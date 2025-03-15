@@ -24,26 +24,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
-  const [isMounted, setIsMounted] = useState(false);
-  const [isReducedMotion, setIsReducedMotion] = useState(false);
 // ClientOnly wrapper to prevent hydration issues
+const ClientOnly = ({ children }: any) => {
+  const [mounted, setMounted] = useState(false);
   useEffect(() => {
-    setIsMounted(true);
-    
-    // Check for reduced motion preference
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setIsReducedMotion(mediaQuery.matches);
-    
-    const handleMediaChange = () => {
-      setIsReducedMotion(mediaQuery.matches);
-    };
-    
-    mediaQuery.addEventListener('change', handleMediaChange);
-    return () => {
-      mediaQuery.removeEventListener('change', handleMediaChange);
-    };
+    setMounted(true);
   }, []);
+  return mounted ? children : null;
+};
+
 // Animation variants optimized for mobile
 const fadeIn = {
   hidden: { opacity: 0, y: 10 },
@@ -199,6 +188,23 @@ const WebHostingPage = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [isReducedMotion, setIsReducedMotion] = useState(false);
   
+  // Check if component is mounted and check for reduced motion preference
+  useEffect(() => {
+    setIsMounted(true);
+    
+    // Check for reduced motion preference
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setIsReducedMotion(mediaQuery.matches);
+    
+    const handleMediaChange = () => {
+      setIsReducedMotion(mediaQuery.matches);
+    };
+    
+    mediaQuery.addEventListener('change', handleMediaChange);
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaChange);
+    };
+  }, []);
 
   // Apply conditional animation based on device capability and user preference
   const getAnimationProps = (delay = 0) => {
@@ -215,7 +221,7 @@ const WebHostingPage = () => {
   };
 
   return (
-  
+    <ClientOnly>
       <div className="min-h-screen bg-black text-white overflow-x-hidden">
         {/* Hero Section */}
         <section className="pt-24 pb-12 relative overflow-hidden">
@@ -268,7 +274,7 @@ const WebHostingPage = () => {
 
         {/* Services Overview */}
         <section className="py-16 relative overflow-hidden">
-          {!isReducedMotion && (
+          {isMounted && !isReducedMotion && (
             <>
               <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-900/10 rounded-full blur-3xl"></div>
               <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-700/10 rounded-full blur-3xl"></div>
@@ -293,39 +299,37 @@ const WebHostingPage = () => {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <AnimatePresence>
-                {hostingFeatures.map((service, index) => (
-                  <motion.div 
-                    key={index} 
-                    {...getAnimationProps(index * 0.05)}
-                  >
-                    <Card className="bg-black/60 border-red-900 h-full group hover:border-red-800/50 transition-colors">
-                      <CardContent className="p-6">
-                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-red-700 to-red-900 p-3 mb-4" style={{ willChange: "transform" }}>
-                          <service.icon className="w-full h-full text-white" />
-                        </div>
-                        <h3 className="text-xl font-bold text-white mb-3">
-                          {service.title}
-                        </h3>
-                        <p className="text-red-200/60 mb-4">
-                          {service.description}
-                        </p>
+              {hostingFeatures.map((service, index) => (
+                <motion.div 
+                  key={index} 
+                  {...getAnimationProps(index * 0.05)}
+                >
+                  <Card className="bg-black/60 border-red-900 h-full group hover:border-red-800/50 transition-colors">
+                    <CardContent className="p-6">
+                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-red-700 to-red-900 p-3 mb-4" style={{ willChange: "transform" }}>
+                        <service.icon className="w-full h-full text-white" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-3">
+                        {service.title}
+                      </h3>
+                      <p className="text-red-200/60 mb-4">
+                        {service.description}
+                      </p>
 
-                        <ul className="space-y-2">
-                          {service.features.map((feature, idx) => (
-                            <li key={idx} className="flex items-start">
-                              <ChevronRight className="h-4 w-4 text-red-500 mt-1 mr-2 flex-shrink-0" />
-                              <span className="text-red-200/80 text-sm">
-                                {feature}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
+                      <ul className="space-y-2">
+                        {service.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start">
+                            <ChevronRight className="h-4 w-4 text-red-500 mt-1 mr-2 flex-shrink-0" />
+                            <span className="text-red-200/80 text-sm">
+                              {feature}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -523,7 +527,7 @@ const WebHostingPage = () => {
                   className="relative"
                 >
                   {/* Connector line for desktop only */}
-                  {!isReducedMotion && index < 5 && (
+                  {isMounted && !isReducedMotion && index < 5 && (
                     <div className="hidden md:block absolute top-12 left-[calc(50%+10px)] w-full h-0.5 bg-gradient-to-r from-red-800/50 to-red-900/10"></div>
                   )}
 
@@ -662,9 +666,8 @@ const WebHostingPage = () => {
           </div>
         </section>
       </div>
-   
+    </ClientOnly>
   );
 };
 
 export default WebHostingPage;
-
