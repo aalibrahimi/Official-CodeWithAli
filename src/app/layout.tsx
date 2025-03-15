@@ -1,19 +1,37 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import "./Styles/globals.css";
 import "./Styles/mediaSizing.css";
 import { Button } from "@/components/ui/button";
-import { Code } from "lucide-react";
-import router from "next/router";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Prevent hydration issues by rendering menu only after component is mounted
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
 
   return (
     <html lang="en">
@@ -27,6 +45,7 @@ export default function RootLayout({
                 className="logo rounded-full border-2 border-red-800/50 shadow-lg shadow-red-900/20"
                 width={70}
                 height={70}
+                priority
               />
               <span className="ml-3 text-xl font-bold bg-gradient-to-r from-red-300 to-red-500 bg-clip-text text-transparent">
                 CodeWithAli
@@ -62,7 +81,7 @@ export default function RootLayout({
             </Link>
           </nav>
 
-          {/* Mobile menu */}
+          {/* Mobile menu button */}
           <div className="mobile-menu block md:hidden">
             <button
               className="menu-toggle w-10 h-10 flex items-center justify-center bg-red-900/20 hover:bg-red-900/40 rounded-full text-red-400 transition-colors"
@@ -72,76 +91,84 @@ export default function RootLayout({
               {isMenuOpen ? "✕" : "☰"}
             </button>
           </div>
-
-          {/* Mobile sidebar - separate from button to ensure proper stacking */}
-          {isMenuOpen && (
-            <div
-              className="fixed inset-0 bg-black/70 z-40 md:hidden"
-              onClick={() => setIsMenuOpen(false)}
-            ></div>
-          )}
-
-          <div
-            className={`fixed top-0 right-0 h-full w-64 bg-black border-l border-red-900/30 shadow-lg shadow-black/50 p-8 transform transition-all duration-300 ease-in-out z-50 md:hidden ${
-              isMenuOpen ? "translate-x-0" : "translate-x-full"
-            }`}
-          >
-            <div className="flex justify-end mb-8">
-              <button
-                className="w-8 h-8 flex items-center justify-center bg-red-900/30 rounded-full text-red-400"
-                onClick={() => setIsMenuOpen(false)}
-                aria-label="Close menu"
-              >
-                ✕
-              </button>
-            </div>
-            <div className="flex flex-col space-y-6">
-              <Link
-                href="/"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
-              >
-                Home
-              </Link>
-              <Link
-                href="/about"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
-              >
-                About
-              </Link>
-              <Link
-                href="/services"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
-              >
-                Services
-              </Link>
-              <Link
-                href="/#contact"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
-              >
-                Contact
-              </Link>
-            </div>
-          </div>
         </header>
+
+        {/* Mobile menu overlay and sidebar - only render when mounted to avoid hydration issues */}
+        {isMounted && (
+          <>
+            {/* Overlay - separate from sidebar for better performance */}
+            <div
+              className={`fixed inset-0 bg-black/70 z-40 md:hidden transition-opacity duration-300 ${
+                isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            />
+
+            {/* Sidebar with hardware-accelerated transforms */}
+            <div
+              className={`fixed top-0 right-0 h-full w-64 bg-black border-l border-red-900/30 shadow-lg shadow-black/50 p-8 transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
+                isMenuOpen ? "translate-x-0" : "translate-x-full"
+              }`}
+              style={{ willChange: "transform" }}
+            >
+              <div className="flex justify-end mb-8">
+                <button
+                  className="w-8 h-8 flex items-center justify-center bg-red-900/30 rounded-full text-red-400"
+                  onClick={() => setIsMenuOpen(false)}
+                  aria-label="Close menu"
+                >
+                  ✕
+                </button>
+              </div>
+              <div className="flex flex-col space-y-6">
+                <Link
+                  href="/"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/about"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
+                >
+                  About
+                </Link>
+                <Link
+                  href="/services"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
+                >
+                  Services
+                </Link>
+                <Link
+                  href="/#contact"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
+                >
+                  Contact
+                </Link>
+              </div>
+            </div>
+          </>
+        )}
+
         <main className="min-h-screen">{children}</main>
 
         {/* Footer */}
-        <footer className="py-12 border-t border-red-900  bg-black">
+        <footer className="py-12 border-t border-red-900 bg-black">
           <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="md:col-span-1">
                 <div className="flex items-center mb-4">
                   <Image
-                src="/codewithali.png"
-                alt="CodeWithAli"
-                className="logo rounded-full border-2 border-red-800/50 shadow-lg shadow-red-900/20"
-                width={70}
-                height={70}
-              />
+                    src="/codewithali.png"
+                    alt="CodeWithAli"
+                    className="logo rounded-full border-2 border-red-800/50 shadow-lg shadow-red-900/20"
+                    width={70}
+                    height={70}
+                  />
                   <span className="ml-2 text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
                     CodeWithAli
                   </span>
@@ -230,14 +257,15 @@ export default function RootLayout({
                     </a>
                   </li>
                   <li>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="mt-2 border-red-800/30 text-red-400 bg-red-900/20 hover:bg-red-950/20 hover:text-red-800"
-                      onClick={() => router.push("/contact")}
-                    >
-                      Get a Quote
-                    </Button>
+                    <Link href="/contact">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="mt-2 border-red-800/30 text-red-400 bg-red-900/20 hover:bg-red-950/20 hover:text-red-800"
+                      >
+                        Get a Quote
+                      </Button>
+                    </Link>
                   </li>
                 </ul>
               </div>
