@@ -716,49 +716,61 @@ export default function AboutPage() {
 </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-24">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <div className="max-w-4xl mx-auto bg-black/60 border border-red-900 rounded-xl p-8 md:p-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Work Together?
-            </h2>
-            <p className="text-lg text-red-200/70 mb-8 max-w-2xl mx-auto">
-              Let's discuss how we can help bring your vision to life with our
-              expertise and dedication.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
-                  text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8"
-                onClick={() => router.push("/contact")}
-              >
-                Get in Touch
-                <Send className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-red-800/30 text-red-400 bg-red-950/20 hover:bg-red-950/30 hover:text-white px-8"
-                onClick={() => router.push("/services")}
-              >
-                Explore Our Services
-              </Button>
-            </div>
+     {/* CTA Section */}
+<section className="py-12 md:py-20">
+  <div className="container mx-auto px-4">
+    <div className="max-w-4xl mx-auto bg-black/60 border border-red-900 rounded-xl p-6 md:p-10 text-center">
+      <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 md:mb-6">
+        Ready to Work Together?
+      </h2>
+      <p className="text-base md:text-lg text-red-200/70 mb-6 md:mb-8 max-w-2xl mx-auto">
+        Let's discuss how we can help bring your vision to life with our
+        expertise and dedication.
+      </p>
+      <div className="flex flex-col gap-3 justify-center">
+        <Button
+          size="default"
+          className="w-full bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
+            text-white border border-red-800/30 shadow-lg shadow-red-950/20"
+          onClick={() => router.push("/contact")}
+        >
+          Get in Touch
+          <Send className="ml-2 h-4 w-4" />
+        </Button>
+        <Button
+          variant="outline"
+          size="default"
+          className="w-full border-red-800/30 text-red-400 bg-red-950/20 hover:bg-red-950/30 hover:text-white"
+          onClick={() => router.push("/services")}
+        >
+          Explore Our Services
+        </Button>
+      </div>
 
-            <div className="flex items-center justify-center mt-8 text-red-200/60">
-              <CheckCircle className="h-4 w-4 mr-2 text-red-500" />
-              <span className="text-sm">No Obligation Consultation</span>
-              <span className="mx-4">•</span>
-              <CheckCircle className="h-4 w-4 mr-2 text-red-500" />
-              <span className="text-sm">Transparent Process</span>
-              <span className="mx-4">•</span>
-              <CheckCircle className="h-4 w-4 mr-2 text-red-500" />
-              <span className="text-sm">Ongoing Support</span>
-            </div>
-          </div>
+      {/* Features list - stacked on mobile */}
+      <div className="mt-6 md:mt-8 space-y-3 md:space-y-0 md:flex md:items-center md:justify-center text-red-200/60">
+        <div className="flex items-center justify-center">
+          <CheckCircle className="h-4 w-4 mr-2 text-red-500" />
+          <span className="text-xs md:text-sm">No Obligation Consultation</span>
         </div>
-      </section>
+        
+        <span className="hidden md:inline mx-4">•</span>
+        
+        <div className="flex items-center justify-center">
+          <CheckCircle className="h-4 w-4 mr-2 text-red-500" />
+          <span className="text-xs md:text-sm">Transparent Process</span>
+        </div>
+        
+        <span className="hidden md:inline mx-4">•</span>
+        
+        <div className="flex items-center justify-center">
+          <CheckCircle className="h-4 w-4 mr-2 text-red-500" />
+          <span className="text-xs md:text-sm">Ongoing Support</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     </div>
   );
 }
