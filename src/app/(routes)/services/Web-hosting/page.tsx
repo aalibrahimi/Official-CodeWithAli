@@ -25,7 +25,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 // ClientOnly wrapper to prevent hydration issues
-const ClientOnly = ({ children }) => {
+const ClientOnly = ({ children }: any) => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     setMounted(true);
@@ -225,6 +225,8 @@ const WebHostingPage = () => {
   };
 
   return (
+    <ClientOnly>
+      
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Hero Section */}
       <section className="pt-24 pb-12 relative overflow-hidden">
@@ -669,6 +671,7 @@ const WebHostingPage = () => {
         </div>
       </section>
     </div>
+    </ClientOnly>
   );
 };
 
