@@ -195,7 +195,7 @@ const WebHostingPage = () => {
   }, []);
 
   // Simplified animation variants for mobile
-  const getAnimationProps = (index) => {
+  const getAnimationProps = (index: any) => {
     if (isMobile) {
       return {
         initial: { opacity: 0 },

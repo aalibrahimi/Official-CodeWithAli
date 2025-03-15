@@ -663,14 +663,14 @@ const HomePage = () => {
       </section>
 
       {/* Contact Form */}
-      <section id="contact" className="py-20 md:py-24">
+      <section id="contact" className="py-20 md:py-24 bg-gradient-to-b from-black to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12 ">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto ">
             <motion.div
-              className="text-center mb-12"
+              className="text-center mb-12 "
               {...getAnimationProps()}
             >
-              <Badge className="bg-red-900/50 text-red-300 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-red-900/50  text-red-300 border-transparent mb-4 px-3 py-1">
                 CONTACT US
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">
