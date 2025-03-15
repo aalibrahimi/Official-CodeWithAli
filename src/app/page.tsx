@@ -28,6 +28,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import Image from "next/image";
 
 
 // Animation variants with reduced intensity for mobile
@@ -109,19 +110,22 @@ const industries = [
 // Portfolio projects
 const portfolioProjects = [
   {
-    title: "E-commerce Platform",
+    title: "Knoz Al-Najah Website",
     category: "Web Development",
-    image: "/portfolio-1.jpg",
+    image: "/knoz_website.png",
+    url: "https://knoz.fly.dev/"
   },
   {
-    title: "Fitness Mobile App",
-    category: "Mobile Development",
-    image: "/portfolio-2.jpg",
+    title: "Reggaeeli Website",
+    category: "Web Development",
+    image: "/reggaeeli_website.png",
+    url: "https://reggaeeli.codewithali.com/"
   },
   {
-    title: "Corporate Website",
-    category: "UI/UX Design",
-    image: "/portfolio-3.jpg",
+    title: "Coming Soon...",
+    category: "N\\A",
+    image: "",
+    url: "#"
   },
 ];
 
@@ -436,7 +440,15 @@ const HomePage = () => {
                 <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-xl shadow-red-950/20">
                   {/* Project Image */}
                   <div className="w-full h-full bg-black/80 border-2 border-red-800/30 flex items-center justify-center">
-                    <p className="text-red-200/70">Project Image Placeholder</p>
+                    {project.image ? (
+                      <>
+                        <Image src={project.image} alt={project.title} height={300} width={500} quality={100} loading="eager" className="w-full h-full object-cover" />
+                      </>
+                    ) : (
+                      <>
+                        <p className="text-red-200/70">Project Image Placeholder</p>
+                      </>
+                    )}
                   </div>
 
                   {/* Hover Overlay - preloaded with opacity-0 for better performance */}
@@ -451,7 +463,7 @@ const HomePage = () => {
                       <p className="text-red-100 text-lg mb-6">
                         {project.category}
                       </p>
-                      <Link href={`/portfolio/${index + 1}`}>
+                      <Link href={`${project.url}`} target="_blank" draggable={false}>
                         <Button
                           variant="outline"
                           size="lg"
