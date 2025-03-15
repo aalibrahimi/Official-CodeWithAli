@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 import {
   ChevronRight,
@@ -22,6 +23,15 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+
+// ClientOnly wrapper to prevent hydration issues
+const ClientOnly = ({ children }) => {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  return mounted ? children : null;
+};
 
 // Hosting features data
 const hostingFeatures = [
@@ -156,36 +166,78 @@ const hostingPackages = [
 const WebHostingPage = () => {
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
-
+  const [isMobile, setIsMobile] = useState(false);
+  const [isReducedMotion, setIsReducedMotion] = useState(false);
+  
   useEffect(() => {
-    // Set mounted state after component mounts to prevent hydration issues
+    // Set mounted to handle hydration
     setMounted(true);
+    
+    // Check if mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Check for reduced motion preference
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setIsReducedMotion(mediaQuery.matches);
+    
+    // Initial checks
+    handleResize();
+    
+    // Add event listeners
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
-  // Return a loading state or nothing while not mounted
+  // Display simple loading indicator when not mounted
   if (!mounted) {
-    return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-8 h-8 rounded-full bg-red-700 mx-auto mb-4"></div>
-          <p className="text-red-400">Loading...</p>
-        </div>
-      </div>
-    );
+    return null;
   }
 
-  // Main content only renders after mounting
+  // Define animation variants
+  const fadeIn = {
+    hidden: { opacity: 0, y: isMobile ? 5 : 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: isMobile ? 0.2 : 0.5, ease: "easeOut" },
+    },
+  };
+  
+  // Animation properties based on device
+  const getAnimationProps = (delay = 0) => {
+    // No animation for mobile or reduced motion preference
+    if (isMobile || isReducedMotion) {
+      return {};
+    }
+    
+    return {
+      initial: "hidden",
+      whileInView: "visible",
+      viewport: { once: true },
+      variants: fadeIn,
+      transition: { delay }
+    };
+  };
+
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Hero Section */}
-      <section className="pt-24 pb-12 relative">
+      <section className="pt-24 pb-12 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-red-950/30 to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-950/30 to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-          <div className="max-w-3xl">
+          <motion.div
+            className="max-w-3xl"
+            {...getAnimationProps()}
+          >
             <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
               WEB HOSTING & MAINTENANCE
             </Badge>
@@ -219,14 +271,24 @@ const WebHostingPage = () => {
                 <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Services Overview */}
-      <section className="py-16 relative">
+      <section className="py-16 relative overflow-hidden">
+        {!isMobile && !isReducedMotion && (
+          <>
+            <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-900/10 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-700/10 rounded-full blur-3xl"></div>
+          </>
+        )}
+
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20">
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            {...getAnimationProps()}
+          >
             <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
               OUR SERVICES
             </Badge>
@@ -237,11 +299,14 @@ const WebHostingPage = () => {
               Beyond just server space, we provide a full suite of services to
               keep your website performing at its best.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {hostingFeatures.map((service, index) => (
-              <div key={index}>
+              <motion.div 
+                key={index} 
+                {...getAnimationProps(index * 0.05)}
+              >
                 <Card className="bg-black/60 border-red-900 h-full group hover:border-red-800/50 transition-colors">
                   <CardContent className="p-6">
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-red-700 to-red-900 p-3 mb-4">
@@ -266,7 +331,7 @@ const WebHostingPage = () => {
                     </ul>
                   </CardContent>
                 </Card>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -275,7 +340,10 @@ const WebHostingPage = () => {
       {/* Benefits Section */}
       <section className="py-20 bg-red-950/5 relative">
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            {...getAnimationProps()}
+          >
             <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
               BENEFITS
             </Badge>
@@ -286,7 +354,7 @@ const WebHostingPage = () => {
               Experience the peace of mind that comes with professional, managed
               hosting solutions.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
@@ -327,7 +395,10 @@ const WebHostingPage = () => {
                   "Automated backup systems ensure your valuable data is always protected and quickly recoverable.",
               },
             ].map((benefit, index) => (
-              <div key={index}>
+              <motion.div
+                key={index}
+                {...getAnimationProps(index * 0.05)}
+              >
                 <div className="bg-black/60 border border-red-900 rounded-xl p-6 h-full">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-red-700 to-red-900 p-3 mb-4">
                     <benefit.icon className="w-full h-full text-white" />
@@ -337,7 +408,7 @@ const WebHostingPage = () => {
                   </h3>
                   <p className="text-red-200/70">{benefit.description}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -346,7 +417,10 @@ const WebHostingPage = () => {
       {/* Technology Stack */}
       <section className="py-20 relative">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            {...getAnimationProps()}
+          >
             <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
               TECHNOLOGY
             </Badge>
@@ -357,11 +431,14 @@ const WebHostingPage = () => {
               We leverage industry-leading technologies to deliver reliable,
               secure, and high-performance hosting solutions.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {techStack.map((tech, index) => (
-              <div key={index}>
+              <motion.div
+                key={index}
+                {...getAnimationProps(index * 0.05)}
+              >
                 <Card className="bg-black/60 border-red-900 h-full">
                   <CardContent className="p-6">
                     <h3 className="text-lg font-bold text-white mb-4">
@@ -377,7 +454,7 @@ const WebHostingPage = () => {
                     </ul>
                   </CardContent>
                 </Card>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -386,7 +463,10 @@ const WebHostingPage = () => {
       {/* Process Section */}
       <section className="py-20 bg-red-950/5">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            {...getAnimationProps()}
+          >
             <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
               OUR PROCESS
             </Badge>
@@ -397,7 +477,7 @@ const WebHostingPage = () => {
               Our systematic approach ensures your website remains secure,
               updated, and performing optimally.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0">
             {[
@@ -444,9 +524,13 @@ const WebHostingPage = () => {
                   "We address potential issues before they impact your site, and provide fast resolution when problems arise.",
               },
             ].map((step, index) => (
-              <div key={index} className="relative">
+              <motion.div
+                key={index}
+                {...getAnimationProps(index * 0.05)}
+                className="relative"
+              >
                 {/* Connector line for desktop only */}
-                {index < 5 && (
+                {!isMobile && index < 5 && (
                   <div className="hidden md:block absolute top-12 left-[calc(50%+10px)] w-full h-0.5 bg-gradient-to-r from-red-800/50 to-red-900/10"></div>
                 )}
 
@@ -466,7 +550,7 @@ const WebHostingPage = () => {
                     {step.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -475,7 +559,10 @@ const WebHostingPage = () => {
       {/* Pricing */}
       <section id="packages" className="py-20">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            {...getAnimationProps()}
+          >
             <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
               PRICING
             </Badge>
@@ -486,11 +573,15 @@ const WebHostingPage = () => {
               Choose the hosting solution that best fits your business needs and
               budget.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {hostingPackages.map((pkg, index) => (
-              <div key={index} className="h-full">
+              <motion.div
+                key={index}
+                {...getAnimationProps(index * 0.05)}
+                className="h-full"
+              >
                 <Card
                   className={`bg-black/60 h-full flex flex-col ${
                     pkg.highlighted
@@ -544,7 +635,7 @@ const WebHostingPage = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -553,7 +644,10 @@ const WebHostingPage = () => {
       {/* CTA Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <div className="max-w-4xl mx-auto bg-black/60 border border-red-900 rounded-xl p-8 md:p-12 text-center">
+          <motion.div
+            className="max-w-4xl mx-auto bg-black/60 border border-red-900 rounded-xl p-8 md:p-12 text-center"
+            {...getAnimationProps()}
+          >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready for Reliable Hosting?
             </h2>
@@ -571,7 +665,7 @@ const WebHostingPage = () => {
               Get Started Today
               <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
