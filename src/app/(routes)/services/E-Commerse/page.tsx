@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { useRouter } from "next/navigation";
 import {
@@ -24,15 +24,40 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
-// Animation variants
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
+// Custom hook to detect mobile devices
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Initial check
+    checkIfMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkIfMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
+  
+  return isMobile;
+};
+
+// Animation variants optimized for performance
+const createFadeInVariant = (isMobile:any) => ({
+  hidden: { opacity: 0, y: isMobile ? 10 : 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { 
+      duration: isMobile ? 0.3 : 0.6, 
+      ease: "easeOut" 
+    },
   },
-};
+});
 
 // E-commerce packages
 const packages = [
@@ -92,13 +117,38 @@ const packages = [
 const EcommerceSolutionsPage = () => {
   const router = useRouter();
   const [activeFaq, setActiveFaq] = useState(null);
+  const isMobile = useIsMobile();
+  
+  // Create animation variants based on device type
+  const fadeIn = createFadeInVariant(isMobile);
 
-  const toggleFaq = (index: any) => {
+  const toggleFaq = (index:any) => {
     if (activeFaq === index) {
       setActiveFaq(null);
     } else {
       setActiveFaq(index);
     }
+  };
+  
+  // Helper function to create optimized motion props
+  const getMotionProps = (index = 0) => {
+    if (isMobile) {
+      // Simplified animations for mobile (no staggered delays, simpler transitions)
+      return {
+        initial: { opacity: 0 },
+        whileInView: { opacity: 1 },
+        viewport: { once: true },
+        transition: { duration: 0.3 }
+      };
+    }
+    
+    // Full animations for desktop
+    return {
+      initial: { opacity: 0, y: 20 },
+      whileInView: { opacity: 1, y: 0 },
+      viewport: { once: true },
+      transition: { duration: 0.5, delay: index * 0.1 }
+    };
   };
 
   return (
@@ -113,9 +163,9 @@ const EcommerceSolutionsPage = () => {
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: isMobile ? 10 : 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: isMobile ? 0.3 : 0.5 }}
             >
               <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
                 E-COMMERCE SOLUTIONS
@@ -158,9 +208,9 @@ const EcommerceSolutionsPage = () => {
 
             {/* Stats/Features Box */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: isMobile ? 10 : 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              transition={{ duration: isMobile ? 0.3 : 0.7, delay: isMobile ? 0 : 0.2 }}
               className="bg-black/60 border border-red-900 rounded-xl overflow-hidden shadow-xl p-6 md:p-8"
             >
               <h3 className="text-2xl font-bold text-center mb-6">
@@ -281,10 +331,7 @@ const EcommerceSolutionsPage = () => {
             ].map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
+                {...getMotionProps(isMobile ? 0 : index * 0.05)}
               >
                 <Card className="bg-black/60 border-red-900 backdrop-blur-sm h-full">
                   <CardContent className="p-6">
@@ -333,10 +380,7 @@ const EcommerceSolutionsPage = () => {
             {packages.map((pkg, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                {...getMotionProps(isMobile ? 0 : index * 0.1)}
               >
                 <Card
                   className={`backdrop-blur-sm overflow-hidden ${
@@ -470,10 +514,7 @@ const EcommerceSolutionsPage = () => {
             ].map((phase, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                {...getMotionProps(isMobile ? 0 : index * 0.1)}
                 className="relative mb-10 last:mb-0"
               >
                 <div className="flex">
@@ -561,10 +602,7 @@ const EcommerceSolutionsPage = () => {
             ].map((faq, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                {...getMotionProps(isMobile ? 0 : index * 0.1)}
                 className="bg-black/60 border border-red-900 rounded-lg overflow-hidden"
               >
                 <button
@@ -600,10 +638,7 @@ const EcommerceSolutionsPage = () => {
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <motion.div
             className="max-w-4xl mx-auto bg-black/60 border border-red-900 rounded-xl p-8 md:p-12 text-center"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
+            {...getMotionProps()}
           >
             <div className="w-16 h-16 rounded-full bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center mx-auto mb-6">
               <ShoppingBag className="w-8 h-8 text-white" />
