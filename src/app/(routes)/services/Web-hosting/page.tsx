@@ -24,15 +24,26 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
+  const [isReducedMotion, setIsReducedMotion] = useState(false);
 // ClientOnly wrapper to prevent hydration issues
-const ClientOnly = ({ children } : any) => {
-  const [mounted, setMounted] = useState(false);
   useEffect(() => {
-    setMounted(true);
+    setIsMounted(true);
+    
+    // Check for reduced motion preference
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setIsReducedMotion(mediaQuery.matches);
+    
+    const handleMediaChange = () => {
+      setIsReducedMotion(mediaQuery.matches);
+    };
+    
+    mediaQuery.addEventListener('change', handleMediaChange);
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaChange);
+    };
   }, []);
-  return mounted ? children : null;
-};
-
 // Animation variants optimized for mobile
 const fadeIn = {
   hidden: { opacity: 0, y: 10 },
@@ -188,23 +199,6 @@ const WebHostingPage = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [isReducedMotion, setIsReducedMotion] = useState(false);
   
-  // Check if component is mounted and check for reduced motion preference
-  useEffect(() => {
-    setIsMounted(true);
-    
-    // Check for reduced motion preference
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setIsReducedMotion(mediaQuery.matches);
-    
-    const handleMediaChange = () => {
-      setIsReducedMotion(mediaQuery.matches);
-    };
-    
-    mediaQuery.addEventListener('change', handleMediaChange);
-    return () => {
-      mediaQuery.removeEventListener('change', handleMediaChange);
-    };
-  }, []);
 
   // Apply conditional animation based on device capability and user preference
   const getAnimationProps = (delay = 0) => {
@@ -221,7 +215,7 @@ const WebHostingPage = () => {
   };
 
   return (
-    <ClientOnly>
+  
       <div className="min-h-screen bg-black text-white overflow-x-hidden">
         {/* Hero Section */}
         <section className="pt-24 pb-12 relative overflow-hidden">
@@ -668,8 +662,9 @@ const WebHostingPage = () => {
           </div>
         </section>
       </div>
-    </ClientOnly>
+   
   );
 };
 
 export default WebHostingPage;
+
