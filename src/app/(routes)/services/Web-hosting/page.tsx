@@ -27,10 +27,15 @@ import { Badge } from "@/components/ui/badge";
 // ClientOnly wrapper to prevent hydration issues
 const ClientOnly = ({ children }: any) => {
   const [mounted, setMounted] = useState(false);
+  
   useEffect(() => {
     setMounted(true);
   }, []);
-  return mounted ? children : null;
+  
+  // Return empty div with matching background 
+  if (!mounted) return <div className="min-h-screen bg-black"></div>;
+  
+  return children;
 };
 
 // Animation variants - simplified
