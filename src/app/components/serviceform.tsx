@@ -18,6 +18,8 @@ interface FormDataState {
   setTimeline: (timeline: string) => void
   message: string
   setMessage: (message: string) => void
+  projectDetails: string
+  setProjectDetails: (projectDetails: string) => void
 }
 
 export const useFormDataStore = create<FormDataState>()((set) => ({
@@ -33,6 +35,8 @@ export const useFormDataStore = create<FormDataState>()((set) => ({
   setTimeline: (timeline: string) => set({ timeline }),
   message: '',
   setMessage: (message: string) => set({ message }),
+  projectDetails: '',
+  setProjectDetails: (projectDetails: string) => set({ projectDetails }),
 }));
 
 // const services = [

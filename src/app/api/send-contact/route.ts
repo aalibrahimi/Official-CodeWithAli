@@ -8,13 +8,13 @@ export async function POST(req: any) {
   // Need to check if the mothod comming in is POST
   if (req.method === 'POST') {
     const content = await req.json()
-    const { email, message } = content;
+    const { name, email, service, projectDetails } = content;
   try {
     const { data, error } = await resend.emails.send({
-      from: 'unfold@codewithali.com',
+      from: 'CodeWithAli Website <unfold@codewithali.com>',
       to: ['blazehunterhp@gmail.com', 'aalibrahimi0@gmail.com'],
       subject: 'Client Contact Incoming',
-      react: EmailContact({ email, message }) as React.ReactElement,
+      react: EmailContact({ name, email, service, projectDetails }) as React.ReactElement,
     });
 
     if (error) {
