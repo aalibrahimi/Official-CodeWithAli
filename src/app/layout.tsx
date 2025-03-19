@@ -2,230 +2,209 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider, useTheme } from "next-themes";
 import "./Styles/globals.css";
 import "./Styles/mediaSizing.css";
 import { Button } from "@/components/ui/button";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, ChevronDown } from "lucide-react";
 
-// Separate component for themed content
-// Import useTheme here
-import { useTheme } from "next-themes";
-
-function ThemedContent({ children }: { children: React.ReactNode }) {
-  const { theme, setTheme, resolvedTheme } = useTheme();
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-
-  // Prevent hydration issues by rendering menu only after component is mounted
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState('light');
+  
+  // Prevent hydration issues
   useEffect(() => {
     setIsMounted(true);
-    console.log("Current theme:", theme);
-    console.log("Resolved theme:", resolvedTheme);
-    // Force a theme update on mount to ensure classes are applied
-  }, [theme, resolvedTheme]);
-
-  // Prevent body scroll when menu is open
+    const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    setCurrentTheme(theme);
+  }, []);
+  
+  // Control body scroll when menu is open
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
+    if (isMenuOpen) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = 'unset';
+    return () => { document.body.style.overflow = 'unset'; };
   }, [isMenuOpen]);
+  
+  // Service items for menus
+  const serviceItems = [
+    { title: "Website Development", href: "/services/website" },
+    { title: "Mobile App Development", href: "/services/mobile" },
+    { title: "UI/UX Design", href: "/services/design" },
+    { title: "E-commerce Solutions", href: "/services/ecommerce" },
+    { title: "SEO Optimization", href: "/services/seo" },
+    { title: "Web Hosting & Maintenance", href: "/services/hosting" }
+  ];
+
+  // Internal theme toggle for immediate UI update
+  const toggleTheme = () => {
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setCurrentTheme(newTheme);
+  };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <header className="border-b border-gray-200 dark:border-red-900/30 bg-white dark:bg-black py-4 px-6 flex justify-between items-center">
-        <div className="logo-container flex items-center">
-          <Link href="/" draggable={false} className="flex items-center">
-            <Image
-              src="/codewithali.png"
-              alt="CodeWithAli"
-              draggable={false}
-              className="logo rounded-full border-2 border-gray-300 dark:border-red-800/50 shadow-lg shadow-gray-200 dark:shadow-red-900/20"
-              width={70}
-              height={70}
-              priority
-            />
-            <span className="ml-3 text-xl font-bold bg-gradient-to-r from-gray-700 to-gray-900 dark:from-red-300 dark:to-red-500 bg-clip-text text-transparent">
-              CodeWithAli
-            </span>
-          </Link>
-        </div>
-
-        {/* Regular nav for larger screens */}
-        <nav className="nav-links desktop-nav hidden md:flex items-center space-x-8">
-          <Link
-            href="/"
-            className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors"
-          >
-            Home
-          </Link>
-          <Link
-            href="/about"
-            className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors"
-          >
-            About
-          </Link>
-      
-<div className="nav-item relative group">
-  <Link
-    href="/services"
-    className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors"
-  >
-    Services
-  </Link>
-  <div className="absolute left-0 mt-2 w-56 bg-white dark:bg-black border border-gray-200 dark:border-red-900/30 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-    <div className="py-2">
-      {[
-        { title: "Website Development", href: "/services/website" },
-        { title: "Mobile App Development", href: "/services/mobile" },
-        { title: "UI/UX Design", href: "/services/design" },
-        { title: "E-commerce Solutions", href: "/services/ecommerce" },
-        { title: "SEO Optimization", href: "/services/seo" },
-        { title: "Web Hosting & Maintenance", href: "/services/hosting" }
-      ].map((service) => (
-        <Link
-          key={service.title}
-          href={service.href}
-          className="block px-4 py-2 text-gray-700 dark:text-red-200 hover:bg-gray-100 dark:hover:bg-red-900/20"
+    <html lang="en" className = "light"  suppressHydrationWarning>
+     <body>
+        <ThemeProvider
+          attribute="class" 
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
         >
-          {service.title}
-        </Link>
-      ))}
-    </div>
-  </div>
-</div>
-          <Link
-            href="/#contact"
-            className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors"
-          >
-            Contact
-          </Link>
           
-          {/* Theme toggle button */}
-          <Button 
-            variant="outline" 
-            size="icon"
-            onClick={() => {
-              const newTheme = theme === 'dark' ? 'light' : 'dark';
-              setTheme(newTheme);
-              console.log("Setting theme to:", newTheme);
-              // Manually toggle classes for immediate visual feedback
-           
-            }}
-            className="ml-4 border-gray-300 dark:border-red-800/30 bg-gray-100 dark:bg-red-950/20 text-gray-700 dark:text-red-400 hover:bg-gray-200 dark:hover:bg-red-950/30"
-          >
-            {isMounted && theme === 'dark' ? (
-              <Sun className="h-5 w-5" />
-            ) : (
-              <Moon className="h-5 w-5" />
+          <div className="min-h-screen flex flex-col">
+            <header className="border-b border-gray-200 dark:border-red-900/30 bg-white dark:bg-black py-4 px-6 flex justify-between items-center">
+              <div className="logo-container flex items-center">
+                <Link href="/" draggable={false} className="flex items-center">
+                  <Image
+                    src="/codewithali.png"
+                    alt="CodeWithAli"
+                    draggable={false}
+                    className="logo rounded-full border-2 border-gray-300 dark:border-red-800/50 shadow-lg shadow-gray-200 dark:shadow-red-900/20"
+                    width={70}
+                    height={70}
+                    priority
+                  />
+                  <span className="ml-3 text-xl font-bold bg-gradient-to-r from-gray-700 to-gray-900 dark:from-red-300 dark:to-red-500 bg-clip-text text-transparent">
+                    CodeWithAli
+                  </span>
+                </Link>
+              </div>
+
+              {/* Desktop nav */}
+              <nav className="nav-links hidden md:flex items-center space-x-8">
+                <Link href="/" className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors">Home</Link>
+                <Link href="/about" className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors">About</Link>
+                
+                {/* Desktop Services Dropdown */}
+                <div className="relative group">
+                  <div className="flex items-center text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors cursor-pointer">
+                    <span>Services</span>
+                    <ChevronDown className="ml-1 h-4 w-4" />
+                  </div>
+                  <div className="absolute left-0 mt-2 w-64 bg-white dark:bg-black border border-gray-200 dark:border-red-900/30 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div className="py-2">
+                      {serviceItems.map((service) => (
+                        <Link
+                          key={service.title}
+                          href={service.href}
+                          className="block px-4 py-2 text-gray-700 dark:text-red-200 hover:bg-gray-100 dark:hover:bg-red-900/20"
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                
+                <Link href="/#contact" className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors">Contact</Link>
+                
+                {/* Theme toggle */}
+                {isMounted && (
+                  <ThemeToggler currentTheme={currentTheme} onToggle={toggleTheme} size="lg" />
+                )}
+              </nav>
+
+              {/* Mobile menu buttons */}
+              <div className="flex items-center md:hidden">
+                {isMounted && (
+                  <ThemeToggler currentTheme={currentTheme} onToggle={toggleTheme} size="sm" />
+                )}
+                
+                <button
+                  className="w-10 h-10 ml-3 flex items-center justify-center bg-gray-200 dark:bg-red-900/20 hover:bg-gray-300 dark:hover:bg-red-900/40 rounded-full text-gray-700 dark:text-red-400 transition-colors"
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  aria-label="Toggle menu"
+                >
+                  {isMenuOpen ? "✕" : "☰"}
+                </button>
+              </div>
+            </header>
+
+            {/* Mobile menu */}
+            {isMounted && (
+              <>
+                <div
+                  className={`fixed inset-0 bg-gray-700/70 dark:bg-black/70 z-40 md:hidden transition-opacity duration-300 ${
+                    isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                />
+
+                <div
+                  className={`fixed top-0 right-0 h-full w-64 bg-white dark:bg-black border-l border-gray-200 dark:border-red-900/30 shadow-lg shadow-gray-400/50 dark:shadow-black/50 p-8 transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
+                    isMenuOpen ? "translate-x-0" : "translate-x-full"
+                  }`}
+                  style={{ willChange: "transform" }}
+                >
+                  <div className="flex justify-end mb-8">
+                    <button
+                      className="w-8 h-8 flex items-center justify-center bg-gray-200 dark:bg-red-900/30 rounded-full text-gray-700 dark:text-red-400"
+                      onClick={() => setIsMenuOpen(false)}
+                      aria-label="Close menu"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                  <div className="flex flex-col space-y-6">
+                    <Link
+                      href="/"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors border-b border-gray-200 dark:border-red-900/20 pb-2"
+                    >
+                      Home
+                    </Link>
+                    <Link
+                      href="/about"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors border-b border-gray-200 dark:border-red-900/20 pb-2"
+                    >
+                      About
+                    </Link>
+                    
+                    {/* Mobile services dropdown */}
+                    <div className="border-b border-gray-200 dark:border-red-900/20 pb-2">
+                      <button 
+                        onClick={() => setServicesOpen(!servicesOpen)}
+                        className="flex items-center justify-between w-full text-left text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors"
+                      >
+                        <span>Services</span>
+                        <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
+                      </button>
+                      {servicesOpen && (
+                        <div className="mt-2 ml-4 space-y-2">
+                          {serviceItems.map((service) => (
+                            <Link
+                              key={service.title}
+                              href={service.href}
+                              onClick={() => setIsMenuOpen(false)}
+                              className="block py-1 text-gray-600 dark:text-red-200/80 hover:text-gray-900 dark:hover:text-red-300"
+                            >
+                              {service.title}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    
+                    <Link
+                      href="/#contact"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors border-b border-gray-200 dark:border-red-900/20 pb-2"
+                    >
+                      Contact
+                    </Link>
+                  </div>
+                </div>
+              </>
             )}
-            <span className="sr-only">Toggle theme</span>
-          </Button>
-        </nav>
 
-        {/* Mobile menu button */}
-        <div className="mobile-menu flex items-center md:hidden">
-          <Button 
-            variant="outline" 
-            size="icon"
-            onClick={() => {
-              const newTheme = theme === 'dark' ? 'light' : 'dark';
-              setTheme(newTheme);
-              console.log("Setting theme to:", newTheme);
-              // Manually toggle classes for immediate visual feedback
-        
-            }}
-            className="mr-3 border-gray-300 dark:border-red-800/30 bg-gray-100 dark:bg-red-950/20 text-gray-700 dark:text-red-400 hover:bg-gray-200 dark:hover:bg-red-950/30"
-          >
-            {isMounted && theme === 'dark' ? (
-              <Sun className="h-4 w-4" />
-            ) : (
-              <Moon className="h-4 w-4" />
-            )}
-            <span className="sr-only">Toggle theme</span>
-          </Button>
-          
-          <button
-            className="menu-toggle w-10 h-10 flex items-center justify-center bg-gray-200 dark:bg-red-900/20 hover:bg-gray-300 dark:hover:bg-red-900/40 rounded-full text-gray-700 dark:text-red-400 transition-colors"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? "✕" : "☰"}
-          </button>
-        </div>
-      </header>
+            <main className="flex-grow">{children}</main>
 
-      {/* Mobile menu overlay and sidebar - only render when mounted to avoid hydration issues */}
-      {isMounted && (
-        <>
-          {/* Overlay - separate from sidebar for better performance */}
-          <div
-            className={`fixed inset-0 bg-gray-700/70 dark:bg-black/70 z-40 md:hidden transition-opacity duration-300 ${
-              isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-            }`}
-            onClick={() => setIsMenuOpen(false)}
-          />
-
-          {/* Sidebar with hardware-accelerated transforms */}
-          <div
-            className={`fixed top-0 right-0 h-full w-64 bg-white dark:bg-black border-l border-gray-200 dark:border-red-900/30 shadow-lg shadow-gray-400/50 dark:shadow-black/50 p-8 transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
-              isMenuOpen ? "translate-x-0" : "translate-x-full"
-            }`}
-            style={{ willChange: "transform" }}
-          >
-            <div className="flex justify-end mb-8">
-              <button
-                className="w-8 h-8 flex items-center justify-center bg-gray-200 dark:bg-red-900/30 rounded-full text-gray-700 dark:text-red-400"
-                onClick={() => setIsMenuOpen(false)}
-                aria-label="Close menu"
-              >
-                ✕
-              </button>
-            </div>
-            <div className="flex flex-col space-y-6">
-              <Link
-                href="/"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors border-b border-gray-200 dark:border-red-900/20 pb-2"
-              >
-                Home
-              </Link>
-              <Link
-                href="/about"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors border-b border-gray-200 dark:border-red-900/20 pb-2"
-              >
-                About
-              </Link>
-              <Link
-                href="/services"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors border-b border-gray-200 dark:border-red-900/20 pb-2"
-              >
-                Services
-              </Link>
-              <Link
-                href="/#contact"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors border-b border-gray-200 dark:border-red-900/20 pb-2"
-              >
-                Contact
-              </Link>
-            </div>
-          </div>
-        </>
-      )}
-
-      <main className="flex-grow">{children}</main>
-
-      {/* Footer */}
+            {/* Footer */}
+            {/* Footer */}
       <footer className="py-12 border-t border-gray-200 dark:border-red-900 bg-white dark:bg-black">
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -368,27 +347,53 @@ function ThemedContent({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </footer>
-    </div>
+          </div>
+          
+        </ThemeProvider>
+        
+      </body>
+    </html>
   );
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+// Helper component to track theme changes
+function ThemeUpdater({ onThemeChange } : { onThemeChange: (theme: string) => void }) {
+  const { theme, resolvedTheme } = useTheme();
+  
+  useEffect(() => {
+    const currentTheme = theme || resolvedTheme || 'light';
+    onThemeChange(currentTheme);
+  }, [theme, resolvedTheme, onThemeChange]);
+  
+  return null;
+}
+
+// Theme toggle button component
+function ThemeToggler({ currentTheme, onToggle, size = "lg" }: { currentTheme: string; onToggle: () => void; size?: "lg" | "sm" }) {
+  const { setTheme } = useTheme();
+  
+  const handleToggle = () => {
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    onToggle();
+  };
+  
+  const iconSize = size === "lg" ? "h-5 w-5" : "h-4 w-4";
+  const marginClass = size === "lg" ? "ml-4" : "mr-3";
+  
   return (
-    <html lang="en" className ="dark" suppressHydrationWarning>
-      <body>
-      <ThemeProvider
-  attribute="class"
-  defaultTheme="dark" // Force dark mode to test
-  enableSystem={false} // Disable system preference temporarily
-  disableTransitionOnChange
->
-  <ThemedContent>{children}</ThemedContent>
-</ThemeProvider>
-      </body>
-    </html>
+    <Button 
+      variant="outline" 
+      size="icon"
+      onClick={handleToggle}
+      className={`${marginClass} border-gray-300 dark:border-red-800/30 bg-gray-100 dark:bg-red-950/20 text-gray-700 dark:text-red-400 hover:bg-gray-200 dark:hover:bg-red-950/30`}
+    >
+      {currentTheme === 'dark' ? (
+        <Sun className={iconSize} />
+      ) : (
+        <Moon className={iconSize} />
+      )}
+      <span className="sr-only">Toggle theme</span>
+    </Button>
   );
 }
