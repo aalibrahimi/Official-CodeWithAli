@@ -142,7 +142,7 @@ header {
   padding: 80px 40px;
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   color: var(--text-color);
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  clipPath: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   position: relative;
   overflow: hidden;
 

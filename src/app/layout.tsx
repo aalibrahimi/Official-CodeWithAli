@@ -38,10 +38,11 @@ export default function RootLayout({
       <body className="bg-black text-red-200">
         <header className="border-b border-red-900/30 bg-black py-4 px-6 flex justify-between items-center">
           <div className="logo-container flex items-center">
-            <div className="flex items-center">
+            <Link href="/" draggable={false} className="flex items-center">
               <Image
                 src="/codewithali.png"
                 alt="CodeWithAli"
+                draggable={false}
                 className="logo rounded-full border-2 border-red-800/50 shadow-lg shadow-red-900/20"
                 width={70}
                 height={70}
@@ -50,7 +51,7 @@ export default function RootLayout({
               <span className="ml-3 text-xl font-bold bg-gradient-to-r from-red-300 to-red-500 bg-clip-text text-transparent">
                 CodeWithAli
               </span>
-            </div>
+            </Link>
           </div>
 
           {/* Regular nav for larger screens */}
@@ -183,10 +184,11 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="md:col-span-1">
-                <div className="flex items-center mb-4">
+                <Link href="/" draggable={false} className="flex items-center mb-4">
                   <Image
                     src="/codewithali.png"
                     alt="CodeWithAli"
+                    draggable={false}
                     className="logo rounded-full border-2 border-red-800/50 shadow-lg shadow-red-900/20"
                     width={70}
                     height={70}
@@ -194,7 +196,7 @@ export default function RootLayout({
                   <span className="ml-2 text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
                     CodeWithAli
                   </span>
-                </div>
+                </Link>
                 <p className="text-sm text-red-200/60 mb-4">
                   We design and develop digital experiences that help businesses
                   and individuals succeed online.
