@@ -18,6 +18,7 @@ import {
   ArrowRight,
   Coffee,
   MessageSquare,
+  Mail,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -256,6 +257,18 @@ const HomePage = () => {
                     View Our Work
                   </Button>
                 </Link>
+                <Link href="mailto:unfold@codewithali.com" className="group block">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-red-800/30 text-red-400 bg-red-950/20 px-8 w-full sm:w-auto 
+                              flex items-center gap-2 transition-all duration-300 ease-in-out 
+                              group-hover:bg-red-950/30 group-hover:text-white"
+                  >
+                    <Mail className="text-red-400 group-hover:text-white" />
+                    <span>Contact Us</span>
+                  </Button>
+                </Link>                
               </div>
             </motion.div>
 

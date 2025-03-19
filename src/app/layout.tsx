@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import "./Styles/globals.css";
 import "./Styles/mediaSizing.css";
 import { Button } from "@/components/ui/button";
+import { Facebook, GiftIcon, Github, Instagram, Linkedin } from "lucide-react";
 
 export default function RootLayout({
   children,
@@ -15,6 +16,36 @@ export default function RootLayout({
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+
+  const socials = [
+    {
+      platform: "Github",
+      style: "hover:bg-black hover:border border-red-950/30",
+      textStyle: "group-hover:text-white duration-150",
+      icon: <Github />,
+      url: "https://github.com/CodeWithAli-Co"
+    },
+    {
+      platform: "Instagram",
+      style: "hover:bg-gradient-to-t hover:from-yellow-400 hover:via-red-500 hover:to-purple-500",
+      icon: <Instagram />,
+      url: "#"
+    },
+    {
+      platform: "Facebook",
+      style: "hover:bg-gradient-to-t hover:from-blue-900 hover:to-blue-800",
+      textStyle: "group-hover:text-white duration-150",
+      icon: <Facebook />,
+      url: "#"
+    },
+    {
+      platform: "LinkedIn",
+      style: "hover:bg-gradient-to-t hover:from-blue-500 hover:to-blue-400",
+      textStyle: "group-hover:text-white duration-150",
+      icon: <Linkedin />,
+      url: "https://www.linkedin.com/company/codewithali-co"
+    }
+  ]
 
   // Prevent hydration issues by rendering menu only after component is mounted
   useEffect(() => {
@@ -222,14 +253,27 @@ export default function RootLayout({
                 </p>
                 <div className="flex space-x-4">
                   {/* Social icons */}
-                  {[1, 2, 3, 4].map((i) => (
-                    <a
-                      key={i}
-                      href="#"
-                      className="w-8 h-8 rounded-full bg-red-950/30 flex items-center justify-center hover:bg-red-900/50 transition-colors"
+                  {socials.map((social) => (
+                    <Link
+                      key={social.platform}
+                      href={social.url}
+                      target={social.url !== "#" ? (
+                        `_blank`
+                      ) : (
+                        `_self`
+                      )}
+                      className={social.style ? (
+                        `w-8 h-8 rounded-full flex items-center justify-center bg-red-950/30 ${social.style} transition-colors duration-300 ease-in-out group`
+                      ) : (
+                        `w-8 h-8 rounded-full flex items-center justify-center bg-red-950/30 hover:bg-red-900/50 transition-colors duration-300 ease-in-out group`
+                      )}
                     >
-                      <span className="text-xs text-red-400">{i}</span>
-                    </a>
+                      <span className={social.textStyle ? (
+                        `text-xs text-red-400 ${social.textStyle}`
+                      ) : (
+                        `text-xs text-red-400`
+                      )}>{social.icon}</span>
+                    </Link>
                   ))}
                 </div>
               </div>
