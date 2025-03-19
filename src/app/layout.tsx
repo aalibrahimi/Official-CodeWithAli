@@ -2,390 +2,398 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { ThemeProvider, useTheme } from "next-themes";
 import "./Styles/globals.css";
 import "./Styles/mediaSizing.css";
 import { Button } from "@/components/ui/button";
-import { Facebook, GiftIcon, Github, Instagram, Linkedin } from "lucide-react";
+import { Moon, Sun, ChevronDown } from "lucide-react";
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const router = useRouter();
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-
-  const socials = [
-    {
-      platform: "Github",
-      style: "hover:bg-black hover:border border-red-950/30",
-      textStyle: "group-hover:text-white duration-150",
-      icon: <Github />,
-      url: "https://github.com/CodeWithAli-Co"
-    },
-    {
-      platform: "Instagram",
-      style: "hover:bg-gradient-to-t hover:from-yellow-400 hover:via-red-500 hover:to-purple-500",
-      icon: <Instagram />,
-      url: "#"
-    },
-    {
-      platform: "Facebook",
-      style: "hover:bg-gradient-to-t hover:from-blue-900 hover:to-blue-800",
-      textStyle: "group-hover:text-white duration-150",
-      icon: <Facebook />,
-      url: "#"
-    },
-    {
-      platform: "LinkedIn",
-      style: "hover:bg-gradient-to-t hover:from-blue-500 hover:to-blue-400",
-      textStyle: "group-hover:text-white duration-150",
-      icon: <Linkedin />,
-      url: "https://www.linkedin.com/company/codewithali-co"
-    }
-  ]
-
-  // Prevent hydration issues by rendering menu only after component is mounted
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState('light');
+  
+  // Prevent hydration issues
   useEffect(() => {
     setIsMounted(true);
+    const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    setCurrentTheme(theme);
   }, []);
-
-  // Prevent body scroll when menu is open
+  
+  // Control body scroll when menu is open
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
+    if (isMenuOpen) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = 'unset';
+    return () => { document.body.style.overflow = 'unset'; };
   }, [isMenuOpen]);
+  
+  // Service items for menus
+  const serviceItems = [
+    { title: "Website Development", href: "/services/website" },
+    { title: "Mobile App Development", href: "/services/mobile" },
+    { title: "UI/UX Design", href: "/services/design" },
+    { title: "E-commerce Solutions", href: "/services/ecommerce" },
+    { title: "SEO Optimization", href: "/services/seo" },
+    { title: "Web Hosting & Maintenance", href: "/services/hosting" }
+  ];
+
+  // Internal theme toggle for immediate UI update
+  const toggleTheme = () => {
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setCurrentTheme(newTheme);
+  };
 
   return (
-    <html lang="en">
-      <body className="bg-black text-red-200">
-        <header className="border-b border-red-900/30 bg-black py-4 px-6 flex justify-between items-center">
-          <div className="logo-container flex items-center">
-            <Link href="/" draggable={false} className="flex items-center">
-              <Image
-                src="/codewithali.png"
-                alt="CodeWithAli"
-                draggable={false}
-                className="logo rounded-full border-2 border-red-800/50 shadow-lg shadow-red-900/20"
-                width={70}
-                height={70}
-                priority
-              />
-              <span className="ml-3 text-xl font-bold bg-gradient-to-r from-red-300 to-red-500 bg-clip-text text-transparent">
-                CodeWithAli
-              </span>
-            </Link>
-          </div>
-
-          {/* Regular nav for larger screens */}
-          <nav className="nav-links desktop-nav hidden md:flex space-x-8">
-            <Link
-              href="/"
-              className="text-red-200 hover:text-red-400 transition-colors"
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className="text-red-200 hover:text-red-400 transition-colors"
-            >
-              About
-            </Link>
-            <div className="nav-item relative group">
-              <Link
-                href="/services"
-                className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors"
-              >
-                Services
-              </Link>
-              <div className="absolute left-0 mt-2 w-56 bg-white dark:bg-black border border-gray-200 dark:border-red-900/30 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div className="py-2">
-                  {[
-                    {
-                      title: "Website Development",
-                      href: "/services/web-development",
-                    },
-                    {
-                      title: "Mobile App Development",
-                      href: "/services/mobile-app-development",
-                    },
-                    { title: "UI/UX Design", href: "/services/UI/UX-Design" },
-                    {
-                      title: "E-commerce Solutions",
-                      href: "/services/E-Commerse",
-                    },
-                    {
-                      title: "SEO Optimization",
-                      href: "/services/seo-optimization",
-                    },
-                    {
-                      title: "Web Hosting & Maintenance",
-                      href: "/services/Web-hosting",
-                    },
-                  ].map((service) => (
-                    <Link
-                      key={service.title}
-                      href={service.href}
-                      className="block px-4 py-2 text-gray-700 dark:text-red-200 hover:bg-gray-100 dark:hover:bg-red-900/20"
-                    >
-                      {service.title}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <Link
-              href="/#contact"
-              className="text-red-200 hover:text-red-400 transition-colors"
-            >
-              Contact
-            </Link>
-          </nav>
-
-          {/* Mobile menu button */}
-          <div className="mobile-menu block md:hidden">
-            <button
-              className="menu-toggle w-10 h-10 flex items-center justify-center bg-red-900/20 hover:bg-red-900/40 rounded-full text-red-400 transition-colors"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? "✕" : "☰"}
-            </button>
-          </div>
-        </header>
-
-        {/* Mobile menu overlay and sidebar - only render when mounted to avoid hydration issues */}
-        {isMounted && (
-          <>
-            {/* Overlay - separate from sidebar for better performance */}
-            <div
-              className={`fixed inset-0 bg-black/70 z-40 md:hidden transition-opacity duration-300 ${
-                isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-              }`}
-              onClick={() => setIsMenuOpen(false)}
-            />
-
-            {/* Sidebar with hardware-accelerated transforms */}
-            <div
-              className={`fixed top-0 right-0 h-full w-64 bg-black border-l border-red-900/30 shadow-lg shadow-black/50 p-8 transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
-                isMenuOpen ? "translate-x-0" : "translate-x-full"
-              }`}
-              style={{ willChange: "transform" }}
-            >
-              <div className="flex justify-end mb-8">
-                <button
-                  className="w-8 h-8 flex items-center justify-center bg-red-900/30 rounded-full text-red-400"
-                  onClick={() => setIsMenuOpen(false)}
-                  aria-label="Close menu"
-                >
-                  ✕
-                </button>
-              </div>
-              <div className="flex flex-col space-y-6">
-                <Link
-                  href="/"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/about"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
-                >
-                  About
-                </Link>
-                <Link
-                  href="/services"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
-                >
-                  Services
-                </Link>
-                <Link
-                  href="/#contact"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
-                >
-                  Contact
-                </Link>
-              </div>
-            </div>
-          </>
-        )}
-
-        <main className="min-h-screen">{children}</main>
-
-        {/* Footer */}
-        <footer className="py-12 border-t border-red-900 bg-black">
-          <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div className="md:col-span-1">
-                <Link
-                  href="/"
-                  draggable={false}
-                  className="flex items-center mb-4"
-                >
+    <html lang="en" className = "light"  suppressHydrationWarning>
+     <body>
+        <ThemeProvider
+          attribute="class" 
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          
+          <div className="min-h-screen flex flex-col">
+            <header className="border-b border-gray-200 dark:border-red-900/30 bg-white dark:bg-black py-4 px-6 flex justify-between items-center">
+              <div className="logo-container flex items-center">
+                <Link href="/" draggable={false} className="flex items-center">
                   <Image
                     src="/codewithali.png"
                     alt="CodeWithAli"
                     draggable={false}
-                    className="logo rounded-full border-2 border-red-800/50 shadow-lg shadow-red-900/20"
+                    className="logo rounded-full border-2 border-gray-300 dark:border-red-800/50 shadow-lg shadow-gray-200 dark:shadow-red-900/20"
                     width={70}
                     height={70}
+                    priority
                   />
-                  <span className="ml-2 text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
+                  <span className="ml-3 text-xl font-bold bg-gradient-to-r from-gray-700 to-gray-900 dark:from-red-300 dark:to-red-500 bg-clip-text text-transparent">
                     CodeWithAli
                   </span>
                 </Link>
-                <p className="text-sm text-red-200/60 mb-4">
-                  We design and develop digital experiences that help businesses
-                  and individuals succeed online.
-                </p>
-                <div className="flex space-x-4">
-                  {/* Social icons */}
-                  {socials.map((social) => (
-                    <Link
-                      key={social.platform}
-                      href={social.url}
-                      target={social.url !== "#" ? (
-                        `_blank`
-                      ) : (
-                        `_self`
-                      )}
-                      className={social.style ? (
-                        `w-8 h-8 rounded-full flex items-center justify-center bg-red-950/30 ${social.style} transition-colors duration-300 ease-in-out group`
-                      ) : (
-                        `w-8 h-8 rounded-full flex items-center justify-center bg-red-950/30 hover:bg-red-900/50 transition-colors duration-300 ease-in-out group`
-                      )}
-                    >
-                      <span className={social.textStyle ? (
-                        `text-xs text-red-400 ${social.textStyle}`
-                      ) : (
-                        `text-xs text-red-400`
-                      )}>{social.icon}</span>
-                    </Link>
-                  ))}
+              </div>
+
+              {/* Desktop nav */}
+              <nav className="nav-links hidden md:flex items-center space-x-8">
+                <Link href="/" className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors">Home</Link>
+                <Link href="/about" className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors">About</Link>
+                
+                {/* Desktop Services Dropdown */}
+                <div className="relative group">
+                  <div className="flex items-center text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors cursor-pointer">
+                    <span>Services</span>
+                    <ChevronDown className="ml-1 h-4 w-4" />
+                  </div>
+                  <div className="absolute left-0 mt-2 w-64 bg-white dark:bg-black border border-gray-200 dark:border-red-900/30 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div className="py-2">
+                      {serviceItems.map((service) => (
+                        <Link
+                          key={service.title}
+                          href={service.href}
+                          className="block px-4 py-2 text-gray-700 dark:text-red-200 hover:bg-gray-100 dark:hover:bg-red-900/20"
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
+                
+                <Link href="/#contact" className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors">Contact</Link>
+                
+                {/* Theme toggle */}
+                {isMounted && (
+                  <ThemeToggler currentTheme={currentTheme} onToggle={toggleTheme} size="lg" />
+                )}
+              </nav>
 
-              <div>
-                <h4 className="font-medium text-white mb-4">Services</h4>
-                <ul className="space-y-2 text-sm">
-                  {[
-                    "Website Development",
-                    "Mobile App Development",
-                    "UI/UX Design",
-                    "E-commerce",
-                    "SEO",
-                    "Web Hosting",
-                  ].map((item) => (
-                    <li key={item}>
-                      <a
-                        href="#"
-                        className="text-red-200/60 hover:text-red-300 transition-colors"
-                      >
-                        {item}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+              {/* Mobile menu buttons */}
+              <div className="flex items-center md:hidden">
+                {isMounted && (
+                  <ThemeToggler currentTheme={currentTheme} onToggle={toggleTheme} size="sm" />
+                )}
+                
+                <button
+                  className="w-10 h-10 ml-3 flex items-center justify-center bg-gray-200 dark:bg-red-900/20 hover:bg-gray-300 dark:hover:bg-red-900/40 rounded-full text-gray-700 dark:text-red-400 transition-colors"
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  aria-label="Toggle menu"
+                >
+                  {isMenuOpen ? "✕" : "☰"}
+                </button>
               </div>
+            </header>
 
-              <div>
-                <h4 className="font-medium text-white mb-4">Company</h4>
-                <ul className="space-y-2 text-sm">
-                  {[
-                    "About",
-                    "Portfolio",
-                    "Process",
-                    "Careers",
-                    "Blog",
-                    "Contact",
-                  ].map((item) => (
-                    <li key={item}>
-                      <a
-                        href="#"
-                        className="text-red-200/60 hover:text-red-300 transition-colors"
-                      >
-                        {item}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {/* Mobile menu */}
+            {isMounted && (
+              <>
+                <div
+                  className={`fixed inset-0 bg-gray-700/70 dark:bg-black/70 z-40 md:hidden transition-opacity duration-300 ${
+                    isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                />
 
-              <div>
-                <h4 className="font-medium text-white mb-4">Contact</h4>
-                <ul className="space-y-2 text-sm">
-                  <li>
-                    <a
-                      href="mailto:info@codewithali.com"
-                      className="text-red-200/60 hover:text-red-300 transition-colors"
+                <div
+                  className={`fixed top-0 right-0 h-full w-64 bg-white dark:bg-black border-l border-gray-200 dark:border-red-900/30 shadow-lg shadow-gray-400/50 dark:shadow-black/50 p-8 transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
+                    isMenuOpen ? "translate-x-0" : "translate-x-full"
+                  }`}
+                  style={{ willChange: "transform" }}
+                >
+                  <div className="flex justify-end mb-8">
+                    <button
+                      className="w-8 h-8 flex items-center justify-center bg-gray-200 dark:bg-red-900/30 rounded-full text-gray-700 dark:text-red-400"
+                      onClick={() => setIsMenuOpen(false)}
+                      aria-label="Close menu"
                     >
-                      unfold@codewithali.com
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="tel:+4086907890"
-                      className="text-red-200/60 hover:text-red-300 transition-colors"
+                      ✕
+                    </button>
+                  </div>
+                  <div className="flex flex-col space-y-6">
+                    <Link
+                      href="/"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors border-b border-gray-200 dark:border-red-900/20 pb-2"
                     >
-                      (408) 690-4009
-                    </a>
-                  </li>
-                  <li>
-                    <Link href="/contact">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="mt-2 border-red-800/30 text-red-400 bg-red-900/20 hover:bg-red-950/20 hover:text-red-800"
-                      >
-                        Get a Quote
-                      </Button>
+                      Home
                     </Link>
-                  </li>
-                </ul>
+                    <Link
+                      href="/about"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors border-b border-gray-200 dark:border-red-900/20 pb-2"
+                    >
+                      About
+                    </Link>
+                    
+                    {/* Mobile services dropdown */}
+                    <div className="border-b border-gray-200 dark:border-red-900/20 pb-2">
+                      <button 
+                        onClick={() => setServicesOpen(!servicesOpen)}
+                        className="flex items-center justify-between w-full text-left text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors"
+                      >
+                        <span>Services</span>
+                        <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
+                      </button>
+                      {servicesOpen && (
+                        <div className="mt-2 ml-4 space-y-2">
+                          {serviceItems.map((service) => (
+                            <Link
+                              key={service.title}
+                              href={service.href}
+                              onClick={() => setIsMenuOpen(false)}
+                              className="block py-1 text-gray-600 dark:text-red-200/80 hover:text-gray-900 dark:hover:text-red-300"
+                            >
+                              {service.title}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    
+                    <Link
+                      href="/#contact"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors border-b border-gray-200 dark:border-red-900/20 pb-2"
+                    >
+                      Contact
+                    </Link>
+                  </div>
+                </div>
+              </>
+            )}
+
+            <main className="flex-grow">{children}</main>
+
+            {/* Footer */}
+            {/* Footer */}
+      <footer className="py-12 border-t border-gray-200 dark:border-red-900 bg-white dark:bg-black">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="md:col-span-1">
+              <Link href="/" draggable={false} className="flex items-center mb-4">
+                <Image
+                  src="/codewithali.png"
+                  alt="CodeWithAli"
+                  draggable={false}
+                  className="logo rounded-full border-2 border-gray-300 dark:border-red-800/50 shadow-lg shadow-gray-200 dark:shadow-red-900/20"
+                  width={70}
+                  height={70}
+                />
+                <span className="ml-2 text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-700 to-gray-900 dark:from-red-400 dark:to-red-600">
+                  CodeWithAli
+                </span>
+              </Link>
+              <p className="text-sm text-gray-600 dark:text-red-200/60 mb-4">
+                We design and develop digital experiences that help businesses
+                and individuals succeed online.
+              </p>
+              <div className="flex space-x-4">
+                {/* Social icons */}
+                {[1, 2, 3, 4].map((i) => (
+                  <a
+                    key={i}
+                    href="#"
+                    className="w-8 h-8 rounded-full bg-gray-100 dark:bg-red-950/30 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-red-900/50 transition-colors"
+                  >
+                    <span className="text-xs text-gray-600 dark:text-red-400">{i}</span>
+                  </a>
+                ))}
               </div>
             </div>
 
-            <div className="mt-12 pt-8 border-t border-red-900 flex flex-col md:flex-row justify-between items-center">
-              <p className="text-sm text-red-200/60 mb-4 md:mb-0">
-                © {new Date().getFullYear()} CodeWithAli. All rights reserved.
-              </p>
-              <div className="flex space-x-6">
-                <a
-                  href="#"
-                  className="text-sm text-red-200/60 hover:text-red-300 transition-colors"
-                >
-                  Privacy Policy
-                </a>
-                <a
-                  href="#"
-                  className="text-sm text-red-200/60 hover:text-red-300 transition-colors"
-                >
-                  Terms of Service
-                </a>
-                <a
-                  href="#"
-                  className="text-sm text-red-200/60 hover:text-red-300 transition-colors"
-                >
-                  Cookie Policy
-                </a>
-              </div>
+            <div>
+              <h4 className="font-medium text-gray-900 dark:text-white mb-4">Services</h4>
+              <ul className="space-y-2 text-sm">
+                {[
+                  "Website Development",
+                  "Mobile App Development",
+                  "UI/UX Design",
+                  "E-commerce",
+                  "SEO",
+                  "Web Hosting",
+                ].map((item) => (
+                  <li key={item}>
+                    <a
+                      href="#"
+                      className="text-gray-600 dark:text-red-200/60 hover:text-gray-900 dark:hover:text-red-300 transition-colors"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-medium text-gray-900 dark:text-white mb-4">Company</h4>
+              <ul className="space-y-2 text-sm">
+                {[
+                  "About",
+                  "Portfolio",
+                  "Process",
+                  "Careers",
+                  "Blog",
+                  "Contact",
+                ].map((item) => (
+                  <li key={item}>
+                    <a
+                      href="#"
+                      className="text-gray-600 dark:text-red-200/60 hover:text-gray-900 dark:hover:text-red-300 transition-colors"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-medium text-gray-900 dark:text-white mb-4">Contact</h4>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <a
+                    href="mailto:info@codewithali.com"
+                    className="text-gray-600 dark:text-red-200/60 hover:text-gray-900 dark:hover:text-red-300 transition-colors"
+                  >
+                    unfold@codewithali.com
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="tel:+4086907890"
+                    className="text-gray-600 dark:text-red-200/60 hover:text-gray-900 dark:hover:text-red-300 transition-colors"
+                  >
+                    (408) 690-4009
+                  </a>
+                </li>
+                <li>
+                  <Link href="/contact">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="mt-2 border-gray-300 dark:border-red-800/30 text-gray-700 dark:text-red-400 bg-gray-50 dark:bg-red-900/20 hover:bg-gray-100 dark:hover:bg-red-950/20 hover:text-gray-900 dark:hover:text-red-800"
+                    >
+                      Get a Quote
+                    </Button>
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
-        </footer>
+
+          <div className="mt-12 pt-8 border-t border-gray-200 dark:border-red-900 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-sm text-gray-600 dark:text-red-200/60 mb-4 md:mb-0">
+              © {new Date().getFullYear()} CodeWithAli. All rights reserved.
+            </p>
+            <div className="flex space-x-6">
+              <a
+                href="#"
+                className="text-sm text-gray-600 dark:text-red-200/60 hover:text-gray-900 dark:hover:text-red-300 transition-colors"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="#"
+                className="text-sm text-gray-600 dark:text-red-200/60 hover:text-gray-900 dark:hover:text-red-300 transition-colors"
+              >
+                Terms of Service
+              </a>
+              <a
+                href="#"
+                className="text-sm text-gray-600 dark:text-red-200/60 hover:text-gray-900 dark:hover:text-red-300 transition-colors"
+              >
+                Cookie Policy
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+          </div>
+          
+        </ThemeProvider>
+        
       </body>
     </html>
+  );
+}
+
+// Helper component to track theme changes
+function ThemeUpdater({ onThemeChange } : { onThemeChange: (theme: string) => void }) {
+  const { theme, resolvedTheme } = useTheme();
+  
+  useEffect(() => {
+    const currentTheme = theme || resolvedTheme || 'light';
+    onThemeChange(currentTheme);
+  }, [theme, resolvedTheme, onThemeChange]);
+  
+  return null;
+}
+
+// Theme toggle button component
+function ThemeToggler({ currentTheme, onToggle, size = "lg" }: { currentTheme: string; onToggle: () => void; size?: "lg" | "sm" }) {
+  const { setTheme } = useTheme();
+  
+  const handleToggle = () => {
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    onToggle();
+  };
+  
+  const iconSize = size === "lg" ? "h-5 w-5" : "h-4 w-4";
+  const marginClass = size === "lg" ? "ml-4" : "mr-3";
+  
+  return (
+    <Button 
+      variant="outline" 
+      size="icon"
+      onClick={handleToggle}
+      className={`${marginClass} border-gray-300 dark:border-red-800/30 bg-gray-100 dark:bg-red-950/20 text-gray-700 dark:text-red-400 hover:bg-gray-200 dark:hover:bg-red-950/30`}
+    >
+      {currentTheme === 'dark' ? (
+        <Sun className={iconSize} />
+      ) : (
+        <Moon className={iconSize} />
+      )}
+      <span className="sr-only">Toggle theme</span>
+    </Button>
   );
 }
