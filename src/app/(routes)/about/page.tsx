@@ -20,6 +20,7 @@ import {
 import { TechIcon } from "../../components/tech-icons";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 
 // Team members data
@@ -80,19 +81,19 @@ const values = [
 
 // Tech stack - corrected to use consistent object structure
 const technologies = [
-  { name: "React", logo: "react" },
-  { name: "Next.js", logo: "nextjs" },
-  { name: "Node.js", logo: "nodejs" },
-  { name: "Tauri", logo: "tauri" },
-  { name: "Supabase", logo: "supabase" },
-  { name: "Stripe", logo: "stripe" },
-  { name: "Figma", logo: "figma" },
-  { name: "Electron", logo: "electron" },
-  { name: "TypeScript", logo: "typescript" },
-  { name: "TailwindCSS", logo: "tailwindcss" },
-  { name: "MongoDB", logo: "mongodb" },
-  { name: "AWS", logo: "aws" },
-  { name: "Firebase", logo: "firebase" },
+  { name: "React", logo: "react", url: "https://react.dev/" },
+  { name: "Next.js", logo: "nextjs", url: "https://nextjs.org/" },
+  { name: "Node.js", logo: "nodejs", url: "https://nodejs.org/" },
+  { name: "Tauri", logo: "tauri", url: "https://tauri.app/" },
+  { name: "Supabase", logo: "supabase", url: "https://supabase.com/" },
+  { name: "Stripe", logo: "stripe", url: "https://stripe.com/" },
+  { name: "Figma", logo: "figma", url: "https://www.figma.com/" },
+  { name: "Electron", logo: "electron", url: "https://www.electronjs.org/" },
+  { name: "TypeScript", logo: "typescript", url: "https://www.typescriptlang.org/" },
+  { name: "TailwindCSS", logo: "tailwindcss", url: "https://tailwindcss.com/" },
+  { name: "MongoDB", logo: "mongodb", url: "https://www.mongodb.com/" },
+  { name: "AWS", logo: "aws", url: "https://aws.amazon.com/" },
+  { name: "Firebase", logo: "firebase", url: "https://firebase.google.com/" },
 ];
 
 // Company stats
@@ -701,15 +702,17 @@ export default function AboutPage() {
 
     <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-7">
       {technologies.map((tech, index) => (
-        <div
+        <Link
           key={index}
+          href={tech.url}
+          target="_blank"
           className="bg-black/60 border border-transparent hover:border-red-900 p-3 rounded-xl flex flex-col items-center text-center transition-colors duration-200"
         >
           <div className="w-11 h-11 bg-gradient-to-br from-red-950/40 to-red-900/10 rounded-lg flex items-center justify-center mb-3">
             <TechIcon name={tech.logo} />
           </div>
           <span className="text-red-200">{tech.name}</span>
-        </div>
+        </Link>
       ))}
     </div>
   </div>
