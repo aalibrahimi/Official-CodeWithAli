@@ -144,7 +144,7 @@ const WebsiteDevelopmentPage = () => {
       <section className="pt-24 pb-16 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-950/30 to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-pink-950/30 to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
@@ -155,16 +155,16 @@ const WebsiteDevelopmentPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-pink-900/30 text-pink-400 border-transparent mb-4 px-3 py-1">
                 WEBSITE DEVELOPMENT
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
                 Custom Website Development
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600 block mt-2">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-pink-600 block mt-2">
                   That Drives Results
                 </span>
               </h1>
-              <p className="text-lg text-red-200/80 mb-8">
+              <p className="text-lg text-pink-200/80 mb-8">
                 We design and develop stunning, high-performance websites that
                 captivate your audience, establish your brand presence, and
                 drive measurable business growth.
@@ -172,8 +172,8 @@ const WebsiteDevelopmentPage = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
-                    text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8"
+                  className="bg-gradient-to-r from-pink-700 to-pink-900 hover:from-pink-600 hover:to-pink-800 
+                    text-white border border-pink-800/30 shadow-lg shadow-pink-950/20 px-8"
                   onClick={() => router.push("/contact")}
                 >
                   Get a Free Quote
@@ -182,7 +182,7 @@ const WebsiteDevelopmentPage = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-red-800/30 text-red-400 bg-red-950/20 hover:bg-red-950/30 hover:text-white px-8"
+                  className="border-pink-800/30 text-pink-400 bg-pink-950/20 hover:bg-pink-950/30 hover:text-white px-8"
                   onClick={() => router.push("/portfolio")}
                 >
                   View Our Work
@@ -196,30 +196,30 @@ const WebsiteDevelopmentPage = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
             >
-              <div className="relative bg-black/60 border border-red-900 rounded-xl overflow-hidden shadow-2xl shadow-red-950/20 p-5">
+              <div className="relative bg-black/60 border border-pink-900 rounded-xl overflow-hidden shadow-2xl shadow-pink-950/20 p-5">
                 {/* Website mockup illustration */}
-                <div className="w-full aspect-[4/3] bg-gradient-to-br from-red-950/40 to-red-900/10 rounded-lg overflow-hidden p-4">
-                  <div className="w-full h-full border-2 border-red-500/20 rounded-md relative">
+                <div className="w-full aspect-[4/3] bg-gradient-to-br from-pink-950/40 to-pink-900/10 rounded-lg overflow-hidden p-4">
+                  <div className="w-full h-full border-2 border-pink-500/20 rounded-md relative">
                     {/* Mockup header */}
-                    <div className="absolute top-0 left-0 right-0 h-6 bg-red-900/20 flex items-center px-2">
+                    <div className="absolute top-0 left-0 right-0 h-6 bg-pink-900/20 flex items-center px-2">
                       <div className="flex space-x-1">
-                        <div className="w-2 h-2 rounded-full bg-red-500/60"></div>
-                        <div className="w-2 h-2 rounded-full bg-red-500/40"></div>
-                        <div className="w-2 h-2 rounded-full bg-red-500/40"></div>
+                        <div className="w-2 h-2 rounded-full bg-pink-500/60"></div>
+                        <div className="w-2 h-2 rounded-full bg-pink-500/40"></div>
+                        <div className="w-2 h-2 rounded-full bg-pink-500/40"></div>
                       </div>
                     </div>
 
                     {/* Mock content */}
                     <div className="absolute top-8 left-2 right-2 bottom-2">
-                      <div className="h-4 w-1/3 bg-red-500/40 rounded mb-2"></div>
-                      <div className="h-2 w-full bg-red-500/20 rounded mb-1"></div>
-                      <div className="h-2 w-full bg-red-500/20 rounded mb-1"></div>
-                      <div className="h-2 w-2/3 bg-red-500/20 rounded mb-3"></div>
-                      <div className="h-20 w-full bg-red-500/30 rounded mb-3"></div>
+                      <div className="h-4 w-1/3 bg-pink-500/40 rounded mb-2"></div>
+                      <div className="h-2 w-full bg-pink-500/20 rounded mb-1"></div>
+                      <div className="h-2 w-full bg-pink-500/20 rounded mb-1"></div>
+                      <div className="h-2 w-2/3 bg-pink-500/20 rounded mb-3"></div>
+                      <div className="h-20 w-full bg-pink-500/30 rounded mb-3"></div>
                       <div className="grid grid-cols-3 gap-2">
-                        <div className="h-12 bg-red-500/20 rounded"></div>
-                        <div className="h-12 bg-red-500/20 rounded"></div>
-                        <div className="h-12 bg-red-500/20 rounded"></div>
+                        <div className="h-12 bg-pink-500/20 rounded"></div>
+                        <div className="h-12 bg-pink-500/20 rounded"></div>
+                        <div className="h-12 bg-pink-500/20 rounded"></div>
                       </div>
                     </div>
                   </div>
@@ -240,13 +240,13 @@ const WebsiteDevelopmentPage = () => {
               viewport={{ once: true }}
               variants={fadeIn}
             >
-              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-pink-900/30 text-pink-400 border-transparent mb-4 px-3 py-1">
                 KEY FEATURES
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 What Sets Our Website Development Apart
               </h2>
-              <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-pink-200/60 text-lg max-w-2xl mx-auto">
                 We combine technical expertise with creative design to deliver
                 websites that not only look great but also perform exceptionally
                 well.
@@ -300,16 +300,16 @@ const WebsiteDevelopmentPage = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="bg-black/60 border-red-900 backdrop-blur-sm h-full">
+                <Card className="bg-black/60 border-pink-900 backdrop-blur-sm h-full">
                   <CardContent className="p-6">
                     <div className="mb-4">
-                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center mb-4">
+                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-pink-700 to-pink-900 flex items-center justify-center mb-4">
                         <feature.icon className="w-6 h-6 text-white" />
                       </div>
                       <h3 className="text-xl font-bold text-white mb-3">
                         {feature.title}
                       </h3>
-                      <p className="text-red-200/60">{feature.description}</p>
+                      <p className="text-pink-200/60">{feature.description}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -320,7 +320,7 @@ const WebsiteDevelopmentPage = () => {
       </section>
 
       {/* Our Process Section */}
-      <section className="py-20 bg-red-950/10">
+      <section className="py-20 bg-pink-950/10">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
             <motion.div
@@ -329,13 +329,13 @@ const WebsiteDevelopmentPage = () => {
               viewport={{ once: true }}
               variants={fadeIn}
             >
-              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-pink-900/30 text-pink-400 border-transparent mb-4 px-3 py-1">
                 OUR PROCESS
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 End-to-End Website Development Process
               </h2>
-              <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-pink-200/60 text-lg max-w-2xl mx-auto">
                 Our structured approach ensures a smooth development journey
                 from concept to launch and beyond.
               </p>
@@ -351,22 +351,22 @@ const WebsiteDevelopmentPage = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="bg-black/60 border-red-900 backdrop-blur-sm overflow-hidden">
+                <Card className="bg-black/60 border-pink-900 backdrop-blur-sm overflow-hidden">
                   <CardContent className="p-6">
                     <div className="flex flex-col md:flex-row gap-4 items-start">
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-700 to-pink-900 flex items-center justify-center flex-shrink-0">
                         <span className="text-white font-bold">
                           {index + 1}
                         </span>
                       </div>
                       <div>
                         <div className="flex items-center mb-2">
-                          <step.icon className="w-5 h-5 text-red-500 mr-2" />
+                          <step.icon className="w-5 h-5 text-pink-500 mr-2" />
                           <h3 className="text-xl font-bold text-white">
                             {step.title}
                           </h3>
                         </div>
-                        <p className="text-red-200/60">{step.description}</p>
+                        <p className="text-pink-200/60">{step.description}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -387,13 +387,13 @@ const WebsiteDevelopmentPage = () => {
               viewport={{ once: true }}
               variants={fadeIn}
             >
-              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-pink-900/30 text-pink-400 border-transparent mb-4 px-3 py-1">
                 TECHNOLOGIES
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Technologies We Utilize
               </h2>
-              <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-pink-200/60 text-lg max-w-2xl mx-auto">
                 We leverage cutting-edge technologies to build modern,
                 high-performance websites.
               </p>
@@ -408,15 +408,15 @@ const WebsiteDevelopmentPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-black/60 border border-red-900 rounded-lg p-6"
+                className="bg-black/60 border border-pink-900 rounded-lg p-6"
               >
                 <div className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-red-500 mt-1 mr-3 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-pink-500 mt-1 mr-3 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-bold text-white mb-1">
                       {tech.name}
                     </h4>
-                    <p className="text-red-200/60 text-sm">
+                    <p className="text-pink-200/60 text-sm">
                       {tech.description}
                     </p>
                   </div>
@@ -428,7 +428,7 @@ const WebsiteDevelopmentPage = () => {
       </section>
 
       {/* Case Studies Section */}
-      <section className="py-20 bg-red-950/10">
+      <section className="py-20 bg-pink-950/10">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
             <motion.div
@@ -437,13 +437,13 @@ const WebsiteDevelopmentPage = () => {
               viewport={{ once: true }}
               variants={fadeIn}
             >
-              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-pink-900/30 text-pink-400 border-transparent mb-4 px-3 py-1">
                 CASE STUDIES
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Success Stories
               </h2>
-              <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-pink-200/60 text-lg max-w-2xl mx-auto">
                 Explore some of our recent website development projects and the
                 results we've achieved for our clients.
               </p>
@@ -460,34 +460,34 @@ const WebsiteDevelopmentPage = () => {
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 className="group cursor-pointer"
               >
-                <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-xl shadow-red-950/20 mb-5">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-xl shadow-pink-950/20 mb-5">
                   {/* Project Image */}
-                  <div className="w-full h-full bg-black/80 border-2 border-red-800/30 flex items-center justify-center">
+                  <div className="w-full h-full bg-black/80 border-2 border-pink-800/30 flex items-center justify-center">
                     <div className="flex flex-col items-center">
-                      <Badge className="bg-red-800/40 text-red-300 border-transparent mb-3">
+                      <Badge className="bg-pink-800/40 text-pink-300 border-transparent mb-3">
                         {project.industry}
                       </Badge>
-                      <p className="text-red-200/70 text-center px-6">
+                      <p className="text-pink-200/70 text-center px-6">
                         Case Study Image: {project.title}
                       </p>
                     </div>
                   </div>
 
                   {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-red-800/80 to-black/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-b from-pink-800/80 to-black/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="text-center p-6">
-                      <Badge className="bg-red-800/40 text-red-300 border-transparent mb-3">
+                      <Badge className="bg-pink-800/40 text-pink-300 border-transparent mb-3">
                         {project.industry}
                       </Badge>
                       <h3 className="text-xl font-bold text-white mb-3">
                         {project.title}
                       </h3>
-                      <p className="text-red-100 mb-5 text-sm">
+                      <p className="text-pink-100 mb-5 text-sm">
                         {project.description}
                       </p>
                       <Button
                         variant="outline"
-                        className="border-2 border-red-400/60 text-white bg-red-700/50 hover:bg-red-700/70"
+                        className="border-2 border-pink-400/60 text-white bg-pink-700/50 hover:bg-pink-700/70"
                       >
                         View Case Study
                         <ArrowRight className="ml-2 h-4 w-4" />
@@ -499,15 +499,15 @@ const WebsiteDevelopmentPage = () => {
                 <h3 className="text-xl font-bold text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-red-200/70 text-sm">{project.description}</p>
+                <p className="text-pink-200/70 text-sm">{project.description}</p>
               </motion.div>
             ))}
           </div>
 
           <div className="text-center mt-12">
             <Button
-              className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
-                text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8"
+              className="bg-gradient-to-r from-pink-700 to-pink-900 hover:from-pink-600 hover:to-pink-800 
+                text-white border border-pink-800/30 shadow-lg shadow-pink-950/20 px-8"
               onClick={() => router.push("/portfolio")}
             >
               View All Projects
@@ -527,13 +527,13 @@ const WebsiteDevelopmentPage = () => {
               viewport={{ once: true }}
               variants={fadeIn}
             >
-              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-pink-900/30 text-pink-400 border-transparent mb-4 px-3 py-1">
                 FAQ
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Frequently Asked Questions
               </h2>
-              <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-pink-200/60 text-lg max-w-2xl mx-auto">
                 Common questions about our website development process and
                 services.
               </p>
@@ -542,22 +542,22 @@ const WebsiteDevelopmentPage = () => {
 
           <div className="max-w-3xl mx-auto">
             <Tabs defaultValue="general" className="w-full">
-              <TabsList className="grid grid-cols-3 mb-8 bg-black/60 border border-red-900">
+              <TabsList className="grid grid-cols-3 mb-8 bg-black/60 border border-pink-900">
                 <TabsTrigger
                   value="general"
-                  className="data-[state=active]:bg-red-900/30 data-[state=active]:text-white"
+                  className="data-[state=active]:bg-pink-900/30 data-[state=active]:text-white"
                 >
                   General
                 </TabsTrigger>
                 <TabsTrigger
                   value="technical"
-                  className="data-[state=active]:bg-red-900/30 data-[state=active]:text-white"
+                  className="data-[state=active]:bg-pink-900/30 data-[state=active]:text-white"
                 >
                   Technical
                 </TabsTrigger>
                 <TabsTrigger
                   value="pricing"
-                  className="data-[state=active]:bg-red-900/30 data-[state=active]:text-white"
+                  className="data-[state=active]:bg-pink-900/30 data-[state=active]:text-white"
                 >
                   Pricing
                 </TabsTrigger>
@@ -588,12 +588,12 @@ const WebsiteDevelopmentPage = () => {
                 ].map((faq, index) => (
                   <div
                     key={index}
-                    className="bg-black/60 border border-red-900 rounded-lg p-6"
+                    className="bg-black/60 border border-pink-900 rounded-lg p-6"
                   >
                     <h4 className="text-lg font-bold text-white mb-2">
                       {faq.question}
                     </h4>
-                    <p className="text-red-200/70">{faq.answer}</p>
+                    <p className="text-pink-200/70">{faq.answer}</p>
                   </div>
                 ))}
               </TabsContent>
@@ -625,12 +625,12 @@ const WebsiteDevelopmentPage = () => {
                 ].map((faq, index) => (
                   <div
                     key={index}
-                    className="bg-black/60 border border-red-900 rounded-lg p-6"
+                    className="bg-black/60 border border-pink-900 rounded-lg p-6"
                   >
                     <h4 className="text-lg font-bold text-white mb-2">
                       {faq.question}
                     </h4>
-                    <p className="text-red-200/70">{faq.answer}</p>
+                    <p className="text-pink-200/70">{faq.answer}</p>
                   </div>
                 ))}
               </TabsContent>
@@ -661,12 +661,12 @@ const WebsiteDevelopmentPage = () => {
                 ].map((faq, index) => (
                   <div
                     key={index}
-                    className="bg-black/60 border border-red-900 rounded-lg p-6"
+                    className="bg-black/60 border border-pink-900 rounded-lg p-6"
                   >
                     <h4 className="text-lg font-bold text-white mb-2">
                       {faq.question}
                     </h4>
-                    <p className="text-red-200/70">{faq.answer}</p>
+                    <p className="text-pink-200/70">{faq.answer}</p>
                   </div>
                 ))}
               </TabsContent>
@@ -676,10 +676,10 @@ const WebsiteDevelopmentPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-red-950/10 to-black">
+      <section className="py-20 bg-gradient-to-b from-pink-950/10 to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <motion.div
-            className="max-w-4xl mx-auto bg-black/60 border border-red-900 rounded-xl p-8 md:p-12 text-center"
+            className="max-w-4xl mx-auto bg-black/60 border border-pink-900 rounded-xl p-8 md:p-12 text-center"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -688,15 +688,15 @@ const WebsiteDevelopmentPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Start Your Website Project?
             </h2>
-            <p className="text-lg text-red-200/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-pink-200/70 mb-8 max-w-2xl mx-auto">
               Contact us today for a free consultation and discover how we can
               help you create a website that drives real business results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
-                  text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8"
+                className="bg-gradient-to-r from-pink-700 to-pink-900 hover:from-pink-600 hover:to-pink-800 
+                  text-white border border-pink-800/30 shadow-lg shadow-pink-950/20 px-8"
                 onClick={() => router.push("/contact")}
               >
                 Get a Free Quote
@@ -705,7 +705,7 @@ const WebsiteDevelopmentPage = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-red-800/30 text-red-400 bg-red-950/20 hover:bg-red-950/30 hover:text-white px-8"
+                className="border-pink-800/30 text-pink-400 bg-pink-950/20 hover:bg-pink-950/30 hover:text-white px-8"
                 onClick={() => router.push("/portfolio")}
               >
                 View Our Work

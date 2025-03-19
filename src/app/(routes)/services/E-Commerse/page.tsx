@@ -157,7 +157,7 @@ const EcommerceSolutionsPage = () => {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-950/30 to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-950/30 to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
@@ -167,16 +167,16 @@ const EcommerceSolutionsPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: isMobile ? 0.3 : 0.5 }}
             >
-              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-green-900/30 text-green-400 border-transparent mb-4 px-3 py-1">
                 E-COMMERCE SOLUTIONS
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                 Turn Your Products Into
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600 block">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-600 block">
                   Online Success
                 </span>
               </h1>
-              <p className="text-lg text-red-200/80 mb-8 max-w-2xl">
+              <p className="text-lg text-green-200/80 mb-8 max-w-2xl">
                 We develop powerful, customized e-commerce websites that help
                 you sell effectively online. We build the digital infrastructure
                 you need while you focus on your products and customers.
@@ -184,8 +184,8 @@ const EcommerceSolutionsPage = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
-                    text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8"
+                  className="bg-gradient-to-r from-green-700 to-green-900 hover:from-green-600 hover:to-green-800 
+                    text-white border border-green-800/30 shadow-lg shadow-green-950/20 px-8"
                   onClick={() => router.push("/contact")}
                 >
                   Get Started
@@ -194,7 +194,7 @@ const EcommerceSolutionsPage = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-red-800/30 text-red-400 bg-red-950/20 hover:bg-red-950/30 hover:text-white px-8"
+                  className="border-green-800/30 text-green-400 bg-green-950/20 hover:bg-green-950/30 hover:text-white px-8"
                   onClick={() =>
                     document
                       .getElementById("packages")
@@ -211,7 +211,7 @@ const EcommerceSolutionsPage = () => {
               initial={{ opacity: 0, y: isMobile ? 10 : 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: isMobile ? 0.3 : 0.7, delay: isMobile ? 0 : 0.2 }}
-              className="bg-black/60 border border-red-900 rounded-xl overflow-hidden shadow-xl p-6 md:p-8"
+              className="bg-black/60 border border-green-900 rounded-xl overflow-hidden shadow-xl p-6 md:p-8"
             >
               <h3 className="text-2xl font-bold text-center mb-6">
                 Why Choose Our E-commerce Solutions?
@@ -240,13 +240,13 @@ const EcommerceSolutionsPage = () => {
                   },
                 ].map((stat, index) => (
                   <div key={index} className="text-center">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center mx-auto mb-3">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-700 to-green-900 flex items-center justify-center mx-auto mb-3">
                       <stat.icon className="w-6 h-6 text-white" />
                     </div>
-                    <div className="text-2xl md:text-3xl font-bold text-red-400">
+                    <div className="text-2xl md:text-3xl font-bold text-green-400">
                       {stat.value}
                     </div>
-                    <p className="text-sm text-red-200/60">{stat.label}</p>
+                    <p className="text-sm text-green-200/60">{stat.label}</p>
                   </div>
                 ))}
               </div>
@@ -256,7 +256,7 @@ const EcommerceSolutionsPage = () => {
       </section>
 
       {/* Core Features Section - Grid Cards */}
-      <section className="py-16 bg-red-950/10">
+      <section className="py-16 bg-green-950/10">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
             <motion.div
@@ -265,13 +265,13 @@ const EcommerceSolutionsPage = () => {
               viewport={{ once: true }}
               variants={fadeIn}
             >
-              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-green-900/30 text-green-400 border-transparent mb-4 px-3 py-1">
                 FEATURES
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 E-commerce Website Features
               </h2>
-              <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-green-200/60 text-lg max-w-2xl mx-auto">
                 We can implement a wide range of features to create a powerful
                 online selling platform for your business.
               </p>
@@ -333,15 +333,15 @@ const EcommerceSolutionsPage = () => {
                 key={index}
                 {...getMotionProps(isMobile ? 0 : index * 0.05)}
               >
-                <Card className="bg-black/60 border-red-900 backdrop-blur-sm h-full">
+                <Card className="bg-black/60 border-green-900 backdrop-blur-sm h-full">
                   <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-700 to-green-900 flex items-center justify-center mb-4">
                       <feature.icon className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-xl font-bold text-white mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-red-200/60">{feature.description}</p>
+                    <p className="text-green-200/60">{feature.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -353,7 +353,7 @@ const EcommerceSolutionsPage = () => {
       {/* Pricing Section - Horizontal Cards */}
       <section
         id="packages"
-        className="py-20 bg-gradient-to-b from-black to-red-950/20"
+        className="py-20 bg-gradient-to-b from-black to-green-950/20"
       >
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
@@ -363,13 +363,13 @@ const EcommerceSolutionsPage = () => {
               viewport={{ once: true }}
               variants={fadeIn}
             >
-              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-green-900/30 text-green-400 border-transparent mb-4 px-3 py-1">
                 PACKAGES
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Choose Your E-commerce Package
               </h2>
-              <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-green-200/60 text-lg max-w-2xl mx-auto">
                 We offer tailored packages to fit businesses at every stage of
                 growth.
               </p>
@@ -385,16 +385,16 @@ const EcommerceSolutionsPage = () => {
                 <Card
                   className={`backdrop-blur-sm overflow-hidden ${
                     pkg.highlighted
-                      ? "bg-gradient-to-r from-red-950/40 to-black/80 border-red-700/50"
-                      : "bg-black/60 border-red-900"
+                      ? "bg-gradient-to-r from-green-950/40 to-black/80 border-green-700/50"
+                      : "bg-black/60 border-green-900"
                   }`}
                 >
                   <CardContent className="p-0">
                     <div className="grid grid-cols-1 md:grid-cols-3">
-                      <div className="p-6 md:p-8 md:border-r border-red-900">
+                      <div className="p-6 md:p-8 md:border-r border-green-900">
                         <div className="mb-2">
                           {pkg.highlighted && (
-                            <Badge className="bg-red-600/80 text-white border-transparent mb-3">
+                            <Badge className="bg-green-600/80 text-white border-transparent mb-3">
                               MOST POPULAR
                             </Badge>
                           )}
@@ -402,24 +402,24 @@ const EcommerceSolutionsPage = () => {
                             {pkg.title}
                           </h3>
                           <div className="mt-2 mb-4">
-                            <span className="text-3xl font-bold text-red-400">
+                            <span className="text-3xl font-bold text-green-400">
                               {pkg.price}
                             </span>
                             {pkg.price !== "Custom" && (
-                              <span className="text-red-200/60 ml-1">
+                              <span className="text-green-200/60 ml-1">
                                 one-time
                               </span>
                             )}
                           </div>
                         </div>
-                        <p className="text-red-200/70 mb-6">
+                        <p className="text-green-200/70 mb-6">
                           {pkg.description}
                         </p>
                         <Button
                           className={`w-full ${
                             pkg.highlighted
-                              ? "bg-gradient-to-r from-red-600 to-red-800 hover:from-red-500 hover:to-red-700"
-                              : "bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800"
+                              ? "bg-gradient-to-r from-green-600 to-green-800 hover:from-green-500 hover:to-green-700"
+                              : "bg-gradient-to-r from-green-700 to-green-900 hover:from-green-600 hover:to-green-800"
                           } text-white`}
                           onClick={() => router.push("/contact")}
                         >
@@ -429,14 +429,14 @@ const EcommerceSolutionsPage = () => {
                       </div>
 
                       <div className="p-6 md:p-8 md:col-span-2 bg-black/40">
-                        <h4 className="text-lg font-semibold text-red-300 mb-4">
+                        <h4 className="text-lg font-semibold text-green-300 mb-4">
                           What's Included:
                         </h4>
                         <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                           {pkg.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start">
-                              <Check className="w-5 h-5 text-red-500 mt-0.5 mr-2 flex-shrink-0" />
-                              <span className="text-red-200/70">{feature}</span>
+                              <Check className="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                              <span className="text-green-200/70">{feature}</span>
                             </li>
                           ))}
                         </ul>
@@ -460,13 +460,13 @@ const EcommerceSolutionsPage = () => {
               viewport={{ once: true }}
               variants={fadeIn}
             >
-              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-green-900/30 text-green-400 border-transparent mb-4 px-3 py-1">
                 OUR PROCESS
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 How We Build Your E-commerce Website
               </h2>
-              <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-green-200/60 text-lg max-w-2xl mx-auto">
                 Our proven development process ensures your e-commerce website
                 is built right, on time, and ready to drive sales.
               </p>
@@ -519,20 +519,20 @@ const EcommerceSolutionsPage = () => {
               >
                 <div className="flex">
                   <div className="flex-shrink-0 mr-6">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-700 to-green-900 flex items-center justify-center">
                       <span className="text-xl font-bold text-white">
                         {phase.step}
                       </span>
                     </div>
                     {index < 5 && (
-                      <div className="absolute top-16 bottom-0 left-8 w-0.5 bg-red-900/40"></div>
+                      <div className="absolute top-16 bottom-0 left-8 w-0.5 bg-green-900/40"></div>
                     )}
                   </div>
                   <div className="pb-10">
                     <h3 className="text-xl font-bold text-white mb-3">
                       {phase.title}
                     </h3>
-                    <p className="text-red-200/70">{phase.description}</p>
+                    <p className="text-green-200/70">{phase.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -542,7 +542,7 @@ const EcommerceSolutionsPage = () => {
       </section>
 
       {/* FAQ Section - Accordion */}
-      <section className="py-20 bg-red-950/10">
+      <section className="py-20 bg-green-950/10">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
             <motion.div
@@ -551,13 +551,13 @@ const EcommerceSolutionsPage = () => {
               viewport={{ once: true }}
               variants={fadeIn}
             >
-              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-green-900/30 text-green-400 border-transparent mb-4 px-3 py-1">
                 FAQ
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Frequently Asked Questions
               </h2>
-              <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-green-200/60 text-lg max-w-2xl mx-auto">
                 Common questions about our e-commerce solutions and services.
               </p>
             </motion.div>
@@ -603,7 +603,7 @@ const EcommerceSolutionsPage = () => {
               <motion.div
                 key={index}
                 {...getMotionProps(isMobile ? 0 : index * 0.1)}
-                className="bg-black/60 border border-red-900 rounded-lg overflow-hidden"
+                className="bg-black/60 border border-green-900 rounded-lg overflow-hidden"
               >
                 <button
                   className="w-full p-6 text-left flex justify-between items-center"
@@ -613,9 +613,9 @@ const EcommerceSolutionsPage = () => {
                     {faq.question}
                   </h3>
                   {activeFaq === index ? (
-                    <MinusCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
+                    <MinusCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                   ) : (
-                    <PlusCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
+                    <PlusCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                   )}
                 </button>
                 <div
@@ -625,7 +625,7 @@ const EcommerceSolutionsPage = () => {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="text-red-200/70">{faq.answer}</p>
+                  <p className="text-green-200/70">{faq.answer}</p>
                 </div>
               </motion.div>
             ))}
@@ -634,27 +634,27 @@ const EcommerceSolutionsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-red-950/10 to-black">
+      <section className="py-20 bg-gradient-to-b from-green-950/10 to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <motion.div
-            className="max-w-4xl mx-auto bg-black/60 border border-red-900 rounded-xl p-8 md:p-12 text-center"
+            className="max-w-4xl mx-auto bg-black/60 border border-green-900 rounded-xl p-8 md:p-12 text-center"
             {...getMotionProps()}
           >
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-700 to-green-900 flex items-center justify-center mx-auto mb-6">
               <ShoppingBag className="w-8 h-8 text-white" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Create Your Custom E-commerce Website?
             </h2>
-            <p className="text-lg text-red-200/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-green-200/70 mb-8 max-w-2xl mx-auto">
               Contact us today for a free consultation. We'll help you choose
               the right features and development approach to create an
               e-commerce website that drives sales and growth for your business.
             </p>
             <Button
               size="lg"
-              className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
-                text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8"
+              className="bg-gradient-to-r from-green-700 to-green-900 hover:from-green-600 hover:to-green-800 
+                text-white border border-green-800/30 shadow-lg shadow-green-950/20 px-8"
               onClick={() => router.push("/contact")}
             >
               Get Your E-commerce Website

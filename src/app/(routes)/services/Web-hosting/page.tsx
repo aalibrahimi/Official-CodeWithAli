@@ -232,7 +232,7 @@ const WebHostingPage = () => {
       <section className="pt-24 pb-12 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-950/30 to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-950/30 to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
@@ -240,23 +240,23 @@ const WebHostingPage = () => {
             className="max-w-3xl"
             {...getAnimationProps()}
           >
-            <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
               WEB HOSTING & MAINTENANCE
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Reliable Hosting
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600 block">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-400 to-gray-600 block">
                 & Expert Maintenance
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-red-200/80 mb-8">
+            <p className="text-lg md:text-xl text-gray-200/80 mb-8">
               Keep your website secure, fast, and always online with our
               professional hosting and maintenance services backed by 24/7
               monitoring and support.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
-                className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 text-white"
+                className="bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-600 hover:to-gray-800 text-white"
                 size="lg"
                 onClick={() => router.push("/contact")}
               >
@@ -266,7 +266,7 @@ const WebHostingPage = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-red-700 text-red-400 bg-red-900/60 hover:bg-red-950/20 hover:text-red-900"
+                className="border-gray-700 text-gray-400 bg-gray-900/60 hover:bg-gray-950/20 hover:text-gray-900"
                 onClick={() => router.push("#packages")}
               >
                 View Hosting Plans
@@ -281,8 +281,8 @@ const WebHostingPage = () => {
       <section className="py-16 relative overflow-hidden">
         {!isMobile && !isReducedMotion && (
           <>
-            <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-900/10 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-700/10 rounded-full blur-3xl"></div>
+            <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-900/10 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-700/10 rounded-full blur-3xl"></div>
           </>
         )}
 
@@ -291,13 +291,13 @@ const WebHostingPage = () => {
             className="text-center mb-16"
             {...getAnimationProps()}
           >
-            <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
               OUR SERVICES
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Comprehensive Hosting Solutions
             </h2>
-            <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-200/60 text-lg max-w-2xl mx-auto">
               Beyond just server space, we provide a full suite of services to
               keep your website performing at its best.
             </p>
@@ -309,23 +309,23 @@ const WebHostingPage = () => {
                 key={index} 
                 {...getAnimationProps(index * 0.05)}
               >
-                <Card className="bg-black/60 border-red-900 h-full group hover:border-red-800/50 transition-colors">
+                <Card className="bg-black/60 border-gray-900 h-full group hover:border-gray-800/50 transition-colors">
                   <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-red-700 to-red-900 p-3 mb-4">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-gray-700 to-gray-900 p-3 mb-4">
                       <service.icon className="w-full h-full text-white" />
                     </div>
                     <h3 className="text-xl font-bold text-white mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-red-200/60 mb-4">
+                    <p className="text-gray-200/60 mb-4">
                       {service.description}
                     </p>
 
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start">
-                          <ChevronRight className="h-4 w-4 text-red-500 mt-1 mr-2 flex-shrink-0" />
-                          <span className="text-red-200/80 text-sm">
+                          <ChevronRight className="h-4 w-4 text-gray-500 mt-1 mr-2 flex-shrink-0" />
+                          <span className="text-gray-200/80 text-sm">
                             {feature}
                           </span>
                         </li>
@@ -340,19 +340,19 @@ const WebHostingPage = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-red-950/5 relative">
+      <section className="py-20 bg-gray-950/5 relative">
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <motion.div
             className="text-center mb-16"
             {...getAnimationProps()}
           >
-            <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
               BENEFITS
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Why Choose Our Hosting
             </h2>
-            <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-200/60 text-lg max-w-2xl mx-auto">
               Experience the peace of mind that comes with professional, managed
               hosting solutions.
             </p>
@@ -401,14 +401,14 @@ const WebHostingPage = () => {
                 key={index}
                 {...getAnimationProps(index * 0.05)}
               >
-                <div className="bg-black/60 border border-red-900 rounded-xl p-6 h-full">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-red-700 to-red-900 p-3 mb-4">
+                <div className="bg-black/60 border border-gray-900 rounded-xl p-6 h-full">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-gray-700 to-gray-900 p-3 mb-4">
                     <benefit.icon className="w-full h-full text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3">
                     {benefit.title}
                   </h3>
-                  <p className="text-red-200/70">{benefit.description}</p>
+                  <p className="text-gray-200/70">{benefit.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -423,13 +423,13 @@ const WebHostingPage = () => {
             className="text-center mb-16"
             {...getAnimationProps()}
           >
-            <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
               TECHNOLOGY
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Our Technology Stack
             </h2>
-            <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-200/60 text-lg max-w-2xl mx-auto">
               We leverage industry-leading technologies to deliver reliable,
               secure, and high-performance hosting solutions.
             </p>
@@ -441,7 +441,7 @@ const WebHostingPage = () => {
                 key={index}
                 {...getAnimationProps(index * 0.05)}
               >
-                <Card className="bg-black/60 border-red-900 h-full">
+                <Card className="bg-black/60 border-gray-900 h-full">
                   <CardContent className="p-6">
                     <h3 className="text-lg font-bold text-white mb-4">
                       {tech.category}
@@ -449,8 +449,8 @@ const WebHostingPage = () => {
                     <ul className="space-y-2">
                       {tech.technologies.map((item, idx) => (
                         <li key={idx} className="flex items-center">
-                          <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
-                          <span className="text-red-200/80">{item}</span>
+                          <div className="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                          <span className="text-gray-200/80">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -463,19 +463,19 @@ const WebHostingPage = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-red-950/5">
+      <section className="py-20 bg-gray-950/5">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <motion.div
             className="text-center mb-16"
             {...getAnimationProps()}
           >
-            <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
               OUR PROCESS
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               How We Maintain Your Website
             </h2>
-            <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-200/60 text-lg max-w-2xl mx-auto">
               Our systematic approach ensures your website remains secure,
               updated, and performing optimally.
             </p>
@@ -533,22 +533,22 @@ const WebHostingPage = () => {
               >
                 {/* Connector line for desktop only */}
                 {!isMobile && index < 5 && (
-                  <div className="hidden md:block absolute top-12 left-[calc(50%+10px)] w-full h-0.5 bg-gradient-to-r from-red-800/50 to-red-900/10"></div>
+                  <div className="hidden md:block absolute top-12 left-[calc(50%+10px)] w-full h-0.5 bg-gradient-to-r from-gray-800/50 to-gray-900/10"></div>
                 )}
 
-                <div className="bg-black/60 border border-red-900 rounded-xl p-6 relative z-10">
+                <div className="bg-black/60 border border-gray-900 rounded-xl p-6 relative z-10">
                   <div className="flex flex-col items-center mb-4">
-                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center mb-4">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center mb-4">
                       <step.icon className="h-6 w-6 text-white" />
                     </div>
-                    <div className="bg-red-950/30 rounded px-2 py-0.5 text-xs font-bold text-red-400 mb-2">
+                    <div className="bg-gray-950/30 rounded px-2 py-0.5 text-xs font-bold text-gray-400 mb-2">
                       STEP {step.step}
                     </div>
                     <h3 className="text-xl font-bold text-white text-center">
                       {step.title}
                     </h3>
                   </div>
-                  <p className="text-red-200/70 text-center">
+                  <p className="text-gray-200/70 text-center">
                     {step.description}
                   </p>
                 </div>
@@ -565,13 +565,13 @@ const WebHostingPage = () => {
             className="text-center mb-16"
             {...getAnimationProps()}
           >
-            <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
               PRICING
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Hosting & Maintenance Plans
             </h2>
-            <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-200/60 text-lg max-w-2xl mx-auto">
               Choose the hosting solution that best fits your business needs and
               budget.
             </p>
@@ -587,13 +587,13 @@ const WebHostingPage = () => {
                 <Card
                   className={`bg-black/60 h-full flex flex-col ${
                     pkg.highlighted
-                      ? "border-red-600 shadow-lg shadow-red-950/30"
-                      : "border-red-900"
+                      ? "border-gray-600 shadow-lg shadow-gray-950/30"
+                      : "border-gray-900"
                   }`}
                 >
                   <CardContent className="p-6 flex-grow flex flex-col">
                     {pkg.highlighted && (
-                      <Badge className="bg-red-700 text-white border-transparent self-start mb-4">
+                      <Badge className="bg-gray-700 text-white border-transparent self-start mb-4">
                         Most Popular
                       </Badge>
                     )}
@@ -601,23 +601,23 @@ const WebHostingPage = () => {
                       {pkg.title}
                     </h3>
                     <div className="mb-4">
-                      <span className="text-3xl font-bold text-red-400">
+                      <span className="text-3xl font-bold text-gray-400">
                         {pkg.price}
                       </span>
-                      <span className="text-red-200/60 ml-1">{pkg.period}</span>
+                      <span className="text-gray-200/60 ml-1">{pkg.period}</span>
                     </div>
-                    <p className="text-red-200/70 mb-6">{pkg.description}</p>
+                    <p className="text-gray-200/70 mb-6">{pkg.description}</p>
 
                     <div className="mt-auto">
-                      <div className="border-t border-red-900 pt-6 mb-6">
+                      <div className="border-t border-gray-900 pt-6 mb-6">
                         <h4 className="font-bold text-white mb-4">
                           What's Included:
                         </h4>
                         <ul className="space-y-3">
                           {pkg.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start">
-                              <CheckCircle className="h-5 w-5 text-red-500 mr-3 flex-shrink-0" />
-                              <span className="text-red-200/80">{feature}</span>
+                              <CheckCircle className="h-5 w-5 text-gray-500 mr-3 flex-shrink-0" />
+                              <span className="text-gray-200/80">{feature}</span>
                             </li>
                           ))}
                         </ul>
@@ -626,8 +626,8 @@ const WebHostingPage = () => {
                       <Button
                         className={`w-full ${
                           pkg.highlighted
-                            ? "bg-gradient-to-r from-red-600 to-red-800 hover:from-red-500 hover:to-red-700 text-white"
-                            : "bg-black border border-red-800/30 text-red-400 hover:bg-red-950/20"
+                            ? "bg-gradient-to-r from-gray-600 to-gray-800 hover:from-gray-500 hover:to-gray-700 text-white"
+                            : "bg-black border border-gray-800/30 text-gray-400 hover:bg-gray-950/20"
                         }`}
                         onClick={() => router.push("/contact")}
                       >
@@ -647,21 +647,21 @@ const WebHostingPage = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <motion.div
-            className="max-w-4xl mx-auto bg-black/60 border border-red-900 rounded-xl p-8 md:p-12 text-center"
+            className="max-w-4xl mx-auto bg-black/60 border border-gray-900 rounded-xl p-8 md:p-12 text-center"
             {...getAnimationProps()}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready for Reliable Hosting?
             </h2>
-            <p className="text-lg text-red-200/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-200/70 mb-8 max-w-2xl mx-auto">
               Get in touch today to discuss your hosting needs and learn how our
               solutions can help your business maintain a secure, fast, and
               reliable online presence.
             </p>
             <Button
               size="lg"
-              className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
-                text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8"
+              className="bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-600 hover:to-gray-800 
+                text-white border border-gray-800/30 shadow-lg shadow-gray-950/20 px-8"
               onClick={() => router.push("/contact")}
             >
               Get Started Today
