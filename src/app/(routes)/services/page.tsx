@@ -12,10 +12,13 @@ import {
   ShoppingBag,
   Palette,
   ArrowRight,
+  ArrowUpRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import GradientText from "@/app/components/gradientText";
+import Link from "next/link";
 
 // ClientOnly wrapper to prevent hydration issues
 const ClientOnly = ({ children }: any) => {
@@ -218,7 +221,35 @@ export default function ServicesPage() {
                             <service.icon className="w-full h-full text-white" />
                           </div>
                           <h3 className="text-xl font-bold text-white mb-3">
-                            {service.title}
+                            {service.title === "Website Development" ? (
+                              <>
+                                <GradientText gradient="from-white via-pink-400 to-red-500">{service.title}</GradientText>
+                              </>
+                            ) : service.title === "Mobile App Development" ? (
+                              <>
+                                <GradientText gradient="from-white via-cyan-400 to-blue-400">{service.title}</GradientText>
+                              </>
+                            ) : service.title === "UI/UX Design" ? (
+                              <>
+                                <GradientText gradient="from-white via-purple-500 to-blue-500">{service.title}</GradientText>
+                              </>
+                            ) : service.title === "E-commerce Solutions" ? (
+                              <>
+                                <GradientText gradient="from-white to-green-600">{service.title}</GradientText>
+                              </>
+                            ) : service.title === "SEO Optimization" ? (
+                              <>
+                                <GradientText gradient="from-white via-orange-400 to-red-600">{service.title}</GradientText>
+                              </>
+                            ) : service.title === "Web Hosting & Maintenance" ? (
+                              <>
+                                <GradientText gradient="from-white via-gray-500 to-gray-600">{service.title}</GradientText>
+                              </>
+                            ) : (
+                              <>
+                                <GradientText gradient="from-green-600 to-red-600">{service.title}</GradientText>
+                              </>
+                            )}
                           </h3>
                           <p className="text-red-200/60 mb-4">
                             {service.description}
@@ -236,13 +267,14 @@ export default function ServicesPage() {
                           </ul>
                         </div>
                         <div className="mt-auto pt-4">
-                          <Button
-                            onClick={() => router.push(service.href)}
-                            className="w-full bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 text-white"
-                          >
-                            Learn More
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                          </Button>
+                          <Link href={service.href} target="_blank">
+                            <Button
+                              className="w-full bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 text-white"
+                            >
+                              Learn More
+                              <ArrowUpRight className="ml-2 h-4 w-4" />
+                            </Button>
+                          </Link>
                         </div>
                       </CardContent>
                     </Card>
