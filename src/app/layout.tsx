@@ -72,12 +72,35 @@ function ThemedContent({ children }: { children: React.ReactNode }) {
           >
             About
           </Link>
-          <Link
-            href="/services"
-            className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors"
-          >
-            Services
-          </Link>
+      
+<div className="nav-item relative group">
+  <Link
+    href="/services"
+    className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors"
+  >
+    Services
+  </Link>
+  <div className="absolute left-0 mt-2 w-56 bg-white dark:bg-black border border-gray-200 dark:border-red-900/30 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+    <div className="py-2">
+      {[
+        { title: "Website Development", href: "/services/website" },
+        { title: "Mobile App Development", href: "/services/mobile" },
+        { title: "UI/UX Design", href: "/services/design" },
+        { title: "E-commerce Solutions", href: "/services/ecommerce" },
+        { title: "SEO Optimization", href: "/services/seo" },
+        { title: "Web Hosting & Maintenance", href: "/services/hosting" }
+      ].map((service) => (
+        <Link
+          key={service.title}
+          href={service.href}
+          className="block px-4 py-2 text-gray-700 dark:text-red-200 hover:bg-gray-100 dark:hover:bg-red-900/20"
+        >
+          {service.title}
+        </Link>
+      ))}
+    </div>
+  </div>
+</div>
           <Link
             href="/#contact"
             className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors"
