@@ -24,12 +24,12 @@ export default function RootLayout({
   // Prevent body scroll when menu is open
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isMenuOpen]);
 
@@ -69,33 +69,48 @@ export default function RootLayout({
               About
             </Link>
             <div className="nav-item relative group">
-  <Link
-    href="/services"
-    className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors"
-  >
-    Services
-  </Link>
-  <div className="absolute left-0 mt-2 w-56 bg-white dark:bg-black border border-gray-200 dark:border-red-900/30 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-    <div className="py-2">
-      {[
-        { title: "Website Development", href: "/services/website" },
-        { title: "Mobile App Development", href: "/services/mobile" },
-        { title: "UI/UX Design", href: "/services/design" },
-        { title: "E-commerce Solutions", href: "/services/ecommerce" },
-        { title: "SEO Optimization", href: "/services/seo" },
-        { title: "Web Hosting & Maintenance", href: "/services/hosting" }
-      ].map((service) => (
-        <Link
-          key={service.title}
-          href={service.href}
-          className="block px-4 py-2 text-gray-700 dark:text-red-200 hover:bg-gray-100 dark:hover:bg-red-900/20"
-        >
-          {service.title}
-        </Link>
-      ))}
-    </div>
-  </div>
-</div>
+              <Link
+                href="/services"
+                className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors"
+              >
+                Services
+              </Link>
+              <div className="absolute left-0 mt-2 w-56 bg-white dark:bg-black border border-gray-200 dark:border-red-900/30 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div className="py-2">
+                  {[
+                    {
+                      title: "Website Development",
+                      href: "/services/web-development",
+                    },
+                    {
+                      title: "Mobile App Development",
+                      href: "/services/mobile-app-development",
+                    },
+                    { title: "UI/UX Design", href: "/services/UI/UX-Design" },
+                    {
+                      title: "E-commerce Solutions",
+                      href: "/services/E-Commerse",
+                    },
+                    {
+                      title: "SEO Optimization",
+                      href: "/services/seo-optimization",
+                    },
+                    {
+                      title: "Web Hosting & Maintenance",
+                      href: "/services/Web-hosting",
+                    },
+                  ].map((service) => (
+                    <Link
+                      key={service.title}
+                      href={service.href}
+                      className="block px-4 py-2 text-gray-700 dark:text-red-200 hover:bg-gray-100 dark:hover:bg-red-900/20"
+                    >
+                      {service.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
             <Link
               href="/#contact"
               className="text-red-200 hover:text-red-400 transition-colors"
@@ -184,7 +199,11 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="md:col-span-1">
-                <Link href="/" draggable={false} className="flex items-center mb-4">
+                <Link
+                  href="/"
+                  draggable={false}
+                  className="flex items-center mb-4"
+                >
                   <Image
                     src="/codewithali.png"
                     alt="CodeWithAli"
