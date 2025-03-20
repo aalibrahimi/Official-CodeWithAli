@@ -142,7 +142,7 @@ const MobileAppDevelopmentPage = () => {
                   For iOS & Android
                 </span>
               </h1>
-              <p className="text-lg text-blue-200/80 mb-8">
+              <p className="text-lg text-white mb-8">
                 We design and build innovative, high-performance mobile
                 applications that engage users, solve real problems, and help
                 your business grow in the mobile-first world.
@@ -238,7 +238,7 @@ const MobileAppDevelopmentPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Mobile App Development Solutions
               </h2>
-              <p className="text-blue-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-amber-50 text-lg max-w-2xl mx-auto">
                 We offer a range of app development approaches to meet your
                 specific needs, budget, and timeline.
               </p>
@@ -256,20 +256,20 @@ const MobileAppDevelopmentPage = () => {
               >
                 <Card className="bg-black/60 border-blue-900 backdrop-blur-sm h-full">
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-white mb-3">
+                    <h3 className="text-xl font-bold text-blue-400 to mb-3">
                       {type.title}
                     </h3>
-                    <p className="text-blue-200/60 mb-4">{type.description}</p>
+                    <p className="text-amber-50 mb-4">{type.description}</p>
 
                     <div className="mb-4">
-                      <h4 className="text-sm font-semibold text-blue-300 mb-2">
+                      <h4 className="text-sm font-semibold text-blue-400  mb-2">
                         Technologies:
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {type.platforms.map((platform, i) => (
                           <Badge
                             key={i}
-                            className="bg-blue-900/20 border-blue-800/30 text-blue-200"
+                            className="bg-blue-900/20 border-blue-800/30 text-white"
                           >
                             {platform}
                           </Badge>
@@ -285,7 +285,7 @@ const MobileAppDevelopmentPage = () => {
                         {type.benefits.map((benefit, i) => (
                           <li key={i} className="flex items-start">
                             <CheckCircle className="w-4 h-4 text-blue-500 mt-0.5 mr-2 flex-shrink-0" />
-                            <span className="text-blue-200/70 text-sm">
+                            <span className="text-amber-50 text-sm">
                               {benefit}
                             </span>
                           </li>
@@ -377,7 +377,7 @@ const MobileAppDevelopmentPage = () => {
                     <h3 className="text-xl font-bold text-white mb-3">
                       {feature.title}
                     </h3>
-                    <p className="text-blue-200/60">{feature.description}</p>
+                    <p className="text-amber-80">{feature.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
