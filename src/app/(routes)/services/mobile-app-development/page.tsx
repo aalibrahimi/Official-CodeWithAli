@@ -138,7 +138,7 @@ const MobileAppDevelopmentPage = () => {
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
                 Custom Mobile Apps
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600 block mt-2">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-600 to-blue-800 block mt-2">
                   For iOS & Android
                 </span>
               </h1>

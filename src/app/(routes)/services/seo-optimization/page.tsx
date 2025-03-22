@@ -227,7 +227,7 @@ const SEOOptimizationPage = () => {
             <Badge className="bg-orange-900/30 text-orange-400 border-transparent mb-4 px-3 py-1">SEO OPTIMIZATION</Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Drive Organic Traffic &
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-orange-600 block">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-orange-400 to-red-600 block">
                 Boost Your Rankings
               </span>
             </h1>

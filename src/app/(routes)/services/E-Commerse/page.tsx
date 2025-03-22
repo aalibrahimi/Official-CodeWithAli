@@ -172,7 +172,7 @@ const EcommerceSolutionsPage = () => {
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                 Turn Your Products Into
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-600 block">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-green-600 block">
                   Online Success
                 </span>
               </h1>

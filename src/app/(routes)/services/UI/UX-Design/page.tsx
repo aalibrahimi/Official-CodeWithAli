@@ -228,7 +228,7 @@ const UIUXDesignPage = () => {
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               User-Focused Design
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-600 block">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-500 to-blue-500 block">
                 That Drives Results
               </span>
             </h1>

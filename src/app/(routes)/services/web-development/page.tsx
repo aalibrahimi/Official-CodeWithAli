@@ -160,7 +160,7 @@ const WebsiteDevelopmentPage = () => {
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
                 Custom Website Development
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-pink-600 block mt-2">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-pink-400 to-red-500 block mt-2">
                   That Drives Results
                 </span>
               </h1>
