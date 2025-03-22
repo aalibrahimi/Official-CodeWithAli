@@ -102,6 +102,7 @@ export default function RootLayout({
             <div className="nav-item relative group">
               <Link
                 href="/services"
+                onClick={() => scrollTo({ top: 0 })} // This is to fix when navigating to Services from Contact
                 className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors"
               >
                 Services

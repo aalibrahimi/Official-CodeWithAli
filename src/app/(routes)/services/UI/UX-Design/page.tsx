@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import GradientText from "@/app/components/gradientText";
 
 // Animation variants
 const fadeIn = {
@@ -276,8 +277,8 @@ const UIUXDesignPage = () => {
             <Badge className="bg-purple-900/30 text-purple-400 border-transparent mb-4 px-3 py-1">
               OUR SERVICES
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Comprehensive UI/UX Design Services
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
+              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">Comprehensive UI/UX Design Services</GradientText>
             </h2>
             <p className="text-purple-200/60 text-lg max-w-2xl mx-auto">
               We offer end-to-end design solutions that transform complex
@@ -340,8 +341,8 @@ const UIUXDesignPage = () => {
             <Badge className="bg-purple-900/30 text-purple-400 border-transparent mb-4 px-3 py-1">
               OUR WORK
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              UI/UX Design Portfolio
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
+              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">UI/UX Design Portfolio</GradientText>
             </h2>
             <p className="text-purple-200/60 text-lg max-w-2xl mx-auto">
               Browse our recent design projects spanning various industries and
@@ -407,8 +408,8 @@ const UIUXDesignPage = () => {
             <Badge className="bg-purple-900/30 text-purple-400 border-transparent mb-4 px-3 py-1">
               OUR PROCESS
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Our Design Process
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
+              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">Our Design Process</GradientText>
             </h2>
             <p className="text-purple-200/60 text-lg max-w-2xl mx-auto">
               We follow a systematic approach to ensure every design solution
@@ -466,8 +467,8 @@ const UIUXDesignPage = () => {
             <Badge className="bg-purple-900/30 text-purple-400 border-transparent mb-4 px-3 py-1">
               CLIENT FEEDBACK
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              What Our Clients Say
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
+              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">What Our Clients Say</GradientText>
             </h2>
             <p className="text-purple-200/60 text-lg max-w-2xl mx-auto">
               Hear from businesses who have transformed their digital presence
@@ -552,8 +553,8 @@ const UIUXDesignPage = () => {
             <Badge className="bg-purple-900/30 text-purple-400 border-transparent mb-4 px-3 py-1">
               PRICING
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              UI/UX Design Packages
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
+              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">UI/UX Design Packages</GradientText>
             </h2>
             <p className="text-purple-200/60 text-lg max-w-2xl mx-auto">
               Flexible options designed to meet the needs of businesses at every
@@ -645,8 +646,8 @@ const UIUXDesignPage = () => {
             <Badge className="bg-purple-900/30 text-purple-400 border-transparent mb-4 px-3 py-1">
               FAQ
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Frequently Asked Questions
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
+              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">Frequently Asked Questions</GradientText>
             </h2>
             <p className="text-purple-200/60 text-lg max-w-2xl mx-auto">
               Common questions about our UI/UX design services and process.

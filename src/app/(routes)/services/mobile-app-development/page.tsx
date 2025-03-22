@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import GradientText from "@/app/components/gradientText";
 
 // Animation variants
 const fadeIn = {
@@ -235,8 +236,8 @@ const MobileAppDevelopmentPage = () => {
               <Badge className="bg-blue-900/30 text-blue-400 border-transparent mb-4 px-3 py-1">
                 APP SOLUTIONS
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Mobile App Development Solutions
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
+                <GradientText gradient="from-blue-500 via-gray-200 to-blue-500">Mobile App Development Solutions</GradientText>
               </h2>
               <p className="text-amber-50 text-lg max-w-2xl mx-auto">
                 We offer a range of app development approaches to meet your
@@ -313,8 +314,8 @@ const MobileAppDevelopmentPage = () => {
               <Badge className="bg-blue-900/30 text-blue-400 border-transparent mb-4 px-3 py-1">
                 OUR EXPERTISE
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                What Sets Our Mobile App Development Apart
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
+                <GradientText gradient="from-blue-500 via-gray-200 to-blue-500">What Sets our Mobile App Development Apart</GradientText>
               </h2>
               <p className="text-blue-200/60 text-lg max-w-2xl mx-auto">
                 We combine technical excellence with creative design to deliver
@@ -399,8 +400,8 @@ const MobileAppDevelopmentPage = () => {
               <Badge className="bg-blue-900/30 text-blue-400 border-transparent mb-4 px-3 py-1">
                 OUR PROCESS
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Mobile App Development Process
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
+                <GradientText gradient="from-blue-500 via-gray-200 to-blue-500">Mobile App Development Process</GradientText>
               </h2>
               <p className="text-blue-200/60 text-lg max-w-2xl mx-auto">
                 Our structured approach ensures a smooth development journey
@@ -457,8 +458,8 @@ const MobileAppDevelopmentPage = () => {
               <Badge className="bg-blue-900/30 text-blue-400 border-transparent mb-4 px-3 py-1">
                 FAQ
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Frequently Asked Questions
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
+                <GradientText gradient="from-blue-500 via-gray-200 to-blue-500">Frequently Asked Questions</GradientText>
               </h2>
               <p className="text-blue-200/60 text-lg max-w-2xl mx-auto">
                 Common questions about our mobile app development process and

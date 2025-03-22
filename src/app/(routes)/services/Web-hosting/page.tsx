@@ -23,6 +23,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import GradientText from "@/app/components/gradientText";
 
 // ClientOnly wrapper to prevent hydration issues
 const ClientOnly = ({ children }: any) => {
@@ -294,8 +295,8 @@ const WebHostingPage = () => {
             <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
               OUR SERVICES
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Comprehensive Hosting Solutions
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
+              <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">Comprehensive Hosting Solutions</GradientText>
             </h2>
             <p className="text-gray-200/60 text-lg max-w-2xl mx-auto">
               Beyond just server space, we provide a full suite of services to
@@ -349,8 +350,8 @@ const WebHostingPage = () => {
             <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
               BENEFITS
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Why Choose Our Hosting
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
+              <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">Why Choose Our Hosting</GradientText>
             </h2>
             <p className="text-gray-200/60 text-lg max-w-2xl mx-auto">
               Experience the peace of mind that comes with professional, managed
@@ -426,8 +427,8 @@ const WebHostingPage = () => {
             <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
               TECHNOLOGY
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Our Technology Stack
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
+              <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">Our Technology Stack</GradientText>
             </h2>
             <p className="text-gray-200/60 text-lg max-w-2xl mx-auto">
               We leverage industry-leading technologies to deliver reliable,
@@ -472,8 +473,8 @@ const WebHostingPage = () => {
             <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
               OUR PROCESS
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              How We Maintain Your Website
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
+              <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">How We Maintain Your Website</GradientText>
             </h2>
             <p className="text-gray-200/60 text-lg max-w-2xl mx-auto">
               Our systematic approach ensures your website remains secure,
@@ -568,8 +569,8 @@ const WebHostingPage = () => {
             <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
               PRICING
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Hosting & Maintenance Plans
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
+              <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">Hosting & Maintenance Plans</GradientText>
             </h2>
             <p className="text-gray-200/60 text-lg max-w-2xl mx-auto">
               Choose the hosting solution that best fits your business needs and

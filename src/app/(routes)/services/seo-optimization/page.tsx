@@ -22,6 +22,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import GradientText from "@/app/components/gradientText";
 
 // Animation variants
 const fadeIn = {
@@ -247,7 +248,7 @@ const SEOOptimizationPage = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-orange-700 text-orange-400 bg-orange-900/60 text-black hover:bg-orange-950/50 hover:text-orange-900"
+                className="border-orange-700 text-orange-400 bg-orange-900/60 hover:bg-orange-950/50 hover:text-orange-900"
                 onClick={() => router.push('#packages')}
               >
                 View SEO Packages
@@ -272,8 +273,8 @@ const SEOOptimizationPage = () => {
             variants={fadeIn}
           >
             <Badge className="bg-orange-900/30 text-orange-400 border-transparent mb-4 px-3 py-1">OUR SERVICES</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Comprehensive SEO Solutions
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
+              <GradientText gradient="from-orange-400 via-gray-200 to-red-600">Comprehensive SEO Solutions</GradientText>
             </h2>
             <p className="text-orange-200/60 text-lg max-w-2xl mx-auto">
               Our holistic approach to search engine optimization covers all aspects needed to improve 
@@ -328,8 +329,8 @@ const SEOOptimizationPage = () => {
             variants={fadeIn}
           >
             <Badge className="bg-orange-900/30 text-orange-400 border-transparent mb-4 px-3 py-1">RESULTS</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Proven Performance
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
+              <GradientText gradient="from-orange-400 via-gray-200 to-red-600">Proven Performance</GradientText>
             </h2>
             <p className="text-orange-200/60 text-lg max-w-2xl mx-auto">
               Our data-driven approach consistently delivers measurable results for our clients.
@@ -372,8 +373,8 @@ const SEOOptimizationPage = () => {
             variants={fadeIn}
           >
             <Badge className="bg-orange-900/30 text-orange-400 border-transparent mb-4 px-3 py-1">OUR APPROACH</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Our SEO Process
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
+              <GradientText gradient="from-orange-400 via-gray-200 to-red-600">Our SEO Process</GradientText>
             </h2>
             <p className="text-orange-200/60 text-lg max-w-2xl mx-auto">
               We follow a systematic approach to ensure your SEO campaign delivers consistent results.
@@ -424,8 +425,8 @@ const SEOOptimizationPage = () => {
             variants={fadeIn}
           >
             <Badge className="bg-orange-900/30 text-orange-400 border-transparent mb-4 px-3 py-1">BENEFITS</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Why Invest in SEO?
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
+              <GradientText gradient="from-orange-400 via-gray-200 to-red-600">Why Invest in SEO?</GradientText>
             </h2>
             <p className="text-orange-200/60 text-lg max-w-2xl mx-auto">
               Search engine optimization offers numerous advantages for businesses looking to grow their online presence.
@@ -496,8 +497,8 @@ const SEOOptimizationPage = () => {
             variants={fadeIn}
           >
             <Badge className="bg-orange-900/30 text-orange-400 border-transparent mb-4 px-3 py-1">PRICING</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              SEO Packages
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
+              <GradientText gradient="from-orange-400 via-gray-200 to-red-600">SEO Packages</GradientText>
             </h2>
             <p className="text-orange-200/60 text-lg max-w-2xl mx-auto">
               Flexible SEO solutions designed to meet the needs of businesses at every stage of growth.

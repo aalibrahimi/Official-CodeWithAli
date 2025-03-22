@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@radix-ui/react-tabs";
+import GradientText from "@/app/components/gradientText";
 // import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 // Animation variants
@@ -243,8 +244,8 @@ const WebsiteDevelopmentPage = () => {
               <Badge className="bg-pink-900/30 text-pink-400 border-transparent mb-4 px-3 py-1">
                 KEY FEATURES
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                What Sets Our Website Development Apart
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
+                <GradientText gradient="from-pink-400 via-gray-200 to-pink-400">What Sets Our Website Development Apart</GradientText>
               </h2>
               <p className="text-pink-200/60 text-lg max-w-2xl mx-auto">
                 We combine technical expertise with creative design to deliver
@@ -332,8 +333,8 @@ const WebsiteDevelopmentPage = () => {
               <Badge className="bg-pink-900/30 text-pink-400 border-transparent mb-4 px-3 py-1">
                 OUR PROCESS
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                End-to-End Website Development Process
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
+                <GradientText gradient="from-pink-400 via-gray-200 to-pink-400">End-to-End Website Development Process</GradientText>
               </h2>
               <p className="text-pink-200/60 text-lg max-w-2xl mx-auto">
                 Our structured approach ensures a smooth development journey
@@ -390,8 +391,8 @@ const WebsiteDevelopmentPage = () => {
               <Badge className="bg-pink-900/30 text-pink-400 border-transparent mb-4 px-3 py-1">
                 TECHNOLOGIES
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Technologies We Utilize
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
+                <GradientText gradient="from-pink-400 via-gray-200 to-pink-400">Technologies We Utilize</GradientText>
               </h2>
               <p className="text-pink-200/60 text-lg max-w-2xl mx-auto">
                 We leverage cutting-edge technologies to build modern,
@@ -440,8 +441,8 @@ const WebsiteDevelopmentPage = () => {
               <Badge className="bg-pink-900/30 text-pink-400 border-transparent mb-4 px-3 py-1">
                 CASE STUDIES
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Success Stories
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
+                <GradientText gradient="from-pink-400 via-gray-200 to-pink-400">Success Stories</GradientText>
               </h2>
               <p className="text-pink-200/60 text-lg max-w-2xl mx-auto">
                 Explore some of our recent website development projects and the
@@ -530,8 +531,8 @@ const WebsiteDevelopmentPage = () => {
               <Badge className="bg-pink-900/30 text-pink-400 border-transparent mb-4 px-3 py-1">
                 FAQ
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Frequently Asked Questions
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
+                <GradientText gradient="from-pink-400 via-gray-200 to-pink-400">Frequently Asked Questions</GradientText>
               </h2>
               <p className="text-pink-200/60 text-lg max-w-2xl mx-auto">
                 Common questions about our website development process and

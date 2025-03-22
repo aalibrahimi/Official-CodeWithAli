@@ -23,6 +23,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import GradientText from "@/app/components/gradientText";
 
 // Custom hook to detect mobile devices
 const useIsMobile = () => {
@@ -268,8 +269,8 @@ const EcommerceSolutionsPage = () => {
               <Badge className="bg-green-900/30 text-green-400 border-transparent mb-4 px-3 py-1">
                 FEATURES
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                E-commerce Website Features
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#1b8f1a]">
+                <GradientText gradient="from-green-600 via-gray-200 to-green-600">E-commerce Website Features</GradientText>
               </h2>
               <p className="text-green-200/60 text-lg max-w-2xl mx-auto">
                 We can implement a wide range of features to create a powerful
@@ -366,8 +367,8 @@ const EcommerceSolutionsPage = () => {
               <Badge className="bg-green-900/30 text-green-400 border-transparent mb-4 px-3 py-1">
                 PACKAGES
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Choose Your E-commerce Package
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#1b8f1a]">
+                <GradientText gradient="from-green-600 via-gray-200 to-green-600">Choose Your E-commerce Package</GradientText>
               </h2>
               <p className="text-green-200/60 text-lg max-w-2xl mx-auto">
                 We offer tailored packages to fit businesses at every stage of
@@ -463,8 +464,8 @@ const EcommerceSolutionsPage = () => {
               <Badge className="bg-green-900/30 text-green-400 border-transparent mb-4 px-3 py-1">
                 OUR PROCESS
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                How We Build Your E-commerce Website
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#1b8f1a]">
+                <GradientText gradient="from-green-600 via-gray-200 to-green-600">How We Build Your E-commerce Website</GradientText>
               </h2>
               <p className="text-green-200/60 text-lg max-w-2xl mx-auto">
                 Our proven development process ensures your e-commerce website
@@ -554,8 +555,8 @@ const EcommerceSolutionsPage = () => {
               <Badge className="bg-green-900/30 text-green-400 border-transparent mb-4 px-3 py-1">
                 FAQ
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Frequently Asked Questions
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#1b8f1a]">
+                <GradientText gradient="from-green-600 via-gray-200 to-green-600">Frequently Asked Questions</GradientText>
               </h2>
               <p className="text-green-200/60 text-lg max-w-2xl mx-auto">
                 Common questions about our e-commerce solutions and services.
