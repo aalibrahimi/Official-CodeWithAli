@@ -29,14 +29,14 @@ export default function RootLayout({
       platform: "Instagram",
       style: "hover:bg-gradient-to-t hover:from-yellow-400 hover:via-red-500 hover:to-purple-500",
       icon: <Instagram />,
-      url: "#"
+      url: "https://www.instagram.com/officialcodewithali/#"
     },
     {
       platform: "Facebook",
       style: "hover:bg-gradient-to-t hover:from-blue-900 hover:to-blue-800",
       textStyle: "group-hover:text-white duration-150",
       icon: <Facebook />,
-      url: "#"
+      url: "https://www.facebook.com/profile.php?id=61573763924961"
     },
     {
       platform: "LinkedIn",

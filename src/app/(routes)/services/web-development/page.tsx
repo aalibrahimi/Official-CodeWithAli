@@ -165,7 +165,7 @@ const WebsiteDevelopmentPage = () => {
                   That Drives Results
                 </span>
               </h1>
-              <p className="text-lg text-pink-200/80 mb-8">
+              <p className="text-lg text-amber-50 mb-8">
                 We design and develop stunning, high-performance websites that
                 captivate your audience, establish your brand presence, and
                 drive measurable business growth.
@@ -247,7 +247,7 @@ const WebsiteDevelopmentPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
                 <GradientText gradient="from-pink-400 via-gray-200 to-pink-400">What Sets Our Website Development Apart</GradientText>
               </h2>
-              <p className="text-pink-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-amber-50 text-lg max-w-2xl mx-auto">
                 We combine technical expertise with creative design to deliver
                 websites that not only look great but also perform exceptionally
                 well.
@@ -310,7 +310,7 @@ const WebsiteDevelopmentPage = () => {
                       <h3 className="text-xl font-bold text-white mb-3">
                         {feature.title}
                       </h3>
-                      <p className="text-pink-200/60">{feature.description}</p>
+                      <p className="text-white/70">{feature.description}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -336,7 +336,7 @@ const WebsiteDevelopmentPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
                 <GradientText gradient="from-pink-400 via-gray-200 to-pink-400">End-to-End Website Development Process</GradientText>
               </h2>
-              <p className="text-pink-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-white/70 ext-lg max-w-2xl mx-auto">
                 Our structured approach ensures a smooth development journey
                 from concept to launch and beyond.
               </p>
@@ -367,7 +367,7 @@ const WebsiteDevelopmentPage = () => {
                             {step.title}
                           </h3>
                         </div>
-                        <p className="text-pink-200/60">{step.description}</p>
+                        <p className="text-white/70">{step.description}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -417,7 +417,7 @@ const WebsiteDevelopmentPage = () => {
                     <h4 className="text-lg font-bold text-white mb-1">
                       {tech.name}
                     </h4>
-                    <p className="text-pink-200/60 text-sm">
+                    <p className="text-white/70 text-sm">
                       {tech.description}
                     </p>
                   </div>
@@ -444,7 +444,7 @@ const WebsiteDevelopmentPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
                 <GradientText gradient="from-pink-400 via-gray-200 to-pink-400">Success Stories</GradientText>
               </h2>
-              <p className="text-pink-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-white/70 text-lg max-w-2xl mx-auto">
                 Explore some of our recent website development projects and the
                 results we've achieved for our clients.
               </p>
@@ -468,7 +468,7 @@ const WebsiteDevelopmentPage = () => {
                       <Badge className="bg-pink-800/40 text-pink-300 border-transparent mb-3">
                         {project.industry}
                       </Badge>
-                      <p className="text-pink-200/70 text-center px-6">
+                      <p className="text-white/70 text-center px-6">
                         Case Study Image: {project.title}
                       </p>
                     </div>
@@ -667,7 +667,7 @@ const WebsiteDevelopmentPage = () => {
                     <h4 className="text-lg font-bold text-white mb-2">
                       {faq.question}
                     </h4>
-                    <p className="text-pink-200/70">{faq.answer}</p>
+                    <p className="text-white/70">{faq.answer}</p>
                   </div>
                 ))}
               </TabsContent>
@@ -689,7 +689,7 @@ const WebsiteDevelopmentPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Start Your Website Project?
             </h2>
-            <p className="text-lg text-pink-200/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
               Contact us today for a free consultation and discover how we can
               help you create a website that drives real business results.
             </p>

@@ -232,7 +232,7 @@ const SEOOptimizationPage = () => {
                 Boost Your Rankings
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-orange-200/80 mb-8">
+            <p className="text-lg md:text-xl text-white/70 mb-8">
               Data-driven SEO strategies that increase visibility, attract qualified leads, 
               and help your business dominate search engine results.
             </p>
@@ -276,7 +276,7 @@ const SEOOptimizationPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
               <GradientText gradient="from-orange-400 via-gray-200 to-red-600">Comprehensive SEO Solutions</GradientText>
             </h2>
-            <p className="text-orange-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
               Our holistic approach to search engine optimization covers all aspects needed to improve 
               your website's visibility in search results.
             </p>
@@ -300,13 +300,13 @@ const SEOOptimizationPage = () => {
                       <service.icon className="w-full h-full text-white" />
                     </div>
                     <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                    <p className="text-orange-200/60 mb-4">{service.description}</p>
+                    <p className="text-white/70 mb-4">{service.description}</p>
                     
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start">
                           <ChevronRight className="h-4 w-4 text-orange-500 mt-1 mr-2 flex-shrink-0" />
-                          <span className="text-orange-200/80 text-sm">{feature}</span>
+                          <span className="text-white/70 text-sm">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -332,7 +332,7 @@ const SEOOptimizationPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
               <GradientText gradient="from-orange-400 via-gray-200 to-red-600">Proven Performance</GradientText>
             </h2>
-            <p className="text-orange-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
               Our data-driven approach consistently delivers measurable results for our clients.
             </p>
           </motion.div>
@@ -353,7 +353,7 @@ const SEOOptimizationPage = () => {
                     </div>
                     <div className="text-4xl font-bold text-orange-400 mb-2">{metric.stat}</div>
                     <h3 className="text-lg font-bold text-white mb-3">{metric.label}</h3>
-                    <p className="text-orange-200/70">{metric.description}</p>
+                    <p className="text-white/70">{metric.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -376,7 +376,7 @@ const SEOOptimizationPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
               <GradientText gradient="from-orange-400 via-gray-200 to-red-600">Our SEO Process</GradientText>
             </h2>
-            <p className="text-orange-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
               We follow a systematic approach to ensure your SEO campaign delivers consistent results.
             </p>
           </motion.div>
@@ -405,7 +405,7 @@ const SEOOptimizationPage = () => {
                       <span className="text-sm font-bold text-orange-500 mr-2">{step.number}</span>
                       <h3 className="text-xl font-bold text-white">{step.title}</h3>
                     </div>
-                    <p className="text-orange-200/70">{step.description}</p>
+                    <p className="text-white/70">{step.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -428,7 +428,7 @@ const SEOOptimizationPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
               <GradientText gradient="from-orange-400 via-gray-200 to-red-600">Why Invest in SEO?</GradientText>
             </h2>
-            <p className="text-orange-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
               Search engine optimization offers numerous advantages for businesses looking to grow their online presence.
             </p>
           </motion.div>
@@ -478,7 +478,7 @@ const SEOOptimizationPage = () => {
                     <benefit.icon className="w-full h-full text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
-                  <p className="text-orange-200/70">{benefit.description}</p>
+                  <p className="text-white/70">{benefit.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -500,7 +500,7 @@ const SEOOptimizationPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
               <GradientText gradient="from-orange-400 via-gray-200 to-red-600">SEO Packages</GradientText>
             </h2>
-            <p className="text-orange-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
               Flexible SEO solutions designed to meet the needs of businesses at every stage of growth.
             </p>
           </motion.div>
@@ -531,7 +531,7 @@ const SEOOptimizationPage = () => {
                       <span className="text-3xl font-bold text-orange-400">{pkg.price}</span>
                       <span className="text-orange-200/60 ml-1">{pkg.period}</span>
                     </div>
-                    <p className="text-orange-200/70 mb-6">{pkg.description}</p>
+                    <p className="text-white/70 mb-6">{pkg.description}</p>
                     
                     <div className="mt-auto">
                       <div className="border-t border-orange-950/30 pt-6 mb-6">
@@ -540,7 +540,7 @@ const SEOOptimizationPage = () => {
                           {pkg.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start">
                               <CheckCircle className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0" />
-                              <span className="text-orange-200/80">{feature}</span>
+                              <span className="text-white/70">{feature}</span>
                             </li>
                           ))}
                         </ul>
@@ -579,7 +579,7 @@ const SEOOptimizationPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Improve Your Search Rankings?
             </h2>
-            <p className="text-lg text-orange-200/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
               Get a complimentary SEO audit and discover opportunities to improve your website's visibility in search engines.
             </p>
             <Button 

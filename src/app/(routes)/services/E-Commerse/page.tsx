@@ -64,7 +64,7 @@ const createFadeInVariant = (isMobile:any) => ({
 const packages = [
   {
     title: "Basic E-commerce",
-    price: "$3,500",
+    price: "$2,500",
     description:
       "Essential e-commerce functionality for businesses starting their online presence",
     features: [
@@ -80,7 +80,7 @@ const packages = [
   },
   {
     title: "Advanced E-commerce",
-    price: "$6,500",
+    price: "$4,500",
     description:
       "Enhanced features and functionality for growing online businesses",
     features: [
@@ -98,7 +98,7 @@ const packages = [
   },
   {
     title: "Premium E-commerce",
-    price: "$10,000+",
+    price: "$7,000+",
     description:
       "Comprehensive solution with advanced features for established businesses",
     features: [
@@ -177,7 +177,7 @@ const EcommerceSolutionsPage = () => {
                   Online Success
                 </span>
               </h1>
-              <p className="text-lg text-green-200/80 mb-8 max-w-2xl">
+              <p className="text-lg text-white/70 mb-8 max-w-2xl">
                 We develop powerful, customized e-commerce websites that help
                 you sell effectively online. We build the digital infrastructure
                 you need while you focus on your products and customers.
@@ -247,7 +247,7 @@ const EcommerceSolutionsPage = () => {
                     <div className="text-2xl md:text-3xl font-bold text-green-400">
                       {stat.value}
                     </div>
-                    <p className="text-sm text-green-200/60">{stat.label}</p>
+                    <p className="text-sm text-white/70">{stat.label}</p>
                   </div>
                 ))}
               </div>
@@ -272,7 +272,7 @@ const EcommerceSolutionsPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#1b8f1a]">
                 <GradientText gradient="from-green-600 via-gray-200 to-green-600">E-commerce Website Features</GradientText>
               </h2>
-              <p className="text-green-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-white/70 text-lg max-w-2xl mx-auto">
                 We can implement a wide range of features to create a powerful
                 online selling platform for your business.
               </p>
@@ -342,7 +342,7 @@ const EcommerceSolutionsPage = () => {
                     <h3 className="text-xl font-bold text-white mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-green-200/60">{feature.description}</p>
+                    <p className="text-white/70">{feature.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -370,7 +370,7 @@ const EcommerceSolutionsPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#1b8f1a]">
                 <GradientText gradient="from-green-600 via-gray-200 to-green-600">Choose Your E-commerce Package</GradientText>
               </h2>
-              <p className="text-green-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-white/70text-lg max-w-2xl mx-auto">
                 We offer tailored packages to fit businesses at every stage of
                 growth.
               </p>
@@ -413,7 +413,7 @@ const EcommerceSolutionsPage = () => {
                             )}
                           </div>
                         </div>
-                        <p className="text-green-200/70 mb-6">
+                        <p className="text-white/70 mb-6">
                           {pkg.description}
                         </p>
                         <Button
@@ -437,7 +437,7 @@ const EcommerceSolutionsPage = () => {
                           {pkg.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start">
                               <Check className="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                              <span className="text-green-200/70">{feature}</span>
+                              <span className="text-white">{feature}</span>
                             </li>
                           ))}
                         </ul>
@@ -467,7 +467,7 @@ const EcommerceSolutionsPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#1b8f1a]">
                 <GradientText gradient="from-green-600 via-gray-200 to-green-600">How We Build Your E-commerce Website</GradientText>
               </h2>
-              <p className="text-green-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-white/70 text-lg max-w-2xl mx-auto">
                 Our proven development process ensures your e-commerce website
                 is built right, on time, and ready to drive sales.
               </p>
@@ -533,7 +533,7 @@ const EcommerceSolutionsPage = () => {
                     <h3 className="text-xl font-bold text-white mb-3">
                       {phase.title}
                     </h3>
-                    <p className="text-green-200/70">{phase.description}</p>
+                    <p className="text-white/70">{phase.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -558,7 +558,7 @@ const EcommerceSolutionsPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#1b8f1a]">
                 <GradientText gradient="from-green-600 via-gray-200 to-green-600">Frequently Asked Questions</GradientText>
               </h2>
-              <p className="text-green-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-white/70 text-lg max-w-2xl mx-auto">
                 Common questions about our e-commerce solutions and services.
               </p>
             </motion.div>
@@ -626,7 +626,7 @@ const EcommerceSolutionsPage = () => {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="text-green-200/70">{faq.answer}</p>
+                  <p className="text-white/70">{faq.answer}</p>
                 </div>
               </motion.div>
             ))}
@@ -647,7 +647,7 @@ const EcommerceSolutionsPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Create Your Custom E-commerce Website?
             </h2>
-            <p className="text-lg text-green-200/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
               Contact us today for a free consultation. We'll help you choose
               the right features and development approach to create an
               e-commerce website that drives sales and growth for your business.

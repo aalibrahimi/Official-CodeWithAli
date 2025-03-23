@@ -161,7 +161,7 @@ const designProcess = [
 const packages = [
   {
     title: "Essential",
-    price: "$3,500",
+    price: "$2,500",
     description:
       "Perfect for startups and small businesses looking to improve their digital presence.",
     features: [
@@ -174,7 +174,7 @@ const packages = [
   },
   {
     title: "Professional",
-    price: "$7,500",
+    price: "$5,500",
     description:
       "Comprehensive solution for established businesses seeking a complete design overhaul.",
     features: [
@@ -233,7 +233,7 @@ const UIUXDesignPage = () => {
                 That Drives Results
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-purple-200/80 mb-8">
+            <p className="text-lg md:text-xl text-white/70 mb-8">
               We create intuitive, engaging user experiences that enhance brand
               perception, increase conversion rates, and simplify complex
               interactions.
@@ -280,7 +280,7 @@ const UIUXDesignPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
               <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">Comprehensive UI/UX Design Services</GradientText>
             </h2>
-            <p className="text-purple-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
               We offer end-to-end design solutions that transform complex
               challenges into seamless user experiences.
             </p>
@@ -303,7 +303,7 @@ const UIUXDesignPage = () => {
                     <h3 className="text-xl font-bold text-white mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-purple-200/60 mb-4">
+                    <p className="text-white/70 mb-4">
                       {service.description}
                     </p>
 
@@ -344,7 +344,7 @@ const UIUXDesignPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
               <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">UI/UX Design Portfolio</GradientText>
             </h2>
-            <p className="text-purple-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
               Browse our recent design projects spanning various industries and
               platforms.
             </p>
@@ -411,7 +411,7 @@ const UIUXDesignPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
               <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">Our Design Process</GradientText>
             </h2>
-            <p className="text-purple-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70text-lg max-w-2xl mx-auto">
               We follow a systematic approach to ensure every design solution
               meets both user needs and business objectives.
             </p>
@@ -445,7 +445,7 @@ const UIUXDesignPage = () => {
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-purple-200/70">{step.description}</p>
+                    <p className="text-white/70">{step.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -470,7 +470,7 @@ const UIUXDesignPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
               <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">What Our Clients Say</GradientText>
             </h2>
-            <p className="text-purple-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
               Hear from businesses who have transformed their digital presence
               with our UI/UX design services.
             </p>
@@ -527,7 +527,7 @@ const UIUXDesignPage = () => {
                         <p className="font-bold text-white">
                           {testimonial.author}
                         </p>
-                        <p className="text-sm text-purple-400">
+                        <p className="text-sm text-white/70">
                           {testimonial.company}
                         </p>
                       </div>
@@ -542,7 +542,7 @@ const UIUXDesignPage = () => {
 
       {/* Pricing */}
       <section className="py-20">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 ">
           <motion.div
             className="text-center mb-16"
             initial="hidden"
@@ -556,7 +556,7 @@ const UIUXDesignPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
               <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">UI/UX Design Packages</GradientText>
             </h2>
-            <p className="text-purple-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
               Flexible options designed to meet the needs of businesses at every
               stage of growth.
             </p>
@@ -596,7 +596,7 @@ const UIUXDesignPage = () => {
                         <span className="text-purple-200/60 ml-1">starting</span>
                       )}
                     </div>
-                    <p className="text-purple-200/70 mb-6">{pkg.description}</p>
+                    <p className="text-white/70 mb-6">{pkg.description}</p>
 
                     <div className="mt-auto">
                       <div className="border-t border-purple-900 pt-6 mb-6">
@@ -607,7 +607,7 @@ const UIUXDesignPage = () => {
                           {pkg.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start">
                               <CheckCircle className="h-5 w-5 text-purple-500 mr-3 flex-shrink-0" />
-                              <span className="text-purple-200/80">{feature}</span>
+                              <span className="text-white/70">{feature}</span>
                             </li>
                           ))}
                         </ul>
@@ -643,13 +643,13 @@ const UIUXDesignPage = () => {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <Badge className="bg-purple-900/30 text-purple-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-purple-900/30 text-white/70 border-transparent mb-4 px-3 py-1">
               FAQ
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
               <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">Frequently Asked Questions</GradientText>
             </h2>
-            <p className="text-purple-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
               Common questions about our UI/UX design services and process.
             </p>
           </motion.div>
@@ -711,7 +711,7 @@ const UIUXDesignPage = () => {
                     <h3 className="text-lg font-bold text-white mb-3">
                       {faq.question}
                     </h3>
-                    <p className="text-purple-200/70">{faq.answer}</p>
+                    <p className="text-white/70 ">{faq.answer}</p>
                   </motion.div>
                 ))}
               </TabsContent>
@@ -780,7 +780,7 @@ const UIUXDesignPage = () => {
                     <h3 className="text-lg font-bold text-white mb-3">
                       {faq.question}
                     </h3>
-                    <p className="text-purple-200/70">{faq.answer}</p>
+                    <p className="text-white/70">{faq.answer}</p>
                   </motion.div>
                 ))}
               </TabsContent>
@@ -815,7 +815,7 @@ const UIUXDesignPage = () => {
                     <h3 className="text-lg font-bold text-white mb-3">
                       {faq.question}
                     </h3>
-                    <p className="text-purple-200/70">{faq.answer}</p>
+                    <p className="text-white/70">{faq.answer}</p>
                   </motion.div>
                 ))}
               </TabsContent>
@@ -837,7 +837,7 @@ const UIUXDesignPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Transform Your User Experience?
             </h2>
-            <p className="text-lg text-purple-200/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
               Let's discuss how our UI/UX design services can help your business
               achieve its goals through exceptional user experiences.
             </p>

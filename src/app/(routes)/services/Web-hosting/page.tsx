@@ -250,7 +250,7 @@ const WebHostingPage = () => {
                 & Expert Maintenance
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-200/80 mb-8">
+            <p className="text-lg md:text-xl text-white mb-8">
               Keep your website secure, fast, and always online with our
               professional hosting and maintenance services backed by 24/7
               monitoring and support.
@@ -298,7 +298,7 @@ const WebHostingPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
               <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">Comprehensive Hosting Solutions</GradientText>
             </h2>
-            <p className="text-gray-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white text-lg max-w-2xl mx-auto">
               Beyond just server space, we provide a full suite of services to
               keep your website performing at its best.
             </p>
@@ -318,7 +318,7 @@ const WebHostingPage = () => {
                     <h3 className="text-xl font-bold text-white mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-gray-200/60 mb-4">
+                    <p className="text-white mb-4">
                       {service.description}
                     </p>
 
@@ -353,7 +353,7 @@ const WebHostingPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
               <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">Why Choose Our Hosting</GradientText>
             </h2>
-            <p className="text-gray-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white text-lg max-w-2xl mx-auto">
               Experience the peace of mind that comes with professional, managed
               hosting solutions.
             </p>
@@ -409,7 +409,7 @@ const WebHostingPage = () => {
                   <h3 className="text-xl font-bold text-white mb-3">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-200/70">{benefit.description}</p>
+                  <p className="text-white">{benefit.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -430,7 +430,7 @@ const WebHostingPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
               <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">Our Technology Stack</GradientText>
             </h2>
-            <p className="text-gray-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white text-lg max-w-2xl mx-auto">
               We leverage industry-leading technologies to deliver reliable,
               secure, and high-performance hosting solutions.
             </p>
@@ -476,7 +476,7 @@ const WebHostingPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
               <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">How We Maintain Your Website</GradientText>
             </h2>
-            <p className="text-gray-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white text-lg max-w-2xl mx-auto">
               Our systematic approach ensures your website remains secure,
               updated, and performing optimally.
             </p>
@@ -549,7 +549,7 @@ const WebHostingPage = () => {
                       {step.title}
                     </h3>
                   </div>
-                  <p className="text-gray-200/70 text-center">
+                  <p className="text-white text-center">
                     {step.description}
                   </p>
                 </div>
@@ -572,7 +572,7 @@ const WebHostingPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
               <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">Hosting & Maintenance Plans</GradientText>
             </h2>
-            <p className="text-gray-200/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white text-lg max-w-2xl mx-auto">
               Choose the hosting solution that best fits your business needs and
               budget.
             </p>
@@ -607,7 +607,7 @@ const WebHostingPage = () => {
                       </span>
                       <span className="text-gray-200/60 ml-1">{pkg.period}</span>
                     </div>
-                    <p className="text-gray-200/70 mb-6">{pkg.description}</p>
+                    <p className="text-white mb-6">{pkg.description}</p>
 
                     <div className="mt-auto">
                       <div className="border-t border-gray-900 pt-6 mb-6">
@@ -654,7 +654,7 @@ const WebHostingPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready for Reliable Hosting?
             </h2>
-            <p className="text-lg text-gray-200/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-white mb-8 max-w-2xl mx-auto">
               Get in touch today to discuss your hosting needs and learn how our
               solutions can help your business maintain a secure, fast, and
               reliable online presence.
