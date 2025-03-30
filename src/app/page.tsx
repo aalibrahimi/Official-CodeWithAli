@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import {
   ChevronRight,
@@ -55,6 +55,7 @@ const services = [
       "Custom-designed responsive websites optimized for performance and conversions",
     icon: Code,
     color: "from-red-600 to-red-800",
+    url: "/services/web-development"
   },
   {
     title: "Mobile App Development",
@@ -62,6 +63,7 @@ const services = [
       "Native and cross-platform mobile applications for iOS and Android",
     icon: Smartphone,
     color: "from-red-700 to-red-900",
+    url: "/services/mobile-app-development"
   },
   {
     title: "UI/UX Design",
@@ -69,6 +71,7 @@ const services = [
       "User-focused designs that enhance engagement and simplify interactions",
     icon: Palette,
     color: "from-red-800 to-red-950",
+    url: "/services/UI/UX-Design"
   },
   {
     title: "E-commerce Solutions",
@@ -76,6 +79,7 @@ const services = [
       "Fully-featured online stores with secure payment processing and inventory management",
     icon: ShoppingBag,
     color: "from-red-600 to-red-800",
+    url: "/services/E-Commerse"
   },
   {
     title: "SEO Optimization",
@@ -83,6 +87,7 @@ const services = [
       "Data-driven strategies to improve visibility and ranking in search engines",
     icon: Search,
     color: "from-red-700 to-red-900",
+    url: "/services/seo-optimization"
   },
   {
     title: "Web Hosting & Maintenance",
@@ -90,6 +95,7 @@ const services = [
       "Reliable hosting services with regular updates, backups, and security monitoring",
     icon: Server,
     color: "from-red-800 to-red-950",
+    url: "/services/Web-hosting"
   },
 ];
 
@@ -402,13 +408,15 @@ const HomePage = () => {
                       <p className="text-red-200/60">{service.description}</p>
                     </div>
                     <div className="mt-auto pt-4">
-                      <Button
-                        variant="ghost"
-                        className="p-0 text-red-400 hover:text-red-300 hover:bg-transparent group"
-                      >
-                        Learn more
-                        <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-                      </Button>
+                      <Link href={service.url} target="_blank">
+                        <Button
+                          variant="ghost"
+                          className="p-0 text-red-400 hover:text-red-300 hover:bg-transparent group"
+                        >
+                          Learn more
+                          <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
