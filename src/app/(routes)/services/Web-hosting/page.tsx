@@ -25,7 +25,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import GradientText from "@/app/components/gradientText";
 // I imported these utilities from the new file I created
-import { ClientOnly, useResponsive, getOptimizedAnimationProps, createBrowserOptimizedVariants } from "../../../utils/browser-compatibility";
+import {
+  ClientOnly,
+  useResponsive,
+  getOptimizedAnimationProps,
+  createBrowserOptimizedVariants,
+} from "../../../utils/browser-compatibility";
 
 // Types for our data
 interface HostingFeature {
@@ -194,11 +199,11 @@ const hostingPackages: HostingPackage[] = [
 
 const WebHostingPage = (): JSX.Element => {
   const router = useRouter();
-  
+
   // I replaced The multiple useState and useEffect hooks with this single optimized hook
   // This fixes the re-rendering issues in Safari/Firefox by properly handling resize events
   const { isMobile, isReducedMotion } = useResponsive();
-  
+
   // I created an optimized version of the animation variants
   // This prevents Safari/Firefox from struggling with the animations at leaast in theory
   const fadeIn = createBrowserOptimizedVariants();
@@ -215,10 +220,11 @@ const WebHostingPage = (): JSX.Element => {
 
           <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
             {/* I replaced the direct animation props with optimized ones */}
-            <motion.div
+            {/* <motion.div
               className="max-w-3xl"
               {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
-            >
+            > */}
+            <div className="max-w-3xl">
               <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
                 WEB HOSTING & MAINTENANCE
               </Badge>
@@ -252,7 +258,8 @@ const WebHostingPage = (): JSX.Element => {
                   <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
         </section>
 
@@ -268,29 +275,34 @@ const WebHostingPage = (): JSX.Element => {
 
           <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20">
             {/* I replaced the direct animation props with optimized ones */}
-            <motion.div
+            {/* <motion.div
               className="text-center mb-16"
               {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
-            >
+            > */}
+            <div className="text-center mb-16">
               <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
                 OUR SERVICES
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
-                <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">Comprehensive Hosting Solutions</GradientText>
+                <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">
+                  Comprehensive Hosting Solutions
+                </GradientText>
               </h2>
               <p className="text-white text-lg max-w-2xl mx-auto">
                 Beyond just server space, we provide a full suite of services to
                 keep your website performing at its best.
               </p>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {hostingFeatures.map((service, index) => (
-                <motion.div 
-                  key={index} 
-                  // I replaced the variant props with optimized ones that won't cause re-renders in Safari
-                  {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
-                >
+                // <motion.div
+                //   key={index}
+                //   // I replaced the variant props with optimized ones that won't cause re-renders in Safari
+                //   {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
+                // >
+                <div key={index}>
                   <Card className="bg-black/60 border-gray-900 h-full group hover:border-gray-800/50 transition-colors">
                     <CardContent className="p-6">
                       <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-gray-700 to-gray-900 p-3 mb-4">
@@ -299,9 +311,7 @@ const WebHostingPage = (): JSX.Element => {
                       <h3 className="text-xl font-bold text-white mb-3">
                         {service.title}
                       </h3>
-                      <p className="text-white mb-4">
-                        {service.description}
-                      </p>
+                      <p className="text-white mb-4">{service.description}</p>
 
                       <ul className="space-y-2">
                         {service.features.map((feature, idx) => (
@@ -315,7 +325,8 @@ const WebHostingPage = (): JSX.Element => {
                       </ul>
                     </CardContent>
                   </Card>
-                </motion.div>
+                </div>
+                // </motion.div>
               ))}
             </div>
           </div>
@@ -324,21 +335,25 @@ const WebHostingPage = (): JSX.Element => {
         {/* Benefits Section */}
         <section className="py-20 bg-gray-950/5 relative">
           <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-            <motion.div
+            {/* <motion.div
               className="text-center mb-16"
               {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
-            >
+            > */}
+            <div className="text-center mb-16">
               <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
                 BENEFITS
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
-                <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">Why Choose Our Hosting</GradientText>
+                <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">
+                  Why Choose Our Hosting
+                </GradientText>
               </h2>
               <p className="text-white text-lg max-w-2xl mx-auto">
-                Experience the peace of mind that comes with professional, managed
-                hosting solutions.
+                Experience the peace of mind that comes with professional,
+                managed hosting solutions.
               </p>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
@@ -379,10 +394,11 @@ const WebHostingPage = (): JSX.Element => {
                     "Automated backup systems ensure your valuable data is always protected and quickly recoverable.",
                 },
               ].map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
-                >
+                // <motion.div
+                //   key={index}
+                //   {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
+                // >
+                <div key={index}>
                   <div className="bg-black/60 border border-gray-900 rounded-xl p-6 h-full">
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-gray-700 to-gray-900 p-3 mb-4">
                       <benefit.icon className="w-full h-full text-white" />
@@ -392,7 +408,8 @@ const WebHostingPage = (): JSX.Element => {
                     </h3>
                     <p className="text-white">{benefit.description}</p>
                   </div>
-                </motion.div>
+                </div>
+                // </motion.div>
               ))}
             </div>
           </div>
@@ -401,28 +418,33 @@ const WebHostingPage = (): JSX.Element => {
         {/* Technology Stack */}
         <section className="py-20 relative">
           <div className="container mx-auto px-4 md:px-8 lg:px-12">
-            <motion.div
+            {/* <motion.div
               className="text-center mb-16"
               {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
-            >
+            > */}
+            <div className="text-center mb-16">
               <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
                 TECHNOLOGY
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
-                <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">Our Technology Stack</GradientText>
+                <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">
+                  Our Technology Stack
+                </GradientText>
               </h2>
               <p className="text-white text-lg max-w-2xl mx-auto">
                 We leverage industry-leading technologies to deliver reliable,
                 secure, and high-performance hosting solutions.
               </p>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {techStack.map((tech, index) => (
-                <motion.div
-                  key={index}
-                  {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
-                >
+                // <motion.div
+                //   key={index}
+                //   {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
+                // >
+                <div key={index}>
                   <Card className="bg-black/60 border-gray-900 h-full">
                     <CardContent className="p-6">
                       <h3 className="text-lg font-bold text-white mb-4">
@@ -438,7 +460,8 @@ const WebHostingPage = (): JSX.Element => {
                       </ul>
                     </CardContent>
                   </Card>
-                </motion.div>
+                </div>
+                // </motion.div>
               ))}
             </div>
           </div>
@@ -447,21 +470,25 @@ const WebHostingPage = (): JSX.Element => {
         {/* Process Section */}
         <section className="py-20 bg-gray-950/5">
           <div className="container mx-auto px-4 md:px-8 lg:px-12">
-            <motion.div
+            {/* <motion.div
               className="text-center mb-16"
               {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
-            >
+            > */}
+            <div className="text-center mb-16">
               <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
                 OUR PROCESS
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
-                <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">How We Maintain Your Website</GradientText>
+                <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">
+                  How We Maintain Your Website
+                </GradientText>
               </h2>
               <p className="text-white text-lg max-w-2xl mx-auto">
                 Our systematic approach ensures your website remains secure,
                 updated, and performing optimally.
               </p>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0">
               {[
@@ -508,11 +535,12 @@ const WebHostingPage = (): JSX.Element => {
                     "We address potential issues before they impact your site, and provide fast resolution when problems arise.",
                 },
               ].map((step, index) => (
-                <motion.div
-                  key={index}
-                  {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
-                  className="relative"
-                >
+                // <motion.div
+                //   key={index}
+                //   {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
+                //   className="relative"
+                // >
+                <div key={index} className="relative">
                   {/* Connector line for desktop only */}
                   {!isMobile && index < 5 && (
                     <div className="hidden md:block absolute top-12 left-[calc(50%+10px)] w-full h-0.5 bg-gradient-to-r from-gray-800/50 to-gray-900/10"></div>
@@ -530,11 +558,10 @@ const WebHostingPage = (): JSX.Element => {
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-white text-center">
-                      {step.description}
-                    </p>
+                    <p className="text-white text-center">{step.description}</p>
                   </div>
-                </motion.div>
+                </div>
+                // </motion.div>
               ))}
             </div>
           </div>
@@ -543,29 +570,34 @@ const WebHostingPage = (): JSX.Element => {
         {/* Pricing */}
         <section id="packages" className="py-20">
           <div className="container mx-auto px-4 md:px-8 lg:px-12">
-            <motion.div
+            {/* <motion.div
               className="text-center mb-16"
               {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
-            >
+            > */}
+            <div className="text-center mb-16">
               <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
                 PRICING
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
-                <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">Hosting & Maintenance Plans</GradientText>
+                <GradientText gradient="from-gray-600 via-gray-200 to-gray-600">
+                  Hosting & Maintenance Plans
+                </GradientText>
               </h2>
               <p className="text-white text-lg max-w-2xl mx-auto">
-                Choose the hosting solution that best fits your business needs and
-                budget.
+                Choose the hosting solution that best fits your business needs
+                and budget.
               </p>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {hostingPackages.map((pkg, index) => (
-                <motion.div
-                  key={index}
-                  {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
-                  className="h-full"
-                >
+                // <motion.div
+                //   key={index}
+                //   {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
+                //   className="h-full"
+                // >
+                <div key={index} className="h-full">
                   <Card
                     className={`bg-black/60 h-full flex flex-col ${
                       pkg.highlighted
@@ -586,7 +618,9 @@ const WebHostingPage = (): JSX.Element => {
                         <span className="text-3xl font-bold text-gray-400">
                           {pkg.price}
                         </span>
-                        <span className="text-gray-200/60 ml-1">{pkg.period}</span>
+                        <span className="text-gray-200/60 ml-1">
+                          {pkg.period}
+                        </span>
                       </div>
                       <p className="text-white mb-6">{pkg.description}</p>
 
@@ -599,7 +633,9 @@ const WebHostingPage = (): JSX.Element => {
                             {pkg.features.map((feature, idx) => (
                               <li key={idx} className="flex items-start">
                                 <CheckCircle className="h-5 w-5 text-gray-500 mr-3 flex-shrink-0" />
-                                <span className="text-gray-200/80">{feature}</span>
+                                <span className="text-gray-200/80">
+                                  {feature}
+                                </span>
                               </li>
                             ))}
                           </ul>
@@ -619,7 +655,8 @@ const WebHostingPage = (): JSX.Element => {
                       </div>
                     </CardContent>
                   </Card>
-                </motion.div>
+                </div>
+                // </motion.div>
               ))}
             </div>
           </div>
@@ -628,17 +665,18 @@ const WebHostingPage = (): JSX.Element => {
         {/* CTA Section */}
         <section className="py-20">
           <div className="container mx-auto px-4 md:px-8 lg:px-12">
-            <motion.div
+            {/* <motion.div
               className="max-w-4xl mx-auto bg-black/60 border border-gray-900 rounded-xl p-8 md:p-12 text-center"
               {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
-            >
+            > */}
+            <div className="max-w-4xl mx-auto bg-black/60 border border-gray-900 rounded-xl p-8 md:p-12 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Ready for Reliable Hosting?
               </h2>
               <p className="text-lg text-white mb-8 max-w-2xl mx-auto">
-                Get in touch today to discuss your hosting needs and learn how our
-                solutions can help your business maintain a secure, fast, and
-                reliable online presence.
+                Get in touch today to discuss your hosting needs and learn how
+                our solutions can help your business maintain a secure, fast,
+                and reliable online presence.
               </p>
               <Button
                 size="lg"
@@ -649,7 +687,8 @@ const WebHostingPage = (): JSX.Element => {
                 Get Started Today
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
         </section>
       </div>

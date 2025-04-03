@@ -28,34 +28,34 @@ import GradientText from "@/app/components/gradientText";
 // Custom hook to detect mobile devices
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false);
-  
+
   useEffect(() => {
     const checkIfMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     // Initial check
     checkIfMobile();
-    
+
     // Add event listener for window resize
-    window.addEventListener('resize', checkIfMobile);
-    
+    window.addEventListener("resize", checkIfMobile);
+
     // Cleanup
-    return () => window.removeEventListener('resize', checkIfMobile);
+    return () => window.removeEventListener("resize", checkIfMobile);
   }, []);
-  
+
   return isMobile;
 };
 
 // Animation variants optimized for performance
-const createFadeInVariant = (isMobile:any) => ({
+const createFadeInVariant = (isMobile: any) => ({
   hidden: { opacity: 0, y: isMobile ? 10 : 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { 
-      duration: isMobile ? 0.3 : 0.6, 
-      ease: "easeOut" 
+    transition: {
+      duration: isMobile ? 0.3 : 0.6,
+      ease: "easeOut",
     },
   },
 });
@@ -119,18 +119,18 @@ const EcommerceSolutionsPage = () => {
   const router = useRouter();
   const [activeFaq, setActiveFaq] = useState(null);
   const isMobile = useIsMobile();
-  
+
   // Create animation variants based on device type
   const fadeIn = createFadeInVariant(isMobile);
 
-  const toggleFaq = (index:any) => {
+  const toggleFaq = (index: any) => {
     if (activeFaq === index) {
       setActiveFaq(null);
     } else {
       setActiveFaq(index);
     }
   };
-  
+
   // Helper function to create optimized motion props
   const getMotionProps = (index = 0) => {
     if (isMobile) {
@@ -139,16 +139,16 @@ const EcommerceSolutionsPage = () => {
         initial: { opacity: 0 },
         whileInView: { opacity: 1 },
         viewport: { once: true },
-        transition: { duration: 0.3 }
+        transition: { duration: 0.3 },
       };
     }
-    
+
     // Full animations for desktop
     return {
       initial: { opacity: 0, y: 20 },
       whileInView: { opacity: 1, y: 0 },
       viewport: { once: true },
-      transition: { duration: 0.5, delay: index * 0.1 }
+      transition: { duration: 0.5, delay: index * 0.1 },
     };
   };
 
@@ -163,11 +163,12 @@ const EcommerceSolutionsPage = () => {
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: isMobile ? 10 : 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: isMobile ? 0.3 : 0.5 }}
-            >
+            > */}
+            <div>
               <Badge className="bg-green-900/30 text-green-400 border-transparent mb-4 px-3 py-1">
                 E-COMMERCE SOLUTIONS
               </Badge>
@@ -205,15 +206,17 @@ const EcommerceSolutionsPage = () => {
                   View Packages
                 </Button>
               </div>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
 
             {/* Stats/Features Box */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: isMobile ? 10 : 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: isMobile ? 0.3 : 0.7, delay: isMobile ? 0 : 0.2 }}
               className="bg-black/60 border border-green-900 rounded-xl overflow-hidden shadow-xl p-6 md:p-8"
-            >
+            > */}
+            <div className="bg-black/60 border border-green-900 rounded-xl overflow-hidden shadow-xl p-6 md:p-8">
               <h3 className="text-2xl font-bold text-center mb-6">
                 Why Choose Our E-commerce Solutions?
               </h3>
@@ -251,7 +254,8 @@ const EcommerceSolutionsPage = () => {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
         </div>
       </section>
@@ -260,23 +264,27 @@ const EcommerceSolutionsPage = () => {
       <section className="py-16 bg-green-950/10">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
-            <motion.div
+            {/* <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeIn}
-            >
+            > */}
+            <div>
               <Badge className="bg-green-900/30 text-green-400 border-transparent mb-4 px-3 py-1">
                 FEATURES
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#1b8f1a]">
-                <GradientText gradient="from-green-600 via-gray-200 to-green-600">E-commerce Website Features</GradientText>
+                <GradientText gradient="from-green-600 via-gray-200 to-green-600">
+                  E-commerce Website Features
+                </GradientText>
               </h2>
               <p className="text-white/70 text-lg max-w-2xl mx-auto">
                 We can implement a wide range of features to create a powerful
                 online selling platform for your business.
               </p>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -330,10 +338,11 @@ const EcommerceSolutionsPage = () => {
                 icon: Settings,
               },
             ].map((feature, index) => (
-              <motion.div
-                key={index}
-                {...getMotionProps(isMobile ? 0 : index * 0.05)}
-              >
+              // <motion.div
+              //   key={index}
+              //   {...getMotionProps(isMobile ? 0 : index * 0.05)}
+              // >
+              <div key={index}>
                 <Card className="bg-black/60 border-green-900 backdrop-blur-sm h-full">
                   <CardContent className="p-6">
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-700 to-green-900 flex items-center justify-center mb-4">
@@ -345,7 +354,8 @@ const EcommerceSolutionsPage = () => {
                     <p className="text-white/70">{feature.description}</p>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
+              // </motion.div>
             ))}
           </div>
         </div>
@@ -358,31 +368,36 @@ const EcommerceSolutionsPage = () => {
       >
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
-            <motion.div
+            {/* <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeIn}
-            >
+            > */}
+            <div>
               <Badge className="bg-green-900/30 text-green-400 border-transparent mb-4 px-3 py-1">
                 PACKAGES
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#1b8f1a]">
-                <GradientText gradient="from-green-600 via-gray-200 to-green-600">Choose Your E-commerce Package</GradientText>
+                <GradientText gradient="from-green-600 via-gray-200 to-green-600">
+                  Choose Your E-commerce Package
+                </GradientText>
               </h2>
               <p className="text-white/70text-lg max-w-2xl mx-auto">
                 We offer tailored packages to fit businesses at every stage of
                 growth.
               </p>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
 
           <div className="grid grid-cols-1 gap-8 max-w-5xl mx-auto">
             {packages.map((pkg, index) => (
-              <motion.div
-                key={index}
-                {...getMotionProps(isMobile ? 0 : index * 0.1)}
-              >
+              // <motion.div
+              //   key={index}
+              //   {...getMotionProps(isMobile ? 0 : index * 0.1)}
+              // >
+              <div key={index}>
                 <Card
                   className={`backdrop-blur-sm overflow-hidden ${
                     pkg.highlighted
@@ -413,9 +428,7 @@ const EcommerceSolutionsPage = () => {
                             )}
                           </div>
                         </div>
-                        <p className="text-white/70 mb-6">
-                          {pkg.description}
-                        </p>
+                        <p className="text-white/70 mb-6">{pkg.description}</p>
                         <Button
                           className={`w-full ${
                             pkg.highlighted
@@ -445,7 +458,8 @@ const EcommerceSolutionsPage = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
+              // </motion.div>
             ))}
           </div>
         </div>
@@ -455,23 +469,27 @@ const EcommerceSolutionsPage = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
-            <motion.div
+            {/* <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeIn}
-            >
+            > */}
+            <div>
               <Badge className="bg-green-900/30 text-green-400 border-transparent mb-4 px-3 py-1">
                 OUR PROCESS
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#1b8f1a]">
-                <GradientText gradient="from-green-600 via-gray-200 to-green-600">How We Build Your E-commerce Website</GradientText>
+                <GradientText gradient="from-green-600 via-gray-200 to-green-600">
+                  How We Build Your E-commerce Website
+                </GradientText>
               </h2>
               <p className="text-white/70 text-lg max-w-2xl mx-auto">
                 Our proven development process ensures your e-commerce website
                 is built right, on time, and ready to drive sales.
               </p>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
 
           <div className="max-w-4xl mx-auto">
@@ -513,11 +531,12 @@ const EcommerceSolutionsPage = () => {
                   "We provide ongoing support and strategic guidance to help your e-commerce business grow and evolve.",
               },
             ].map((phase, index) => (
-              <motion.div
-                key={index}
-                {...getMotionProps(isMobile ? 0 : index * 0.1)}
-                className="relative mb-10 last:mb-0"
-              >
+              // <motion.div
+              //   key={index}
+              //   {...getMotionProps(isMobile ? 0 : index * 0.1)}
+              //   className="relative mb-10 last:mb-0"
+              // >
+              <div key={index} className="relative mb-10 last:mb-0">
                 <div className="flex">
                   <div className="flex-shrink-0 mr-6">
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-700 to-green-900 flex items-center justify-center">
@@ -536,7 +555,8 @@ const EcommerceSolutionsPage = () => {
                     <p className="text-white/70">{phase.description}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
+              // </motion.div>
             ))}
           </div>
         </div>
@@ -546,22 +566,26 @@ const EcommerceSolutionsPage = () => {
       <section className="py-20 bg-green-950/10">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
-            <motion.div
+            {/* <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeIn}
-            >
+            > */}
+            <div>
               <Badge className="bg-green-900/30 text-green-400 border-transparent mb-4 px-3 py-1">
                 FAQ
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#1b8f1a]">
-                <GradientText gradient="from-green-600 via-gray-200 to-green-600">Frequently Asked Questions</GradientText>
+                <GradientText gradient="from-green-600 via-gray-200 to-green-600">
+                  Frequently Asked Questions
+                </GradientText>
               </h2>
               <p className="text-white/70 text-lg max-w-2xl mx-auto">
                 Common questions about our e-commerce solutions and services.
               </p>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
 
           <div className="max-w-3xl mx-auto space-y-4">
@@ -601,9 +625,13 @@ const EcommerceSolutionsPage = () => {
                   "Yes, we provide ongoing maintenance and support packages to keep your store running smoothly. These include regular updates, security monitoring, performance optimization, and technical support. We recommend a maintenance plan to protect your investment and ensure your store remains secure and up-to-date.",
               },
             ].map((faq, index) => (
-              <motion.div
+              // <motion.div
+              //   key={index}
+              //   {...getMotionProps(isMobile ? 0 : index * 0.1)}
+              //   className="bg-black/60 border border-green-900 rounded-lg overflow-hidden"
+              // >
+              <div
                 key={index}
-                {...getMotionProps(isMobile ? 0 : index * 0.1)}
                 className="bg-black/60 border border-green-900 rounded-lg overflow-hidden"
               >
                 <button
@@ -628,7 +656,8 @@ const EcommerceSolutionsPage = () => {
                 >
                   <p className="text-white/70">{faq.answer}</p>
                 </div>
-              </motion.div>
+              </div>
+              // </motion.div>
             ))}
           </div>
         </div>
@@ -637,10 +666,11 @@ const EcommerceSolutionsPage = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-b from-green-950/10 to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <motion.div
+          {/* <motion.div
             className="max-w-4xl mx-auto bg-black/60 border border-green-900 rounded-xl p-8 md:p-12 text-center"
             {...getMotionProps()}
-          >
+          > */}
+          <div className="max-w-4xl mx-auto bg-black/60 border border-green-900 rounded-xl p-8 md:p-12 text-center">
             <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-700 to-green-900 flex items-center justify-center mx-auto mb-6">
               <ShoppingBag className="w-8 h-8 text-white" />
             </div>
@@ -661,7 +691,8 @@ const EcommerceSolutionsPage = () => {
               Get Your E-commerce Website
               <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
-          </motion.div>
+          </div>
+          {/* </motion.div> */}
         </div>
       </section>
     </div>

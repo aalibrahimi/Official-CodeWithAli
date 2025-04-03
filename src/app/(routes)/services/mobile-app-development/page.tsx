@@ -128,12 +128,13 @@ const MobileAppDevelopmentPage = () => {
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
-            <motion.div
+            {/* <motion.div
               className="lg:w-7/12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-            >
+            > */}
+            <div className="lg:w-7/12">
               <Badge className="bg-blue-900/30 text-blue-400 border-transparent mb-4 px-3 py-1">
                 MOBILE APP DEVELOPMENT
               </Badge>
@@ -167,14 +168,16 @@ const MobileAppDevelopmentPage = () => {
                   View Our Work
                 </Button>
               </div>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
 
-            <motion.div
+            {/* <motion.div
               className="lg:w-5/12"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-            >
+            > */}
+            <div className="lg:w-5/12">
               <div className="relative bg-black/60 border border-blue-900 rounded-xl overflow-hidden shadow-2xl shadow-blue-950/20 p-5">
                 {/* Mobile app mockup illustration */}
                 <div className="flex justify-center">
@@ -218,7 +221,8 @@ const MobileAppDevelopmentPage = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
         </div>
       </section>
@@ -227,34 +231,39 @@ const MobileAppDevelopmentPage = () => {
       <section className="py-16 relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="text-center mb-14">
-            <motion.div
+            {/* <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeIn}
-            >
+            > */}
+            <div>
               <Badge className="bg-blue-900/30 text-blue-400 border-transparent mb-4 px-3 py-1">
                 APP SOLUTIONS
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
-                <GradientText gradient="from-blue-500 via-gray-200 to-blue-500">Mobile App Development Solutions</GradientText>
+                <GradientText gradient="from-blue-500 via-gray-200 to-blue-500">
+                  Mobile App Development Solutions
+                </GradientText>
               </h2>
               <p className="text-amber-50 text-lg max-w-2xl mx-auto">
                 We offer a range of app development approaches to meet your
                 specific needs, budget, and timeline.
               </p>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {appTypes.map((type, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
+              // <motion.div
+              //   key={index}
+              //   initial={{ opacity: 0, y: 20 }}
+              //   whileInView={{ opacity: 1, y: 0 }}
+              //   viewport={{ once: true }}
+              //   transition={{ duration: 0.5, delay: index * 0.1 }}
+              // >
+              <div key={index}>
                 <Card className="bg-black/60 border-blue-900 backdrop-blur-sm h-full">
                   <CardContent className="p-6">
                     <h3 className="text-xl font-bold text-blue-400 to mb-3">
@@ -295,7 +304,8 @@ const MobileAppDevelopmentPage = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
+              // </motion.div>
             ))}
           </div>
         </div>
@@ -305,23 +315,27 @@ const MobileAppDevelopmentPage = () => {
       <section className="py-16 bg-blue-950/10">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
-            <motion.div
+            {/* <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeIn}
-            >
+            > */}
+            <div>
               <Badge className="bg-blue-900/30 text-blue-400 border-transparent mb-4 px-3 py-1">
                 OUR EXPERTISE
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
-                <GradientText gradient="from-blue-500 via-gray-200 to-blue-500">What Sets our Mobile App Development Apart</GradientText>
+                <GradientText gradient="from-blue-500 via-gray-200 to-blue-500">
+                  What Sets our Mobile App Development Apart
+                </GradientText>
               </h2>
               <p className="text-blue-200/60 text-lg max-w-2xl mx-auto">
                 We combine technical excellence with creative design to deliver
                 mobile apps that users love and businesses rely on.
               </p>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -363,13 +377,14 @@ const MobileAppDevelopmentPage = () => {
                 icon: CloudCog,
               },
             ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
+              // <motion.div
+              //   key={index}
+              //   initial={{ opacity: 0, y: 20 }}
+              //   whileInView={{ opacity: 1, y: 0 }}
+              //   viewport={{ once: true }}
+              //   transition={{ duration: 0.5, delay: index * 0.1 }}
+              // >
+              <div key={index}>
                 <Card className="bg-black/60 border-blue-900 backdrop-blur-sm h-full">
                   <CardContent className="p-6">
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-700 to-blue-900 flex items-center justify-center mb-4">
@@ -381,7 +396,8 @@ const MobileAppDevelopmentPage = () => {
                     <p className="text-amber-80">{feature.description}</p>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
+              // </motion.div>
             ))}
           </div>
         </div>
@@ -391,34 +407,39 @@ const MobileAppDevelopmentPage = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
-            <motion.div
+            {/* <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeIn}
-            >
+            > */}
+            <div>
               <Badge className="bg-blue-900/30 text-blue-400 border-transparent mb-4 px-3 py-1">
                 OUR PROCESS
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
-                <GradientText gradient="from-blue-500 via-gray-200 to-blue-500">Mobile App Development Process</GradientText>
+                <GradientText gradient="from-blue-500 via-gray-200 to-blue-500">
+                  Mobile App Development Process
+                </GradientText>
               </h2>
               <p className="text-blue-200/60 text-lg max-w-2xl mx-auto">
                 Our structured approach ensures a smooth development journey
                 from concept to launch and beyond.
               </p>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
 
           <div className="space-y-6">
             {processSteps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
+              // <motion.div
+              //   key={index}
+              //   initial={{ opacity: 0, y: 20 }}
+              //   whileInView={{ opacity: 1, y: 0 }}
+              //   viewport={{ once: true }}
+              //   transition={{ duration: 0.5, delay: index * 0.1 }}
+              // >
+              <div key={index}>
                 <Card className="bg-black/60 border-blue-900 backdrop-blur-sm overflow-hidden">
                   <CardContent className="p-6">
                     <div className="flex flex-col md:flex-row gap-4 items-start">
@@ -439,7 +460,8 @@ const MobileAppDevelopmentPage = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
+              // </motion.div>
             ))}
           </div>
         </div>
@@ -449,23 +471,27 @@ const MobileAppDevelopmentPage = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
-            <motion.div
+            {/* <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeIn}
-            >
+            > */}
+            <div>
               <Badge className="bg-blue-900/30 text-blue-400 border-transparent mb-4 px-3 py-1">
                 FAQ
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
-                <GradientText gradient="from-blue-500 via-gray-200 to-blue-500">Frequently Asked Questions</GradientText>
+                <GradientText gradient="from-blue-500 via-gray-200 to-blue-500">
+                  Frequently Asked Questions
+                </GradientText>
               </h2>
               <p className="text-blue-200/60 text-lg max-w-2xl mx-auto">
                 Common questions about our mobile app development process and
                 services.
               </p>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
 
           <div className="max-w-3xl mx-auto">
@@ -606,13 +632,14 @@ const MobileAppDevelopmentPage = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-b from-blue-950/10 to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <motion.div
+          {/* <motion.div
             className="max-w-4xl mx-auto bg-black/60 border border-blue-900 rounded-xl p-8 md:p-12 text-center"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeIn}
-          >
+          > */}
+          <div className="max-w-4xl mx-auto bg-black/60 border border-blue-900 rounded-xl p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Build Your Mobile App?
             </h2>
@@ -640,7 +667,8 @@ const MobileAppDevelopmentPage = () => {
                 View Our Work
               </Button>
             </div>
-          </motion.div>
+          </div>
+          {/* </motion.div> */}
         </div>
       </section>
     </div>

@@ -135,7 +135,8 @@ export default function ContactForm({
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
         <div className="max-w-4xl mx-auto">
           {/* HEADER */}
-          <motion.div className="text-center mb-12 " {...getAnimationProps()}>
+          {/* <motion.div className="text-center mb-12 " {...getAnimationProps()}> */}
+          <div className="text-center mb-12">
             <Badge className="bg-red-900/50  text-red-300 border-transparent mb-4 px-3 py-1">
               {badge ? `${badge.toUpperCase()}` : "CONTACT US"}
             </Badge>
@@ -147,13 +148,15 @@ export default function ContactForm({
                 ? `${desc}`
                 : "Tell us about your project and we'll get back to you within 24 hours with a free consultation."}
             </p>
-          </motion.div>
+          </div>
+          {/* </motion.div> */}
 
           {/* FORM */}
-          <motion.div
+          {/* <motion.div
             className="bg-black border-2 border-red-800/40 rounded-xl p-8 md:p-10 shadow-xl shadow-red-950/10"
             {...getAnimationProps(0.1)}
-          >
+          > */}
+          <div className="bg-black border-2 border-red-800/40 rounded-xl p-8 md:p-10 shadow-xl shadow-red-950/10">
             <div className="grid grid-cols-1 gap-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name Field */}
@@ -290,7 +293,8 @@ export default function ContactForm({
                 </div>
               </form>
             </div>
-          </motion.div>
+          </div>
+          {/* </motion.div> */}
         </div>
       </div>
     </section>

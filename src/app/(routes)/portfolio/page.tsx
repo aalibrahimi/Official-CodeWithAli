@@ -99,11 +99,12 @@ const PortfolioPage = () => {
           <div className="">
             <motion.div className="grid gap-8 place-items-center md:grid-cols-2 lg:grid-cols-3" {...getAnimationProps()}>
             {portfolioProjects.map((project, index) => (
-              <motion.div
-                key={index}
-                {...getAnimationProps(index * 0.1)}
-                className="group cursor-pointer h-auto max-w-[650px] min-w-[350px]"
-              >
+              // <motion.div
+              //   key={index}
+              //   {...getAnimationProps(index * 0.1)}
+              //   className="group cursor-pointer h-auto max-w-[650px] min-w-[350px]"
+              // >
+              <div key={index} className="group cursor-pointer h-auto max-w-[650px] min-w-[350px]">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-xl shadow-red-950/20">
                   {/* Project Image */}
                   <div className="w-full h-full bg-black/80 border-2 border-red-800/30 flex items-center justify-center">
@@ -152,7 +153,8 @@ const PortfolioPage = () => {
                     {project.title}
                   </h3>
                 </div>
-              </motion.div>
+              </div>
+              // </motion.div>
             ))}
             </motion.div>
           </div>

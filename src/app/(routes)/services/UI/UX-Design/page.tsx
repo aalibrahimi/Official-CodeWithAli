@@ -218,12 +218,13 @@ const UIUXDesignPage = () => {
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-          <motion.div
+          {/* <motion.div
             className="max-w-3xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-          >
+          > */}
+          <div className="max-w-3xl">
             <Badge className="bg-purple-900/30 text-purple-400 border-transparent mb-4 px-3 py-1">
               UI/UX DESIGN
             </Badge>
@@ -257,7 +258,8 @@ const UIUXDesignPage = () => {
                 <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
-          </motion.div>
+          </div>
+          {/* </motion.div> */}
         </div>
       </section>
 
@@ -267,32 +269,37 @@ const UIUXDesignPage = () => {
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-700/10 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20">
-          <motion.div
+          {/* <motion.div
             className="text-center mb-16"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeIn}
-          >
+          > */}
+          <div className="text-center mb-16">
             <Badge className="bg-purple-900/30 text-purple-400 border-transparent mb-4 px-3 py-1">
               OUR SERVICES
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
-              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">Comprehensive UI/UX Design Services</GradientText>
+              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">
+                Comprehensive UI/UX Design Services
+              </GradientText>
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto">
               We offer end-to-end design solutions that transform complex
               challenges into seamless user experiences.
             </p>
-          </motion.div>
+          </div>
+          {/* </motion.div> */}
 
-          <motion.div
+          {/* <motion.div
             className="grid grid-cols-1 md:grid-cols-2 gap-8"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-          >
+          > */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {designOfferings.map((service, index) => (
               <motion.div key={index} variants={fadeIn}>
                 <Card className="bg-black/60 border-purple-900 backdrop-blur-sm h-full group hover:border-purple-800/50 transition-colors">
@@ -303,9 +310,7 @@ const UIUXDesignPage = () => {
                     <h3 className="text-xl font-bold text-white mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-white/70 mb-4">
-                      {service.description}
-                    </p>
+                    <p className="text-white/70 mb-4">{service.description}</p>
 
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
@@ -321,7 +326,8 @@ const UIUXDesignPage = () => {
                 </Card>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
+          {/* </motion.div> */}
         </div>
       </section>
 
@@ -331,35 +337,40 @@ const UIUXDesignPage = () => {
         className="py-20 bg-purple-950/5 relative overflow-hidden"
       >
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-          <motion.div
+          {/* <motion.div
             className="text-center mb-16"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeIn}
-          >
+          > */}
+          <div className="text-center mb-16">
             <Badge className="bg-purple-900/30 text-purple-400 border-transparent mb-4 px-3 py-1">
               OUR WORK
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
-              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">UI/UX Design Portfolio</GradientText>
+              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">
+                UI/UX Design Portfolio
+              </GradientText>
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto">
               Browse our recent design projects spanning various industries and
               platforms.
             </p>
-          </motion.div>
+          </div>
+          {/* </motion.div> */}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {portfolioProjects.map((project, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group"
-              >
+              // <motion.div
+              //   key={index}
+              //   initial={{ opacity: 0, y: 20 }}
+              //   whileInView={{ opacity: 1, y: 0 }}
+              //   viewport={{ once: true }}
+              //   transition={{ duration: 0.5, delay: index * 0.1 }}
+              //   className="group"
+              // >
+              <div key={index} className="group">
                 <div className="relative overflow-hidden rounded-xl aspect-[4/3] bg-purple-950/20">
                   <div className="w-full h-full bg-gradient-to-tr from-purple-950 to-black/20 absolute inset-0 opacity-40 group-hover:opacity-0 transition-opacity"></div>
                   <img
@@ -378,7 +389,8 @@ const UIUXDesignPage = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
+              // </motion.div>
             ))}
           </div>
 
@@ -398,24 +410,28 @@ const UIUXDesignPage = () => {
       {/* Design Process */}
       <section className="py-20 relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-          <motion.div
+          {/* <motion.div
             className="text-center mb-16"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeIn}
-          >
+          > */}
+          <div className="text-center mb-16">
             <Badge className="bg-purple-900/30 text-purple-400 border-transparent mb-4 px-3 py-1">
               OUR PROCESS
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
-              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">Our Design Process</GradientText>
+              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">
+                Our Design Process
+              </GradientText>
             </h2>
             <p className="text-white/70text-lg max-w-2xl mx-auto">
               We follow a systematic approach to ensure every design solution
               meets both user needs and business objectives.
             </p>
-          </motion.div>
+          </div>
+          {/* </motion.div> */}
 
           <div className="relative">
             {/* Connector line */}
@@ -423,14 +439,15 @@ const UIUXDesignPage = () => {
 
             <div className="space-y-12 relative">
               {designProcess.map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex flex-col md:flex-row gap-6"
-                >
+                // <motion.div
+                //   key={index}
+                //   initial={{ opacity: 0, x: -20 }}
+                //   whileInView={{ opacity: 1, x: 0 }}
+                //   viewport={{ once: true }}
+                //   transition={{ duration: 0.5, delay: index * 0.1 }}
+                //   className="flex flex-col md:flex-row gap-6"
+                // >
+                <div key={index} className="flex flex-col md:flex-row gap-6">
                   <div className="flex-shrink-0">
                     <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-700 to-purple-900 flex items-center justify-center shadow-lg shadow-purple-950/30 relative z-10">
                       <step.icon className="h-6 w-6 text-white" />
@@ -447,7 +464,8 @@ const UIUXDesignPage = () => {
                     </div>
                     <p className="text-white/70">{step.description}</p>
                   </div>
-                </motion.div>
+                </div>
+                // </motion.div>
               ))}
             </div>
           </div>
@@ -457,32 +475,37 @@ const UIUXDesignPage = () => {
       {/* Testimonials */}
       <section className="py-20 bg-purple-950/5">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <motion.div
+          {/* <motion.div
             className="text-center mb-16"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeIn}
-          >
+          > */}
+          <div className="text-center mb-16">
             <Badge className="bg-purple-900/30 text-purple-400 border-transparent mb-4 px-3 py-1">
               CLIENT FEEDBACK
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
-              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">What Our Clients Say</GradientText>
+              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">
+                What Our Clients Say
+              </GradientText>
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto">
               Hear from businesses who have transformed their digital presence
               with our UI/UX design services.
             </p>
-          </motion.div>
+          </div>
+          {/* </motion.div> */}
 
-          <motion.div
+          {/* <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-          >
+          > */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 quote:
@@ -506,7 +529,8 @@ const UIUXDesignPage = () => {
                 image: "/api/placeholder/64/64",
               },
             ].map((testimonial, index) => (
-              <motion.div key={index} variants={fadeIn} className="h-full">
+              // <motion.div key={index} variants={fadeIn} className="h-full">
+              <div key={index} className="h-full">
                 <Card className="bg-black/60 border-purple-900 backdrop-blur-sm h-full">
                   <CardContent className="p-6 flex flex-col h-full">
                     <div className="mb-6">
@@ -534,44 +558,51 @@ const UIUXDesignPage = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
+              // </motion.div>
             ))}
-          </motion.div>
+          </div>
+          {/* </motion.div> */}
         </div>
       </section>
 
       {/* Pricing */}
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-8 lg:px-12 ">
-          <motion.div
+          {/* <motion.div
             className="text-center mb-16"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeIn}
-          >
+          > */}
+          <div className="text-center mb-16">
             <Badge className="bg-purple-900/30 text-purple-400 border-transparent mb-4 px-3 py-1">
               PRICING
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
-              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">UI/UX Design Packages</GradientText>
+              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">
+                UI/UX Design Packages
+              </GradientText>
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto">
               Flexible options designed to meet the needs of businesses at every
               stage of growth.
             </p>
-          </motion.div>
+          </div>
+          {/* </motion.div> */}
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {packages.map((pkg, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="h-full"
-              >
+              // <motion.div
+              //   key={index}
+              //   initial={{ opacity: 0, y: 20 }}
+              //   whileInView={{ opacity: 1, y: 0 }}
+              //   viewport={{ once: true }}
+              //   transition={{ duration: 0.5, delay: index * 0.1 }}
+              //   className="h-full"
+              // >
+              <div key={index} className="h-full">
                 <Card
                   className={`bg-black/60 backdrop-blur-sm h-full flex flex-col ${
                     pkg.highlighted
@@ -593,7 +624,9 @@ const UIUXDesignPage = () => {
                         {pkg.price}
                       </span>
                       {pkg.price !== "Custom" && (
-                        <span className="text-purple-200/60 ml-1">starting</span>
+                        <span className="text-purple-200/60 ml-1">
+                          starting
+                        </span>
                       )}
                     </div>
                     <p className="text-white/70 mb-6">{pkg.description}</p>
@@ -627,7 +660,8 @@ const UIUXDesignPage = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
+              // </motion.div>
             ))}
           </div>
         </div>
@@ -636,23 +670,27 @@ const UIUXDesignPage = () => {
       {/* FAQ */}
       <section className="py-20 bg-purple-950/5">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <motion.div
+          {/* <motion.div
             className="text-center mb-16"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeIn}
-          >
+          > */}
+          <div className="text-center mb-16">
             <Badge className="bg-purple-900/30 text-white/70 border-transparent mb-4 px-3 py-1">
               FAQ
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
-              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">Frequently Asked Questions</GradientText>
+              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">
+                Frequently Asked Questions
+              </GradientText>
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto">
               Common questions about our UI/UX design services and process.
             </p>
-          </motion.div>
+          </div>
+          {/* </motion.div> */}
 
           <div className="max-w-3xl mx-auto">
             <Tabs defaultValue="process" className="w-full">
@@ -701,18 +739,23 @@ const UIUXDesignPage = () => {
                       "We begin by conducting a thorough review of your existing brand guidelines and assets. Throughout the design process, we ensure consistency with your brand while enhancing the user experience.",
                   },
                 ].map((faq, index) => (
-                  <motion.div
+                  // <motion.div
+                  //   key={index}
+                  //   initial={{ opacity: 0, y: 10 }}
+                  //   animate={{ opacity: 1, y: 0 }}
+                  //   transition={{ duration: 0.3, delay: index * 0.1 }}
+                  //   className="bg-black/60 border border-purple-900 rounded-xl p-6"
+                  // >
+                  <div
                     key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
                     className="bg-black/60 border border-purple-900 rounded-xl p-6"
                   >
                     <h3 className="text-lg font-bold text-white mb-3">
                       {faq.question}
                     </h3>
                     <p className="text-white/70 ">{faq.answer}</p>
-                  </motion.div>
+                  </div>
+                  // </motion.div>
                 ))}
               </TabsContent>
 
@@ -736,18 +779,23 @@ const UIUXDesignPage = () => {
                       "Yes, we typically require a 50% deposit to begin work, with the remaining balance due upon project completion or according to agreed-upon milestones.",
                   },
                 ].map((faq, index) => (
-                  <motion.div
+                  // <motion.div
+                  //   key={index}
+                  //   initial={{ opacity: 0, y: 10 }}
+                  //   animate={{ opacity: 1, y: 0 }}
+                  //   transition={{ duration: 0.3, delay: index * 0.1 }}
+                  //   className="bg-black/60 border border-purple-900 rounded-xl p-6"
+                  // >
+                  <div
                     key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
                     className="bg-black/60 border border-purple-900 rounded-xl p-6"
                   >
                     <h3 className="text-lg font-bold text-white mb-3">
                       {faq.question}
                     </h3>
                     <p className="text-purple-200/70">{faq.answer}</p>
-                  </motion.div>
+                  </div>
+                  // </motion.div>
                 ))}
               </TabsContent>
 
@@ -770,18 +818,23 @@ const UIUXDesignPage = () => {
                       "Yes, we specialize in creating comprehensive design systems that ensure consistency and scalability across your product. This includes component libraries, style guides, and documentation.",
                   },
                 ].map((faq, index) => (
-                  <motion.div
+                  // <motion.div
+                  //   key={index}
+                  //   initial={{ opacity: 0, y: 10 }}
+                  //   animate={{ opacity: 1, y: 0 }}
+                  //   transition={{ duration: 0.3, delay: index * 0.1 }}
+                  //   className="bg-black/60 border border-purple-900 rounded-xl p-6"
+                  // >
+                  <div
                     key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
                     className="bg-black/60 border border-purple-900 rounded-xl p-6"
                   >
                     <h3 className="text-lg font-bold text-white mb-3">
                       {faq.question}
                     </h3>
                     <p className="text-white/70">{faq.answer}</p>
-                  </motion.div>
+                  </div>
+                  // </motion.div>
                 ))}
               </TabsContent>
 
@@ -805,18 +858,23 @@ const UIUXDesignPage = () => {
                       "We build buffer time into our project plans to account for revisions and unforeseen challenges. We communicate proactively if delays occur and work collaboratively to adjust timelines as needed.",
                   },
                 ].map((faq, index) => (
-                  <motion.div
+                  // <motion.div
+                  //   key={index}
+                  //   initial={{ opacity: 0, y: 10 }}
+                  //   animate={{ opacity: 1, y: 0 }}
+                  //   transition={{ duration: 0.3, delay: index * 0.1 }}
+                  //   className="bg-black/60 border border-purple-900 rounded-xl p-6"
+                  // >
+                  <div
                     key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
                     className="bg-black/60 border border-purple-900 rounded-xl p-6"
                   >
                     <h3 className="text-lg font-bold text-white mb-3">
                       {faq.question}
                     </h3>
                     <p className="text-white/70">{faq.answer}</p>
-                  </motion.div>
+                  </div>
+                  // </motion.div>
                 ))}
               </TabsContent>
             </Tabs>
@@ -827,13 +885,14 @@ const UIUXDesignPage = () => {
       {/* CTA Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <motion.div
+          {/* <motion.div
             className="max-w-4xl mx-auto bg-black/60 border border-purple-900 rounded-xl p-8 md:p-12 text-center"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeIn}
-          >
+          > */}
+          <div className="max-w-4xl mx-auto bg-black/60 border border-purple-900 rounded-xl p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Transform Your User Experience?
             </h2>
@@ -850,7 +909,8 @@ const UIUXDesignPage = () => {
               Schedule a Free Consultation
               <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
-          </motion.div>
+          </div>
+          {/* </motion.div> */}
         </div>
       </section>
     </div>

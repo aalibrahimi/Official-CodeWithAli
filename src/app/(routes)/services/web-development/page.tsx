@@ -150,12 +150,13 @@ const WebsiteDevelopmentPage = () => {
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
-            <motion.div
+            {/* <motion.div
               className="lg:w-7/12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-            >
+            > */}
+            <div className="lg:w-7/12">
               <Badge className="bg-pink-900/30 text-pink-400 border-transparent mb-4 px-3 py-1">
                 WEBSITE DEVELOPMENT
               </Badge>
@@ -189,14 +190,16 @@ const WebsiteDevelopmentPage = () => {
                   View Our Work
                 </Button>
               </div>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
 
-            <motion.div
+            {/* <motion.div
               className="lg:w-5/12"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-            >
+            > */}
+            <div className="lg:w-5/12">
               <div className="relative bg-black/60 border border-pink-900 rounded-xl overflow-hidden shadow-2xl shadow-pink-950/20 p-5">
                 {/* Website mockup illustration */}
                 <div className="w-full aspect-[4/3] bg-gradient-to-br from-pink-950/40 to-pink-900/10 rounded-lg overflow-hidden p-4">
@@ -226,7 +229,8 @@ const WebsiteDevelopmentPage = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
         </div>
       </section>
@@ -235,24 +239,28 @@ const WebsiteDevelopmentPage = () => {
       <section className="py-16 relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="text-center mb-14">
-            <motion.div
+            {/* <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeIn}
-            >
+            > */}
+            <div>
               <Badge className="bg-pink-900/30 text-pink-400 border-transparent mb-4 px-3 py-1">
                 KEY FEATURES
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
-                <GradientText gradient="from-pink-400 via-gray-200 to-pink-400">What Sets Our Website Development Apart</GradientText>
+                <GradientText gradient="from-pink-400 via-gray-200 to-pink-400">
+                  What Sets Our Website Development Apart
+                </GradientText>
               </h2>
               <p className="text-amber-50 text-lg max-w-2xl mx-auto">
                 We combine technical expertise with creative design to deliver
                 websites that not only look great but also perform exceptionally
                 well.
               </p>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -294,13 +302,14 @@ const WebsiteDevelopmentPage = () => {
                 icon: RefreshCw,
               },
             ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
+              // <motion.div
+              //   key={index}
+              //   initial={{ opacity: 0, y: 20 }}
+              //   whileInView={{ opacity: 1, y: 0 }}
+              //   viewport={{ once: true }}
+              //   transition={{ duration: 0.5, delay: index * 0.1 }}
+              // >
+              <div key={index}>
                 <Card className="bg-black/60 border-pink-900 backdrop-blur-sm h-full">
                   <CardContent className="p-6">
                     <div className="mb-4">
@@ -314,7 +323,8 @@ const WebsiteDevelopmentPage = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
+              // </motion.div>
             ))}
           </div>
         </div>
@@ -324,34 +334,39 @@ const WebsiteDevelopmentPage = () => {
       <section className="py-20 bg-pink-950/10">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
-            <motion.div
+            {/* <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeIn}
-            >
+            > */}
+            <div>
               <Badge className="bg-pink-900/30 text-pink-400 border-transparent mb-4 px-3 py-1">
                 OUR PROCESS
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
-                <GradientText gradient="from-pink-400 via-gray-200 to-pink-400">End-to-End Website Development Process</GradientText>
+                <GradientText gradient="from-pink-400 via-gray-200 to-pink-400">
+                  End-to-End Website Development Process
+                </GradientText>
               </h2>
               <p className="text-white/70 ext-lg max-w-2xl mx-auto">
                 Our structured approach ensures a smooth development journey
                 from concept to launch and beyond.
               </p>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
 
           <div className="space-y-6">
             {processSteps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
+              // <motion.div
+              //   key={index}
+              //   initial={{ opacity: 0, y: 20 }}
+              //   whileInView={{ opacity: 1, y: 0 }}
+              //   viewport={{ once: true }}
+              //   transition={{ duration: 0.5, delay: index * 0.1 }}
+              // >
+              <div key={index}>
                 <Card className="bg-black/60 border-pink-900 backdrop-blur-sm overflow-hidden">
                   <CardContent className="p-6">
                     <div className="flex flex-col md:flex-row gap-4 items-start">
@@ -372,7 +387,8 @@ const WebsiteDevelopmentPage = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
+              // </motion.div>
             ))}
           </div>
         </div>
@@ -382,33 +398,41 @@ const WebsiteDevelopmentPage = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
-            <motion.div
+            {/* <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeIn}
-            >
+            > */}
+            <div>
               <Badge className="bg-pink-900/30 text-pink-400 border-transparent mb-4 px-3 py-1">
                 TECHNOLOGIES
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
-                <GradientText gradient="from-pink-400 via-gray-200 to-pink-400">Technologies We Utilize</GradientText>
+                <GradientText gradient="from-pink-400 via-gray-200 to-pink-400">
+                  Technologies We Utilize
+                </GradientText>
               </h2>
               <p className="text-pink-200/60 text-lg max-w-2xl mx-auto">
                 We leverage cutting-edge technologies to build modern,
                 high-performance websites.
               </p>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {technologies.map((tech, index) => (
-              <motion.div
+              // <motion.div
+              //   key={index}
+              //   initial={{ opacity: 0, y: 20 }}
+              //   whileInView={{ opacity: 1, y: 0 }}
+              //   viewport={{ once: true }}
+              //   transition={{ duration: 0.5, delay: index * 0.1 }}
+              //   className="bg-black/60 border border-pink-900 rounded-lg p-6"
+              // >
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-black/60 border border-pink-900 rounded-lg p-6"
               >
                 <div className="flex items-start">
@@ -417,12 +441,11 @@ const WebsiteDevelopmentPage = () => {
                     <h4 className="text-lg font-bold text-white mb-1">
                       {tech.name}
                     </h4>
-                    <p className="text-white/70 text-sm">
-                      {tech.description}
-                    </p>
+                    <p className="text-white/70 text-sm">{tech.description}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
+              // </motion.div>
             ))}
           </div>
         </div>
@@ -432,35 +455,40 @@ const WebsiteDevelopmentPage = () => {
       <section className="py-20 bg-pink-950/10">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
-            <motion.div
+            {/* <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeIn}
-            >
+            > */}
+            <div>
               <Badge className="bg-pink-900/30 text-pink-400 border-transparent mb-4 px-3 py-1">
                 CASE STUDIES
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
-                <GradientText gradient="from-pink-400 via-gray-200 to-pink-400">Success Stories</GradientText>
+                <GradientText gradient="from-pink-400 via-gray-200 to-pink-400">
+                  Success Stories
+                </GradientText>
               </h2>
               <p className="text-white/70 text-lg max-w-2xl mx-auto">
                 Explore some of our recent website development projects and the
                 results we've achieved for our clients.
               </p>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {caseStudies.map((project, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="group cursor-pointer"
-              >
+              // <motion.div
+              //   key={index}
+              //   initial={{ opacity: 0, y: 20 }}
+              //   whileInView={{ opacity: 1, y: 0 }}
+              //   viewport={{ once: true }}
+              //   transition={{ duration: 0.5, delay: index * 0.2 }}
+              //   className="group cursor-pointer"
+              // >
+              <div key={index} className="group cursor-pointer">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-xl shadow-pink-950/20 mb-5">
                   {/* Project Image */}
                   <div className="w-full h-full bg-black/80 border-2 border-pink-800/30 flex items-center justify-center">
@@ -500,8 +528,11 @@ const WebsiteDevelopmentPage = () => {
                 <h3 className="text-xl font-bold text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-pink-200/70 text-sm">{project.description}</p>
-              </motion.div>
+                <p className="text-pink-200/70 text-sm">
+                  {project.description}
+                </p>
+              </div>
+              // </motion.div>
             ))}
           </div>
 
@@ -522,23 +553,27 @@ const WebsiteDevelopmentPage = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
-            <motion.div
+            {/* <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeIn}
-            >
+            > */}
+            <div>
               <Badge className="bg-pink-900/30 text-pink-400 border-transparent mb-4 px-3 py-1">
                 FAQ
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
-                <GradientText gradient="from-pink-400 via-gray-200 to-pink-400">Frequently Asked Questions</GradientText>
+                <GradientText gradient="from-pink-400 via-gray-200 to-pink-400">
+                  Frequently Asked Questions
+                </GradientText>
               </h2>
               <p className="text-pink-200/60 text-lg max-w-2xl mx-auto">
                 Common questions about our website development process and
                 services.
               </p>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
 
           <div className="max-w-3xl mx-auto">
@@ -679,13 +714,14 @@ const WebsiteDevelopmentPage = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-b from-pink-950/10 to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <motion.div
+          {/* <motion.div
             className="max-w-4xl mx-auto bg-black/60 border border-pink-900 rounded-xl p-8 md:p-12 text-center"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeIn}
-          >
+          > */}
+          <div className="max-w-4xl mx-auto bg-black/60 border border-pink-900 rounded-xl p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Start Your Website Project?
             </h2>
@@ -712,7 +748,8 @@ const WebsiteDevelopmentPage = () => {
                 View Our Work
               </Button>
             </div>
-          </motion.div>
+          </div>
+          {/* </motion.div> */}
         </div>
       </section>
     </div>

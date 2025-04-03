@@ -172,12 +172,13 @@ export default function ServicesPage() {
           </div>
 
           <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-            <motion.div
+            {/* <motion.div
               className="text-center max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-            >
+            > */}
+            <div className="text-center max-w-3xl mx-auto">
               <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
                 OUR EXPERTISE
               </Badge>
@@ -192,7 +193,8 @@ export default function ServicesPage() {
                 digital solutions designed to help your business thrive in the
                 digital landscape.
               </p>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
         </section>
 
@@ -205,13 +207,14 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-8">
               <AnimatePresence>
                 {services.map((service, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
-                  >
+                  // <motion.div
+                  //   key={index}
+                  //   initial={{ opacity: 0, y: 20 }}
+                  //   animate={{ opacity: 1, y: 0 }}
+                  //   exit={{ opacity: 0 }}
+                  //   transition={{ duration: 0.4, delay: index * 0.05 }}
+                  // >
+                  <div key={index}>
                     <Card className="bg-black/60 border-red-900 backdrop-blur-sm h-full overflow-hidden group hover:border-red-800/50 transition-colors">
                       <CardContent className="p-6 flex flex-col h-full">
                         <div className="mb-5">
@@ -278,7 +281,8 @@ export default function ServicesPage() {
                         </div>
                       </CardContent>
                     </Card>
-                  </motion.div>
+                  </div>
+                  // </motion.div>
                 ))}
               </AnimatePresence>
             </div>
@@ -289,11 +293,12 @@ export default function ServicesPage() {
         <section className="py-20 bg-red-950/10">
           <div className="container mx-auto px-4 md:px-8 lg:px-12">
             <div className="text-center mb-16">
-              <motion.div
+              {/* <motion.div
                 initial="hidden"
                 animate="visible"
                 variants={fadeIn}
-              >
+              > */}
+              <div>
                 <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
                   OUR APPROACH
                 </Badge>
@@ -304,17 +309,19 @@ export default function ServicesPage() {
                   We follow a proven methodology to ensure successful outcomes for
                   all our services.
                 </p>
-              </motion.div>
+              </div>
+              {/* </motion.div> */}
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {processSteps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
+                // <motion.div
+                //   key={index}
+                //   initial={{ opacity: 0, y: 20 }}
+                //   animate={{ opacity: 1, y: 0 }}
+                //   transition={{ duration: 0.4, delay: index * 0.1 }}
+                // >
+                <div key={index}>
                   <div className="bg-black/60 border border-red-900 rounded-xl p-6 h-full">
                     <div className="flex items-center mb-4">
                       <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center mr-3">
@@ -328,7 +335,8 @@ export default function ServicesPage() {
                     </div>
                     <p className="text-red-200/60">{step.description}</p>
                   </div>
-                </motion.div>
+                </div>
+                // </motion.div>
               ))}
             </div>
           </div>
@@ -337,12 +345,13 @@ export default function ServicesPage() {
         {/* CTA Section - More responsive */}
         <section className="py-12 md:py-20">
           <div className="container mx-auto px-4">
-            <motion.div
+            {/* <motion.div
               className="max-w-4xl mx-auto bg-black/60 border border-red-900 rounded-xl p-6 md:p-10 text-center"
               initial="hidden"
               animate="visible"
               variants={fadeIn}
-            >
+            > */}
+            <div className="max-w-4xl mx-auto bg-black/60 border border-red-900 rounded-xl p-6 md:p-10 text-center">
               <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 md:mb-6">
                 Ready to Get Started?
               </h2>
@@ -358,7 +367,8 @@ export default function ServicesPage() {
                 Schedule a Consultation
                 <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
-            </motion.div>
+            </div>
+            {/* </motion.div> */}
           </div>
         </section>
       </div>
