@@ -480,7 +480,7 @@ export default function AboutPage() {
             <div className="space-y-16 relative z-10">
               {/* Step 1 */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
-                <div className="md:text-right">
+                <div className="md:text-right md:mr-5">
                   <div className="bg-black/60 border border-red-900 p-6 rounded-xl">
                     <h3 className="text-2xl font-bold text-white mb-3">
                       Discovery & Planning
@@ -504,7 +504,7 @@ export default function AboutPage() {
                 </div>
 
                 <div className="hidden md:flex justify-start items-center">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center -ml-7">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center -ml-11">
                     <span className="text-xl font-bold text-white">01</span>
                   </div>
                 </div>
@@ -513,12 +513,12 @@ export default function AboutPage() {
               {/* Step 2 */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
                 <div className="hidden md:flex justify-end items-center">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center -mr-7">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center -mr-11">
                     <span className="text-xl font-bold text-white">02</span>
                   </div>
                 </div>
 
-                <div>
+                <div className="md:ml-5">
                   <div className="bg-black/60 border border-red-900 p-6 rounded-xl">
                     <h3 className="text-2xl font-bold text-white mb-3">
                       Design & Strategy
@@ -540,7 +540,7 @@ export default function AboutPage() {
 
               {/* Step 3 */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
-                <div className="md:text-right">
+                <div className="md:text-right md:mr-5">
                   <div className="bg-black/60 border border-red-900 p-6 rounded-xl">
                     <h3 className="text-2xl font-bold text-white mb-3">
                       Development & Testing
@@ -567,7 +567,7 @@ export default function AboutPage() {
                 </div>
 
                 <div className="hidden md:flex justify-start items-center">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center -ml-7">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center -ml-11">
                     <span className="text-xl font-bold text-white">03</span>
                   </div>
                 </div>
@@ -576,12 +576,12 @@ export default function AboutPage() {
               {/* Step 4 */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
                 <div className="hidden md:flex justify-end items-center">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center -mr-7">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center -mr-11">
                     <span className="text-xl font-bold text-white">04</span>
                   </div>
                 </div>
 
-                <div>
+                <div className="md:ml-5">
                   <div className="bg-black/60 border border-red-900 p-6 rounded-xl">
                     <h3 className="text-2xl font-bold text-white mb-3">
                       Deployment & Support

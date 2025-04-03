@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import {
   ChevronRight,
@@ -55,6 +55,7 @@ const services = [
       "Custom-designed responsive websites optimized for performance and conversions",
     icon: Code,
     color: "from-red-600 to-red-800",
+    url: "/services/web-development"
   },
   {
     title: "Mobile App Development",
@@ -62,6 +63,7 @@ const services = [
       "Native and cross-platform mobile applications for iOS and Android",
     icon: Smartphone,
     color: "from-red-700 to-red-900",
+    url: "/services/mobile-app-development"
   },
   {
     title: "UI/UX Design",
@@ -69,6 +71,7 @@ const services = [
       "User-focused designs that enhance engagement and simplify interactions",
     icon: Palette,
     color: "from-red-800 to-red-950",
+    url: "/services/UI/UX-Design"
   },
   {
     title: "E-commerce Solutions",
@@ -76,6 +79,7 @@ const services = [
       "Fully-featured online stores with secure payment processing and inventory management",
     icon: ShoppingBag,
     color: "from-red-600 to-red-800",
+    url: "/services/E-Commerse"
   },
   {
     title: "SEO Optimization",
@@ -83,6 +87,7 @@ const services = [
       "Data-driven strategies to improve visibility and ranking in search engines",
     icon: Search,
     color: "from-red-700 to-red-900",
+    url: "/services/seo-optimization"
   },
   {
     title: "Web Hosting & Maintenance",
@@ -90,6 +95,7 @@ const services = [
       "Reliable hosting services with regular updates, backups, and security monitoring",
     icon: Server,
     color: "from-red-800 to-red-950",
+    url: "/services/Web-hosting"
   },
 ];
 
@@ -109,7 +115,7 @@ const portfolioProjects = [
     title: "Knoz Al-Najah Website",
     category: "Web Development",
     image: "/knoz_website.png",
-    url: "https://knoz.fly.dev/"
+    url: "https://knoz.codewithali.com/"
   },
   {
     title: "Reggaeeli Website",
@@ -118,10 +124,10 @@ const portfolioProjects = [
     url: "https://reggaeeli.codewithali.com/"
   },
   {
-    title: "Coming Soon...",
-    category: "N\\A",
-    image: "",
-    url: "#"
+    title: "Merged Construction Website",
+    category: "Web Development",
+    image: "/knozorion_website.png",
+    url: "https://knozorion.codewithali.com/"
   },
 ];
 
@@ -402,13 +408,15 @@ const HomePage = () => {
                       <p className="text-red-200/60">{service.description}</p>
                     </div>
                     <div className="mt-auto pt-4">
-                      <Button
-                        variant="ghost"
-                        className="p-0 text-red-400 hover:text-red-300 hover:bg-transparent group"
-                      >
-                        Learn more
-                        <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-                      </Button>
+                      <Link href={service.url} target="_blank">
+                        <Button
+                          variant="ghost"
+                          className="p-0 text-red-400 hover:text-red-300 hover:bg-transparent group"
+                        >
+                          Learn more
+                          <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
@@ -588,7 +596,7 @@ const HomePage = () => {
                 </div>
 
                 {index < 3 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-3 transform translate-x-full">
+                  <div className="hidden lg:block absolute top-1/2 -right-0 transform translate-x-full">
                     <ArrowRight className="w-6 h-6 text-red-700/50" />
                   </div>
                 )}
@@ -622,13 +630,13 @@ const HomePage = () => {
           </div>
 
           <div className="relative min-h-[240px]">
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="popLayout">
               <motion.div
                 key={activeTestimonial}
-                initial={isReducedMotion ? { opacity: 1 } : { opacity: 0, y: 10 }}
+                initial={isReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
                 animate={isReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
-                exit={isReducedMotion ? { opacity: 1 } : { opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
+                exit={isReducedMotion ? { opacity: 1 } : { opacity: 0.9, y: 0 }}
+                transition={{ duration: 0.1 }}
                 className="bg-black/60 border border-red-900 rounded-xl p-8 md:p-10"
               >
                 <div className="flex flex-col items-center">
