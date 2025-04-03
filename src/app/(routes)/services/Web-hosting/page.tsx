@@ -25,7 +25,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import GradientText from "@/app/components/gradientText";
 // I imported these utilities from the new file I created
-import { ClientOnly, useResponsive, getOptimizedAnimationProps, createBrowserOptimizedVariants } from "@/utils/browser-compatibility";
+import { ClientOnly, useResponsive, getOptimizedAnimationProps, createBrowserOptimizedVariants } from "../../../utils/browser-compatibility";
 
 // Types for our data
 interface HostingFeature {
