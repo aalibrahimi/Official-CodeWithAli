@@ -1,6 +1,6 @@
 "use client";
-import React, { JSX } from "react";
-import { motion } from "motion/react";
+import React, { useRef } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { useRouter } from "next/navigation";
 import {
   ChevronRight,
@@ -24,8 +24,73 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import GradientText from "@/app/components/gradientText";
-// I imported these utilities from the new file I created
-import { ClientOnly, useResponsive, getOptimizedAnimationProps, createBrowserOptimizedVariants } from "../../../utils/browser-compatibility";
+
+// Improved ClientOnly component
+const ClientOnly: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [isMounted, setIsMounted] = React.useState(false);
+  const hasInitialized = useRef(false);
+
+  React.useEffect(() => {
+    // Only run once to prevent redundant re-renders in Safari/Firefox
+    if (!hasInitialized.current) {
+      hasInitialized.current = true;
+      // Use requestAnimationFrame for smoother rendering
+      requestAnimationFrame(() => {
+        setIsMounted(true);
+      });
+    }
+    
+    return () => {
+      // Cleanup
+      hasInitialized.current = false;
+    };
+  }, []);
+
+  return isMounted ? children : null;
+};
+
+// Optimized responsive hook for cross-browser compatibility
+const useResponsive = () => {
+  const [isMobile, setIsMobile] = React.useState(false);
+  const [isReducedMotion, setIsReducedMotion] = React.useState(false);
+  const resizeTimeoutRef = useRef<number | null>(null);
+  
+  React.useEffect(() => {
+    // Initial check for device properties
+    const checkMediaQueries = () => {
+      setIsMobile(window.innerWidth < 768);
+      
+      const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+      setIsReducedMotion(mediaQuery.matches);
+    };
+    
+    // Debounced resize handler to prevent excessive re-renders in Safari
+    const handleResize = () => {
+      if (resizeTimeoutRef.current) {
+        window.clearTimeout(resizeTimeoutRef.current);
+      }
+      
+      resizeTimeoutRef.current = window.setTimeout(() => {
+        setIsMobile(window.innerWidth < 768);
+      }, 150) as unknown as number; // Debounce for 150ms
+    };
+    
+    // Initial check
+    checkMediaQueries();
+    
+    // Add event listeners with passive option for better performance
+    window.addEventListener('resize', handleResize, { passive: true });
+    
+    return () => {
+      if (resizeTimeoutRef.current) {
+        window.clearTimeout(resizeTimeoutRef.current);
+      }
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  
+  return { isMobile, isReducedMotion };
+};
 
 // Types for our data
 interface HostingFeature {
@@ -49,18 +114,67 @@ interface HostingPackage {
   highlighted?: boolean;
 }
 
-interface Benefit {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-}
+// Animation variants optimized for Safari
+const fadeInUp = {
+  hidden: { 
+    opacity: 0, 
+    y: 20,
+    // Hint for browser optimization
+    willChange: "opacity, transform"
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    willChange: "opacity, transform",
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1] // Custom easing that works well in Safari
+    }
+  }
+};
 
-interface ProcessStep {
-  icon: React.ElementType;
-  step: string;
-  title: string;
-  description: string;
-}
+const fadeIn = {
+  hidden: { 
+    opacity: 0,
+    willChange: "opacity"
+  },
+  visible: {
+    opacity: 1,
+    willChange: "opacity",
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2
+    }
+  }
+};
+
+const scaleIn = {
+  hidden: { 
+    opacity: 0, 
+    scale: 0.9,
+    willChange: "opacity, transform"
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    willChange: "opacity, transform",
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1]
+    }
+  }
+};
 
 // Hosting features data
 const hostingFeatures: HostingFeature[] = [
@@ -195,13 +309,43 @@ const hostingPackages: HostingPackage[] = [
 const WebHostingPage = (): JSX.Element => {
   const router = useRouter();
   
-  // I replaced The multiple useState and useEffect hooks with this single optimized hook
-  // This fixes the re-rendering issues in Safari/Firefox by properly handling resize events
+  // Use the optimized responsive hook
   const { isMobile, isReducedMotion } = useResponsive();
   
-  // I created an optimized version of the animation variants
-  // This prevents Safari/Firefox from struggling with the animations at leaast in theory
-  const fadeIn = createBrowserOptimizedVariants();
+  // Function to generate animation props based on device and preferences
+  const getAnimationProps = (delay: number = 0) => {
+    // If reduced motion is preferred or on mobile, provide minimal animations
+    if (isReducedMotion || isMobile) {
+      return {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        transition: { duration: 0.3 }
+      };
+    }
+    
+    // Full animations for desktop
+    return {
+      initial: "hidden",
+      whileInView: "visible",
+      viewport: { once: true, margin: "-10% 0px" },
+      variants: fadeInUp,
+      transition: { delay }
+    };
+  };
+  
+  // Function for container animation props
+  const getContainerProps = () => {
+    if (isReducedMotion || isMobile) {
+      return {};
+    }
+    
+    return {
+      initial: "hidden",
+      whileInView: "visible",
+      viewport: { once: true },
+      variants: staggerContainer
+    };
+  };
 
   return (
     <ClientOnly>
@@ -214,10 +358,14 @@ const WebHostingPage = (): JSX.Element => {
           </div>
 
           <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-            {/* I replaced the direct animation props with optimized ones */}
             <motion.div
               className="max-w-3xl"
-              {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.7,
+                ease: [0.22, 1, 0.36, 1]
+              }}
             >
               <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
                 WEB HOSTING & MAINTENANCE
@@ -258,19 +406,27 @@ const WebHostingPage = (): JSX.Element => {
 
         {/* Services Overview */}
         <section className="py-16 relative overflow-hidden">
-          {/* I made this conditional render more efficient */}
           {!isMobile && !isReducedMotion && (
             <>
-              <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-900/10 rounded-full blur-3xl"></div>
-              <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-700/10 rounded-full blur-3xl"></div>
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.6 }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="absolute -top-40 -right-40 w-80 h-80 bg-gray-900/10 rounded-full blur-3xl"
+              ></motion.div>
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.6 }}
+                transition={{ duration: 1, delay: 0.8 }}
+                className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-700/10 rounded-full blur-3xl"
+              ></motion.div>
             </>
           )}
 
           <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20">
-            {/* I replaced the direct animation props with optimized ones */}
             <motion.div
               className="text-center mb-16"
-              {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
+              {...getAnimationProps()}
             >
               <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
                 OUR SERVICES
@@ -284,16 +440,20 @@ const WebHostingPage = (): JSX.Element => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 gap-8"
+              {...getContainerProps()}
+            >
               {hostingFeatures.map((service, index) => (
                 <motion.div 
                   key={index} 
-                  // I replaced the variant props with optimized ones that won't cause re-renders in Safari
-                  {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
+                  variants={fadeInUp}
+                  transition={{ delay: index * 0.1 }}
+                  className="h-full"
                 >
                   <Card className="bg-black/60 border-gray-900 h-full group hover:border-gray-800/50 transition-colors">
                     <CardContent className="p-6">
-                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-gray-700 to-gray-900 p-3 mb-4">
+                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-gray-700 to-gray-900 p-3 mb-4 transform group-hover:scale-110 transition-transform">
                         <service.icon className="w-full h-full text-white" />
                       </div>
                       <h3 className="text-xl font-bold text-white mb-3">
@@ -317,7 +477,7 @@ const WebHostingPage = (): JSX.Element => {
                   </Card>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -326,7 +486,7 @@ const WebHostingPage = (): JSX.Element => {
           <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
             <motion.div
               className="text-center mb-16"
-              {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
+              {...getAnimationProps()}
             >
               <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
                 BENEFITS
@@ -340,7 +500,10 @@ const WebHostingPage = (): JSX.Element => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              {...getContainerProps()}
+            >
               {[
                 {
                   icon: Zap,
@@ -381,9 +544,10 @@ const WebHostingPage = (): JSX.Element => {
               ].map((benefit, index) => (
                 <motion.div
                   key={index}
-                  {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
+                  variants={scaleIn}
+                  className="h-full"
                 >
-                  <div className="bg-black/60 border border-gray-900 rounded-xl p-6 h-full">
+                  <div className="bg-black/60 border border-gray-900 rounded-xl p-6 h-full hover:border-gray-700 transition-colors duration-300">
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-gray-700 to-gray-900 p-3 mb-4">
                       <benefit.icon className="w-full h-full text-white" />
                     </div>
@@ -394,7 +558,7 @@ const WebHostingPage = (): JSX.Element => {
                   </div>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -403,7 +567,7 @@ const WebHostingPage = (): JSX.Element => {
           <div className="container mx-auto px-4 md:px-8 lg:px-12">
             <motion.div
               className="text-center mb-16"
-              {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
+              {...getAnimationProps()}
             >
               <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
                 TECHNOLOGY
@@ -417,13 +581,17 @@ const WebHostingPage = (): JSX.Element => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+              {...getContainerProps()}
+            >
               {techStack.map((tech, index) => (
                 <motion.div
                   key={index}
-                  {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
+                  variants={fadeInUp}
+                  className="h-full"
                 >
-                  <Card className="bg-black/60 border-gray-900 h-full">
+                  <Card className="bg-black/60 border-gray-900 h-full hover:border-gray-700 transition-colors duration-300">
                     <CardContent className="p-6">
                       <h3 className="text-lg font-bold text-white mb-4">
                         {tech.category}
@@ -440,7 +608,7 @@ const WebHostingPage = (): JSX.Element => {
                   </Card>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -449,7 +617,7 @@ const WebHostingPage = (): JSX.Element => {
           <div className="container mx-auto px-4 md:px-8 lg:px-12">
             <motion.div
               className="text-center mb-16"
-              {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
+              {...getAnimationProps()}
             >
               <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
                 OUR PROCESS
@@ -510,19 +678,36 @@ const WebHostingPage = (): JSX.Element => {
               ].map((step, index) => (
                 <motion.div
                   key={index}
-                  {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: index * 0.1,
+                    ease: [0.22, 1, 0.36, 1]
+                  }}
                   className="relative"
                 >
                   {/* Connector line for desktop only */}
                   {!isMobile && index < 5 && (
-                    <div className="hidden md:block absolute top-12 left-[calc(50%+10px)] w-full h-0.5 bg-gradient-to-r from-gray-800/50 to-gray-900/10"></div>
+                    <motion.div 
+                      className="hidden md:block absolute top-12 left-[calc(50%+10px)] w-full h-0.5 bg-gradient-to-r from-gray-800/50 to-gray-900/10"
+                      initial={{ scaleX: 0, originX: 0 }}
+                      whileInView={{ scaleX: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.5, duration: 0.7 }}
+                    ></motion.div>
                   )}
 
                   <div className="bg-black/60 border border-gray-900 rounded-xl p-6 relative z-10">
                     <div className="flex flex-col items-center mb-4">
-                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center mb-4">
+                      <motion.div 
+                        className="w-14 h-14 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center mb-4"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      >
                         <step.icon className="h-6 w-6 text-white" />
-                      </div>
+                      </motion.div>
                       <div className="bg-gray-950/30 rounded px-2 py-0.5 text-xs font-bold text-gray-400 mb-2">
                         STEP {step.step}
                       </div>
@@ -545,7 +730,7 @@ const WebHostingPage = (): JSX.Element => {
           <div className="container mx-auto px-4 md:px-8 lg:px-12">
             <motion.div
               className="text-center mb-16"
-              {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
+              {...getAnimationProps()}
             >
               <Badge className="bg-gray-900/30 text-gray-400 border-transparent mb-4 px-3 py-1">
                 PRICING
@@ -559,11 +744,35 @@ const WebHostingPage = (): JSX.Element => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.2
+                  }
+                }
+              }}
+            >
               {hostingPackages.map((pkg, index) => (
                 <motion.div
                   key={index}
-                  {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: { 
+                      opacity: 1, 
+                      y: 0,
+                      transition: {
+                        duration: 0.7,
+                        ease: [0.22, 1, 0.36, 1]
+                      }
+                    }
+                  }}
                   className="h-full"
                 >
                   <Card
@@ -571,6 +780,8 @@ const WebHostingPage = (): JSX.Element => {
                       pkg.highlighted
                         ? "border-gray-600 shadow-lg shadow-gray-950/30"
                         : "border-gray-900"
+                    } hover:border-gray-700 transition-all duration-300 ${
+                      pkg.highlighted ? "hover:shadow-xl hover:shadow-gray-950/40" : ""
                     }`}
                   >
                     <CardContent className="p-6 flex-grow flex flex-col">
@@ -605,23 +816,33 @@ const WebHostingPage = (): JSX.Element => {
                           </ul>
                         </div>
 
-                        <Button
-                          className={`w-full ${
-                            pkg.highlighted
-                              ? "bg-gradient-to-r from-gray-600 to-gray-800 hover:from-gray-500 hover:to-gray-700 text-white"
-                              : "bg-black border border-gray-800/30 text-gray-400 hover:bg-gray-950/20"
-                          }`}
-                          onClick={() => router.push("/contact")}
+                        <motion.div
+                          whileHover={{ scale: 1.03 }}
+                          whileTap={{ scale: 0.97 }}
+                          transition={{ 
+                            type: "spring", 
+                            stiffness: 400, 
+                            damping: 10 
+                          }}
                         >
-                          Get Started
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
+                          <Button
+                            className={`w-full ${
+                              pkg.highlighted
+                                ? "bg-gradient-to-r from-gray-600 to-gray-800 hover:from-gray-500 hover:to-gray-700 text-white"
+                                : "bg-black border border-gray-800/30 text-gray-400 hover:bg-gray-950/20"
+                            }`}
+                            onClick={() => router.push("/contact")}
+                          >
+                            Get Started
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </motion.div>
                       </div>
                     </CardContent>
                   </Card>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -630,7 +851,13 @@ const WebHostingPage = (): JSX.Element => {
           <div className="container mx-auto px-4 md:px-8 lg:px-12">
             <motion.div
               className="max-w-4xl mx-auto bg-black/60 border border-gray-900 rounded-xl p-8 md:p-12 text-center"
-              {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ 
+                duration: 0.7,
+                ease: [0.22, 1, 0.36, 1]
+              }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Ready for Reliable Hosting?
@@ -640,15 +867,25 @@ const WebHostingPage = (): JSX.Element => {
                 solutions can help your business maintain a secure, fast, and
                 reliable online presence.
               </p>
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-600 hover:to-gray-800 
-                  text-white border border-gray-800/30 shadow-lg shadow-gray-950/20 px-8"
-                onClick={() => router.push("/contact")}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ 
+                  type: "spring", 
+                  stiffness: 400, 
+                  damping: 10 
+                }}
               >
-                Get Started Today
-                <ChevronRight className="ml-2 h-5 w-5" />
-              </Button>
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-600 hover:to-gray-800 
+                    text-white border border-gray-800/30 shadow-lg shadow-gray-950/20 px-8"
+                  onClick={() => router.push("/contact")}
+                >
+                  Get Started Today
+                  <ChevronRight className="ml-2 h-5 w-5" />
+                </Button>
+              </motion.div>
             </motion.div>
           </div>
         </section>
