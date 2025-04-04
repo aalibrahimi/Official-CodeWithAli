@@ -171,7 +171,7 @@ export default function ContactForm({
                     type="text"
                     id="name"
                     value={formData.name}
-                    placeholder="Ener your full name"
+                    placeholder="Enter your full name"
                     onChange={(e) => setName(e.target.value)}
                     className="bg-red-950/20 border-red-800/40 text-white focus:border-red-600 h-12 text-base w-full"
                     required
