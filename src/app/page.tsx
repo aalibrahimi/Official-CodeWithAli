@@ -357,7 +357,7 @@ const HomePage = () => {
               //   {...getAnimationProps(index * 0.05)}
               //   className="flex flex-col items-center"
               // >
-              <div className="flex flex-col items-center">
+              <div key={index} className="flex flex-col items-center">
                 <div className="w-12 h-12 bg-red-950/20 rounded-lg flex items-center justify-center mb-3">
                   <industry.icon className="h-6 w-6 text-red-500/70" />
                 </div>

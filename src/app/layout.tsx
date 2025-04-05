@@ -100,6 +100,12 @@ export default function RootLayout({
             >
               About
             </Link>
+            <Link
+              href="/portfolio"
+              className="text-red-200 hover:text-red-400 transition-colors"
+            >
+              Projects
+            </Link>
             <div className="nav-item relative group">
               <Link
                 href="/services"
@@ -205,6 +211,13 @@ export default function RootLayout({
                   className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
                 >
                   About
+                </Link>
+                <Link
+                  href="/portfolio"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
+                >
+                  Projects
                 </Link>
                 <Link
                   href="/services"
