@@ -82,13 +82,13 @@ const PortfolioPage = () => {
         </div>
 
         {/* Heading */}
-        <div className="pl-8 h-full relative z-10">
-          <div className="grid grid-cols-2 w-full h-full">
-            <div className="w-full h-full">
-              <h1 className="text-4xl lg:text-5xl font-bold leading-tight col-start-1">
+        <div className="h-full relative z-10 flex flex-col items-center justify-center text-center" >
+          <div className="w-full h-full ">
+            <div className="w-full h-full ">
+              <h1 className="text-4xl lg:text-5xl font-bold leading-tight  ">
                 Our <GradientText gradient="from-red-500 to-red-600">Projects</GradientText>
               </h1>
-              <p className="text-red-200/80 max-w-xl">Discover the full spectrum of our creations.</p>
+              <p className="text-red-200/80 pt-2 ">Discover the full spectrum of our creations.</p>
             </div>
           </div>
         </div>
