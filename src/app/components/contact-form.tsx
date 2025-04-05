@@ -247,6 +247,7 @@ export default function ContactForm({
                   <Textarea
                     id="message"
                     className="bg-red-950/20 border-red-800/40 text-white focus:border-red-600 h-40 text-base w-full resize-none"
+                    required
                     value={formData.projectDetails}
                     onChange={(e) => setProjectDetails(e.target.value)}
                     placeholder="Tell us about your project requirements and goals..."
