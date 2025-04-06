@@ -104,7 +104,7 @@ export default function RootLayout({
               href="/portfolio"
               className="text-red-200 hover:text-red-400 transition-colors"
             >
-              Projects
+              Portfolio
             </Link>
             <div className="nav-item relative group">
               <Link
@@ -217,7 +217,7 @@ export default function RootLayout({
                   onClick={() => setIsMenuOpen(false)}
                   className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
                 >
-                  Projects
+                  Portfolio
                 </Link>
                 <Link
                   href="/services"
