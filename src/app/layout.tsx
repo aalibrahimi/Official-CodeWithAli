@@ -106,6 +106,7 @@ export default function RootLayout({
             >
               Portfolio
             </Link>
+
             <div className="nav-item relative group">
               <Link
                 href="/services"
@@ -150,6 +151,12 @@ export default function RootLayout({
                 </div>
               </div>
             </div>
+            <Link
+              href="/Merchandise"
+              className="text-red-200 hover:text-red-400 transition-colors"
+            >
+              Merchandise
+            </Link>
             <Link
               href="/#contact"
               className="text-red-200 hover:text-red-400 transition-colors"
