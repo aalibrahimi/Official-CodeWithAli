@@ -1,27 +1,12 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import React, { useState } from "react";
+import { motion } from "motion/react";
 import Link from "next/link";
 import {
-  ChevronRight,
-  Code,
-  Smartphone,
-  Layers,
-  Server,
-  Search,
-  BriefcaseBusiness,
-  ShoppingBag,
-  School,
   MoveUpRight,
-  CheckCircle,
-  Palette,
-  ArrowRight,
-  Coffee,
-  MessageSquare,
-  Mail,
+
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import GradientText from "@/app/components/gradientText";
@@ -50,6 +35,12 @@ const portfolioProjects = [
     category: "Web Development",
     image: "/iraqisweets_website.png",
     url: "https://iraqisweets.codewithali.com/"
+  },
+  { 
+    title: "Budgetary App",
+    category: "Desktop Development",
+    image: "/budgetary.png",
+    url: "https://budgetary.codewithali.com/",
   }
 ];
 
@@ -86,7 +77,7 @@ const PortfolioPage = () => {
           <div className="w-full h-full ">
             <div className="w-full h-full ">
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight  ">
-                Our <GradientText gradient="from-red-500 to-red-600">Projects</GradientText>
+                Our <GradientText gradient="from-red-500 to-red-600">Portfolio</GradientText>
               </h1>
               <p className="text-red-200/80 pt-2 ">Discover the full spectrum of our creations.</p>
             </div>
