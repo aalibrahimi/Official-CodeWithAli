@@ -4,14 +4,13 @@ import React, { useState } from "react";
 import Link from "next/link";
 import {
   ShoppingCart,
-  ChevronRight,
-  Star,
+
   ShoppingBag,
   Tag,
   TrendingUp,
   CheckCircle,
   Send,
-  ArrowRight,
+
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -246,7 +245,7 @@ export default function MerchandisePage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-9 ">
             {filteredItems.map((item : any) => (
               <div 
                 key={item.id} 
@@ -254,7 +253,7 @@ export default function MerchandisePage() {
                 onMouseEnter={() => setHoveredItem(item.id)}
                 onMouseLeave={() => setHoveredItem(null)}
               >
-                <div className="relative aspect-square bg-gradient-to-br from-red-950/40 to-red-900/10">
+                <div className="relative aspect-square  bg-gradient-to-br from-red-950/40 to-red-900/10">
                   {/* Product badges */}
                   {item.bestseller && (
                     <div className="absolute top-3 left-3 z-10">
@@ -265,7 +264,7 @@ export default function MerchandisePage() {
                   )}
                   
                   {/* once we actually have the images then we would implement next/images here*/}
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="absolute inset-0 flex items-center justify-center ">
                     <div className="relative w-3/4 h-3/4">
                       {/* Placeholder for product image */}
                       <Tag className="h-20 w-20 text-red-500/60 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
@@ -278,22 +277,7 @@ export default function MerchandisePage() {
                       hoveredItem === item.id ? "opacity-100" : "opacity-0"
                     }`}
                   >
-                    <div className="flex gap-3">
-                      <Button 
-                        size="icon" 
-                        className="rounded-full w-10 h-10 bg-white text-black hover:bg-red-100"
-                        title="Add to cart"
-                      >
-                        <ShoppingCart className="h-5 w-5" />
-                      </Button>
-                      <Button 
-                        size="icon" 
-                        className="rounded-full w-10 h-10 bg-white text-black hover:bg-red-100"
-                        title="Add to wishlist"
-                      >
-                       
-                      </Button>
-                    </div>
+                    
                   </div>
                 </div>
                 
@@ -303,18 +287,18 @@ export default function MerchandisePage() {
                       {item.category}
                     </Badge>
                     
-                    {/* Star rating */}
-                    <div className="ml-auto flex">
+                    {/* Star rating cute idea but not really strongly attached to it */}
+                    {/* <div className="ml-auto flex">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="h-3 w-3 text-red-500 fill-red-500" />
                       ))}
-                    </div>
+                    </div> */}
                   </div>
                   
                   <h3 className="text-lg font-bold text-white mb-1">{item.name}</h3>
                   
                   <div className="flex justify-between items-center mt-3">
-                    <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-600">
+                    <span className="text-xl font-bold text-white">
                       ${item.price}
                     </span>
                     <Button
