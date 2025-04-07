@@ -6,7 +6,6 @@ import {
   ShoppingCart,
   ChevronRight,
   Star,
-  Heart,
   ShoppingBag,
   Tag,
   TrendingUp,
@@ -205,10 +204,11 @@ export default function MerchandisePage() {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-white mb-2">{collection.name}</h3>
                   <p className="text-red-200/70 mb-4">{collection.description}</p>
-                  <div className="flex items-center text-red-400 group-hover:text-red-300 transition-colors">
+                  {/* <div className="flex items-center text-red-400 group-hover:text-red-300 transition-colors">
                     <span>View Collection</span>
                     <ChevronRight className="h-4 w-4 ml-1" />
-                  </div>
+                  </div> */}
+                  {/* we don't need the view collections quite yet either */}
                 </div>
               </div>
             ))}
@@ -224,7 +224,7 @@ export default function MerchandisePage() {
               <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
                 OUR PRODUCTS
               </Badge>
-              <h2 className="text-3xl font-bold">Shop The Collection</h2>
+              <h2 className="text-3xl font-bold mr-[400px]">Shop The Collection</h2>
             </div>
             
             {/* Filter Tabs */}
@@ -247,7 +247,7 @@ export default function MerchandisePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredItems.map((item) => (
+            {filteredItems.map((item : any) => (
               <div 
                 key={item.id} 
                 className="bg-black/60 border border-red-900 rounded-xl overflow-hidden group"
@@ -291,7 +291,7 @@ export default function MerchandisePage() {
                         className="rounded-full w-10 h-10 bg-white text-black hover:bg-red-100"
                         title="Add to wishlist"
                       >
-                        <Heart className="h-5 w-5" />
+                       
                       </Button>
                     </div>
                   </div>
@@ -327,7 +327,7 @@ export default function MerchandisePage() {
                   
                   {/* Color options */}
                   <div className="mt-4 flex gap-1">
-                    {item.colors.map((color, i) => (
+                    {item.colors.map((color : any, i : any)  => (
                       <div 
                         key={i} 
                         className="w-4 h-4 rounded-full border border-red-300/30"
@@ -347,15 +347,15 @@ export default function MerchandisePage() {
             ))}
           </div>
           
-          {/* View All Button */}
-          <div className="mt-12 text-center">
+          {/* View All Button but we don't need this atm*/}
+          {/* <div className="mt-12 text-center">
             <Button
               className="bg-transparent border border-red-800/30 text-red-400 hover:bg-red-950/20 hover:text-white"
             >
               View All Products
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -396,7 +396,7 @@ export default function MerchandisePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section had to include a little deal hehe*/}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto bg-black/60 border border-red-900 rounded-xl p-10 text-center">
