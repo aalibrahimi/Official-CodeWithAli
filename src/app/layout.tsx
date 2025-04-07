@@ -152,7 +152,7 @@ export default function RootLayout({
               </div>
             </div>
             <Link
-              href="/Merchandise"
+              href="/merchandise"
               className="text-red-200 hover:text-red-400 transition-colors"
             >
               Merchandise
