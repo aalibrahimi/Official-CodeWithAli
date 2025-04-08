@@ -151,12 +151,12 @@ export default function RootLayout({
                 </div>
               </div>
             </div>
-            <Link
+            {/* <Link
               href="/merchandise"
               className="text-red-200 hover:text-red-400 transition-colors"
             >
               Merchandise
-            </Link>
+            </Link> */}
             <Link
               href="/#contact"
               className="text-red-200 hover:text-red-400 transition-colors"
