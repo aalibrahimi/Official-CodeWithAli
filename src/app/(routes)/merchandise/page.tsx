@@ -82,6 +82,18 @@ const merchandiseItems = [
     description: "Warm knitted beanie with a subtle embroidered code symbol. Perfect for winter coding."
   },
   {
+    id: 8,
+    name: "Cap",
+    category: "Hat",
+    price: 22.99,
+    image: "/merchandise/hat.png", 
+    colors: ["Black", "Gray", "Red"],
+    sizes: ["One Size"],
+    featured: true,
+    bestseller: false,
+    description: "Wear your coding cap when going to meet ups while looking fresh and cool."
+  },
+  {
     id: 7,
     name: "Premium Code Hoodie",
     category: "Hoodie",
