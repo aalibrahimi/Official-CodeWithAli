@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import "./Styles/globals.css";
 import "./Styles/mediaSizing.css";
 import { Button } from "@/components/ui/button";
-import { Facebook, GiftIcon, Github, Instagram, Linkedin } from "lucide-react";
+import { Facebook, GiftIcon, Github, Heart, Instagram, Linkedin } from "lucide-react";
 
 export default function RootLayout({
   children,
@@ -530,6 +530,7 @@ export default function RootLayout({
                 © {new Date().getFullYear()} CodeWithAli. All rights reserved.
               </p>
               <div className="flex space-x-6">
+                <Link href="https://gofund.me/84a5e264" target="_blank" draggable={false} className="text-red-500"><Heart /></Link>
                 <a
                   href="#"
                   className="text-sm text-red-200/60 hover:text-red-300 transition-colors"

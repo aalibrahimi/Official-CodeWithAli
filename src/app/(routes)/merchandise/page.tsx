@@ -144,7 +144,7 @@ const categories = ["All", "Hoodie", "Shirt", "Hat", "Pants"];
 export default function MerchandisePage() {
   const router = useRouter();
   const [activeCategory, setActiveCategory] = useState("All");
-  const [hoveredItem, setHoveredItem] = useState(null);
+  const [hoveredItem, setHoveredItem] = useState(0);
 
   // Filter merchandise based on selected category
   const filteredItems = activeCategory === "All" 
@@ -258,12 +258,12 @@ export default function MerchandisePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-9 ">
-            {filteredItems.map((item : any) => (
+            {filteredItems.map((item) => (
               <div 
                 key={item.id} 
                 className="bg-black/60 border border-red-900 rounded-xl overflow-hidden group"
                 onMouseEnter={() => setHoveredItem(item.id)}
-                onMouseLeave={() => setHoveredItem(null)}
+                onMouseLeave={() => setHoveredItem(0)}
               >
                 <div className="relative aspect-square  bg-gradient-to-br from-red-950/40 to-red-900/10">
                   {/* Product badges */}
@@ -323,13 +323,14 @@ export default function MerchandisePage() {
                   
                   {/* Color options */}
                   <div className="mt-4 flex gap-1">
-                    {item.colors.map((color : any, i : any)  => (
+                    {item.colors.map((color: string, i: any)  => (
                       <div 
                         key={i} 
                         className="w-4 h-4 rounded-full border border-red-300/30"
                         style={{
                           backgroundColor: color.toLowerCase(),
-                          background: color.toLowerCase() === "white" ? "white" : undefined
+                          // Removed this bc it was causing issues loading up colors. Pretty much conflicting with above value and causing no render at all
+                          // background: color.toLowerCase() === "white" ? "white" : undefined
                         }}
                         title={color}
                       />
