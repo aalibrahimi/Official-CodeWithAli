@@ -110,7 +110,7 @@ const MerchCard = (item: MerchDetails) => {
         )}
 
         <div className="flex justify-between items-center mt-3">
-          <span className="text-xl font-bold text-white">${item.price}</span>
+          <span className={`${item.available === false ? 'text-lg italic font-bold line-through text-gray-300' : 'text-xl font-bold text-white'}`}>${item.price}</span>
           {item.paymentLink?.trim() ? (
             <Link href={item.paymentLink} target="_blank">
               <Button
@@ -125,7 +125,7 @@ const MerchCard = (item: MerchDetails) => {
               size="sm"
               className="bg-red-950/40 hover:cursor-not-allowed text-gray-500 text-sm select-none"
             >
-              Buy Now
+              {item.available === false ? 'Coming Soon' : 'Out of Stock'}
             </Button>
           )}
         </div>

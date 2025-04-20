@@ -16,6 +16,7 @@ import Image from "next/image";
 import GradientText from "@/app/components/gradientText";
 import { useRouter } from "next/navigation";
 import MerchCard, { Category, Color, Size } from "@/app/components/Merchandise/merchCard";
+import Link from "next/link";
 
 // Merchandise data
 const merchandiseItems = [
@@ -25,7 +26,7 @@ const merchandiseItems = [
     category: "Hoodie",
     price: 59.99,
     image: "blue_hoodie",
-    paymentLink: "",
+    paymentLink: "https://buy.stripe.com/eVa02NgCa09PamQaEL",
     colors: ["Black", "Gray", "Navy", "White"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: true,
@@ -367,26 +368,31 @@ export default function MerchandisePage() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Get 15% Off Your First Order
             </h2>
+            <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+              CODE: CWA15
+            </Badge>
             <p className="text-lg text-red-200/70 mb-8 max-w-2xl mx-auto">
-              Sign up for our newsletter and receive a 15% discount code for your first merchandise purchase.
+              Enter the promotion code at checkout and receive a 15% discount code for your first merchandise purchase.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
-                  text-white border border-red-800/30 shadow-lg shadow-red-950/20"
-              >
-                Shop Now
-                <ShoppingCart className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
+              <Link href="/merchandise">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
+                    text-white border border-red-800/30 shadow-lg shadow-red-950/20"
+                >
+                  Shop Now
+                  <ShoppingCart className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              {/* <Button
                 variant="outline"
                 size="lg"
                 className="border-red-800/30 text-red-400 bg-red-950/20 hover:bg-red-950/30 hover:text-white"
               >
                 Sign Up For Newsletter
                 <Send className="ml-2 h-5 w-5" />
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>
