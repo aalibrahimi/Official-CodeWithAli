@@ -25,7 +25,7 @@ const merchandiseItems = [
     category: "Hoodie",
     price: 59.99,
     image: "blue_hoodie",
-    paymentLink: "https://buy.stripe.com/00gbLv3Po09P9iM7sy",
+    paymentLink: "",
     colors: ["Black", "Gray", "Navy", "White"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: true,
@@ -37,7 +37,8 @@ const merchandiseItems = [
     name: "Premium Code Hoodie",
     category: "Hoodie",
     price: 69.99,
-    image: "red_hoodie", 
+    image: "red_hoodie",
+    paymentLink: "",
     colors: ["Black", "Gray", "Navy", "White"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: true,
@@ -49,7 +50,8 @@ const merchandiseItems = [
     name: "Code Artist T-Shirt",
     category: "Shirt",
     price: 29.99,
-    image: "red_tshirt", 
+    image: "red_tshirt",
+    paymentLink: "",
     colors: ["Black", "White", "Red", "Blue", "Gray", "Light-Gray", "Navy"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: true,
@@ -75,6 +77,7 @@ const merchandiseItems = [
     category: "Shirt",
     price: 34.99,
     image: "blue_sweatshirt",
+    paymentLink: "",
     colors: ["Black", "Navy", "Gray"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
@@ -86,6 +89,7 @@ const merchandiseItems = [
     category: "Shirt",
     price: 44.99,
     image: "red_sweatshirt",
+    paymentLink: "",
     colors: ["Black", "Navy", "Gray"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
@@ -96,34 +100,40 @@ const merchandiseItems = [
     name: "Tech Beanie",
     category: "Hat",
     price: 22.99,
-    colors: ["Black", "Gray", "Red"],
+    image: "beanie",
+    paymentLink: "",
+    colors: ["Black"],
     sizes: ["One Size"],
     featured: true,
     bestseller: false,
-    description: "Warm knitted beanie with a subtle embroidered code symbol. Perfect for winter coding."
+    description: "Warm knitted beanie with a subtle embroidered code symbol. Perfect for winter coding.",
+    available: false
   },
   {
     id: 8,
     name: "Cap",
     category: "Hat",
     price: 22.99,
-    colors: ["Black", "Gray", "Red"],
+    image: "cap",
+    paymentLink: "",
+    colors: ["Black"],
     sizes: ["One Size"],
     featured: true,
     bestseller: false,
-    description: "Wear your coding cap when going to meet ups while looking fresh and cool."
+    description: "Wear your coding cap when going to meet ups while looking fresh and cool.",
+    available: false
   },
   {
     id: 9,
     name: "CWA Mug",
     category: "Other",
     price: 69.99,
-    image: "", 
-    colors: ["Black", "Gray", "Navy", "White"],
+    image: "mug", 
+    colors: ["Black"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: true,
-    bestseller: true,
-    description: "Our premium heavyweight hoodie with embroidered logo and code patterns. Includes hidden earbud channels in the hood."
+    description: "Our premium heavyweight hoodie with embroidered logo and code patterns. Includes hidden earbud channels in the hood.",
+    available: false
   },
   
 //   {
@@ -160,12 +170,11 @@ const collections = [
 ];
 
 // Filter categories
-const categories = ["All", "Hoodie", "Shirt", "Hat", "Pants"];
+const categories = ["All", "Hoodie", "Shirt", "Hat", "Pants", "Other"];
 
 export default function MerchandisePage() {
   const router = useRouter();
   const [activeCategory, setActiveCategory] = useState("All");
-  const [hoveredItem, setHoveredItem] = useState(0);
 
   // Filter merchandise based on selected category
   const filteredItems = activeCategory === "All" 
@@ -292,6 +301,8 @@ export default function MerchandisePage() {
                 description={item.description}
                 colors={item.colors as Color[]}
                 sizes={item.sizes as Size[]}
+                paymentLink={item.paymentLink}
+                available={item.available}
               />
               </div>
             ))}

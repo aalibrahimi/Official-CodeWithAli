@@ -17,10 +17,9 @@ export type Color =
   | "Navy"
   | "Blue"
   | "White";
-export type Category = "Hoodie" | "Shirt" | "Hat" | "Other"
+export type Category = "Hoodie" | "Shirt" | "Hat" | "Other";
 export type Size = "One Size" | "S" | "M" | "L" | "XL" | "XXL";
 
-// Key and ID need to be the same so color switching is for individual
 interface MerchDetails {
   readonly id: number;
   featured?: boolean;
@@ -32,18 +31,18 @@ interface MerchDetails {
   colors: Color[];
   sizes: Size[];
   description: string;
-  paymentLink?: string
+  paymentLink?: string;
+  available?: boolean;
 }
 
 const MerchCard = (item: MerchDetails) => {
   // Idk what this is used for but you had it, so i made it into a zustand store
   const { setHoveredItem, hoveredItem } = HoveredItemStore();
   const { setMerchColor, merchColor } = MerchVariantStore();
-  console.log({ merchColor })
 
   useEffect(() => {
     setMerchColor(item.id, "black");
-  }, [])
+  }, []);
 
   return (
     <div
@@ -64,17 +63,21 @@ const MerchCard = (item: MerchDetails) => {
         {/* once we actually have the images then we would implement next/images here*/}
         <div className="absolute inset-0 flex items-center justify-center">
           {/* <div className="relative w-3/4 h-3/4"> */}
-            {item.img ? (
-              // Need to work on image display. Want to make img previewer component to pop the img out and make it bigger for preview
-              <Image src={`/merch/${item.img}_${merchColor[item.id]}.png`} alt={item.name.toLowerCase()} width={500} height={500}
-                className="h-auto w-45 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-125"
-              />
-            ) : (
-              <>
-                {/* Placeholder for product image */}
-                <Tag className="h-20 w-20 text-red-500/60 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-              </>
-            )}
+          {item.img ? (
+            // Need to work on image display. Want to make img previewer component to pop the img out and make it bigger for preview
+            <Image
+              src={`/merch/${item.img}_${merchColor[item.id]}.png`}
+              alt={item.name.toLowerCase()}
+              width={500}
+              height={500}
+              className={`h-auto w-45 ${item.available === false ? 'brightness-50' : ''} absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
+            />
+          ) : (
+            <>
+              {/* Placeholder for product image */}
+              <Tag className="h-20 w-20 text-red-500/60 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+            </>
+          )}
           {/* </div> */}
         </div>
 
@@ -102,24 +105,28 @@ const MerchCard = (item: MerchDetails) => {
 
         <h3 className="text-lg font-bold text-white mb-1">{item.name}</h3>
 
+        {item.available === false && (
+          <h3 className="text-sm italic text-gray-300">Coming Soon...</h3>
+        )}
+
         <div className="flex justify-between items-center mt-3">
           <span className="text-xl font-bold text-white">${item.price}</span>
-          {item.paymentLink ? (
+          {item.paymentLink?.trim() ? (
             <Link href={item.paymentLink} target="_blank">
+              <Button
+                size="sm"
+                className="bg-red-800/40 hover:bg-red-800 hover:cursor-pointer text-white text-sm"
+              >
+                Buy Now
+              </Button>
+            </Link>
+          ) : (
             <Button
               size="sm"
-              className="bg-red-800/40 hover:bg-red-800 hover:cursor-pointer text-white text-sm"
+              className="bg-red-950/40 hover:cursor-not-allowed text-gray-500 text-sm select-none"
             >
               Buy Now
             </Button>
-          </Link>
-          ) : (
-          <Button
-            size="sm"
-            className="bg-red-950/40 hover:cursor-not-allowed text-gray-500 text-sm"
-          >
-            Buy Now
-          </Button>
           )}
         </div>
 
@@ -129,6 +136,7 @@ const MerchCard = (item: MerchDetails) => {
             <div
               key={i}
               className="w-4 h-4 rounded-full border border-red-300/30"
+              // Key and ID need to be the same so color switching is for individual
               onClick={() => setMerchColor(item.id, color.toLowerCase())}
               style={{
                 backgroundColor: color.toLowerCase(),
