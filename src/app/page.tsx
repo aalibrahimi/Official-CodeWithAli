@@ -116,18 +116,18 @@ const portfolioProjects = [
     image: "/knoz_website.png",
     url: "https://knoz.codewithali.com/",
   },
-  {
-    title: "Reggaeeli Website",
-    category: "Web Development",
-    image: "/reggaeeli_website.png",
-    url: "https://reggaeeli.codewithali.com/",
+  { 
+    title: "Budgetary App",
+    category: "Desktop Development",
+    image: "/budgetary.png",
+    url: "https://budgetary.codewithali.com/",
   },
   {
-    title: "Merged Construction Website",
+    title: "Mario's Hauling",
     category: "Web Development",
-    image: "/knozorion_website.png",
-    url: "https://knozorion.codewithali.com/",
-  },
+    image: "/marioshauling_website.png",
+    url: "https://marioshauling.codewithali.com/"
+  }
 ];
 
 // Testimonials
