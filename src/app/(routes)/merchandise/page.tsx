@@ -4,19 +4,18 @@ import React, { useState } from "react";
 
 import {
   ShoppingCart,
-
   ShoppingBag,
   Tag,
   TrendingUp,
   CheckCircle,
   Send,
-
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import GradientText from "@/app/components/gradientText";
 import { useRouter } from "next/navigation";
+import MerchCard, { Category, Color, Size } from "@/app/components/Merchandise/merchCard";
 
 // Merchandise data
 const merchandiseItems = [
@@ -25,8 +24,9 @@ const merchandiseItems = [
     name: "Developer Hoodie",
     category: "Hoodie",
     price: 59.99,
-    image: "/merchandise/hoodie.png", 
-    colors: ["Black", "Red", "Gray"],
+    image: "blue_hoodie",
+    paymentLink: "https://buy.stripe.com/00gbLv3Po09P9iM7sy",
+    colors: ["Black", "Gray", "Navy", "White"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: true,
     bestseller: true,
@@ -34,11 +34,23 @@ const merchandiseItems = [
   },
   {
     id: 2,
+    name: "Premium Code Hoodie",
+    category: "Hoodie",
+    price: 69.99,
+    image: "red_hoodie", 
+    colors: ["Black", "Gray", "Navy", "White"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: true,
+    bestseller: true,
+    description: "Our premium heavyweight hoodie with embroidered logo and code patterns. Includes hidden earbud channels in the hood."
+  },
+  {
+    id: 3,
     name: "Code Artist T-Shirt",
     category: "Shirt",
     price: 29.99,
-    image: "/merchandise/tshirt.png", 
-    colors: ["Black", "White", "Red"],
+    image: "red_tshirt", 
+    colors: ["Black", "White", "Red", "Blue", "Gray", "Light-Gray", "Navy"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: true,
     bestseller: false,
@@ -59,22 +71,31 @@ const merchandiseItems = [
 //   },
   {
     id: 5,
-    name: "Vintage Code T-Shirt",
+    name: "Developer Sweatshirt",
     category: "Shirt",
     price: 34.99,
-    image: "/merchandise/vintage-tshirt.png", 
-    colors: ["Black", "Navy", "Burgundy"],
-    sizes: ["S", "M", "L", "XL"],
+    image: "blue_sweatshirt",
+    colors: ["Black", "Navy", "Gray"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    bestseller: true,
     description: "Retro-inspired t-shirt featuring vintage programming languages and syntax."
   },
   {
     id: 6,
+    name: "Premium Developer Sweatshirt",
+    category: "Shirt",
+    price: 44.99,
+    image: "red_sweatshirt",
+    colors: ["Black", "Navy", "Gray"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: false,
+    description: "Retro-inspired t-shirt featuring vintage programming languages and syntax."
+  },
+  {
+    id: 7,
     name: "Tech Beanie",
     category: "Hat",
     price: 22.99,
-    image: "/merchandise/beanie.png", 
     colors: ["Black", "Gray", "Red"],
     sizes: ["One Size"],
     featured: true,
@@ -86,7 +107,6 @@ const merchandiseItems = [
     name: "Cap",
     category: "Hat",
     price: 22.99,
-    image: "/merchandise/hat.png", 
     colors: ["Black", "Gray", "Red"],
     sizes: ["One Size"],
     featured: true,
@@ -94,17 +114,18 @@ const merchandiseItems = [
     description: "Wear your coding cap when going to meet ups while looking fresh and cool."
   },
   {
-    id: 7,
-    name: "Premium Code Hoodie",
-    category: "Hoodie",
+    id: 9,
+    name: "CWA Mug",
+    category: "Other",
     price: 69.99,
-    image: "/merchandise/premium-hoodie.png", 
-    colors: ["Black", "Red", "Blue"],
+    image: "", 
+    colors: ["Black", "Gray", "Navy", "White"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: true,
     bestseller: true,
     description: "Our premium heavyweight hoodie with embroidered logo and code patterns. Includes hidden earbud channels in the hood."
   },
+  
 //   {
 //     id: 8,
 //     name: "Developer Joggers",
@@ -259,87 +280,19 @@ export default function MerchandisePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-9 ">
             {filteredItems.map((item) => (
-              <div 
-                key={item.id} 
-                className="bg-black/60 border border-red-900 rounded-xl overflow-hidden group"
-                onMouseEnter={() => setHoveredItem(item.id)}
-                onMouseLeave={() => setHoveredItem(0)}
-              >
-                <div className="relative aspect-square  bg-gradient-to-br from-red-950/40 to-red-900/10">
-                  {/* Product badges */}
-                  {item.bestseller && (
-                    <div className="absolute top-3 left-3 z-10">
-                      <Badge className="bg-red-700 text-white border-transparent">
-                        Bestseller
-                      </Badge>
-                    </div>
-                  )}
-                  
-                  {/* once we actually have the images then we would implement next/images here*/}
-                  <div className="absolute inset-0 flex items-center justify-center ">
-                    <div className="relative w-3/4 h-3/4">
-                      {/* Placeholder for product image */}
-                      <Tag className="h-20 w-20 text-red-500/60 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                    </div>
-                  </div>
-                  
-                  {/* Quick actions overlay */}
-                  <div 
-                    className={`absolute inset-0 bg-black/70 flex items-center justify-center transition-opacity duration-300 ${
-                      hoveredItem === item.id ? "opacity-100" : "opacity-0"
-                    }`}
-                  >
-                    
-                  </div>
-                </div>
-                
-                <div className="p-5">
-                  <div className="mb-1 flex items-center">
-                    <Badge className="bg-red-900/30 text-red-400 border-transparent text-xs">
-                      {item.category}
-                    </Badge>
-                    
-                    {/* Star rating cute idea but not really strongly attached to it */}
-                    {/* <div className="ml-auto flex">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-3 w-3 text-red-500 fill-red-500" />
-                      ))}
-                    </div> */}
-                  </div>
-                  
-                  <h3 className="text-lg font-bold text-white mb-1">{item.name}</h3>
-                  
-                  <div className="flex justify-between items-center mt-3">
-                    <span className="text-xl font-bold text-white">
-                      ${item.price}
-                    </span>
-                    <Button
-                      size="sm"
-                      className="bg-red-800/40 hover:bg-red-800 text-white text-sm"
-                    >
-                      Add to Cart
-                    </Button>
-                  </div>
-                  
-                  {/* Color options */}
-                  <div className="mt-4 flex gap-1">
-                    {item.colors.map((color: string, i: any)  => (
-                      <div 
-                        key={i} 
-                        className="w-4 h-4 rounded-full border border-red-300/30"
-                        style={{
-                          backgroundColor: color.toLowerCase(),
-                          // Removed this bc it was causing issues loading up colors. Pretty much conflicting with above value and causing no render at all
-                          // background: color.toLowerCase() === "white" ? "white" : undefined
-                        }}
-                        title={color}
-                      />
-                    ))}
-                    <span className="text-red-300/70 text-xs ml-2 mt-0.5">
-                      {item.colors.length} colors
-                    </span>
-                  </div>
-                </div>
+              <div key={item.id}>
+                <MerchCard
+                id={item.id}
+                featured={item.featured}
+                bestseller={item.bestseller}
+                name={item.name}
+                price={item.price}
+                category={item.category as Category}
+                img={item.image}
+                description={item.description}
+                colors={item.colors as Color[]}
+                sizes={item.sizes as Size[]}
+              />
               </div>
             ))}
           </div>
