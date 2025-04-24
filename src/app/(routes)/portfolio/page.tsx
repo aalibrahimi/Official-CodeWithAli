@@ -41,6 +41,12 @@ const portfolioProjects = [
     category: "Desktop Development",
     image: "/budgetary.png",
     url: "https://budgetary.codewithali.com/",
+  },
+  {
+    title: "Mario's Hauling",
+    category: "Web Development",
+    image: "/marioshauling_website.png",
+    url: "https://marioshauling.codewithali.com/"
   }
 ];
 
@@ -85,7 +91,7 @@ const PortfolioPage = () => {
         </div>
       </section>
 
-      <section className="bg-red-950/10 h-full md:h-screen w-full p-10 overflow-y-clip">
+      <section className="bg-red-950/10 h-full w-full p-10 overflow-y-clip">
         <div className="h-full relative z-10">
           <div className="">
             <motion.div className="grid gap-8 place-items-center md:grid-cols-2 lg:grid-cols-3" {...getAnimationProps()}>

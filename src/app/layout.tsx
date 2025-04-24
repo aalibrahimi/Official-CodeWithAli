@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,7 +7,19 @@ import { useRouter } from "next/navigation";
 import "./Styles/globals.css";
 import "./Styles/mediaSizing.css";
 import { Button } from "@/components/ui/button";
-import { Facebook, GiftIcon, Github, Instagram, Linkedin } from "lucide-react";
+import {
+  Facebook,
+  Github,
+  Heart,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
+
+// Need to make layout server-side file
+// export const metadata = {
+//   title: 'CodeWithAli',
+//   description: 'At CodeWithAli, we empower individuals and businesses with the tools, knowledge, and applications needed to thrive in the digital age',
+// }
 
 export default function RootLayout({
   children,
@@ -232,6 +245,13 @@ export default function RootLayout({
                   className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
                 >
                   Services
+                </Link>
+                <Link
+                  href="/merchandise"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
+                >
+                  Merchandise
                 </Link>
                 <Link
                   href="/#contact"
@@ -530,6 +550,14 @@ export default function RootLayout({
                 © {new Date().getFullYear()} CodeWithAli. All rights reserved.
               </p>
               <div className="flex space-x-6">
+                <Link
+                  href="https://gofund.me/84a5e264"
+                  target="_blank"
+                  draggable={false}
+                  className="text-red-500"
+                >
+                  <Heart />
+                </Link>
                 <a
                   href="#"
                   className="text-sm text-red-200/60 hover:text-red-300 transition-colors"

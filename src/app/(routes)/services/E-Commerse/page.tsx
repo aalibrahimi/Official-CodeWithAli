@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { motion } from "motion/react";
 import { useRouter } from "next/navigation";
 import {
   ChevronRight,
@@ -121,7 +120,7 @@ const EcommerceSolutionsPage = () => {
   const isMobile = useIsMobile();
 
   // Create animation variants based on device type
-  const fadeIn = createFadeInVariant(isMobile);
+  // const fadeIn = createFadeInVariant(isMobile);
 
   const toggleFaq = (index: any) => {
     if (activeFaq === index) {
@@ -132,25 +131,25 @@ const EcommerceSolutionsPage = () => {
   };
 
   // Helper function to create optimized motion props
-  const getMotionProps = (index = 0) => {
-    if (isMobile) {
-      // Simplified animations for mobile (no staggered delays, simpler transitions)
-      return {
-        initial: { opacity: 0 },
-        whileInView: { opacity: 1 },
-        viewport: { once: true },
-        transition: { duration: 0.3 },
-      };
-    }
+  // const getMotionProps = (index = 0) => {
+  //   if (isMobile) {
+  //     // Simplified animations for mobile (no staggered delays, simpler transitions)
+  //     return {
+  //       initial: { opacity: 0 },
+  //       whileInView: { opacity: 1 },
+  //       viewport: { once: true },
+  //       transition: { duration: 0.3 },
+  //     };
+  //   }
 
-    // Full animations for desktop
-    return {
-      initial: { opacity: 0, y: 20 },
-      whileInView: { opacity: 1, y: 0 },
-      viewport: { once: true },
-      transition: { duration: 0.5, delay: index * 0.1 },
-    };
-  };
+  //   // Full animations for desktop
+  //   return {
+  //     initial: { opacity: 0, y: 20 },
+  //     whileInView: { opacity: 1, y: 0 },
+  //     viewport: { once: true },
+  //     transition: { duration: 0.5, delay: index * 0.1 },
+  //   };
+  // };
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">

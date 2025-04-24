@@ -4,19 +4,17 @@ import React, { useState } from "react";
 
 import {
   ShoppingCart,
-
   ShoppingBag,
   Tag,
   TrendingUp,
   CheckCircle,
   Send,
-
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
-import GradientText from "@/app/components/gradientText";
 import { useRouter } from "next/navigation";
+import MerchCard, { Category, Color, Size } from "@/app/components/Merchandise/merchCard";
+import Link from "next/link";
 
 // Merchandise data
 const merchandiseItems = [
@@ -25,8 +23,9 @@ const merchandiseItems = [
     name: "Developer Hoodie",
     category: "Hoodie",
     price: 59.99,
-    image: "/merchandise/hoodie.png", 
-    colors: ["Black", "Red", "Gray"],
+    image: "blue_hoodie",
+    paymentLink: "",
+    colors: ["Black", "Gray", "Navy", "White"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: true,
     bestseller: true,
@@ -34,11 +33,25 @@ const merchandiseItems = [
   },
   {
     id: 2,
+    name: "Premium Code Hoodie",
+    category: "Hoodie",
+    price: 69.99,
+    image: "red_hoodie",
+    paymentLink: "https://buy.stripe.com/eVa02NgCa09PamQaEL",
+    colors: ["Black", "Gray", "Navy", "White"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: true,
+    bestseller: true,
+    description: "Our premium heavyweight hoodie with embroidered logo and code patterns. Includes hidden earbud channels in the hood."
+  },
+  {
+    id: 3,
     name: "Code Artist T-Shirt",
     category: "Shirt",
     price: 29.99,
-    image: "/merchandise/tshirt.png", 
-    colors: ["Black", "White", "Red"],
+    image: "red_tshirt",
+    paymentLink: "",
+    colors: ["Black", "White", "Red", "Blue", "Gray", "Light-Gray", "Navy"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: true,
     bestseller: false,
@@ -59,52 +72,69 @@ const merchandiseItems = [
 //   },
   {
     id: 5,
-    name: "Vintage Code T-Shirt",
+    name: "Developer Sweatshirt",
     category: "Shirt",
     price: 34.99,
-    image: "/merchandise/vintage-tshirt.png", 
-    colors: ["Black", "Navy", "Burgundy"],
-    sizes: ["S", "M", "L", "XL"],
+    image: "blue_sweatshirt",
+    paymentLink: "",
+    colors: ["Black", "Navy", "Gray"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    bestseller: true,
     description: "Retro-inspired t-shirt featuring vintage programming languages and syntax."
   },
   {
     id: 6,
+    name: "Premium Developer Sweatshirt",
+    category: "Shirt",
+    price: 44.99,
+    image: "red_sweatshirt",
+    paymentLink: "",
+    colors: ["Black", "Navy", "Gray"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: false,
+    description: "Retro-inspired t-shirt featuring vintage programming languages and syntax."
+  },
+  {
+    id: 7,
     name: "Tech Beanie",
     category: "Hat",
     price: 22.99,
-    image: "/merchandise/beanie.png", 
-    colors: ["Black", "Gray", "Red"],
+    image: "beanie",
+    paymentLink: "",
+    colors: ["Black"],
     sizes: ["One Size"],
     featured: true,
     bestseller: false,
-    description: "Warm knitted beanie with a subtle embroidered code symbol. Perfect for winter coding."
+    description: "Warm knitted beanie with a subtle embroidered code symbol. Perfect for winter coding.",
+    available: false
   },
   {
     id: 8,
     name: "Cap",
     category: "Hat",
     price: 22.99,
-    image: "/merchandise/hat.png", 
-    colors: ["Black", "Gray", "Red"],
+    image: "cap",
+    paymentLink: "",
+    colors: ["Black"],
     sizes: ["One Size"],
     featured: true,
     bestseller: false,
-    description: "Wear your coding cap when going to meet ups while looking fresh and cool."
+    description: "Wear your coding cap when going to meet ups while looking fresh and cool.",
+    available: false
   },
   {
-    id: 7,
-    name: "Premium Code Hoodie",
-    category: "Hoodie",
+    id: 9,
+    name: "CWA Mug",
+    category: "Other",
     price: 69.99,
-    image: "/merchandise/premium-hoodie.png", 
-    colors: ["Black", "Red", "Blue"],
+    image: "mug", 
+    colors: ["Black"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: true,
-    bestseller: true,
-    description: "Our premium heavyweight hoodie with embroidered logo and code patterns. Includes hidden earbud channels in the hood."
+    description: "Our premium heavyweight hoodie with embroidered logo and code patterns. Includes hidden earbud channels in the hood.",
+    available: false
   },
+  
 //   {
 //     id: 8,
 //     name: "Developer Joggers",
@@ -139,12 +169,11 @@ const collections = [
 ];
 
 // Filter categories
-const categories = ["All", "Hoodie", "Shirt", "Hat", "Pants"];
+const categories = ["All", "Hoodie", "Shirt", "Hat", "Pants", "Other"];
 
 export default function MerchandisePage() {
   const router = useRouter();
   const [activeCategory, setActiveCategory] = useState("All");
-  const [hoveredItem, setHoveredItem] = useState(null);
 
   // Filter merchandise based on selected category
   const filteredItems = activeCategory === "All" 
@@ -258,87 +287,22 @@ export default function MerchandisePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-9 ">
-            {filteredItems.map((item : any) => (
-              <div 
-                key={item.id} 
-                className="bg-black/60 border border-red-900 rounded-xl overflow-hidden group"
-                onMouseEnter={() => setHoveredItem(item.id)}
-                onMouseLeave={() => setHoveredItem(null)}
-              >
-                <div className="relative aspect-square  bg-gradient-to-br from-red-950/40 to-red-900/10">
-                  {/* Product badges */}
-                  {item.bestseller && (
-                    <div className="absolute top-3 left-3 z-10">
-                      <Badge className="bg-red-700 text-white border-transparent">
-                        Bestseller
-                      </Badge>
-                    </div>
-                  )}
-                  
-                  {/* once we actually have the images then we would implement next/images here*/}
-                  <div className="absolute inset-0 flex items-center justify-center ">
-                    <div className="relative w-3/4 h-3/4">
-                      {/* Placeholder for product image */}
-                      <Tag className="h-20 w-20 text-red-500/60 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                    </div>
-                  </div>
-                  
-                  {/* Quick actions overlay */}
-                  <div 
-                    className={`absolute inset-0 bg-black/70 flex items-center justify-center transition-opacity duration-300 ${
-                      hoveredItem === item.id ? "opacity-100" : "opacity-0"
-                    }`}
-                  >
-                    
-                  </div>
-                </div>
-                
-                <div className="p-5">
-                  <div className="mb-1 flex items-center">
-                    <Badge className="bg-red-900/30 text-red-400 border-transparent text-xs">
-                      {item.category}
-                    </Badge>
-                    
-                    {/* Star rating cute idea but not really strongly attached to it */}
-                    {/* <div className="ml-auto flex">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-3 w-3 text-red-500 fill-red-500" />
-                      ))}
-                    </div> */}
-                  </div>
-                  
-                  <h3 className="text-lg font-bold text-white mb-1">{item.name}</h3>
-                  
-                  <div className="flex justify-between items-center mt-3">
-                    <span className="text-xl font-bold text-white">
-                      ${item.price}
-                    </span>
-                    <Button
-                      size="sm"
-                      className="bg-red-800/40 hover:bg-red-800 text-white text-sm"
-                    >
-                      Add to Cart
-                    </Button>
-                  </div>
-                  
-                  {/* Color options */}
-                  <div className="mt-4 flex gap-1">
-                    {item.colors.map((color : any, i : any)  => (
-                      <div 
-                        key={i} 
-                        className="w-4 h-4 rounded-full border border-red-300/30"
-                        style={{
-                          backgroundColor: color.toLowerCase(),
-                          background: color.toLowerCase() === "white" ? "white" : undefined
-                        }}
-                        title={color}
-                      />
-                    ))}
-                    <span className="text-red-300/70 text-xs ml-2 mt-0.5">
-                      {item.colors.length} colors
-                    </span>
-                  </div>
-                </div>
+            {filteredItems.map((item) => (
+              <div key={item.id}>
+                <MerchCard
+                id={item.id}
+                featured={item.featured}
+                bestseller={item.bestseller}
+                name={item.name}
+                price={item.price}
+                category={item.category as Category}
+                img={item.image}
+                description={item.description}
+                colors={item.colors as Color[]}
+                sizes={item.sizes as Size[]}
+                paymentLink={item.paymentLink}
+                available={item.available}
+              />
               </div>
             ))}
           </div>
@@ -402,26 +366,31 @@ export default function MerchandisePage() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Get 15% Off Your First Order
             </h2>
+            <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+              CODE: CWA15
+            </Badge>
             <p className="text-lg text-red-200/70 mb-8 max-w-2xl mx-auto">
-              Sign up for our newsletter and receive a 15% discount code for your first merchandise purchase.
+              Enter the promotion code at checkout and receive a 15% discount code for your first merchandise purchase.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
-                  text-white border border-red-800/30 shadow-lg shadow-red-950/20"
-              >
-                Shop Now
-                <ShoppingCart className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
+              <Link href="/merchandise">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
+                    text-white border border-red-800/30 shadow-lg shadow-red-950/20"
+                >
+                  Shop Now
+                  <ShoppingCart className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              {/* <Button
                 variant="outline"
                 size="lg"
                 className="border-red-800/30 text-red-400 bg-red-950/20 hover:bg-red-950/30 hover:text-white"
               >
                 Sign Up For Newsletter
                 <Send className="ml-2 h-5 w-5" />
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>

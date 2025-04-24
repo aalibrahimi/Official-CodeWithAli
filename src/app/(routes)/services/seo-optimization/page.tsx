@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { motion } from "motion/react";
 import { useRouter } from "next/navigation";
 import {
   ChevronRight,
@@ -8,7 +7,6 @@ import {
   Search,
   BarChart3,
   Globe,
-  LineChart,
   TrendingUp,
   Zap,
   Award,
@@ -17,7 +15,6 @@ import {
   Layers,
   FileText,
   Link2,
-  MessageSquare,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -25,14 +22,14 @@ import { Badge } from "@/components/ui/badge";
 import GradientText from "@/app/components/gradientText";
 
 // Animation variants
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
+// const fadeIn = {
+//   hidden: { opacity: 0, y: 20 },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     transition: { duration: 0.6, ease: "easeOut" },
+//   },
+// };
 
 const staggerContainer = {
   hidden: { opacity: 0 },
