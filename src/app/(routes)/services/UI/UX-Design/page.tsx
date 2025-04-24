@@ -2,13 +2,11 @@
 import React from "react";
 import { motion } from "motion/react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import {
   ChevronRight,
   ArrowRight,
   Eye,
   Lightbulb,
-  Palette,
   PenTool,
   Layers,
   Users,
@@ -32,15 +30,15 @@ const fadeIn = {
   },
 };
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
+// const staggerContainer = {
+//   hidden: { opacity: 0 },
+//   visible: {
+//     opacity: 1,
+//     transition: {
+//       staggerChildren: 0.1,
+//     },
+//   },
+// };
 
 // Design offerings data
 const designOfferings = [

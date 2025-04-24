@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { motion } from "motion/react";
 import { useRouter } from "next/navigation";
 import {
   ChevronRight,
@@ -10,10 +9,8 @@ import {
   Zap,
   Smartphone,
   Palette,
-  ArrowRight,
   ShieldCheck,
   Settings,
-  BarChart,
   RefreshCw,
   Globe,
   CloudCog,
@@ -25,14 +22,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import GradientText from "@/app/components/gradientText";
 
 // Animation variants
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
+// const fadeIn = {
+//   hidden: { opacity: 0, y: 20 },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     transition: { duration: 0.6, ease: "easeOut" },
+//   },
+// };
 
 // Process steps
 const processSteps = [

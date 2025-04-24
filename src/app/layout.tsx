@@ -9,7 +9,6 @@ import "./Styles/mediaSizing.css";
 import { Button } from "@/components/ui/button";
 import {
   Facebook,
-  GiftIcon,
   Github,
   Heart,
   Instagram,

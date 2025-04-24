@@ -1,6 +1,5 @@
 "use client";
 import React, { JSX } from "react";
-import { motion } from "motion/react";
 import { useRouter } from "next/navigation";
 import {
   ChevronRight,
@@ -14,11 +13,9 @@ import {
   Lock,
   CheckCircle,
   RefreshCw,
-  Layers,
   Cloud,
   Download,
   Globe,
-  MessageSquare,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -28,7 +25,6 @@ import GradientText from "@/app/components/gradientText";
 import {
   ClientOnly,
   useResponsive,
-  getOptimizedAnimationProps,
   createBrowserOptimizedVariants,
 } from "../../../utils/browser-compatibility";
 

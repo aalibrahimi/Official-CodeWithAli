@@ -12,8 +12,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
-import GradientText from "@/app/components/gradientText";
 import { useRouter } from "next/navigation";
 import MerchCard, { Category, Color, Size } from "@/app/components/Merchandise/merchCard";
 import Link from "next/link";
