@@ -16,7 +16,7 @@ const portfolioProjects = [
     title: "Knoz Al-Najah Website",
     category: "Web Development",
     image: "/knoz_website.png",
-    url: "https://knoz.codewithali.com/"
+    url: "https://www.knozalnajah.com/en"
   },
   {
     title: "Reggaeeli Website",
