@@ -36,8 +36,8 @@ export default function Footer() {
   ];
 
   return (
-    <div className="bg-black text-red-200 py-12 border-t border-red-900">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
+    <div className="dark:bg-black/20 dark:text-red-200 py-12 border-t border-red-900 ">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 ">
         {/* Desktop Layout */}
         <div className="hidden md:flex justify-between items-start">
           {/* Logo and Description */}

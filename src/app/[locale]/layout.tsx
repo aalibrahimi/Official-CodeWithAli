@@ -6,6 +6,7 @@ import Footer from "@/MyComponents/Footer";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { getLangDir } from "rtl-detect";
+import { ThemeProvider } from "next-themes";
 
 export default async function RootLayout({
   children,
@@ -25,13 +26,15 @@ export default async function RootLayout({
 
 
   return (
-    <html lang={locale} dir={direction} suppressHydrationWarning> 
+    <html lang={locale} dir={direction} suppressHydrationWarning > 
     <body>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
     <NextIntlClientProvider>
        <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
         </NextIntlClientProvider>
+        </ThemeProvider>
     </body>
      
     </html>
