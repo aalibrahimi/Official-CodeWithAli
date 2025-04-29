@@ -25,14 +25,12 @@ export default async function RootLayout({
 
 
   return (
-    <html lang={locale} dir={direction} suppressHydrationWarning>
-      <body className="bg-black text-red-200">
+    <html lang={locale} dir={direction} suppressHydrationWarning> 
       <NextIntlClientProvider>
        <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
         </NextIntlClientProvider>
-      </body>
     </html>
   );
 }
