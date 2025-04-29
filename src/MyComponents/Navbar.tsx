@@ -88,7 +88,7 @@ export function Navbar(): React.ReactElement {
 
   return (
     <>
-      <header className="border-b border-red-900/30 bg-black py-4 px-6 flex justify-between items-center">
+      <header className="border-b border-red-900/30 text-black dark:text-white dark:bg-black py-4 px-6 flex justify-between items-center">
         <div className="logo-container flex items-center">
           <Link href="/" draggable={false} className="flex items-center">
             <Image
@@ -100,7 +100,7 @@ export function Navbar(): React.ReactElement {
               height={70}
               priority
             />
-            <span className="ml-3 text-xl font-bold bg-gradient-to-r from-red-300 to-red-500 bg-clip-text text-transparent">
+            <span className="ml-3 text-xl font-bold bg-gradient-to-r from-red-500 to-red-900 dark:from-red-300 dark:to-red-500 bg-clip-text text-transparent">
               CodeWithAli
             </span>
           </Link>
@@ -110,19 +110,19 @@ export function Navbar(): React.ReactElement {
         <nav className="nav-links desktop-nav hidden md:flex space-x-8">
           <Link
             href="/"
-            className="text-red-200 hover:text-red-400 transition-colors"
+            className="text-black dark:text-white hover:text-red-400 transition-colors"
           >
             {t("routes.home")}
           </Link>
           <Link
             href="/about"
-            className="text-red-200 hover:text-red-400 transition-colors"
+            className="text-black dark:text-white hover:text-red-400 transition-colors"
           >
             {t("routes.about")}
           </Link>
           <Link
             href="/portfolio"
-            className="text-red-200 hover:text-red-400 transition-colors"
+            className="text-black dark:text-white hover:text-red-400 transition-colors"
           >
             {t("routes.portfolio")}
           </Link>
@@ -131,11 +131,11 @@ export function Navbar(): React.ReactElement {
             <Link
               href="/services"
               onClick={() => scrollTo({ top: 0 })} // This is to fix when navigating to Services from Contact
-              className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors"
+              className="text-black dark:text-white hover:text-gray-900 dark:hover:text-red-400 transition-colors"
             >
               {t("routes.services.title")}
             </Link>
-            <div className="absolute left-0 mt-2 w-56 bg-white dark:bg-black border border-gray-200 dark:border-red-900/30 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+            <div className="absolute left-0 mt-2 w-56 text-black dark:text-white bg-white dark:bg-black border border-gray-200 dark:border-red-900/30 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
               <div className="py-2">
                 {[
                   {
@@ -166,7 +166,7 @@ export function Navbar(): React.ReactElement {
                   <Link
                     key={service.title}
                     href={service.href}
-                    className="block px-4 py-2 text-gray-700 dark:text-red-200 hover:bg-gray-100 dark:hover:bg-red-900/20"
+                    className="block px-4 py-2 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-red-900/20"
                   >
                     {service.title}
                   </Link>
@@ -176,13 +176,13 @@ export function Navbar(): React.ReactElement {
           </div>
           <Link
             href="/merchandise"
-            className="text-red-200 hover:text-red-400 transition-colors"
+            className="text-black dark:text-white hover:text-red-400 transition-colors"
           >
             {t("routes.merch")}
           </Link>
           <Link
             href="/#contact"
-            className="text-red-200 hover:text-red-400 transition-colors"
+            className="text-black dark:text-white hover:text-red-400 transition-colors"
           >
             {t("routes.contact")}
           </Link>
@@ -270,42 +270,42 @@ export function Navbar(): React.ReactElement {
               <Link
                 href="/"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
+                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
               >
                 {t("routes.home")}
               </Link>
               <Link
                 href="/about"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
+                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
               >
                 {t("routes.about")}
               </Link>
               <Link
                 href="/portfolio"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
+                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
               >
                 {t("routes.portfolio")}
               </Link>
               <Link
                 href="/services"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
+                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
               >
                 {t("routes.services")}
               </Link>
               <Link
                 href="/merchandise"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
+                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
               >
                 {t("routes.merch")}
               </Link>
               <Link
                 href="/#contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
+                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
               >
                 {t("routes.contact")}
               </Link>
