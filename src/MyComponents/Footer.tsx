@@ -43,14 +43,14 @@ export default function Footer() {
     return (
         <>
           {/* Footer */}
-          <footer className="py-12 border-t border-red-900 bg-black">
+          <footer className="py-12 border-t border-red-900 dark:bg-black">
           <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-8">
               {/* Mobile Footer Links + Info */}
               <div className="md:hidden grid grid-cols-2 grid-rows-2 gap-y-5">
                 {/* Services Section */}
                 <div>
-                  <h4 className="font-medium text-white mb-4">{t("nav.company.title")}</h4>
+                  <h4 className="font-medium text-black dark:text-white mb-4">{t("nav.company.title")}</h4>
                   <ul className="space-y-2 text-sm">
                     {[
                       {
@@ -81,7 +81,7 @@ export default function Footer() {
                       <li key={item.title}>
                         <Link
                           href={item.href}
-                          className="text-red-200/60 hover:text-red-300 transition-colors"
+                          className="text-red-500 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
                         >
                           {item.title}
                         </Link>
@@ -92,7 +92,7 @@ export default function Footer() {
 
                 {/* Company Section */}
                 <div className="col-start-2">
-                  <h4 className="font-medium text-white mb-4">{t("nav.resources.title")}</h4>
+                  <h4 className="font-medium text-black dark:text-white mb-4">{t("nav.resources.title")}</h4>
                   <ul className="space-y-2 text-sm">
                     {[
                       {
@@ -112,7 +112,7 @@ export default function Footer() {
                       <li key={item.title}>
                         <Link
                           href={item.href}
-                          className="text-red-200/60 hover:text-red-300 transition-colors"
+                          className="text-red-500 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
                         >
                           {item.title}
                         </Link>
@@ -124,12 +124,12 @@ export default function Footer() {
                 {/* Contact Section */}
                 <div className="col-span-2">
                   <div>
-                    <h4 className="font-medium text-white mb-4">{t("nav.contact.title")}</h4>
+                    <h4 className="font-medium text-black dark:text-white mb-4">{t("nav.contact.title")}</h4>
                     <ul className="space-y-2 text-sm">
                       <li>
                         <a
                           href="mailto:info@codewithali.com"
-                          className="text-red-200/60 hover:text-red-300 transition-colors"
+                          className="text-red-500 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
                         >
                         {t("nav.contact.links.1")}
                         </a>
@@ -137,7 +137,7 @@ export default function Footer() {
                       <li>
                         <a
                           href="tel:+4086907890"
-                          className="text-red-200/60 hover:text-red-300 transition-colors"
+                          className="text-red-500 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
                         >
                           {t("nav.contact.links.2")}
                            
@@ -148,7 +148,7 @@ export default function Footer() {
                           <Button
                             variant="outline"
                             size="sm"
-                            className="mt-2 border-red-800/30 text-red-400 bg-red-900/20 hover:bg-red-950/20 hover:text-red-800"
+                            className="mt-2 border-red-800/30 text-red-800 dark:text-red-400 bg-red-500/40 dark:bg-red-900/20 hover:bg-red-800/40 dark:hover:bg-red-950/20 hover:text-red-800"
                           >
                            {t("nav.contact.links.3")}
                           </Button>
@@ -174,11 +174,11 @@ export default function Footer() {
                     width={70}
                     height={70}
                   />
-                  <span className="ml-2 text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
+                  <span className="ml-2 text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-red-900 dark:from-red-300 dark:to-red-500">
                     CodeWithAli
                   </span>
                 </Link>
-                <p className="text-sm text-red-200/60 mb-4">
+                <p className="text-sm text-red-500 dark:text-red-200/60 mb-4">
                  {t("compDesc")}
                 </p>
                 <div className="flex space-x-4">
@@ -197,8 +197,8 @@ export default function Footer() {
                       <span
                         className={
                           social.textStyle
-                            ? `text-xs text-red-400 ${social.textStyle}`
-                            : `text-xs text-red-400`
+                            ? `text-xs text-red-500 dark:text-red-400 ${social.textStyle}`
+                            : `text-xs text-red-500 dark:text-red-400`
                         }
                       >
                         {social.icon}
@@ -208,12 +208,12 @@ export default function Footer() {
                 </div>
               </div>
 
-              {/* Footer Links + Info */}
+              {/* Footer Links + Info DESKTOP (?) */}
               <div className="md:col-span-2">
                 <div className="hidden md:grid grid-cols-3 grid-rows-1">
                   {/* Services Section */}
                   <div>
-                    <h4 className="font-medium text-white mb-4">{t("nav.company.title")}</h4>
+                    <h4 className="font-medium text-black dark:text-white mb-4">{t("nav.company.title")}</h4>
                     <ul className="space-y-2 text-sm">
                       {[
                         {
@@ -244,7 +244,7 @@ export default function Footer() {
                         <li key={item.title}>
                           <Link
                             href={item.href}
-                            className="text-red-200/60 hover:text-red-300 transition-colors"
+                            className="text-red-500 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
                           >
                             {item.title}
                           </Link>
@@ -255,7 +255,7 @@ export default function Footer() {
 
                   {/* Company Section */}
                   <div>
-                    <h4 className="font-medium text-white mb-4">{t("nav.resources.title")}</h4>
+                    <h4 className="font-medium text-black dark:text-white mb-4">{t("nav.resources.title")}</h4>
                     <ul className="space-y-2 text-sm">
                       {[
                         {
@@ -275,7 +275,7 @@ export default function Footer() {
                         <li key={item.title}>
                           <Link
                             href={item.href}
-                            className="text-red-200/60 hover:text-red-300 transition-colors"
+                            className="text-red-500 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
                           >
                             {item.title}
                           </Link>
@@ -287,12 +287,12 @@ export default function Footer() {
                   {/* Contact Section */}
                   <div>
                     <div>
-                      <h4 className="font-medium text-white mb-4">{t("nav.contact.title")}</h4>
+                      <h4 className="font-medium text-black dark:text-white mb-4">{t("nav.contact.title")}</h4>
                       <ul className="space-y-2 text-sm">
                         <li>
                           <a
                             href="mailto:info@codewithali.com"
-                            className="text-red-200/60 hover:text-red-300 transition-colors"
+                            className="text-red-500 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
                           >
                            {t("nav.contact.links.1")}
                           </a>
@@ -300,7 +300,7 @@ export default function Footer() {
                         <li>
                           <a
                             href="tel:+4086907890"
-                            className="text-red-200/60 hover:text-red-300 transition-colors"
+                            className="text-red-500 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
                           >
                             {t("nav.contact.links.2")}
                            
@@ -311,7 +311,7 @@ export default function Footer() {
                             <Button
                               variant="outline"
                               size="sm"
-                              className="mt-2 border-red-800/30 text-red-400 bg-red-900/20 hover:bg-red-950/20 hover:text-red-800"
+                              className="mt-2 border-red-800/30 text-red-800 dark:text-red-400 bg-red-500/40 dark:bg-red-900/20 hover:bg-red-800/40 dark:hover:bg-red-950/20 hover:text-red-800"
                             >
                               {t("nav.contact.links.3")}
                             </Button>
@@ -325,7 +325,7 @@ export default function Footer() {
             </div>
 
             <div className="mt-12 pt-8 border-t border-red-900 flex flex-col md:flex-row justify-between items-center">
-              <p className="text-sm text-red-200/60 mb-4 md:mb-0">
+              <p className="text-sm text-red-800 dark:text-red-200/60 mb-4 md:mb-0">
                 © {new Date().getFullYear()} {t("nav.legal.links.1")}
               </p>
               <div className="flex space-x-6">
@@ -339,20 +339,20 @@ export default function Footer() {
                 </Link>
                 <a
                   href="#"
-                  className="text-sm text-red-200/60 hover:text-red-300 transition-colors"
+                  className="text-sm text-red-800 hover:text-red-400 dark:text-red-200/60 dark:hover:text-red-300 transition-colors"
                 >
                   {t("nav.legal.links.2")}
                 
                 </a>
                 <a
                   href="#"
-                  className="text-sm text-red-200/60 hover:text-red-300 transition-colors"
+                  className="text-sm text-red-800 hover:text-red-400 dark:text-red-200/60 dark:hover:text-red-300 transition-colors"
                 >
                   {t("nav.legal.links.3")}
                 </a>
                 <a
                   href="#"
-                  className="text-sm text-red-200/60 hover:text-red-300 transition-colors"
+                  className="text-sm text-red-800 hover:text-red-400 dark:text-red-200/60 dark:hover:text-red-300 transition-colors"
                 >
                  {t("nav.legal.links.4")}
                 </a>
