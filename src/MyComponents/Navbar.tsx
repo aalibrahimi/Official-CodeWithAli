@@ -1,16 +1,16 @@
 // src/components/Navbar.tsx
 "use client";
 import React, { useEffect, useState } from "react";
-// import { Link, usePathname } from "@/i18n/navigation";
-// import { NavigationMenuLink } from "@/components/ui/navigation-menu";
 import { ModeToggle } from "@/components/ui/modetoggle";
 
 import { cn } from "@/lib/utils";
 import { Globe } from "lucide-react"; // Import icons for menu toggle and language
-// import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { usePathname } from "@/i18n/navigation";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 
 interface RouteItem {
@@ -24,7 +24,7 @@ interface RouteItem {
 }
 
 export function Navbar(): React.ReactElement {
-//   const t = useTranslations("NavBar");
+  const t = useTranslations("NavBar");
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
@@ -37,6 +37,7 @@ export function Navbar(): React.ReactElement {
 
   const languages: Language[] = [
     { code: "en", name: "English", flag: "🇺🇸" },
+    { code: "es", name: "Español", flag: "🇪🇸" },
     { code: "ar", name: "العربية", flag: "🇮🇶" },
   ];
 
@@ -174,6 +175,40 @@ export function Navbar(): React.ReactElement {
               Contact
             </Link>
           </nav>
+
+                  {/* Right section: Language switcher, Mode toggle and Avatar with dropdown */}
+        <div className="flex items-center justify-end gap-4 pr-4">
+          {/* Language Switcher */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="flex items-center gap-1 px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <Globe className="h-4 w-4" />
+                <span className="hidden sm:inline-block">{currentLanguage.flag}</span>
+                <span className="sr-only">{t('labelSwitchLang')}</span>
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="bg-white dark:bg-gray-950 text-black dark:text-white">
+              <DropdownMenuLabel>{t('labelSelectLang')}</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              {languages.map((language) => (
+                <DropdownMenuItem 
+                  key={language.code}
+                  className={cn(
+                    "cursor-pointer flex items-center gap-2",
+                    currentLanguage.code === language.code && "font-medium bg-gray-100 dark:bg-gray-800"
+                  )}
+                  onClick={() => changeLanguage(language)}
+                >
+                  <span className="text-base">{language.flag}</span>
+                  {language.name}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+          
+          <ModeToggle />
+        </div>
+
 
           {/* Mobile menu button */}
           <div className="mobile-menu block md:hidden">
