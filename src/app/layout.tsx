@@ -15,6 +15,7 @@ import {
   Linkedin,
 } from "lucide-react";
 import { Navbar } from "@/MyComponents/Navbar";
+import Footer from "@/MyComponents/Footer";
 
 // Need to make layout server-side file
 // export const metadata = {
@@ -30,11 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-black text-red-200">
-  
-        <Navbar />
+       <Navbar />
         <main className="min-h-screen">{children}</main>
-
-      
+        <Footer />
       </body>
     </html>
   );
