@@ -163,6 +163,101 @@
       "contact": "Contact"     
     }   
   },   
+
+  "About" :
+  {
+    "badge": "OUR EXPERTISE",     
+    "Header": "Comprehensive Digital",
+    "Subheader" :  " Services & Solutions",
+    "Subdesc" : "  From website development to SEO optimization, we offer end-to-end digital solutions designed to help your business thrive in the digital landscape.",
+    "Services" : {
+      "titleLinks" :  {
+        "1" : "Website Development",
+        "2" : "Mobile App Development",
+        "3" : "UI/UX Design",
+        "4" : "E-commerce Solutions",
+        "5" : "SEO Optimization",
+        "6" : "Web Hosting & Maintenance"
+      },
+      "desc" : {
+        "1" :  "Custom-designed responsive websites optimized for performance and conversions",
+        "2" :  "Native and cross-platform mobile applications for iOS and Android",
+        "3" :  "User-focused designs that enhance engagement and simplify interactions",
+        "4" :  "Fully-featured online stores with secure payment processing and inventory management",
+        "5" :  "Data-driven strategies to improve visibility and ranking in search engines",
+        "6" :  "Reliable hosting services with regular updates, backups, and security monitoring"
+      },
+      "features" : {
+        "first" : {
+            "1" : "Responsive Design",
+            "2" : "SEO Optimization",
+            "3" : "Content Management",
+            "4" : "Performance Tuning"
+            
+        },
+        "second" : {
+          "1" : "iOS & Android Apps",
+          "2" : "Cross-Platform Solutions",
+          "3" : "App Store Deployment",
+          "4" : "Maintenance & Updates"
+        },
+        "third" : {
+          "1" : "User Research",
+          "2" : "Interface Design",
+          "3" : "Interface Design",
+          "4" : "Design Systems"
+        },
+        "fourth" : {
+          "1" : "Product Catalogs",
+          "2" : "Payment Processing",
+          "3" : "Inventory Management",
+          "4" : "Customer Management"
+        },
+        "fifth" : {
+          "1" : "Keyword Research",
+          "2" : "On-Page SEO",
+          "3" : "Content Strategy",
+          "4" : "Analytics & Reporting"
+        },
+        "sixth" : {
+          "1" : "Managed Hosting",
+          "2" : "Security Updates",
+          "3" : "Performance Monitoring",
+          "4" : "Regular Backups"
+        }
+      },
+      "process": {
+        "1" : "Discovery",
+        "2" : "Strategy",
+        "3" : "Execution",
+        "4" : "Support",
+        "numbers" : {
+          "1" : "01",
+          "2" : "02",
+          "3" : "03",
+          "4" : "04"
+        },
+        "desc" : {
+          "1" : "We begin by understanding your business, goals, target audience, and specific requirements.",
+          "2" : "We develop a comprehensive strategy and detailed project plan tailored to your objectives.",
+          "3" : "Our expert team implements the solution with regular updates and client feedback.",
+          "4" : "We provide ongoing support, maintenance, and optimization to ensure long-term success."
+        },
+        "learn" : "Learn More",
+        "approach" : {
+          "badge" : "OUR APPROACH",
+          "title" : " Our Service Delivery Process",
+          "sub" : " We follow a proven methodology to ensure successful outcomes for all our services."
+        }
+      },
+      "cta": {
+        "title" : " Ready to Get Started?",
+        "header" : " Contact us for a free consultation and let's discuss how our services can help you achieve your digital goals.",
+        "button" : " Schedule a Consultation"
+      }
+    }
+  },
+
   "Footer": {     
     "compDesc": "We design and develop digital experiences that help businesses and individuals succeed online.",     
     "rights": "Your Company. All rights reserved.",     

@@ -19,14 +19,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import GradientText from "@/MyComponents/GradientText";
+import { useTranslations } from "next-intl";
 
 // ClientOnly wrapper to prevent hydration issues
 const ClientOnly = ({ children }: any) => {
+  
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     setMounted(true);
   }, []);
   return mounted ? children : null;
+  
 };
 
 // Animation variants - simplified for better performance
@@ -39,127 +42,130 @@ const ClientOnly = ({ children }: any) => {
 //   },
 // };
 
-// Services data
+
+export default function ServicesPage() {
+  const router = useRouter();
+  const t = useTranslations("About");
+
+  // Services data
 const services = [
   {
-    title: "Website Development",
+    title: t("Services.titleLinks.1"),
     description:
-      "Custom-designed responsive websites optimized for performance and conversions",
+    t("Services.desc.1"),
     icon: Code,
     color: "from-red-600 to-red-800",
     href: "/services/web-development",
     features: [
-      "Responsive Design",
-      "SEO Optimization",
-      "Content Management",
-      "Performance Tuning",
+      t("Services.features.first.1"),
+      t("Services.features.first.2"),
+      t("Services.features.first.3"),
+      t("Services.features.first.4"),
     ],
   },
   {
-    title: "Mobile App Development",
+    title: t("Services.titleLinks.2"),
     description:
-      "Native and cross-platform mobile applications for iOS and Android",
+    t("Services.desc.2"),
     icon: Smartphone,
     color: "from-red-700 to-red-900",
     href: "/services/mobile-app-development",
     features: [
-      "iOS & Android Apps",
-      "Cross-Platform Solutions",
-      "App Store Deployment",
-      "Maintenance & Updates",
+      t("Services.features.second.1"),
+      t("Services.features.second.2"),
+      t("Services.features.second.3"),
+      t("Services.features.second.4"),
     ],
   },
   {
-    title: "UI/UX Design",
+    title: t("Services.titleLinks.3"),
     description:
-      "User-focused designs that enhance engagement and simplify interactions",
+    t("Services.desc.3"),
     icon: Palette,
     color: "from-red-800 to-red-950",
     href: "/services/UI/UX-Design", // Fixed path
     features: [
-      "User Research",
-      "Interface Design",
-      "Usability Testing",
-      "Design Systems",
+      t("Services.features.third.1"),
+      t("Services.features.third.2"),
+      t("Services.features.third.3"),
+      t("Services.features.third.4"),
     ],
   },
   {
-    title: "E-commerce Solutions",
+    title: t("Services.titleLinks.4"),
     description:
-      "Fully-featured online stores with secure payment processing and inventory management",
+      t("Services.desc.4"),
     icon: ShoppingBag,
     color: "from-red-600 to-red-800",
     href: "/services/E-Commerse",
     features: [
-      "Product Catalogs",
-      "Payment Processing",
-      "Inventory Management",
-      "Customer Management",
+      t("Services.features.fourth.1"),
+      t("Services.features.fourth.2"),
+      t("Services.features.fourth.3"),
+      t("Services.features.fourth.4"),
     ],
   },
   {
-    title: "SEO Optimization",
+    title: t("Services.titleLinks.5"),
     description:
-      "Data-driven strategies to improve visibility and ranking in search engines",
+     t("Services.desc.5"),
     icon: Search,
     color: "from-red-700 to-red-900",
     href: "/services/seo-optimization",
     features: [
-      "Keyword Research",
-      "On-Page SEO",
-      "Content Strategy",
-      "Analytics & Reporting",
+      t("Services.features.fifth.1"),
+      t("Services.features.fifth.2"),
+      t("Services.features.fifth.3"),
+      t("Services.features.fifth.4"),
     ],
   },
   {
-    title: "Web Hosting & Maintenance",
+    title: t("Services.titleLinks.6"),
     description:
-      "Reliable hosting services with regular updates, backups, and security monitoring",
+      t("Services.desc.6"),
     icon: Server,
     color: "from-red-800 to-red-950",
     href: "/services/Web-hosting",
     features: [
-      "Managed Hosting",
-      "Security Updates",
-      "Performance Monitoring",
-      "Regular Backups",
+      t("Services.features.sixth.1"),
+      t("Services.features.sixth.2"),
+      t("Services.features.sixth.3"),
+      t("Services.features.sixth.4"),
     ],
   },
 ];
 
 const processSteps = [
   {
-    number: "01",
-    title: "Discovery",
+    number: t("Services.process.numbers.1"),
+    title: t("Services.process.1"),
     description:
-      "We begin by understanding your business, goals, target audience, and specific requirements.",
+    t("Services.process.desc.1"),
     icon: Search,
   },
   {
-    number: "02",
-    title: "Strategy",
+    number: t("Services.process.numbers.2"),
+    title:  t("Services.process.2"),
     description:
-      "We develop a comprehensive strategy and detailed project plan tailored to your objectives.",
+    t("Services.process.desc.2"),
     icon: Layers,
   },
   {
-    number: "03",
-    title: "Execution",
+    number:  t("Services.process.numbers.3"),
+    title:  t("Services.process.3"),
     description:
-      "Our expert team implements the solution with regular updates and client feedback.",
+    t("Services.process.desc.3"),
     icon: Code,
   },
   {
-    number: "04",
-    title: "Support",
+    number:  t("Services.process.numbers.4"),
+    title:  t("Services.process.4"),
     description:
-      "We provide ongoing support, maintenance, and optimization to ensure long-term success.",
+    t("Services.process.desc.4"),
     icon: Server,
   },
 ];
 
-export default function ServicesPage() {
-  const router = useRouter();
 
   return (
     <ClientOnly>
@@ -180,18 +186,19 @@ export default function ServicesPage() {
             > */}
             <div className="text-center max-w-3xl mx-auto">
               <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
-                OUR EXPERTISE
+              {t("badge")}
+                
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Comprehensive Digital
+                {t("Header")}
+                
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600 block">
-                  Services & Solutions
+                {t("Subheader")}
+        
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-red-200/80 mb-8">
-                From website development to SEO optimization, we offer end-to-end
-                digital solutions designed to help your business thrive in the
-                digital landscape.
+              <p className="text-lg md:text-xl text-white/80 mb-8">
+              {t("Subdesc")}
               </p>
             </div>
             {/* </motion.div> */}
@@ -274,7 +281,8 @@ export default function ServicesPage() {
                             <Button
                               className="w-full bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 text-white"
                             >
-                              Learn More
+                              {t("Services.process.learn")}
+
                               <ArrowUpRight className="ml-2 h-4 w-4" />
                             </Button>
                           </Link>
@@ -300,14 +308,13 @@ export default function ServicesPage() {
               > */}
               <div>
                 <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
-                  OUR APPROACH
+                   {t("Services.process.approach.badge")}
                 </Badge>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Our Service Delivery Process
+                {t("Services.process.approach.title")}
                 </h2>
-                <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
-                  We follow a proven methodology to ensure successful outcomes for
-                  all our services.
+                <p className="text-amber-50 text-lg max-w-2xl mx-auto">
+                {t("Services.process.approach.sub")}
                 </p>
               </div>
               {/* </motion.div> */}
@@ -353,18 +360,17 @@ export default function ServicesPage() {
             > */}
             <div className="max-w-4xl mx-auto bg-black/60 border border-red-900 rounded-xl p-6 md:p-10 text-center">
               <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 md:mb-6">
-                Ready to Get Started?
+               {t("Services.cta.title")}
               </h2>
               <p className="text-base md:text-lg text-red-200/70 mb-6 md:mb-8 max-w-2xl mx-auto">
-                Contact us for a free consultation and let's discuss how our
-                services can help you achieve your digital goals.
+              {t("Services.cta.header")}
               </p>
               <Button
                 className="w-full md:w-auto bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
                   text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-4 md:px-8 py-2"
                 onClick={() => router.push("/contact")}
               >
-                Schedule a Consultation
+                {t("Services.cta.button")}
                 <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
