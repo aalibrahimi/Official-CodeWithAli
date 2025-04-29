@@ -1,19 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import "./Styles/globals.css";
 import "./Styles/mediaSizing.css";
-import { Button } from "@/components/ui/button";
-import {
-  Facebook,
-  Github,
-  Heart,
-  Instagram,
-  Linkedin,
-} from "lucide-react";
+
+
 import { Navbar } from "@/MyComponents/Navbar";
 import Footer from "@/MyComponents/Footer";
 
