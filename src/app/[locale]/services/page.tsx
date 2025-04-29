@@ -17,8 +17,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import GradientText from "@/app/components/gradientText";
 import Link from "next/link";
+import GradientText from "@/MyComponents/GradientText";
 
 // ClientOnly wrapper to prevent hydration issues
 const ClientOnly = ({ children }: any) => {

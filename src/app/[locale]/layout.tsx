@@ -1,5 +1,5 @@
-import "../Styles/globals.css";
-import "../Styles/mediaSizing.css";
+// import "../Styles/globals.css";
+// import "../Styles/mediaSizing.css";
 import { routing } from "@/i18n/routing";
 import { Navbar } from "@/MyComponents/Navbar";
 import Footer from "@/MyComponents/Footer";
@@ -23,14 +23,19 @@ export default async function RootLayout({
     // Checks if the language is RTL (right to left) or not
   const direction = getLangDir(locale);
 
-
   return (
+    // Override HTML attributes from the parent layout
     <html lang={locale} dir={direction} suppressHydrationWarning> 
+      <body>
       <NextIntlClientProvider>
-       <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+          <div className="flex min-h-screen flex-col">
+            <Navbar />
+            <main className="flex-1 w-full bg-black/10">{children}</main>
+            <Footer />
+          </div>
         </NextIntlClientProvider>
+
+      </body>
     </html>
   );
 }

@@ -22,7 +22,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import GradientText from "@/app/components/gradientText";
+import GradientText from "@/MyComponents/GradientText";
 
 // Custom hook to detect mobile devices
 const useIsMobile = () => {

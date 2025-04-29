@@ -15,9 +15,9 @@ import {
   BarChart,
   Heart,
 } from "lucide-react";
-import { TechIcon } from "../../components/tech-icons";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { TechIcon } from '@/MyComponents/tech-icons'
 import Link from "next/link";
 
 

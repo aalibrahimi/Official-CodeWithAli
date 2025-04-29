@@ -19,7 +19,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import GradientText from "@/app/components/gradientText";
+import GradientText from "@/MyComponents/GradientText";
 
 // Animation variants
 // const fadeIn = {

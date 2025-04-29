@@ -1,12 +1,12 @@
 "use client";
 import { motion } from "motion/react";
-import { useFormDataStore } from "@/app/components/serviceform";
 import { Loader2, Send } from "lucide-react";
 import { FormEvent, useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useFormDataStore } from "./serviceform";
 
 interface Props {
   scrollToTop?: boolean | false;

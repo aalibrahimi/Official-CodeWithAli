@@ -1,4 +1,4 @@
-import './Styles/globals.css';
+import './[locale]/globals.css';
 
 export const metadata = {
   title: 'Website Template',

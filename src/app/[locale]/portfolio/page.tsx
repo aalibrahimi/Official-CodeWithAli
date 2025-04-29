@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import GradientText from "@/app/components/gradientText";
+import GradientText from "@/MyComponents/GradientText";
 
 const portfolioProjects = [
   {

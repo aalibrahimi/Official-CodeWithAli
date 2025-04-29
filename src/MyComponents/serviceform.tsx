@@ -3,7 +3,7 @@
 import { useState, FormEvent } from 'react';
 import { Send, Loader2 } from 'lucide-react';
 import { create } from 'zustand';
-import "../Styles/info-cards.css"
+// import "../Styles/info-cards.css"
 
 interface FormDataState {
   name: string

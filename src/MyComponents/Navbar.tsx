@@ -67,12 +67,12 @@ export function Navbar(): React.ReactElement {
   const locale = useLocale();
   const pathname = usePathname();
 
+  const initialLanguage =
+    languages.find((lang) => lang.code === locale) || languages[0];
 
-
-  const initialLanguage = languages.find((lang) => lang.code === locale) || languages[0];
-
-  const [currentLanguage, setCurrentLanguage] = useState<Language>(initialLanguage);
-const changeLanguage = (language: Language) => {
+  const [currentLanguage, setCurrentLanguage] =
+    useState<Language>(initialLanguage);
+  const changeLanguage = (language: Language) => {
     if (language.code === locale) return;
 
     window.location.href = `/${language.code}${
@@ -81,7 +81,7 @@ const changeLanguage = (language: Language) => {
   };
 
   useEffect(() => {
-    const matchedLanguage = 
+    const matchedLanguage =
       languages.find((lang) => lang.code === locale) || languages[0];
     setCurrentLanguage(matchedLanguage);
   }, [locale]);
@@ -112,19 +112,19 @@ const changeLanguage = (language: Language) => {
             href="/"
             className="text-red-200 hover:text-red-400 transition-colors"
           >
-            {t('routes.home')}
+            {t("routes.home")}
           </Link>
           <Link
             href="/about"
             className="text-red-200 hover:text-red-400 transition-colors"
           >
-            {t('routes.about')}
+            {t("routes.about")}
           </Link>
           <Link
             href="/portfolio"
             className="text-red-200 hover:text-red-400 transition-colors"
           >
-            {t('routes.portfolio')}
+            {t("routes.portfolio")}
           </Link>
 
           <div className="nav-item relative group">
@@ -133,30 +133,33 @@ const changeLanguage = (language: Language) => {
               onClick={() => scrollTo({ top: 0 })} // This is to fix when navigating to Services from Contact
               className="text-gray-700 dark:text-red-200 hover:text-gray-900 dark:hover:text-red-400 transition-colors"
             >
-              {t('routes.services.title')}
+              {t("routes.services.title")}
             </Link>
             <div className="absolute left-0 mt-2 w-56 bg-white dark:bg-black border border-gray-200 dark:border-red-900/30 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
               <div className="py-2">
                 {[
                   {
-                    title: t('routes.services.content.1.title'),
+                    title: t("routes.services.content.1.title"),
                     href: "/services/web-development",
                   },
                   {
-                    title: t('routes.services.content.2.title'),
+                    title: t("routes.services.content.2.title"),
                     href: "/services/mobile-app-development",
                   },
-                  { title: t('routes.services.content.3.title'), href: "/services/UI/UX-Design" },
                   {
-                    title: t('routes.services.content.4.title'),
+                    title: t("routes.services.content.3.title"),
+                    href: "/services/UI/UX-Design",
+                  },
+                  {
+                    title: t("routes.services.content.4.title"),
                     href: "/services/E-Commerse",
                   },
                   {
-                    title: t('routes.services.content.5.title'),
+                    title: t("routes.services.content.5.title"),
                     href: "/services/seo-optimization",
                   },
                   {
-                    title: t('routes.services.content.6.title'),
+                    title: t("routes.services.content.6.title"),
                     href: "/services/Web-hosting",
                   },
                 ].map((service) => (
@@ -175,13 +178,13 @@ const changeLanguage = (language: Language) => {
             href="/merchandise"
             className="text-red-200 hover:text-red-400 transition-colors"
           >
-            {t('routes.merch')}
+            {t("routes.merch")}
           </Link>
           <Link
             href="/#contact"
             className="text-red-200 hover:text-red-400 transition-colors"
           >
-            {t('routes.contact')}
+            {t("routes.contact")}
           </Link>
         </nav>
 
@@ -269,42 +272,42 @@ const changeLanguage = (language: Language) => {
                 onClick={() => setIsMenuOpen(false)}
                 className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
               >
-                {t('routes.home')}
+                {t("routes.home")}
               </Link>
               <Link
                 href="/about"
                 onClick={() => setIsMenuOpen(false)}
                 className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
               >
-                {t('routes.about')}
+                {t("routes.about")}
               </Link>
               <Link
                 href="/portfolio"
                 onClick={() => setIsMenuOpen(false)}
                 className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
               >
-                {t('routes.portfolio')}
+                {t("routes.portfolio")}
               </Link>
               <Link
                 href="/services"
                 onClick={() => setIsMenuOpen(false)}
                 className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
               >
-                {t('routes.services')}
+                {t("routes.services")}
               </Link>
               <Link
                 href="/merchandise"
                 onClick={() => setIsMenuOpen(false)}
                 className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
               >
-                {t('routes.merch')}
+                {t("routes.merch")}
               </Link>
               <Link
                 href="/#contact"
                 onClick={() => setIsMenuOpen(false)}
                 className="text-red-200 hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
               >
-                {t('routes.contact')}
+                {t("routes.contact")}
               </Link>
             </div>
           </div>

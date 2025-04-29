@@ -20,13 +20,13 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import GradientText from "@/app/components/gradientText";
 // I imported these utilities from the new file I created
 import {
   ClientOnly,
   useResponsive,
   createBrowserOptimizedVariants,
 } from "../../../utils/browser-compatibility";
+import GradientText from "@/MyComponents/GradientText";
 
 // Types for our data
 interface HostingFeature {

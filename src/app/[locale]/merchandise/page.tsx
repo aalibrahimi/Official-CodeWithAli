@@ -13,8 +13,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useRouter } from "next/navigation";
-import MerchCard, { Category, Color, Size } from "@/app/components/Merchandise/merchCard";
 import Link from "next/link";
+import MerchCard, { Category, Color, Size } from "@/MyComponents/Merchandise/merchCard";
 
 // Merchandise data
 const merchandiseItems = [
