@@ -195,32 +195,33 @@ export default function Footer() {
           
         </div>
 {/*  */}
-<div className="mt-12 pt-8 border-t border-red-900 flex flex-col md:flex-row justify-between items-center">
+<div className="flex justify-center items-center w-full pt-6 ">
+<div className="w-[900px] pt-8  mt-12 border-t border-red-900 flex justify-between gap-20 ">
               <p className="text-sm text-red-200/60 mb-4 md:mb-0">
                 © {new Date().getFullYear()} CodeWithAli. All rights reserved.
               </p>
-              <div className="flex space-x-6 gap-8">
+              <div className="flex">
                 <a
                   href="#"
-                  className="text-sm text-red-200/60 hover:text-red-300 transition-colors"
+                  className="text-sm text-red-200/60 hover:text-red-300 transition-colors px-10"
                 >
                   Privacy Policy
                 </a>
                 <a
                   href="#"
-                  className="text-sm text-red-200/60 hover:text-red-300 transition-colors"
+                  className="text-sm text-red-200/60 hover:text-red-300 transition-colors px-10"
                 >
                   Terms of Service
                 </a>
                 <a
                   href="#"
-                  className="text-sm text-red-200/60 hover:text-red-300 transition-colors"
+                  className="text-sm text-red-200/60 hover:text-red-300 transition-colors pl-6"
                 >
                   Cookie Policy
                 </a>
               </div>
             </div>
-
+            </div>
       </div>
     </div>
   );
