@@ -211,12 +211,12 @@ const HomePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-white dark:bg-black text-white overflow-x-hidden">
       {/* Hero Section */}
       <section className="pt-10 pb-20 md:pb-24 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-950/30 to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-red-300 dark:bg-black dark:opacity-70"></div>
+          <div className="absolute top-0 left-0 w-full h-full dark:bg-gradient-to-br dark:from-red-950/30 dark:to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
@@ -238,7 +238,7 @@ const HomePage = () => {
                 <Link href="/contact">
                   <Button
                     size="lg"
-                    className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
+                    className="bg-gradient-to-r from-red-500 to-red-700 dark:from-red-700 dark:to-red-900 hover:from-red-600 hover:to-red-800 
                       text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8 w-full sm:w-auto"
                   >
                     {t("hero.buttons.startProject")}
@@ -249,7 +249,7 @@ const HomePage = () => {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-red-800/30 text-red-400 bg-red-950/20 hover:bg-red-950/30 hover:text-white px-8 w-full sm:w-auto"
+                    className="border-red-800/30 text-white dark:text-red-400 bg-red-700/40 dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white px-8 w-full sm:w-auto"
                   >
                     {t("hero.buttons.viewWork")}
                   </Button>
@@ -261,7 +261,7 @@ const HomePage = () => {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-red-800/30 text-red-400 bg-red-950/20 px-8 w-full sm:w-auto 
+                    className="border-red-800/30 text-white dark:text-red-400 bg-red-700/40 dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white px-8 w-full sm:w-auto 
                               flex items-center gap-2 transition-all duration-300 ease-in-out 
                               group-hover:bg-red-950/30 group-hover:text-white"
                   >
@@ -330,7 +330,7 @@ const HomePage = () => {
       </section>
 
       {/* Clients Section */}
-      <section className="py-12 bg-black/80 border-y border-red-950/20">
+      <section className="py-12 bg-white dark:bg-black/80 border-y border-red-950/20">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-8">
             <p className="text-red-300/60 text-sm uppercase tracking-wider">
@@ -395,16 +395,16 @@ const HomePage = () => {
                       >
                         <service.icon className="w-full h-full text-white" />
                       </div>
-                      <h3 className="text-xl font-bold text-white mb-2">
+                      <h3 className="text-xl font-bold text-red-800 dark:text-white mb-2">
                         {service.title}
                       </h3>
-                      <p className="text-red-200/60">{service.description}</p>
+                      <p className="dark:text-red-200/60">{service.description}</p>
                     </div>
                     <div className="mt-auto pt-4">
                       <Link href={service.url} target="_blank">
                         <Button
                           variant="ghost"
-                          className="p-0 text-red-400 hover:text-red-300 hover:bg-transparent group"
+                          className="p-0 text-red-700 dark:text-red-400 dark:hover:text-red-300 hover:bg-transparent group"
                         >
                           {t("services.learnMore")}
                           <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
