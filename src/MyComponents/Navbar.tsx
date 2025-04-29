@@ -69,24 +69,22 @@ export function Navbar(): React.ReactElement {
 
 
 
-// Determine the initial language that will match on both server and client
-const initialLanguage = languages.find((lang) => lang.code === locale) || languages[0];
+  const initialLanguage = languages.find((lang) => lang.code === locale) || languages[0];
 
-const [currentLanguage, setCurrentLanguage] = useState<Language>(initialLanguage);
-// const changeLanguage = (language: Language) => {
-//     if (language.code === locale) return;
+  const [currentLanguage, setCurrentLanguage] = useState<Language>(initialLanguage);
+const changeLanguage = (language: Language) => {
+    if (language.code === locale) return;
 
     window.location.href = `/${language.code}${
       pathname === "/" ? "" : pathname
     } `;
   };
 
-// You can keep this effect for when locale changes
-useEffect(() => {
-  const matchedLanguage = 
-    languages.find((lang) => lang.code === locale) || languages[0];
-  setCurrentLanguage(matchedLanguage);
-}, [locale]);
+  useEffect(() => {
+    const matchedLanguage = 
+      languages.find((lang) => lang.code === locale) || languages[0];
+    setCurrentLanguage(matchedLanguage);
+  }, [locale]);
 
   return (
     <>
