@@ -29,7 +29,7 @@ export function ModeToggle() {
       size="icon"
       onClick={toggleTheme}
       aria-label="Toggle theme"
-      className="bg-white text-black hover:bg-white dark:bg-red-800/60 dark:text-black dark:hover:bg-red-900 dark:hover:text-white transition-colors duration-75"
+      className="bg-rose-200 hover:bg-rose-300 dark:bg-pink-400 dark:text-black dark:hover:bg-pink-500 dark:hover:text-white transition-colors duration-75"
     >
       <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
       <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />

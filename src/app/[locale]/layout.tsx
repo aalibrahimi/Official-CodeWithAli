@@ -6,7 +6,6 @@ import Footer from "@/MyComponents/Footer";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { getLangDir } from "rtl-detect";
-import { ThemeProvider } from "next-themes";
 
 export default async function RootLayout({
   children,
