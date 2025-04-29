@@ -46,33 +46,47 @@
     }
   },
   "Footer": {
-    "compDesc": "Your company description goes here. A brief overview of what your organization does and its mission.",
+    "compDesc": " We design and develop digital experiences that help businesses and individuals succeed online.",
     "rights": "Your Company. All rights reserved.",
     "customLink": "Github",
     "cwaMark": "Designed By",
     "nav": {
       "company": {
-        "title": "Company",
+        "title": "Services",
         "links": {
-          "1": "About",
-          "2": "Careers",
-          "3": "Contact"
+          "1": "Website Development",
+          "2": "Mobile App Development",
+          "3": "UI/UX Design",
+          "4": "E-commerce Solutions",
+          "5": "SEO Optimization",
+          "6": "Web Hosting"
         }
       },
       "resources": {
-        "title": "Resources",
+        "title": "company",
         "links": {
-          "1": "Blog",
-          "2": "Documentation",
-          "3": "Help Center"
+          "1": "About",
+          "2": "Portfolio",
+          "3": "Contact"
         }
       },
-      "legal": {
-        "title": "Legal",
+      "contact": {
+        "title": "Contact",
         "links": {
-          "1": "Privacy Policy",
-          "2": "Terms of Service",
-          "3": "Cookie Policy"
+          "1": "unfold@codewithali.com",
+          "2": " (408) 690-4009",
+          "3": " Get a Quote"
+
+        }
+        
+      },
+      "legal" : {
+        "title":"Privacy",
+        "links" : {
+          "1" : "2025 CodeWithAli. All rights reserved.",
+          "2" : "Privacy Policy",
+          "3" : "Terms of Service",
+          "4" : "Cookie Policy"
         }
       }
     }

@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Facebook, Github, Heart, Instagram, Linkedin } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -37,7 +38,7 @@ export default function Footer() {
       url: "https://www.linkedin.com/company/codewithali-co",
     },
   ];
-
+  const t = useTranslations("Footer");
     
     return (
         <>
@@ -49,28 +50,31 @@ export default function Footer() {
               <div className="md:hidden grid grid-cols-2 grid-rows-2 gap-y-5">
                 {/* Services Section */}
                 <div>
-                  <h4 className="font-medium text-white mb-4">Services</h4>
+                  <h4 className="font-medium text-white mb-4">{t("nav.company.title")}</h4>
                   <ul className="space-y-2 text-sm">
                     {[
                       {
-                        title: "Website Development",
+                        title: t("nav.company.links.1"),
                         href: "/services/web-development",
                       },
                       {
-                        title: "Mobile App Development",
+                        title: t("nav.company.links.2"),
                         href: "/services/mobile-app-development",
                       },
-                      { title: "UI/UX Design", href: "/services/UI/UX-Design" },
                       {
-                        title: "E-commerce Solutions",
+                        title: t("nav.company.links.3"),
+                        href: "/services/UI/UX-Design",
+                      },
+                      {
+                        title: t("nav.company.links.4"),
                         href: "/services/E-Commerse",
                       },
                       {
-                        title: "SEO Optimization",
+                        title: t("nav.company.links.5"),
                         href: "/services/seo-optimization",
                       },
                       {
-                        title: "Web Hosting",
+                        title: t("nav.company.links.6"),
                         href: "/services/Web-hosting",
                       },
                     ].map((item) => (
@@ -88,20 +92,20 @@ export default function Footer() {
 
                 {/* Company Section */}
                 <div className="col-start-2">
-                  <h4 className="font-medium text-white mb-4">Company</h4>
+                  <h4 className="font-medium text-white mb-4">{t("nav.resources.title")}</h4>
                   <ul className="space-y-2 text-sm">
                     {[
                       {
-                        title: "About",
+                        title: t("nav.resources.links.1"),
                         href: "/about",
                       },
                       {
-                        title: "Portfolio",
+                        title: t("nav.resources.links.2"),
                         href: "/portfolio",
                       },
                       { title: "Process", href: "/#process" },
                       {
-                        title: "Contact",
+                        title: t("nav.resources.links.3"),
                         href: "/contact",
                       },
                     ].map((item) => (
@@ -120,14 +124,14 @@ export default function Footer() {
                 {/* Contact Section */}
                 <div className="col-span-2">
                   <div>
-                    <h4 className="font-medium text-white mb-4">Contact</h4>
+                    <h4 className="font-medium text-white mb-4">{t("nav.contact.title")}</h4>
                     <ul className="space-y-2 text-sm">
                       <li>
                         <a
                           href="mailto:info@codewithali.com"
                           className="text-red-200/60 hover:text-red-300 transition-colors"
                         >
-                          unfold@codewithali.com
+                        {t("nav.contact.links.1")}
                         </a>
                       </li>
                       <li>
@@ -135,7 +139,8 @@ export default function Footer() {
                           href="tel:+4086907890"
                           className="text-red-200/60 hover:text-red-300 transition-colors"
                         >
-                          (408) 690-4009
+                          {t("nav.contact.links.2")}
+                           
                         </a>
                       </li>
                       <li>
@@ -145,7 +150,7 @@ export default function Footer() {
                             size="sm"
                             className="mt-2 border-red-800/30 text-red-400 bg-red-900/20 hover:bg-red-950/20 hover:text-red-800"
                           >
-                            Get a Quote
+                           {t("nav.contact.links.3")}
                           </Button>
                         </Link>
                       </li>
@@ -174,8 +179,7 @@ export default function Footer() {
                   </span>
                 </Link>
                 <p className="text-sm text-red-200/60 mb-4">
-                  We design and develop digital experiences that help businesses
-                  and individuals succeed online.
+                 {t("compDesc")}
                 </p>
                 <div className="flex space-x-4">
                   {/* Social icons */}
@@ -209,31 +213,31 @@ export default function Footer() {
                 <div className="hidden md:grid grid-cols-3 grid-rows-1">
                   {/* Services Section */}
                   <div>
-                    <h4 className="font-medium text-white mb-4">Services</h4>
+                    <h4 className="font-medium text-white mb-4">{t("nav.company.title")}</h4>
                     <ul className="space-y-2 text-sm">
                       {[
                         {
-                          title: "Website Development",
+                          title: t("nav.company.links.1"),
                           href: "/services/web-development",
                         },
                         {
-                          title: "Mobile App Development",
+                          title: t("nav.company.links.2"),
                           href: "/services/mobile-app-development",
                         },
                         {
-                          title: "UI/UX Design",
+                          title: t("nav.company.links.3"),
                           href: "/services/UI/UX-Design",
                         },
                         {
-                          title: "E-commerce Solutions",
+                          title: t("nav.company.links.4"),
                           href: "/services/E-Commerse",
                         },
                         {
-                          title: "SEO Optimization",
+                          title: t("nav.company.links.5"),
                           href: "/services/seo-optimization",
                         },
                         {
-                          title: "Web Hosting",
+                          title: t("nav.company.links.6"),
                           href: "/services/Web-hosting",
                         },
                       ].map((item) => (
@@ -251,20 +255,20 @@ export default function Footer() {
 
                   {/* Company Section */}
                   <div>
-                    <h4 className="font-medium text-white mb-4">Company</h4>
+                    <h4 className="font-medium text-white mb-4">{t("nav.resources.title")}</h4>
                     <ul className="space-y-2 text-sm">
                       {[
                         {
-                          title: "About",
+                          title: t("nav.resources.links.1"),
                           href: "/about",
                         },
                         {
-                          title: "Portfolio",
+                          title: t("nav.resources.links.2"),
                           href: "/portfolio",
                         },
                         { title: "Process", href: "/#process" },
                         {
-                          title: "Contact",
+                          title: t("nav.resources.links.3"),
                           href: "/contact",
                         },
                       ].map((item) => (
@@ -283,14 +287,14 @@ export default function Footer() {
                   {/* Contact Section */}
                   <div>
                     <div>
-                      <h4 className="font-medium text-white mb-4">Contact</h4>
+                      <h4 className="font-medium text-white mb-4">{t("nav.contact.title")}</h4>
                       <ul className="space-y-2 text-sm">
                         <li>
                           <a
                             href="mailto:info@codewithali.com"
                             className="text-red-200/60 hover:text-red-300 transition-colors"
                           >
-                            unfold@codewithali.com
+                           {t("nav.contact.links.1")}
                           </a>
                         </li>
                         <li>
@@ -298,7 +302,8 @@ export default function Footer() {
                             href="tel:+4086907890"
                             className="text-red-200/60 hover:text-red-300 transition-colors"
                           >
-                            (408) 690-4009
+                            {t("nav.contact.links.2")}
+                           
                           </a>
                         </li>
                         <li>
@@ -308,7 +313,7 @@ export default function Footer() {
                               size="sm"
                               className="mt-2 border-red-800/30 text-red-400 bg-red-900/20 hover:bg-red-950/20 hover:text-red-800"
                             >
-                              Get a Quote
+                              {t("nav.contact.links.3")}
                             </Button>
                           </Link>
                         </li>
@@ -321,7 +326,7 @@ export default function Footer() {
 
             <div className="mt-12 pt-8 border-t border-red-900 flex flex-col md:flex-row justify-between items-center">
               <p className="text-sm text-red-200/60 mb-4 md:mb-0">
-                © {new Date().getFullYear()} CodeWithAli. All rights reserved.
+                © {new Date().getFullYear()} {t("nav.legal.links.1")}
               </p>
               <div className="flex space-x-6">
                 <Link
@@ -336,19 +341,20 @@ export default function Footer() {
                   href="#"
                   className="text-sm text-red-200/60 hover:text-red-300 transition-colors"
                 >
-                  Privacy Policy
+                  {t("nav.legal.links.2")}
+                
                 </a>
                 <a
                   href="#"
                   className="text-sm text-red-200/60 hover:text-red-300 transition-colors"
                 >
-                  Terms of Service
+                  {t("nav.legal.links.3")}
                 </a>
                 <a
                   href="#"
                   className="text-sm text-red-200/60 hover:text-red-300 transition-colors"
                 >
-                  Cookie Policy
+                 {t("nav.legal.links.4")}
                 </a>
               </div>
             </div>
