@@ -25,6 +25,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import ContactForm from "@/MyComponents/contact-form";
+import { useTranslations } from "next-intl";
 
 // Animation variants with reduced intensity for mobile
 const fadeIn = {
@@ -46,116 +47,108 @@ const staggerContainer = {
   },
 };
 
-// Services data
-const services = [
-  {
-    title: "Website Development",
-    description:
-      "Custom-designed responsive websites optimized for performance and conversions",
-    icon: Code,
-    color: "from-red-600 to-red-800",
-    url: "/services/web-development",
-  },
-  {
-    title: "Mobile App Development",
-    description:
-      "Native and cross-platform mobile applications for iOS and Android",
-    icon: Smartphone,
-    color: "from-red-700 to-red-900",
-    url: "/services/mobile-app-development",
-  },
-  {
-    title: "UI/UX Design",
-    description:
-      "User-focused designs that enhance engagement and simplify interactions",
-    icon: Palette,
-    color: "from-red-800 to-red-950",
-    url: "/services/UI/UX-Design",
-  },
-  {
-    title: "E-commerce Solutions",
-    description:
-      "Fully-featured online stores with secure payment processing and inventory management",
-    icon: ShoppingBag,
-    color: "from-red-600 to-red-800",
-    url: "/services/E-Commerse",
-  },
-  {
-    title: "SEO Optimization",
-    description:
-      "Data-driven strategies to improve visibility and ranking in search engines",
-    icon: Search,
-    color: "from-red-700 to-red-900",
-    url: "/services/seo-optimization",
-  },
-  {
-    title: "Web Hosting & Maintenance",
-    description:
-      "Reliable hosting services with regular updates, backups, and security monitoring",
-    icon: Server,
-    color: "from-red-800 to-red-950",
-    url: "/services/Web-hosting",
-  },
-];
-
-// Client industries
-const industries = [
-  { name: "Business", icon: BriefcaseBusiness },
-  { name: "E-commerce", icon: ShoppingBag },
-  { name: "Education", icon: School },
-  { name: "Healthcare", icon: MessageSquare },
-  { name: "Real Estate", icon: Coffee },
-  { name: "Technology", icon: Server },
-];
-
-// Portfolio projects
-const portfolioProjects = [
-  {
-    title: "Knoz Al-Najah Website",
-    category: "Web Development",
-    image: "/knoz_website.png",
-    url: "https://knoz.codewithali.com/",
-  },
-  { 
-    title: "Budgetary App",
-    category: "Desktop Development",
-    image: "/budgetary.png",
-    url: "https://budgetary.codewithali.com/",
-  },
-  {
-    title: "Mario's Hauling",
-    category: "Web Development",
-    image: "/marioshauling_website.png",
-    url: "https://marioshauling.codewithali.com/"
-  }
-];
-
-// Testimonials
-const testimonials = [
-  {
-    name: "Alex Thompson",
-    position: "CEO, TechStart Inc.",
-    content:
-      "They delivered our company website ahead of schedule and beyond our expectations. Their attention to detail and responsive design expertise made all the difference.",
-  },
-  {
-    name: "Sarah Chen",
-    position: "Marketing Director, StyleShop",
-    content:
-      "Our e-commerce site has seen a 45% increase in conversions since the redesign. Their team understood our brand and implemented exactly what we needed.",
-  },
-  {
-    name: "Marcus Johnson",
-    position: "Founder, HealthApp",
-    content:
-      "From concept to launch, they guided us through the entire app development process with expertise and professionalism. The final product exceeded our vision.",
-  },
-];
-
 const HomePage = () => {
+  const t = useTranslations("HomePage");
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
   const [isReducedMotion, setIsReducedMotion] = useState(false);
+
+  // Services data
+  const services = [
+    {
+      title: t("services.items.1.title"),
+      description: t("services.items.1.description"),
+      icon: Code,
+      color: "from-red-600 to-red-800",
+      url: "/services/web-development",
+    },
+    {
+      title: t("services.items.2.title"),
+      description: t("services.items.2.description"),
+      icon: Smartphone,
+      color: "from-red-700 to-red-900",
+      url: "/services/mobile-app-development",
+    },
+    {
+      title: t("services.items.3.title"),
+      description: t("services.items.3.description"),
+      icon: Palette,
+      color: "from-red-800 to-red-950",
+      url: "/services/UI/UX-Design",
+    },
+    {
+      title: t("services.items.4.title"),
+      description: t("services.items.4.description"),
+      icon: ShoppingBag,
+      color: "from-red-600 to-red-800",
+      url: "/services/E-Commerse",
+    },
+    {
+      title: t("services.items.5.title"),
+      description: t("services.items.5.description"),
+      icon: Search,
+      color: "from-red-700 to-red-900",
+      url: "/services/seo-optimization",
+    },
+    {
+      title: t("services.items.6.title"),
+      description: t("services.items.6.description"),
+      icon: Server,
+      color: "from-red-800 to-red-950",
+      url: "/services/Web-hosting",
+    },
+  ];
+
+  // Client industries
+  const industries = [
+    { name: t("clients.industries.business"), icon: BriefcaseBusiness },
+    { name: t("clients.industries.ecommerce"), icon: ShoppingBag },
+    { name: t("clients.industries.education"), icon: School },
+    { name: t("clients.industries.healthcare"), icon: MessageSquare },
+    { name: t("clients.industries.realEstate"), icon: Coffee },
+    { name: t("clients.industries.technology"), icon: Server },
+  ];
+
+  // Portfolio projects
+  const portfolioProjects = [
+    {
+      title: "Knoz Al-Najah Website",
+      category: "Web Development",
+      image: "/knoz_website.png",
+      url: "https://knoz.codewithali.com/",
+    },
+    { 
+      title: "Budgetary App",
+      category: "Desktop Development",
+      image: "/budgetary.png",
+      url: "https://budgetary.codewithali.com/",
+    },
+    {
+      title: "Mario's Hauling",
+      category: "Web Development",
+      image: "/marioshauling_website.png",
+      url: "https://marioshauling.codewithali.com/"
+    }
+  ];
+
+  // Testimonials
+  const testimonials = [
+    {
+      name: t("testimonials.items.1.name"),
+      position: t("testimonials.items.1.position"),
+      content: t("testimonials.items.1.content"),
+    },
+    {
+      name: t("testimonials.items.2.name"),
+      position: t("testimonials.items.2.position"),
+      content: t("testimonials.items.2.content"),
+    },
+    {
+      name: t("testimonials.items.3.name"),
+      position: t("testimonials.items.3.position"),
+      content: t("testimonials.items.3.content"),
+    },
+  ];
 
   // Check if component is mounted and check for reduced motion preference
   useEffect(() => {
@@ -228,20 +221,18 @@ const HomePage = () => {
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* <motion.div
+            <motion.div
               className="md:pr-8"
               {...getAnimationProps()}
-            > */}
-            <div className="md:pr-8">
+            >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Bringing Your
+                {t("hero.title.part1")}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600 block">
-                  Digital Vision to Life
+                  {t("hero.title.part2")}
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-red-200/80 mb-8 max-w-xl">
-                We design and develop stunning websites and powerful
-                applications that elevate your brand and grow your business.
+                {t("hero.description")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact">
@@ -250,7 +241,7 @@ const HomePage = () => {
                     className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
                       text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8 w-full sm:w-auto"
                   >
-                    Start Your Project
+                    {t("hero.buttons.startProject")}
                     <ChevronRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
@@ -260,7 +251,7 @@ const HomePage = () => {
                     size="lg"
                     className="border-red-800/30 text-red-400 bg-red-950/20 hover:bg-red-950/30 hover:text-white px-8 w-full sm:w-auto"
                   >
-                    View Our Work
+                    {t("hero.buttons.viewWork")}
                   </Button>
                 </Link>
                 <Link
@@ -275,20 +266,18 @@ const HomePage = () => {
                               group-hover:bg-red-950/30 group-hover:text-white"
                   >
                     <Mail className="text-red-400 group-hover:text-white" />
-                    <span>Contact Us</span>
+                    <span>{t("hero.buttons.contactUs")}</span>
                   </Button>
                 </Link>
               </div>
-            </div>
-            {/* </motion.div> */}
+            </motion.div>
 
             {/* Right Side Graphics - only rendered on larger screens */}
             {isMounted && (
-              // <motion.div
-              //   {...getAnimationProps(0.2)}
-              //   className="hidden lg:block relative"
-              // >
-              <div className="hidden lg:block relative">
+              <motion.div
+                {...getAnimationProps(0.2)}
+                className="hidden lg:block relative"
+              >
                 <div className="relative bg-black/60 border border-red-900 rounded-xl overflow-hidden shadow-2xl shadow-red-950/20 p-2">
                   <div className="grid grid-cols-2 gap-2">
                     {/* Mock designs */}
@@ -334,8 +323,7 @@ const HomePage = () => {
                 {/* Decorative elements */}
                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-red-600/10 rounded-full blur-3xl"></div>
                 <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-red-800/10 rounded-full blur-3xl"></div>
-              </div>
-              // </motion.div>
+              </motion.div>
             )}
           </div>
         </div>
@@ -346,24 +334,22 @@ const HomePage = () => {
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-8">
             <p className="text-red-300/60 text-sm uppercase tracking-wider">
-              Trusted by businesses across industries
+              {t("clients.title")}
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {industries.map((industry, index) => (
-              // <motion.div
-              //   key={index}
-              //   {...getAnimationProps(index * 0.05)}
-              //   className="flex flex-col items-center"
-              // >
-              <div key={index} className="flex flex-col items-center">
+              <motion.div
+                key={index}
+                {...getAnimationProps(index * 0.05)}
+                className="flex flex-col items-center"
+              >
                 <div className="w-12 h-12 bg-red-950/20 rounded-lg flex items-center justify-center mb-3">
                   <industry.icon className="h-6 w-6 text-red-500/70" />
                 </div>
                 <span className="text-red-200/60 text-sm">{industry.name}</span>
-              </div>
-              // </motion.div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -379,31 +365,27 @@ const HomePage = () => {
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20">
           <div className="text-center mb-16">
-            {/* <motion.div
+            <motion.div
               {...getAnimationProps()}
-            > */}
-            <div>
+            >
               <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
-                OUR SERVICES
+                {t("services.badge")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Expert Solutions for Your Digital Needs
+                {t("services.title")}
               </h2>
               <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
-                From websites to mobile apps, we create custom digital solutions
-                tailored to your business goals and user needs.
+                {t("services.description")}
               </p>
-            </div>
-            {/* </motion.div> */}
+            </motion.div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, index) => (
-              // <motion.div
-              //   key={index}
-              //   {...getAnimationProps(index * 0.05)}
-              // >
-              <div key={index}>
+              <motion.div
+                key={index}
+                {...getAnimationProps(index * 0.05)}
+              >
                 <Card className="bg-black/60 border-red-900 backdrop-blur-sm h-full overflow-hidden group">
                   <CardContent className="p-6 flex flex-col h-full">
                     <div className="mb-5">
@@ -424,15 +406,14 @@ const HomePage = () => {
                           variant="ghost"
                           className="p-0 text-red-400 hover:text-red-300 hover:bg-transparent group"
                         >
-                          Learn more
+                          {t("services.learnMore")}
                           <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
                         </Button>
                       </Link>
                     </div>
                   </CardContent>
                 </Card>
-              </div>
-              // </motion.div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -442,32 +423,28 @@ const HomePage = () => {
       <section id="work" className="py-20 md:py-24 bg-red-950/10">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-16">
-            {/* <motion.div
+            <motion.div
               {...getAnimationProps()}
-            > */}
-            <div>
+            >
               <Badge className="bg-red-900/50 text-red-300 border-transparent mb-4 px-3 py-1">
-                OUR WORK
+                {t("portfolio.badge")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Recent Projects
+                {t("portfolio.title")}
               </h2>
               <p className="text-red-200 text-lg max-w-2xl mx-auto">
-                Explore some of our latest work for clients across different
-                industries.
+                {t("portfolio.description")}
               </p>
-            </div>
-            {/* </motion.div> */}
+            </motion.div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {portfolioProjects.map((project, index) => (
-              // <motion.div
-              //   key={index}
-              //   {...getAnimationProps(index * 0.1)}
-              //   className="group cursor-pointer"
-              // >
-              <div key={index} className="group cursor-pointer">
+              <motion.div
+                key={index}
+                {...getAnimationProps(index * 0.1)}
+                className="group cursor-pointer"
+              >
                 <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-xl shadow-red-950/20">
                   {/* Project Image */}
                   <div className="w-full h-full bg-black/80 border-2 border-red-800/30 flex items-center justify-center">
@@ -514,7 +491,7 @@ const HomePage = () => {
                           size="lg"
                           className="border-2 border-red/60 text-white bg-red-700/50 px-6 py-5 hover:bg-black hover:text-white text-base font-medium"
                         >
-                          View Project
+                          {t("portfolio.viewProject")}
                           <MoveUpRight className="ml-2 h-5 w-5" />
                         </Button>
                       </Link>
@@ -530,8 +507,7 @@ const HomePage = () => {
                     {project.title}
                   </h3>
                 </div>
-              </div>
-              // </motion.div>
+              </motion.div>
             ))}
           </div>
 
@@ -541,7 +517,7 @@ const HomePage = () => {
                 className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
                 text-white border-2 border-red-800/40 shadow-lg shadow-red-950/20 px-8 py-6 text-lg font-medium"
               >
-                View All Projects
+                {t("portfolio.viewAllProjects")}
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
@@ -556,61 +532,53 @@ const HomePage = () => {
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="text-center mb-16">
-            {/* <motion.div
+            <motion.div
               {...getAnimationProps()}
-            > */}
-            <div>
+            >
               <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
-                OUR PROCESS
+                {t("process.badge")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                How We Work
+                {t("process.title")}
               </h2>
               <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
-                Our streamlined process ensures clear communication and
-                outstanding results for every project.
+                {t("process.description")}
               </p>
-            </div>
-            {/* </motion.div> */}
+            </motion.div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 md:gap-6">
             {[
               {
                 number: "01",
-                title: "Discovery",
-                description:
-                  "We learn about your business, goals, and requirements through in-depth consultations.",
+                title: t("process.steps.1.title"),
+                description: t("process.steps.1.description"),
                 icon: Search,
               },
               {
                 number: "02",
-                title: "Design",
-                description:
-                  "Our designers create wireframes and visual mockups that align with your brand identity.",
+                title: t("process.steps.2.title"),
+                description: t("process.steps.2.description"),
                 icon: Palette,
               },
               {
                 number: "03",
-                title: "Development",
-                description:
-                  "Our developers build your solution with clean code and cutting-edge technologies.",
+                title: t("process.steps.3.title"),
+                description: t("process.steps.3.description"),
                 icon: Code,
               },
               {
                 number: "04",
-                title: "Deployment",
-                description:
-                  "We launch your project, provide training, and offer ongoing support as needed.",
+                title: t("process.steps.4.title"),
+                description: t("process.steps.4.description"),
                 icon: ShoppingBag,
               },
             ].map((step, index) => (
-              // <motion.div
-              //   key={index}
-              //   {...getAnimationProps(index * 0.1)}
-              //   className="relative"
-              // >
-              <div key={index} className="relative">
+              <motion.div
+                key={index}
+                {...getAnimationProps(index * 0.1)}
+                className="relative"
+              >
                 <div className="bg-black/60 border border-red-900 rounded-xl p-6 h-full">
                   <div className="absolute -top-5 -left-2">
                     <span className="text-5xl font-bold text-red-950/70">
@@ -633,8 +601,7 @@ const HomePage = () => {
                     <ArrowRight className="w-6 h-6 text-red-700/50" />
                   </div>
                 )}
-              </div>
-              // </motion.div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -647,22 +614,19 @@ const HomePage = () => {
       >
         <div className="max-w-5xl mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="text-center mb-16">
-            {/* <motion.div
+            <motion.div
               {...getAnimationProps()}
-            > */}
-            <div>
+            >
               <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
-                TESTIMONIALS
+                {t("testimonials.badge")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                What Our Clients Say
+                {t("testimonials.title")}
               </h2>
               <p className="text-red-200/60 text-lg max-w-2xl mx-auto">
-                Don't just take our word for it – hear from the businesses we've
-                helped succeed.
+                {t("testimonials.description")}
               </p>
-            </div>
-            {/* </motion.div> */}
+            </motion.div>
           </div>
 
           <div className="relative min-h-[240px]">
@@ -736,17 +700,15 @@ const HomePage = () => {
       {/* CTA Section */}
       <section className="py-20 md:py-24 bg-gradient-to-b from-red-950/10 to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          {/* <motion.div
+          <motion.div
             className="max-w-4xl mx-auto bg-black/60 border border-red-900 rounded-xl p-8 md:p-12 text-center"
             {...getAnimationProps()}
-          > */}
-          <div className="max-w-4xl mx-auto bg-black/60 border border-red-900 rounded-xl p-8 md:p-12 text-center">
+          >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Let's Create Something Amazing Together
+              {t("cta.title")}
             </h2>
             <p className="text-lg text-red-200/70 mb-8 max-w-2xl mx-auto">
-              Whether you need a website, mobile app, or complete digital
-              strategy, we're here to bring your vision to life.
+              {t("cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
@@ -755,7 +717,7 @@ const HomePage = () => {
                   className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
                     text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8 w-full sm:w-auto"
                 >
-                  Start Your Project
+                  {t("cta.buttons.startProject")}
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
@@ -765,7 +727,7 @@ const HomePage = () => {
                   size="lg"
                   className="border-red-800/30 text-red-400 bg-red-950/20 hover:bg-red-950/30 hover:text-white px-8 w-full sm:w-auto"
                 >
-                  Learn About Us
+                  {t("cta.buttons.learnAboutUs")}
                 </Button>
               </Link>
             </div>
@@ -773,19 +735,18 @@ const HomePage = () => {
             <div className="flex flex-wrap items-center justify-center mt-8 text-red-200/60">
               <div className="flex items-center mr-4 mb-2">
                 <CheckCircle className="h-4 w-4 mr-2 text-red-500" />
-                <span className="text-sm">Free Consultation</span>
+                <span className="text-sm">{t("cta.features.1")}</span>
               </div>
               <div className="flex items-center mr-4 mb-2">
                 <CheckCircle className="h-4 w-4 mr-2 text-red-500" />
-                <span className="text-sm">Expert Team</span>
+                <span className="text-sm">{t("cta.features.2")}</span>
               </div>
               <div className="flex items-center mb-2">
                 <CheckCircle className="h-4 w-4 mr-2 text-red-500" />
-                <span className="text-sm">Ongoing Support</span>
+                <span className="text-sm">{t("cta.features.3")}</span>
               </div>
             </div>
-          </div>
-          {/* </motion.div> */}
+          </motion.div>
         </div>
       </section>
     </div>

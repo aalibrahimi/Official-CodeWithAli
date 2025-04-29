@@ -1,94 +1,210 @@
 {
   "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
-  },
-  "NavBar": {
-    "labelSwitchLang": "Switch Language",
-    "labelSelectLang": "Select Language",
-    "dropdown": {
-      "title": "My Account",
-      "item1": "Profile",
-      "item2": "Settings",
-      "item3": "Dashboard",
-      "logout": "Logout"
+    "hero": {
+      "title": {
+        "part1": "Bringing Your",
+        "part2": "Digital Vision to Life"
+      },
+      "description": "We design and develop stunning websites and powerful applications that elevate your brand and grow your business.",
+      "buttons": {
+        "startProject": "Start Your Project",
+        "viewWork": "View Our Work",
+        "contactUs": "Contact Us"
+      }
     },
-    "labelLang": "Language",
-    "routes": {
-      "home": "Home",
-      "about": "About",
-      "portfolio": "Portfolio",
-      "services": {
-        "title": "Services",
-        "content": {
-          "1": {
-            "title": "Website Development"
-          },
-          "2": {
-            "title": "Mobile App Development"
-          },
-          "3": {
-            "title": "UI/UX Design"
-          },
-          "4": {
-            "title": "E-commerce Solutions"
-          },
-          "5": {
-            "title": "SEO Optimization"
-          },
-          "6": {
-            "title": "Web Hosting & Maintenance"
-          }
+    "clients": {
+      "title": "Trusted by businesses across industries",
+      "industries": {
+        "business": "Business",
+        "ecommerce": "E-commerce",
+        "education": "Education",
+        "healthcare": "Healthcare",
+        "realEstate": "Real Estate", 
+        "technology": "Technology"
+      }
+    },
+    "services": {
+      "badge": "OUR SERVICES",
+      "title": "Expert Solutions for Your Digital Needs",
+      "description": "From websites to mobile apps, we create custom digital solutions tailored to your business goals and user needs.",
+      "items": {
+        "1": {
+          "title": "Website Development",
+          "description": "Custom-designed responsive websites optimized for performance and conversions"
+        },
+        "2": {
+          "title": "Mobile App Development",
+          "description": "Native and cross-platform mobile applications for iOS and Android"
+        },
+        "3": {
+          "title": "UI/UX Design",
+          "description": "User-focused designs that enhance engagement and simplify interactions"
+        },
+        "4": {
+          "title": "E-commerce Solutions",
+          "description": "Fully-featured online stores with secure payment processing and inventory management"
+        },
+        "5": {
+          "title": "SEO Optimization",
+          "description": "Data-driven strategies to improve visibility and ranking in search engines"
+        },
+        "6": {
+          "title": "Web Hosting & Maintenance",
+          "description": "Reliable hosting services with regular updates, backups, and security monitoring"
         }
       },
-      "merch": "Merchandise",
-      "contact": "Contact"
-    }
-  },
-  "Footer": {
-    "compDesc": " We design and develop digital experiences that help businesses and individuals succeed online.",
-    "rights": "Your Company. All rights reserved.",
-    "customLink": "Github",
-    "cwaMark": "Designed By",
-    "nav": {
-      "company": {
-        "title": "Services",
-        "links": {
-          "1": "Website Development",
-          "2": "Mobile App Development",
-          "3": "UI/UX Design",
-          "4": "E-commerce Solutions",
-          "5": "SEO Optimization",
-          "6": "Web Hosting"
-        }
-      },
-      "resources": {
-        "title": "company",
-        "links": {
-          "1": "About",
-          "2": "Portfolio",
-          "3": "Contact"
-        }
-      },
-      "contact": {
-        "title": "Contact",
-        "links": {
-          "1": "unfold@codewithali.com",
-          "2": " (408) 690-4009",
-          "3": " Get a Quote"
-
-        }
-        
-      },
-      "legal" : {
-        "title":"Privacy",
-        "links" : {
-          "1" : "2025 CodeWithAli. All rights reserved.",
-          "2" : "Privacy Policy",
-          "3" : "Terms of Service",
-          "4" : "Cookie Policy"
+      "learnMore": "Learn more"
+    },
+    "portfolio": {
+      "badge": "OUR WORK",
+      "title": "Recent Projects",
+      "description": "Explore some of our latest work for clients across different industries.",
+      "viewProject": "View Project",
+      "viewAllProjects": "View All Projects"
+    },
+    "process": {
+      "badge": "OUR PROCESS",
+      "title": "How We Work",
+      "description": "Our streamlined process ensures clear communication and outstanding results for every project.",
+      "steps": {
+        "1": {
+          "title": "Discovery",
+          "description": "We learn about your business, goals, and requirements through in-depth consultations."
+        },
+        "2": {
+          "title": "Design",
+          "description": "Our designers create wireframes and visual mockups that align with your brand identity."
+        },
+        "3": {
+          "title": "Development",
+          "description": "Our developers build your solution with clean code and cutting-edge technologies."
+        },
+        "4": {
+          "title": "Deployment",
+          "description": "We launch your project, provide training, and offer ongoing support as needed."
         }
       }
+    },
+    "testimonials": {
+      "badge": "TESTIMONIALS",
+      "title": "What Our Clients Say",
+      "description": "Don't just take our word for it – hear from the businesses we've helped succeed.",
+      "items": {
+        "1": {
+          "name": "Alex Thompson",
+          "position": "CEO, TechStart Inc.",
+          "content": "They delivered our company website ahead of schedule and beyond our expectations. Their attention to detail and responsive design expertise made all the difference."
+        },
+        "2": {
+          "name": "Sarah Chen",
+          "position": "Marketing Director, StyleShop",
+          "content": "Our e-commerce site has seen a 45% increase in conversions since the redesign. Their team understood our brand and implemented exactly what we needed."
+        },
+        "3": {
+          "name": "Marcus Johnson",
+          "position": "Founder, HealthApp",
+          "content": "From concept to launch, they guided us through the entire app development process with expertise and professionalism. The final product exceeded our vision."
+        }
+      }
+    },
+    "cta": {
+      "title": "Let's Create Something Amazing Together",
+      "description": "Whether you need a website, mobile app, or complete digital strategy, we're here to bring your vision to life.",
+      "buttons": {
+        "startProject": "Start Your Project",
+        "learnAboutUs": "Learn About Us"
+      },
+      "features": {
+        "1": "Free Consultation",
+        "2": "Expert Team",
+        "3": "Ongoing Support"
+      }
     }
-  }
+  },
+  "NavBar": {     
+    "labelSwitchLang": "Switch Language",     
+    "labelSelectLang": "Select Language",     
+    "dropdown": {       
+      "title": "My Account",       
+      "item1": "Profile",       
+      "item2": "Settings",       
+      "item3": "Dashboard",       
+      "logout": "Logout"     
+    },     
+    "labelLang": "Language",     
+    "routes": {       
+      "home": "Home",       
+      "about": "About",       
+      "portfolio": "Portfolio",       
+      "services": {         
+        "title": "Services",         
+        "content": {           
+          "1": {             
+            "title": "Website Development"           
+          },           
+          "2": {             
+            "title": "Mobile App Development"           
+          },           
+          "3": {             
+            "title": "UI/UX Design"           
+          },           
+          "4": {             
+            "title": "E-commerce Solutions"           
+          },           
+          "5": {             
+            "title": "SEO Optimization"           
+          },           
+          "6": {             
+            "title": "Web Hosting & Maintenance"           
+          }         
+        }       
+      },       
+      "merch": "Merchandise",       
+      "contact": "Contact"     
+    }   
+  },   
+  "Footer": {     
+    "compDesc": "We design and develop digital experiences that help businesses and individuals succeed online.",     
+    "rights": "Your Company. All rights reserved.",     
+    "customLink": "Github",     
+    "cwaMark": "Designed By",     
+    "nav": {       
+      "company": {         
+        "title": "Services",         
+        "links": {           
+          "1": "Website Development",           
+          "2": "Mobile App Development",           
+          "3": "UI/UX Design",           
+          "4": "E-commerce Solutions",           
+          "5": "SEO Optimization",           
+          "6": "Web Hosting"         
+        }       
+      },       
+      "resources": {         
+        "title": "Company",         
+        "links": {           
+          "1": "About",           
+          "2": "Portfolio",           
+          "3": "Contact"         
+        }       
+      },       
+      "contact": {         
+        "title": "Contact",         
+        "links": {           
+          "1": "unfold@codewithali.com",           
+          "2": "(408) 690-4009",           
+          "3": "Get a Quote"          
+        }       
+      },       
+      "legal": {         
+        "title": "Privacy",         
+        "links": {           
+          "1": "CodeWithAli. All rights reserved.",           
+          "2": "Privacy Policy",           
+          "3": "Terms of Service",           
+          "4": "Cookie Policy"         
+        }       
+      }     
+    }   
+  } 
 }
