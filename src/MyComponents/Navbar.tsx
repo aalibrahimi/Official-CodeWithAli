@@ -12,6 +12,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
+
 interface RouteItem {
   title: string;
   href?: string;
@@ -39,6 +40,23 @@ export function Navbar(): React.ReactElement {
     { code: "ar", name: "العربية", flag: "🇮🇶" },
   ];
 
+    // Prevent hydration issues by rendering menu only after component is mounted
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
+  
   const locale = useLocale();
   const pathname = usePathname();
 
