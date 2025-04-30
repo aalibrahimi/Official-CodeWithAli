@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { TechIcon } from '@/MyComponents/tech-icons'
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 
 // Team members data
@@ -49,7 +50,40 @@ const teamMembers = [
   },
 ];
 
-// Company values
+
+
+// Tech stack - corrected to use consistent object structure
+const technologies = [
+  { name: "React", logo: "react", url: "https://react.dev/" },
+  { name: "Next.js", logo: "nextjs", url: "https://nextjs.org/" },
+  { name: "Node.js", logo: "nodejs", url: "https://nodejs.org/" },
+  { name: "Tauri", logo: "tauri", url: "https://tauri.app/" },
+  { name: "Supabase", logo: "supabase", url: "https://supabase.com/" },
+  { name: "Stripe", logo: "stripe", url: "https://stripe.com/" },
+  { name: "Figma", logo: "figma", url: "https://www.figma.com/" },
+  { name: "Electron", logo: "electron", url: "https://www.electronjs.org/" },
+  { name: "TypeScript", logo: "typescript", url: "https://www.typescriptlang.org/" },
+  { name: "TailwindCSS", logo: "tailwindcss", url: "https://tailwindcss.com/" },
+  { name: "MongoDB", logo: "mongodb", url: "https://www.mongodb.com/" },
+  { name: "AWS", logo: "aws", url: "https://aws.amazon.com/" },
+  { name: "Firebase", logo: "firebase", url: "https://firebase.google.com/" },
+];
+
+
+
+export default function AboutPage() {
+  const router = useRouter();
+  const t = useTranslations("About")
+
+    // Company stats
+  const stats = [
+    { value: "50+", label: t("mission.stats.1") },
+    { value: "98%", label: t("mission.stats.2") },
+    { value: "24/7", label: t("mission.stats.3") },
+    { value: "100%", label: t("mission.stats.4") },
+  ];
+
+  // Company values
 const values = [
   {
     title: "Quality",
@@ -77,34 +111,6 @@ const values = [
   },
 ];
 
-// Tech stack - corrected to use consistent object structure
-const technologies = [
-  { name: "React", logo: "react", url: "https://react.dev/" },
-  { name: "Next.js", logo: "nextjs", url: "https://nextjs.org/" },
-  { name: "Node.js", logo: "nodejs", url: "https://nodejs.org/" },
-  { name: "Tauri", logo: "tauri", url: "https://tauri.app/" },
-  { name: "Supabase", logo: "supabase", url: "https://supabase.com/" },
-  { name: "Stripe", logo: "stripe", url: "https://stripe.com/" },
-  { name: "Figma", logo: "figma", url: "https://www.figma.com/" },
-  { name: "Electron", logo: "electron", url: "https://www.electronjs.org/" },
-  { name: "TypeScript", logo: "typescript", url: "https://www.typescriptlang.org/" },
-  { name: "TailwindCSS", logo: "tailwindcss", url: "https://tailwindcss.com/" },
-  { name: "MongoDB", logo: "mongodb", url: "https://www.mongodb.com/" },
-  { name: "AWS", logo: "aws", url: "https://aws.amazon.com/" },
-  { name: "Firebase", logo: "firebase", url: "https://firebase.google.com/" },
-];
-
-// Company stats
-const stats = [
-  { value: "50+", label: "Completed Projects" },
-  { value: "98%", label: "Client Satisfaction" },
-  { value: "24/7", label: "Support Coverage" },
-  { value: "100%", label: "On-time Delivery" },
-];
-
-export default function AboutPage() {
-  const router = useRouter();
-
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Hero Section */}
@@ -117,18 +123,16 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
-              ABOUT US
+               {t("badge")}
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              We Are Passionate About
+              {t("title")}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600 block">
-                Building Digital Excellence
+              {t("sub")}
               </span>
             </h1>
             <p className="text-lg md:text-xl text-red-200/80 mb-8">
-              More than just developers, we're partners in your digital journey,
-              committed to transforming your ideas into powerful digital
-              experiences.
+             {t("desc")}
             </p>
           </div>
         </div>
@@ -140,14 +144,10 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Our Mission
-              </h2>
-              <p className="text-xl text-red-200/80 leading-relaxed">
-                At CodeWithAli, our mission is to empower businesses and
-                individuals through thoughtfully crafted digital solutions. We
-                believe technology should be both powerful and accessible,
-                driving real results while providing exceptional user
-                experiences.
+                {t("mission.header")}
+               </h2>
+              <p className="text-xl text-gray-300 leading-relaxed">
+              {t("mission.desc")}
               </p>
             </div>
 
@@ -155,23 +155,19 @@ export default function AboutPage() {
               <div className="bg-black/60 border border-red-900 p-6 rounded-xl">
                 <Globe className="h-12 w-12 text-red-500 mb-4" />
                 <h3 className="text-xl font-bold text-white mb-3">
-                  Global Reach, Personal Touch
+                {t("mission.sub")}
                 </h3>
-                <p className="text-red-200/70">
-                  We work with clients worldwide but maintain the personalized
-                  attention of a boutique agency. Every project receives our
-                  full dedication regardless of size.
+                <p className="text-gray-300">
+                {t("mission.subDesc")}
                 </p>
               </div>
               <div className="bg-black/60 border border-red-900 p-6 rounded-xl">
                 <BarChart className="h-12 w-12 text-red-500 mb-4" />
                 <h3 className="text-xl font-bold text-white mb-3">
-                  Results-Driven Development
+                {t("mission.sub2")}
                 </h3>
-                <p className="text-red-200/70">
-                  We measure our success by your success. Our solutions are
-                  designed to deliver measurable results, helping you achieve
-                  your business goals.
+                <p className="text-gray-300">
+                 {t('mission.subDesc2')}
                 </p>
               </div>
             </div>
@@ -207,10 +203,10 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
-                OUR STORY
+                {t("story.badge")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                How We Started
+              {t("story.title")}
               </h2>
             </div>
 
@@ -223,19 +219,13 @@ export default function AboutPage() {
                 </div>
                 <div className="md:col-span-7">
                   <h3 className="text-2xl font-bold text-white mb-4">
-                    From Passion to Purpose
+                  {t("story.header")}
                   </h3>
                   <p className="text-red-200/70 mb-4">
-                    CodeWithAli began in 2019 when our founder Ali identified a
-                    gap in the market: businesses needed technical excellence
-                    combined with strategic guidance. What started as freelance
-                    consulting quickly grew as clients recognized our unique
-                    approach.
+                  {t("story.sub")}
                   </p>
                   <p className="text-red-200/70">
-                    Today, we've evolved into a full-service digital agency,
-                    maintaining our core values while expanding our capabilities
-                    to serve a diverse range of clients.
+                  {t("story.subDesc")}
                   </p>
                 </div>
               </div>
@@ -243,18 +233,13 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                 <div className="md:col-span-7 md:order-1 order-2">
                   <h3 className="text-2xl font-bold text-white mb-4">
-                    Our Growth Philosophy
+                  {t("story.header2")}
                   </h3>
                   <p className="text-red-200/70 mb-4">
-                    We believe in sustainable growth—both for our clients and
-                    ourselves. Rather than scaling rapidly at the expense of
-                    quality, we've carefully built our team with specialized
-                    experts who share our dedication to excellence.
+                  {t("story.sub2")}
                   </p>
                   <p className="text-red-200/70">
-                    This approach allows us to maintain close relationships with
-                    our clients while delivering the high-caliber work they've
-                    come to expect from us.
+                  {t("story.subDesc2")}
                   </p>
                 </div>
                 <div className="md:col-span-5 md:order-2 order-1 bg-black/60 border border-red-900 rounded-xl overflow-hidden">
@@ -774,4 +759,8 @@ export default function AboutPage() {
 </section>
     </div>
   );
+}
+
+function useTranslation(arg0: string) {
+  throw new Error("Function not implemented.");
 }

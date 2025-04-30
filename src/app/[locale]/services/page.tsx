@@ -45,7 +45,7 @@ const ClientOnly = ({ children }: any) => {
 
 export default function ServicesPage() {
   const router = useRouter();
-  const t = useTranslations("About");
+  const t = useTranslations("Serv");
 
   // Services data
 const services = [

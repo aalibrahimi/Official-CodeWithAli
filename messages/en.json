@@ -162,9 +162,40 @@
       "merch": "Merchandise",       
       "contact": "Contact"     
     }   
-  },   
+  },  
+  "About" : {
+    "badge" : "ABOUT US",
+    "title" : "We Are Passionate About",
+    "sub" : " Building Digital Excellence",
+    "desc" : " More than just developers, we're partners in your digital journey, committed to transforming your ideas into powerful digital experiences.",
+    "mission" : {
+      "header" : " Our Mission",
+      "desc" :  "At CodeWithAli, our mission is to empower businesses and individuals through thoughtfully crafted digital solutions. We believe technology should be both powerful and accessible, driving real results while providing exceptional user experiences.",
+      "sub" : "  Global Reach, Personal Touch",
+      "subDesc" : " We work with clients worldwide but maintain the personalized attention of a boutique agency. Every project receives our full dedication regardless of size.",
+      "sub2" : " Results-Driven Development",
+      "subDesc2" : " We measure our success by your success. Our solutions are designed to deliver measurable results, helping you achieve your business goals.",
+      "stats" : {
+        "1" : "Completed Projects",
+        "2" : "Client Satisfaction",
+        "3" : "Support Coverage",
+        "4" : "On-time Delivery"
 
-  "About" :
+      } 
+    },
+    "story" :  {
+      "badge" : "OUR STORY",
+      "title" : "How We Started",
+      "header" : "From Passion to Purpose",
+      "sub" : "CodeWithAli began in 2019 when our founder Ali identified a gap in the market: businesses needed technical excellence combined with strategic guidance. What started as freelance consulting quickly grew as clients recognized our unique approach.",
+      "subDesc" : "Today, we've evolved into a full-service digital agency, maintaining our core values while expanding our capabilities to serve a diverse range of clients.",
+      "header2": "Our Growth Philosophy",
+      "sub2": "We believe in sustainable growth—both for our clients and ourselves. Rather than scaling rapidly at the expense of quality, we've carefully built our team with specialized experts who share our dedication to excellence.",
+      "subDesc2" : "This approach allows us to maintain close relationships with our clients while delivering the high-caliber work they've come to expect from us."
+    }
+    } ,
+
+  "Serv" :
   {
     "badge": "OUR EXPERTISE",     
     "Header": "Comprehensive Digital",
