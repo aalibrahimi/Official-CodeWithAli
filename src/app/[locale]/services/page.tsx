@@ -169,12 +169,12 @@ const processSteps = [
 
   return (
     <ClientOnly>
-      <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <div className="min-h-screen bg-white dark:bg-black text-white overflow-x-hidden">
         {/* Hero Section */}
         <section className="pt-24 pb-12 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-            <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-950/30 to-transparent"></div>
+            <div className="absolute top-0 left-0 w-full h-full dark:bg-black opacity-70"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-950 to-red-500 dark:bg-gradient-to-br dark:from-red-950/30 dark:to-transparent"></div>
           </div>
 
           <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
@@ -185,19 +185,19 @@ const processSteps = [
               transition={{ duration: 0.5 }}
             > */}
             <div className="text-center max-w-3xl mx-auto">
-              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-red-600/80 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
               {t("badge")}
                 
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 {t("Header")}
                 
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600 block">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-200 to-red-400 dark:from-red-400 dark:to-red-600 block">
                 {t("Subheader")}
         
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-white/80 mb-8">
+              <p className="text-lg md:text-xl dark:text-white/80 mb-8">
               {t("Subdesc")}
               </p>
             </div>
@@ -207,8 +207,8 @@ const processSteps = [
 
         {/* Services Section */}
         <section className="py-16 relative overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-900/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-700/10 rounded-full blur-3xl"></div>
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-500/20 dark:bg-red-900/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-500/20 dark:bg-red-700/10 rounded-full blur-3xl"></div>
 
           <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-8">
@@ -222,9 +222,12 @@ const processSteps = [
                   //   transition={{ duration: 0.4, delay: index * 0.05 }}
                   // >
                   <div key={index}>
-                    <Card className="bg-black/60 border-red-900 backdrop-blur-sm h-full overflow-hidden group hover:border-red-800/50 transition-colors">
+                    <Card className="bg-red-900/90 dark:bg-black/60 border-red-900 backdrop-blur-sm h-full overflow-hidden group hover:border-red-800/50 transition-colors">
                       <CardContent className="p-6 flex flex-col h-full">
                         <div className="mb-5">
+                          {/* Could put this: from-red-500 to-red-600 dark:from-red-600 dark:to-red-800
+                              as service icon color
+                          */}
                           <div
                             className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.color} p-3 mb-4 transform group-hover:scale-110 transition-transform`}
                           >
@@ -261,15 +264,15 @@ const processSteps = [
                               </>
                             )}
                           </h3>
-                          <p className="text-red-200/60 mb-4">
+                          <p className="text-white dark:text-red-200/60 mb-4">
                             {service.description}
                           </p>
 
                           <ul className="space-y-2 mb-5">
                             {service.features.map((feature, idx) => (
                               <li key={idx} className="flex items-start">
-                                <ChevronRight className="h-4 w-4 text-red-500 mt-1 mr-2 flex-shrink-0" />
-                                <span className="text-red-200/80 text-sm">
+                                <ChevronRight className="h-4 w-4 text-red-300 dark:text-red-500 mt-1 mr-2 flex-shrink-0" />
+                                <span className="text-white/80 dark:text-red-200/80 text-sm">
                                   {feature}
                                 </span>
                               </li>
@@ -279,7 +282,8 @@ const processSteps = [
                         <div className="mt-auto pt-4">
                           <Link href={service.href} target="_blank">
                             <Button
-                              className="w-full bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 text-white"
+                              className="w-full bg-gradient-to-r from-red-500 to-red-600 dark:from-red-700 dark:to-red-900 hover:from-red-600 hover:to-red-800 
+                              dark:hover:from-red-600 dark:hover:to-red-800 text-white"
                             >
                               {t("Services.process.learn")}
 
@@ -298,7 +302,7 @@ const processSteps = [
         </section>
 
         {/* Process Overview */}
-        <section className="py-20 bg-red-950/10">
+        <section className="py-20 dark:bg-red-950/10">
           <div className="container mx-auto px-4 md:px-8 lg:px-12">
             <div className="text-center mb-16">
               {/* <motion.div
@@ -307,13 +311,13 @@ const processSteps = [
                 variants={fadeIn}
               > */}
               <div>
-                <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+                <Badge className="bg-red-600/80 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
                    {t("Services.process.approach.badge")}
                 </Badge>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                <h2 className="text-3xl text-red-500/80 dark:text-white md:text-4xl font-bold mb-6">
                 {t("Services.process.approach.title")}
                 </h2>
-                <p className="text-amber-50 text-lg max-w-2xl mx-auto">
+                <p className="text-black dark:text-red-200/60 text-lg max-w-2xl mx-auto">
                 {t("Services.process.approach.sub")}
                 </p>
               </div>
@@ -329,9 +333,9 @@ const processSteps = [
                 //   transition={{ duration: 0.4, delay: index * 0.1 }}
                 // >
                 <div key={index}>
-                  <div className="bg-black/60 border border-red-900 rounded-xl p-6 h-full">
+                  <div className="bg-red-900/90 dark:bg-black/60 border border-red-900 rounded-xl p-6 h-full">
                     <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center mr-3">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-red-600 dark:from-red-600 dark:to-red-800 flex items-center justify-center mr-3">
                         <span className="text-white font-bold">
                           {step.number}
                         </span>
@@ -340,7 +344,7 @@ const processSteps = [
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-red-200/60">{step.description}</p>
+                    <p className="text-white/80 dark:text-red-200/60">{step.description}</p>
                   </div>
                 </div>
                 // </motion.div>
@@ -358,16 +362,16 @@ const processSteps = [
               animate="visible"
               variants={fadeIn}
             > */}
-            <div className="max-w-4xl mx-auto bg-black/60 border border-red-900 rounded-xl p-6 md:p-10 text-center">
+            <div className="max-w-4xl mx-auto bg-red-900/90 dark:bg-black/60 border border-red-900 rounded-xl p-6 md:p-10 text-center">
               <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 md:mb-6">
                {t("Services.cta.title")}
               </h2>
-              <p className="text-base md:text-lg text-red-200/70 mb-6 md:mb-8 max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-red-200/80 mb-6 md:mb-8 max-w-2xl mx-auto">
               {t("Services.cta.header")}
               </p>
               <Button
-                className="w-full md:w-auto bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
-                  text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-4 md:px-8 py-2"
+                className="w-full md:w-auto bg-gradient-to-r from-red-500 to-red-600 dark:from-red-700 dark:to-red-900 hover:from-red-600 hover:to-red-800 
+                     dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-4 md:px-8 py-2"
                 onClick={() => router.push("/contact")}
               >
                 {t("Services.cta.button")}
