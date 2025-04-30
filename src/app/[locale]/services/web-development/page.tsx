@@ -111,25 +111,26 @@ const technologies = [
 // Case studies (simplified for this example)
 const caseStudies = [
   {
-    title: "E-commerce Platform Redesign",
+    // should we add a new vs new?
+    title: "Construction Website Redesign",
+     industry: "Construction",
     description:
-      "Revamped an outdated online store, resulting in 45% increase in conversions and 60% improved page load times.",
-    industry: "Retail",
-    image: "/portfolio-1.jpg",
+      "Redesigned an outdated construction website, boosting conversions by 45% and improving page load times by 60%.",
+    image: "/knoz_website.png",
   },
   {
-    title: "Corporate Website Relaunch",
+    title: "Budgeting Website launch",
     description:
       "Developed a modern, responsive website that increased lead generation by 38% and reduced bounce rate by 25%.",
     industry: "Financial Services",
-    image: "/portfolio-2.jpg",
+    image: "/budgetary.png",
   },
   {
-    title: "SaaS Product Website",
+    title: "Iraqi Sweets",
     description:
-      "Created a conversion-focused website that helped the client increase trial signups by 52% within the first month.",
-    industry: "Technology",
-    image: "/portfolio-3.jpg",
+      "Created a conversion-focused landing website that helped the client increase their customers count by 52% within the first month.",
+    industry: "Baking Goods",
+    image: "/iraqisweets_website.png",
   },
 ];
 
@@ -490,7 +491,7 @@ const WebsiteDevelopmentPage = () => {
                   {/* Project Image */}
                   <div className="w-full h-full bg-black/80 border-2 border-pink-800/30 flex items-center justify-center">
                     <div className="flex flex-col items-center">
-                      <Badge className="bg-pink-800/40 text-pink-300 border-transparent mb-3">
+                      <Badge className="bg-pink-800/40 text-white border-transparent mb-3">
                         {project.industry}
                       </Badge>
                       <p className="text-white/70 text-center px-6">
@@ -502,15 +503,15 @@ const WebsiteDevelopmentPage = () => {
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-b from-pink-800/80 to-black/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="text-center p-6">
-                      <Badge className="bg-pink-800/40 text-pink-300 border-transparent mb-3">
+                      <Badge className="bg-pink-800/40 text-white border-transparent mb-3">
                         {project.industry}
                       </Badge>
                       <h3 className="text-xl font-bold text-white mb-3">
                         {project.title}
                       </h3>
-                      <p className="text-pink-100 mb-5 text-sm">
+                      {/* <p className="text-amber-50 mb-5 text-sm">
                         {project.description}
-                      </p>
+                      </p> */}
                       <Button
                         variant="outline"
                         className="border-2 border-pink-400/60 text-white bg-pink-700/50 hover:bg-pink-700/70"
@@ -525,7 +526,7 @@ const WebsiteDevelopmentPage = () => {
                 <h3 className="text-xl font-bold text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-pink-200/70 text-sm">
+                <p className="text-grey-400 text-sm">
                   {project.description}
                 </p>
               </div>
@@ -565,7 +566,7 @@ const WebsiteDevelopmentPage = () => {
                   Frequently Asked Questions
                 </GradientText>
               </h2>
-              <p className="text-pink-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-amber-50 text-lg max-w-2xl mx-auto">
                 Common questions about our website development process and
                 services.
               </p>
@@ -575,7 +576,7 @@ const WebsiteDevelopmentPage = () => {
 
           <div className="max-w-3xl mx-auto">
             <Tabs defaultValue="general" className="w-full">
-              <TabsList className="grid grid-cols-3 mb-8 bg-black/60 border border-pink-900">
+              <TabsList className="grid grid-cols-3 mb-8 bg-black/60 border border-pink-900 ">
                 <TabsTrigger
                   value="general"
                   className="data-[state=active]:bg-pink-900/30 data-[state=active]:text-white"
@@ -626,7 +627,7 @@ const WebsiteDevelopmentPage = () => {
                     <h4 className="text-lg font-bold text-white mb-2">
                       {faq.question}
                     </h4>
-                    <p className="text-pink-200/70">{faq.answer}</p>
+                    <p className="text-white/70">{faq.answer}</p>
                   </div>
                 ))}
               </TabsContent>
@@ -637,7 +638,7 @@ const WebsiteDevelopmentPage = () => {
                     question:
                       "What technologies do you use for website development?",
                     answer:
-                      "We use a range of modern technologies depending on your specific needs. For content-focused websites, we often use WordPress with custom themes. For web applications and more complex sites, we use React, Next.js, and other modern frameworks. The choice of technology is based on your requirements, budget, and long-term goals.",
+                      "We use a range of modern technologies depending on your specific needs. For web applications and more complex sites, we use React, Next.js, and other modern frameworks. The choice of technology is based on your requirements, budget, and long-term goals.",
                   },
                   {
                     question: "Do you optimize websites for search engines?",
@@ -663,7 +664,7 @@ const WebsiteDevelopmentPage = () => {
                     <h4 className="text-lg font-bold text-white mb-2">
                       {faq.question}
                     </h4>
-                    <p className="text-pink-200/70">{faq.answer}</p>
+                    <p className="text-white/70">{faq.answer}</p>
                   </div>
                 ))}
               </TabsContent>
@@ -673,7 +674,7 @@ const WebsiteDevelopmentPage = () => {
                   {
                     question: "How much does a website cost?",
                     answer:
-                      "Website costs vary depending on complexity, features, and requirements. Small business websites typically range from $5,000-$15,000, while more complex sites with custom functionality range from $15,000-$50,000+. We provide detailed quotes after understanding your specific needs.",
+                      "Website costs vary depending on complexity, features, and requirements. Small business websites typically range from $899 - $3,500, while more complex sites with custom functionality range from $3500 - $9,000+. We provide detailed quotes after understanding your specific needs.",
                   },
                   {
                     question: "Do you offer payment plans?",
