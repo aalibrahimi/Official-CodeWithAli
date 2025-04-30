@@ -180,9 +180,103 @@
         "2" : "Client Satisfaction",
         "3" : "Support Coverage",
         "4" : "On-time Delivery"
-
-      } 
+      },
+      "story" : {
+        "badge" : "SUCCESS STORIES",
+        "header" : "Clients We've Helped Succeed",
+        "title" : "Real results from businesses that trusted us with their digital needs."
+      },
+      "quots" : {
+        "1" : "CodeWithAli transformed our e-commerce platform, resulting in a 45% increase in conversions and a significant improvement in user satisfaction. Their technical expertise combined with strategic insights made all the difference.",
+        "2" : "Working with CodeWithAli on our business dashboard has been game-changing. Their team quickly understood our complex requirements and delivered a solution that has streamlined our operations and improved decision-making.",
+        "3" :  "The mobile app CodeWithAli developed for our healthcare service has received outstanding feedback from users. Their attention to security and user experience shows in every aspect of the finished product.",
+        "4" :  "As a startup, we needed a partner who could guide us through the technical challenges of launching our platform. CodeWithAli provided not just development expertise but valuable strategic input that helped shape our product."
+      },
+      "author" : {
+        "1" : "Emma Thompson",
+        "2" : "Michael Rodriguez",
+        "3" : "Dr. James Wilson",
+        "4" : "Sophia Chen"
+      },
+      "job": {
+        "1" : "CTO, StyleHub",
+        "2" : " Founder, DataVision Inc.",
+        "3" : " Director, HealthConnect",
+        "4" : " Co-founder, NextLevel Tech"
+      }
     },
+    "process" : {
+      "badge" : "OUR PROCESS",
+      "header" : "How We Transform Ideas Into Reality",
+      "sub" : "Our proven development methodology ensures clear communication and outstanding results for every project.",
+      "cards" : {
+        "h1": " Discovery & Planning",
+        "h2" : "Design & Strategy",
+        "h3" : "Development & Testing",
+        "h4" : " Deployment & Support",
+        "desc1" : "We begin by understanding your business, goals, and requirements through in-depth consultations. This phase includes:",
+        "desc2" : "Our design team creates wireframes and visual mockups that align with your brand identity while our strategists plan the technical approach:",
+        "desc3" : "Our developers build your solution with clean code and cutting-edge technologies while ensuring quality through:",
+        "desc4" : "We launch your project, provide training, and offer ongoing support through:",
+        "firstList" : {
+          "li1" : "Stakeholder interview",
+          "li2" : "Business goal alignment",
+          "li3" : "Technical requirement gathering",
+          "li4" : "Project scope definition"
+        },
+        "secondList" : {
+          "li1" : "UX/UI design and wireframing",
+          "li2" : "Technical architecture planning",
+          "li3" : "Database structure design",
+          "li4" : "Technology stack selection"
+        },
+        "thirdList" : {
+          "li1" : " Agile development methodology",
+          "li2" : "Regular progress updates",
+          "li3" : "Comprehensive testing (unit, integration, UI)",
+          "li4" : "Performance optimization"
+        },
+        "fourthList" : {
+          "li1" : "Smooth deployment procedures",
+          "li2" : "Comprehensive documentation",
+          "li3" : "User training and knowledge transfer",
+          "li4" : "Ongoing maintenance and support options"
+        }
+      }
+  
+    },
+    "values" :  {
+      "badge" : "OUR VALUES",
+      "header" : " Principles That Guide Our Work",
+      "sub" : " Our core values shape everything we do, from how we work with clients to how we develop solutions.",
+      "title" : {
+        "h1" : "Quality",
+        "h2" : "Innovation",
+        "h3" : "Reliability",
+        "h4" : "Collaboration",
+        "d1" : "We never compromise on code quality or user experience. Every project receives our full attention to detail.",
+        "d2" : "We stay at the forefront of technology, constantly learning and implementing the latest best practices.",
+        "d3" : "We deliver on our promises, meeting deadlines and keeping our clients informed throughout the process.",
+        "d4" : "We work closely with our clients, valuing their input and ensuring their vision comes to life."
+      }
+    },
+
+    "tech" : {
+      "badge" : " OUR EXPERTISE",
+      "header" : "Technologies We Master",
+      "sub" : " We leverage cutting-edge technologies to build scalable, high-performance solutions."
+    },
+
+    "cta": {
+      "title" : "Ready to Work Together?",
+      "header" : "Let's discuss how we can help bring your vision to life with our expertise and dedication.",
+      "button" : "Get in Touch",
+      "button2" : "Explore Our Services",
+      "li" : "No Obligation Consultation",
+      "li2" : "Transparent Process",
+      "li3" : "Ongoing Support"
+    },
+
     "story" :  {
       "badge" : "OUR STORY",
       "title" : "How We Started",
@@ -192,6 +286,7 @@
       "header2": "Our Growth Philosophy",
       "sub2": "We believe in sustainable growth—both for our clients and ourselves. Rather than scaling rapidly at the expense of quality, we've carefully built our team with specialized experts who share our dedication to excellence.",
       "subDesc2" : "This approach allows us to maintain close relationships with our clients while delivering the high-caliber work they've come to expect from us."
+   
     }
     } ,
 

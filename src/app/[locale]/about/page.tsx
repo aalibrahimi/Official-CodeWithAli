@@ -86,27 +86,23 @@ export default function AboutPage() {
   // Company values
 const values = [
   {
-    title: "Quality",
-    description:
-      "We never compromise on code quality or user experience. Every project receives our full attention to detail.",
+    title: t("values.title.h1"),
+    description: t("values.title.d1"),
     icon: Award,
   },
   {
-    title: "Innovation",
-    description:
-      "We stay at the forefront of technology, constantly learning and implementing the latest best practices.",
+    title: t("values.title.h2"),
+    description: t("values.title.d2"),
     icon: Zap,
   },
   {
-    title: "Reliability",
-    description:
-      "We deliver on our promises, meeting deadlines and keeping our clients informed throughout the process.",
+    title: t("values.title.h3"),
+    description: t("values.title.d3"),
     icon: Clock,
   },
   {
-    title: "Collaboration",
-    description:
-      "We work closely with our clients, valuing their input and ensuring their vision comes to life.",
+    title: t("values.title.h4"),
+    description: t("values.title.d4"),
     icon: Users,
   },
 ];
@@ -259,14 +255,13 @@ const values = [
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-16">
             <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
-              SUCCESS STORIES
+              {t("mission.story.badge")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Clients We've Helped Succeed
+              {t("mission.story.header")}
             </h2>
             <p className="text-lg text-red-200/80 max-w-2xl mx-auto">
-              Real results from businesses that trusted us with their digital
-              needs.
+             {t("mission.story.title")}
             </p>
           </div>
 
@@ -293,10 +288,7 @@ const values = [
 
               <div className="mb-6 pt-4">
                 <p className="text-lg text-red-200/80 italic">
-                  "CodeWithAli transformed our e-commerce platform, resulting in
-                  a 45% increase in conversions and a significant improvement in
-                  user satisfaction. Their technical expertise combined with
-                  strategic insights made all the difference."
+                  {t("mission.quots.1")}
                 </p>
               </div>
 
@@ -305,8 +297,8 @@ const values = [
                   <Users className="h-6 w-6 text-red-500/60" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white">Emma Thompson</h4>
-                  <p className="text-red-400/70 text-sm">CTO, StyleHub</p>
+                  <h4 className="font-bold text-white"> {t("mission.author.1")} </h4>
+                  <p className="text-red-400/70 text-sm">  {t("mission.job.1")}</p>
                 </div>
               </div>
             </div>
@@ -333,10 +325,7 @@ const values = [
 
               <div className="mb-6 pt-4">
                 <p className="text-lg text-red-200/80 italic">
-                  "Working with CodeWithAli on our business dashboard has been
-                  game-changing. Their team quickly understood our complex
-                  requirements and delivered a solution that has streamlined our
-                  operations and improved decision-making."
+                {t("mission.quots.2")}
                 </p>
               </div>
 
@@ -345,9 +334,9 @@ const values = [
                   <Users className="h-6 w-6 text-red-500/60" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white">Michael Rodriguez</h4>
+                  <h4 className="font-bold text-white"> {t("mission.author.2")}</h4>
                   <p className="text-red-400/70 text-sm">
-                    Founder, DataVision Inc.
+                  {t("mission.job.2")}
                   </p>
                 </div>
               </div>
@@ -375,10 +364,7 @@ const values = [
 
               <div className="mb-6 pt-4">
                 <p className="text-lg text-red-200/80 italic">
-                  "The mobile app CodeWithAli developed for our healthcare
-                  service has received outstanding feedback from users. Their
-                  attention to security and user experience shows in every
-                  aspect of the finished product."
+                {t("mission.quots.3")}
                 </p>
               </div>
 
@@ -387,9 +373,9 @@ const values = [
                   <Users className="h-6 w-6 text-red-500/60" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white">Dr. James Wilson</h4>
+                  <h4 className="font-bold text-white">{t("mission.author.3")}</h4>
                   <p className="text-red-400/70 text-sm">
-                    Director, HealthConnect
+                  {t("mission.job.3")}
                   </p>
                 </div>
               </div>
@@ -417,10 +403,7 @@ const values = [
 
               <div className="mb-6 pt-4">
                 <p className="text-lg text-red-200/80 italic">
-                  "As a startup, we needed a partner who could guide us through
-                  the technical challenges of launching our platform.
-                  CodeWithAli provided not just development expertise but
-                  valuable strategic input that helped shape our product."
+                {t("mission.quots.4")}
                 </p>
               </div>
 
@@ -429,9 +412,9 @@ const values = [
                   <Users className="h-6 w-6 text-red-500/60" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white">Sophia Chen</h4>
+                  <h4 className="font-bold text-white">{t("mission.author.4")}</h4>
                   <p className="text-red-400/70 text-sm">
-                    Co-founder, NextLevel Tech
+                  {t("mission.job.4")}
                   </p>
                 </div>
               </div>
@@ -444,14 +427,13 @@ const values = [
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-16">
             <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
-              OUR PROCESS
+              {t("process.badge")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              How We Transform Ideas Into Reality
+            {t("process.header")}
             </h2>
             <p className="text-lg text-red-200/80 max-w-2xl mx-auto">
-              Our proven development methodology ensures clear communication and
-              outstanding results for every project.
+            {t("process.sub")}
             </p>
           </div>
 
@@ -466,21 +448,19 @@ const values = [
                 <div className="md:text-right md:mr-5">
                   <div className="bg-black/60 border border-red-900 p-6 rounded-xl">
                     <h3 className="text-2xl font-bold text-white mb-3">
-                      Discovery & Planning
+                    {t("process.cards.h1")}
                     </h3>
-                    <p className="text-red-200/70">
-                      We begin by understanding your business, goals, and
-                      requirements through in-depth consultations. This phase
-                      includes:
+                    <p className="text-amber-50">
+                    {t("process.cards.desc1")}
                     </p>
-                    <ul className="list-disc text-red-200/70 pl-5 md:pl-0 md:list-none mt-3 space-y-2">
-                      <li className="md:text-right">Stakeholder interviews</li>
-                      <li className="md:text-right">Business goal alignment</li>
+                    <ul className="list-disc text-red-300 pl-5 md:pl-0 md:list-none mt-3 space-y-2">
+                      <li className="md:text-right">{t("process.cards.firstList.li1")}</li>
+                      <li className="md:text-right">{t("process.cards.firstList.li2")}</li>
                       <li className="md:text-right">
-                        Technical requirement gathering
+                      {t("process.cards.firstList.li3")}
                       </li>
                       <li className="md:text-right">
-                        Project scope definition
+                      {t("process.cards.firstList.li4")}
                       </li>
                     </ul>
                   </div>
@@ -504,18 +484,18 @@ const values = [
                 <div className="md:ml-5">
                   <div className="bg-black/60 border border-red-900 p-6 rounded-xl">
                     <h3 className="text-2xl font-bold text-white mb-3">
-                      Design & Strategy
+                    {t("process.cards.h2")}
                     </h3>
-                    <p className="text-red-200/70">
-                      Our design team creates wireframes and visual mockups that
-                      align with your brand identity while our strategists plan
-                      the technical approach:
+                    <p className="text-amber-50">
+                    {t("process.cards.desc2")}
+                     
                     </p>
-                    <ul className="list-disc text-red-200/70 pl-5 mt-3 space-y-2">
-                      <li>UX/UI design and wireframing</li>
-                      <li>Technical architecture planning</li>
-                      <li>Database structure design</li>
-                      <li>Technology stack selection</li>
+                    <ul className="list-disc text-red-300 pl-5 mt-3 space-y-2">
+                      {/* {t("process.cards.firstList.li1")} */}
+                      <li>{t("process.cards.secondList.li1")}</li>
+                      <li>{t("process.cards.secondList.li2")}</li>
+                      <li>{t("process.cards.secondList.li3")}</li>
+                      <li>{t("process.cards.secondList.li4")}</li>
                     </ul>
                   </div>
                 </div>
@@ -526,24 +506,24 @@ const values = [
                 <div className="md:text-right md:mr-5">
                   <div className="bg-black/60 border border-red-900 p-6 rounded-xl">
                     <h3 className="text-2xl font-bold text-white mb-3">
-                      Development & Testing
+                    {t("process.cards.h3")}
+                      
                     </h3>
-                    <p className="text-red-200/70">
-                      Our developers build your solution with clean code and
-                      cutting-edge technologies while ensuring quality through:
+                    <p className="text-amber-50">
+                    {t("process.cards.desc3")}
                     </p>
-                    <ul className="list-disc text-red-200/70 pl-5 md:pl-0 md:list-none mt-3 space-y-2">
+                    <ul className="list-disc text-red-300 pl-5 md:pl-0 md:list-none mt-3 space-y-2">
                       <li className="md:text-right">
-                        Agile development methodology
+                      {t("process.cards.thirdList.li1")}
                       </li>
                       <li className="md:text-right">
-                        Regular progress updates
+                      {t("process.cards.thirdList.li2")}
                       </li>
                       <li className="md:text-right">
-                        Comprehensive testing (unit, integration, UI)
+                      {t("process.cards.thirdList.li3")}
                       </li>
                       <li className="md:text-right">
-                        Performance optimization
+                      {t("process.cards.thirdList.li4")}
                       </li>
                     </ul>
                   </div>
@@ -567,17 +547,16 @@ const values = [
                 <div className="md:ml-5">
                   <div className="bg-black/60 border border-red-900 p-6 rounded-xl">
                     <h3 className="text-2xl font-bold text-white mb-3">
-                      Deployment & Support
+                    {t("process.cards.h4")}
                     </h3>
-                    <p className="text-red-200/70">
-                      We launch your project, provide training, and offer
-                      ongoing support through:
+                    <p className="text-amber-50">
+                     {t("process.cards.desc4")}
                     </p>
-                    <ul className="list-disc text-red-200/70 pl-5 mt-3 space-y-2">
-                      <li>Smooth deployment procedures</li>
-                      <li>Comprehensive documentation</li>
-                      <li>User training and knowledge transfer</li>
-                      <li>Ongoing maintenance and support options</li>
+                    <ul className="list-disc text-red-300 pl-5 mt-3 space-y-2">
+                      <li> {t("process.cards.fourthList.li1")}  </li>
+                      <li>{t("process.cards.fourthList.li2")}</li>
+                      <li>{t("process.cards.fourthList.li3")}</li>
+                      <li>{t("process.cards.fourthList.li4")}</li>
                     </ul>
                   </div>
                 </div>
@@ -630,14 +609,13 @@ const values = [
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="text-center mb-16">
             <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
-              OUR VALUES
+              {t("values.badge")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Principles That Guide Our Work
+            {t("values.header")}
             </h2>
             <p className="text-lg text-red-200/80 max-w-2xl mx-auto">
-              Our core values shape everything we do, from how we work with
-              clients to how we develop solutions.
+            {t("values.sub")}
             </p>
           </div>
 
@@ -672,14 +650,13 @@ const values = [
   <div className="container mx-auto px-4 md:px-8 lg:px-12">
     <div className="text-center mb-16">
       <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
-        OUR EXPERTISE
+       {t("tech.badge")}
       </Badge>
       <h2 className="text-3xl md:text-4xl font-bold mb-6">
-        Technologies We Master
+      {t("tech.header")}
       </h2>
       <p className="text-lg text-red-200/80 max-w-2xl mx-auto">
-        We leverage cutting-edge technologies to build scalable,
-        high-performance solutions.
+      {t("tech.sub")}
       </p>
     </div>
 
@@ -694,24 +671,22 @@ const values = [
           <div className="w-11 h-11 bg-gradient-to-br from-red-950/40 to-red-900/10 rounded-lg flex items-center justify-center mb-3">
             <TechIcon name={tech.logo} />
           </div>
-          <span className="text-red-200">{tech.name}</span>
+          <span className="text-wwhite">{tech.name}</span>
         </Link>
       ))}
     </div>
   </div>
 </section>
 
-      {/* CTA Section */}
      {/* CTA Section */}
 <section className="py-12 md:py-20">
   <div className="container mx-auto px-4">
     <div className="max-w-4xl mx-auto bg-black/60 border border-red-900 rounded-xl p-6 md:p-10 text-center">
       <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 md:mb-6">
-        Ready to Work Together?
+        {t("cta.title")}
       </h2>
       <p className="text-base md:text-lg text-red-200/70 mb-6 md:mb-8 max-w-2xl mx-auto">
-        Let's discuss how we can help bring your vision to life with our
-        expertise and dedication.
+      {t("cta.header")}
       </p>
       <div className="flex flex-col gap-3 justify-center">
         <Button
@@ -720,7 +695,7 @@ const values = [
             text-white border border-red-800/30 shadow-lg shadow-red-950/20"
           onClick={() => router.push("/contact")}
         >
-          Get in Touch
+         {t("cta.button")}
           <Send className="ml-2 h-4 w-4" />
         </Button>
         <Button
@@ -729,7 +704,7 @@ const values = [
           className="w-full border-red-800/30 text-red-400 bg-red-950/20 hover:bg-red-950/30 hover:text-white"
           onClick={() => router.push("/services")}
         >
-          Explore Our Services
+          {t("cta.button2")}
         </Button>
       </div>
 
@@ -737,21 +712,21 @@ const values = [
       <div className="mt-6 md:mt-8 space-y-3 md:space-y-0 md:flex md:items-center md:justify-center text-red-200/60">
         <div className="flex items-center justify-center">
           <CheckCircle className="h-4 w-4 mr-2 text-red-500" />
-          <span className="text-xs md:text-sm">No Obligation Consultation</span>
+          <span className="text-xs md:text-sm">{t("cta.li")}</span>
         </div>
         
         <span className="hidden md:inline mx-4">•</span>
         
         <div className="flex items-center justify-center">
           <CheckCircle className="h-4 w-4 mr-2 text-red-500" />
-          <span className="text-xs md:text-sm">Transparent Process</span>
+          <span className="text-xs md:text-sm">{t("cta.li2")}</span>
         </div>
         
         <span className="hidden md:inline mx-4">•</span>
         
         <div className="flex items-center justify-center">
           <CheckCircle className="h-4 w-4 mr-2 text-red-500" />
-          <span className="text-xs md:text-sm">Ongoing Support</span>
+          <span className="text-xs md:text-sm">{t("cta.li3")}</span>
         </div>
       </div>
     </div>
