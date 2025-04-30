@@ -258,6 +258,21 @@
     }
   },
 
+  "Portfolio" : {
+    "title" : "our",
+    "title2" : "Portfolio",
+    "sub" : "Discover the full spectrum of our creations.",
+    "category" : {
+      "1" : "Web Development",
+      "2" : "Desktop Development",
+      "3" : "",
+      "4" : "",
+      "5" : "",
+      "6" : ""
+
+    }
+  },
+
   "Footer": {     
     "compDesc": "We design and develop digital experiences that help businesses and individuals succeed online.",     
     "rights": "Your Company. All rights reserved.",     

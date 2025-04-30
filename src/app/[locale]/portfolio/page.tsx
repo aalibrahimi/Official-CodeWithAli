@@ -10,55 +10,21 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import GradientText from "@/MyComponents/GradientText";
+import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 
-const portfolioProjects = [
-  {
-    title: "Knoz Al-Najah Website",
-    category: "Web Development",
-    image: "/knoz_website.png",
-    url: "https://www.knozalnajah.com/en"
-  },
-  {
-    title: "Reggaeeli Website",
-    category: "Web Development",
-    image: "/reggaeeli_website.png",
-    url: "https://reggaeeli.codewithali.com/"
-  },
-  {
-    title: "Merged Construction Website",
-    category: "Web Development",
-    image: "/knozorion_website.png",
-    url: "https://knozorion.codewithali.com/"
-  },
-  {
-    title: "Iraqi Sweets",
-    category: "Web Development",
-    image: "/iraqisweets_website.png",
-    url: "https://iraqisweets.codewithali.com/"
-  },
-  { 
-    title: "Budgetary App",
-    category: "Desktop Development",
-    image: "/budgetary.png",
-    url: "https://budgetary.codewithali.com/",
-  },
-  {
-    title: "Mario's Hauling",
-    category: "Web Development",
-    image: "/marioshauling_website.png",
-    url: "https://marioshauling.codewithali.com/"
-  }
-];
+
 
 const PortfolioPage = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [isReducedMotion, setIsReducedMotion] = useState(false);
-
+  const t = useTranslations("Portfolio");
   // Apply conditional animation based on device capability and user preference
   const getAnimationProps = (delay = 0) => {
     if (!isMounted || isReducedMotion) {
       return {}; // No animation on SSR or when reduced motion is preferred
     }
+    
 
     return {
       initial: { opacity: 0, y: 10 },
@@ -67,6 +33,45 @@ const PortfolioPage = () => {
       transition: { duration: 0.3, delay },
     };
   };
+
+  const portfolioProjects = [
+    {
+      title: "Knoz Al-Najah Website",
+      category: t("category.1"),
+      image: "/knoz_website.png",
+      url: "https://www.knozalnajah.com/en"
+    },
+    {
+      title: "Reggaeeli Website",
+      category: t("category.1"),
+      image: "/reggaeeli_website.png",
+      url: "https://reggaeeli.codewithali.com/"
+    },
+    {
+      title: "Merged Construction Website",
+      category: t("category.1"),
+      image: "/knozorion_website.png",
+      url: "https://knozorion.codewithali.com/"
+    },
+    {
+      title: "Iraqi Sweets",
+      category: t("category.1"),
+      image: "/iraqisweets_website.png",
+      url: "https://iraqisweets.codewithali.com/"
+    },
+    { 
+      title: "Budgetary App",
+      category: t("category.2"),
+      image: "/budgetary.png",
+      url: "https://budgetary.codewithali.com/",
+    },
+    {
+      title: "Mario's Hauling",
+      category: t("category.1"),
+      image: "/marioshauling_website.png",
+      url: "https://marioshauling.codewithali.com/"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
@@ -83,9 +88,12 @@ const PortfolioPage = () => {
           <div className="w-full h-full ">
             <div className="w-full h-full ">
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight  ">
-                Our <GradientText gradient="from-red-500 to-red-600">Portfolio</GradientText>
+                
+              {t("title")} <GradientText gradient="from-red-500 to-red-600">{t("title2")} </GradientText>
               </h1>
-              <p className="text-red-200/80 pt-2 ">Discover the full spectrum of our creations.</p>
+              <p className="amber-50 pt-2 ">
+              {t("sub")}
+              </p>
             </div>
           </div>
         </div>
