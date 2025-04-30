@@ -74,13 +74,13 @@ const PortfolioPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-white dark:bg-black text-white overflow-x-hidden">
       {/* Hero Section */}
       <section className="pt-10 pb-20 md:pb-24 relative overflow-hidden">
         {/* BG */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 border-b-[1px] border-b-red-950/50">
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-950/30 to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-950 to-red-500 dark:bg-gradient-to-br dark:from-red-950/30 dark:to-transparent"></div>
         </div>
 
         {/* Heading */}
@@ -89,7 +89,7 @@ const PortfolioPage = () => {
             <div className="w-full h-full ">
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight  ">
                 
-              {t("title")} <GradientText gradient="from-red-500 to-red-600">{t("title2")} </GradientText>
+              {t("title")} <GradientText gradient="from-red-200 to-red-400 dark:from-red-400 dark:to-red-600">{t("title2")} </GradientText>
               </h1>
               <p className="amber-50 pt-2 ">
               {t("sub")}
@@ -99,7 +99,7 @@ const PortfolioPage = () => {
         </div>
       </section>
 
-      <section className="bg-red-950/10 h-full w-full p-10 overflow-y-clip">
+      <section className="dark:bg-red-950/10 h-full w-full p-10 overflow-y-clip">
         <div className="h-full relative z-10">
           <div className="">
             <motion.div className="grid gap-8 place-items-center md:grid-cols-2 lg:grid-cols-3" {...getAnimationProps()}>
@@ -112,21 +112,21 @@ const PortfolioPage = () => {
               <div key={index} className="group cursor-pointer h-auto max-w-[650px] min-w-[350px]">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-xl shadow-red-950/20">
                   {/* Project Image */}
-                  <div className="w-full h-full bg-black/80 border-2 border-red-800/30 flex items-center justify-center">
+                  <div className="w-full h-full bg-red-300 dark:bg-black/80 border-2 border-red-800/30 flex items-center justify-center">
                     {project.image ? (
                       <>
-                        <Image src={project.image} alt={project.title} height={1000} width={1000} quality={100} loading="eager" className="w-full h-full object-cover" />
+                        <Image src={project.image} alt={project.title} height={1000} width={1000} quality={100} loading="eager" className="w-full h-full object-cover rounded-xl" />
                       </>
                     ) : (
                       <>
-                        <p className="text-red-200/70">Project Image Placeholder</p>
+                        <p className="text-black dark:text-red-200/70">Project Image Placeholder</p>
                       </>
                     )}
                   </div>
 
                   {/* Hover Overlay - preloaded with opacity-0 for better performance */}
                   <div 
-                    className="absolute inset-0 bg-gradient-to-b from-red-800/80 to-black/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="absolute inset-0 bg-gradient-to-b from-red-400/80 to-red-800/90 dark:from-red-800/80 dark:to-black/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     style={{ willChange: "opacity" }}
                   >
                     <div className="text-center p-8">
@@ -140,7 +140,7 @@ const PortfolioPage = () => {
                         <Button
                           variant="outline"
                           size="lg"
-                          className="border-2 border-red/60 text-white bg-red-700/50 px-6 py-5 hover:bg-black hover:text-white text-base font-medium"
+                          className="border-2 dark:border-red-950/80 text-white bg-red-700/80 dark:bg-red-700/50 px-6 py-5 hover:bg-red-950 dark:hover:bg-black hover:text-white text-base font-medium"
                         >
                           View Project
                           <MoveUpRight className="ml-2 h-5 w-5" />
@@ -151,10 +151,10 @@ const PortfolioPage = () => {
                 </div>
 
                 <div className="mt-5">
-                  <Badge className="bg-red-800/30 text-red-300 border-transparent text-base py-1 px-3">
+                  <Badge className="bg-red-700/80 dark:bg-red-800/30 dark:text-red-300 border-transparent text-base py-1 px-3">
                     {project.category}
                   </Badge>
-                  <h3 className="text-xl font-bold text-white mt-3">
+                  <h3 className="text-xl font-bold text-red-800 dark:text-white mt-3">
                     {project.title}
                   </h3>
                 </div>
