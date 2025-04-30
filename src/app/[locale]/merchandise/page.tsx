@@ -184,33 +184,33 @@ export default function MerchandisePage() {
   const featuredItems = merchandiseItems.filter(item => item.featured);
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-white dark:bg-black text-white overflow-x-hidden">
       {/* Hero Section */}
       <section className="pt-20 pb-24 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 border-b-[1px] border-b-red-950/50">
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-950/30 to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-950 to-red-500 dark:bg-gradient-to-br dark:from-red-950/30 dark:to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-red-600/80 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
               OFFICIAL MERCHANDISE
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Wear Your
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600 block">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-200 to-red-400 dark:from-red-400 dark:to-red-600 block">
                 Coding Passion
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-red-200/80 mb-8">
+            <p className="text-lg md:text-xl dark:text-red-200/80 mb-8">
               High-quality apparel for developers, designers, and tech enthusiasts.
               Made for those who build digital excellence.
             </p>
             <Button
               size="lg"
-              className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
-                text-white border border-red-800/30 shadow-lg shadow-red-950/20"
+              className="bg-gradient-to-r from-red-500 to-red-600 dark:from-red-700 dark:to-red-900 hover:from-red-600 hover:to-red-800 
+                     dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-800/30 shadow-lg shadow-red-950/20"
             >
               Shop Now
               <ShoppingCart className="ml-2 h-5 w-5" />
@@ -220,30 +220,30 @@ export default function MerchandisePage() {
       </section>
 
       {/* Featured Collection */}
-      <section className="py-16 bg-red-950/5 border-y border-red-950/20">
+      <section className="py-16 dark:bg-red-950/5 border-y border-red-950/20">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="mb-10">
-            <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-red-600/80 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
               FEATURED COLLECTIONS
             </Badge>
-            <h2 className="text-3xl font-bold">Curated Collections</h2>
+            <h2 className="text-3xl text-red-500/80 dark:text-white font-bold">Curated Collections</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {collections.map((collection, index) => (
               <div 
                 key={index} 
-                className="group cursor-pointer bg-black/60 border border-red-900 rounded-xl overflow-hidden"
+                className="group cursor-pointer bg-red-200 dark:bg-black/60 border border-red-900 rounded-xl overflow-hidden"
               >
-                <div className="aspect-[16/9] bg-gradient-to-br from-red-950/40 to-red-900/10 relative">
+                <div className="aspect-[16/9] bg-gradient-to-br from-red-600/40 to-red-400/10 dark:from-red-950/40 dark:to-red-900/10 relative">
                   {/* we'll use next/image here */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <ShoppingBag className="h-16 w-16 text-red-500/40" />
+                    <ShoppingBag className="h-16 w-16 text-red-500/60" />
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2">{collection.name}</h3>
-                  <p className="text-red-200/70 mb-4">{collection.description}</p>
+                  <h3 className="text-xl font-bold text-red-900 dark:text-white mb-2">{collection.name}</h3>
+                  <p className="text-black dark:text-red-200/70 mb-4">{collection.description}</p>
                   {/* <div className="flex items-center text-red-400 group-hover:text-red-300 transition-colors">
                     <span>View Collection</span>
                     <ChevronRight className="h-4 w-4 ml-1" />
@@ -261,10 +261,10 @@ export default function MerchandisePage() {
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
             <div>
-              <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-red-600/80 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
                 OUR PRODUCTS
               </Badge>
-              <h2 className="text-3xl font-bold mr-[400px]">Shop The Collection</h2>
+              <h2 className="text-3xl text-red-500/80 dark:text-white font-bold mr-[400px]">Shop The Collection</h2>
             </div>
             
             {/* Filter Tabs */}
@@ -276,7 +276,7 @@ export default function MerchandisePage() {
                   size="sm"
                   className={activeCategory === category 
                     ? "bg-red-800 hover:bg-red-700 text-white border-transparent"
-                    : "border-red-800/30 text-red-300 hover:text-white hover:bg-red-950/30"
+                    : "border-red-800/30 bg-red-300 text-black dark:bg-transparent dark:text-red-300 hover:text-white hover:bg-red-950/30"
                   }
                   onClick={() => setActiveCategory(category)}
                 >
@@ -320,35 +320,35 @@ export default function MerchandisePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-red-950/5 border-y border-red-950/20">
+      <section className="py-16 dark:bg-red-950/5 border-y border-red-950/20">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex flex-col items-center text-center p-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-red-800 to-red-900 rounded-full flex items-center justify-center mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 dark:from-red-600 dark:to-red-800 rounded-full flex items-center justify-center mb-4">
                 <Tag className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Premium Quality</h3>
-              <p className="text-red-200/70">
+              <p className="text-black dark:text-red-200/70">
                 All our merchandise is made with high-quality materials built to last through countless coding sessions.
               </p>
             </div>
             
             <div className="flex flex-col items-center text-center p-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-red-800 to-red-900 rounded-full flex items-center justify-center mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 dark:from-red-600 dark:to-red-800 rounded-full flex items-center justify-center mb-4">
                 <TrendingUp className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Unique Designs</h3>
-              <p className="text-red-200/70">
+              <p className="text-black dark:text-red-200/70">
                 Each piece features unique designs created by our in-house team of developer-artists.
               </p>
             </div>
             
             <div className="flex flex-col items-center text-center p-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-red-800 to-red-900 rounded-full flex items-center justify-center mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 dark:from-red-600 dark:to-red-800 rounded-full flex items-center justify-center mb-4">
                 <CheckCircle className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Free Shipping</h3>
-              <p className="text-red-200/70">
+              <p className="text-black dark:text-red-200/70">
                 Enjoy free shipping on all orders over $75. International shipping available to most countries.
               </p>
             </div>
@@ -359,25 +359,25 @@ export default function MerchandisePage() {
       {/* CTA Section had to include a little deal hehe*/}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto bg-black/60 border border-red-900 rounded-xl p-10 text-center">
-            <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+          <div className="max-w-4xl mx-auto bg-red-900/90 dark:bg-black/60 border border-red-900 rounded-xl p-10 text-center">
+            <Badge className="bg-red-600/80 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
               LIMITED TIME OFFER
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Get 15% Off Your First Order
             </h2>
-            <Badge className="bg-red-900/30 text-red-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-red-600/80 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
               CODE: CWA15
             </Badge>
-            <p className="text-lg text-red-200/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-red-200/80 mb-8 max-w-2xl mx-auto">
               Enter the promotion code at checkout and receive a 15% discount code for your first merchandise purchase.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link href="/merchandise">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 
-                    text-white border border-red-800/30 shadow-lg shadow-red-950/20"
+                  className="bg-gradient-to-r from-red-500 to-red-600 dark:from-red-700 dark:to-red-900 hover:from-red-600 hover:to-red-800 
+                     dark:hover:from-red-600 dark:hover:to-red-800 text-white hover:cursor-pointer border border-red-800/30 shadow-lg shadow-red-950/20"
                 >
                   Shop Now
                   <ShoppingCart className="ml-2 h-5 w-5" />
