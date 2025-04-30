@@ -232,7 +232,7 @@ const UIUXDesignPage = () => {
                 That Drives Results
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-white/70 mb-8">
+            <p className="text-lg md:text-xl text-white/80 mb-8">
               We create intuitive, engaging user experiences that enhance brand
               perception, increase conversion rates, and simplify complex
               interactions.
@@ -279,11 +279,11 @@ const UIUXDesignPage = () => {
               OUR SERVICES
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
-              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">
+              <GradientText gradient="from-purple-500 via-white to-white/100">
                 Comprehensive UI/UX Design Services
               </GradientText>
             </h2>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+            <p className="text-white/90 text-lg max-w-2xl mx-auto">
               We offer end-to-end design solutions that transform complex
               challenges into seamless user experiences.
             </p>
@@ -308,13 +308,13 @@ const UIUXDesignPage = () => {
                     <h3 className="text-xl font-bold text-white mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-white/70 mb-4">{service.description}</p>
+                    <p className="text-white/90 mb-4">{service.description}</p>
 
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start">
                           <ChevronRight className="h-4 w-4 text-purple-500 mt-1 mr-2 flex-shrink-0" />
-                          <span className="text-purple-200/80 text-sm">
+                          <span className="text-gray-200 text-sm">
                             {feature}
                           </span>
                         </li>
@@ -347,17 +347,18 @@ const UIUXDesignPage = () => {
               OUR WORK
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
-              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">
+              <GradientText gradient="from-purple-500 via-amber-50 to-white">
                 UI/UX Design Portfolio
               </GradientText>
             </h2>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+            <p className="text-amber-50 text-lg max-w-2xl mx-auto">
               Browse our recent design projects spanning various industries and
               platforms.
             </p>
           </div>
           {/* </motion.div> */}
 
+          {/* either comment this out blaze (below ) or add photos*/}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {portfolioProjects.map((project, index) => (
               // <motion.div
@@ -420,7 +421,7 @@ const UIUXDesignPage = () => {
               OUR PROCESS
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
-              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">
+              <GradientText gradient="from-purple-500 via-gray-200 to-white">
                 Our Design Process
               </GradientText>
             </h2>
@@ -460,7 +461,7 @@ const UIUXDesignPage = () => {
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-white/70">{step.description}</p>
+                    <p className="text-white/80">{step.description}</p>
                   </div>
                 </div>
                 // </motion.div>
@@ -485,11 +486,11 @@ const UIUXDesignPage = () => {
               CLIENT FEEDBACK
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
-              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">
+              <GradientText gradient="from-purple-500 via-gray-200 to-white">
                 What Our Clients Say
               </GradientText>
             </h2>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+            <p className="text-white/80 text-lg max-w-2xl mx-auto">
               Hear from businesses who have transformed their digital presence
               with our UI/UX design services.
             </p>
@@ -510,21 +511,23 @@ const UIUXDesignPage = () => {
                   "The redesign completely transformed our user engagement metrics. Conversion rates increased by 40% within the first month.",
                 author: "Sarah Johnson",
                 company: "TechStart Solutions",
-                image: "/api/placeholder/64/64",
+                // place holder images should be our logo until we can grab a different photo/idea
+                // sort of how like there are empty person shadow for authors ( your doctor invoice for ex) our logo would be that for us in our sites
+                image: "/codewithali.png",
               },
               {
                 quote:
                   "Their user research uncovered pain points we had overlooked for years. The resulting interface designs have significantly improved customer satisfaction.",
                 author: "Michael Chen",
                 company: "Global Innovations",
-                image: "/api/placeholder/64/64",
+                image: "/codewithali.png",
               },
               {
                 quote:
                   "Working with this team was seamless. They translated our complex requirements into an intuitive design that our users love.",
                 author: "Emma Rodriguez",
                 company: "HealthPlus",
-                image: "/api/placeholder/64/64",
+                image: "/codewithali.png",
               },
             ].map((testimonial, index) => (
               // <motion.div key={index} variants={fadeIn} className="h-full">
@@ -533,7 +536,7 @@ const UIUXDesignPage = () => {
                   <CardContent className="p-6 flex flex-col h-full">
                     <div className="mb-6">
                       <MessageSquare className="h-8 w-8 text-purple-600 mb-4" />
-                      <p className="text-purple-200/80 italic mb-6">
+                      <p className="text-white italic mb-6">
                         "{testimonial.quote}"
                       </p>
                     </div>
@@ -579,11 +582,11 @@ const UIUXDesignPage = () => {
               PRICING
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
-              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">
+              <GradientText gradient="from-purple-500 via-gray-200 to-white">
                 UI/UX Design Packages
               </GradientText>
             </h2>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+            <p className="text-white/80 text-lg max-w-2xl mx-auto">
               Flexible options designed to meet the needs of businesses at every
               stage of growth.
             </p>
@@ -680,11 +683,11 @@ const UIUXDesignPage = () => {
               FAQ
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
-              <GradientText gradient="from-purple-500 via-gray-200 to-blue-500">
+              <GradientText gradient="from-purple-500 via-gray-200 to-white">
                 Frequently Asked Questions
               </GradientText>
             </h2>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+            <p className="text-white/80 text-lg max-w-2xl mx-auto">
               Common questions about our UI/UX design services and process.
             </p>
           </div>
@@ -751,7 +754,7 @@ const UIUXDesignPage = () => {
                     <h3 className="text-lg font-bold text-white mb-3">
                       {faq.question}
                     </h3>
-                    <p className="text-white/70 ">{faq.answer}</p>
+                    <p className="text-white/80 ">{faq.answer}</p>
                   </div>
                   // </motion.div>
                 ))}
@@ -791,7 +794,7 @@ const UIUXDesignPage = () => {
                     <h3 className="text-lg font-bold text-white mb-3">
                       {faq.question}
                     </h3>
-                    <p className="text-purple-200/70">{faq.answer}</p>
+                    <p className="text-white/80">{faq.answer}</p>
                   </div>
                   // </motion.div>
                 ))}
@@ -830,7 +833,7 @@ const UIUXDesignPage = () => {
                     <h3 className="text-lg font-bold text-white mb-3">
                       {faq.question}
                     </h3>
-                    <p className="text-white/70">{faq.answer}</p>
+                    <p className="text-white/80">{faq.answer}</p>
                   </div>
                   // </motion.div>
                 ))}
@@ -870,7 +873,7 @@ const UIUXDesignPage = () => {
                     <h3 className="text-lg font-bold text-white mb-3">
                       {faq.question}
                     </h3>
-                    <p className="text-white/70">{faq.answer}</p>
+                    <p className="text-white/80">{faq.answer}</p>
                   </div>
                   // </motion.div>
                 ))}
@@ -894,7 +897,7 @@ const UIUXDesignPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Transform Your User Experience?
             </h2>
-            <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
               Let's discuss how our UI/UX design services can help your business
               achieve its goals through exceptional user experiences.
             </p>

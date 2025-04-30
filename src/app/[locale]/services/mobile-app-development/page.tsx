@@ -77,6 +77,7 @@ const appTypes = [
     title: "Native Apps",
     description:
       "Built specifically for iOS or Android platforms, offering the best performance and access to all device features.",
+      // I'll  let you update the technology part blazey
     platforms: ["iOS (Swift/Objective-C)", "Android (Kotlin/Java)"],
     benefits: [
       "Optimal performance",
@@ -327,7 +328,7 @@ const MobileAppDevelopmentPage = () => {
                   What Sets our Mobile App Development Apart
                 </GradientText>
               </h2>
-              <p className="text-blue-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-whitee text-lg max-w-2xl mx-auto">
                 We combine technical excellence with creative design to deliver
                 mobile apps that users love and businesses rely on.
               </p>
@@ -390,7 +391,7 @@ const MobileAppDevelopmentPage = () => {
                     <h3 className="text-xl font-bold text-white mb-3">
                       {feature.title}
                     </h3>
-                    <p className="text-amber-80">{feature.description}</p>
+                    <p className="text-white/80">{feature.description}</p>
                   </CardContent>
                 </Card>
               </div>
@@ -419,7 +420,7 @@ const MobileAppDevelopmentPage = () => {
                   Mobile App Development Process
                 </GradientText>
               </h2>
-              <p className="text-blue-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-white text-lg max-w-2xl mx-auto">
                 Our structured approach ensures a smooth development journey
                 from concept to launch and beyond.
               </p>
@@ -452,7 +453,7 @@ const MobileAppDevelopmentPage = () => {
                             {step.title}
                           </h3>
                         </div>
-                        <p className="text-blue-200/60">{step.description}</p>
+                        <p className="text-white/70">{step.description}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -483,7 +484,7 @@ const MobileAppDevelopmentPage = () => {
                   Frequently Asked Questions
                 </GradientText>
               </h2>
-              <p className="text-blue-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-white text-lg max-w-2xl mx-auto">
                 Common questions about our mobile app development process and
                 services.
               </p>
@@ -545,7 +546,7 @@ const MobileAppDevelopmentPage = () => {
                     <h4 className="text-lg font-bold text-white mb-2">
                       {faq.question}
                     </h4>
-                    <p className="text-blue-200/70">{faq.answer}</p>
+                    <p className="text-white/70">{faq.answer}</p>
                   </div>
                 ))}
               </TabsContent>
@@ -581,7 +582,7 @@ const MobileAppDevelopmentPage = () => {
                     <h4 className="text-lg font-bold text-white mb-2">
                       {faq.question}
                     </h4>
-                    <p className="text-blue-200/70">{faq.answer}</p>
+                    <p className="text-white/70">{faq.answer}</p>
                   </div>
                 ))}
               </TabsContent>
@@ -591,7 +592,7 @@ const MobileAppDevelopmentPage = () => {
                   {
                     question: "How much does it cost to develop a mobile app?",
                     answer:
-                      "App development costs vary widely based on complexity, features, and platforms. Simple apps typically range from $25,000-$50,000, medium-complexity apps from $50,000-$100,000, and complex apps can exceed $150,000. We provide detailed estimates after understanding your specific requirements.",
+                      "App development costs vary widely based on complexity, features, and platforms. Simple apps typically range from $15,000-$35,000, medium-complexity apps from $35,000-$60,000, and complex apps can exceed $100,000. We provide detailed estimates after understanding your specific requirements.",
                   },
                   {
                     question:
@@ -617,7 +618,7 @@ const MobileAppDevelopmentPage = () => {
                     <h4 className="text-lg font-bold text-white mb-2">
                       {faq.question}
                     </h4>
-                    <p className="text-blue-200/70">{faq.answer}</p>
+                    <p className="text-white/70">{faq.answer}</p>
                   </div>
                 ))}
               </TabsContent>
@@ -640,7 +641,7 @@ const MobileAppDevelopmentPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Build Your Mobile App?
             </h2>
-            <p className="text-lg text-blue-200/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
               Contact us today for a free consultation and discover how we can
               help you create a mobile app that engages users and drives
               business growth.
