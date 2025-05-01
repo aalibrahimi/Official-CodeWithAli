@@ -149,21 +149,21 @@ const values = [
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
-              <div className="bg-red-200 dark:bg-black/60 border border-red-900 p-6 rounded-xl">
-                <Globe className="h-12 w-12 text-red-500 mb-4" />
-                <h3 className="text-xl font-bold text-red-800 dark:text-white mb-3">
+              <div className="bg-red-700/80 dark:bg-black/60 border border-red-900 p-6 rounded-xl">
+                <Globe className="h-12 w-12 text-red-200 dark:text-red-500 mb-4" />
+                <h3 className="text-xl font-bold text-red-950 dark:text-white mb-3">
                 {t("mission.sub")}
                 </h3>
-                <p className="text-black dark:text-gray-300">
+                <p className="text-white dark:text-gray-300">
                 {t("mission.subDesc")}
                 </p>
               </div>
-              <div className="bg-red-200 dark:bg-black/60 border border-red-900 p-6 rounded-xl">
-                <BarChart className="h-12 w-12 text-red-500 mb-4" />
-                <h3 className="text-xl font-bold text-red-800 dark:text-white mb-3">
+              <div className="bg-red-700/80 dark:bg-black/60 border border-red-900 p-6 rounded-xl">
+                <BarChart className="h-12 w-12 text-red-200 dark:text-red-500 mb-4" />
+                <h3 className="text-xl font-bold text-red-950 dark:text-white mb-3">
                 {t("mission.sub2")}
                 </h3>
-                <p className="text-black dark:text-gray-300">
+                <p className="text-white dark:text-gray-300">
                  {t('mission.subDesc2')}
                 </p>
               </div>
@@ -180,12 +180,12 @@ const values = [
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="bg-red-200 dark:bg-black/60 border border-red-900 p-6 rounded-xl"
+                className="bg-red-700/80 dark:bg-black/60 border border-red-900 p-6 rounded-xl"
               >
-                <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-700 dark:from-red-400 dark:to-red-600 mb-2">
+                <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-900 to-red-950 dark:from-red-400 dark:to-red-600 mb-2">
                   {stat.value}
                 </div>
-                <div className="text-black dark:text-red-200">{stat.label}</div>
+                <div className="text-white dark:text-red-200">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -209,9 +209,9 @@ const values = [
 
             <div className="space-y-12">
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                <div className="md:col-span-5 bg-red-200 dark:bg-black/60 border border-red-900 rounded-xl overflow-hidden">
+                <div className="md:col-span-5 bg-red-700/80 dark:bg-black/60 border border-red-900 rounded-xl overflow-hidden">
                   <div className="aspect-video bg-gradient-to-br from-red-600/40 to-red-400/10 dark:from-red-950/40 dark:to-red-900/10 flex items-center justify-center">
-                    <Rocket className="h-16 w-16 text-red-500/60" />
+                    <Rocket className="h-16 w-16 text-red-200/60 dark:text-red-500/60" />
                   </div>
                 </div>
                 <div className="md:col-span-7">
@@ -239,9 +239,9 @@ const values = [
                   {t("story.subDesc2")}
                   </p>
                 </div>
-                <div className="md:col-span-5 md:order-2 order-1 bg-red-200 dark:bg-black/60 border border-red-900 rounded-xl overflow-hidden">
+                <div className="md:col-span-5 md:order-2 order-1 bg-red-700/80 dark:bg-black/60 border border-red-900 rounded-xl overflow-hidden">
                   <div className="aspect-video bg-gradient-to-br from-red-600/40 to-red-400/10 dark:from-red-950/40 dark:to-red-900/10 flex items-center justify-center">
-                    <Heart className="h-16 w-16 text-red-500/60" />
+                    <Heart className="h-16 w-16 text-red-200/60 dark:text-red-500/60" />
                   </div>
                 </div>
               </div>
@@ -267,7 +267,7 @@ const values = [
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-red-200 dark:bg-black/60 border border-red-900 rounded-xl p-8 relative">
+            <div className="bg-red-700/80 dark:bg-black/60 border border-red-900 rounded-xl p-8 relative">
               <div className="absolute -top-5 -left-5">
                 <svg
                   width="48"
@@ -288,23 +288,23 @@ const values = [
               </div>
 
               <div className="mb-6 pt-4">
-                <p className="text-lg text-black dark:text-red-200/80 italic">
+                <p className="text-lg text-white/90 dark:text-red-200/80 italic">
                   {t("mission.quots.1")}
                 </p>
               </div>
 
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-red-600/40 to-red-400/10 dark:from-red-950/40 dark:to-red-900/10 flex items-center justify-center mr-4">
-                  <Users className="h-6 w-6 text-red-800/80 dark:text-red-500/60" />
+                  <Users className="h-6 w-6 text-red-950/80 dark:text-red-500/60" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-red-900 dark:text-white"> {t("mission.author.1")} </h4>
-                  <p className="text-red-700/70 dark:text-red-400/70 text-sm">  {t("mission.job.1")}</p>
+                  <h4 className="font-bold text-red-950 dark:text-white"> {t("mission.author.1")} </h4>
+                  <p className="text-red-950 dark:text-red-400/70 text-sm">  {t("mission.job.1")}</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-red-200 dark:bg-black/60 border border-red-900 rounded-xl p-8 relative">
+            <div className="bg-red-700/80 dark:bg-black/60 border border-red-900 rounded-xl p-8 relative">
               <div className="absolute -top-5 -left-5">
                 <svg
                   width="48"
@@ -325,25 +325,25 @@ const values = [
               </div>
 
               <div className="mb-6 pt-4">
-                <p className="text-lg text-black dark:text-red-200/80 italic">
+                <p className="text-lg text-white/90 dark:text-red-200/80 italic">
                 {t("mission.quots.2")}
                 </p>
               </div>
 
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-red-600/40 to-red-400/10 dark:from-red-950/40 dark:to-red-900/10 flex items-center justify-center mr-4">
-                  <Users className="h-6 w-6 text-red-800/80 dark:text-red-500/60" />
+                  <Users className="h-6 w-6 text-red-950/80 dark:text-red-500/60" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-red-900 dark:text-white"> {t("mission.author.2")}</h4>
-                  <p className="text-red-700/70 dark:text-red-400/70 text-sm">
+                  <h4 className="font-bold text-red-950 dark:text-white"> {t("mission.author.2")}</h4>
+                  <p className="text-red-950 dark:text-red-400/70 text-sm">
                   {t("mission.job.2")}
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-red-200 dark:bg-black/60 border border-red-900 rounded-xl p-8 relative">
+            <div className="bg-red-700/80 dark:bg-black/60 border border-red-900 rounded-xl p-8 relative">
               <div className="absolute -top-5 -left-5">
                 <svg
                   width="48"
@@ -364,25 +364,25 @@ const values = [
               </div>
 
               <div className="mb-6 pt-4">
-                <p className="text-lg text-black dark:text-red-200/80 italic">
+                <p className="text-lg text-white/90 dark:text-red-200/80 italic">
                 {t("mission.quots.3")}
                 </p>
               </div>
 
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-red-600/40 to-red-400/10 dark:from-red-950/40 dark:to-red-900/10 flex items-center justify-center mr-4">
-                  <Users className="h-6 w-6 text-red-800/80 dark:text-red-500/60" />
+                  <Users className="h-6 w-6 text-red-950/80 dark:text-red-500/60" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-red-900 dark:text-white">{t("mission.author.3")}</h4>
-                  <p className="text-red-700/70 dark:text-red-400/70 text-sm">
+                  <h4 className="font-bold text-red-950 dark:text-white">{t("mission.author.3")}</h4>
+                  <p className="text-red-950 dark:text-red-400/70 text-sm">
                   {t("mission.job.3")}
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-red-200 dark:bg-black/60 border border-red-900 rounded-xl p-8 relative">
+            <div className="bg-red-700/80 dark:bg-black/60 border border-red-900 rounded-xl p-8 relative">
               <div className="absolute -top-5 -left-5">
                 <svg
                   width="48"
@@ -403,18 +403,18 @@ const values = [
               </div>
 
               <div className="mb-6 pt-4">
-                <p className="text-lg text-black dark:text-red-200/80 italic">
+                <p className="text-lg text-white/90 dark:text-red-200/80 italic">
                 {t("mission.quots.4")}
                 </p>
               </div>
 
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-red-600/40 to-red-400/10 dark:from-red-950/40 dark:to-red-900/10 flex items-center justify-center mr-4">
-                  <Users className="h-6 w-6 text-red-800/80 dark:text-red-500/60" />
+                  <Users className="h-6 w-6 text-red-950/80 dark:text-red-500/60" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-red-900 dark:text-white">{t("mission.author.4")}</h4>
-                  <p className="text-red-700/70 dark:text-red-400/70 text-sm">
+                  <h4 className="font-bold text-red-950 dark:text-white">{t("mission.author.4")}</h4>
+                  <p className="text-red-950 dark:text-red-400/70 text-sm">
                   {t("mission.job.4")}
                   </p>
                 </div>
@@ -448,14 +448,14 @@ const values = [
               {/* Step 1 */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
                 <div className="md:text-right md:mr-5">
-                  <div className="bg-red-200 dark:bg-black/60 border border-red-900 p-6 rounded-xl">
-                    <h3 className="text-2xl font-bold text-red-900 dark:text-white mb-3">
+                  <div className="bg-red-700/80 dark:bg-black/60 border border-red-900 p-6 rounded-xl">
+                    <h3 className="text-2xl font-bold text-red-950 dark:text-white mb-3">
                     {t("process.cards.h1")}
                     </h3>
-                    <p className="text-black dark:text-amber-50">
+                    <p className="text-white/90 dark:text-amber-50">
                     {t("process.cards.desc1")}
                     </p>
-                    <ul className="list-disc text-red-800 dark:text-red-300 pl-5 md:pl-0 md:list-none mt-3 space-y-2">
+                    <ul className="list-disc text-red-950 dark:text-red-300 pl-5 md:pl-0 md:list-none mt-3 space-y-2">
                       <li className="md:text-right">{t("process.cards.firstList.li1")}</li>
                       <li className="md:text-right">{t("process.cards.firstList.li2")}</li>
                       <li className="md:text-right">
@@ -484,15 +484,15 @@ const values = [
                 </div>
 
                 <div className="md:ml-5">
-                  <div className="bg-red-200 dark:bg-black/60 border border-red-900 p-6 rounded-xl">
-                    <h3 className="text-2xl font-bold text-red-900 dark:text-white mb-3">
+                  <div className="bg-red-700/80 dark:bg-black/60 border border-red-900 p-6 rounded-xl">
+                    <h3 className="text-2xl font-bold text-red-950 dark:text-white mb-3">
                     {t("process.cards.h2")}
                     </h3>
-                    <p className="text-black dark:text-amber-50">
+                    <p className="text-white/90 dark:text-amber-50">
                     {t("process.cards.desc2")}
                      
                     </p>
-                    <ul className="list-disc text-red-800 dark:text-red-300 pl-5 mt-3 space-y-2">
+                    <ul className="list-disc text-red-950 dark:text-red-300 pl-5 mt-3 space-y-2">
                       {/* {t("process.cards.firstList.li1")} */}
                       <li>{t("process.cards.secondList.li1")}</li>
                       <li>{t("process.cards.secondList.li2")}</li>
@@ -506,15 +506,15 @@ const values = [
               {/* Step 3 */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
                 <div className="md:text-right md:mr-5">
-                  <div className="bg-red-200 dark:bg-black/60 border border-red-900 p-6 rounded-xl">
-                    <h3 className="text-2xl font-bold text-red-900 dark:text-white mb-3">
+                  <div className="bg-red-700/80 dark:bg-black/60 border border-red-900 p-6 rounded-xl">
+                    <h3 className="text-2xl font-bold text-red-950 dark:text-white mb-3">
                     {t("process.cards.h3")}
                       
                     </h3>
-                    <p className="text-black dark:text-amber-50">
+                    <p className="text-white/90 dark:text-amber-50">
                     {t("process.cards.desc3")}
                     </p>
-                    <ul className="list-disc text-red-800 dark:text-red-300 pl-5 md:pl-0 md:list-none mt-3 space-y-2">
+                    <ul className="list-disc text-red-950 dark:text-red-300 pl-5 md:pl-0 md:list-none mt-3 space-y-2">
                       <li className="md:text-right">
                       {t("process.cards.thirdList.li1")}
                       </li>
@@ -547,14 +547,14 @@ const values = [
                 </div>
 
                 <div className="md:ml-5">
-                  <div className="bg-red-200 dark:bg-black/60 border border-red-900 p-6 rounded-xl">
-                    <h3 className="text-2xl font-bold text-red-900 dark:text-white mb-3">
+                  <div className="bg-red-700/80 dark:bg-black/60 border border-red-900 p-6 rounded-xl">
+                    <h3 className="text-2xl font-bold text-red-950 dark:text-white mb-3">
                     {t("process.cards.h4")}
                     </h3>
-                    <p className="text-black dark:text-amber-50">
+                    <p className="text-white/90 dark:text-amber-50">
                      {t("process.cards.desc4")}
                     </p>
-                    <ul className="list-disc text-red-800 dark:text-red-300 pl-5 mt-3 space-y-2">
+                    <ul className="list-disc text-red-950 dark:text-red-300 pl-5 mt-3 space-y-2">
                       <li> {t("process.cards.fourthList.li1")}  </li>
                       <li>{t("process.cards.fourthList.li2")}</li>
                       <li>{t("process.cards.fourthList.li3")}</li>
@@ -627,7 +627,7 @@ const values = [
               return (
                 <div
                   key={index}
-                  className="bg-red-200 dark:bg-black/60 border border-red-900 rounded-xl p-6 flex"
+                  className="bg-red-700/80 dark:bg-black/60 border border-red-900 rounded-xl p-6 flex"
                 >
                   <div className="mr-4">
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-red-500 to-red-600 dark:from-red-600 dark:to-red-800 flex items-center justify-center">
@@ -635,10 +635,10 @@ const values = [
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-red-900 dark:text-white mb-2">
+                    <h3 className="text-xl font-bold text-red-950 dark:text-white mb-2">
                       {value.title}
                     </h3>
-                    <p className="text-black dark:text-red-200/70">{value.description}</p>
+                    <p className="text-white/90 dark:text-red-200/70">{value.description}</p>
                   </div>
                 </div>
               );
@@ -668,12 +668,12 @@ const values = [
           key={index}
           href={tech.url}
           target="_blank"
-          className="bg-red-200 dark:bg-black/60 border border-transparent hover:border-red-900 p-3 rounded-xl flex flex-col items-center text-center transition-colors duration-200"
+          className="bg-red-700/80 dark:bg-black/60 border border-transparent hover:border-red-900 p-3 rounded-xl flex flex-col items-center text-center transition-colors duration-200"
         >
-          <div className="w-11 h-11 bg-gradient-to-br from-red-600/40 to-red-400/10 dark:from-red-950/40 dark:to-red-900/10 rounded-lg flex items-center justify-center mb-3">
+          <div className="w-11 h-11 bg-gradient-to-br from-red-700/40 to-red-400/10 dark:from-red-950/40 dark:to-red-900/10 rounded-lg flex items-center justify-center mb-3">
             <TechIcon name={tech.logo} />
           </div>
-          <span className="text-black dark:text-white">{tech.name}</span>
+          <span className="text-white/90 dark:text-white">{tech.name}</span>
         </Link>
       ))}
     </div>
@@ -681,7 +681,7 @@ const values = [
 </section>
 
      {/* CTA Section */}
-<section className="py-12 md:py-20">
+<section className="py-12 md:py-20 bg-gradient-to-b from-red-900/20 to-red-900/90 dark:from-red-950/10 dark:to-black">
   <div className="container mx-auto px-4">
     <div className="max-w-4xl mx-auto bg-red-900/90 dark:bg-black/60 border border-red-900 rounded-xl p-6 md:p-10 text-center">
       <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 md:mb-6">
