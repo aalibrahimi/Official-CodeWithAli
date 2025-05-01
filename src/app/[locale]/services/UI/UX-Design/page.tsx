@@ -207,12 +207,12 @@ const UIUXDesignPage = () => {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-white dark:bg-black text-white overflow-x-hidden">
       {/* Hero Section */}
       <section className="pt-24 pb-12 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-950/30 to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-950 to-purple-500 dark:bg-gradient-to-br dark:from-purple-950/30 dark:to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
@@ -223,12 +223,12 @@ const UIUXDesignPage = () => {
             transition={{ duration: 0.5 }}
           > */}
           <div className="max-w-3xl">
-            <Badge className="bg-purple-900/30 text-purple-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
               UI/UX DESIGN
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               User-Focused Design
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-500 to-blue-500 block">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-400 to-blue-300 dark:to-blue-500 block">
                 That Drives Results
               </span>
             </h1>
@@ -238,8 +238,10 @@ const UIUXDesignPage = () => {
               interactions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
+              {/* Need to fix visibility of this btn */}
               <Button
-                className="bg-gradient-to-r from-purple-700 to-purple-900 hover:from-purple-600 hover:to-purple-800 text-white"
+                className="bg-gradient-to-r from-purple-500 to-purple-600 dark:from-purple-700 dark:to-purple-900 hover:from-purple-600 hover:to-purple-800 
+                     dark:hover:from-purple-600 dark:hover:to-purple-800 text-white"
                 size="lg"
                 onClick={() => router.push("/contact")}
               >
@@ -249,7 +251,7 @@ const UIUXDesignPage = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-purple-700 text-purple-400 bg-purple-900/20 hover:bg-purple-960/20 hover:text-purple-900"
+                className="border-purple-700 text-purple-950 dark:text-purple-400 bg-purple-300/40 dark:bg-purple-950/20 hover:bg-purple-800/80 dark:hover:bg-purple-950/30 hover:text-white dark:hover:text-white"
                 onClick={() => router.push("#portfolio")}
               >
                 View Our Work
@@ -263,8 +265,8 @@ const UIUXDesignPage = () => {
 
       {/* Services Overview */}
       <section className="py-16 relative overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-900/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-700/10 rounded-full blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/20 dark:bg-purple-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/20 dark:bg-purple-700/10 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20">
           {/* <motion.div
@@ -275,15 +277,15 @@ const UIUXDesignPage = () => {
             variants={fadeIn}
           > */}
           <div className="text-center mb-16">
-            <Badge className="bg-purple-900/30 text-purple-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
               OUR SERVICES
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
-              <GradientText gradient="from-purple-500 via-white to-white/100">
+              <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
                 Comprehensive UI/UX Design Services
               </GradientText>
             </h2>
-            <p className="text-white/90 text-lg max-w-2xl mx-auto">
+            <p className="text-black dark:text-white/90 text-lg max-w-2xl mx-auto">
               We offer end-to-end design solutions that transform complex
               challenges into seamless user experiences.
             </p>
@@ -300,12 +302,12 @@ const UIUXDesignPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {designOfferings.map((service, index) => (
               <motion.div key={index} variants={fadeIn}>
-                <Card className="bg-black/60 border-purple-900 backdrop-blur-sm h-full group hover:border-purple-800/50 transition-colors">
+                <Card className="bg-purple-600/80 dark:bg-black/60 border-purple-900 backdrop-blur-sm h-full group hover:border-purple-800/50 transition-colors">
                   <CardContent className="p-6">
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-700 to-purple-900 p-3 mb-4 transform group-hover:scale-110 transition-transform">
                       <service.icon className="w-full h-full text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3">
+                    <h3 className="text-xl font-bold text-black dark:text-white mb-3">
                       {service.title}
                     </h3>
                     <p className="text-white/90 mb-4">{service.description}</p>
@@ -313,7 +315,7 @@ const UIUXDesignPage = () => {
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start">
-                          <ChevronRight className="h-4 w-4 text-purple-500 mt-1 mr-2 flex-shrink-0" />
+                          <ChevronRight className="h-4 w-4 text-purple-950 dark:text-purple-500 mt-1 mr-2 flex-shrink-0" />
                           <span className="text-gray-200 text-sm">
                             {feature}
                           </span>
@@ -332,7 +334,7 @@ const UIUXDesignPage = () => {
       {/* Portfolio Section */}
       <section
         id="portfolio"
-        className="py-20 bg-purple-950/5 relative overflow-hidden"
+        className="py-20 dark:bg-purple-950/5 relative overflow-hidden"
       >
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           {/* <motion.div
@@ -343,15 +345,15 @@ const UIUXDesignPage = () => {
             variants={fadeIn}
           > */}
           <div className="text-center mb-16">
-            <Badge className="bg-purple-900/30 text-purple-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
               OUR WORK
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
-              <GradientText gradient="from-purple-500 via-amber-50 to-white">
+              <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
                 UI/UX Design Portfolio
               </GradientText>
             </h2>
-            <p className="text-amber-50 text-lg max-w-2xl mx-auto">
+            <p className="text-black dark:text-amber-50 text-lg max-w-2xl mx-auto">
               Browse our recent design projects spanning various industries and
               platforms.
             </p>
@@ -370,7 +372,7 @@ const UIUXDesignPage = () => {
               //   className="group"
               // >
               <div key={index} className="group">
-                <div className="relative overflow-hidden rounded-xl aspect-[4/3] bg-purple-950/20">
+                <div className="relative overflow-hidden rounded-xl aspect-[4/3] bg-purple-500/80 dark:bg-purple-950/20">
                   <div className="w-full h-full bg-gradient-to-tr from-purple-950 to-black/20 absolute inset-0 opacity-40 group-hover:opacity-0 transition-opacity"></div>
                   <img
                     src="/api/placeholder/600/450"
@@ -379,7 +381,7 @@ const UIUXDesignPage = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent p-6 flex flex-col justify-end">
                     <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform">
-                      <Badge className="bg-purple-900/60 text-purple-200 border-none mb-2">
+                      <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-none mb-2">
                         {project.category}
                       </Badge>
                       <h3 className="text-xl font-bold text-white">
@@ -396,7 +398,7 @@ const UIUXDesignPage = () => {
           <div className="text-center mt-12">
             <Button
               variant="outline"
-              className="border-purple-800/30 text-purple-400 hover:bg-purple-950/20"
+              className="border-purple-800/30 text-purple-950 dark:text-purple-400 bg-purple-300/40 dark:bg-purple-950/20 hover:bg-purple-800/80 dark:hover:bg-purple-950/30 hover:text-white dark:hover:text-white"
               onClick={() => router.push("/portfolio")}
             >
               View All Projects
@@ -417,15 +419,15 @@ const UIUXDesignPage = () => {
             variants={fadeIn}
           > */}
           <div className="text-center mb-16">
-            <Badge className="bg-purple-900/30 text-purple-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
               OUR PROCESS
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
-              <GradientText gradient="from-purple-500 via-gray-200 to-white">
+              <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
                 Our Design Process
               </GradientText>
             </h2>
-            <p className="text-white/70text-lg max-w-2xl mx-auto">
+            <p className="text-black dark:text-white/70 text-lg max-w-2xl mx-auto">
               We follow a systematic approach to ensure every design solution
               meets both user needs and business objectives.
             </p>
@@ -452,16 +454,18 @@ const UIUXDesignPage = () => {
                       <step.icon className="h-6 w-6 text-white" />
                     </div>
                   </div>
-                  <div className="bg-black/60 border border-purple-900 rounded-xl p-6 flex-grow backdrop-blur-sm">
+                  <div className="bg-purple-600/80 dark:bg-black/60 border border-purple-900 rounded-xl p-6 flex-grow backdrop-blur-sm">
                     <div className="flex items-center mb-3">
                       <span className="text-sm font-bold text-purple-500 mr-2">
                         {step.number}
                       </span>
-                      <h3 className="text-xl font-bold text-white">
+                      <h3 className="text-xl font-bold text-black dark:text-white">
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-white/80">{step.description}</p>
+                    <p className="text-white dark:text-white/80">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
                 // </motion.div>
@@ -472,7 +476,7 @@ const UIUXDesignPage = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-purple-950/5">
+      <section className="py-20 dark:bg-purple-950/5">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           {/* <motion.div
             className="text-center mb-16"
@@ -482,15 +486,15 @@ const UIUXDesignPage = () => {
             variants={fadeIn}
           > */}
           <div className="text-center mb-16">
-            <Badge className="bg-purple-900/30 text-purple-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
               CLIENT FEEDBACK
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
-              <GradientText gradient="from-purple-500 via-gray-200 to-white">
+              <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
                 What Our Clients Say
               </GradientText>
             </h2>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto">
+            <p className="text-black dark:text-white/80 text-lg max-w-2xl mx-auto">
               Hear from businesses who have transformed their digital presence
               with our UI/UX design services.
             </p>
@@ -532,10 +536,10 @@ const UIUXDesignPage = () => {
             ].map((testimonial, index) => (
               // <motion.div key={index} variants={fadeIn} className="h-full">
               <div key={index} className="h-full">
-                <Card className="bg-black/60 border-purple-900 backdrop-blur-sm h-full">
+                <Card className="bg-purple-600/80 dark:bg-black/60 border-purple-900 backdrop-blur-sm h-full">
                   <CardContent className="p-6 flex flex-col h-full">
                     <div className="mb-6">
-                      <MessageSquare className="h-8 w-8 text-purple-600 mb-4" />
+                      <MessageSquare className="h-8 w-8 text-purple-900 dark:text-purple-600 mb-4" />
                       <p className="text-white italic mb-6">
                         "{testimonial.quote}"
                       </p>
@@ -549,10 +553,10 @@ const UIUXDesignPage = () => {
                         />
                       </div>
                       <div>
-                        <p className="font-bold text-white">
+                        <p className="font-bold text-black dark:text-white">
                           {testimonial.author}
                         </p>
-                        <p className="text-sm text-white/70">
+                        <p className="text-sm text-white/80 dark:text-white/70">
                           {testimonial.company}
                         </p>
                       </div>
@@ -578,15 +582,15 @@ const UIUXDesignPage = () => {
             variants={fadeIn}
           > */}
           <div className="text-center mb-16">
-            <Badge className="bg-purple-900/30 text-purple-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
               PRICING
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
-              <GradientText gradient="from-purple-500 via-gray-200 to-white">
+              <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
                 UI/UX Design Packages
               </GradientText>
             </h2>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto">
+            <p className="text-black dark:text-white/80 text-lg max-w-2xl mx-auto">
               Flexible options designed to meet the needs of businesses at every
               stage of growth.
             </p>
@@ -605,43 +609,48 @@ const UIUXDesignPage = () => {
               // >
               <div key={index} className="h-full">
                 <Card
-                  className={`bg-black/60 backdrop-blur-sm h-full flex flex-col ${
+                  className={`bg-purple-600/80 dark:bg-black/60 backdrop-blur-sm h-full flex flex-col ${
                     pkg.highlighted
-                      ? "border-purple-600 shadow-lg shadow-purple-950/30"
-                      : "border-purple-900"
+                      ? "border-purple-900 dark:border-purple-600 shadow-lg shadow-purple-950/30"
+                      : "dark:border-purple-900"
                   }`}
                 >
                   <CardContent className="p-6 flex-grow flex flex-col">
                     {pkg.highlighted && (
-                      <Badge className="bg-purple-700 text-white border-transparent self-start mb-4">
+                      <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent self-start mb-4">
                         Most Popular
                       </Badge>
                     )}
-                    <h3 className="text-2xl font-bold text-white mb-2">
+                    <h3 className="text-2xl font-bold text-black dark:text-white mb-2">
                       {pkg.title}
                     </h3>
                     <div className="mb-4">
-                      <span className="text-3xl font-bold text-purple-400">
+                      <span className="text-3xl font-bold text-purple-100 dark:text-purple-400">
                         {pkg.price}
                       </span>
                       {pkg.price !== "Custom" && (
-                        <span className="text-purple-200/60 ml-1">
+                        <span className="text-purple-200/80 dark:text-purple-200/60 ml-1">
                           starting
                         </span>
                       )}
                     </div>
-                    <p className="text-white/70 mb-6">{pkg.description}</p>
+                    <p className="text-white dark:text-white/70 mb-6">
+                      {pkg.description}
+                    </p>
 
+                    {/* Need to fix this mt-auto. It causes issue for one of the cards */}
                     <div className="mt-auto">
                       <div className="border-t border-purple-900 pt-6 mb-6">
-                        <h4 className="font-bold text-white mb-4">
+                        <h4 className="font-bold dark:text-white mb-4">
                           What's Included:
                         </h4>
                         <ul className="space-y-3">
                           {pkg.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start">
-                              <CheckCircle className="h-5 w-5 text-purple-500 mr-3 flex-shrink-0" />
-                              <span className="text-white/70">{feature}</span>
+                              <CheckCircle className="h-5 w-5 text-purple-950 dark:text-purple-500 mr-3 flex-shrink-0" />
+                              <span className="text-white dark:text-white/70">
+                                {feature}
+                              </span>
                             </li>
                           ))}
                         </ul>
@@ -650,8 +659,8 @@ const UIUXDesignPage = () => {
                       <Button
                         className={`w-full ${
                           pkg.highlighted
-                            ? "bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-500 hover:to-purple-700 text-white"
-                            : "bg-black border border-purple-800/30 text-purple-400 hover:bg-purple-950/20"
+                            ? "bg-gradient-to-r from-purple-500 to-purple-600 dark:from-purple-700 dark:to-purple-900 hover:from-purple-600 hover:to-purple-800 dark:hover:from-purple-600 dark:hover:to-purple-800 text-white"
+                            : "bg-black border border-purple-800/30 dark:text-purple-400 hover:bg-purple-950/80 dark:hover:bg-purple-950/20"
                         }`}
                         onClick={() => router.push("/contact")}
                       >
@@ -669,7 +678,7 @@ const UIUXDesignPage = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-purple-950/5">
+      <section className="py-20 dark:bg-purple-950/5">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           {/* <motion.div
             className="text-center mb-16"
@@ -679,15 +688,15 @@ const UIUXDesignPage = () => {
             variants={fadeIn}
           > */}
           <div className="text-center mb-16">
-            <Badge className="bg-purple-900/30 text-white/70 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
               FAQ
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
-              <GradientText gradient="from-purple-500 via-gray-200 to-white">
+              <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
                 Frequently Asked Questions
               </GradientText>
             </h2>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto">
+            <p className="text-black dark:text-white/80 text-lg max-w-2xl mx-auto">
               Common questions about our UI/UX design services and process.
             </p>
           </div>
@@ -695,22 +704,22 @@ const UIUXDesignPage = () => {
 
           <div className="max-w-3xl mx-auto">
             <Tabs defaultValue="process" className="w-full">
-              <TabsList className="grid grid-cols-2 md:grid-cols-4 bg-black/60 border border-purple-900 rounded-lg p-1 mb-8">
+              <TabsList className="grid grid-cols-2 md:grid-cols-4 bg-purple-600/80 dark:bg-black/60 text-black dark:text-white border border-purple-900 rounded-lg p-1 mb-8">
                 <TabsTrigger
                   value="process"
-                  className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-purple-400"
+                  className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-white dark:data-[state=active]:text-purple-400"
                 >
                   Process
                 </TabsTrigger>
                 <TabsTrigger
                   value="pricing"
-                  className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-purple-400"
+                  className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-white dark:data-[state=active]:text-purple-400"
                 >
                   Pricing
                 </TabsTrigger>
                 <TabsTrigger
                   value="deliverables"
-                  className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-purple-400"
+                  className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-white dark:data-[state=active]:text-purple-400"
                 >
                   Deliverables
                 </TabsTrigger>
@@ -749,12 +758,12 @@ const UIUXDesignPage = () => {
                   // >
                   <div
                     key={index}
-                    className="bg-black/60 border border-purple-900 rounded-xl p-6"
+                    className="bg-purple-600/80 dark:bg-black/60 border border-purple-900 rounded-xl p-6"
                   >
-                    <h3 className="text-lg font-bold text-white mb-3">
+                    <h3 className="text-lg font-bold text-black dark:text-white mb-3">
                       {faq.question}
                     </h3>
-                    <p className="text-white/80 ">{faq.answer}</p>
+                    <p className="dark:text-white/80 ">{faq.answer}</p>
                   </div>
                   // </motion.div>
                 ))}
@@ -789,12 +798,12 @@ const UIUXDesignPage = () => {
                   // >
                   <div
                     key={index}
-                    className="bg-black/60 border border-purple-900 rounded-xl p-6"
+                    className="bg-purple-600/80 dark:bg-black/60 border border-purple-900 rounded-xl p-6"
                   >
-                    <h3 className="text-lg font-bold text-white mb-3">
+                    <h3 className="text-lg font-bold text-black dark:text-white mb-3">
                       {faq.question}
                     </h3>
-                    <p className="text-white/80">{faq.answer}</p>
+                    <p className="dark:text-white/80">{faq.answer}</p>
                   </div>
                   // </motion.div>
                 ))}
@@ -828,12 +837,12 @@ const UIUXDesignPage = () => {
                   // >
                   <div
                     key={index}
-                    className="bg-black/60 border border-purple-900 rounded-xl p-6"
+                    className="bg-purple-600/80 dark:bg-black/60 border border-purple-900 rounded-xl p-6"
                   >
-                    <h3 className="text-lg font-bold text-white mb-3">
+                    <h3 className="text-lg font-bold text-black dark:text-white mb-3">
                       {faq.question}
                     </h3>
-                    <p className="text-white/80">{faq.answer}</p>
+                    <p className="dark:text-white/80">{faq.answer}</p>
                   </div>
                   // </motion.div>
                 ))}
@@ -868,12 +877,12 @@ const UIUXDesignPage = () => {
                   // >
                   <div
                     key={index}
-                    className="bg-black/60 border border-purple-900 rounded-xl p-6"
+                    className="bg-purple-600/80 dark:bg-black/60 border border-purple-900 rounded-xl p-6"
                   >
-                    <h3 className="text-lg font-bold text-white mb-3">
+                    <h3 className="text-lg font-bold text-black dark:text-white mb-3">
                       {faq.question}
                     </h3>
-                    <p className="text-white/80">{faq.answer}</p>
+                    <p className="dark:text-white/80">{faq.answer}</p>
                   </div>
                   // </motion.div>
                 ))}
@@ -884,7 +893,7 @@ const UIUXDesignPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-b from-purple-900/20 to-purple-900/90 dark:from-purple-950/10 dark:to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           {/* <motion.div
             className="max-w-4xl mx-auto bg-black/60 border border-purple-900 rounded-xl p-8 md:p-12 text-center"
@@ -893,7 +902,7 @@ const UIUXDesignPage = () => {
             viewport={{ once: true }}
             variants={fadeIn}
           > */}
-          <div className="max-w-4xl mx-auto bg-black/60 border border-purple-900 rounded-xl p-8 md:p-12 text-center">
+          <div className="max-w-4xl mx-auto bg-purple-600/80 dark:bg-black/60 border border-purple-900 rounded-xl p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Transform Your User Experience?
             </h2>
@@ -903,8 +912,8 @@ const UIUXDesignPage = () => {
             </p>
             <Button
               size="lg"
-              className="bg-gradient-to-r from-purple-700 to-purple-900 hover:from-purple-600 hover:to-purple-800 
-                text-white border border-purple-800/30 shadow-lg shadow-purple-950/20 px-8"
+              className="bg-gradient-to-r from-purple-500 to-purple-600 dark:from-purple-700 dark:to-purple-900 hover:from-purple-600 hover:to-purple-800 
+                     dark:hover:from-purple-600 dark:hover:to-purple-800 text-white border border-purple-800/30 shadow-lg shadow-purple-950/20 px-8"
               onClick={() => router.push("/contact")}
             >
               Schedule a Free Consultation
