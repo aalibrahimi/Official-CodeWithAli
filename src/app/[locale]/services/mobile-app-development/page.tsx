@@ -116,12 +116,12 @@ const MobileAppDevelopmentPage = () => {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-white dark:bg-black text-white overflow-x-hidden">
       {/* Hero Section */}
       <section className="pt-24 pb-16 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-950/30 to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-950 to-blue-500 dark:bg-gradient-to-br dark:from-blue-950/30 dark:to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
@@ -133,16 +133,16 @@ const MobileAppDevelopmentPage = () => {
               transition={{ duration: 0.5 }}
             > */}
             <div className="lg:w-7/12">
-              <Badge className="bg-blue-900/30 text-blue-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-blue-600/80 dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
                 MOBILE APP DEVELOPMENT
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
                 Custom Mobile Apps
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-600 to-blue-800 block mt-2">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-400 to-blue-300 dark:to-blue-800 block mt-2">
                   For iOS & Android
                 </span>
               </h1>
-              <p className="text-lg text-white mb-8">
+              <p className="text-lg text-white/80 dark:text-white mb-8">
                 We design and build innovative, high-performance mobile
                 applications that engage users, solve real problems, and help
                 your business grow in the mobile-first world.
@@ -150,8 +150,8 @@ const MobileAppDevelopmentPage = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-blue-700 to-blue-900 hover:from-blue-600 hover:to-blue-800 
-                    text-white border border-blue-800/30 shadow-lg shadow-blue-950/20 px-8"
+                  className="bg-gradient-to-r from-blue-500 to-blue-600 dark:from-blue-700 dark:to-blue-900 hover:from-blue-600 hover:to-blue-800 
+                     dark:hover:from-blue-600 dark:hover:to-blue-800 text-white border-blue-800/30 shadow-lg shadow-blue-950/20 px-8"
                   onClick={() => router.push("/contact")}
                 >
                   Discuss Your App Idea
@@ -160,7 +160,7 @@ const MobileAppDevelopmentPage = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-blue-800/30 text-blue-400 bg-blue-950/20 hover:bg-blue-950/30 hover:text-white px-8"
+                  className="border-blue-800/30 text-white dark:text-blue-400 bg-blue-500/40 dark:bg-blue-950/20 hover:bg-blue-800/80 dark:hover:bg-blue-950/30 hover:text-white dark:hover:text-white px-8"
                   onClick={() => router.push("/portfolio")}
                 >
                   View Our Work
@@ -236,15 +236,15 @@ const MobileAppDevelopmentPage = () => {
               variants={fadeIn}
             > */}
             <div>
-              <Badge className="bg-blue-900/30 text-blue-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-blue-600/80 dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
                 APP SOLUTIONS
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
-                <GradientText gradient="from-blue-500 via-gray-200 to-blue-500">
+                <GradientText gradient="from-blue-400 via-blue-500 dark:from-gray-200 dark:via-blue-400 to-blue-400">
                   Mobile App Development Solutions
                 </GradientText>
               </h2>
-              <p className="text-amber-50 text-lg max-w-2xl mx-auto">
+              <p className="text-black dark:text-amber-50 text-lg max-w-2xl mx-auto">
                 We offer a range of app development approaches to meet your
                 specific needs, budget, and timeline.
               </p>
@@ -262,22 +262,22 @@ const MobileAppDevelopmentPage = () => {
               //   transition={{ duration: 0.5, delay: index * 0.1 }}
               // >
               <div key={index}>
-                <Card className="bg-black/60 border-blue-900 backdrop-blur-sm h-full">
+                <Card className="bg-blue-600/80 dark:bg-black/60 border-blue-900 backdrop-blur-sm h-full">
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-blue-400 to mb-3">
+                    <h3 className="text-xl font-bold text-black dark:text-blue-400 to mb-3">
                       {type.title}
                     </h3>
                     <p className="text-amber-50 mb-4">{type.description}</p>
 
                     <div className="mb-4">
-                      <h4 className="text-sm font-semibold text-blue-400  mb-2">
+                      <h4 className="text-sm font-semibold dark:text-blue-400  mb-2">
                         Technologies:
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {type.platforms.map((platform, i) => (
                           <Badge
                             key={i}
-                            className="bg-blue-900/20 border-blue-800/30 text-white"
+                            className="bg-blue-900/80 dark:bg-blue-900/20 border-blue-800/30 text-white"
                           >
                             {platform}
                           </Badge>
@@ -286,13 +286,13 @@ const MobileAppDevelopmentPage = () => {
                     </div>
 
                     <div>
-                      <h4 className="text-sm font-semibold text-blue-300 mb-2">
+                      <h4 className="text-sm font-semibold dark:text-blue-300 mb-2">
                         Benefits:
                       </h4>
                       <ul className="space-y-1">
                         {type.benefits.map((benefit, i) => (
                           <li key={i} className="flex items-start">
-                            <CheckCircle className="w-4 h-4 text-blue-500 mt-0.5 mr-2 flex-shrink-0" />
+                            <CheckCircle className="w-4 h-4 text-blue-950 dark:text-blue-500 mt-0.5 mr-2 flex-shrink-0" />
                             <span className="text-amber-50 text-sm">
                               {benefit}
                             </span>
@@ -310,7 +310,7 @@ const MobileAppDevelopmentPage = () => {
       </section>
 
       {/* Key Features Section */}
-      <section className="py-16 bg-blue-950/10">
+      <section className="py-16 dark:bg-blue-950/10">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
             {/* <motion.div
@@ -320,11 +320,11 @@ const MobileAppDevelopmentPage = () => {
               variants={fadeIn}
             > */}
             <div>
-              <Badge className="bg-blue-900/30 text-blue-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-blue-600/80 dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
                 OUR EXPERTISE
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
-                <GradientText gradient="from-blue-500 via-gray-200 to-blue-500">
+                <GradientText gradient="from-blue-400 via-blue-500 dark:from-gray-200 dark:via-blue-400 to-blue-400">
                   What Sets our Mobile App Development Apart
                 </GradientText>
               </h2>
@@ -383,15 +383,15 @@ const MobileAppDevelopmentPage = () => {
               //   transition={{ duration: 0.5, delay: index * 0.1 }}
               // >
               <div key={index}>
-                <Card className="bg-black/60 border-blue-900 backdrop-blur-sm h-full">
+                <Card className="bg-blue-600/80 dark:bg-black/60 border-blue-900 backdrop-blur-sm h-full">
                   <CardContent className="p-6">
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-700 to-blue-900 flex items-center justify-center mb-4">
                       <feature.icon className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3">
+                    <h3 className="text-xl font-bold text-black dark:text-white mb-3">
                       {feature.title}
                     </h3>
-                    <p className="text-white/80">{feature.description}</p>
+                    <p className="text-white dark:text-white/80">{feature.description}</p>
                   </CardContent>
                 </Card>
               </div>
@@ -412,11 +412,11 @@ const MobileAppDevelopmentPage = () => {
               variants={fadeIn}
             > */}
             <div>
-              <Badge className="bg-blue-900/30 text-blue-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-blue-600/80 dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
                 OUR PROCESS
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
-                <GradientText gradient="from-blue-500 via-gray-200 to-blue-500">
+                <GradientText gradient="from-blue-400 via-blue-500 dark:from-gray-200 dark:via-blue-400 to-blue-400">
                   Mobile App Development Process
                 </GradientText>
               </h2>
@@ -438,7 +438,7 @@ const MobileAppDevelopmentPage = () => {
               //   transition={{ duration: 0.5, delay: index * 0.1 }}
               // >
               <div key={index}>
-                <Card className="bg-black/60 border-blue-900 backdrop-blur-sm overflow-hidden">
+                <Card className="bg-blue-600/80 dark:bg-black/60 border-blue-900 backdrop-blur-sm overflow-hidden">
                   <CardContent className="p-6">
                     <div className="flex flex-col md:flex-row gap-4 items-start">
                       <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-700 to-blue-900 flex items-center justify-center flex-shrink-0">
@@ -449,11 +449,11 @@ const MobileAppDevelopmentPage = () => {
                       <div>
                         <div className="flex items-center mb-2">
                           <step.icon className="w-5 h-5 text-blue-500 mr-2" />
-                          <h3 className="text-xl font-bold text-white">
+                          <h3 className="text-xl font-bold dark:text-white">
                             {step.title}
                           </h3>
                         </div>
-                        <p className="text-white/70">{step.description}</p>
+                        <p className="text-white dark:text-white/70">{step.description}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -476,11 +476,11 @@ const MobileAppDevelopmentPage = () => {
               variants={fadeIn}
             > */}
             <div>
-              <Badge className="bg-blue-900/30 text-blue-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-blue-600/80 dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
                 FAQ
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
-                <GradientText gradient="from-blue-500 via-gray-200 to-blue-500">
+                <GradientText gradient="from-blue-400 via-blue-500 dark:from-gray-200 dark:via-blue-400 to-blue-400">
                   Frequently Asked Questions
                 </GradientText>
               </h2>
@@ -494,7 +494,7 @@ const MobileAppDevelopmentPage = () => {
 
           <div className="max-w-3xl mx-auto">
             <Tabs defaultValue="general" className="w-full">
-              <TabsList className="grid grid-cols-3 mb-8 bg-black/60 border border-blue-900">
+              <TabsList className="grid grid-cols-3 mb-8 bg-blue-600/80 dark:bg-black/60 text-black border border-blue-900">
                 <TabsTrigger
                   value="general"
                   className="data-[state=active]:bg-blue-900/30 data-[state=active]:text-white"
@@ -541,12 +541,12 @@ const MobileAppDevelopmentPage = () => {
                 ].map((faq, index) => (
                   <div
                     key={index}
-                    className="bg-black/60 border border-blue-900 rounded-lg p-6"
+                    className="bg-blue-600/80 dark:bg-black/60 border border-blue-900 rounded-lg p-6"
                   >
-                    <h4 className="text-lg font-bold text-white mb-2">
+                    <h4 className="text-lg font-bold text-black dark:text-white mb-2">
                       {faq.question}
                     </h4>
-                    <p className="text-white/70">{faq.answer}</p>
+                    <p className="dark:text-white/70">{faq.answer}</p>
                   </div>
                 ))}
               </TabsContent>
@@ -577,12 +577,12 @@ const MobileAppDevelopmentPage = () => {
                 ].map((faq, index) => (
                   <div
                     key={index}
-                    className="bg-black/60 border border-blue-900 rounded-lg p-6"
+                    className="bg-blue-600/80 dark:bg-black/60 border border-blue-900 rounded-lg p-6"
                   >
-                    <h4 className="text-lg font-bold text-white mb-2">
+                    <h4 className="text-lg font-bold text-black dark:text-white mb-2">
                       {faq.question}
                     </h4>
-                    <p className="text-white/70">{faq.answer}</p>
+                    <p className="dark:text-white/70">{faq.answer}</p>
                   </div>
                 ))}
               </TabsContent>
@@ -613,12 +613,12 @@ const MobileAppDevelopmentPage = () => {
                 ].map((faq, index) => (
                   <div
                     key={index}
-                    className="bg-black/60 border border-blue-900 rounded-lg p-6"
+                    className="bg-blue-600/80 dark:bg-black/60 border border-blue-900 rounded-lg p-6"
                   >
-                    <h4 className="text-lg font-bold text-white mb-2">
+                    <h4 className="text-lg font-bold text-black dark:text-white mb-2">
                       {faq.question}
                     </h4>
-                    <p className="text-white/70">{faq.answer}</p>
+                    <p className="dark:text-white/70">{faq.answer}</p>
                   </div>
                 ))}
               </TabsContent>
@@ -628,7 +628,7 @@ const MobileAppDevelopmentPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-blue-950/10 to-black">
+      <section className="py-20 bg-gradient-to-b from-blue-900/20 to-blue-900/90 dark:from-blue-950/10 dark:to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           {/* <motion.div
             className="max-w-4xl mx-auto bg-black/60 border border-blue-900 rounded-xl p-8 md:p-12 text-center"
@@ -637,7 +637,7 @@ const MobileAppDevelopmentPage = () => {
             viewport={{ once: true }}
             variants={fadeIn}
           > */}
-          <div className="max-w-4xl mx-auto bg-black/60 border border-blue-900 rounded-xl p-8 md:p-12 text-center">
+          <div className="max-w-4xl mx-auto bg-blue-900 dark:bg-black/60 border border-blue-900 rounded-xl p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Build Your Mobile App?
             </h2>
@@ -649,8 +649,8 @@ const MobileAppDevelopmentPage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-blue-700 to-blue-900 hover:from-blue-600 hover:to-blue-800 
-                  text-white border border-blue-800/30 shadow-lg shadow-blue-950/20 px-8"
+                className="bg-gradient-to-r from-blue-500 to-blue-600 dark:from-blue-700 dark:to-blue-900 hover:from-blue-600 hover:to-blue-800 
+                     dark:hover:from-blue-600 dark:hover:to-blue-800 text-white border border-blue-800/30 shadow-lg shadow-blue-950/20 px-8"
                 onClick={() => router.push("/contact")}
               >
                 Discuss Your App Idea
@@ -659,7 +659,7 @@ const MobileAppDevelopmentPage = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-blue-800/30 text-blue-400 bg-blue-950/20 hover:bg-blue-950/30 hover:text-white px-8"
+                className="border-blue-800/30 text-white dark:text-blue-400 bg-blue-500/40 dark:bg-blue-950/20 hover:bg-blue-800/80 dark:hover:bg-blue-950/30 hover:text-white dark:hover:text-white px-8"
                 onClick={() => router.push("/portfolio")}
               >
                 View Our Work

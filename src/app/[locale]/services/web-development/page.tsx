@@ -308,7 +308,7 @@ const WebsiteDevelopmentPage = () => {
               //   transition={{ duration: 0.5, delay: index * 0.1 }}
               // >
               <div key={index}>
-                <Card className="bg-pink-500/80 dark:bg-black/60 border-pink-900 backdrop-blur-sm h-full">
+                <Card className="bg-pink-600/80 dark:bg-black/60 border-pink-900 backdrop-blur-sm h-full">
                   <CardContent className="p-6">
                     <div className="mb-4">
                       <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-pink-700 to-pink-900 flex items-center justify-center mb-4">
@@ -365,7 +365,7 @@ const WebsiteDevelopmentPage = () => {
               //   transition={{ duration: 0.5, delay: index * 0.1 }}
               // >
               <div key={index}>
-                <Card className="bg-pink-500/80 dark:bg-black/60 border-pink-900 backdrop-blur-sm overflow-hidden">
+                <Card className="bg-pink-600/80 dark:bg-black/60 border-pink-900 backdrop-blur-sm overflow-hidden">
                   <CardContent className="p-6">
                     <div className="flex flex-col md:flex-row gap-4 items-start">
                       <div className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-700 to-pink-900 flex items-center justify-center flex-shrink-0">
@@ -431,7 +431,7 @@ const WebsiteDevelopmentPage = () => {
               // >
               <div
                 key={index}
-                className="bg-pink-500/80 dark:bg-black/60 border border-pink-900 rounded-lg p-6"
+                className="bg-pink-600/80 dark:bg-black/60 border border-pink-900 rounded-lg p-6"
               >
                 <div className="flex items-start">
                   <CheckCircle className="w-5 h-5 text-pink-900 dark:text-pink-500 mt-1 mr-3 flex-shrink-0" />
@@ -489,7 +489,7 @@ const WebsiteDevelopmentPage = () => {
               <div key={index} className="group cursor-pointer">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-xl shadow-pink-950/20 mb-5">
                   {/* Project Image */}
-                  <div className="w-full h-full bg-pink-500/80 dark:bg-black/80 border-2 border-pink-800/30 flex items-center justify-center">
+                  <div className="w-full h-full bg-pink-600/80 dark:bg-black/80 border-2 border-pink-800/30 flex items-center justify-center">
                     <div className="flex flex-col items-center">
                       <Badge className="bg-pink-800/40 text-white border-transparent mb-3">
                         {project.industry}
@@ -576,7 +576,7 @@ const WebsiteDevelopmentPage = () => {
 
           <div className="max-w-3xl mx-auto">
             <Tabs defaultValue="general" className="w-full">
-              <TabsList className="grid grid-cols-3 mb-8 bg-pink-500/80 dark:bg-black/60 border border-pink-900 ">
+              <TabsList className="grid grid-cols-3 mb-8 bg-pink-600/80 dark:bg-black/60 border border-pink-900 ">
                 <TabsTrigger
                   value="general"
                   className="data-[state=active]:bg-pink-900/30 data-[state=active]:text-white"
@@ -622,7 +622,7 @@ const WebsiteDevelopmentPage = () => {
                 ].map((faq, index) => (
                   <div
                     key={index}
-                    className="bg-pink-500/80 dark:bg-black/60 border border-pink-900 rounded-lg p-6"
+                    className="bg-pink-600/80 dark:bg-black/60 border border-pink-900 rounded-lg p-6"
                   >
                     <h4 className="text-lg font-bold text-pink-950 dark:text-white mb-2">
                       {faq.question}
@@ -660,7 +660,7 @@ const WebsiteDevelopmentPage = () => {
                 ].map((faq, index) => (
                   <div
                     key={index}
-                    className="bg-pink-500/80 dark:bg-black/60 border border-pink-900 rounded-lg p-6"
+                    className="bg-pink-600/80 dark:bg-black/60 border border-pink-900 rounded-lg p-6"
                   >
                     <h4 className="text-lg font-bold text-pink-950 dark:text-white mb-2">
                       {faq.question}
@@ -696,7 +696,7 @@ const WebsiteDevelopmentPage = () => {
                 ].map((faq, index) => (
                   <div
                     key={index}
-                    className="bg-pink-500/80 dark:bg-black/60 border border-pink-900 rounded-lg p-6"
+                    className="bg-pink-600/80 dark:bg-black/60 border border-pink-900 rounded-lg p-6"
                   >
                     <h4 className="text-lg font-bold text-pink-950 dark:text-white mb-2">
                       {faq.question}
@@ -732,7 +732,7 @@ const WebsiteDevelopmentPage = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-pink-500 to-pink-600 dark:from-pink-700 dark:to-pink-900 hover:from-pink-600 hover:to-pink-800 
-                     dark:hover:from-pink-600 dark:hover:to-pink-800 text-white  border border-pink-800/30 shadow-lg shadow-pink-950/20 px-8"
+                     dark:hover:from-pink-600 dark:hover:to-pink-800 text-white border border-pink-800/30 shadow-lg shadow-pink-950/20 px-8"
                 onClick={() => router.push("/contact")}
               >
                 Get a Free Quote
