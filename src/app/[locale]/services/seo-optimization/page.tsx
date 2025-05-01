@@ -223,12 +223,12 @@ const SEOOptimizationPage = () => {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-white dark:bg-black text-white overflow-x-hidden">
       {/* Hero Section */}
       <section className="pt-24 pb-12 relative overflow-hidden border-b border-orange-600">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-orange-950/30 to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-orange-950 to-orange-500 dark:bg-gradient-to-br dark:from-orange-950/30 dark:to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
@@ -239,23 +239,24 @@ const SEOOptimizationPage = () => {
             transition={{ duration: 0.5 }}
           > */}
           <div className="max-w-3xl">
-            <Badge className="bg-orange-900/30 text-orange-400 border-transparent hover:bg-orange-900/20 mb-4 px-3 py-1">
+            <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent hover:bg-orange-900/20 mb-4 px-3 py-1">
               SEO OPTIMIZATION
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Drive Organic Traffic &
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-orange-400 to-red-600 block">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-orange-300 to-red-400 dark:to-red-500 block">
                 Boost Your Rankings
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-white/70 mb-8">
+            <p className="text-lg md:text-xl dark:text-white/70 mb-8">
               Data-driven SEO strategies that increase visibility, attract
               qualified leads, and help your business dominate search engine
               results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
-                className="bg-gradient-to-r from-orange-700 to-orange-900 hover:from-orange-600 hover:to-orange-800 text-white"
+                className="bg-gradient-to-r from-orange-500 to-orange-600 dark:from-orange-700 dark:to-orange-900 hover:from-orange-600 hover:to-orange-800 
+                     dark:hover:from-orange-600 dark:hover:to-orange-800 text-white"
                 size="lg"
                 onClick={() => router.push("/contact")}
               >
@@ -265,7 +266,7 @@ const SEOOptimizationPage = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-orange-700 text-orange-400 bg-orange-900/60 hover:bg-orange-950/50 hover:text-orange-900"
+                className="border-orange-700 text-white dark:text-orange-400 bg-orange-300/40 dark:bg-orange-950/20 hover:bg-orange-800/80 dark:hover:bg-orange-950/30 hover:text-white dark:hover:text-white"
                 onClick={() => router.push("#packages")}
               >
                 View SEO Packages
@@ -279,8 +280,8 @@ const SEOOptimizationPage = () => {
 
       {/* Services Overview */}
       <section className="py-16 relative overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-900/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-orange-700/10 rounded-full blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-400/20 dark:bg-orange-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-orange-400/20 dark:bg-orange-700/10 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20">
           {/* <motion.div 
@@ -291,16 +292,16 @@ const SEOOptimizationPage = () => {
             variants={fadeIn}
           > */}
           <div className="text-center mb-16">
-            <Badge className="bg-orange-900/30 text-orange-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
               OUR SERVICES
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
               {/* Changed orange Gradient here */}
-              <GradientText gradient="from-white via-orange-400 to-red-500">
+              <GradientText gradient="from-orange-500 via-orange-400 to-red-400 dark:from-white dark:to-red-500">
                 Comprehensive SEO Solutions
               </GradientText>
             </h2>
-            <p className="text-white/90 text-lg max-w-2xl mx-auto">
+            <p className="text-black dark:text-white/90 text-lg max-w-2xl mx-auto">
               Our holistic approach to search engine optimization covers all
               aspects needed to improve your website's visibility in search
               results.
@@ -323,20 +324,20 @@ const SEOOptimizationPage = () => {
               // >
               // card hover feature here
               <div key={index}>
-                <Card className="bg-black/60 border-orange-950 backdrop-blur-sm h-full group hover:border-orange-800 transition-colors">
+                <Card className="bg-orange-600/80 dark:bg-black/60 border-orange-950 backdrop-blur-sm h-full group hover:border-orange-800 transition-colors">
                   <CardContent className="p-6">
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-700 to-orange-900 p-3 mb-4 transform group-hover:scale-110 transition-transform">
                       <service.icon className="w-full h-full text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3">
+                    <h3 className="text-xl font-bold dark:text-white mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-white/85 mb-4">{service.description}</p>
+                    <p className="text-white dark:text-white/85 mb-4">{service.description}</p>
 
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start">
-                          <ChevronRight className="h-4 w-4 text-orange-500 mt-1 mr-2 flex-shrink-0" />
+                          <ChevronRight className="h-4 w-4 text-orange-950 dark:text-orange-500 mt-1 mr-2 flex-shrink-0" />
                           <span className="text-white/80 text-sm">
                             {feature}
                           </span>
@@ -354,7 +355,7 @@ const SEOOptimizationPage = () => {
       </section>
 
       {/* Results Section */}
-      <section className="py-20 bg-orange-950/5 relative overflow-hidden">
+      <section className="py-20 dark:bg-orange-950/5 relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           {/* <motion.div 
             className="text-center mb-16"
@@ -364,15 +365,15 @@ const SEOOptimizationPage = () => {
             variants={fadeIn}
           > */}
           <div className="text-center mb-16 ">
-            <Badge className="bg-orange-900/30 text-orange-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
               RESULTS
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
-              <GradientText gradient="from-orange-400 via-gray-200 to-red-600">
+              <GradientText gradient="from-orange-500 via-orange-400 to-red-400 dark:from-white dark:to-red-500">
                 Proven Performance
               </GradientText>
             </h2>
-            <p className="text-white text-lg max-w-2xl mx-auto">
+            <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
               Our data-driven approach consistently delivers measurable results
               for our clients.
             </p>
@@ -389,15 +390,15 @@ const SEOOptimizationPage = () => {
               //   transition={{ duration: 0.5, delay: index * 0.1 }}
               // >
               <div key={index}>
-                <Card className="bg-black/60 border-orange-950 h-full backdrop-blur-sm hover:border-orange-900 transition-colors">
+                <Card className="bg-orange-600/80 dark:bg-black/60 border-orange-950 h-full backdrop-blur-sm hover:border-orange-900 transition-colors">
                   <CardContent className="p-6 text-center">
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-700 to-orange-900 flex items-center justify-center mx-auto mb-4">
                       <TrendingUp className="h-8 w-8 text-white" />
                     </div>
-                    <div className="text-4xl font-bold text-orange-400 mb-2">
+                    <div className="text-4xl font-bold text-orange-950 dark:text-orange-400 mb-2">
                       {metric.stat}
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-3">
+                    <h3 className="text-lg font-bold dark:text-white mb-3">
                       {metric.label}
                     </h3>
                     <p className="text-white/80">{metric.description}</p>
@@ -421,15 +422,15 @@ const SEOOptimizationPage = () => {
             variants={fadeIn}
           > */}
           <div className="text-center mb-16">
-            <Badge className="bg-orange-900/30 text-orange-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
               OUR APPROACH
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
-              <GradientText gradient="from-orange-400 via-gray-200 to-red-600">
+              <GradientText gradient="from-orange-500 via-orange-400 to-red-400 dark:from-white dark:to-red-500">
                 Our SEO Process
               </GradientText>
             </h2>
-            <p className="text-white text-lg max-w-2xl mx-auto">
+            <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
               We follow a systematic approach to ensure your SEO campaign
               delivers consistent results.
             </p>
@@ -456,16 +457,16 @@ const SEOOptimizationPage = () => {
                       <step.icon className="h-6 w-6 text-white" />
                     </div>
                   </div>
-                  <div className="bg-black/60 border border-orange-950 hover:border-orange-900 transition-colors rounded-xl p-6 flex-grow backdrop-blur-sm">
+                  <div className="bg-orange-600/80 dark:bg-black/60 border border-orange-950 hover:border-orange-900 transition-colors rounded-xl p-6 flex-grow backdrop-blur-sm">
                     <div className="flex items-center mb-3">
-                      <span className="text-sm font-bold text-orange-500 mr-2">
+                      <span className="text-sm font-bold text-orange-950 dark:text-orange-500 mr-2">
                         {step.number}
                       </span>
-                      <h3 className="text-xl font-bold text-white">
+                      <h3 className="text-xl font-bold text-black dark:text-white">
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-white/80">{step.description}</p>
+                    <p className="dark:text-white/80">{step.description}</p>
                   </div>
                 </div>
                 // </motion.div>
@@ -476,7 +477,7 @@ const SEOOptimizationPage = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-orange-950/5">
+      <section className="py-20 dark:bg-orange-950/5">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           {/* <motion.div 
             className="text-center mb-16"
@@ -486,15 +487,15 @@ const SEOOptimizationPage = () => {
             variants={fadeIn}
           > */}
           <div className="text-center  mb-16">
-            <Badge className="bg-orange-900/30 text-orange-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
               BENEFITS
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
-              <GradientText gradient="from-orange-400 via-gray-200 to-red-600">
+              <GradientText gradient="from-orange-500 via-orange-400 to-red-400 dark:from-white dark:to-red-500">
                 Why Invest in SEO?
               </GradientText>
             </h2>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+            <p className="text-black dark:text-white/70 text-lg max-w-2xl mx-auto">
               Search engine optimization offers numerous advantages for
               businesses looking to grow their online presence.
             </p>
@@ -549,14 +550,14 @@ const SEOOptimizationPage = () => {
               // >
               <div key={index}>
                 {/* cards esta aqui */}
-                <div className="bg-black/60 border border-orange-950/30 rounded-xl p-6  backdrop-blur-sm h-full group hover:border-orange-800/50 transition-colors ">
+                <div className="bg-orange-600/80 dark:bg-black/60 border border-orange-950/30 rounded-xl p-6  backdrop-blur-sm h-full group hover:border-orange-800/50 transition-colors ">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-700 to-orange-900 p-3 mb-4">
                     <benefit.icon className="w-full h-full text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">
+                  <h3 className="text-xl font-bold text-black dark:text-white mb-3">
                     {benefit.title}
                   </h3>
-                  <p className="text-white/70">{benefit.description}</p>
+                  <p className="dark:text-white/70">{benefit.description}</p>
                 </div>
               </div>
               // </motion.div>
@@ -576,15 +577,15 @@ const SEOOptimizationPage = () => {
             variants={fadeIn}
           > */}
           <div className="text-center mb-16">
-            <Badge className="bg-orange-900/30 text-orange-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
               PRICING
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
-              <GradientText gradient="from-orange-400 via-gray-200 to-red-600">
+              <GradientText gradient="from-orange-500 via-orange-400 to-red-400 dark:from-white dark:to-red-500">
                 SEO Packages
               </GradientText>
             </h2>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+            <p className="text-black dark:text-white/70 text-lg max-w-2xl mx-auto">
               Flexible SEO solutions designed to meet the needs of businesses at
               every stage of growth.
             </p>
@@ -603,10 +604,10 @@ const SEOOptimizationPage = () => {
               // >
               <div key={index} className="h-full">
                 <Card
-                  className={`bg-black/60 backdrop-blur-sm h-full flex flex-col  hover:border-orange-900 ${
+                  className={`bg-orange-600/80 dark:bg-black/60 backdrop-blur-sm h-full flex flex-col  hover:border-orange-900 ${
                     pkg.highlighted
                       ? "border-orange-600 shadow-lg shadow-orange-950/30 hover:border-red-800"
-                      : "border-orange-950/30"
+                      : "dark:border-orange-950/30"
                   }`}
                 >
                   <CardContent className="p-6 flex-grow flex flex-col ">
@@ -615,29 +616,30 @@ const SEOOptimizationPage = () => {
                         Most Popular
                       </Badge>
                     )}
-                    <h3 className="text-2xl font-bold text-white mb-2">
+                    <h3 className="text-2xl font-bold dark:text-white mb-2">
                       {pkg.title}
                     </h3>
                     <div className="mb-4">
-                      <span className="text-3xl font-bold text-orange-400">
+                      <span className="text-3xl font-bold text-orange-950 dark:text-orange-400">
                         {pkg.price}
                       </span>
-                      <span className="text-white ml-1">
+                      <span className="text-orange-950 dark:text-white ml-1">
                         {pkg.period}
                       </span>
                     </div>
-                    <p className="text-white/70 mb-6">{pkg.description}</p>
+                    <p className="text-white dark:text-white/70 mb-6">{pkg.description}</p>
 
+                    {/* Need to fix mt-auto here. It's causing issues for spacing in one of the cards */}
                     <div className="mt-auto">
                       <div className="border-t border-orange-950/30 pt-6 mb-6">
-                        <h4 className="font-bold text-white mb-4">
+                        <h4 className="font-bold text-orange-950 dark:text-white mb-4">
                           What's Included:
                         </h4>
                         <ul className="space-y-3">
                           {pkg.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start  ">
-                              <CheckCircle className="h-5 w-5 text-orange-500 mr-3 flex-shrink-0 " />
-                              <span className="text-white/70">{feature}</span>
+                              <CheckCircle className="h-5 w-5 text-orange-950 dark:text-orange-500 mr-3 flex-shrink-0 " />
+                              <span className="text-white/80 dark:text-white/70">{feature}</span>
                             </li>
                           ))}
                         </ul>
@@ -646,8 +648,8 @@ const SEOOptimizationPage = () => {
                       <Button
                         className={`w-full ${
                           pkg.highlighted
-                            ? "bg-gradient-to-r from-orange-600 to-orange-800 hover:from-orange-500 hover:to-orange-700 text-white"
-                            : "bg-black border border-orange-800/30 text-orange-400 hover:bg-orange-950/20"
+                            ? "bg-gradient-to-r from-orange-600 to-orange-700 dark:from-orange-700 dark:to-orange-900 hover:from-orange-700 hover:to-orange-800 dark:hover:from-orange-600 dark:hover:to-orange-800 dark:text-white"
+                            : "bg-orange-950 dark:bg-black border border-orange-800/30 dark:text-orange-400 hover:bg-orange-950/20"
                         }`}
                         onClick={() => router.push("/contact")}
                       >
@@ -665,7 +667,7 @@ const SEOOptimizationPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-orange-950/5 ">
+      <section className="py-20 bg-gradient-to-b from-orange-900/20 to-orange-900/90 dark:from-orange-950/10 dark:to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12  ">
           {/* <motion.div 
             className="max-w-4xl mx-auto bg-black/60 border border-orange-900 rounded-xl p-8 md:p-12 text-center"
@@ -674,18 +676,17 @@ const SEOOptimizationPage = () => {
             viewport={{ once: true }}
             variants={fadeIn}
           > */}
-          <div className="max-w-4xl mx-auto bg-black/60 border border-orange-900 hover:border-orange-600 transition-colors rounded-xl p-8 md:p-12 text-center  ">
+          <div className="max-w-4xl mx-auto bg-orange-600/80 dark:bg-black/60 border border-orange-900 hover:border-orange-600 transition-colors rounded-xl p-8 md:p-12 text-center  ">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Improve Your Search Rankings?
             </h2>
-            <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-white/80 dark:text-white/70 mb-8 max-w-2xl mx-auto">
               Get a complimentary SEO audit and discover opportunities to
               improve your website's visibility in search engines.
             </p>
             <Button
               size="lg"
-              className="bg-gradient-to-r from-orange-700 to-orange-900 hover:from-orange-600 hover:to-orange-800 
-                text-white border border-orange-800/30 shadow-lg shadow-orange-950/20 px-8"
+              className="bg-gradient-to-r from-orange-600 to-orange-700 dark:from-orange-700 dark:to-orange-900 hover:from-orange-700 hover:to-orange-800 dark:hover:from-orange-600 dark:hover:to-orange-800 dark:text-white border border-orange-800/30 shadow-lg shadow-orange-950/20 px-8"
               onClick={() => router.push("/contact")}
             >
               Request Your Free SEO Audit
