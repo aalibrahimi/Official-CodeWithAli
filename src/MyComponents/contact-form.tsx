@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useFormDataStore } from "./serviceform";
+import { useTranslations } from "next-intl";
 
 interface Props {
   scrollToTop?: boolean | false;
@@ -21,8 +22,10 @@ export default function ContactForm({
   badge,
   header,
   desc,
-  btnText
+  btnText,
 }: Props) {
+  const t = useTranslations("Contact");
+
   const {
     name,
     setName,
@@ -113,14 +116,13 @@ export default function ContactForm({
 
       setStatus({
         type: "success",
-        message: "Thank You for reaching out!",
+        message: t("status.success"),
       });
     } catch (error) {
       console.error("Error submitting form:", error);
       setStatus({
         type: "error",
-        message:
-          "There was an error submitting your message. Please try again.",
+        message: t("status.error"),
       });
     } finally {
       setIsSubmitting(false);
@@ -138,15 +140,13 @@ export default function ContactForm({
           {/* <motion.div className="text-center mb-12 " {...getAnimationProps()}> */}
           <div className="text-center mb-12">
             <Badge className="bg-red-600/80 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
-              {badge ? `${badge.toUpperCase()}` : "CONTACT US"}
+              {badge ? `${badge.toUpperCase()}` : `${t("badge")}`}
             </Badge>
             <h2 className="text-3xl text-white md:text-4xl font-bold mt-2 mb-4">
-              {header ? `${header}` : "Ready to Start Your Project?"}
+              {header ? `${header}` : `${t("header")}`}
             </h2>
             <p className="text-black dark:text-red-200/60 max-w-2xl mx-auto">
-              {desc
-                ? `${desc}`
-                : "Tell us about your project and we'll get back to you within 24 hours with a free consultation."}
+              {desc ? `${desc}` : `${t("desc")}`}
             </p>
           </div>
           {/* </motion.div> */}
@@ -165,13 +165,13 @@ export default function ContactForm({
                     htmlFor="name"
                     className="block text-white dark:text-red-200 font-medium mb-2"
                   >
-                    Name
+                    {t("field.name.label")}
                   </label>
                   <Input
                     type="text"
                     id="name"
                     value={formData.name}
-                    placeholder="Enter your full name"
+                    placeholder={`${t("field.name.placeholder")}`}
                     onChange={(e) => setName(e.target.value)}
                     className="bg-red-200/80 placeholder:text-black/80 dark:placeholder:text-gray-500 dark:bg-red-950/20 border-red-800/40 text-black dark:text-white focus:border-red-600 h-12 text-base w-full"
                     required
@@ -185,13 +185,13 @@ export default function ContactForm({
                       htmlFor="email"
                       className="block text-white dark:text-red-200 font-medium mb-2"
                     >
-                      Email
+                      {t("field.email.label")}
                     </label>
                     <Input
                       type="email"
                       id="email"
                       value={formData.email}
-                      placeholder="your@email.com"
+                      placeholder={`${t("field.email.placeholder")}`}
                       onChange={(e) => setEmail(e.target.value)}
                       className="bg-red-200/80 placeholder:text-black/80 dark:placeholder:text-gray-500 dark:bg-red-950/20 border-red-800/40 text-black dark:text-white focus:border-red-600 h-12 text-base w-full"
                       required
@@ -204,7 +204,7 @@ export default function ContactForm({
                       htmlFor="service"
                       className="block text-white dark:text-red-200 font-medium mb-2"
                     >
-                      Service Needed
+                      {t("field.service.label")}
                     </label>
                     <select
                       id="service"
@@ -212,25 +212,43 @@ export default function ContactForm({
                       onChange={(e) => setService(e.target.value)}
                     >
                       <option value="" className="bg-red-200/80 dark:bg-black">
-                        Select a service
+                        {t("field.service.placeholder")}
                       </option>
-                      <option value="website" className="bg-red-200/80 dark:bg-black">
-                        Website Development
+                      <option
+                        value="website"
+                        className="bg-red-200/80 dark:bg-black"
+                      >
+                        {t("field.service.option.1")}
                       </option>
-                      <option value="app" className="bg-red-200/80 dark:bg-black">
-                        Mobile App Development
+                      <option
+                        value="app"
+                        className="bg-red-200/80 dark:bg-black"
+                      >
+                        {t("field.service.option.2")}
                       </option>
-                      <option value="design" className="bg-red-200/80 dark:bg-black">
-                        UI/UX Design
+                      <option
+                        value="design"
+                        className="bg-red-200/80 dark:bg-black"
+                      >
+                        {t("field.service.option.3")}
                       </option>
-                      <option value="ecommerce" className="bg-red-200/80 dark:bg-black">
-                        E-commerce Solutions
+                      <option
+                        value="ecommerce"
+                        className="bg-red-200/80 dark:bg-black"
+                      >
+                        {t("field.service.option.4")}
                       </option>
-                      <option value="seo" className="bg-red-200/80 dark:bg-black">
-                        SEO Optimization
+                      <option
+                        value="seo"
+                        className="bg-red-200/80 dark:bg-black"
+                      >
+                        {t("field.service.option.5")}
                       </option>
-                      <option value="hosting" className="bg-red-200/80 dark:bg-black">
-                        Web Hosting & Maintenance
+                      <option
+                        value="hosting"
+                        className="bg-red-200/80 dark:bg-black"
+                      >
+                        {t("field.service.option.6")}
                       </option>
                     </select>
                   </div>
@@ -242,7 +260,7 @@ export default function ContactForm({
                     htmlFor="message"
                     className="block text-white dark:text-red-200 font-medium mb-2"
                   >
-                    Project Details
+                    {t("field.details.label")}
                   </label>
                   <Textarea
                     id="message"
@@ -250,7 +268,7 @@ export default function ContactForm({
                     required
                     value={formData.projectDetails}
                     onChange={(e) => setProjectDetails(e.target.value)}
-                    placeholder="Tell us about your project requirements and goals..."
+                    placeholder={`${t("field.details.placeholder")}`}
                   />
                 </div>
 
@@ -278,16 +296,12 @@ export default function ContactForm({
                     {isSubmitting ? (
                       <>
                         <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                        Sending...
+                        {t("submitLoad")}
                       </>
                     ) : (
                       <>
                         <Send className="mr-2 h-5 w-5" />
-                        {btnText ? (
-                          `${btnText}`
-                        ) : (
-                          "Send Message"
-                        )}
+                        {btnText ? `${btnText}` : `${t("submitbtn")}`}
                       </>
                     )}
                   </Button>

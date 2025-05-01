@@ -458,6 +458,43 @@
       "desc": "Enter the promotion code at checkout and receive a 15% discount code for your first merchandise purchase."
     }
   },
+  "Contact": {
+    "badge": "CONTACT US",
+    "statusMsg": {
+      "success": "Thank You for reaching out!",
+      "error": "There was an error submitting your message. Please try again."
+    },
+    "header": "Ready to Start Your Project?",
+    "desc": "Tell us about your project and we'll get back to you within 24 hours with a free consultation.",
+    "submitbtn": "Send Message",
+    "submitLoad": "Sending...",
+    "field": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Enter your full name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "your@email.com"
+      },
+      "service": {
+        "label": "Service Needed",
+        "placeholder": "Select a service",
+        "option": {
+          "1": "Website Development",
+          "2": "Mobile App Development",
+          "3": "UI/UX Design",
+          "4": "E-commerce Solutions",
+          "5": "SEO Optimization",
+          "6": "Web Hosting & Maintenance"
+        }
+      },
+      "details": {
+        "label": "Project Details",
+        "placeholder": "Tell us about your project requirements and goals..."
+      }
+    }
+  },
   "Footer": {     
     "compDesc": "We design and develop digital experiences that help businesses and individuals succeed online.",     
     "rights": "Your Company. All rights reserved.",     
