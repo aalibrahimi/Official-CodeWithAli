@@ -386,7 +386,7 @@ const HomePage = () => {
                 key={index}
                 {...getAnimationProps(index * 0.05)}
               >
-                <Card className="bg-red-200 dark:bg-black/60 border-red-900 backdrop-blur-sm h-full overflow-hidden group">
+                <Card className="bg-red-700/80 dark:bg-black/60 border-red-900 backdrop-blur-sm h-full overflow-hidden group">
                   <CardContent className="p-6 flex flex-col h-full">
                     <div className="mb-5">
                       <div
@@ -395,16 +395,16 @@ const HomePage = () => {
                       >
                         <service.icon className="w-full h-full text-white" />
                       </div>
-                      <h3 className="text-xl font-bold text-red-800 dark:text-white mb-2">
+                      <h3 className="text-xl font-bold text-red-950 dark:text-white mb-2">
                         {service.title}
                       </h3>
-                      <p className="dark:text-red-200/60">{service.description}</p>
+                      <p className="text-white dark:text-red-200/60">{service.description}</p>
                     </div>
                     <div className="mt-auto pt-4">
                       <Link href={service.url} target="_blank">
                         <Button
                           variant="ghost"
-                          className="p-0 text-red-700 dark:text-red-400 dark:hover:text-red-300 hover:bg-transparent group"
+                          className="p-0 text-red-950 dark:text-red-400 dark:hover:text-red-300 hover:bg-transparent group"
                         >
                           {t("services.learnMore")}
                           <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
@@ -580,20 +580,20 @@ const HomePage = () => {
                 {...getAnimationProps(index * 0.1)}
                 className="relative"
               >
-                <div className="bg-red-200 dark:bg-black/60 border border-red-900 rounded-xl p-6 h-full">
+                <div className="bg-red-700/80 dark:bg-black/60 border border-red-900 rounded-xl p-6 h-full">
                   <div className="absolute -top-5 -left-2">
-                    <span className="text-5xl font-bold text-red-600/70 dark:text-red-950/70">
+                    <span className="text-5xl font-bold text-red-950/80 dark:text-red-950/70">
                       {step.number}
                     </span>
                   </div>
                   <div className="pt-6">
                     <div className="mb-4 flex items-center">
-                      <step.icon className="w-6 h-6 text-red-500 mr-3" />
-                      <h3 className="text-xl font-bold text-red-700 dark:text-white">
+                      <step.icon className="w-6 h-6 text-red-300 dark:text-red-500 mr-3" />
+                      <h3 className="text-xl font-bold text-red-950 dark:text-white">
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-black dark:text-red-200/60">{step.description}</p>
+                    <p className="text-white dark:text-red-200/60">{step.description}</p>
                   </div>
                 </div>
 
@@ -642,7 +642,7 @@ const HomePage = () => {
                 }
                 exit={isReducedMotion ? { opacity: 1 } : { opacity: 0.9, y: 0 }}
                 transition={{ duration: 0.1 }}
-                className="bg-red-100 dark:bg-black/60 border border-red-900 rounded-xl p-8 md:p-10"
+                className="bg-red-300 dark:bg-black/60 border border-red-900 rounded-xl p-8 md:p-10"
               >
                 <div className="flex flex-col items-center">
                   <div className="mb-6">
