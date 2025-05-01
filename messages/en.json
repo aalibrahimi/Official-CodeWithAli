@@ -399,7 +399,65 @@
     "holder": "Project Image Placeholder",
     "viewbtn": "View Project"
   },
-
+  "Merch": {
+    "badge": {
+      "1": "OFFICIAL MERCHANDISE",
+      "2": "FEATURED COLLECTIONS",
+      "3": "OUR PRODUCTS",
+      "4": "LIMITED TIME OFFER",
+      "5": "CODE: CWA15"
+    },
+    "title": {
+      "1": "Wear Your",
+      "2": "Coding Passion"
+    },
+    "desc": "High-quality apparel for developers, designers, and tech enthusiasts. Made for those who build digital excellence.",
+    "shopbtn": "Shop Now",
+    "heading": {
+      "1": "Curated Collections",
+      "2": "Shop The Collection"
+    },
+    "collection": {
+      "1": {
+        "title": "Winter Collection",
+        "desc": "Stay warm and stylish with our winter coding apparel."
+      },
+      "2": {
+        "title": "Essential Collection",
+        "desc": "Must-have pieces for every developer's wardrobe."
+      },
+      "3": {
+        "title": "Limited Edition",
+        "desc": "Exclusive designs available for a limited time only."
+      }
+    },
+    "category": {
+      "1": "All",
+      "2": "Hoodie",
+      "3": "Shirt",
+      "4": "Hat",
+      "5": "Pants",
+      "6": "Other"
+    },
+    "features": {
+      "1": {
+        "title": "Premium Quality",
+        "desc": "All our merchandise is made with high-quality materials built to last through countless coding sessions."
+      },
+      "2": {
+        "title": "Unique Designs",
+        "desc": "Each piece features unique designs created by our in-house team of developer-artists."
+      },
+      "3": {
+        "title": "Free Shipping",
+        "desc": "Enjoy free shipping on all orders over $75. International shipping available to most countries."
+      }
+    },
+    "cta": {
+      "title": "Get 15% Off Your First Order",
+      "desc": "Enter the promotion code at checkout and receive a 15% discount code for your first merchandise purchase."
+    }
+  },
   "Footer": {     
     "compDesc": "We design and develop digital experiences that help businesses and individuals succeed online.",     
     "rights": "Your Company. All rights reserved.",     

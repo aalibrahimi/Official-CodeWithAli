@@ -14,7 +14,12 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import MerchCard, { Category, Color, Size } from "@/MyComponents/Merchandise/merchCard";
+import MerchCard, {
+  Category,
+  Color,
+  Size,
+} from "@/MyComponents/Merchandise/merchCard";
+import { useTranslations } from "next-intl";
 
 // Merchandise data
 const merchandiseItems = [
@@ -29,7 +34,8 @@ const merchandiseItems = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: true,
     bestseller: true,
-    description: "Stay warm while coding with our premium developer hoodie. Features a minimalist design with subtle code snippets on the sleeves."
+    description:
+      "Stay warm while coding with our premium developer hoodie. Features a minimalist design with subtle code snippets on the sleeves.",
   },
   {
     id: 2,
@@ -42,7 +48,8 @@ const merchandiseItems = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: true,
     bestseller: true,
-    description: "Our premium heavyweight hoodie with embroidered logo and code patterns. Includes hidden earbud channels in the hood."
+    description:
+      "Our premium heavyweight hoodie with embroidered logo and code patterns. Includes hidden earbud channels in the hood.",
   },
   {
     id: 3,
@@ -55,21 +62,22 @@ const merchandiseItems = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: true,
     bestseller: false,
-    description: "Comfortable cotton t-shirt with our signature 'Code Artist' design on the front."
+    description:
+      "Comfortable cotton t-shirt with our signature 'Code Artist' design on the front.",
   },
 
-//   {
-//     id: 4,
-//     name: "Developer lol",
-//     category: "Pants",
-//     price: 49.99,
-//     image: "/merchandise/lol.png", 
-//     colors: ["Black", "Gray"],
-//     sizes: ["S", "M", "L", "XL", "XXL"],
-//     featured: true,
-//     bestseller: false,
-//     description: "Comfortable lol for long coding sessions. Features deep pockets for all your gadgets."
-//   },
+  //   {
+  //     id: 4,
+  //     name: "Developer lol",
+  //     category: "Pants",
+  //     price: 49.99,
+  //     image: "/merchandise/lol.png",
+  //     colors: ["Black", "Gray"],
+  //     sizes: ["S", "M", "L", "XL", "XXL"],
+  //     featured: true,
+  //     bestseller: false,
+  //     description: "Comfortable lol for long coding sessions. Features deep pockets for all your gadgets."
+  //   },
   {
     id: 5,
     name: "Developer Sweatshirt",
@@ -80,7 +88,8 @@ const merchandiseItems = [
     colors: ["Black", "Navy", "Gray"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    description: "Retro-inspired t-shirt featuring vintage programming languages and syntax."
+    description:
+      "Retro-inspired t-shirt featuring vintage programming languages and syntax.",
   },
   {
     id: 6,
@@ -92,7 +101,8 @@ const merchandiseItems = [
     colors: ["Black", "Navy", "Gray"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    description: "Retro-inspired t-shirt featuring vintage programming languages and syntax."
+    description:
+      "Retro-inspired t-shirt featuring vintage programming languages and syntax.",
   },
   {
     id: 7,
@@ -105,8 +115,9 @@ const merchandiseItems = [
     sizes: ["One Size"],
     featured: true,
     bestseller: false,
-    description: "Warm knitted beanie with a subtle embroidered code symbol. Perfect for winter coding.",
-    available: false
+    description:
+      "Warm knitted beanie with a subtle embroidered code symbol. Perfect for winter coding.",
+    available: false,
   },
   {
     id: 8,
@@ -119,69 +130,73 @@ const merchandiseItems = [
     sizes: ["One Size"],
     featured: true,
     bestseller: false,
-    description: "Wear your coding cap when going to meet ups while looking fresh and cool.",
-    available: false
+    description:
+      "Wear your coding cap when going to meet ups while looking fresh and cool.",
+    available: false,
   },
   {
     id: 9,
     name: "CWA Mug",
     category: "Other",
     price: 69.99,
-    image: "mug", 
+    image: "mug",
     colors: ["Black"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: true,
-    description: "Our premium heavyweight hoodie with embroidered logo and code patterns. Includes hidden earbud channels in the hood.",
-    available: false
+    description:
+      "Our premium heavyweight hoodie with embroidered logo and code patterns. Includes hidden earbud channels in the hood.",
+    available: false,
   },
-  
-//   {
-//     id: 8,
-//     name: "Developer Joggers",
-//     category: "Joggers",
-//     price: 54.99,
-//     image: "/merchandise/pants.png", 
-//     colors: ["Black", "Khaki", "Olive"],
-//     sizes: ["S", "M", "L", "XL", "XXL"],
-//     featured: false,
-//     bestseller: false,
-//     description: "Multiple pocket Joggers pants designed for developers. Enough space for all your tech essentials."
-//   }
-];
 
-// Featured collections
-const collections = [
-  { 
-    name: "Winter Collection", 
-    image: "/merchandise/winter-collection.png",
-    description: "Stay warm and stylish with our winter coding apparel."
-  },
-  { 
-    name: "Essential Collection", 
-    image: "/merchandise/essential-collection.png",
-    description: "Must-have pieces for every developer's wardrobe."
-  },
-  { 
-    name: "Limited Edition", 
-    image: "/merchandise/limited-edition.png",
-    description: "Exclusive designs available for a limited time only."
-  }
+  //   {
+  //     id: 8,
+  //     name: "Developer Joggers",
+  //     category: "Joggers",
+  //     price: 54.99,
+  //     image: "/merchandise/pants.png",
+  //     colors: ["Black", "Khaki", "Olive"],
+  //     sizes: ["S", "M", "L", "XL", "XXL"],
+  //     featured: false,
+  //     bestseller: false,
+  //     description: "Multiple pocket Joggers pants designed for developers. Enough space for all your tech essentials."
+  //   }
 ];
-
-// Filter categories
-const categories = ["All", "Hoodie", "Shirt", "Hat", "Pants", "Other"];
 
 export default function MerchandisePage() {
+  const t = useTranslations("Merch");
+
+  // Filter categories
+  const categories = [t('category.1'), t('category.2'), t('category.3'), t('category.4'), t('category.5'), t('category.6')];
+
+  // Featured collections
+  const collections = [
+    {
+      name: t("collection.1.title"),
+      image: "/merchandise/winter-collection.png",
+      description: t("collection.1.desc"),
+    },
+    {
+      name: t("collection.2.title"),
+      image: "/merchandise/essential-collection.png",
+      description: t("collection.2.desc"),
+    },
+    {
+      name: t("collection.3.title"),
+      image: "/merchandise/limited-edition.png",
+      description: t("collection.3.desc"),
+    },
+  ];
   const router = useRouter();
   const [activeCategory, setActiveCategory] = useState("All");
 
   // Filter merchandise based on selected category
-  const filteredItems = activeCategory === "All" 
-    ? merchandiseItems 
-    : merchandiseItems.filter(item => item.category === activeCategory);
+  const filteredItems =
+    activeCategory === "All"
+      ? merchandiseItems
+      : merchandiseItems.filter((item) => item.category === activeCategory);
 
   // Get featured items
-  const featuredItems = merchandiseItems.filter(item => item.featured);
+  const featuredItems = merchandiseItems.filter((item) => item.featured);
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-white overflow-x-hidden">
@@ -195,24 +210,23 @@ export default function MerchandisePage() {
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <Badge className="bg-red-600/80 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
-              OFFICIAL MERCHANDISE
+              {t("badge.1")}
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Wear Your
+              {t("title.1")}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-200 to-red-400 dark:from-red-400 dark:to-red-600 block">
-                Coding Passion
+                {t("title.2")}
               </span>
             </h1>
             <p className="text-lg md:text-xl dark:text-red-200/80 mb-8">
-              High-quality apparel for developers, designers, and tech enthusiasts.
-              Made for those who build digital excellence.
+              {t("desc")}
             </p>
             <Button
               size="lg"
               className="bg-gradient-to-r from-red-500 to-red-600 dark:from-red-700 dark:to-red-900 hover:from-red-600 hover:to-red-800 
                      dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-800/30 shadow-lg shadow-red-950/20"
             >
-              Shop Now
+              {t("shopbtn")}
               <ShoppingCart className="ml-2 h-5 w-5" />
             </Button>
           </div>
@@ -224,15 +238,17 @@ export default function MerchandisePage() {
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="mb-10">
             <Badge className="bg-red-600/80 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
-              FEATURED COLLECTIONS
+              {t("badge.2")}
             </Badge>
-            <h2 className="text-3xl text-red-500/80 dark:text-white font-bold">Curated Collections</h2>
+            <h2 className="text-3xl text-red-500/80 dark:text-white font-bold">
+              {t("heading.1")}
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {collections.map((collection, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="group cursor-pointer bg-red-200 dark:bg-black/60 border border-red-900 rounded-xl overflow-hidden"
               >
                 <div className="aspect-[16/9] bg-gradient-to-br from-red-600/40 to-red-400/10 dark:from-red-950/40 dark:to-red-900/10 relative">
@@ -242,8 +258,12 @@ export default function MerchandisePage() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-red-900 dark:text-white mb-2">{collection.name}</h3>
-                  <p className="text-black dark:text-red-200/70 mb-4">{collection.description}</p>
+                  <h3 className="text-xl font-bold text-red-900 dark:text-white mb-2">
+                    {collection.name}
+                  </h3>
+                  <p className="text-black dark:text-red-200/70 mb-4">
+                    {collection.description}
+                  </p>
                   {/* <div className="flex items-center text-red-400 group-hover:text-red-300 transition-colors">
                     <span>View Collection</span>
                     <ChevronRight className="h-4 w-4 ml-1" />
@@ -262,11 +282,13 @@ export default function MerchandisePage() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
             <div>
               <Badge className="bg-red-600/80 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
-                OUR PRODUCTS
+                {t("badge.3")}
               </Badge>
-              <h2 className="text-3xl text-red-500/80 dark:text-white font-bold mr-[400px]">Shop The Collection</h2>
+              <h2 className="text-3xl text-red-500/80 dark:text-white font-bold mr-[400px]">
+                {t("heading.2")}
+              </h2>
             </div>
-            
+
             {/* Filter Tabs */}
             <div className="flex flex-wrap gap-3 mt-4 md:mt-0">
               {categories.map((category, index) => (
@@ -274,9 +296,10 @@ export default function MerchandisePage() {
                   key={index}
                   variant={activeCategory === category ? "default" : "outline"}
                   size="sm"
-                  className={activeCategory === category 
-                    ? "bg-red-800 hover:bg-red-700 text-white border-transparent"
-                    : "border-red-800/30 bg-red-300 text-black dark:bg-transparent dark:text-red-300 hover:text-white hover:bg-red-950/30"
+                  className={
+                    activeCategory === category
+                      ? "bg-red-800 hover:bg-red-700 text-white border-transparent"
+                      : "border-red-800/30 bg-red-300 text-black dark:bg-transparent dark:text-red-300 hover:text-white hover:bg-red-950/30"
                   }
                   onClick={() => setActiveCategory(category)}
                 >
@@ -290,23 +313,23 @@ export default function MerchandisePage() {
             {filteredItems.map((item) => (
               <div key={item.id}>
                 <MerchCard
-                id={item.id}
-                featured={item.featured}
-                bestseller={item.bestseller}
-                name={item.name}
-                price={item.price}
-                category={item.category as Category}
-                img={item.image}
-                description={item.description}
-                colors={item.colors as Color[]}
-                sizes={item.sizes as Size[]}
-                paymentLink={item.paymentLink}
-                available={item.available}
-              />
+                  id={item.id}
+                  featured={item.featured}
+                  bestseller={item.bestseller}
+                  name={item.name}
+                  price={item.price}
+                  category={item.category as Category}
+                  img={item.image}
+                  description={item.description}
+                  colors={item.colors as Color[]}
+                  sizes={item.sizes as Size[]}
+                  paymentLink={item.paymentLink}
+                  available={item.available}
+                />
               </div>
             ))}
           </div>
-          
+
           {/* View All Button but we don't need this atm*/}
           {/* <div className="mt-12 text-center">
             <Button
@@ -327,29 +350,35 @@ export default function MerchandisePage() {
               <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 dark:from-red-600 dark:to-red-800 rounded-full flex items-center justify-center mb-4">
                 <Tag className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Premium Quality</h3>
+              <h3 className="text-xl font-bold text-red-600 dark:text-white mb-2">
+                {t("features.1.title")}
+              </h3>
               <p className="text-black dark:text-red-200/70">
-                All our merchandise is made with high-quality materials built to last through countless coding sessions.
+                {t("features.1.desc")}
               </p>
             </div>
-            
+
             <div className="flex flex-col items-center text-center p-6">
               <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 dark:from-red-600 dark:to-red-800 rounded-full flex items-center justify-center mb-4">
                 <TrendingUp className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Unique Designs</h3>
+              <h3 className="text-xl font-bold text-red-600 dark:text-white mb-2">
+                {t("features.2.title")}
+              </h3>
               <p className="text-black dark:text-red-200/70">
-                Each piece features unique designs created by our in-house team of developer-artists.
+                {t("features.2.desc")}
               </p>
             </div>
-            
+
             <div className="flex flex-col items-center text-center p-6">
               <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 dark:from-red-600 dark:to-red-800 rounded-full flex items-center justify-center mb-4">
                 <CheckCircle className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Free Shipping</h3>
+              <h3 className="text-xl font-bold text-red-600 dark:text-white mb-2">
+                {t("features.3.title")}
+              </h3>
               <p className="text-black dark:text-red-200/70">
-                Enjoy free shipping on all orders over $75. International shipping available to most countries.
+                {t("features.3.desc")}
               </p>
             </div>
           </div>
@@ -361,16 +390,16 @@ export default function MerchandisePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto bg-red-900/90 dark:bg-black/60 border border-red-900 rounded-xl p-10 text-center">
             <Badge className="bg-red-600/80 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
-              LIMITED TIME OFFER
+              {t("badge.4")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Get 15% Off Your First Order
+              {t("cta.title")}
             </h2>
             <Badge className="bg-red-600/80 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
-              CODE: CWA15
+              {t("badge.5")}
             </Badge>
             <p className="text-lg text-red-200/80 mb-8 max-w-2xl mx-auto">
-              Enter the promotion code at checkout and receive a 15% discount code for your first merchandise purchase.
+              {t("cta.desc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link href="/merchandise">
@@ -379,7 +408,7 @@ export default function MerchandisePage() {
                   className="bg-gradient-to-r from-red-500 to-red-600 dark:from-red-700 dark:to-red-900 hover:from-red-600 hover:to-red-800 
                      dark:hover:from-red-600 dark:hover:to-red-800 text-white hover:cursor-pointer border border-red-800/30 shadow-lg shadow-red-950/20"
                 >
-                  Shop Now
+                  {t("shopbtn")}
                   <ShoppingCart className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
