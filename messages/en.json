@@ -136,7 +136,7 @@
       "home": "Home",       
       "about": "About",       
       "portfolio": "Portfolio",       
-      "services": {         
+      "services": {      
         "title": "Services",         
         "content": {           
           "1": {             
@@ -395,8 +395,9 @@
       "4" : "",
       "5" : "",
       "6" : ""
-
-    }
+    },
+    "holder": "Project Image Placeholder",
+    "viewbtn": "View Project"
   },
 
   "Footer": {     

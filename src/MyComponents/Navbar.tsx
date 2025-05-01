@@ -293,7 +293,7 @@ export function Navbar(): React.ReactElement {
                 onClick={() => setIsMenuOpen(false)}
                 className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
               >
-                {t("routes.services")}
+                {t("routes.services.title")}
               </Link>
               <Link
                 href="/merchandise"

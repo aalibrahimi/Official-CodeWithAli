@@ -119,7 +119,7 @@ const PortfolioPage = () => {
                       </>
                     ) : (
                       <>
-                        <p className="text-black dark:text-red-200/70">Project Image Placeholder</p>
+                        <p className="text-black dark:text-red-200/70">{t('holder')}</p>
                       </>
                     )}
                   </div>
@@ -142,7 +142,7 @@ const PortfolioPage = () => {
                           size="lg"
                           className="border-2 dark:border-red-950/80 text-white bg-red-700/80 dark:bg-red-700/50 px-6 py-5 hover:bg-red-950 dark:hover:bg-black hover:text-white text-base font-medium"
                         >
-                          View Project
+                          {t('viewbtn')}
                           <MoveUpRight className="ml-2 h-5 w-5" />
                         </Button>
                       </Link>
