@@ -206,7 +206,7 @@ const getImagePath = (baseName: string, color: Color): string => {
   return `/merch/${baseName}_${colorLower}.png`;
 };
 
-// Improved MerchCard component
+//  MerchCard component
 const MerchCard: React.FC<{
   id: number;
   featured?: boolean;
@@ -623,6 +623,8 @@ export default function MerchandisePage() {
           </div>
         </div>
       </section>
+
+      {/* the mug, hat, and cap are all too tall and its ruining the padding within the cards*/}
 
       {/* Shop Section */}
       <section className="py-20">

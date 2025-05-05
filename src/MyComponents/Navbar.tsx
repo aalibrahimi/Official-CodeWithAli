@@ -88,7 +88,7 @@ export function Navbar(): React.ReactElement {
 
   return (
     <>
-      <header className="border-b border-red-900/30 text-black dark:text-white dark:bg-black py-4 px-6 flex justify-between items-center">
+      <header className="border-b border-red-900/30 text-black dark:text-white dark:bg-black py-4 px-6 flex justify-between items-center sticky">
         <div className="logo-container flex items-center">
           <Link href="/" draggable={false} className="flex items-center">
             <Image

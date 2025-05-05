@@ -216,7 +216,7 @@ const HomePage = () => {
       <section className="pt-10 pb-20 md:pb-24 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-950 to-red-500 dark:bg-gradient-to-br dark:from-red-950/30 dark:to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-black via-red-950 to-red-800 dark:bg-gradient-to-br dark:from-red-950/30 dark:to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
@@ -278,32 +278,32 @@ const HomePage = () => {
                 {...getAnimationProps(0.2)}
                 className="hidden lg:block relative"
               >
-                <div className="relative bg-black/60 border border-red-900 rounded-xl overflow-hidden shadow-2xl shadow-red-950/20 p-2">
+                <div className="relative bg-black border border-red-900 rounded-xl overflow-hidden shadow-2xl shadow-red-950/20 p-2">
                   <div className="grid grid-cols-2 gap-2">
                     {/* Mock designs */}
-                    <div className="aspect-square bg-gradient-to-br from-red-950/40 to-red-900/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
+                    <div className="aspect-square bg-black rounded-lg overflow-hidden p-4 flex items-center justify-center">
                       <div className="w-full h-full border-2 border-red-500/20 rounded-md flex items-center justify-center">
                         <Layers className="h-12 w-12 text-red-500/60" />
                       </div>
                     </div>
-                    <div className="aspect-square bg-gradient-to-br from-red-950/40 to-red-900/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
+                    <div className="aspect-square bg-black  to-red-900/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
                       <div className="w-full h-full border-2 border-red-500/20 rounded-md flex items-center justify-center">
                         <Code className="h-12 w-12 text-red-500/60" />
                       </div>
                     </div>
-                    <div className="aspect-square bg-gradient-to-br from-red-950/40 to-red-900/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
+                    <div className="aspect-square bg-black  to-red-900/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
                       <div className="w-full h-full border-2 border-red-500/20 rounded-md flex items-center justify-center">
                         <Smartphone className="h-12 w-12 text-red-500/60" />
                       </div>
                     </div>
-                    <div className="aspect-square bg-gradient-to-br from-red-950/40 to-red-900/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
+                    <div className="aspect-square bg-black  to-red-900/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
                       <div className="w-full h-full border-2 border-red-500/20 rounded-md flex items-center justify-center">
                         <ShoppingBag className="h-12 w-12 text-red-500/60" />
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-2 p-4 bg-gradient-to-br from-red-950/40 to-red-900/10 rounded-lg">
+                  <div className="mt-2 p-4 bg-black  to-red-900/10 rounded-lg">
                     <div className="flex items-center justify-between mb-3">
                       <div className="w-32 h-3 bg-red-800/30 rounded-full"></div>
                       <div className="flex space-x-2">
@@ -330,7 +330,7 @@ const HomePage = () => {
       </section>
 
       {/* Clients Section */}
-      <section className="py-12 bg-white dark:bg-black/80 border-y border-red-950/20">
+      <section className="py-12 bg-white dark:bg-black/80 border-y border-red-800">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-8">
             <p className="text-black dark:text-red-300/60 text-sm uppercase tracking-wider">
@@ -345,10 +345,10 @@ const HomePage = () => {
                 {...getAnimationProps(index * 0.05)}
                 className="flex flex-col items-center"
               >
-                <div className="w-12 h-12 bg-red-950/20 rounded-lg flex items-center justify-center mb-3">
-                  <industry.icon className="h-6 w-6 text-red-500/70" />
+                <div className="w-12 h-12 bg-transparent dark:bg-black rounded-lg flex items-center justify-center mb-3">
+                  <industry.icon className="h-6 w-6 text-red-700 dark:text-red-500/70" />
                 </div>
-                <span className="text-black dark:text-red-200/60 text-sm">{industry.name}</span>
+                <span className="text-red-800 dark:text-red-200/60 text-sm">{industry.name}</span>
               </motion.div>
             ))}
           </div>
@@ -395,16 +395,16 @@ const HomePage = () => {
                       >
                         <service.icon className="w-full h-full text-white" />
                       </div>
-                      <h3 className="text-xl font-bold text-red-950 dark:text-white mb-2">
+                      <h3 className="text-xl font-bold text-white dark:text-white mb-2">
                         {service.title}
                       </h3>
-                      <p className="text-white dark:text-red-200/60">{service.description}</p>
+                      <p className="text-black dark:text-red-200/60">{service.description}</p>
                     </div>
                     <div className="mt-auto pt-4">
                       <Link href={service.url} target="_blank">
                         <Button
                           variant="ghost"
-                          className="p-0 text-red-950 dark:text-red-400 dark:hover:text-red-300 hover:bg-transparent group"
+                          className="p-0 text-white dark:text-red-400 dark:hover:text-red-300 hover:bg-transparent group"
                         >
                           {t("services.learnMore")}
                           <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
@@ -542,7 +542,7 @@ const HomePage = () => {
               <h2 className="text-3xl text-red-500/80 dark:text-white md:text-4xl font-bold mb-6">
                 {t("process.title")}
               </h2>
-              <p className="text-black dark:text-red-200/60 text-lg max-w-2xl mx-auto">
+              <p className="text-black dark:text-white/80 text-lg max-w-2xl mx-auto">
                 {t("process.description")}
               </p>
             </motion.div>
@@ -582,7 +582,7 @@ const HomePage = () => {
               >
                 <div className="bg-red-700/80 dark:bg-black/60 border border-red-900 rounded-xl p-6 h-full">
                   <div className="absolute -top-5 -left-2">
-                    <span className="text-5xl font-bold text-red-950/80 dark:text-red-950/70">
+                    <span className="text-5xl font-bold text-black dark:text-white">
                       {step.number}
                     </span>
                   </div>
@@ -642,11 +642,11 @@ const HomePage = () => {
                 }
                 exit={isReducedMotion ? { opacity: 1 } : { opacity: 0.9, y: 0 }}
                 transition={{ duration: 0.1 }}
-                className="bg-red-300 dark:bg-black/60 border border-red-900 rounded-xl p-8 md:p-10"
+                className="bg-red-600/80 dark:bg-black/60 border border-red-900 rounded-xl p-8 md:p-10"
               >
                 <div className="flex flex-col items-center">
                   <div className="mb-6">
-                    <svg
+                    {/* <svg
                       width="48"
                       height="48"
                       viewBox="0 0 24 24"
@@ -661,16 +661,16 @@ const HomePage = () => {
                         d="M18 6.2H16V11.4L14.7 12.7V14.9L17.2 12.4C17.7 11.9 18 11.2 18 10.5V8C18 7 17.2 6.2 16.2 6.2H16"
                         fill="rgba(220, 38, 38, 0.7)"
                       />
-                    </svg>
+                    </svg> */}
                   </div>
                   <p className="text-lg text-black dark:text-white md:text-xl text-center mb-8">
                     &ldquo;{testimonials[activeTestimonial].content}&rdquo;
                   </p>
                   <div className="text-center">
-                    <div className="font-bold text-red-600/80 dark:text-white">
+                    <div className="font-bold text-white dark:text-white">
                       {testimonials[activeTestimonial].name}
                     </div>
-                    <div className="text-red-600/60 dark:text-red-400/70 text-sm">
+                    <div className="text-white/80 dark:text-red-400/70 text-sm">
                       {testimonials[activeTestimonial].position}
                     </div>
                   </div>
@@ -685,7 +685,7 @@ const HomePage = () => {
                   onClick={() => setActiveTestimonial(index)}
                   className={`mx-1 w-3 h-3 rounded-full transition-colors ${
                     index === activeTestimonial
-                      ? "bg-red-600"
+                      ? "bg-red-700"
                       : "bg-red-900/30 hover:bg-red-800/50"
                   }`}
                 />
@@ -699,52 +699,52 @@ const HomePage = () => {
       <ContactForm />
 
       {/* CTA Section */}
-      <section className="py-20 md:py-24 bg-gradient-to-b from-red-900/20 to-red-900/90 dark:from-red-950/10 dark:to-black">
+      <section className="py-20 md:py-24 bg-gradient-to-b from-white via-white to-white  dark:from-red-950/10 dark:via-red-950/10 dark:to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <motion.div
-            className="max-w-4xl mx-auto bg-red-900/90 dark:bg-black/60 border border-red-900 rounded-xl p-8 md:p-12 text-center"
+            className="max-w-4xl mx-auto bg-white  dark:bg-black/60 border  dark:border-red-900 rounded-xl p-8 md:p-12 text-center"
             {...getAnimationProps()}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-6">
               {t("cta.title")}
             </h2>
-            <p className="text-lg text-red-200/80 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-black dark:text-white mb-8 max-w-2xl mx-auto">
               {t("cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-red-500 to-red-600 dark:from-red-700 dark:to-red-900 hover:from-red-600 hover:to-red-800 
+                  className="bg-gradient-to-r from-red-500 to-red-600 dark:from-red-700 dark:to-red-900 hover:from-red-600 hover:to-red-700 
                      dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8 w-full sm:w-auto"
                 >
                   {t("cta.buttons.startProject")}
-                  <ChevronRight className="ml-2 h-5 w-5" />
+                  <ChevronRight className=" ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link href="/about">
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-red-800/30 text-white dark:text-red-400 bg-red-400/40 dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white dark:hover:text-white px-8 w-full sm:w-auto"
+                  className="border-red-800/30 text-white dark:text-red-400 bg-red-500 dark:bg-red-950/20 hover:bg-red-600 dark:hover:bg-red-950/30 hover:text-white dark:hover:text-white px-8 w-full sm:w-auto"
                 >
                   {t("cta.buttons.learnAboutUs")}
                 </Button>
               </Link>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center mt-8 text-white dark:text-red-200/60">
+            <div className="flex flex-wrap items-center justify-center mt-8 text-black/95 dark:text-red-200/60">
               <div className="flex items-center mr-4 mb-2">
-                <CheckCircle className="h-4 w-4 mr-2 text-red-400 dark:text-red-500" />
+                <CheckCircle className="h-4 w-4 mr-2 text-red-700 dark:text-red-500" />
                 <span className="text-sm">{t("cta.features.1")}</span>
               </div>
               <div className="flex items-center mr-4 mb-2">
-                <CheckCircle className="h-4 w-4 mr-2 text-red-400 dark:text-red-500" />
+                <CheckCircle className="h-4 w-4 mr-2 text-red-700 dark:text-red-500" />
                 <span className="text-sm">{t("cta.features.2")}</span>
               </div>
               <div className="flex items-center mb-2">
-                <CheckCircle className="h-4 w-4 mr-2 text-red-400 dark:text-red-500" />
-                <span className="text-sm">{t("cta.features.3")}</span>
+                <CheckCircle className="h-4 w-4 mr-2 text-red-700 dark:text-red-500" />
+                <span className="text-sm ">{t("cta.features.3")}</span>
               </div>
             </div>
           </motion.div>
