@@ -470,32 +470,12 @@ export default function AboutPage() {
                     <p className="text-red-950/90 dark:text-amber-50 mb-4 text-right">
                       {t("process.cards.desc1")}
                     </p>
-                    <ul className="text-white/70 dark:text-red-300 md:pr-5 mt-3 space-y-2">
-                      <li className="flex justify-end items-center gap-2">
-                        <span className="text-right">
-                          {t("process.cards.firstList.li1")}
-                        </span>
-                        <span className="h-2 w-2 rounded-full bg-white/90 dark:bg-red-300 flex-shrink-0"></span>
-                      </li>
-                      <li className="flex justify-end items-center gap-2">
-                        <span className="text-right">
-                          {t("process.cards.firstList.li2")}
-                        </span>
-                        <span className="h-2 w-2 rounded-full bg-white/90 dark:bg-red-300 flex-shrink-0"></span>
-                      </li>
-                      <li className="flex justify-end items-center gap-2">
-                        <span className="text-right">
-                          {t("process.cards.firstList.li3")}
-                        </span>
-                        <span className="h-2 w-2 rounded-full bg-white/90 dark:bg-red-300 flex-shrink-0"></span>
-                      </li>
-                      <li className="flex justify-end items-center gap-2">
-                        <span className="text-right">
-                          {t("process.cards.firstList.li4")}
-                        </span>
-                        <span className="h-2 w-2 rounded-full bg-white/90 dark:bg-red-300 flex-shrink-0"></span>
-                      </li>
-                    </ul>
+                    <ul className="text-black dark:text-red-300 pl-5 md:pl-0 mt-3 space-y-2 list-disc pr-5 " style = {{direction : "rtl"}} >
+                        <li>{t("process.cards.firstList.li1")}</li>
+                        <li>{t("process.cards.firstList.li2")}</li>
+                        <li>{t("process.cards.firstList.li3")}</li>
+                        <li>{t("process.cards.firstList.li4")}</li>
+                      </ul>
                   </div>
                 </div>
 
@@ -543,8 +523,8 @@ export default function AboutPage() {
                     <p className="text-white/90 dark:text-amber-50">
                       {t("process.cards.desc3")}
                     </p>
-                    <ul className=" text-red-950 dark:text-red-300 pl-5 md:pl-0 m mt-3 space-y-2 list-disc">
-                      <li className=" relative before:hidden md:after:content-['•'] md:after:absolute md:after:right-[-1rem] md:after:text-white/90 md:after:dark:text-red-300 "> {t("process.cards.thirdList.li1")}  <span className="h-2 w-2 rounded-full bg-white/90 dark:bg-red-300 flex-shrink-0"></span> </li>
+                    <ul className=" text-red-950 dark:text-red-300 pl-5 md:pl-0 m mt-3 space-y-2 list-disc pr-5">
+                      <li className=""> {t("process.cards.thirdList.li1")}  <span className="h-2 w-2 rounded-full bg-white/90 dark:bg-red-300 flex-shrink-0"></span> </li>
                       <li className=""> {t("process.cards.thirdList.li2")} </li>
                       <li className=""> {t("process.cards.thirdList.li3")} </li>
                       <li className=""> {t("process.cards.thirdList.li4")} </li>
@@ -648,18 +628,18 @@ export default function AboutPage() {
               return (
                 <div
                   key={index}
-                  className="bg-red-700/80 dark:bg-black/60 border border-red-900 rounded-xl p-6 flex"
+                  className="bg-red-700/80 dark:bg-black/60 border border-red-900 rounded-xl p-4 flex"
                 >
                   <div className="mr-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-red-500 to-red-600 dark:from-red-600 dark:to-red-800 flex items-center justify-center">
-                      <ValueIcon className="h-6 w-6 text-white" />
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-red-500 to-red-600 dark:from-red-600 dark:to-red-800 flex items-center justify-center m">
+                      <ValueIcon className="h-6 w-6 text-black" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-red-950 dark:text-white mb-2">
+                    <h3 className="text-xl font-bold text-white dark:text-white mb-2">
                       {value.title}
                     </h3>
-                    <p className="text-white/90 dark:text-red-200/70">
+                    <p className="text-white/80 dark:text-red-200/70">
                       {value.description}
                     </p>
                   </div>
@@ -685,34 +665,45 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-7">
-            {technologies.map((tech, index) => (
-              <Link
-                key={index}
-                href={tech.url}
-                target="_blank"
-                className="bg-red-700/80 dark:bg-black/60 border border-transparent hover:border-red-900 p-3 rounded-xl flex flex-col items-center text-center transition-colors duration-200"
-              >
-                <div className="w-11 h-11 bg-gradient-to-br from-red-700/40 to-red-400/10 dark:from-red-950/40 dark:to-red-900/10 rounded-lg flex items-center justify-center mb-3">
-                  <TechIcon name={tech.logo} />
-                </div>
-                <span className="text-white/90 dark:text-white">
-                  {tech.name}
-                </span>
-              </Link>
-            ))}
-          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-7 font-bold">
+  {technologies.map((tech, index) => (
+    <Link
+      key={index}
+      href={tech.url}
+      target="_blank"
+      className="bg-forground dark:bg-black/60 border border-transparent hover:border-red-900 p-3 rounded-xl flex flex-col items-center text-center transition-colors duration-200"
+    >
+      {/* revist later */}
+      <div className={`w-11 h-11 rounded-lg flex items-center justify-center mb-3 
+        ${tech.logo === 'nextjs' ? 
+          'bg-black dark:bg-black ring-1 ring-black ' : 
+          'dark:bg-gradient-to-br from-red-700/40 to-red-400/10 dark:from-red-950/40 dark:to-red-900/10'
+        }`}>
+        <TechIcon 
+          name={tech.logo} 
+          className={tech.logo === 'nextjs' ? 'text-white dark:text-black scale-110' : ''} 
+        />
+      </div>
+      <span className={tech.logo === 'nextjs' ? 
+        'font-semibold text-black dark:text-white' : 
+        'text-black dark:text-white'
+      }>
+        {tech.name}
+      </span>
+    </Link>
+  ))}
+</div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-red-900/20 to-red-900/90 dark:from-red-950/10 dark:to-black">
+      <section className="py-12 md:py-20 dark:bg-gradient-to-b dark:from-red-950/10 dark:to-black">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto bg-red-900/90 dark:bg-black/60 border border-red-900 rounded-xl p-6 md:p-10 text-center">
+          <div className="max-w-4xl mx-auto bg-red-800  dark:bg-black/60 border border-red-900 rounded-xl p-6 md:p-10 text-center">
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 md:mb-6">
               {t("cta.title")}
             </h2>
-            <p className="text-base md:text-lg text-red-200/80 mb-6 md:mb-8 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-white/90 mb-6 md:mb-8 max-w-2xl mx-auto">
               {t("cta.header")}
             </p>
             <div className="flex flex-col gap-3 justify-center">
@@ -728,7 +719,7 @@ export default function AboutPage() {
               <Button
                 variant="outline"
                 size="default"
-                className="w-full border-red-800/30 hover:cursor-pointer text-white dark:text-red-400 bg-red-400/40 dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white dark:hover:text-white"
+                className="w-full border-red-800/30 hover:cursor-pointer text-black  dark:text-red-400 bg-white dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white dark:hover:text-white"
                 onClick={() => router.push("/services")}
               >
                 {t("cta.button2")}
@@ -738,7 +729,7 @@ export default function AboutPage() {
             {/* Features list - stacked on mobile */}
             <div className="mt-6 md:mt-8 space-y-3 md:space-y-0 md:flex md:items-center md:justify-center text-red-200/60">
               <div className="flex items-center justify-center">
-                <CheckCircle className="h-4 w-4 mr-2 text-red-400 dark:text-red-500" />
+                <CheckCircle className="h-4 w-4 mr-2 text-red-200 dark:text-red-500" />
                 <span className="text-xs text-white dark:text-red-300 md:text-sm">
                   {t("cta.li")}
                 </span>
@@ -747,7 +738,7 @@ export default function AboutPage() {
               <span className="hidden md:inline mx-4 text-white">•</span>
 
               <div className="flex items-center justify-center">
-                <CheckCircle className="h-4 w-4 mr-2 text-red-400 dark:text-red-500" />
+                <CheckCircle className="h-4 w-4 mr-2 text-red-200 dark:text-red-500" />
                 <span className="text-xs text-white dark:text-red-300 md:text-sm">
                   {t("cta.li2")}
                 </span>
@@ -756,7 +747,7 @@ export default function AboutPage() {
               <span className="hidden md:inline mx-4 text-white">•</span>
 
               <div className="flex items-center justify-center">
-                <CheckCircle className="h-4 w-4 mr-2 text-red-400 dark:text-red-500" />
+                <CheckCircle className="h-4 w-4 mr-2 text-red-200 dark:text-red-500" />
                 <span className="text-xs text-white dark:text-red-300 md:text-sm">
                   {t("cta.li3")}
                 </span>
