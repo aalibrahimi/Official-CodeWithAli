@@ -127,7 +127,8 @@ export function Navbar(): React.ReactElement {
             {t("routes.portfolio")}
           </Link>
 
-          <div className="nav-item relative group">
+          {/* Removed extra margin that was given here for some reason */}
+          <div className="nav-item relative group m-0">
             <Link
               href="/services"
               onClick={() => scrollTo({ top: 0 })} // This is to fix when navigating to Services from Contact
