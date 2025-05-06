@@ -535,7 +535,7 @@ export default function AboutPage() {
 
               {/* Step 3 */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
-                <div className="md:text-right md:mr-5">
+                <div className=" md:mr-5" style={{ direction: 'rtl' }}>
                   <div className="bg-red-700/80 dark:bg-black/60 border border-red-900 p-6 rounded-xl">
                     <h3 className="text-2xl font-bold text-red-950 dark:text-white mb-3">
                       {t("process.cards.h3")}
@@ -543,11 +543,11 @@ export default function AboutPage() {
                     <p className="text-white/90 dark:text-amber-50">
                       {t("process.cards.desc3")}
                     </p>
-                    <ul className=" text-red-950 dark:text-red-300 pl-5 md:pl-0 m mt-3 space-y-2">
-                      <li className="md:text-right relative before:hidden md:after:content-['•'] md:after:absolute md:after:right-[-1rem] md:after:text-white/90 md:after:dark:text-red-300 "> {t("process.cards.thirdList.li1")}  <span className="h-2 w-2 rounded-full bg-white/90 dark:bg-red-300 flex-shrink-0"></span> </li>
-                      <li className="md:text-right"> {t("process.cards.thirdList.li2")} </li>
-                      <li className="md:text-right"> {t("process.cards.thirdList.li3")} </li>
-                      <li className="md:text-right"> {t("process.cards.thirdList.li4")} </li>
+                    <ul className=" text-red-950 dark:text-red-300 pl-5 md:pl-0 m mt-3 space-y-2 list-disc">
+                      <li className=" relative before:hidden md:after:content-['•'] md:after:absolute md:after:right-[-1rem] md:after:text-white/90 md:after:dark:text-red-300 "> {t("process.cards.thirdList.li1")}  <span className="h-2 w-2 rounded-full bg-white/90 dark:bg-red-300 flex-shrink-0"></span> </li>
+                      <li className=""> {t("process.cards.thirdList.li2")} </li>
+                      <li className=""> {t("process.cards.thirdList.li3")} </li>
+                      <li className=""> {t("process.cards.thirdList.li4")} </li>
                     </ul>
                   </div>
                 </div>
