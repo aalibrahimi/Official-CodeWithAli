@@ -383,7 +383,152 @@
       }
     }
   },
-
+"ServicePage": {
+  "webDev": {
+    "badge": {
+      "1": "WEBSITE DEVELOPMENT",
+      "2": "KEY FEATURES",
+      "3": "OUR PROCESS",
+      "4": "TECHNOLOGIES",
+      "5": "CASE STUDIES",
+      "6": "FAQ"
+    },
+    "title": {
+      "1": "Custom Website Development",
+      "2": "That Drives Results"
+    },
+    "desc": "We design and develop stunning, high-performance websites that captivate your audience, establish your brand presence, and drive measurable business growth.",
+    "quoteBtn": "Get a Free Quote",
+    "workBtn": "View Our Work",
+    "sections": {
+      "1": {
+        "title": "What Sets Our Website Development Apart",
+        "desc": "We combine technical expertise with creative design to deliver websites that not only look great but also perform exceptionally well.",
+        "cards": {
+          "1": {
+            "title": "Responsive Design",
+            "desc": "We build websites that adapt seamlessly to any device, ensuring an optimal user experience on desktops, tablets, and smartphones."
+          },
+          "2": {
+            "title": "Performance Optimization",
+            "desc": "Our websites are optimized for speed with efficient code, image optimization, and caching strategies for lightning-fast load times."
+          },
+          "3": {
+            "title": "SEO-Friendly Structure",
+            "desc": "We implement SEO best practices from the ground up, ensuring your website ranks well in search engines and drives organic traffic."
+          },
+          "4": {
+            "title": "Custom Functionality",
+            "desc": "From interactive elements to complex business logic, we develop custom features that meet your specific requirements."
+          },
+          "5": {
+            "title": "Security Measures",
+            "desc": "We implement robust security practices to protect your website and user data from vulnerabilities and threats."
+          },
+          "6": {
+            "title": "Content Management",
+            "desc": "We build easy-to-use content management systems that empower you to update and maintain your website without technical knowledge."
+          }
+        }
+      },
+      "2": {
+        "title": "End-to-End Website Development Process",
+        "desc": "Our structured approach ensures a smooth development journey from concept to launch and beyond."
+      },
+      "3": {
+        "title": "Technologies We Utilize",
+        "desc": "We leverage cutting-edge technologies to build modern, high-performance websites."
+      },
+      "4": {
+        "title": "Success Stories",
+        "desc": "Explore some of our recent website development projects and the results we've achieved for our clients.",
+        "case": {
+          "imgPlaceholder": "Case Study Image:",
+          "viewBtn": "View Case Study",
+          "projectsBtn": "View All Projects",
+          "1": {
+            "title": "Construction Website Redesign",
+            "industry": "Construction",
+            "desc": "Redesigned an outdated construction website, boosting conversions by 45% and improving page load times by 60%."
+          },
+          "2": {
+            "title": "Budgeting Website launch",
+            "industry": "Financial Services",
+            "desc": "Developed a modern, responsive website that increased lead generation by 38% and reduced bounce rate by 25%."
+          },
+          "3": {
+            "title": "Iraqi Sweets",
+            "industry": "Baking Goods",
+            "desc": "Created a conversion-focused landing website that helped the client increase their customers count by 52% within the first month."
+          }
+        }
+      },
+      "5": {
+        "title": "Frequently Asked Questions",
+        "desc": "Common questions about our website development process and services.",
+        "tab": {
+          "1": "General",
+          "2": "Technical",
+          "3": "Pricing"
+        },
+        "QA": {
+          "1": {
+            "Q": "How long does it take to develop a website?",
+            "A": "The timeline varies depending on the complexity of the project. A simple website can be completed in 4-6 weeks, while more complex projects may take 8-12 weeks or longer. We'll provide a detailed timeline during the discovery and planning phase."
+          },
+          "2": {
+            "Q": "Will I be able to update the website myself?",
+            "A": "Yes, we build websites with user-friendly content management systems that allow you to easily update content, add pages, and make basic design changes without technical knowledge. We also provide training to ensure you're comfortable managing your site."
+          },
+          "3": {
+            "Q": "Do you provide ongoing maintenance and support?",
+            "A": "Yes, we offer various maintenance packages to keep your website secure, up-to-date, and performing optimally. These packages include regular updates, security monitoring, backups, and technical support."
+          },
+          "4": {
+            "Q": "Will my website be mobile-friendly?",
+            "A": "Absolutely. All our websites are built with responsive design, ensuring they look and function perfectly on all devices including desktops, tablets, and smartphones. This is essential for both user experience and search engine rankings."
+          },
+          "5": {
+            "Q": "What technologies do you use for website development?",
+            "A": "We use a range of modern technologies depending on your specific needs. For web applications and more complex sites, we use React, Next.js, and other modern frameworks. The choice of technology is based on your requirements, budget, and long-term goals."
+          },
+          "6": {
+            "Q": "Do you optimize websites for search engines?",
+            "A": "Yes, SEO best practices are integrated into our development process. We ensure proper site structure, optimized code, fast loading speeds, mobile responsiveness, and other technical SEO factors. For more comprehensive SEO services, we offer dedicated SEO packages."
+          },
+          "7": {
+            "Q": "Can you integrate third-party tools and services?",
+            "A": "Absolutely. We regularly integrate various third-party tools and services such as CRM systems, payment gateways, marketing automation platforms, analytics tools, and more. We ensure seamless integration and proper data flow between your website and external systems."
+          },
+          "8": {
+            "Q": "How do you ensure website security?",
+            "A": "We implement multiple security measures including secure coding practices, regular updates, SSL certificates, firewall protection, and security plugins. For e-commerce sites and applications handling sensitive data, we implement additional security layers and ensure compliance with relevant regulations."
+          },
+          "9": {
+            "Q": "How much does a website cost?",
+            "A": "Website costs vary depending on complexity, features, and requirements. Small business websites typically range from $899 - $3,500, while more complex sites with custom functionality range from $3500 - $9,000+. We provide detailed quotes after understanding your specific needs."
+          },
+          "10": {
+            "Q": "Do you offer payment plans?",
+            "A": "Yes, we typically structure payments in milestones throughout the project. A common breakdown is 40% upfront, 30% at the design approval stage, and 30% upon project completion. For larger projects, we can create custom payment schedules."
+          },
+          "11": {
+            "Q": "What ongoing costs should I expect?",
+            "A": "Ongoing costs typically include domain registration ($10-$20/year), hosting ($20-$100/month depending on traffic and requirements), and optional maintenance packages ($100-$500/month based on the level of support needed)."
+          },
+          "12": {
+            "Q": "Do you provide cost estimates before starting a project?",
+            "A": "Yes, we provide detailed proposals and cost estimates after our initial consultation. Our proposals outline all deliverables, timelines, and costs, so you know exactly what to expect before committing to the project."
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Start Your Website Project?",
+      "desc": "Contact us today for a free consultation and discover how we can help you create a website that drives real business results."
+    }
+  }
+},
   "Portfolio" : {
     "title" : "our",
     "title2" : "Portfolio",

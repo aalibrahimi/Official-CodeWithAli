@@ -20,6 +20,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@radix-ui/react-tabs";
 import GradientText from "@/MyComponents/GradientText";
+import { useTranslations } from "next-intl";
 // import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 // Animation variants
@@ -108,35 +109,36 @@ const technologies = [
   },
 ];
 
-// Case studies (simplified for this example)
-const caseStudies = [
-  {
-    // should we add a new vs new?
-    title: "Construction Website Redesign",
-     industry: "Construction",
-    description:
-      "Redesigned an outdated construction website, boosting conversions by 45% and improving page load times by 60%.",
-    image: "/knoz_website.png",
-  },
-  {
-    title: "Budgeting Website launch",
-    description:
-      "Developed a modern, responsive website that increased lead generation by 38% and reduced bounce rate by 25%.",
-    industry: "Financial Services",
-    image: "/budgetary.png",
-  },
-  {
-    title: "Iraqi Sweets",
-    description:
-      "Created a conversion-focused landing website that helped the client increase their customers count by 52% within the first month.",
-    industry: "Baking Goods",
-    image: "/iraqisweets_website.png",
-  },
-];
 
 const WebsiteDevelopmentPage = () => {
+  const t = useTranslations('ServicePage.webDev');
   const router = useRouter();
-
+  
+  // Case studies (simplified for this example)
+  const caseStudies = [
+    {
+      // should we add a new vs new?
+      title: t('sections.4.case.1.title'),
+       industry: t('sections.4.case.1.industry'),
+      description:
+        t('sections.4.case.1.desc'),
+      image: "/knoz_website.png",
+    },
+    {
+      title: t('sections.4.case.2.title'),
+      industry: t('sections.4.case.2.industry'),
+      description:
+        t('sections.4.case.2.desc'),
+      image: "/budgetary.png",
+    },
+    {
+      title: t('sections.4.case.3.title'),
+      industry: t('sections.4.case.3.industry'),
+      description:
+        t('sections.4.case.3.desc'),
+      image: "/iraqisweets_website.png",
+    },
+  ];
   return (
     <div className="min-h-screen bg-white dark:bg-black text-white overflow-x-hidden">
       {/* Hero Section */}
@@ -156,18 +158,16 @@ const WebsiteDevelopmentPage = () => {
             > */}
             <div className="lg:w-7/12">
               <Badge className="bg-pink-600/80 dark:bg-pink-900/30 dark:text-pink-400 border-transparent mb-4 px-3 py-1">
-                WEBSITE DEVELOPMENT
+                {t('badge.1')}
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                Custom Website Development
+                {t('title.1')}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-pink-400 to-red-300 dark:to-red-500 block mt-2">
-                  That Drives Results
+                  {t('title.2')}
                 </span>
               </h1>
               <p className="text-lg text-white/80 dark:text-amber-50 mb-8">
-                We design and develop stunning, high-performance websites that
-                captivate your audience, establish your brand presence, and
-                drive measurable business growth.
+                {t('desc')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
@@ -176,7 +176,7 @@ const WebsiteDevelopmentPage = () => {
                      dark:hover:from-pink-600 dark:hover:to-pink-800 text-white border border-pink-800/30 shadow-lg shadow-pink-950/20 px-8"
                   onClick={() => router.push("/contact")}
                 >
-                  Get a Free Quote
+                  {t('quoteBtn')}
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
@@ -185,7 +185,7 @@ const WebsiteDevelopmentPage = () => {
                   className="border-pink-800/30 text-white dark:text-pink-400 bg-pink-500/40 dark:bg-pink-950/20 hover:bg-pink-800/80 dark:hover:bg-pink-950/30 hover:text-white dark:hover:text-white px-8"
                   onClick={() => router.push("/portfolio")}
                 >
-                  View Our Work
+                  {t('workBtn')}
                 </Button>
               </div>
             </div>
@@ -245,17 +245,15 @@ const WebsiteDevelopmentPage = () => {
             > */}
             <div>
               <Badge className="bg-pink-600/80 dark:bg-pink-900/30 dark:text-pink-400 border-transparent mb-4 px-3 py-1">
-                KEY FEATURES
+                {t('badge.2')}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
                 <GradientText gradient="from-pink-400 via-pink-500 dark:from-gray-200 dark:via-pink-400 to-pink-400">
-                  What Sets Our Website Development Apart
+                  {t('sections.1.title')}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-amber-50 text-lg max-w-2xl mx-auto">
-                We combine technical expertise with creative design to deliver
-                websites that not only look great but also perform exceptionally
-                well.
+                {t('sections.1.desc')}
               </p>
             </div>
             {/* </motion.div> */}
@@ -264,39 +262,39 @@ const WebsiteDevelopmentPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Responsive Design",
+                title: t('sections.1.cards.1.title'),
                 description:
-                  "We build websites that adapt seamlessly to any device, ensuring an optimal user experience on desktops, tablets, and smartphones.",
+                  t('sections.1.cards.1.desc'),
                 icon: Smartphone,
               },
               {
-                title: "Performance Optimization",
+                title: t('sections.1.cards.2.title'),
                 description:
-                  "Our websites are optimized for speed with efficient code, image optimization, and caching strategies for lightning-fast load times.",
+                t('sections.1.cards.2.desc'),
                 icon: Zap,
               },
               {
-                title: "SEO-Friendly Structure",
+                title: t('sections.1.cards.3.title'),
                 description:
-                  "We implement SEO best practices from the ground up, ensuring your website ranks well in search engines and drives organic traffic.",
+                t('sections.1.cards.3.desc'),
                 icon: Search,
               },
               {
-                title: "Custom Functionality",
+                title: t('sections.1.cards.4.title'),
                 description:
-                  "From interactive elements to complex business logic, we develop custom features that meet your specific requirements.",
+                t('sections.1.cards.4.desc'),
                 icon: Settings,
               },
               {
-                title: "Security Measures",
+                title: t('sections.1.cards.5.title'),
                 description:
-                  "We implement robust security practices to protect your website and user data from vulnerabilities and threats.",
+                  t('sections.1.cards.5.desc'),
                 icon: ShieldCheck,
               },
               {
-                title: "Content Management",
+                title: t('sections.1.cards.6.title'),
                 description:
-                  "We build easy-to-use content management systems that empower you to update and maintain your website without technical knowledge.",
+                  t('sections.1.cards.6.desc'),
                 icon: RefreshCw,
               },
             ].map((feature, index) => (
@@ -340,16 +338,15 @@ const WebsiteDevelopmentPage = () => {
             > */}
             <div>
               <Badge className="bg-pink-600/80 dark:bg-pink-900/30 dark:text-pink-400 border-transparent mb-4 px-3 py-1">
-                OUR PROCESS
+                {t('badge.3')}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
                 <GradientText gradient="from-pink-400 via-pink-500 dark:from-gray-200 dark:via-pink-400 to-pink-400">
-                  End-to-End Website Development Process
+                  {t('sections.2.title')}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-white/70 ext-lg max-w-2xl mx-auto">
-                Our structured approach ensures a smooth development journey
-                from concept to launch and beyond.
+                {t('sections.2.desc')}
               </p>
             </div>
             {/* </motion.div> */}
@@ -404,16 +401,15 @@ const WebsiteDevelopmentPage = () => {
             > */}
             <div>
               <Badge className="bg-pink-600/80 dark:bg-pink-900/30 dark:text-pink-400 border-transparent mb-4 px-3 py-1">
-                TECHNOLOGIES
+                {t('badge.4')}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
                 <GradientText gradient="from-pink-400 via-pink-500 dark:from-gray-200 dark:via-pink-400 to-pink-400">
-                  Technologies We Utilize
+                  {t('sections.3.title')}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-pink-200/60 text-lg max-w-2xl mx-auto">
-                We leverage cutting-edge technologies to build modern,
-                high-performance websites.
+                {t('sections.3.desc')}
               </p>
             </div>
             {/* </motion.div> */}
@@ -461,16 +457,15 @@ const WebsiteDevelopmentPage = () => {
             > */}
             <div>
               <Badge className="bg-pink-600/80 dark:bg-pink-900/30 dark:text-pink-400 border-transparent mb-4 px-3 py-1">
-                CASE STUDIES
+                {t('badge.5')}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
                 <GradientText gradient="from-pink-400 via-pink-500 dark:from-gray-200 dark:via-pink-400 to-pink-400">
-                  Success Stories
+                  {t('sections.4.title')}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-white/70 text-lg max-w-2xl mx-auto">
-                Explore some of our recent website development projects and the
-                results we've achieved for our clients.
+                {t('sections.4.desc')}
               </p>
             </div>
             {/* </motion.div> */}
@@ -495,7 +490,7 @@ const WebsiteDevelopmentPage = () => {
                         {project.industry}
                       </Badge>
                       <p className="text-white/80 dark:text-white/70 text-center px-6">
-                        Case Study Image: {project.title}
+                        {t('sections.4.case.imgPlaceholder')} {project.title}
                       </p>
                     </div>
                   </div>
@@ -516,7 +511,7 @@ const WebsiteDevelopmentPage = () => {
                         variant="outline"
                         className="border-2 border-pink-400/60 hover:text-white text-white bg-pink-700/50 hover:bg-pink-700/70"
                       >
-                        View Case Study
+                        {t('sections.4.case.viewBtn')}
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </div>
@@ -540,7 +535,7 @@ const WebsiteDevelopmentPage = () => {
                      dark:hover:from-pink-600 dark:hover:to-pink-800 text-white border border-pink-800/30 shadow-lg shadow-pink-950/20 px-8"
               onClick={() => router.push("/portfolio")}
             >
-              View All Projects
+              {t('sections.4.case.projectsBtn')}
               <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
@@ -559,16 +554,15 @@ const WebsiteDevelopmentPage = () => {
             > */}
             <div>
               <Badge className="bg-pink-600/80 dark:bg-pink-900/30 dark:text-pink-400 border-transparent mb-4 px-3 py-1">
-                FAQ
+                {t('badge.6')}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
                 <GradientText gradient="from-pink-400 via-pink-500 dark:from-gray-200 dark:via-pink-400 to-pink-400">
-                  Frequently Asked Questions
+                  {t('sections.5.title')}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-amber-50 text-lg max-w-2xl mx-auto">
-                Common questions about our website development process and
-                services.
+                {t('sections.5.desc')}
               </p>
             </div>
             {/* </motion.div> */}
@@ -581,43 +575,43 @@ const WebsiteDevelopmentPage = () => {
                   value="general"
                   className="data-[state=active]:bg-pink-900/30 data-[state=active]:text-white"
                 >
-                  General
+                  {t('sections.5.tab.1')}
                 </TabsTrigger>
                 <TabsTrigger
                   value="technical"
                   className="data-[state=active]:bg-pink-900/30 data-[state=active]:text-white"
                 >
-                  Technical
+                  {t('sections.5.tab.2')}
                 </TabsTrigger>
                 <TabsTrigger
                   value="pricing"
                   className="data-[state=active]:bg-pink-900/30 data-[state=active]:text-white"
                 >
-                  Pricing
+                  {t('sections.5.tab.3')}
                 </TabsTrigger>
               </TabsList>
 
               <TabsContent value="general" className="space-y-4">
                 {[
                   {
-                    question: "How long does it take to develop a website?",
+                    question: t('sections.5.QA.1.Q'),
                     answer:
-                      "The timeline varies depending on the complexity of the project. A simple website can be completed in 4-6 weeks, while more complex projects may take 8-12 weeks or longer. We'll provide a detailed timeline during the discovery and planning phase.",
+                    t('sections.5.QA.1.A'),
                   },
                   {
-                    question: "Will I be able to update the website myself?",
+                    question: t('sections.5.QA.2.Q'),
                     answer:
-                      "Yes, we build websites with user-friendly content management systems that allow you to easily update content, add pages, and make basic design changes without technical knowledge. We also provide training to ensure you're comfortable managing your site.",
+                      t('sections.5.QA.2.A'),
                   },
                   {
-                    question: "Do you provide ongoing maintenance and support?",
+                    question: t('sections.5.QA.3.Q'),
                     answer:
-                      "Yes, we offer various maintenance packages to keep your website secure, up-to-date, and performing optimally. These packages include regular updates, security monitoring, backups, and technical support.",
+                      t('sections.5.QA.3.A'),
                   },
                   {
-                    question: "Will my website be mobile-friendly?",
+                    question: t('sections.5.QA.4.Q'),
                     answer:
-                      "Absolutely. All our websites are built with responsive design, ensuring they look and function perfectly on all devices including desktops, tablets, and smartphones. This is essential for both user experience and search engine rankings.",
+                      t('sections.5.QA.4.A'),
                   },
                 ].map((faq, index) => (
                   <div
@@ -637,25 +631,25 @@ const WebsiteDevelopmentPage = () => {
                 {[
                   {
                     question:
-                      "What technologies do you use for website development?",
+                      t('sections.5.QA.5.Q'),
                     answer:
-                      "We use a range of modern technologies depending on your specific needs. For web applications and more complex sites, we use React, Next.js, and other modern frameworks. The choice of technology is based on your requirements, budget, and long-term goals.",
+                      t('sections.5.QA.5.A'),
                   },
                   {
-                    question: "Do you optimize websites for search engines?",
+                    question: t('sections.5.QA.6.Q'),
                     answer:
-                      "Yes, SEO best practices are integrated into our development process. We ensure proper site structure, optimized code, fast loading speeds, mobile responsiveness, and other technical SEO factors. For more comprehensive SEO services, we offer dedicated SEO packages.",
+                      t('sections.5.QA.6.A'),
                   },
                   {
                     question:
-                      "Can you integrate third-party tools and services?",
+                      t('sections.5.QA.7.Q'),
                     answer:
-                      "Absolutely. We regularly integrate various third-party tools and services such as CRM systems, payment gateways, marketing automation platforms, analytics tools, and more. We ensure seamless integration and proper data flow between your website and external systems.",
+                      t('sections.5.QA.7.A'),
                   },
                   {
-                    question: "How do you ensure website security?",
+                    question: t('sections.5.QA.8.Q'),
                     answer:
-                      "We implement multiple security measures including secure coding practices, regular updates, SSL certificates, firewall protection, and security plugins. For e-commerce sites and applications handling sensitive data, we implement additional security layers and ensure compliance with relevant regulations.",
+                      t('sections.5.QA.8.A'),
                   },
                 ].map((faq, index) => (
                   <div
@@ -673,25 +667,25 @@ const WebsiteDevelopmentPage = () => {
               <TabsContent value="pricing" className="space-y-4">
                 {[
                   {
-                    question: "How much does a website cost?",
+                    question: t('sections.5.QA.9.Q'),
                     answer:
-                      "Website costs vary depending on complexity, features, and requirements. Small business websites typically range from $899 - $3,500, while more complex sites with custom functionality range from $3500 - $9,000+. We provide detailed quotes after understanding your specific needs.",
+                      t('sections.5.QA.9.A'),
                   },
                   {
-                    question: "Do you offer payment plans?",
+                    question: t('sections.5.QA.10.Q'),
                     answer:
-                      "Yes, we typically structure payments in milestones throughout the project. A common breakdown is 40% upfront, 30% at the design approval stage, and 30% upon project completion. For larger projects, we can create custom payment schedules.",
+                      t('sections.5.QA.10.A'),
                   },
                   {
-                    question: "What ongoing costs should I expect?",
+                    question: t('sections.5.QA.11.Q'),
                     answer:
-                      "Ongoing costs typically include domain registration ($10-$20/year), hosting ($20-$100/month depending on traffic and requirements), and optional maintenance packages ($100-$500/month based on the level of support needed).",
+                      t('sections.5.QA.11.A'),
                   },
                   {
                     question:
-                      "Do you provide cost estimates before starting a project?",
+                      t('sections.5.QA.12.Q'),
                     answer:
-                      "Yes, we provide detailed proposals and cost estimates after our initial consultation. Our proposals outline all deliverables, timelines, and costs, so you know exactly what to expect before committing to the project.",
+                      t('sections.5.QA.12.A'),
                   },
                 ].map((faq, index) => (
                   <div
@@ -711,7 +705,7 @@ const WebsiteDevelopmentPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-pink-900/20 to-pink-900/90 dark:from-pink-950/10 dark:to-black">
+      <section className="py-20 dark:bg-gradient-to-b dark:from-pink-950/10 dark:to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           {/* <motion.div
             className="max-w-4xl mx-auto bg-black/60 border border-pink-900 rounded-xl p-8 md:p-12 text-center"
@@ -722,11 +716,10 @@ const WebsiteDevelopmentPage = () => {
           > */}
           <div className="max-w-4xl mx-auto bg-pink-900 dark:bg-black/60 border border-pink-900 rounded-xl p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Start Your Website Project?
+              {t('cta.title')}
             </h2>
             <p className="text-lg text-white/80 dark:text-white/70 mb-8 max-w-2xl mx-auto">
-              Contact us today for a free consultation and discover how we can
-              help you create a website that drives real business results.
+              {t('cta.desc')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -735,7 +728,7 @@ const WebsiteDevelopmentPage = () => {
                      dark:hover:from-pink-600 dark:hover:to-pink-800 text-white border border-pink-800/30 shadow-lg shadow-pink-950/20 px-8"
                 onClick={() => router.push("/contact")}
               >
-                Get a Free Quote
+                {t('quoteBtn')}
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
               <Button
@@ -744,7 +737,7 @@ const WebsiteDevelopmentPage = () => {
                 className="border-pink-800/30 text-white dark:text-pink-400 bg-pink-500/40 dark:bg-pink-950/20 hover:bg-pink-800/80 dark:hover:bg-pink-950/30 hover:text-white dark:hover:text-white px-8"
                 onClick={() => router.push("/portfolio")}
               >
-                View Our Work
+                {t('workBtn')}
               </Button>
             </div>
           </div>
