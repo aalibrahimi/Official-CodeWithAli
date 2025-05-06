@@ -276,7 +276,8 @@ const HomePage = () => {
             {isMounted && (
               <motion.div
                 {...getAnimationProps(0.2)}
-                className="hidden lg:block relative"
+                // Added ml-20 for LG so it doesnt cover the contact btn
+                className="hidden lg:block lg:ml-20 xl:ml-0 relative"
               >
                 <div className="relative bg-black border border-red-900 rounded-xl overflow-hidden shadow-2xl shadow-red-950/20 p-2">
                   <div className="grid grid-cols-2 gap-2">
