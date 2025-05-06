@@ -433,11 +433,64 @@
       },
       "2": {
         "title": "End-to-End Website Development Process",
-        "desc": "Our structured approach ensures a smooth development journey from concept to launch and beyond."
+        "desc": "Our structured approach ensures a smooth development journey from concept to launch and beyond.",
+        "steps": {
+          "1": {
+            "title": "Discovery and Requirements",
+            "desc": "We begin by understanding your business goals, target audience, and specific requirements through in-depth consultations. This phase includes competitor analysis, content planning, and technical specifications."
+          },
+          "2": {
+            "title": "Planning and Architecture",
+            "desc": "We create a detailed project plan including site architecture, wireframes, and technical specifications that will guide the development process."
+          },
+          "3": {
+            "title": "Design",
+            "desc": "Our designers create visual mockups and prototypes that align with your brand identity while ensuring an optimal user experience."
+          },
+          "4": {
+            "title": "Development",
+            "desc": "Our developers build your website with clean, efficient code using modern frameworks and best practices for performance and security."
+          },
+          "5": {
+            "title": "Testing and QA",
+            "desc": "We rigorously test your website across devices and browsers to ensure functionality, performance, and accessibility standards are met."
+          },
+          "6": {
+            "title": "Launch and Training",
+            "desc": "We deploy your website to production servers and provide comprehensive training on content management and maintenance."
+          },
+          "7": {
+            "title": "Maintenance and Support",
+            "desc": "We offer ongoing support, regular updates, performance monitoring, and continuous improvement to keep your website secure and effective."
+          }
+        }
       },
       "3": {
         "title": "Technologies We Utilize",
-        "desc": "We leverage cutting-edge technologies to build modern, high-performance websites."
+        "desc": "We leverage cutting-edge technologies to build modern, high-performance websites.",
+        "tech": {
+          "1": {
+            "desc": "For building interactive user interfaces with optimal performance"
+          },
+          "2": {
+            "desc": "For content-focused websites with powerful CMS capabilities"
+          },
+          "3": {
+            "desc": "For e-commerce websites with robust product management"
+          },
+          "4": {
+            "desc": "For rapid, responsive design implementation"
+          },
+          "5": {
+            "desc": "For scalable backend development"
+          },
+          "6": {
+            "desc": "For efficient data querying and management"
+          },
+          "7": {
+            "desc": "For reliable, scalable hosting solutions"
+          }
+        }
       },
       "4": {
         "title": "Success Stories",

@@ -33,48 +33,55 @@ import { useTranslations } from "next-intl";
 //   },
 // };
 
-// Process steps
+
+
+
+const WebsiteDevelopmentPage = () => {
+  const t = useTranslations('ServicePage.webDev');
+  const router = useRouter();
+
+  // Process steps
 const processSteps = [
   {
-    title: "Discovery and Requirements",
+    title: t('sections.2.steps.1.title'),
     description:
-      "We begin by understanding your business goals, target audience, and specific requirements through in-depth consultations. This phase includes competitor analysis, content planning, and technical specifications.",
+      t('sections.2.steps.1.desc'),
     icon: Search,
   },
   {
-    title: "Planning and Architecture",
+    title: t('sections.2.steps.2.title'),
     description:
-      "We create a detailed project plan including site architecture, wireframes, and technical specifications that will guide the development process.",
+      t('sections.2.steps.2.desc'),
     icon: Layers,
   },
   {
-    title: "Design",
+    title: t('sections.2.steps.3.title'),
     description:
-      "Our designers create visual mockups and prototypes that align with your brand identity while ensuring an optimal user experience.",
+      t('sections.2.steps.3.desc'),
     icon: Palette,
   },
   {
-    title: "Development",
+    title: t('sections.2.steps.4.title'),
     description:
-      "Our developers build your website with clean, efficient code using modern frameworks and best practices for performance and security.",
+      t('sections.2.steps.4.desc'),
     icon: Code,
   },
   {
-    title: "Testing and QA",
+    title: t('sections.2.steps.5.title'),
     description:
-      "We rigorously test your website across devices and browsers to ensure functionality, performance, and accessibility standards are met.",
+      t('sections.2.steps.5.desc'),
     icon: Settings,
   },
   {
-    title: "Launch and Training",
+    title: t('sections.2.steps.6.title'),
     description:
-      "We deploy your website to production servers and provide comprehensive training on content management and maintenance.",
+      t('sections.2.steps.6.desc'),
     icon: Zap,
   },
   {
-    title: "Maintenance and Support",
+    title: t('sections.2.steps.7.title'),
     description:
-      "We offer ongoing support, regular updates, performance monitoring, and continuous improvement to keep your website secure and effective.",
+      t('sections.2.steps.7.desc'),
     icon: RefreshCw,
   },
 ];
@@ -84,35 +91,32 @@ const technologies = [
   {
     name: "React/Next.js",
     description:
-      "For building interactive user interfaces with optimal performance",
+      t('sections.3.tech.1.desc'),
   },
   {
     name: "WordPress",
-    description: "For content-focused websites with powerful CMS capabilities",
+    description: t('sections.3.tech.2.desc'),
   },
   {
     name: "Shopify",
-    description: "For e-commerce websites with robust product management",
+    description: t('sections.3.tech.3.desc'),
   },
   {
     name: "Tailwind CSS",
-    description: "For rapid, responsive design implementation",
+    description: t('sections.3.tech.4.desc'),
   },
-  { name: "Node.js", description: "For scalable backend development" },
+  { name: "Node.js", description: t('sections.3.tech.5.desc') },
   {
     name: "GraphQL",
-    description: "For efficient data querying and management",
+    description: t('sections.3.tech.6.desc'),
   },
   {
     name: "AWS/Vercel",
-    description: "For reliable, scalable hosting solutions",
+    description: t('sections.3.tech.7.desc'),
   },
 ];
 
 
-const WebsiteDevelopmentPage = () => {
-  const t = useTranslations('ServicePage.webDev');
-  const router = useRouter();
   
   // Case studies (simplified for this example)
   const caseStudies = [
