@@ -703,13 +703,13 @@ const HomePage = () => {
       <section className="py-20 md:py-24 bg-gradient-to-b from-white via-white to-white  dark:from-red-950/10 dark:via-red-950/10 dark:to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <motion.div
-            className="max-w-4xl mx-auto bg-white  dark:bg-black/60 border  dark:border-red-900 rounded-xl p-8 md:p-12 text-center"
+            className="max-w-4xl mx-auto bg-red-800  dark:bg-black/60 border  dark:border-red-900 rounded-xl p-8 md:p-12 text-center"
             {...getAnimationProps()}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-white mb-6">
               {t("cta.title")}
             </h2>
-            <p className="text-lg text-black dark:text-white mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-white/90 dark:text-white mb-8 max-w-2xl mx-auto">
               {t("cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -734,17 +734,17 @@ const HomePage = () => {
               </Link>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center mt-8 text-black/95 dark:text-red-200/60">
+            <div className="flex flex-wrap items-center justify-center mt-8 text-white/95 dark:text-red-200/60">
               <div className="flex items-center mr-4 mb-2">
-                <CheckCircle className="h-4 w-4 mr-2 text-red-700 dark:text-red-500" />
+                <CheckCircle className="h-4 w-4 mr-2 text-red-300 dark:text-red-500" />
                 <span className="text-sm">{t("cta.features.1")}</span>
               </div>
               <div className="flex items-center mr-4 mb-2">
-                <CheckCircle className="h-4 w-4 mr-2 text-red-700 dark:text-red-500" />
+                <CheckCircle className="h-4 w-4 mr-2 text-red-300 dark:text-red-500" />
                 <span className="text-sm">{t("cta.features.2")}</span>
               </div>
               <div className="flex items-center mb-2">
-                <CheckCircle className="h-4 w-4 mr-2 text-red-700 dark:text-red-500" />
+                <CheckCircle className="h-4 w-4 mr-2 text-red-300 dark:text-red-500" />
                 <span className="text-sm ">{t("cta.features.3")}</span>
               </div>
             </div>
