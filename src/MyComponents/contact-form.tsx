@@ -8,6 +8,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useFormDataStore } from "./serviceform";
 import { useTranslations } from "next-intl";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 interface Props {
   scrollToTop?: boolean | false;
@@ -132,7 +139,7 @@ export default function ContactForm({
   return (
     <section
       id="contact"
-      className="py-20 md:py-24 bg-gradient-to-b from-red-400/80 to-red-500/80 dark:from-black dark:to-black"
+      className="py-20 md:py-24 bg-gradient-to-b from-red-500/80 to-red-600/80 dark:from-black dark:to-black"
     >
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
         <div className="max-w-4xl mx-auto">
@@ -156,7 +163,7 @@ export default function ContactForm({
             className="bg-black border-2 border-red-800/40 rounded-xl p-8 md:p-10 shadow-xl shadow-red-950/10"
             {...getAnimationProps(0.1)}
           > */}
-          <div className="bg-red-900/90 dark:bg-black border-2 border-red-800/40 rounded-xl p-8 md:p-10 shadow-xl shadow-red-950/10">
+          <div className="bg-red-950/80 dark:bg-black border-2 border-red-800/40 rounded-xl p-8 md:p-10 shadow-xl shadow-red-950/10">
             <div className="grid grid-cols-1 gap-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name Field */}
@@ -173,7 +180,7 @@ export default function ContactForm({
                     value={formData.name}
                     placeholder={`${t("field.name.placeholder")}`}
                     onChange={(e) => setName(e.target.value)}
-                    className="bg-red-200/80 placeholder:text-black/80 dark:placeholder:text-gray-500 dark:bg-red-950/20 border-red-800/40 text-black dark:text-white focus:border-red-600 h-12 text-base w-full"
+                    className=" bg-white/90 placeholder:text-black/80 dark:placeholder:text-gray-500 dark:bg-red-950/20 border-red-800/40 text-black dark:text-white focus:border-red-600 h-12 text-base w-full"
                     required
                   />
                 </div>
@@ -193,64 +200,70 @@ export default function ContactForm({
                       value={formData.email}
                       placeholder={`${t("field.email.placeholder")}`}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="bg-red-200/80 placeholder:text-black/80 dark:placeholder:text-gray-500 dark:bg-red-950/20 border-red-800/40 text-black dark:text-white focus:border-red-600 h-12 text-base w-full"
+                      className="bg-white/90 placeholder:text-black/80 dark:placeholder:text-gray-500 dark:bg-red-950/20 border-red-800/40 text-black dark:text-white focus:border-red-600 h-12 text-base w-full"
                       required
                     />
                   </div>
 
                   {/* Services */}
                   <div>
+                    <Select onValueChange={(value) => setService(value)}>
                     <label
-                      htmlFor="service"
+                      htmlFor="email"
                       className="block text-white dark:text-red-200 font-medium mb-2"
                     >
                       {t("field.service.label")}
                     </label>
-                    <select
-                      id="service"
-                      className="w-full bg-red-200/80 dark:bg-red-950/20 border border-red-8text-black dark:00/40 text-black dark:text-white focus:border-red-600 rounded-md h-12 text-base px-3"
-                      onChange={(e) => setService(e.target.value)}
-                    >
-                      <option value="" className="bg-red-200/80 dark:bg-black">
-                        {t("field.service.placeholder")}
-                      </option>
-                      <option
-                        value="website"
-                        className="bg-red-200/80 dark:bg-black"
-                      >
-                        {t("field.service.option.1")}
-                      </option>
-                      <option
-                        value="app"
-                        className="bg-red-200/80 dark:bg-black"
-                      >
-                        {t("field.service.option.2")}
-                      </option>
-                      <option
-                        value="design"
-                        className="bg-red-200/80 dark:bg-black"
-                      >
-                        {t("field.service.option.3")}
-                      </option>
-                      <option
-                        value="ecommerce"
-                        className="bg-red-200/80 dark:bg-black"
-                      >
-                        {t("field.service.option.4")}
-                      </option>
-                      <option
-                        value="seo"
-                        className="bg-red-200/80 dark:bg-black"
-                      >
-                        {t("field.service.option.5")}
-                      </option>
-                      <option
-                        value="hosting"
-                        className="bg-red-200/80 dark:bg-black"
-                      >
-                        {t("field.service.option.6")}
-                      </option>
-                    </select>
+                      <SelectTrigger
+                        id="service"
+                        className="w-full bg-white/90 dark:bg-red-950/20 border border-red-800 text-black dark:text-white focus:border-red-600 rounded-md h-12 text-base px-3 focus:bg-red-800"
+                     
+                     >
+                        
+                        <SelectValue
+                        
+                          placeholder={t("field.service.placeholder")}
+                        />
+                      </SelectTrigger>
+                      <SelectContent className="bg-white  dark:bg-black text-black dark:text-white">
+                        <SelectItem
+                          value="website"
+                          className="hover:bg-red-600 hover:text-white cursor-pointer"
+                        >
+                          {t("field.service.option.1")}
+                        </SelectItem>
+                        <SelectItem
+                          value="app"
+                          className="hover:bg-red-600 hover:text-white cursor-pointer"
+                        >
+                          {t("field.service.option.2")}
+                        </SelectItem>
+                        <SelectItem
+                          value="design"
+                          className="hover:bg-red-600 hover:text-white cursor-pointer"
+                        >
+                          {t("field.service.option.3")}
+                        </SelectItem>
+                        <SelectItem
+                          value="ecommerce"
+                          className="hover:bg-red-600 hover:text-white cursor-pointer"
+                        >
+                          {t("field.service.option.4")}
+                        </SelectItem>
+                        <SelectItem
+                          value="seo"
+                          className="hover:bg-red-600 hover:text-white cursor-pointer"
+                        >
+                          {t("field.service.option.5")}
+                        </SelectItem>
+                        <SelectItem
+                          value="hosting"
+                          className="hover:bg-red-600 hover:text-white cursor-pointer"
+                        >
+                          {t("field.service.option.6")}
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
                 </div>
 
@@ -264,7 +277,7 @@ export default function ContactForm({
                   </label>
                   <Textarea
                     id="message"
-                    className="bg-red-200/80 placeholder:text-black/80 dark:placeholder:text-gray-500 dark:bg-red-950/20 border-red-800/40 text-black dark:text-white focus:border-red-600 h-40 text-base w-full resize-none"
+                    className="bg-white/90 placeholder:text-black/80 dark:placeholder:text-gray-500 dark:bg-red-950/20 border-red-800/40 text-black dark:text-white focus:border-red-600 h-40 text-base w-full resize-none"
                     required
                     value={formData.projectDetails}
                     onChange={(e) => setProjectDetails(e.target.value)}
