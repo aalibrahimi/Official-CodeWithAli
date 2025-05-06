@@ -580,6 +580,185 @@
       "title": "Ready to Start Your Website Project?",
       "desc": "Contact us today for a free consultation and discover how we can help you create a website that drives real business results."
     }
+  },
+  "mobileApp": {
+    "badge": {
+      "1": "MOBILE APP DEVELOPMENT",
+      "2": "APP SOLUTIONS",
+      "3": "OUR EXPERTISE",
+      "4": "OUR PROCESS",
+      "5": "FAQ"
+    },
+    "title": {
+      "1": "Custom Mobile Apps",
+      "2": "For iOS & Android"
+    },
+    "desc": "We design and build innovative, high-performance mobile applications that engage users, solve real problems, and help your business grow in the mobile-first world.",
+    "discussBtn": "Discuss Your App Idea",
+    "workBtn": "View Our Work",
+    "sections": {
+      "1": {
+        "title": "Mobile App Development Solutions",
+        "desc": "We offer a range of app development approaches to meet your specific needs, budget, and timeline.",
+        "types": {
+          "techLabel": "Technologies:",
+          "benefitLabel": "Benefits:",
+          "1": {
+            "title": "Native Apps",
+            "desc": "Built specifically for iOS or Android platforms, offering the best performance and access to all device features.",
+            "benefits": {
+              "1": "Optimal performance",
+              "2": "Full access to device features",
+              "3": "Superior user experience",
+              "4": "Better store visibility"
+            }
+          },
+          "2": {
+            "title": "Cross-Platform Apps",
+            "desc": "Developed once and deployed on multiple platforms, reducing development time and costs.",
+            "benefits": {
+              "1": "Cost-effective",
+              "2": "Faster development",
+              "3": "Easier maintenance",
+              "4": "Consistent experience across platforms"
+            }
+          },
+          "3": {
+            "title": "Progressive Web Apps",
+            "desc": "Web applications that offer app-like experiences, accessible directly through web browsers without installation.",
+            "benefits": {
+              "1": "No installation required",
+              "2": "Works offline",
+              "3": "Automatic updates",
+              "4": "Lower development costs"
+            }
+          }
+        }
+      },
+      "2": {
+        "title": "What Sets our Mobile App Development Apart",
+        "desc": "We combine technical excellence with creative design to deliver mobile apps that users love and businesses rely on.",
+        "card": {
+          "1": {
+            "title": "User-Centered Design",
+            "desc": "We create intuitive, engaging interfaces based on deep user research and iterative testing to ensure your app is a joy to use."
+          },
+          "2": {
+            "title": "High Performance",
+            "desc": "Our apps are optimized for speed, responsiveness, and efficient resource usage, even under demanding conditions."
+          },
+          "3": {
+            "title": "Cross-Platform Expertise",
+            "desc": "We develop for both iOS and Android, ensuring consistent experiences across all devices while leveraging platform-specific features."
+          },
+          "4": {
+            "title": "Advanced Functionality",
+            "desc": "From location services to payment processing, we implement complex features that make your app powerful and distinctive."
+          },
+          "5": {
+            "title": "Security & Compliance",
+            "desc": "We build with security-first principles and ensure compliance with GDPR, CCPA, and other relevant regulations."
+          },
+          "6": {
+            "title": "Scalable Architecture",
+            "desc": "Our apps are built on flexible, scalable architectures that can grow with your user base and evolving requirements."
+          }
+        }
+      },
+      "3": {
+        "title": "Mobile App Development Process",
+        "desc": "Our structured approach ensures a smooth development journey from concept to launch and beyond.",
+        "steps": {
+          "1": {
+            "title": "Discovery & Strategy",
+            "desc": "We start by understanding your business objectives, target users, and market requirements to create a comprehensive app strategy."
+          },
+          "2": {
+            "title": "UX/UI Design",
+            "desc": "Our designers create intuitive, user-friendly interfaces with engaging visuals that align with your brand identity."
+          },
+          "3": {
+            "title": "Development",
+            "desc": "Our developers build your app using the most appropriate technologies, ensuring code quality and optimal performance."
+          },
+          "4": {
+            "title": "Testing & QA",
+            "desc": "We conduct rigorous testing across devices and platforms to ensure functionality, performance, and security."
+          },
+          "5": {
+            "title": "Deployment",
+            "desc": "We handle the app store submission process and ensure your app meets all requirements for iOS and Android platforms."
+          },
+          "6": {
+            "title": "Post-Launch Support",
+            "desc": "We provide ongoing maintenance, updates, and support to keep your app running smoothly and up-to-date."
+          }
+        }
+      },
+      "4": {
+        "title": "Frequently Asked Questions",
+        "desc": "Common questions about our mobile app development process and services.",
+        "tab": {
+          "1": "General",
+          "2": "Technical",
+          "3": "Pricing"
+        },
+        "QA": {
+          "1": {
+            "Q": "How long does it take to develop a mobile app?",
+            "A": "The timeline varies based on complexity and features. Simple apps can take 3-4 months, while complex apps may require 6-9 months from concept to launch. We'll provide a detailed timeline during the discovery phase."
+          },
+          "2": {
+            "Q": "Should I develop for iOS, Android, or both?",
+            "A": "This depends on your target audience and business goals. If your audience primarily uses one platform, starting there makes sense. However, most businesses benefit from developing for both platforms to maximize reach, which can be done efficiently with cross-platform development."
+          },
+          "3": {
+            "Q": "How do you ensure my app will be successful?",
+            "A": "Success starts with thorough research and planning. We conduct market analysis, define clear user personas, and focus on solving real user problems. We also implement analytics to track key metrics and make data-driven improvements post-launch."
+          },
+          "4": {
+            "Q": "What ongoing support do you provide after launch?",
+            "A": "We offer comprehensive maintenance packages including bug fixes, performance monitoring, compatibility updates for new OS versions, security patches, and feature enhancements. We recommend a maintenance plan to keep your app secure, stable, and relevant."
+          },
+          "5": {
+            "Q": "Native vs. cross-platform: which is better for my app?",
+            "A": "Native development offers optimal performance and access to all platform features, while cross-platform development is more cost-effective and faster to market. The choice depends on your app's requirements, budget, and timeline. We recommend native for performance-critical apps or those needing advanced device features, and cross-platform for most business apps with standard functionality."
+          },
+          "6": {
+            "Q": "How do you handle app store approvals?",
+            "A": "We have extensive experience with both Apple App Store and Google Play Store guidelines. We incorporate these requirements throughout the development process and handle the entire submission process, including preparing all required materials, responding to review questions, and making any necessary adjustments to ensure approval."
+          },
+          "7": {
+            "Q": "Can you integrate my app with existing systems?",
+            "A": "Yes, we specialize in integrating mobile apps with existing systems such as CRMs, ERPs, payment processors, and custom backends. We use secure APIs to ensure seamless data flow between your app and other business systems."
+          },
+          "8": {
+            "Q": "How do you address app security?",
+            "A": "Security is built into every stage of our development process. We implement encryption for data storage and transmission, secure authentication methods, input validation, and protection against common vulnerabilities. For apps handling sensitive data, we conduct security audits and penetration testing."
+          },
+          "9": {
+            "Q": "How much does it cost to develop a mobile app?",
+            "A": "App development costs vary widely based on complexity, features, and platforms. Simple apps typically range from $15,000-$35,000, medium-complexity apps from $35,000-$60,000, and complex apps can exceed $100,000. We provide detailed estimates after understanding your specific requirements."
+          },
+          "10": {
+            "Q": "What factors affect the cost of app development?",
+            "A": "Key factors include: platforms (iOS, Android, or both), complexity of features, backend requirements, third-party integrations, design complexity, user authentication needs, and whether you need a custom CMS or admin panel. Additional factors include analytics implementation and security requirements."
+          },
+          "11": {
+            "Q": "Do you offer payment plans?",
+            "A": "Yes, we typically structure payments in milestones throughout the project. A common approach is 30% upfront, 30% at design approval, 30% at development completion, and 10% upon final delivery and approval. For larger projects, we can create more granular payment schedules."
+          },
+          "12": {
+            "Q": "What ongoing costs should I expect?",
+            "A": "Ongoing costs typically include app store fees ($99/year for Apple, $25 one-time for Google), server/hosting costs ($50-500/month depending on usage), maintenance and updates (typically 15-20% of initial development cost annually), and possible third-party service fees for integrations."
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Build Your Mobile App?",
+      "desc": "Contact us today for a free consultation and discover how we can help you create a mobile app that engages users and drives business growth."
+    }
   }
 },
   "Portfolio" : {

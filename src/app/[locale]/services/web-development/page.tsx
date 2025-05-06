@@ -33,113 +33,97 @@ import { useTranslations } from "next-intl";
 //   },
 // };
 
-
-
-
 const WebsiteDevelopmentPage = () => {
-  const t = useTranslations('ServicePage.webDev');
+  const t = useTranslations("ServicePage.webDev");
   const router = useRouter();
 
   // Process steps
-const processSteps = [
-  {
-    title: t('sections.2.steps.1.title'),
-    description:
-      t('sections.2.steps.1.desc'),
-    icon: Search,
-  },
-  {
-    title: t('sections.2.steps.2.title'),
-    description:
-      t('sections.2.steps.2.desc'),
-    icon: Layers,
-  },
-  {
-    title: t('sections.2.steps.3.title'),
-    description:
-      t('sections.2.steps.3.desc'),
-    icon: Palette,
-  },
-  {
-    title: t('sections.2.steps.4.title'),
-    description:
-      t('sections.2.steps.4.desc'),
-    icon: Code,
-  },
-  {
-    title: t('sections.2.steps.5.title'),
-    description:
-      t('sections.2.steps.5.desc'),
-    icon: Settings,
-  },
-  {
-    title: t('sections.2.steps.6.title'),
-    description:
-      t('sections.2.steps.6.desc'),
-    icon: Zap,
-  },
-  {
-    title: t('sections.2.steps.7.title'),
-    description:
-      t('sections.2.steps.7.desc'),
-    icon: RefreshCw,
-  },
-];
+  const processSteps = [
+    {
+      title: t("sections.2.steps.1.title"),
+      description: t("sections.2.steps.1.desc"),
+      icon: Search,
+    },
+    {
+      title: t("sections.2.steps.2.title"),
+      description: t("sections.2.steps.2.desc"),
+      icon: Layers,
+    },
+    {
+      title: t("sections.2.steps.3.title"),
+      description: t("sections.2.steps.3.desc"),
+      icon: Palette,
+    },
+    {
+      title: t("sections.2.steps.4.title"),
+      description: t("sections.2.steps.4.desc"),
+      icon: Code,
+    },
+    {
+      title: t("sections.2.steps.5.title"),
+      description: t("sections.2.steps.5.desc"),
+      icon: Settings,
+    },
+    {
+      title: t("sections.2.steps.6.title"),
+      description: t("sections.2.steps.6.desc"),
+      icon: Zap,
+    },
+    {
+      title: t("sections.2.steps.7.title"),
+      description: t("sections.2.steps.7.desc"),
+      icon: RefreshCw,
+    },
+  ];
 
-// Technologies we use
-const technologies = [
-  {
-    name: "React/Next.js",
-    description:
-      t('sections.3.tech.1.desc'),
-  },
-  {
-    name: "WordPress",
-    description: t('sections.3.tech.2.desc'),
-  },
-  {
-    name: "Shopify",
-    description: t('sections.3.tech.3.desc'),
-  },
-  {
-    name: "Tailwind CSS",
-    description: t('sections.3.tech.4.desc'),
-  },
-  { name: "Node.js", description: t('sections.3.tech.5.desc') },
-  {
-    name: "GraphQL",
-    description: t('sections.3.tech.6.desc'),
-  },
-  {
-    name: "AWS/Vercel",
-    description: t('sections.3.tech.7.desc'),
-  },
-];
+  // Technologies we use
+  const technologies = [
+    {
+      name: "React/Next.js",
+      description: t("sections.3.tech.1.desc"),
+    },
+    {
+      name: "WordPress",
+      description: t("sections.3.tech.2.desc"),
+    },
+    {
+      name: "Shopify",
+      description: t("sections.3.tech.3.desc"),
+    },
+    {
+      name: "Tailwind CSS",
+      description: t("sections.3.tech.4.desc"),
+    },
+    { name: "Node.js", description: t("sections.3.tech.5.desc") },
+    {
+      name: "GraphQL",
+      description: t("sections.3.tech.6.desc"),
+    },
+    {
+      name: "AWS/Vercel",
+      description: t("sections.3.tech.7.desc"),
+    },
+  ];
 
-
-  
   // Case studies (simplified for this example)
   const caseStudies = [
     {
       // should we add a new vs new?
-      title: t('sections.4.case.1.title'),
-       industry: t('sections.4.case.1.industry'),
-      description:
-        t('sections.4.case.1.desc'),
+      title: t("sections.4.case.1.title"),
+      industry: t("sections.4.case.1.industry"),
+      description: t("sections.4.case.1.desc"),
       image: "/knoz_website.png",
     },
     {
-      title: t('sections.4.case.2.title'),
-      industry: t('sections.4.case.2.industry'),
-      description:
-        t('sections.4.case.2.desc'),
+      title: t("sections.4.case.2.title"),
+      industry: t("sections.4.case.2.industry"),
+      description: t("sections.4.case.2.desc"),
       image: "/budgetary.png",
     },
     {
-      title: t('sections.4.case.3.title'),
-      industry: t('sections.4.case.3.industry'),
-      description:
-        t('sections.4.case.3.desc'),
+      title: t("sections.4.case.3.title"),
+      industry: t("sections.4.case.3.industry"),
+      description: t("sections.4.case.3.desc"),
       image: "/iraqisweets_website.png",
     },
   ];
@@ -162,16 +146,16 @@ const technologies = [
             > */}
             <div className="lg:w-7/12">
               <Badge className="bg-pink-600/80 dark:bg-pink-900/30 dark:text-pink-400 border-transparent mb-4 px-3 py-1">
-                {t('badge.1')}
+                {t("badge.1")}
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                {t('title.1')}
+                {t("title.1")}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-pink-400 to-red-300 dark:to-red-500 block mt-2">
-                  {t('title.2')}
+                  {t("title.2")}
                 </span>
               </h1>
               <p className="text-lg text-white/80 dark:text-amber-50 mb-8">
-                {t('desc')}
+                {t("desc")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
@@ -180,7 +164,7 @@ const technologies = [
                      dark:hover:from-pink-600 dark:hover:to-pink-800 text-white border border-pink-800/30 shadow-lg shadow-pink-950/20 px-8"
                   onClick={() => router.push("/contact")}
                 >
-                  {t('quoteBtn')}
+                  {t("quoteBtn")}
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
@@ -189,7 +173,7 @@ const technologies = [
                   className="border-pink-800/30 text-white dark:text-pink-400 bg-pink-500/40 dark:bg-pink-950/20 hover:bg-pink-800/80 dark:hover:bg-pink-950/30 hover:text-white dark:hover:text-white px-8"
                   onClick={() => router.push("/portfolio")}
                 >
-                  {t('workBtn')}
+                  {t("workBtn")}
                 </Button>
               </div>
             </div>
@@ -249,15 +233,15 @@ const technologies = [
             > */}
             <div>
               <Badge className="bg-pink-600/80 dark:bg-pink-900/30 dark:text-pink-400 border-transparent mb-4 px-3 py-1">
-                {t('badge.2')}
+                {t("badge.2")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
                 <GradientText gradient="from-pink-400 via-pink-500 dark:from-gray-200 dark:via-pink-400 to-pink-400">
-                  {t('sections.1.title')}
+                  {t("sections.1.title")}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-amber-50 text-lg max-w-2xl mx-auto">
-                {t('sections.1.desc')}
+                {t("sections.1.desc")}
               </p>
             </div>
             {/* </motion.div> */}
@@ -266,39 +250,33 @@ const technologies = [
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: t('sections.1.cards.1.title'),
-                description:
-                  t('sections.1.cards.1.desc'),
+                title: t("sections.1.cards.1.title"),
+                description: t("sections.1.cards.1.desc"),
                 icon: Smartphone,
               },
               {
-                title: t('sections.1.cards.2.title'),
-                description:
-                t('sections.1.cards.2.desc'),
+                title: t("sections.1.cards.2.title"),
+                description: t("sections.1.cards.2.desc"),
                 icon: Zap,
               },
               {
-                title: t('sections.1.cards.3.title'),
-                description:
-                t('sections.1.cards.3.desc'),
+                title: t("sections.1.cards.3.title"),
+                description: t("sections.1.cards.3.desc"),
                 icon: Search,
               },
               {
-                title: t('sections.1.cards.4.title'),
-                description:
-                t('sections.1.cards.4.desc'),
+                title: t("sections.1.cards.4.title"),
+                description: t("sections.1.cards.4.desc"),
                 icon: Settings,
               },
               {
-                title: t('sections.1.cards.5.title'),
-                description:
-                  t('sections.1.cards.5.desc'),
+                title: t("sections.1.cards.5.title"),
+                description: t("sections.1.cards.5.desc"),
                 icon: ShieldCheck,
               },
               {
-                title: t('sections.1.cards.6.title'),
-                description:
-                  t('sections.1.cards.6.desc'),
+                title: t("sections.1.cards.6.title"),
+                description: t("sections.1.cards.6.desc"),
                 icon: RefreshCw,
               },
             ].map((feature, index) => (
@@ -319,7 +297,9 @@ const technologies = [
                       <h3 className="text-xl font-bold text-pink-950 dark:text-white mb-3">
                         {feature.title}
                       </h3>
-                      <p className="text-white dark:text-white/70">{feature.description}</p>
+                      <p className="text-white dark:text-white/70">
+                        {feature.description}
+                      </p>
                     </div>
                   </CardContent>
                 </Card>
@@ -342,15 +322,15 @@ const technologies = [
             > */}
             <div>
               <Badge className="bg-pink-600/80 dark:bg-pink-900/30 dark:text-pink-400 border-transparent mb-4 px-3 py-1">
-                {t('badge.3')}
+                {t("badge.3")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
                 <GradientText gradient="from-pink-400 via-pink-500 dark:from-gray-200 dark:via-pink-400 to-pink-400">
-                  {t('sections.2.title')}
+                  {t("sections.2.title")}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-white/70 ext-lg max-w-2xl mx-auto">
-                {t('sections.2.desc')}
+                {t("sections.2.desc")}
               </p>
             </div>
             {/* </motion.div> */}
@@ -381,7 +361,9 @@ const technologies = [
                             {step.title}
                           </h3>
                         </div>
-                        <p className="text-white/80 dark:text-white/70">{step.description}</p>
+                        <p className="text-white/80 dark:text-white/70">
+                          {step.description}
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -405,15 +387,15 @@ const technologies = [
             > */}
             <div>
               <Badge className="bg-pink-600/80 dark:bg-pink-900/30 dark:text-pink-400 border-transparent mb-4 px-3 py-1">
-                {t('badge.4')}
+                {t("badge.4")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
                 <GradientText gradient="from-pink-400 via-pink-500 dark:from-gray-200 dark:via-pink-400 to-pink-400">
-                  {t('sections.3.title')}
+                  {t("sections.3.title")}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-pink-200/60 text-lg max-w-2xl mx-auto">
-                {t('sections.3.desc')}
+                {t("sections.3.desc")}
               </p>
             </div>
             {/* </motion.div> */}
@@ -439,7 +421,9 @@ const technologies = [
                     <h4 className="text-lg font-bold text-red-950 dark:text-white mb-1">
                       {tech.name}
                     </h4>
-                    <p className="text-white/80 dark:text-white/70 text-sm">{tech.description}</p>
+                    <p className="text-white/80 dark:text-white/70 text-sm">
+                      {tech.description}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -461,15 +445,15 @@ const technologies = [
             > */}
             <div>
               <Badge className="bg-pink-600/80 dark:bg-pink-900/30 dark:text-pink-400 border-transparent mb-4 px-3 py-1">
-                {t('badge.5')}
+                {t("badge.5")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
                 <GradientText gradient="from-pink-400 via-pink-500 dark:from-gray-200 dark:via-pink-400 to-pink-400">
-                  {t('sections.4.title')}
+                  {t("sections.4.title")}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-white/70 text-lg max-w-2xl mx-auto">
-                {t('sections.4.desc')}
+                {t("sections.4.desc")}
               </p>
             </div>
             {/* </motion.div> */}
@@ -494,7 +478,7 @@ const technologies = [
                         {project.industry}
                       </Badge>
                       <p className="text-white/80 dark:text-white/70 text-center px-6">
-                        {t('sections.4.case.imgPlaceholder')} {project.title}
+                        {t("sections.4.case.imgPlaceholder")} {project.title}
                       </p>
                     </div>
                   </div>
@@ -515,7 +499,7 @@ const technologies = [
                         variant="outline"
                         className="border-2 border-pink-400/60 hover:text-white text-white bg-pink-700/50 hover:bg-pink-700/70"
                       >
-                        {t('sections.4.case.viewBtn')}
+                        {t("sections.4.case.viewBtn")}
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </div>
@@ -525,9 +509,7 @@ const technologies = [
                 <h3 className="text-xl font-bold text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-grey-400 text-sm">
-                  {project.description}
-                </p>
+                <p className="text-grey-400 text-sm">{project.description}</p>
               </div>
               // </motion.div>
             ))}
@@ -539,7 +521,7 @@ const technologies = [
                      dark:hover:from-pink-600 dark:hover:to-pink-800 text-white border border-pink-800/30 shadow-lg shadow-pink-950/20 px-8"
               onClick={() => router.push("/portfolio")}
             >
-              {t('sections.4.case.projectsBtn')}
+              {t("sections.4.case.projectsBtn")}
               <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
@@ -558,15 +540,15 @@ const technologies = [
             > */}
             <div>
               <Badge className="bg-pink-600/80 dark:bg-pink-900/30 dark:text-pink-400 border-transparent mb-4 px-3 py-1">
-                {t('badge.6')}
+                {t("badge.6")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
                 <GradientText gradient="from-pink-400 via-pink-500 dark:from-gray-200 dark:via-pink-400 to-pink-400">
-                  {t('sections.5.title')}
+                  {t("sections.5.title")}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-amber-50 text-lg max-w-2xl mx-auto">
-                {t('sections.5.desc')}
+                {t("sections.5.desc")}
               </p>
             </div>
             {/* </motion.div> */}
@@ -579,43 +561,39 @@ const technologies = [
                   value="general"
                   className="data-[state=active]:bg-pink-900/30 data-[state=active]:text-white"
                 >
-                  {t('sections.5.tab.1')}
+                  {t("sections.5.tab.1")}
                 </TabsTrigger>
                 <TabsTrigger
                   value="technical"
                   className="data-[state=active]:bg-pink-900/30 data-[state=active]:text-white"
                 >
-                  {t('sections.5.tab.2')}
+                  {t("sections.5.tab.2")}
                 </TabsTrigger>
                 <TabsTrigger
                   value="pricing"
                   className="data-[state=active]:bg-pink-900/30 data-[state=active]:text-white"
                 >
-                  {t('sections.5.tab.3')}
+                  {t("sections.5.tab.3")}
                 </TabsTrigger>
               </TabsList>
 
               <TabsContent value="general" className="space-y-4">
                 {[
                   {
-                    question: t('sections.5.QA.1.Q'),
-                    answer:
-                    t('sections.5.QA.1.A'),
+                    question: t("sections.5.QA.1.Q"),
+                    answer: t("sections.5.QA.1.A"),
                   },
                   {
-                    question: t('sections.5.QA.2.Q'),
-                    answer:
-                      t('sections.5.QA.2.A'),
+                    question: t("sections.5.QA.2.Q"),
+                    answer: t("sections.5.QA.2.A"),
                   },
                   {
-                    question: t('sections.5.QA.3.Q'),
-                    answer:
-                      t('sections.5.QA.3.A'),
+                    question: t("sections.5.QA.3.Q"),
+                    answer: t("sections.5.QA.3.A"),
                   },
                   {
-                    question: t('sections.5.QA.4.Q'),
-                    answer:
-                      t('sections.5.QA.4.A'),
+                    question: t("sections.5.QA.4.Q"),
+                    answer: t("sections.5.QA.4.A"),
                   },
                 ].map((faq, index) => (
                   <div
@@ -626,7 +604,9 @@ const technologies = [
                       {faq.question}
                     </h4>
                     {/* NEED TO ADJUST */}
-                    <p className="text-white/80 dark:text-white/70">{faq.answer}</p>
+                    <p className="text-white/80 dark:text-white/70">
+                      {faq.answer}
+                    </p>
                   </div>
                 ))}
               </TabsContent>
@@ -634,26 +614,20 @@ const technologies = [
               <TabsContent value="technical" className="space-y-4">
                 {[
                   {
-                    question:
-                      t('sections.5.QA.5.Q'),
-                    answer:
-                      t('sections.5.QA.5.A'),
+                    question: t("sections.5.QA.5.Q"),
+                    answer: t("sections.5.QA.5.A"),
                   },
                   {
-                    question: t('sections.5.QA.6.Q'),
-                    answer:
-                      t('sections.5.QA.6.A'),
+                    question: t("sections.5.QA.6.Q"),
+                    answer: t("sections.5.QA.6.A"),
                   },
                   {
-                    question:
-                      t('sections.5.QA.7.Q'),
-                    answer:
-                      t('sections.5.QA.7.A'),
+                    question: t("sections.5.QA.7.Q"),
+                    answer: t("sections.5.QA.7.A"),
                   },
                   {
-                    question: t('sections.5.QA.8.Q'),
-                    answer:
-                      t('sections.5.QA.8.A'),
+                    question: t("sections.5.QA.8.Q"),
+                    answer: t("sections.5.QA.8.A"),
                   },
                 ].map((faq, index) => (
                   <div
@@ -663,7 +637,9 @@ const technologies = [
                     <h4 className="text-lg font-bold text-pink-950 dark:text-white mb-2">
                       {faq.question}
                     </h4>
-                    <p className=" text-white/80dark:text-white/70">{faq.answer}</p>
+                    <p className=" text-white/80dark:text-white/70">
+                      {faq.answer}
+                    </p>
                   </div>
                 ))}
               </TabsContent>
@@ -671,25 +647,20 @@ const technologies = [
               <TabsContent value="pricing" className="space-y-4">
                 {[
                   {
-                    question: t('sections.5.QA.9.Q'),
-                    answer:
-                      t('sections.5.QA.9.A'),
+                    question: t("sections.5.QA.9.Q"),
+                    answer: t("sections.5.QA.9.A"),
                   },
                   {
-                    question: t('sections.5.QA.10.Q'),
-                    answer:
-                      t('sections.5.QA.10.A'),
+                    question: t("sections.5.QA.10.Q"),
+                    answer: t("sections.5.QA.10.A"),
                   },
                   {
-                    question: t('sections.5.QA.11.Q'),
-                    answer:
-                      t('sections.5.QA.11.A'),
+                    question: t("sections.5.QA.11.Q"),
+                    answer: t("sections.5.QA.11.A"),
                   },
                   {
-                    question:
-                      t('sections.5.QA.12.Q'),
-                    answer:
-                      t('sections.5.QA.12.A'),
+                    question: t("sections.5.QA.12.Q"),
+                    answer: t("sections.5.QA.12.A"),
                   },
                 ].map((faq, index) => (
                   <div
@@ -699,7 +670,9 @@ const technologies = [
                     <h4 className="text-lg font-bold text-pink-950 dark:text-white mb-2">
                       {faq.question}
                     </h4>
-                    <p className="text-white/80 dark:text-white/70">{faq.answer}</p>
+                    <p className="text-white/80 dark:text-white/70">
+                      {faq.answer}
+                    </p>
                   </div>
                 ))}
               </TabsContent>
@@ -720,10 +693,10 @@ const technologies = [
           > */}
           <div className="max-w-4xl mx-auto bg-pink-900 dark:bg-black/60 border border-pink-900 rounded-xl p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              {t('cta.title')}
+              {t("cta.title")}
             </h2>
             <p className="text-lg text-white/80 dark:text-white/70 mb-8 max-w-2xl mx-auto">
-              {t('cta.desc')}
+              {t("cta.desc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -732,7 +705,7 @@ const technologies = [
                      dark:hover:from-pink-600 dark:hover:to-pink-800 text-white border border-pink-800/30 shadow-lg shadow-pink-950/20 px-8"
                 onClick={() => router.push("/contact")}
               >
-                {t('quoteBtn')}
+                {t("quoteBtn")}
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
               <Button
@@ -741,7 +714,7 @@ const technologies = [
                 className="border-pink-800/30 text-white dark:text-pink-400 bg-pink-500/40 dark:bg-pink-950/20 hover:bg-pink-800/80 dark:hover:bg-pink-950/30 hover:text-white dark:hover:text-white px-8"
                 onClick={() => router.push("/portfolio")}
               >
-                {t('workBtn')}
+                {t("workBtn")}
               </Button>
             </div>
           </div>
