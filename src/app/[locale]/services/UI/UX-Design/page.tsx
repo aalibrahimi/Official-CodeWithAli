@@ -180,17 +180,17 @@ const UIUXDesignPage = () => {
       highlighted: true,
     },
     {
-      title: t("section.5.package.3.title"),
+      title: t("sections.5.package.3.title"),
       price: "Custom",
-      description: t("section.5.package.3.desc"),
+      description: t("sections.5.package.3.desc"),
       features: [
-        t("section.5.package.3.features.1"),
-        t("section.5.package.3.features.2"),
-        t("section.5.package.3.features.3"),
-        t("section.5.package.3.features.4"),
-        t("section.5.package.3.features.5"),
-        t("section.5.package.3.features.6"),
-        t("section.5.package.3.features.7"),
+        t("sections.5.package.3.features.1"),
+        t("sections.5.package.3.features.2"),
+        t("sections.5.package.3.features.3"),
+        t("sections.5.package.3.features.4"),
+        t("sections.5.package.3.features.5"),
+        t("sections.5.package.3.features.6"),
+        t("sections.5.package.3.features.7"),
       ],
     },
   ];
@@ -600,7 +600,7 @@ const UIUXDesignPage = () => {
       <div className="h-64"> {/* Adjust height as needed to fit your content */}
         {pkg.highlighted && (
           <Badge className="bg-purple-600 dark:bg-purple-900/30 dark:text-purple-400 border-transparent self-start mb-4">
-            Most Popular
+            {t('sections.5.package.whatIncluded')}
           </Badge>
         )}
         <h3 className="text-2xl font-bold text-black dark:text-white mb-2">
@@ -612,7 +612,7 @@ const UIUXDesignPage = () => {
           </span>
           {pkg.price !== "Custom" && (
             <span className="text-black/80 dark:text-purple-200/60 ml-1">
-              starting
+              {t('sections.5.package.startLabel')}
             </span>
           )}
         </div>

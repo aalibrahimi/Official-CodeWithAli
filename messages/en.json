@@ -900,6 +900,7 @@
         "desc": "Flexible options designed to meet the needs of businesses at every stage of growth.",
         "package": {
           "startBtn": "Get Started",
+          "startLabel": "starting",
           "whatIncluded": "What's Included:",
           "1": {
             "title": "Essential",
@@ -927,7 +928,7 @@
           },
           "3": {
             "title": "Enterprise",
-            "desc": "",
+            "desc": "Tailored solution for large organizations with complex requirements and multiple platforms.",
             "features": {
               "1": "Tailored solution for large organizations with complex requirements and multiple platforms.",
               "2": "Everything in Professional",
