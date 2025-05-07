@@ -214,7 +214,7 @@ const WebHostingPage = (): JSX.Element => {
               {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
             > */}
             <div className="max-w-3xl">
-              <Badge className="bg-gray-600/80 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-gray-600 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.1")}
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
@@ -237,7 +237,7 @@ const WebHostingPage = (): JSX.Element => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-gray-700 text-gray-900 dark:text-gray-400 bg-gray-300/40 dark:bg-gray-950/20 hover:bg-gray-800/80 dark:hover:bg-gray-950/30 hover:text-white dark:hover:text-white"
+                  className="border-gray-700 text-white dark:text-gray-400 bg-gray-300/40 dark:bg-gray-950/20 hover:bg-gray-800/80 dark:hover:bg-gray-950/30 hover:text-white dark:hover:text-white"
                   onClick={() => router.push("#packages")}
                 >
                   {t("plansBtn")}
@@ -266,7 +266,7 @@ const WebHostingPage = (): JSX.Element => {
               {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
             > */}
             <div className="text-center mb-16">
-              <Badge className="bg-gray-600/80 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-gray-600 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.2")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
@@ -288,7 +288,7 @@ const WebHostingPage = (): JSX.Element => {
                 //   {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
                 // >
                 <div key={index}>
-                  <Card className="bg-gray-600/80 dark:bg-black/60 border-gray-900 h-full group hover:border-gray-800/50 transition-colors">
+                  <Card className="bg-gray-300 dark:bg-black/60 border-gray-900 h-full group hover:border-gray-800/50 transition-colors">
                     <CardContent className="p-6">
                       <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-gray-700 to-gray-900 p-3 mb-4">
                         <service.icon className="w-full h-full text-white" />
@@ -296,13 +296,15 @@ const WebHostingPage = (): JSX.Element => {
                       <h3 className="text-xl font-bold dark:text-white mb-3">
                         {service.title}
                       </h3>
-                      <p className="text-white mb-4">{service.description}</p>
+                      <p className="text-black dark:text-white mb-4">
+                        {service.description}
+                      </p>
 
                       <ul className="space-y-2">
                         {service.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start">
                             <ChevronRight className="h-4 w-4 text-gray-900 dark:text-gray-500 mt-1 mr-2 flex-shrink-0" />
-                            <span className="text-gray-200/90 dark:text-gray-200/80 text-sm">
+                            <span className="text-black  dark:text-gray-200/80 text-sm">
                               {feature}
                             </span>
                           </li>
@@ -325,7 +327,7 @@ const WebHostingPage = (): JSX.Element => {
               {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
             > */}
             <div className="text-center mb-16">
-              <Badge className="bg-gray-600/80 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-gray-600 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.3")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
@@ -377,14 +379,14 @@ const WebHostingPage = (): JSX.Element => {
                 //   {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
                 // >
                 <div key={index}>
-                  <div className="bg-gray-600/80 dark:bg-black/60 border border-gray-900 rounded-xl p-6 h-full">
+                  <div className="bg-gray-300 dark:bg-black/60 border border-gray-900 rounded-xl p-6 h-full">
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-gray-700 to-gray-900 p-3 mb-4">
                       <benefit.icon className="w-full h-full text-white" />
                     </div>
                     <h3 className="text-xl font-bold text-black dark:text-white mb-3">
                       {benefit.title}
                     </h3>
-                    <p className="text-white/80 dark:text-white">
+                    <p className="text-black/80 dark:text-white">
                       {benefit.description}
                     </p>
                   </div>
@@ -403,7 +405,7 @@ const WebHostingPage = (): JSX.Element => {
               {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
             > */}
             <div className="text-center mb-16">
-              <Badge className="bg-gray-600/80 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-gray-600 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.4")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
@@ -424,7 +426,7 @@ const WebHostingPage = (): JSX.Element => {
                 //   {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
                 // >
                 <div key={index}>
-                  <Card className="bg-gray-600/80 dark:bg-black/60 border-gray-900 h-full">
+                  <Card className="bg-gray-300 dark:bg-black/60 border-gray-900 h-full">
                     <CardContent className="p-6">
                       <h3 className="text-lg font-bold dark:text-white mb-4">
                         {tech.category}
@@ -433,7 +435,7 @@ const WebHostingPage = (): JSX.Element => {
                         {tech.technologies.map((item, idx) => (
                           <li key={idx} className="flex items-center">
                             <div className="w-2 h-2 bg-gray-800 dark:bg-gray-600 rounded-full mr-3"></div>
-                            <span className="text-white/80 dark:text-gray-200/80">
+                            <span className="text-black/80 dark:text-gray-200/80">
                               {item}
                             </span>
                           </li>
@@ -456,7 +458,7 @@ const WebHostingPage = (): JSX.Element => {
               {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
             > */}
             <div className="text-center mb-16">
-              <Badge className="bg-gray-600/80 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-gray-600 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.5")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
@@ -522,19 +524,21 @@ const WebHostingPage = (): JSX.Element => {
                   )} */}
 
                   {/* Added a h-75 to this so they all are equal heights */}
-                  <div className="bg-gray-600/80 dark:bg-black/60 border border-gray-900 rounded-xl p-6 relative z-10 h-75">
+                  <div className="bg-gray-300 dark:bg-black/60 border border-gray-900 rounded-xl p-6 relative z-10 h-75">
                     <div className="flex flex-col items-center mb-4">
-                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center mb-4">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-black to-black flex items-center justify-center mb-4">
                         <step.icon className="h-6 w-6 text-white" />
                       </div>
-                      <div className="bg-gray-950/30 rounded px-2 py-0.5 text-xs font-bold text-gray-200 dark:text-gray-400 mb-2">
+                      <div className="bg-black dark:bg-white/60  rounded px-2 py-0.5 text-xs font-bold text-gray-200 dark:text-black mb-2">
                         {t("sections.4.cards.stepLabel")} {step.step}
                       </div>
                       <h3 className="text-xl font-bold text-black dark:text-white text-center">
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-white text-center">{step.description}</p>
+                    <p className="text-black text-center dark:text-white">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
                 // </motion.div>
@@ -546,12 +550,8 @@ const WebHostingPage = (): JSX.Element => {
         {/* Pricing */}
         <section id="packages" className="py-20">
           <div className="container mx-auto px-4 md:px-8 lg:px-12">
-            {/* <motion.div
-              className="text-center mb-16"
-              {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
-            > */}
             <div className="text-center mb-16">
-              <Badge className="bg-gray-600/80 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-gray-600 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.6")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
@@ -563,44 +563,43 @@ const WebHostingPage = (): JSX.Element => {
                 {t("sections.5.desc")}
               </p>
             </div>
-            {/* </motion.div> */}
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {hostingPackages.map((pkg, index) => (
-                // <motion.div
-                //   key={index}
-                //   {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
-                //   className="h-full"
-                // >
                 <div key={index} className="h-full">
                   <Card
-                    className={`bg-gray-600/80 dark:bg-black/60 h-full flex flex-col ${
+                    className={`bg-gray-300 dark:bg-black/60 h-full flex flex-col ${
                       pkg.highlighted
                         ? "border-gray-600 shadow-lg shadow-gray-950/30"
                         : "dark:border-gray-900"
                     }`}
                   >
-                    <CardContent className="p-6 flex-grow flex flex-col">
-                      {pkg.highlighted && (
-                        <Badge className="bg-gray-700 text-white border-transparent self-start mb-4">
-                          {t("sections.5.packages.badge")}
-                        </Badge>
-                      )}
-                      <h3 className="text-2xl font-bold text-black dark:text-white mb-2">
-                        {pkg.title}
-                      </h3>
-                      <div className="mb-4">
-                        <span className="text-3xl font-bold text-gray-950 dark:text-gray-400">
-                          {pkg.price}
-                        </span>
-                        <span className="text-gray-950 dark:text-gray-200/60 ml-1">
-                          {pkg.period}
-                        </span>
+                    <CardContent className="p-6 flex flex-col h-full">
+                      {/* Fixed height top section */}
+                      <div className="h-64">
+                        {pkg.highlighted && (
+                          <Badge className="bg-gray-700 text-white border-transparent self-start mb-4">
+                            {t("sections.5.packages.badge")}
+                          </Badge>
+                        )}
+                        <h3 className="text-2xl font-bold text-black dark:text-white mb-2">
+                          {pkg.title}
+                        </h3>
+                        <div className="mb-4">
+                          <span className="text-3xl font-bold text-gray-950 dark:text-gray-400">
+                            {pkg.price}
+                          </span>
+                          <span className="text-gray-950 dark:text-gray-200/60 ml-1">
+                            {pkg.period}
+                          </span>
+                        </div>
+                        <p className="text-black dark:text-white">
+                          {pkg.description}
+                        </p>
                       </div>
-                      <p className="text-white mb-6">{pkg.description}</p>
 
-                      {/* Need to fix mt-auto, it causes spacing issues */}
-                      <div className="mt-auto">
+                      {/* Features section with flex-grow to push button to bottom */}
+                      <div className="flex-grow flex flex-col">
                         <div className="border-t border-gray-900 pt-6 mb-6">
                           <h4 className="font-bold text-gray-950 dark:text-white mb-4">
                             {t("sections.5.packages.includedLabel")}
@@ -609,7 +608,7 @@ const WebHostingPage = (): JSX.Element => {
                             {pkg.features.map((feature, idx) => (
                               <li key={idx} className="flex items-start">
                                 <CheckCircle className="h-5 w-5 text-gray-950 dark:text-gray-500 mr-3 flex-shrink-0" />
-                                <span className="text-white/80 dark:text-gray-200/80">
+                                <span className="text-black dark:text-gray-200/80">
                                   {feature}
                                 </span>
                               </li>
@@ -617,22 +616,24 @@ const WebHostingPage = (): JSX.Element => {
                           </ul>
                         </div>
 
-                        <Button
-                          className={`w-full ${
-                            pkg.highlighted
-                              ? "bg-gradient-to-r from-gray-600 to-gray-700 dark:from-gray-700 dark:to-gray-900 hover:from-gray-700 hover:to-gray-800 dark:hover:from-gray-600 dark:hover:to-gray-800 dark:text-white"
-                              : "bg-black border border-gray-800/30 text-white dark:text-gray-400 hover:bg-gray-950/20"
-                          }`}
-                          onClick={() => router.push("/contact")}
-                        >
-                          {t("sections.5.packages.startBtn")}
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
+                        {/* Button always at the bottom */}
+                        <div className="mt-auto pt-4">
+                          <Button
+                            className={`w-full ${
+                              pkg.highlighted
+                                ? "bg-gradient-to-r from-gray-600 to-gray-700 dark:from-gray-700 dark:to-gray-900 hover:from-gray-700 hover:to-gray-800 dark:hover:from-gray-600 dark:hover:to-gray-800 dark:text-white"
+                                : "bg-black border border-gray-800/30 text-white dark:text-gray-400 hover:bg-gray-950/20"
+                            }`}
+                            onClick={() => router.push("/contact")}
+                          >
+                            {t("sections.5.packages.startBtn")}
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </div>
                       </div>
                     </CardContent>
                   </Card>
                 </div>
-                // </motion.div>
               ))}
             </div>
           </div>
@@ -642,14 +643,14 @@ const WebHostingPage = (): JSX.Element => {
         <section className="py-20 dark:bg-gradient-to-b dark:from-gray-950/10 dark:to-black">
           <div className="container mx-auto px-4 md:px-8 lg:px-12">
             {/* <motion.div
-              className="max-w-4xl mx-auto bg-gray-600/80 dark:bg-black/60 border border-gray-900 rounded-xl p-8 md:p-12 text-center"
+              className="max-w-4xl mx-auto bg-gray-300 dark:bg-black/60 border border-gray-900 rounded-xl p-8 md:p-12 text-center"
               {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
             > */}
-            <div className="max-w-4xl mx-auto bg-gray-600/80 dark:bg-black/60 border border-gray-900 rounded-xl p-8 md:p-12 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <div className="max-w-4xl mx-auto bg-gray-300 dark:bg-black/60 border border-gray-900 rounded-xl p-8 md:p-12 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-black mb-6">
                 {t("cta.title")}
               </h2>
-              <p className="text-lg text-white mb-8 max-w-2xl mx-auto">
+              <p className="text-lg  dark:text-white text-black mb-8 max-w-2xl mx-auto">
                 {t("cta.desc")}
               </p>
               <Button

@@ -188,27 +188,23 @@ const SEOOptimizationPage = () => {
   const resultMetrics = [
     {
       stat: "45%",
-      label: t('sections.2.metrics.1.title'),
-      description:
-        t('sections.2.metrics.1.desc'),
+      label: t("sections.2.metrics.1.title"),
+      description: t("sections.2.metrics.1.desc"),
     },
     {
       stat: "85%",
-      label: t('sections.2.metrics.2.title'),
-      description:
-        t('sections.2.metrics.2.desc'),
+      label: t("sections.2.metrics.2.title"),
+      description: t("sections.2.metrics.2.desc"),
     },
     {
       stat: "32%",
-      label: t('sections.2.metrics.3.title'),
-      description:
-        t('sections.2.metrics.3.desc'),
+      label: t("sections.2.metrics.3.title"),
+      description: t("sections.2.metrics.3.desc"),
     },
     {
       stat: "65%",
-      label: t('sections.2.metrics.4.title'),
-      description:
-        t('sections.2.metrics.4.desc'),
+      label: t("sections.2.metrics.4.title"),
+      description: t("sections.2.metrics.4.desc"),
     },
   ];
 
