@@ -1408,6 +1408,211 @@
       "desc": "Get a complimentary SEO audit and discover opportunities to improve your website's visibility in search engines.",
       "reqBtn": "Request Your Free SEO Audit"
     }
+  },
+  "Hosting": {
+    "badge": {
+      "1": "WEB HOSTING & MAINTENANCE",
+      "2": "OUR SERVICES",
+      "3": "BENEFITS",
+      "4": "TECHNOLOGY",
+      "5": "OUR PROCESS",
+      "6": "PRICING"
+    },
+    "title": {
+      "1": "Reliable Hosting",
+      "2": "& Expert Maintenance"
+    },
+    "desc": "Keep your website secure, fast, and always online with our professional hosting and maintenance services backed by 24/7 monitoring and support.",
+    "startBtn": "Get Started Today",
+    "plansBtn": "View Hosting Plans",
+    "sections": {
+      "1": {
+        "title": "Comprehensive Hosting Solutions",
+        "desc": "Beyond just server space, we provide a full suite of services to keep your website performing at its best.",
+        "hostFeatures": {
+          "1": {
+            "title": "Managed Hosting",
+            "desc": "Fully managed hosting environment with expert monitoring and optimization for optimal performance.",
+            "features": {
+              "1": "24/7 Server Monitoring",
+              "2": "Performance Optimization",
+              "3": "Resource Management",
+              "4": "Scalable Infrastructure"
+            }
+          },
+          "2": {
+            "title": "Security Services",
+            "desc": "Comprehensive security measures to protect your website from threats and vulnerabilities.",
+            "features": {
+              "1": "Malware Scanning",
+              "2": "DDoS Protection",
+              "3": "SSL Certificates",
+              "4": "Firewall Configuration"
+            }
+          },
+          "3": {
+            "title": "Performance Monitoring",
+            "desc": "Continuous monitoring and optimization to ensure your website maintains peak performance.",
+            "features": {
+              "1": "Uptime Monitoring",
+              "2": "Page Speed Analysis",
+              "3": "Load Testing",
+              "4": "Performance Reports"
+            }
+          },
+          "4": {
+            "title": "Regular Backups",
+            "desc": "Automated backup systems ensuring your data is always safe and recoverable in case of emergencies.",
+            "features": {
+              "1": "Daily Automated Backups",
+              "2": "Secure Offsite Storage",
+              "3": "Quick Restoration",
+              "4": "Data Retention Policies"
+            }
+          }
+        }
+      },
+      "2": {
+        "title": "Why Choose Our Hosting",
+        "desc": "Experience the peace of mind that comes with professional, managed hosting solutions.",
+        "cards": {
+          "1": {
+            "title": "Superior Performance",
+            "desc": "Optimized server configurations and premium hardware deliver lightning-fast loading times for your visitors."
+          },
+          "2": {
+            "title": "Enhanced Security",
+            "desc": "Advanced security protocols and continuous monitoring protect your site from threats and vulnerabilities."
+          },
+          "3": {
+            "title": "Exceptional Uptime",
+            "desc": "Our robust infrastructure and proactive monitoring ensures your website stays online 99.9% of the time."
+          },
+          "4": {
+            "title": "Regular Updates",
+            "desc": "Automatic updates for your CMS, plugins, and server software keep your site secure and functioning smoothly."
+          },
+          "5": {
+            "title": "Seamless Scalability",
+            "desc": "Easily scale your resources as your business grows, without service interruptions or technical headaches."
+          },
+          "6": {
+            "title": "Data Protection",
+            "desc": "Automated backup systems ensure your valuable data is always protected and quickly recoverable."
+          }
+        }
+      },
+      "3": {
+        "title": "Our Technology Stack",
+        "desc": "We leverage industry-leading technologies to deliver reliable, secure, and high-performance hosting solutions.",
+        "stack": {
+          "1": {
+            "category": "Hosting Infrastructure"
+          },
+          "2": {
+            "category": "Content Delivery"
+          },
+          "3": {
+            "category": "Database Solutions"
+          },
+          "4": {
+            "category": "CMS Platforms"
+          }
+        }
+      },
+      "4": {
+        "title": "How We Maintain Your Website",
+        "desc": "Our systematic approach ensures your website remains secure, updated, and performing optimally.",
+        "cards": {
+          "stepLabel": "STEP",
+          "1": {
+            "title": "Server Monitoring",
+            "desc": "We continuously monitor your server for uptime, resource usage, and potential issues to ensure optimal performance."
+          },
+          "2": {
+            "title": "Regular Updates",
+            "desc": "We perform regular updates to your CMS, plugins, themes, and server software to maintain security and functionality."
+          },
+          "3": {
+            "title": "Security Scans",
+            "desc": "We conduct regular security scans to identify and remediate vulnerabilities before they can be exploited."
+          },
+          "4": {
+            "title": "Performance Testing",
+            "desc": "We regularly test your site's performance and make necessary optimizations to improve speed and user experience."
+          },
+          "5": {
+            "title": "Backup Management",
+            "desc": "We maintain regular backups of your site and database, ensuring your data is always protected and recoverable."
+          },
+          "6": {
+            "title": "Proactive Support",
+            "desc": "We address potential issues before they impact your site, and provide fast resolution when problems arise."
+          }
+        }
+      },
+      "5": {
+        "title": "Hosting & Maintenance Plans",
+        "desc": "Choose the hosting solution that best fits your business needs and budget.",
+        "packages": {
+          "badge": "Most Popular",
+          "includedLabel": "What's Included:",
+          "startBtn": "Get Started",
+          "1": {
+            "title": "Standard",
+            "desc": "Perfect for small business websites and blogs with moderate traffic.",
+            "period": "per month",
+            "features": {
+              "1": "Shared Hosting Environment",
+              "2": "5GB Storage",
+              "3": "50GB Monthly Bandwidth",
+              "4": "Weekly Backups",
+              "5": "SSL Certificate",
+              "6": "Basic Security Protection",
+              "7": "Email Support"
+            }
+          },
+          "2": {
+            "title": "Professional",
+            "desc": "Ideal for growing businesses, e-commerce sites, and high-traffic content sites.",
+            "period": "per month",
+            "features": {
+              "1": "VPS Hosting",
+              "2": "20GB SSD Storage",
+              "3": "Unlimited Bandwidth",
+              "4": "Daily Backups",
+              "5": "Premium SSL Certificate",
+              "6": "Advanced Security Protection",
+              "7": "CDN Integration",
+              "8": "Priority Support",
+              "9": "Monthly Performance Reports"
+            }
+          },
+          "3": {
+            "title": "Enterprise",
+            "desc": "Comprehensive solution for large businesses with complex requirements and high traffic volumes.",
+            "period": "per month",
+            "features": {
+              "1": "Dedicated Hosting",
+              "2": "100GB SSD Storage",
+              "3": "Unlimited Bandwidth",
+              "4": "Real-time Backups",
+              "5": "Extended Validation SSL",
+              "6": "Enterprise-grade Security",
+              "7": "Global CDN",
+              "8": "Load Balancing",
+              "9": "24/7 Dedicated Support",
+              "10": "Custom Infrastructure"
+            }
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready for Reliable Hosting?",
+      "desc": "Get in touch today to discuss your hosting needs and learn how our solutions can help your business maintain a secure, fast, and reliable online presence.",
+      "startBtn": "Get Started Today"
+    }
   }
 },
   "Portfolio" : {

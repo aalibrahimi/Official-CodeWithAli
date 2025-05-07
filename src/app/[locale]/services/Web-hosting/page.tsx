@@ -27,6 +27,7 @@ import {
   createBrowserOptimizedVariants,
 } from "../../../utils/browser-compatibility";
 import GradientText from "@/MyComponents/GradientText";
+import { useTranslations } from "next-intl";
 
 // Types for our data
 interface HostingFeature {
@@ -63,138 +64,130 @@ interface ProcessStep {
   description: string;
 }
 
-// Hosting features data
-const hostingFeatures: HostingFeature[] = [
-  {
-    title: "Managed Hosting",
-    description:
-      "Fully managed hosting environment with expert monitoring and optimization for optimal performance.",
-    icon: Server,
-    features: [
-      "24/7 Server Monitoring",
-      "Performance Optimization",
-      "Resource Management",
-      "Scalable Infrastructure",
-    ],
-  },
-  {
-    title: "Security Services",
-    description:
-      "Comprehensive security measures to protect your website from threats and vulnerabilities.",
-    icon: Shield,
-    features: [
-      "Malware Scanning",
-      "DDoS Protection",
-      "SSL Certificates",
-      "Firewall Configuration",
-    ],
-  },
-  {
-    title: "Performance Monitoring",
-    description:
-      "Continuous monitoring and optimization to ensure your website maintains peak performance.",
-    icon: BarChart,
-    features: [
-      "Uptime Monitoring",
-      "Page Speed Analysis",
-      "Load Testing",
-      "Performance Reports",
-    ],
-  },
-  {
-    title: "Regular Backups",
-    description:
-      "Automated backup systems ensuring your data is always safe and recoverable in case of emergencies.",
-    icon: Clock,
-    features: [
-      "Daily Automated Backups",
-      "Secure Offsite Storage",
-      "Quick Restoration",
-      "Data Retention Policies",
-    ],
-  },
-];
-
-// Technology stack
-const techStack: TechCategory[] = [
-  {
-    category: "Hosting Infrastructure",
-    technologies: ["AWS", "Google Cloud", "DigitalOcean", "Linode"],
-  },
-  {
-    category: "Content Delivery",
-    technologies: ["Cloudflare", "AWS CloudFront", "Fastly", "Akamai"],
-  },
-  {
-    category: "Database Solutions",
-    technologies: ["MySQL", "PostgreSQL", "MongoDB", "Redis"],
-  },
-  {
-    category: "CMS Platforms",
-    technologies: ["WordPress", "Drupal", "Shopify", "Custom Solutions"],
-  },
-];
-
-// Hosting packages
-const hostingPackages: HostingPackage[] = [
-  {
-    title: "Standard",
-    price: "$49",
-    period: "per month",
-    description:
-      "Perfect for small business websites and blogs with moderate traffic.",
-    features: [
-      "Shared Hosting Environment",
-      "5GB Storage",
-      "50GB Monthly Bandwidth",
-      "Weekly Backups",
-      "SSL Certificate",
-      "Basic Security Protection",
-      "Email Support",
-    ],
-  },
-  {
-    title: "Professional",
-    price: "$129",
-    period: "per month",
-    description:
-      "Ideal for growing businesses, e-commerce sites, and high-traffic content sites.",
-    features: [
-      "VPS Hosting",
-      "20GB SSD Storage",
-      "Unlimited Bandwidth",
-      "Daily Backups",
-      "Premium SSL Certificate",
-      "Advanced Security Protection",
-      "CDN Integration",
-      "Priority Support",
-      "Monthly Performance Reports",
-    ],
-    highlighted: true,
-  },
-  {
-    title: "Enterprise",
-    price: "$299",
-    period: "per month",
-    description:
-      "Comprehensive solution for large businesses with complex requirements and high traffic volumes.",
-    features: [
-      "Dedicated Hosting",
-      "100GB SSD Storage",
-      "Unlimited Bandwidth",
-      "Real-time Backups",
-      "Extended Validation SSL",
-      "Enterprise-grade Security",
-      "Global CDN",
-      "Load Balancing",
-      "24/7 Dedicated Support",
-      "Custom Infrastructure",
-    ],
-  },
-];
-
 const WebHostingPage = (): JSX.Element => {
   const router = useRouter();
+  const t = useTranslations("ServicePage.Hosting");
+
+  // Hosting features data
+  const hostingFeatures: HostingFeature[] = [
+    {
+      title: t("sections.1.hostFeatures.1.title"),
+      description: t("sections.1.hostFeatures.1.desc"),
+      icon: Server,
+      features: [
+        t("sections.1.hostFeatures.1.features.1"),
+        t("sections.1.hostFeatures.1.features.2"),
+        t("sections.1.hostFeatures.1.features.3"),
+        t("sections.1.hostFeatures.1.features.4"),
+      ],
+    },
+    {
+      title: t("sections.1.hostFeatures.2.title"),
+      description: t("sections.1.hostFeatures.2.desc"),
+      icon: Shield,
+      features: [
+        t("sections.1.hostFeatures.2.features.1"),
+        t("sections.1.hostFeatures.2.features.2"),
+        t("sections.1.hostFeatures.2.features.3"),
+        t("sections.1.hostFeatures.2.features.4"),
+      ],
+    },
+    {
+      title: t("sections.1.hostFeatures.3.title"),
+      description: t("sections.1.hostFeatures.3.desc"),
+      icon: BarChart,
+      features: [
+        t("sections.1.hostFeatures.3.features.1"),
+        t("sections.1.hostFeatures.3.features.2"),
+        t("sections.1.hostFeatures.3.features.3"),
+        t("sections.1.hostFeatures.3.features.4"),
+      ],
+    },
+    {
+      title: t("sections.1.hostFeatures.4.title"),
+      description: t("sections.1.hostFeatures.4.desc"),
+      icon: Clock,
+      features: [
+        t("sections.1.hostFeatures.4.features.1"),
+        t("sections.1.hostFeatures.4.features.2"),
+        t("sections.1.hostFeatures.4.features.3"),
+        t("sections.1.hostFeatures.4.features.4"),
+      ],
+    },
+  ];
+
+  // Technology stack
+  const techStack: TechCategory[] = [
+    {
+      category: t("sections.3.stack.1.category"),
+      technologies: ["AWS", "Google Cloud", "DigitalOcean", "Linode"],
+    },
+    {
+      category: t("sections.3.stack.2.category"),
+      technologies: ["Cloudflare", "AWS CloudFront", "Fastly", "Akamai"],
+    },
+    {
+      category: t("sections.3.stack.3.category"),
+      technologies: ["MySQL", "PostgreSQL", "MongoDB", "Redis"],
+    },
+    {
+      category: t("sections.3.stack.4.category"),
+      technologies: ["WordPress", "Drupal", "Shopify", "Custom Solutions"],
+    },
+  ];
+
+  // Hosting packages
+  const hostingPackages: HostingPackage[] = [
+    {
+      title: t("sections.5.packages.1.title"),
+      price: "$49",
+      period: t("sections.5.packages.1.period"),
+      description: t("sections.5.packages.1.desc"),
+      features: [
+        t("sections.5.packages.1.features.1"),
+        t("sections.5.packages.1.features.2"),
+        t("sections.5.packages.1.features.3"),
+        t("sections.5.packages.1.features.4"),
+        t("sections.5.packages.1.features.5"),
+        t("sections.5.packages.1.features.6"),
+        t("sections.5.packages.1.features.7"),
+      ],
+    },
+    {
+      title: t("sections.5.packages.2.title"),
+      price: "$129",
+      period: t("sections.5.packages.2.period"),
+      description: t("sections.5.packages.2.desc"),
+      features: [
+        t("sections.5.packages.2.features.1"),
+        t("sections.5.packages.2.features.2"),
+        t("sections.5.packages.2.features.3"),
+        t("sections.5.packages.2.features.4"),
+        t("sections.5.packages.2.features.5"),
+        t("sections.5.packages.2.features.6"),
+        t("sections.5.packages.2.features.7"),
+      ],
+      highlighted: true,
+    },
+    {
+      title: t("sections.5.packages.3.title"),
+      price: "$299",
+      period: t("sections.5.packages.3.period"),
+      description: t("sections.5.packages.3.desc"),
+      features: [
+        t("sections.5.packages.3.features.1"),
+        t("sections.5.packages.3.features.2"),
+        t("sections.5.packages.3.features.3"),
+        t("sections.5.packages.3.features.4"),
+        t("sections.5.packages.3.features.5"),
+        t("sections.5.packages.3.features.6"),
+        t("sections.5.packages.3.features.7"),
+        t("sections.5.packages.3.features.8"),
+        t("sections.5.packages.3.features.9"),
+        t("sections.5.packages.3.features.10"),
+      ],
+    },
+  ];
 
   // I replaced The multiple useState and useEffect hooks with this single optimized hook
   // This fixes the re-rendering issues in Safari/Firefox by properly handling resize events
@@ -222,19 +215,15 @@ const WebHostingPage = (): JSX.Element => {
             > */}
             <div className="max-w-3xl">
               <Badge className="bg-gray-600/80 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
-                WEB HOSTING & MAINTENANCE
+                {t("badge.1")}
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Reliable Hosting
+                {t("title.1")}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-400 to-gray-300 dark:to-gray-500 block">
-                  & Expert Maintenance
+                  {t("title.2")}
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-white mb-8">
-                Keep your website secure, fast, and always online with our
-                professional hosting and maintenance services backed by 24/7
-                monitoring and support.
-              </p>
+              <p className="text-lg md:text-xl text-white mb-8">{t("desc")}</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   className="bg-gradient-to-r from-gray-500 to-gray-600 dark:from-gray-700 dark:to-gray-900 hover:from-gray-600 hover:to-gray-800 
@@ -242,7 +231,7 @@ const WebHostingPage = (): JSX.Element => {
                   size="lg"
                   onClick={() => router.push("/contact")}
                 >
-                  Get Started Today
+                  {t("startBtn")}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 <Button
@@ -251,7 +240,7 @@ const WebHostingPage = (): JSX.Element => {
                   className="border-gray-700 text-gray-900 dark:text-gray-400 bg-gray-300/40 dark:bg-gray-950/20 hover:bg-gray-800/80 dark:hover:bg-gray-950/30 hover:text-white dark:hover:text-white"
                   onClick={() => router.push("#packages")}
                 >
-                  View Hosting Plans
+                  {t("plansBtn")}
                   <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
@@ -278,16 +267,15 @@ const WebHostingPage = (): JSX.Element => {
             > */}
             <div className="text-center mb-16">
               <Badge className="bg-gray-600/80 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
-                OUR SERVICES
+                {t("badge.2")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
                 <GradientText gradient="from-gray-500 via-gray-400 to-gray-400 dark:from-white dark:to-gray-500">
-                  Comprehensive Hosting Solutions
+                  {t("sections.1.title")}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
-                Beyond just server space, we provide a full suite of services to
-                keep your website performing at its best.
+                {t("sections.1.desc")}
               </p>
             </div>
             {/* </motion.div> */}
@@ -338,16 +326,15 @@ const WebHostingPage = (): JSX.Element => {
             > */}
             <div className="text-center mb-16">
               <Badge className="bg-gray-600/80 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
-                BENEFITS
+                {t("badge.3")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
                 <GradientText gradient="from-gray-500 via-gray-400 to-gray-400 dark:from-white dark:to-gray-500">
-                  Why Choose Our Hosting
+                  {t("sections.2.title")}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
-                Experience the peace of mind that comes with professional,
-                managed hosting solutions.
+                {t("sections.2.desc")}
               </p>
             </div>
             {/* </motion.div> */}
@@ -356,39 +343,33 @@ const WebHostingPage = (): JSX.Element => {
               {[
                 {
                   icon: Zap,
-                  title: "Superior Performance",
-                  description:
-                    "Optimized server configurations and premium hardware deliver lightning-fast loading times for your visitors.",
+                  title: t("sections.2.cards.1.title"),
+                  description: t("sections.2.cards.1.desc"),
                 },
                 {
                   icon: Lock,
-                  title: "Enhanced Security",
-                  description:
-                    "Advanced security protocols and continuous monitoring protect your site from threats and vulnerabilities.",
+                  title: t("sections.2.cards.2.title"),
+                  description: t("sections.2.cards.2.desc"),
                 },
                 {
                   icon: Clock,
-                  title: "Exceptional Uptime",
-                  description:
-                    "Our robust infrastructure and proactive monitoring ensures your website stays online 99.9% of the time.",
+                  title: t("sections.2.cards.3.title"),
+                  description: t("sections.2.cards.3.desc"),
                 },
                 {
                   icon: RefreshCw,
-                  title: "Regular Updates",
-                  description:
-                    "Automatic updates for your CMS, plugins, and server software keep your site secure and functioning smoothly.",
+                  title: t("sections.2.cards.4.title"),
+                  description: t("sections.2.cards.4.desc"),
                 },
                 {
                   icon: Database,
-                  title: "Seamless Scalability",
-                  description:
-                    "Easily scale your resources as your business grows, without service interruptions or technical headaches.",
+                  title: t("sections.2.cards.5.title"),
+                  description: t("sections.2.cards.5.desc"),
                 },
                 {
                   icon: Shield,
-                  title: "Data Protection",
-                  description:
-                    "Automated backup systems ensure your valuable data is always protected and quickly recoverable.",
+                  title: t("sections.2.cards.6.title"),
+                  description: t("sections.2.cards.6.desc"),
                 },
               ].map((benefit, index) => (
                 // <motion.div
@@ -403,7 +384,9 @@ const WebHostingPage = (): JSX.Element => {
                     <h3 className="text-xl font-bold text-black dark:text-white mb-3">
                       {benefit.title}
                     </h3>
-                    <p className="text-white/80 dark:text-white">{benefit.description}</p>
+                    <p className="text-white/80 dark:text-white">
+                      {benefit.description}
+                    </p>
                   </div>
                 </div>
                 // </motion.div>
@@ -421,16 +404,15 @@ const WebHostingPage = (): JSX.Element => {
             > */}
             <div className="text-center mb-16">
               <Badge className="bg-gray-600/80 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
-                TECHNOLOGY
+                {t("badge.4")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
                 <GradientText gradient="from-gray-500 via-gray-400 to-gray-400 dark:from-white dark:to-gray-500">
-                  Our Technology Stack
+                  {t("sections.3.title")}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
-                We leverage industry-leading technologies to deliver reliable,
-                secure, and high-performance hosting solutions.
+                {t("sections.3.desc")}
               </p>
             </div>
             {/* </motion.div> */}
@@ -451,7 +433,9 @@ const WebHostingPage = (): JSX.Element => {
                         {tech.technologies.map((item, idx) => (
                           <li key={idx} className="flex items-center">
                             <div className="w-2 h-2 bg-gray-800 dark:bg-gray-600 rounded-full mr-3"></div>
-                            <span className="text-white/80 dark:text-gray-200/80">{item}</span>
+                            <span className="text-white/80 dark:text-gray-200/80">
+                              {item}
+                            </span>
                           </li>
                         ))}
                       </ul>
@@ -473,16 +457,15 @@ const WebHostingPage = (): JSX.Element => {
             > */}
             <div className="text-center mb-16">
               <Badge className="bg-gray-600/80 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
-                OUR PROCESS
+                {t("badge.5")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
                 <GradientText gradient="from-gray-500 via-gray-400 to-gray-400 dark:from-white dark:to-gray-500">
-                  How We Maintain Your Website
+                  {t("sections.4.title")}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
-                Our systematic approach ensures your website remains secure,
-                updated, and performing optimally.
+                {t("sections.4.desc")}
               </p>
             </div>
             {/* </motion.div> */}
@@ -492,44 +475,38 @@ const WebHostingPage = (): JSX.Element => {
                 {
                   icon: Cloud,
                   step: "01",
-                  title: "Server Monitoring",
-                  description:
-                    "We continuously monitor your server for uptime, resource usage, and potential issues to ensure optimal performance.",
+                  title: t("sections.4.cards.1.title"),
+                  description: t("sections.4.cards.1.desc"),
                 },
                 {
                   icon: RefreshCw,
                   step: "02",
-                  title: "Regular Updates",
-                  description:
-                    "We perform regular updates to your CMS, plugins, themes, and server software to maintain security and functionality.",
+                  title: t("sections.4.cards.2.title"),
+                  description: t("sections.4.cards.2.desc"),
                 },
                 {
                   icon: Shield,
                   step: "03",
-                  title: "Security Scans",
-                  description:
-                    "We conduct regular security scans to identify and remediate vulnerabilities before they can be exploited.",
+                  title: t("sections.4.cards.3.title"),
+                  description: t("sections.4.cards.3.desc"),
                 },
                 {
                   icon: BarChart,
                   step: "04",
-                  title: "Performance Testing",
-                  description:
-                    "We regularly test your site's performance and make necessary optimizations to improve speed and user experience.",
+                  title: t("sections.4.cards.4.title"),
+                  description: t("sections.4.cards.4.desc"),
                 },
                 {
                   icon: Download,
                   step: "05",
-                  title: "Backup Management",
-                  description:
-                    "We maintain regular backups of your site and database, ensuring your data is always protected and recoverable.",
+                  title: t("sections.4.cards.5.title"),
+                  description: t("sections.4.cards.5.desc"),
                 },
                 {
                   icon: Globe,
                   step: "06",
-                  title: "Proactive Support",
-                  description:
-                    "We address potential issues before they impact your site, and provide fast resolution when problems arise.",
+                  title: t("sections.4.cards.6.title"),
+                  description: t("sections.4.cards.6.desc"),
                 },
               ].map((step, index) => (
                 // <motion.div
@@ -551,7 +528,7 @@ const WebHostingPage = (): JSX.Element => {
                         <step.icon className="h-6 w-6 text-white" />
                       </div>
                       <div className="bg-gray-950/30 rounded px-2 py-0.5 text-xs font-bold text-gray-200 dark:text-gray-400 mb-2">
-                        STEP {step.step}
+                        {t("sections.4.cards.stepLabel")} {step.step}
                       </div>
                       <h3 className="text-xl font-bold text-black dark:text-white text-center">
                         {step.title}
@@ -575,16 +552,15 @@ const WebHostingPage = (): JSX.Element => {
             > */}
             <div className="text-center mb-16">
               <Badge className="bg-gray-600/80 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
-                PRICING
+                {t("badge.6")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
                 <GradientText gradient="from-gray-500 via-gray-400 to-gray-400 dark:from-white dark:to-gray-500">
-                  Hosting & Maintenance Plans
+                  {t("sections.5.title")}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
-                Choose the hosting solution that best fits your business needs
-                and budget.
+                {t("sections.5.desc")}
               </p>
             </div>
             {/* </motion.div> */}
@@ -607,7 +583,7 @@ const WebHostingPage = (): JSX.Element => {
                     <CardContent className="p-6 flex-grow flex flex-col">
                       {pkg.highlighted && (
                         <Badge className="bg-gray-700 text-white border-transparent self-start mb-4">
-                          Most Popular
+                          {t("sections.5.packages.badge")}
                         </Badge>
                       )}
                       <h3 className="text-2xl font-bold text-black dark:text-white mb-2">
@@ -627,7 +603,7 @@ const WebHostingPage = (): JSX.Element => {
                       <div className="mt-auto">
                         <div className="border-t border-gray-900 pt-6 mb-6">
                           <h4 className="font-bold text-gray-950 dark:text-white mb-4">
-                            What's Included:
+                            {t("sections.5.packages.includedLabel")}
                           </h4>
                           <ul className="space-y-3">
                             {pkg.features.map((feature, idx) => (
@@ -649,7 +625,7 @@ const WebHostingPage = (): JSX.Element => {
                           }`}
                           onClick={() => router.push("/contact")}
                         >
-                          Get Started
+                          {t("sections.5.packages.startBtn")}
                           <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
                       </div>
@@ -671,19 +647,17 @@ const WebHostingPage = (): JSX.Element => {
             > */}
             <div className="max-w-4xl mx-auto bg-gray-600/80 dark:bg-black/60 border border-gray-900 rounded-xl p-8 md:p-12 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Ready for Reliable Hosting?
+                {t("cta.title")}
               </h2>
               <p className="text-lg text-white mb-8 max-w-2xl mx-auto">
-                Get in touch today to discuss your hosting needs and learn how
-                our solutions can help your business maintain a secure, fast,
-                and reliable online presence.
+                {t("cta.desc")}
               </p>
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-gray-600 to-gray-700 dark:from-gray-700 dark:to-gray-900 hover:from-gray-700 hover:to-gray-800 dark:hover:from-gray-600 dark:hover:to-gray-800 dark:text-white border border-gray-800/30 shadow-lg shadow-gray-950/20 px-8"
                 onClick={() => router.push("/contact")}
               >
-                Get Started Today
+                {t("cta.startBtn")}
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
