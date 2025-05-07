@@ -667,7 +667,7 @@ const SEOOptimizationPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-orange-900/20 to-orange-900/90 dark:from-orange-950/10 dark:to-black">
+      <section className="py-20 dark:bg-gradient-to-b dark:from-orange-950/10 dark:to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12  ">
           {/* <motion.div 
             className="max-w-4xl mx-auto bg-black/60 border border-orange-900 rounded-xl p-8 md:p-12 text-center"

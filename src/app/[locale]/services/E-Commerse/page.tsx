@@ -23,6 +23,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import GradientText from "@/MyComponents/GradientText";
+import { useTranslations } from "next-intl";
 
 // Custom hook to detect mobile devices
 const useIsMobile = () => {
@@ -59,66 +60,63 @@ const createFadeInVariant = (isMobile: any) => ({
   },
 });
 
-// E-commerce packages
-const packages = [
-  {
-    title: "Basic E-commerce",
-    price: "$2,500",
-    description:
-      "Essential e-commerce functionality for businesses starting their online presence",
-    features: [
-      "Custom responsive design",
-      "Product catalog setup",
-      "Payment gateway integration",
-      "Basic product filtering",
-      "Contact form & essential pages",
-      "On-page SEO optimization",
-      "Mobile-friendly checkout",
-      "2 hours of training",
-    ],
-  },
-  {
-    title: "Advanced E-commerce",
-    price: "$4,500",
-    description:
-      "Enhanced features and functionality for growing online businesses",
-    features: [
-      "All Basic features",
-      "Advanced product filtering & search",
-      "Customer account creation",
-      "Wishlist functionality",
-      "Product reviews & ratings",
-      "Multi-currency support",
-      "Email marketing integration",
-      "Analytics implementation",
-      "4 hours of training",
-    ],
-    highlighted: true,
-  },
-  {
-    title: "Premium E-commerce",
-    price: "$7,000+",
-    description:
-      "Comprehensive solution with advanced features for established businesses",
-    features: [
-      "All Advanced features",
-      "Custom functionality development",
-      "Multiple payment gateways",
-      "Advanced inventory management",
-      "Third-party system integrations",
-      "Multi-language support",
-      "Custom reporting dashboards",
-      "Advanced security features",
-      "Comprehensive training program",
-    ],
-  },
-];
-
 const EcommerceSolutionsPage = () => {
+  const t = useTranslations("ServicePage.Ecom");
   const router = useRouter();
   const [activeFaq, setActiveFaq] = useState(null);
   const isMobile = useIsMobile();
 
+  // E-commerce packages
+  const packages = [
+    {
+      title: t("sections.3.packages.1.title"),
+      price: "$2,500",
+      description: t("sections.3.packages.1.desc"),
+      features: [
+        t("sections.3.packages.1.features.1"),
+        t("sections.3.packages.1.features.2"),
+        t("sections.3.packages.1.features.3"),
+        t("sections.3.packages.1.features.4"),
+        t("sections.3.packages.1.features.5"),
+        t("sections.3.packages.1.features.6"),
+        t("sections.3.packages.1.features.7"),
+        t("sections.3.packages.1.features.8"),
+      ],
+    },
+    {
+      title: t("sections.3.packages.2.title"),
+      price: "$4,500",
+      description: t("sections.3.packages.2.desc"),
+      features: [
+        t("sections.3.packages.2.features.1"),
+        t("sections.3.packages.2.features.2"),
+        t("sections.3.packages.2.features.3"),
+        t("sections.3.packages.2.features.4"),
+        t("sections.3.packages.2.features.5"),
+        t("sections.3.packages.2.features.6"),
+        t("sections.3.packages.2.features.7"),
+        t("sections.3.packages.2.features.8"),
+        t("sections.3.packages.2.features.9"),
+      ],
+      highlighted: true,
+    },
+    {
+      title: t("sections.3.packages.3.title"),
+      price: "$7,000+",
+      description: t("sections.3.packages.3.desc"),
+      features: [
+        t("sections.3.packages.3.features.1"),
+        t("sections.3.packages.3.features.2"),
+        t("sections.3.packages.3.features.3"),
+        t("sections.3.packages.3.features.4"),
+        t("sections.3.packages.3.features.5"),
+        t("sections.3.packages.3.features.6"),
+        t("sections.3.packages.3.features.7"),
+        t("sections.3.packages.3.features.8"),
+        t("sections.3.packages.3.features.9"),
+      ],
+    },
+  ];
   // Create animation variants based on device type
   // const fadeIn = createFadeInVariant(isMobile);
 
@@ -169,18 +167,16 @@ const EcommerceSolutionsPage = () => {
             > */}
             <div>
               <Badge className="bg-green-600/80 dark:bg-green-900/30 dark:text-green-400 border-transparent mb-4 px-3 py-1">
-                E-COMMERCE SOLUTIONS
+                {t("badge.1")}
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Turn Your Products Into
+                {t("title.1")}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-green-400 to-red-300 dark:to-red-500 block">
-                  Online Success
+                  {t("title.2")}
                 </span>
               </h1>
               <p className="text-lg text-white/90 mb-8 max-w-2xl">
-                We develop powerful, customized e-commerce websites that help
-                you sell effectively online. We build the digital infrastructure
-                you need while you focus on your products and customers.
+                {t("desc")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
@@ -189,7 +185,7 @@ const EcommerceSolutionsPage = () => {
                      dark:hover:from-green-600 dark:hover:to-green-800 text-white border border-green-800/30 shadow-lg shadow-green-950/20 px-8"
                   onClick={() => router.push("/contact")}
                 >
-                  Get Started
+                  {t("startBtn")}
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
@@ -202,7 +198,7 @@ const EcommerceSolutionsPage = () => {
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
                 >
-                  View Packages
+                  {t("packageBtn")}
                 </Button>
               </div>
             </div>
@@ -217,28 +213,28 @@ const EcommerceSolutionsPage = () => {
             > */}
             <div className="bg-green-950 dark:bg-black border border-green-900 rounded-xl overflow-hidden shadow-xl p-6 md:p-8">
               <h3 className="text-2xl font-bold text-center mb-6">
-                Why Choose Our E-commerce Solutions?
+                {t("sections.1.title")}
               </h3>
               <div className="grid grid-cols-2 gap-6">
                 {[
                   {
                     value: "45%",
-                    label: "Average increase in conversion rates",
+                    label: t("sections.1.cards.1.title"),
                     icon: TrendingUp,
                   },
                   {
                     value: "60%",
-                    label: "Mobile traffic optimization",
+                    label: t("sections.1.cards.2.title"),
                     icon: Smartphone,
                   },
                   {
                     value: "99.9%",
-                    label: "Uptime for your online store",
+                    label: t("sections.1.cards.3.title"),
                     icon: Zap,
                   },
                   {
                     value: "24/7",
-                    label: "Support and maintenance",
+                    label: t("sections.1.cards.4.title"),
                     icon: Shield,
                   },
                 ].map((stat, index) => (
@@ -271,16 +267,15 @@ const EcommerceSolutionsPage = () => {
             > */}
             <div>
               <Badge className="bg-green-600/80 dark:bg-green-900/30 dark:text-green-400 border-transparent mb-4 px-3 py-1">
-                FEATURES
+                {t("badge.2")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#1b8f1a]">
                 <GradientText gradient="from-green-400 via-green-500 dark:from-gray-200 dark:via-green-400 to-green-400">
-                  E-commerce Website Features
+                  {t("sections.2.title")}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-white/80 text-lg max-w-2xl mx-auto">
-                We can implement a wide range of features to create a powerful
-                online selling platform for your business.
+                {t("sections.2.desc")}
               </p>
             </div>
             {/* </motion.div> */}
@@ -289,51 +284,43 @@ const EcommerceSolutionsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                title: "Product Management",
-                description:
-                  "Easily manage your products, categories, variations, and inventory levels.",
+                title: t("sections.2.features.1.title"),
+                description: t("sections.2.features.1.desc"),
                 icon: Package,
               },
               {
-                title: "Secure Payments",
-                description:
-                  "Multiple payment gateways with secure checkout process and fraud protection.",
+                title: t("sections.2.features.2.title"),
+                description: t("sections.2.features.2.desc"),
                 icon: CreditCard,
               },
               {
-                title: "Shipping Options",
-                description:
-                  "Flexible shipping rules, real-time rates, and order tracking integration.",
+                title: t("sections.2.features.3.title"),
+                description: t("sections.2.features.3.desc"),
                 icon: Truck,
               },
               {
-                title: "Customer Accounts",
-                description:
-                  "User registration, order history, wishlists, and personalized experiences.",
+                title: t("sections.2.features.4.title"),
+                description: t("sections.2.features.4.desc"),
                 icon: Users,
               },
               {
-                title: "Mobile Optimization",
-                description:
-                  "Responsive design ensuring perfect shopping experience on all devices.",
+                title: t("sections.2.features.5.title"),
+                description: t("sections.2.features.5.desc"),
                 icon: Smartphone,
               },
               {
-                title: "Analytics & Reporting",
-                description:
-                  "Comprehensive insights into sales, customers, and product performance.",
+                title: t("sections.2.features.6.title"),
+                description: t("sections.2.features.6.desc"),
                 icon: BarChart3,
               },
               {
-                title: "Marketing Tools",
-                description:
-                  "Discounts, coupons, abandoned cart recovery, and email marketing integration.",
+                title: t("sections.2.features.7.title"),
+                description: t("sections.2.features.7.desc"),
                 icon: TrendingUp,
               },
               {
-                title: "Advanced Customization",
-                description:
-                  "Tailor your store's functionality and design to match your brand and needs.",
+                title: t("sections.2.features.8.title"),
+                description: t("sections.2.features.8.desc"),
                 icon: Settings,
               },
             ].map((feature, index) => (
@@ -361,10 +348,7 @@ const EcommerceSolutionsPage = () => {
       </section>
 
       {/* Pricing Section - Horizontal Cards */}
-      <section
-        id="packages"
-        className="py-20 dark:bg-black"
-      >
+      <section id="packages" className="py-20 dark:bg-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
             {/* <motion.div
@@ -375,17 +359,16 @@ const EcommerceSolutionsPage = () => {
             > */}
             <div>
               <Badge className="bg-green-600/80 dark:bg-green-900/30 dark:text-green-400 border-transparent mb-4 px-3 py-1">
-                PACKAGES
+                {t("badge.3")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#1b8f1a]">
                 {/* This is a much better Gradien text do the same with the following blaze to ( practice your unmiatus touch) */}
                 <GradientText gradient="from-green-400 via-green-500 dark:from-gray-200 dark:via-green-400 to-green-400">
-                  Choose Your E-commerce Package
+                  {t("sections.3.title")}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-white/70 text-lg max-w-2xl mx-auto">
-                We offer tailored packages to fit businesses at every stage of
-                growth.
+                {t("sections.3.desc")}
               </p>
             </div>
             {/* </motion.div> */}
@@ -411,7 +394,7 @@ const EcommerceSolutionsPage = () => {
                         <div className="mb-2">
                           {pkg.highlighted && (
                             <Badge className="bg-green-800/80 dark:bg-green-900/30 dark:text-green-400 border-transparent mb-3">
-                              MOST POPULAR
+                              {t("sections.3.packages.badge")}
                             </Badge>
                           )}
                           <h3 className="text-2xl font-bold dark:text-white">
@@ -423,12 +406,14 @@ const EcommerceSolutionsPage = () => {
                             </span>
                             {pkg.price !== "Custom" && (
                               <span className="text-green-950 dark:text-white ml-1">
-                                one-time
+                                {t("sections.3.packages.payType")}
                               </span>
                             )}
                           </div>
                         </div>
-                        <p className=" dark:text-white/80 mb-6">{pkg.description}</p>
+                        <p className=" dark:text-white/80 mb-6">
+                          {pkg.description}
+                        </p>
                         <Button
                           className={`w-full ${
                             pkg.highlighted
@@ -437,14 +422,14 @@ const EcommerceSolutionsPage = () => {
                           } text-white`}
                           onClick={() => router.push("/contact")}
                         >
-                          Get Started
+                          {t("startBtn")}
                           <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
                       </div>
 
                       <div className="p-6 md:p-8 md:col-span-2 bg-black/40">
                         <h4 className="text-lg font-semibold text-green-300 mb-4">
-                          What's Included:
+                          {t("sections.3.packages.includedLabel")}
                         </h4>
                         <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                           {pkg.features.map((feature, idx) => (
@@ -477,16 +462,15 @@ const EcommerceSolutionsPage = () => {
             > */}
             <div>
               <Badge className="bg-green-600/80 dark:bg-green-900/30 dark:text-green-400 border-transparent mb-4 px-3 py-1">
-                OUR PROCESS
+                {t("badge.4")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#1b8f1a]">
                 <GradientText gradient="from-green-400 via-green-500 dark:from-gray-200 dark:via-green-400 to-green-400">
-                  How We Build Your E-commerce Website
+                  {t("sections.4.title")}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
-                Our proven development process ensures your e-commerce website
-                is built right, on time, and ready to drive sales.
+                {t("sections.4.desc")}
               </p>
             </div>
             {/* </motion.div> */}
@@ -496,39 +480,33 @@ const EcommerceSolutionsPage = () => {
             {[
               {
                 step: "1",
-                title: "Discovery & Planning",
-                description:
-                  "We analyze your business needs, target audience, and competitors to create a strategic roadmap for your e-commerce store.",
+                title: t("sections.4.process.1.title"),
+                description: t("sections.4.process.1.desc"),
               },
               {
                 step: "2",
-                title: "Design & User Experience",
-                description:
-                  "Our designers create an engaging, conversion-focused user experience that reflects your brand and appeals to your customers.",
+                title: t("sections.4.process.2.title"),
+                description: t("sections.4.process.2.desc"),
               },
               {
                 step: "3",
-                title: "Development & Configuration",
-                description:
-                  "We build your store with clean code, implement all features, and configure products, payment gateways, and shipping options.",
+                title: t("sections.4.process.3.title"),
+                description: t("sections.4.process.3.desc"),
               },
               {
                 step: "4",
-                title: "Testing & Quality Assurance",
-                description:
-                  "We rigorously test your store across devices and browsers to ensure functionality, performance, and security.",
+                title: t("sections.4.process.4.title"),
+                description: t("sections.4.process.4.desc"),
               },
               {
                 step: "5",
-                title: "Launch & Training",
-                description:
-                  "We deploy your store and provide comprehensive training so you can confidently manage your products, orders, and customers.",
+                title: t("sections.4.process.5.title"),
+                description: t("sections.4.process.5.desc"),
               },
               {
                 step: "6",
-                title: "Support & Growth",
-                description:
-                  "We provide ongoing support and strategic guidance to help your e-commerce business grow and evolve.",
+                title: t("sections.4.process.6.title"),
+                description: t("sections.4.process.6.desc"),
               },
             ].map((phase, index) => (
               // <motion.div
@@ -552,7 +530,9 @@ const EcommerceSolutionsPage = () => {
                     <h3 className="text-xl font-bold text-green-900 dark:text-white mb-3">
                       {phase.title}
                     </h3>
-                    <p className="text-black dark:text-white/70">{phase.description}</p>
+                    <p className="text-black dark:text-white/70">
+                      {phase.description}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -574,15 +554,15 @@ const EcommerceSolutionsPage = () => {
             > */}
             <div>
               <Badge className="bg-green-600/80 dark:bg-green-900/30 dark:text-green-400 border-transparent mb-4 px-3 py-1">
-                FAQ
+                {t("badge.5")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#1b8f1a]">
                 <GradientText gradient="from-green-400 via-green-500 dark:from-gray-200 dark:via-green-400 to-green-400">
-                  Frequently Asked Questions
+                  {t("sections.5.title")}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-white/85 text-lg max-w-2xl mx-auto">
-                Common questions about our e-commerce solutions and services.
+                {t("sections.5.desc")}
               </p>
             </div>
             {/* </motion.div> */}
@@ -591,38 +571,28 @@ const EcommerceSolutionsPage = () => {
           <div className="max-w-3xl mx-auto space-y-4">
             {[
               {
-                question:
-                  "How long does it take to build an e-commerce website?",
-                answer:
-                  "The timeline depends on the complexity of your project. A basic e-commerce store can be up and running in 3-4 weeks, while more complex projects may take 8-12 weeks. During our initial consultation, we'll provide a detailed timeline based on your specific requirements.",
+                question: t("sections.5.QA.1.Q"),
+                answer: t("sections.5.QA.1.A"),
               },
               {
-                question:
-                  "Can you migrate my existing online store to a new platform?",
-                answer:
-                  "Yes, we provide comprehensive migration services. We can transfer your product catalog, customer accounts, and order history from your current platform to a new Shopify, WooCommerce, or custom solution. Our process ensures minimal disruption and preserves your SEO value during the transition.",
+                question: t("sections.5.QA.2.Q"),
+                answer: t("sections.5.QA.2.A"),
               },
               {
-                question:
-                  "Do you provide training on how to manage my e-commerce website?",
-                answer:
-                  "Absolutely! We include comprehensive training sessions as part of our packages. We'll teach you and your team how to add/edit products, manage inventory, process orders, update content, and use all the features of your e-commerce platform. We also provide detailed documentation and recorded training sessions for future reference.",
+                question: t("sections.5.QA.3.Q"),
+                answer: t("sections.5.QA.3.A"),
               },
               {
-                question:
-                  "What payment processors can you integrate with my website?",
-                answer:
-                  "We can integrate your website with all major payment processors including Stripe, PayPal, Square, Authorize.net, Braintree, and many others. We can also implement region-specific payment methods and multiple payment options to maximize your conversion rates and provide convenience for your customers.",
+                question: t("sections.5.QA.4.Q"),
+                answer: t("sections.5.QA.4.A"),
               },
               {
-                question: "Can you help with SEO for my e-commerce store?",
-                answer:
-                  "Yes, we build your store with SEO best practices from the ground up. This includes optimized site structure, proper metadata, clean code, mobile optimization, and fast loading speeds. We also offer ongoing SEO services to help improve your visibility and rankings over time.",
+                question: t("sections.5.QA.5.Q"),
+                answer: t("sections.5.QA.5.A"),
               },
               {
-                question: "Do you offer maintenance and support after launch?",
-                answer:
-                  "Yes, we provide ongoing maintenance and support packages to keep your store running smoothly. These include regular updates, security monitoring, performance optimization, and technical support. We recommend a maintenance plan to protect your investment and ensure your store remains secure and up-to-date.",
+                question: t("sections.5.QA.6.Q"),
+                answer: t("sections.5.QA.6.A"),
               },
             ].map((faq, index) => (
               // <motion.div
@@ -664,7 +634,7 @@ const EcommerceSolutionsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-green-900/20 to-green-900/90 dark:from-green-950/10 dark:to-black">
+      <section className="py-20 dark:bg-gradient-to-b dark:from-green-950/10 dark:to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           {/* <motion.div
             className="max-w-4xl mx-auto bg-black/60 border border-green-900 rounded-xl p-8 md:p-12 text-center"
@@ -675,12 +645,10 @@ const EcommerceSolutionsPage = () => {
               <ShoppingBag className="w-8 h-8 text-white" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Create Your Custom E-commerce Website?
+              {t("cta.title")}
             </h2>
             <p className="text-lg text-white/85 mb-8 max-w-2xl mx-auto">
-              Contact us today for a free consultation. We'll help you choose
-              the right features and development approach to create an
-              e-commerce website that drives sales and growth for your business.
+              {t("cta.desc")}
             </p>
             <Button
               size="lg"
@@ -688,7 +656,7 @@ const EcommerceSolutionsPage = () => {
                      dark:hover:from-green-600 dark:hover:to-green-800 text-white border border-green-800/30 shadow-lg shadow-green-950/20 px-8"
               onClick={() => router.push("/contact")}
             >
-              Get Your E-commerce Website
+              {t("cta.getBtn")}
               <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
           </div>

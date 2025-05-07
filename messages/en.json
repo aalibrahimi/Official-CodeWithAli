@@ -1006,6 +1006,203 @@
       "title": "Ready to Transform Your User Experience?",
       "desc": "Let's discuss how our UI/UX design services can help your business achieve its goals through exceptional user experiences."
     }
+  },
+  "Ecom": {
+    "badge": {
+      "1": "E-COMMERCE SOLUTIONS",
+      "2": "FEATURES",
+      "3": "PACKAGES",
+      "4": "OUR PROCESS",
+      "5": "FAQ"
+    },
+    "title": {
+      "1": "Turn Your Products Into",
+      "2": "Online Success"
+    },
+    "desc": "We develop powerful, customized e-commerce websites that help you sell effectively online. We build the digital infrastructure you need while you focus on your products and customers.",
+    "startBtn": "Get Started",
+    "packageBtn": "View Packages",
+    "sections": {
+      "1": {
+        "title": "Why Choose Our E-commerce Solutions?",
+        "cards": {
+          "1": {
+            "title": "Average increase in conversion rates"
+          },
+          "2": {
+            "title": "Mobile traffic optimization"
+          },
+          "3": {
+            "title": "Uptime for your online store"
+          },
+          "4": {
+            "title": "Support and maintenance"
+          }
+        }
+      },
+      "2": {
+        "title": "E-commerce Website Features",
+        "desc": "We can implement a wide range of features to create a powerful online selling platform for your business.",
+        "features": {
+          "1": {
+            "title": "Product Management",
+            "desc": "Easily manage your products, categories, variations, and inventory levels."
+          },
+          "2": {
+            "title": "Secure Payments",
+            "desc": "Multiple payment gateways with secure checkout process and fraud protection."
+          },
+          "3": {
+            "title": "Shipping Options",
+            "desc": "Flexible shipping rules, real-time rates, and order tracking integration."
+          },
+          "4": {
+            "title": "Customer Accounts",
+            "desc": "User registration, order history, wishlists, and personalized experiences."
+          },
+          "5": {
+            "title": "Mobile Optimization",
+            "desc": "Responsive design ensuring perfect shopping experience on all devices."
+          },
+          "6": {
+            "title": "Analytics & Reporting",
+            "desc": "Comprehensive insights into sales, customers, and product performance."
+          },
+          "7": {
+            "title": "Marketing Tools",
+            "desc": "Discounts, coupons, abandoned cart recovery, and email marketing integration."
+          },
+          "8": {
+            "title": "Advanced Customization",
+            "desc": "Tailor your store's functionality and design to match your brand and needs."
+          }
+        }
+      },
+      "3": {
+        "title": "Choose Your E-commerce Package",
+        "desc": "We offer tailored packages to fit businesses at every stage of growth.",
+        "packages": {
+          "badge": "MOST POPULAR",
+          "payType": "one-time",
+          "includedLabel": "What's Included:",
+          "1": {
+            "title": "Basic E-commerce",
+            "desc": "Essential e-commerce functionality for businesses starting their online presence",
+            "features": {
+              "1": "Custom responsive design",
+              "2": "Product catalog setup",
+              "3": "Payment gateway integration",
+              "4": "Basic product filtering",
+              "5": "Contact form & essential pages",
+              "6": "On-page SEO optimization",
+              "7": "Mobile-friendly checkout",
+              "8": "2 hours of training"
+            }
+          },
+          "2": {
+            "title": "Advanced E-commerce",
+            "desc": "Enhanced features and functionality for growing online businesses",
+            "features": {
+              "1": "All Basic features",
+              "2": "Advanced product filtering & search",
+              "3": "Customer account creation",
+              "4": "Wishlist functionality",
+              "5": "Product reviews & ratings",
+              "6": "Multi-currency support",
+              "7": "Email marketing integration",
+              "8": "Analytics implementation",
+              "9": "4 hours of training"
+            }
+          },
+          "3": {
+            "title":"Premium E-commerce",
+            "desc": "Comprehensive solution with advanced features for established businesses",
+            "features": {
+              "1": "All Advanced features",
+              "2": "Custom functionality development",
+              "3": "Multiple payment gateways",
+              "4": "Advanced inventory management",
+              "5": "Third-party system integrations",
+              "6":"Multi-language support",
+              "7": "Custom reporting dashboards",
+              "8": "Advanced security features",
+              "9": "Comprehensive training program"
+            }
+          }
+        }
+      },
+      "4": {
+        "title": "How We Build Your E-commerce Website",
+        "desc": "Our proven development process ensures your e-commerce website is built right, on time, and ready to drive sales.",
+        "process": {
+          "1": {
+            "title": "Discovery & Planning",
+            "desc": "We analyze your business needs, target audience, and competitors to create a strategic roadmap for your e-commerce store."
+          },
+          "2": {
+            "title": "Design & User Experience",
+            "desc": "Our designers create an engaging, conversion-focused user experience that reflects your brand and appeals to your customers."
+          },
+          "3": {
+            "title": "Development & Configuration",
+            "desc": "We build your store with clean code, implement all features, and configure products, payment gateways, and shipping options."
+          },
+          "4": {
+            "title": "Testing & Quality Assurance",
+            "desc": "We rigorously test your store across devices and browsers to ensure functionality, performance, and security."
+          },
+          "5": {
+            "title": "Launch & Training",
+            "desc": "We deploy your store and provide comprehensive training so you can confidently manage your products, orders, and customers."
+          },
+          "6": {
+            "title": "Support & Growth",
+            "desc": "We provide ongoing support and strategic guidance to help your e-commerce business grow and evolve."
+          }
+        }
+      },
+      "5": {
+        "title": "Frequently Asked Questions",
+        "desc": "Common questions about our e-commerce solutions and services.",
+        "tab": {
+          "1": "Process",
+          "2": "Pricing",
+          "3": "Deliverables",
+          "4": "Timeline"
+        },
+        "QA": {
+          "1": {
+            "Q": "How long does it take to build an e-commerce website?",
+            "A": "The timeline depends on the complexity of your project. A basic e-commerce store can be up and running in 3-4 weeks, while more complex projects may take 8-12 weeks. During our initial consultation, we'll provide a detailed timeline based on your specific requirements."
+          },
+          "2": {
+            "Q": "Can you migrate my existing online store to a new platform?",
+            "A": "Yes, we provide comprehensive migration services. We can transfer your product catalog, customer accounts, and order history from your current platform to a new Shopify, WooCommerce, or custom solution. Our process ensures minimal disruption and preserves your SEO value during the transition."
+          },
+          "3": {
+            "Q": "Do you provide training on how to manage my e-commerce website?",
+            "A": "Absolutely! We include comprehensive training sessions as part of our packages. We'll teach you and your team how to add/edit products, manage inventory, process orders, update content, and use all the features of your e-commerce platform. We also provide detailed documentation and recorded training sessions for future reference."
+          },
+          "4": {
+            "Q": "What payment processors can you integrate with my website?",
+            "A": "We can integrate your website with all major payment processors including Stripe, PayPal, Square, Authorize.net, Braintree, and many others. We can also implement region-specific payment methods and multiple payment options to maximize your conversion rates and provide convenience for your customers."
+          },
+          "5": {
+            "Q": "Can you help with SEO for my e-commerce store?",
+            "A": "Yes, we build your store with SEO best practices from the ground up. This includes optimized site structure, proper metadata, clean code, mobile optimization, and fast loading speeds. We also offer ongoing SEO services to help improve your visibility and rankings over time."
+          },
+          "6": {
+            "Q": "Do you offer maintenance and support after launch?",
+            "A": "Yes, we provide ongoing maintenance and support packages to keep your store running smoothly. These include regular updates, security monitoring, performance optimization, and technical support. We recommend a maintenance plan to protect your investment and ensure your store remains secure and up-to-date."
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Create Your Custom E-commerce Website?",
+      "desc": "Contact us today for a free consultation. We'll help you choose the right features and development approach to create an e-commerce website that drives sales and growth for your business.",
+      "getBtn": "Get Your E-commerce Website"
+    }
   }
 },
   "Portfolio" : {

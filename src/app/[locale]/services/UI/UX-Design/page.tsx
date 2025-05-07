@@ -41,169 +41,156 @@ const fadeIn = {
 //   },
 // };
 
-
 const UIUXDesignPage = () => {
   const router = useRouter();
-  const t = useTranslations('ServicePage.UI')
+  const t = useTranslations("ServicePage.UI");
   // Design offerings data
   const designOfferings = [
     {
-      title: t('sections.1.offerings.1.title'),
-      description:
-        t('sections.1.offerings.1.desc'),
+      title: t("sections.1.offerings.1.title"),
+      description: t("sections.1.offerings.1.desc"),
       icon: Users,
       features: [
-        t('sections.1.offerings.1.features.1'),
-        t('sections.1.offerings.1.features.2'),
-        t('sections.1.offerings.1.features.3'),
-        t('sections.1.offerings.1.features.4'),
+        t("sections.1.offerings.1.features.1"),
+        t("sections.1.offerings.1.features.2"),
+        t("sections.1.offerings.1.features.3"),
+        t("sections.1.offerings.1.features.4"),
       ],
     },
     {
-      title: t('sections.1.offerings.2.title'),
-      description:
-      t('sections.1.offerings.2.desc'),
+      title: t("sections.1.offerings.2.title"),
+      description: t("sections.1.offerings.2.desc"),
       icon: Monitor,
       features: [
-        t('sections.1.offerings.2.features.1'),
-        t('sections.1.offerings.2.features.2'),
-        t('sections.1.offerings.2.features.3'),
-        t('sections.1.offerings.2.features.4'),
+        t("sections.1.offerings.2.features.1"),
+        t("sections.1.offerings.2.features.2"),
+        t("sections.1.offerings.2.features.3"),
+        t("sections.1.offerings.2.features.4"),
       ],
     },
     {
-      title: t('sections.1.offerings.3.title'),
-      description:
-      t('sections.1.offerings.3.desc'),
+      title: t("sections.1.offerings.3.title"),
+      description: t("sections.1.offerings.3.desc"),
       icon: Eye,
       features: [
-        t('sections.1.offerings.3.features.1'),
-        t('sections.1.offerings.3.features.2'),
-        t('sections.1.offerings.3.features.3'),
-        t('sections.1.offerings.3.features.4'),
+        t("sections.1.offerings.3.features.1"),
+        t("sections.1.offerings.3.features.2"),
+        t("sections.1.offerings.3.features.3"),
+        t("sections.1.offerings.3.features.4"),
       ],
     },
     {
-      title: t('sections.1.offerings.4.title'),
-      description:
-      t('sections.1.offerings.4.desc'),
+      title: t("sections.1.offerings.4.title"),
+      description: t("sections.1.offerings.4.desc"),
       icon: Layers,
       features: [
-        t('sections.1.offerings.4.features.1'),
-        t('sections.1.offerings.4.features.2'),
-        t('sections.1.offerings.4.features.3'),
-        t('sections.1.offerings.4.features.4'),
+        t("sections.1.offerings.4.features.1"),
+        t("sections.1.offerings.4.features.2"),
+        t("sections.1.offerings.4.features.3"),
+        t("sections.1.offerings.4.features.4"),
       ],
     },
   ];
-  
+
   // Portfolio projects
   const portfolioProjects = [
     {
-      title: t('sections.2.projects.1.title'),
-      category: t('sections.2.projects.1.category'),
+      title: t("sections.2.projects.1.title"),
+      category: t("sections.2.projects.1.category"),
       image: "/placeholder/ui-project-1.jpg",
     },
     {
-      title: t('sections.2.projects.2.title'),
-      category: t('sections.2.projects.2.category'),
+      title: t("sections.2.projects.2.title"),
+      category: t("sections.2.projects.2.category"),
       image: "/placeholder/ui-project-2.jpg",
     },
     {
-      title: t('sections.2.projects.3.title'),
-      category: t('sections.2.projects.3.category'),
+      title: t("sections.2.projects.3.title"),
+      category: t("sections.2.projects.3.category"),
       image: "/placeholder/ui-project-3.jpg",
     },
     {
-      title: t('sections.2.projects.4.title'),
-      category: t('sections.2.projects.4.category'),
+      title: t("sections.2.projects.4.title"),
+      category: t("sections.2.projects.4.category"),
       image: "/placeholder/ui-project-4.jpg",
     },
   ];
-  
+
   // Design process steps
   const designProcess = [
     {
       number: "01",
-      title: t('sections.3.process.1.title'),
-      description:
-        t('sections.3.process.1.desc'),
+      title: t("sections.3.process.1.title"),
+      description: t("sections.3.process.1.desc"),
       icon: Lightbulb,
     },
     {
       number: "02",
-      title: t('sections.3.process.2.title'),
-      description:
-        t('sections.3.process.2.desc'),
+      title: t("sections.3.process.2.title"),
+      description: t("sections.3.process.2.desc"),
       icon: Users,
     },
     {
       number: "03",
-      title: t('sections.3.process.3.title'),
-      description:
-        t('sections.3.process.3.desc'),
+      title: t("sections.3.process.3.title"),
+      description: t("sections.3.process.3.desc"),
       icon: PenTool,
     },
     {
       number: "04",
-      title: t('sections.3.process.4.title'),
-      description:
-        t('sections.3.process.4.desc'),
+      title: t("sections.3.process.4.title"),
+      description: t("sections.3.process.4.desc"),
       icon: Eye,
     },
     {
       number: "05",
-      title: t('sections.3.process.5.title'),
-      description:
-        t('sections.3.process.5.desc'),
+      title: t("sections.3.process.5.title"),
+      description: t("sections.3.process.5.desc"),
       icon: CheckCircle,
     },
   ];
-  
+
   // Packages data
   const packages = [
     {
-      title: t('sections.5.package.1.title'),
+      title: t("sections.5.package.1.title"),
       price: "$2,500",
-      description:
-        t('sections.5.package.1.desc'),
+      description: t("sections.5.package.1.desc"),
       features: [
-        t('sections.5.package.1.features.1'),
-        t('sections.5.package.1.features.2'),
-        t('sections.5.package.1.features.3'),
-        t('sections.5.package.1.features.4'),
-        t('sections.5.package.1.features.5'),
+        t("sections.5.package.1.features.1"),
+        t("sections.5.package.1.features.2"),
+        t("sections.5.package.1.features.3"),
+        t("sections.5.package.1.features.4"),
+        t("sections.5.package.1.features.5"),
       ],
     },
     {
-      title: t('sections.5.package.2.title'),
+      title: t("sections.5.package.2.title"),
       price: "$5,500",
-      description:
-      t('sections.5.package.2.desc'),
+      description: t("sections.5.package.2.desc"),
       features: [
-        t('sections.5.package.2.features.1'),
-        t('sections.5.package.2.features.2'),
-        t('sections.5.package.2.features.3'),
-        t('sections.5.package.2.features.4'),
-        t('sections.5.package.2.features.5'),
-        t('sections.5.package.2.features.6'),
-        t('sections.5.package.2.features.7'),
+        t("sections.5.package.2.features.1"),
+        t("sections.5.package.2.features.2"),
+        t("sections.5.package.2.features.3"),
+        t("sections.5.package.2.features.4"),
+        t("sections.5.package.2.features.5"),
+        t("sections.5.package.2.features.6"),
+        t("sections.5.package.2.features.7"),
       ],
       highlighted: true,
     },
     {
-      title: t('section.5.package.3.title'),
+      title: t("section.5.package.3.title"),
       price: "Custom",
-      description:
-      t('section.5.package.3.desc'),
+      description: t("section.5.package.3.desc"),
       features: [
-        t('section.5.package.3.features.1'),
-        t('section.5.package.3.features.2'),
-        t('section.5.package.3.features.3'),
-        t('section.5.package.3.features.4'),
-        t('section.5.package.3.features.5'),
-        t('section.5.package.3.features.6'),
-        t('section.5.package.3.features.7'),
+        t("section.5.package.3.features.1"),
+        t("section.5.package.3.features.2"),
+        t("section.5.package.3.features.3"),
+        t("section.5.package.3.features.4"),
+        t("section.5.package.3.features.5"),
+        t("section.5.package.3.features.6"),
+        t("section.5.package.3.features.7"),
       ],
     },
   ];
@@ -226,17 +213,15 @@ const UIUXDesignPage = () => {
           > */}
           <div className="max-w-3xl">
             <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
-              {t('badge.1')}
+              {t("badge.1")}
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              {t('title.1')}
+              {t("title.1")}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-400 to-blue-300 dark:to-blue-500 block">
-                {t('title.2')}
+                {t("title.2")}
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 mb-8">
-              {t('desc')}
-            </p>
+            <p className="text-lg md:text-xl text-white/80 mb-8">{t("desc")}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               {/* Need to fix visibility of this btn */}
               <Button
@@ -245,7 +230,7 @@ const UIUXDesignPage = () => {
                 size="lg"
                 onClick={() => router.push("/contact")}
               >
-                {t('consultBtn')}
+                {t("consultBtn")}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button
@@ -254,7 +239,7 @@ const UIUXDesignPage = () => {
                 className="border-purple-700 text-purple-950 dark:text-purple-400 bg-purple-300/40 dark:bg-purple-950/20 hover:bg-purple-800/80 dark:hover:bg-purple-950/30 hover:text-white dark:hover:text-white"
                 onClick={() => router.push("#portfolio")}
               >
-                {t('workBtn')}
+                {t("workBtn")}
                 <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
@@ -278,15 +263,15 @@ const UIUXDesignPage = () => {
           > */}
           <div className="text-center mb-16">
             <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
-              {t('badge.2')}
+              {t("badge.2")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
               <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
-                {t('sections.1.title')}
+                {t("sections.1.title")}
               </GradientText>
             </h2>
             <p className="text-black dark:text-white/90 text-lg max-w-2xl mx-auto">
-            {t('sections.1.desc')}
+              {t("sections.1.desc")}
             </p>
           </div>
           {/* </motion.div> */}
@@ -345,15 +330,15 @@ const UIUXDesignPage = () => {
           > */}
           <div className="text-center mb-16">
             <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
-              {t('badge.3')}
+              {t("badge.3")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
               <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
-                {t('sections.2.title')}
+                {t("sections.2.title")}
               </GradientText>
             </h2>
             <p className="text-black dark:text-amber-50 text-lg max-w-2xl mx-auto">
-              {t('sections.2.desc')}
+              {t("sections.2.desc")}
             </p>
           </div>
           {/* </motion.div> */}
@@ -399,7 +384,7 @@ const UIUXDesignPage = () => {
               className="border-purple-800/30 text-purple-950 dark:text-purple-400 bg-purple-300/40 dark:bg-purple-950/20 hover:bg-purple-800/80 dark:hover:bg-purple-950/30 hover:text-white dark:hover:text-white"
               onClick={() => router.push("/portfolio")}
             >
-              {t('viewAllBtn')}
+              {t("viewAllBtn")}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
@@ -418,15 +403,15 @@ const UIUXDesignPage = () => {
           > */}
           <div className="text-center mb-16">
             <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
-              {t('badge.4')}
+              {t("badge.4")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
               <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
-                {t('sections.3.title')}
+                {t("sections.3.title")}
               </GradientText>
             </h2>
             <p className="text-black dark:text-white/70 text-lg max-w-2xl mx-auto">
-              {t('sections.3.desc')}
+              {t("sections.3.desc")}
             </p>
           </div>
           {/* </motion.div> */}
@@ -484,15 +469,15 @@ const UIUXDesignPage = () => {
           > */}
           <div className="text-center mb-16">
             <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
-              {t('badge.5')}
+              {t("badge.5")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
               <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
-                {t('section.4.title')}
+                {t("section.4.title")}
               </GradientText>
             </h2>
             <p className="text-black dark:text-white/80 text-lg max-w-2xl mx-auto">
-              {t('section.4.desc')}
+              {t("section.4.desc")}
             </p>
           </div>
           {/* </motion.div> */}
@@ -507,26 +492,23 @@ const UIUXDesignPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                quote:
-                  t('sections.4.quotes.1.quote'),
-                author: t('sections.4.quotes.1.author'),
-                company: t('sections.4.quotes.1.authDesc'),
+                quote: t("sections.4.quotes.1.quote"),
+                author: t("sections.4.quotes.1.author"),
+                company: t("sections.4.quotes.1.authDesc"),
                 // place holder images should be our logo until we can grab a different photo/idea
                 // sort of how like there are empty person shadow for authors ( your doctor invoice for ex) our logo would be that for us in our sites
                 image: "/codewithali.png",
               },
               {
-                quote:
-                  t('sections.4.quotes.2.quote'),
-                author: t('sections.4.quotes.2.author'),
-                company: t('sections.4.quotes.2.authDesc'),
+                quote: t("sections.4.quotes.2.quote"),
+                author: t("sections.4.quotes.2.author"),
+                company: t("sections.4.quotes.2.authDesc"),
                 image: "/codewithali.png",
               },
               {
-                quote:
-                  t('sections.4.quotes.3.quote'),
-                author: t('sections.4.quotes.3.author'),
-                company: t('sections.4.quotes.3.authDesc'),
+                quote: t("sections.4.quotes.3.quote"),
+                author: t("sections.4.quotes.3.author"),
+                company: t("sections.4.quotes.3.authDesc"),
                 image: "/codewithali.png",
               },
             ].map((testimonial, index) => (
@@ -579,15 +561,15 @@ const UIUXDesignPage = () => {
           > */}
           <div className="text-center mb-16">
             <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
-              {t('badge.6')}
+              {t("badge.6")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
               <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
-                {t('sections.5.title')}
+                {t("sections.5.title")}
               </GradientText>
             </h2>
             <p className="text-black dark:text-white/80 text-lg max-w-2xl mx-auto">
-              {t('sections.5.desc')}
+              {t("sections.5.desc")}
             </p>
           </div>
           {/* </motion.div> */}
@@ -637,7 +619,7 @@ const UIUXDesignPage = () => {
                     <div className="mt-auto">
                       <div className="border-t border-purple-900 pt-6 mb-6">
                         <h4 className="font-bold dark:text-white mb-4">
-                          {t('sections.5.package.whatIncluded')}
+                          {t("sections.5.package.whatIncluded")}
                         </h4>
                         <ul className="space-y-3">
                           {pkg.features.map((feature, idx) => (
@@ -659,7 +641,7 @@ const UIUXDesignPage = () => {
                         }`}
                         onClick={() => router.push("/contact")}
                       >
-                        {t('sections.5.package.startBtn')}
+                        {t("sections.5.package.startBtn")}
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </div>
@@ -684,15 +666,15 @@ const UIUXDesignPage = () => {
           > */}
           <div className="text-center mb-16">
             <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
-              {t('badge.7')}
+              {t("badge.7")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
               <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
-                {t('sections.6.title')}
+                {t("sections.6.title")}
               </GradientText>
             </h2>
             <p className="text-black dark:text-white/80 text-lg max-w-2xl mx-auto">
-              {t('sections.6.desc')}
+              {t("sections.6.desc")}
             </p>
           </div>
           {/* </motion.div> */}
@@ -704,44 +686,41 @@ const UIUXDesignPage = () => {
                   value="process"
                   className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-white dark:data-[state=active]:text-purple-400"
                 >
-                  {t('sections.6.tab.1')}
+                  {t("sections.6.tab.1")}
                 </TabsTrigger>
                 <TabsTrigger
                   value="pricing"
                   className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-white dark:data-[state=active]:text-purple-400"
                 >
-                  {t('sections.6.tab.2')}
+                  {t("sections.6.tab.2")}
                 </TabsTrigger>
                 <TabsTrigger
                   value="deliverables"
                   className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-white dark:data-[state=active]:text-purple-400"
                 >
-                  {t('sections.6.tab.3')}
+                  {t("sections.6.tab.3")}
                 </TabsTrigger>
                 <TabsTrigger
                   value="timeline"
                   className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-purple-400"
                 >
-                  {t('sections.6.tab.4')}
+                  {t("sections.6.tab.4")}
                 </TabsTrigger>
               </TabsList>
 
               <TabsContent value="process" className="space-y-6">
                 {[
                   {
-                    question: t('sections.6.QA.1.Q'),
-                    answer:
-                      t('sections.6.QA.1.A'),
+                    question: t("sections.6.QA.1.Q"),
+                    answer: t("sections.6.QA.1.A"),
                   },
                   {
-                    question: t('sections.6.QA.2.Q'),
-                    answer:
-                      t('sections.6.QA.2.A'),
+                    question: t("sections.6.QA.2.Q"),
+                    answer: t("sections.6.QA.2.A"),
                   },
                   {
-                    question: t('sections.6.QA.3.Q'),
-                    answer:
-                      t('sections.6.QA.3.A'),
+                    question: t("sections.6.QA.3.Q"),
+                    answer: t("sections.6.QA.3.A"),
                   },
                 ].map((faq, index) => (
                   // <motion.div
@@ -767,21 +746,16 @@ const UIUXDesignPage = () => {
               <TabsContent value="pricing" className="space-y-6">
                 {[
                   {
-                    question:
-                      t('sections.6.QA.4.Q'),
-                    answer:
-                      t('sections.6.QA.4.A'),
+                    question: t("sections.6.QA.4.Q"),
+                    answer: t("sections.6.QA.4.A"),
                   },
                   {
-                    question:
-                      t('sections.6.QA.5.Q'),
-                    answer:
-                      t('sections.6.QA.5.A'),
+                    question: t("sections.6.QA.5.Q"),
+                    answer: t("sections.6.QA.5.A"),
                   },
                   {
-                    question: t('sections.6.QA.6.Q'),
-                    answer:
-                      t('sections.6.QA.6.A'),
+                    question: t("sections.6.QA.6.Q"),
+                    answer: t("sections.6.QA.6.A"),
                   },
                 ].map((faq, index) => (
                   // <motion.div
@@ -807,20 +781,16 @@ const UIUXDesignPage = () => {
               <TabsContent value="deliverables" className="space-y-6">
                 {[
                   {
-                    question:
-                      t('sections.6.QA.7.Q'),
-                    answer:
-                      t('sections.6.QA.7.A'),
+                    question: t("sections.6.QA.7.Q"),
+                    answer: t("sections.6.QA.7.A"),
                   },
                   {
-                    question: t('sections.6.QA.8.Q'),
-                    answer:
-                      t('sections.6.QA.8.A'),
+                    question: t("sections.6.QA.8.Q"),
+                    answer: t("sections.6.QA.8.A"),
                   },
                   {
-                    question: t('sections.6.QA.9.Q'),
-                    answer:
-                      t('sections.6.QA.9.A'),
+                    question: t("sections.6.QA.9.Q"),
+                    answer: t("sections.6.QA.9.A"),
                   },
                 ].map((faq, index) => (
                   // <motion.div
@@ -846,21 +816,16 @@ const UIUXDesignPage = () => {
               <TabsContent value="timeline" className="space-y-6">
                 {[
                   {
-                    question:
-                      t('sections.6.QA.10.Q'),
-                    answer:
-                      t('sections.6.QA.10.A'),
+                    question: t("sections.6.QA.10.Q"),
+                    answer: t("sections.6.QA.10.A"),
                   },
                   {
-                    question:
-                      t('sections.6.QA.11.Q'),
-                    answer:
-                      t('sections.6.QA.11.A'),
+                    question: t("sections.6.QA.11.Q"),
+                    answer: t("sections.6.QA.11.A"),
                   },
                   {
-                    question: t('sections.6.QA.12.Q'),
-                    answer:
-                      t('sections.6.QA.12.A'),
+                    question: t("sections.6.QA.12.Q"),
+                    answer: t("sections.6.QA.12.A"),
                   },
                 ].map((faq, index) => (
                   // <motion.div
@@ -888,7 +853,7 @@ const UIUXDesignPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-purple-900/20 to-purple-900/90 dark:from-purple-950/10 dark:to-black">
+      <section className="py-20 dark:bg-gradient-to-b dark:from-purple-950/10 dark:to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           {/* <motion.div
             className="max-w-4xl mx-auto bg-black/60 border border-purple-900 rounded-xl p-8 md:p-12 text-center"
@@ -899,10 +864,10 @@ const UIUXDesignPage = () => {
           > */}
           <div className="max-w-4xl mx-auto bg-purple-600/80 dark:bg-black/60 border border-purple-900 rounded-xl p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              {t('cta.title')}
+              {t("cta.title")}
             </h2>
             <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-              {t('cta.desc')}
+              {t("cta.desc")}
             </p>
             <Button
               size="lg"
@@ -910,7 +875,7 @@ const UIUXDesignPage = () => {
                      dark:hover:from-purple-600 dark:hover:to-purple-800 text-white border border-purple-800/30 shadow-lg shadow-purple-950/20 px-8"
               onClick={() => router.push("/contact")}
             >
-              {t('consultBtn')}
+              {t("consultBtn")}
               <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
