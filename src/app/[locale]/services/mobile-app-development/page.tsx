@@ -109,40 +109,34 @@ const MobileAppDevelopmentPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white overflow-x-hidden">
       {/* Hero Section */}
       <section className="pt-24 pb-16 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-950 to-blue-500 dark:bg-gradient-to-br dark:from-blue-950/30 dark:to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-300 to-blue-400 dark:bg-gradient-to-br dark:from-blue-950/30 dark:to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
-            {/* <motion.div
-              className="lg:w-7/12"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            > */}
             <div className="lg:w-7/12">
-              <Badge className="bg-blue-600/80 dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-blue-600 text-white dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.1")}
               </Badge>
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-black dark:text-white">
                 {t("title.1")}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-400 to-blue-300 dark:to-blue-800 block mt-2">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-800 via-blue-600 to-blue-500 dark:from-white dark:via-blue-400 dark:to-blue-800 block mt-2">
                   {t("title.2")}
                 </span>
               </h1>
-              <p className="text-lg text-white/80 dark:text-white mb-8">
+              <p className="text-lg text-black/80 dark:text-white/80 mb-8">
                 {t("desc")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-blue-500 to-blue-600 dark:from-blue-700 dark:to-blue-900 hover:from-blue-600 hover:to-blue-800 
-                     dark:hover:from-blue-600 dark:hover:to-blue-800 text-white border-blue-800/30 shadow-lg shadow-blue-950/20 px-8"
+                  className=" dark:border-2 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-700 dark:to-blue-900 hover:from-blue-700 hover:to-blue-800 
+                     dark:hover:from-blue-600 dark:hover:to-blue-800 text-white dark:border-blue-300/30 shadow-lg shadow-blue-950/20 px-8"
                   onClick={() => router.push("/contact")}
                 >
                   {t("discussBtn")}
@@ -151,58 +145,51 @@ const MobileAppDevelopmentPage = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-blue-800/30 text-white dark:text-blue-400 bg-blue-500/40 dark:bg-blue-950/20 hover:bg-blue-800/80 dark:hover:bg-blue-950/30 hover:text-white dark:hover:text-white px-8"
+                  className="border-blue-800/30 text-blue-700 dark:text-blue-400 bg-blue-100 dark:bg-blue-950/20 hover:bg-blue-700 hover:text-white dark:hover:bg-blue-950/30 dark:hover:text-white px-8"
                   onClick={() => router.push("/portfolio")}
                 >
                   {t("workBtn")}
                 </Button>
               </div>
             </div>
-            {/* </motion.div> */}
 
-            {/* <motion.div
-              className="lg:w-5/12"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-            > */}
             <div className="lg:w-5/12">
-              <div className="relative bg-black/60 border border-blue-900 rounded-xl overflow-hidden shadow-2xl shadow-blue-950/20 p-5">
+              <div className="relative bg-blue-100 dark:bg-black/60 border border-blue-300 dark:border-blue-900 rounded-xl overflow-hidden shadow-2xl shadow-blue-950/20 p-5">
                 {/* Mobile app mockup illustration */}
                 <div className="flex justify-center">
-                  <div className="w-48 h-96 bg-gradient-to-br from-blue-950/40 to-blue-900/10 rounded-xl overflow-hidden p-2 relative">
-                    <div className="w-full h-full border-2 border-blue-500/20 rounded-lg relative">
+                  <div className="w-48 h-96 bg-gradient-to-br from-blue-200 to-blue-100 dark:from-blue-950/40 dark:to-blue-900/10 rounded-xl overflow-hidden p-2 relative">
+                    <div className="w-full h-full border-2 border-blue-300 dark:border-blue-500/20 rounded-lg relative">
                       {/* Phone notch */}
-                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-5 bg-black rounded-b-xl"></div>
+                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-5 bg-blue-200 dark:bg-black rounded-b-xl"></div>
 
                       {/* Screen content */}
                       <div className="absolute top-7 left-2 right-2 bottom-2">
                         {/* App header */}
-                        <div className="h-8 bg-blue-800/30 rounded-t-lg flex items-center justify-center">
-                          <div className="w-24 h-3 bg-blue-500/50 rounded"></div>
+                        <div className="h-8 bg-blue-300/70 dark:bg-blue-800/30 rounded-t-lg flex items-center justify-center">
+                          <div className="w-24 h-3 bg-blue-500/70 dark:bg-blue-500/50 rounded"></div>
                         </div>
 
                         {/* App content */}
-                        <div className="bg-blue-950/30 h-[calc(100%-8px)] p-2 rounded-b-lg">
-                          <div className="h-24 bg-blue-800/20 rounded mb-3"></div>
+                        <div className="bg-blue-200/70 dark:bg-blue-950/30 h-[calc(100%-8px)] p-2 rounded-b-lg">
+                          <div className="h-24 bg-blue-300/70 dark:bg-blue-800/20 rounded mb-3"></div>
                           <div className="space-y-2 mb-3">
-                            <div className="h-3 bg-blue-800/30 rounded-full w-full"></div>
-                            <div className="h-3 bg-blue-800/30 rounded-full w-5/6"></div>
-                            <div className="h-3 bg-blue-800/30 rounded-full w-4/6"></div>
+                            <div className="h-3 bg-blue-400/70 dark:bg-blue-800/30 rounded-full w-full"></div>
+                            <div className="h-3 bg-blue-400/70 dark:bg-blue-800/30 rounded-full w-5/6"></div>
+                            <div className="h-3 bg-blue-400/70 dark:bg-blue-800/30 rounded-full w-4/6"></div>
                           </div>
                           <div className="grid grid-cols-2 gap-2">
-                            <div className="h-20 bg-blue-800/20 rounded"></div>
-                            <div className="h-20 bg-blue-800/20 rounded"></div>
-                            <div className="h-20 bg-blue-800/20 rounded"></div>
-                            <div className="h-20 bg-blue-800/20 rounded"></div>
+                            <div className="h-20 bg-blue-300/70 dark:bg-blue-800/20 rounded"></div>
+                            <div className="h-20 bg-blue-300/70 dark:bg-blue-800/20 rounded"></div>
+                            <div className="h-20 bg-blue-300/70 dark:bg-blue-800/20 rounded"></div>
+                            <div className="h-20 bg-blue-300/70 dark:bg-blue-800/20 rounded"></div>
                           </div>
 
                           {/* Navigation bar */}
-                          <div className="absolute bottom-2 left-2 right-2 h-12 bg-blue-800/30 rounded-lg flex justify-around items-center">
-                            <div className="w-8 h-8 rounded-full bg-blue-600/40"></div>
-                            <div className="w-8 h-8 rounded-full bg-blue-600/40"></div>
-                            <div className="w-8 h-8 rounded-full bg-blue-600/40"></div>
-                            <div className="w-8 h-8 rounded-full bg-blue-600/40"></div>
+                          <div className="absolute bottom-2 left-2 right-2 h-12 bg-blue-400/70 dark:bg-blue-800/30 rounded-lg flex justify-around items-center">
+                            <div className="w-8 h-8 rounded-full bg-blue-600/60 dark:bg-blue-600/40"></div>
+                            <div className="w-8 h-8 rounded-full bg-blue-600/60 dark:bg-blue-600/40"></div>
+                            <div className="w-8 h-8 rounded-full bg-blue-600/60 dark:bg-blue-600/40"></div>
+                            <div className="w-8 h-8 rounded-full bg-blue-600/60 dark:bg-blue-600/40"></div>
                           </div>
                         </div>
                       </div>
@@ -211,7 +198,6 @@ const MobileAppDevelopmentPage = () => {
                 </div>
               </div>
             </div>
-            {/* </motion.div> */}
           </div>
         </div>
       </section>
@@ -220,18 +206,12 @@ const MobileAppDevelopmentPage = () => {
       <section className="py-16 relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="text-center mb-14">
-            {/* <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeIn}
-            > */}
             <div>
-              <Badge className="bg-blue-600/80 dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-blue-600 text-white dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.2")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
-                <GradientText gradient="from-blue-400 via-blue-500 dark:from-gray-200 dark:via-blue-400 to-blue-400">
+                <GradientText gradient="from-blue-700 via-blue-600 dark:from-gray-200 dark:via-blue-400 to-blue-500">
                   {t("sections.1.title")}
                 </GradientText>
               </h2>
@@ -239,35 +219,27 @@ const MobileAppDevelopmentPage = () => {
                 {t("sections.1.desc")}
               </p>
             </div>
-            {/* </motion.div> */}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {appTypes.map((type, index) => (
-              // <motion.div
-              //   key={index}
-              //   initial={{ opacity: 0, y: 20 }}
-              //   whileInView={{ opacity: 1, y: 0 }}
-              //   viewport={{ once: true }}
-              //   transition={{ duration: 0.5, delay: index * 0.1 }}
-              // >
               <div key={index}>
-                <Card className="bg-blue-600/80 dark:bg-black/60 border-blue-900 backdrop-blur-sm h-full">
+                <Card className="bg-blue-200 dark:bg-black/60 border-blue-300 dark:border-blue-900 backdrop-blur-sm h-full">
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-black dark:text-blue-400 to mb-3">
+                    <h3 className="text-xl font-bold text-blue-700 dark:text-blue-400 to mb-3">
                       {type.title}
                     </h3>
-                    <p className="text-amber-50 mb-4">{type.description}</p>
+                    <p className="text-black dark:text-amber-50 mb-4">{type.description}</p>
 
                     <div className="mb-4">
-                      <h4 className="text-sm font-semibold dark:text-blue-400  mb-2">
+                      <h4 className="text-sm font-semibold text-blue-700 dark:text-blue-400 mb-2">
                         {t("sections.1.types.techLabel")}
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {type.platforms.map((platform, i) => (
                           <Badge
                             key={i}
-                            className="bg-blue-900/80 dark:bg-blue-900/20 border-blue-800/30 text-white"
+                            className="bg-blue-600 dark:bg-blue-900/20 border-blue-800/30 text-white"
                           >
                             {platform}
                           </Badge>
@@ -276,14 +248,14 @@ const MobileAppDevelopmentPage = () => {
                     </div>
 
                     <div>
-                      <h4 className="text-sm font-semibold dark:text-blue-300 mb-2">
+                      <h4 className="text-sm font-semibold text-blue-700 dark:text-blue-300 mb-2">
                         {t("sections.1.types.benefitLabel")}
                       </h4>
                       <ul className="space-y-1">
                         {type.benefits.map((benefit, i) => (
                           <li key={i} className="flex items-start">
-                            <CheckCircle className="w-4 h-4 text-blue-950 dark:text-blue-500 mt-0.5 mr-2 flex-shrink-0" />
-                            <span className="text-amber-50 text-sm">
+                            <CheckCircle className="w-4 h-4 text-blue-600 dark:text-blue-500 mt-0.5 mr-2 flex-shrink-0" />
+                            <span className="text-black dark:text-amber-50 text-sm">
                               {benefit}
                             </span>
                           </li>
@@ -293,28 +265,21 @@ const MobileAppDevelopmentPage = () => {
                   </CardContent>
                 </Card>
               </div>
-              // </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Key Features Section */}
-      <section className="py-16 dark:bg-blue-950/10">
+      <section className="py-16 bg-blue-50 dark:bg-blue-950/10">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
-            {/* <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeIn}
-            > */}
             <div>
-              <Badge className="bg-blue-600/80 dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-blue-600 text-white dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.3")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
-                <GradientText gradient="from-blue-400 via-blue-500 dark:from-gray-200 dark:via-blue-400 to-blue-400">
+                <GradientText gradient="from-blue-700 via-blue-600 dark:from-gray-200 dark:via-blue-400 to-blue-500">
                   {t("sections.2.title")}
                 </GradientText>
               </h2>
@@ -322,7 +287,6 @@ const MobileAppDevelopmentPage = () => {
                 {t("sections.2.desc")}
               </p>
             </div>
-            {/* </motion.div> */}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -358,29 +322,21 @@ const MobileAppDevelopmentPage = () => {
                 icon: CloudCog,
               },
             ].map((feature, index) => (
-              // <motion.div
-              //   key={index}
-              //   initial={{ opacity: 0, y: 20 }}
-              //   whileInView={{ opacity: 1, y: 0 }}
-              //   viewport={{ once: true }}
-              //   transition={{ duration: 0.5, delay: index * 0.1 }}
-              // >
               <div key={index}>
-                <Card className="bg-blue-600/80 dark:bg-black/60 border-blue-900 backdrop-blur-sm h-full">
+                <Card className="bg-blue-300/70 dark:bg-black/60 border-blue-300 dark:border-blue-900 backdrop-blur-sm h-full">
                   <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-700 to-blue-900 flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-700 dark:to-blue-900 flex items-center justify-center mb-4">
                       <feature.icon className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-black dark:text-white mb-3">
+                    <h3 className="text-xl font-bold text-blue-700 dark:text-white mb-3">
                       {feature.title}
                     </h3>
-                    <p className="text-white dark:text-white/80">
+                    <p className="text-black dark:text-white/80">
                       {feature.description}
                     </p>
                   </CardContent>
                 </Card>
               </div>
-              // </motion.div>
             ))}
           </div>
         </div>
@@ -390,18 +346,12 @@ const MobileAppDevelopmentPage = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
-            {/* <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeIn}
-            > */}
             <div>
-              <Badge className="bg-blue-600/80 dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-blue-600 text-white dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.4")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
-                <GradientText gradient="from-blue-400 via-blue-500 dark:from-gray-200 dark:via-blue-400 to-blue-400">
+                <GradientText gradient="from-blue-700 via-blue-600 dark:from-gray-200 dark:via-blue-400 to-blue-500">
                   {t("sections.3.title")}
                 </GradientText>
               </h2>
@@ -409,35 +359,27 @@ const MobileAppDevelopmentPage = () => {
                 {t("sections.3.desc")}
               </p>
             </div>
-            {/* </motion.div> */}
           </div>
 
           <div className="space-y-6">
             {processSteps.map((step, index) => (
-              // <motion.div
-              //   key={index}
-              //   initial={{ opacity: 0, y: 20 }}
-              //   whileInView={{ opacity: 1, y: 0 }}
-              //   viewport={{ once: true }}
-              //   transition={{ duration: 0.5, delay: index * 0.1 }}
-              // >
               <div key={index}>
-                <Card className="bg-blue-600/80 dark:bg-black/60 border-blue-900 backdrop-blur-sm overflow-hidden">
+                <Card className="bg-gray-50 dark:bg-black/60 border-blue-300 dark:border-blue-900 backdrop-blur-sm overflow-hidden">
                   <CardContent className="p-6">
                     <div className="flex flex-col md:flex-row gap-4 items-start">
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-700 to-blue-900 flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-500 dark:from-blue-700 dark:to-blue-900 flex items-center justify-center flex-shrink-0">
                         <span className="text-white font-bold">
                           {index + 1}
                         </span>
                       </div>
                       <div>
                         <div className="flex items-center mb-2">
-                          <step.icon className="w-5 h-5 text-blue-500 mr-2" />
-                          <h3 className="text-xl font-bold dark:text-white">
+                          <step.icon className="w-5 h-5 text-blue-600 dark:text-blue-500 mr-2" />
+                          <h3 className="text-xl font-bold text-blue-700 dark:text-white">
                             {step.title}
                           </h3>
                         </div>
-                        <p className="text-white dark:text-white/70">
+                        <p className="text-black dark:text-white/70">
                           {step.description}
                         </p>
                       </div>
@@ -445,28 +387,21 @@ const MobileAppDevelopmentPage = () => {
                   </CardContent>
                 </Card>
               </div>
-              // </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20">
+      <section className="py-20 bg-white dark:bg-transparent">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
-            {/* <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeIn}
-            > */}
             <div>
-              <Badge className="bg-blue-600/80 dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-blue-600 text-white dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.5")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
-                <GradientText gradient="from-blue-400 via-blue-500 dark:from-gray-200 dark:via-blue-400 to-blue-400">
+                <GradientText gradient="from-blue-700 via-blue-600 dark:from-gray-200 dark:via-blue-400 to-blue-500">
                   {t("sections.4.title")}
                 </GradientText>
               </h2>
@@ -474,27 +409,26 @@ const MobileAppDevelopmentPage = () => {
                 {t("sections.4.desc")}
               </p>
             </div>
-            {/* </motion.div> */}
           </div>
 
           <div className="max-w-3xl mx-auto">
             <Tabs defaultValue="general" className="w-full">
-              <TabsList className="grid grid-cols-3 mb-8 bg-blue-600/80 dark:bg-black/60 text-black border border-blue-900">
+              <TabsList className="grid grid-cols-3 mb-8 bg-blue-600 dark:bg-black/60 text-white dark:text-white border border-blue-300 dark:border-blue-900">
                 <TabsTrigger
                   value="general"
-                  className="data-[state=active]:bg-blue-900/30 data-[state=active]:text-white"
+                  className="data-[state=active]:bg-white data-[state=active]:text-blue-800 dark:data-[state=active]:bg-blue-900/30 dark:data-[state=active]:text-white"
                 >
                   {t("sections.4.tab.1")}
                 </TabsTrigger>
                 <TabsTrigger
                   value="technical"
-                  className="data-[state=active]:bg-blue-900/30 data-[state=active]:text-white"
+                  className="data-[state=active]:bg-white data-[state=active]:text-blue-800 dark:data-[state=active]:bg-blue-900/30 dark:data-[state=active]:text-white"
                 >
                   {t("sections.4.tab.2")}
                 </TabsTrigger>
                 <TabsTrigger
                   value="pricing"
-                  className="data-[state=active]:bg-blue-900/30 data-[state=active]:text-white"
+                  className="data-[state=active]:bg-white data-[state=active]:text-blue-800 dark:data-[state=active]:bg-blue-900/30 dark:data-[state=active]:text-white"
                 >
                   {t("sections.4.tab.3")}
                 </TabsTrigger>
@@ -521,12 +455,12 @@ const MobileAppDevelopmentPage = () => {
                 ].map((faq, index) => (
                   <div
                     key={index}
-                    className="bg-blue-600/80 dark:bg-black/60 border border-blue-900 rounded-lg p-6"
+                    className="bg-white dark:bg-black/60 border border-blue-500 dark:border-blue-900 rounded-lg p-6"
                   >
-                    <h4 className="text-lg font-bold text-black dark:text-white mb-2">
+                    <h4 className="text-lg font-bold text-blue-700 dark:text-white mb-2">
                       {faq.question}
                     </h4>
-                    <p className="dark:text-white/70">{faq.answer}</p>
+                    <p className="text-black dark:text-white/70">{faq.answer}</p>
                   </div>
                 ))}
               </TabsContent>
@@ -552,12 +486,12 @@ const MobileAppDevelopmentPage = () => {
                 ].map((faq, index) => (
                   <div
                     key={index}
-                    className="bg-blue-600/80 dark:bg-black/60 border border-blue-900 rounded-lg p-6"
+                    className="bg-white dark:bg-black/60 border border-blue-300 dark:border-blue-900 rounded-lg p-6"
                   >
-                    <h4 className="text-lg font-bold text-black dark:text-white mb-2">
+                    <h4 className="text-lg font-bold text-blue-700 dark:text-white mb-2">
                       {faq.question}
                     </h4>
-                    <p className="dark:text-white/70">{faq.answer}</p>
+                    <p className="text-black dark:text-white/70">{faq.answer}</p>
                   </div>
                 ))}
               </TabsContent>
@@ -583,12 +517,12 @@ const MobileAppDevelopmentPage = () => {
                 ].map((faq, index) => (
                   <div
                     key={index}
-                    className="bg-blue-600/80 dark:bg-black/60 border border-blue-900 rounded-lg p-6"
+                    className="bg-white dark:bg-black/60 border border-blue-300 dark:border-blue-900 rounded-lg p-6"
                   >
-                    <h4 className="text-lg font-bold text-black dark:text-white mb-2">
+                    <h4 className="text-lg font-bold text-blue-700 dark:text-white mb-2">
                       {faq.question}
                     </h4>
-                    <p className="dark:text-white/70">{faq.answer}</p>
+                    <p className="text-black dark:text-white/70">{faq.answer}</p>
                   </div>
                 ))}
               </TabsContent>
@@ -598,16 +532,9 @@ const MobileAppDevelopmentPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 dark:bg-gradient-to-b dark:from-blue-950/10 dark:to-black">
+      <section className="py-20 bg-gradient-to-b from-white to-blue-50 dark:bg-gradient-to-b dark:from-blue-950/10 dark:to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          {/* <motion.div
-            className="max-w-4xl mx-auto bg-black/60 border border-blue-900 rounded-xl p-8 md:p-12 text-center"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-          > */}
-          <div className="max-w-4xl mx-auto bg-blue-900 dark:bg-black/60 border border-blue-900 rounded-xl p-8 md:p-12 text-center">
+          <div className="max-w-4xl mx-auto bg-blue-600 text-white dark:bg-black/60 border border-blue-700 dark:border-blue-900 rounded-xl p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               {t("cta.title")}
             </h2>
@@ -617,8 +544,8 @@ const MobileAppDevelopmentPage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-blue-500 to-blue-600 dark:from-blue-700 dark:to-blue-900 hover:from-blue-600 hover:to-blue-800 
-                     dark:hover:from-blue-600 dark:hover:to-blue-800 text-white border border-blue-800/30 shadow-lg shadow-blue-950/20 px-8"
+                className="bg-gradient-to-r from-blue-700 to-blue-800 dark:from-blue-700 dark:to-blue-900 hover:from-blue-800 hover:to-blue-900 
+                     dark:hover:from-blue-600 dark:hover:to-blue-800 text-white border border-white dark:border-blue-800/30 shadow-lg shadow-blue-950/20 px-8"
                 onClick={() => router.push("/contact")}
               >
                 {t("discussBtn")}
@@ -627,14 +554,13 @@ const MobileAppDevelopmentPage = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-blue-800/30 text-white dark:text-blue-400 bg-blue-500/40 dark:bg-blue-950/20 hover:bg-blue-800/80 dark:hover:bg-blue-950/30 hover:text-white dark:hover:text-white px-8"
+                className="border-blue-800/30 text-black bg-white dark:bg-blue-950/20 hover:bg-white hover:text-blue-700 dark:hover:bg-blue-950/30 dark:hover:text-white px-8"
                 onClick={() => router.push("/portfolio")}
               >
                 {t("workBtn")}
               </Button>
             </div>
           </div>
-          {/* </motion.div> */}
         </div>
       </section>
     </div>
