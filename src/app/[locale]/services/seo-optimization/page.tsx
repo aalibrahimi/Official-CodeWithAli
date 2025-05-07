@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import GradientText from "@/MyComponents/GradientText";
+import { useTranslations } from "next-intl";
 
 // Animation variants
 // const fadeIn = {
@@ -41,186 +42,175 @@ const staggerContainer = {
   },
 };
 
-// SEO services data
-const seoServices = [
-  {
-    title: "Keyword Research",
-    description:
-      "Comprehensive keyword research to identify high-value search terms that your target audience is using.",
-    icon: Search,
-    features: [
-      "Competitor Keyword Analysis",
-      "Search Volume Assessment",
-      "Long-tail Keyword Discovery",
-      "Keyword Difficulty Scoring",
-    ],
-  },
-  {
-    title: "On-Page SEO",
-    description:
-      "Optimization of individual pages to rank higher and earn more relevant traffic in search engines.",
-    icon: FileText,
-    features: [
-      "Title & Meta Optimization",
-      "Content Structure Improvement",
-      "Internal Linking Strategy",
-      "Image Optimization",
-    ],
-  },
-  {
-    title: "Technical SEO",
-    description:
-      "Addressing technical aspects of your website to improve ranking in search engines.",
-    icon: Layers,
-    features: [
-      "Site Speed Optimization",
-      "Mobile Responsiveness",
-      "Schema Markup Implementation",
-      "Crawl Error Resolution",
-    ],
-  },
-  {
-    title: "Link Building",
-    description:
-      "Strategic acquisition of backlinks from authoritative websites to boost your domain authority.",
-    icon: Link2,
-    features: [
-      "Quality Backlink Acquisition",
-      "Broken Link Recovery",
-      "Guest Posting Strategy",
-      "Competitor Backlink Analysis",
-    ],
-  },
-];
-
-// SEO approach
-const seoApproach = [
-  {
-    number: "01",
-    title: "SEO Audit",
-    description:
-      "We conduct a thorough analysis of your current SEO performance, identifying issues and opportunities.",
-    icon: Search,
-  },
-  {
-    number: "02",
-    title: "Strategy Development",
-    description:
-      "We create a customized SEO strategy based on your business goals, target audience, and competitive landscape.",
-    icon: Target,
-  },
-  {
-    number: "03",
-    title: "On-Page Optimization",
-    description:
-      "We optimize your website's content, structure, and technical elements to improve search engine rankings.",
-    icon: FileText,
-  },
-  {
-    number: "04",
-    title: "Off-Page Strategy",
-    description:
-      "We build high-quality backlinks and enhance your online presence across relevant platforms.",
-    icon: Link2,
-  },
-  {
-    number: "05",
-    title: "Analytics & Reporting",
-    description:
-      "We track key metrics and provide detailed reports on your SEO performance and ROI.",
-    icon: BarChart3,
-  },
-];
-
-// SEO packages
-const seoPackages = [
-  {
-    title: "Starter SEO",
-    price: "$89",
-    period: "per month",
-    description:
-      "Essential SEO services for small businesses looking to improve their local search presence.",
-    features: [
-      "Initial SEO Audit",
-      "Keyword Research (up to 20 keywords)",
-      "On-Page Optimization (5 pages)",
-      "Basic Technical SEO",
-      "Monthly Reporting",
-      "Google Business Profile Optimization",
-      "3-Month Minimum Commitment",
-    ],
-  },
-  {
-    title: "Professional SEO",
-    price: "$150",
-    period: "per month",
-    description:
-      "Comprehensive SEO solution for growing businesses competing in broader markets.",
-    features: [
-      "In-depth SEO Audit",
-      "Advanced Keyword Research (up to 50 keywords)",
-      "On-Page Optimization (15 pages)",
-      "Technical SEO Implementation",
-      "Content Optimization Strategy",
-      "Monthly Link Building (5 quality links)",
-      "Competitor Analysis",
-      "Bi-weekly Reporting",
-      "6-Month Minimum Commitment",
-    ],
-    highlighted: true,
-  },
-  {
-    title: "Enterprise SEO",
-    price: "$500",
-    period: "per month",
-    description:
-      "Strategic SEO partnership for large businesses with complex needs and competitive industries.",
-    features: [
-      "Comprehensive SEO Audit",
-      "Extensive Keyword Research & Mapping",
-      "Full Website Optimization",
-      "Advanced Technical SEO",
-      "Content Creation Strategy",
-      "Aggressive Link Building Campaign",
-      "International SEO (if applicable)",
-      "E-commerce Optimization (if applicable)",
-      "Weekly Reporting & Strategy Calls",
-      "Dedicated SEO Manager",
-      "12-Month Minimum Commitment",
-    ],
-  },
-];
-
-// Results metrics
-const resultMetrics = [
-  {
-    stat: "45%",
-    label: "Average Traffic Increase",
-    description:
-      "Our clients typically see a 45% increase in organic traffic within 6 months.",
-  },
-  {
-    stat: "85%",
-    label: "Keyword Ranking Improvement",
-    description:
-      "85% of target keywords showing significant ranking improvements within the first 3 months.",
-  },
-  {
-    stat: "32%",
-    label: "Conversion Rate Lift",
-    description:
-      "On average, our SEO services help improve conversion rates by 32% through qualified traffic.",
-  },
-  {
-    stat: "65%",
-    label: "Local Search Visibility",
-    description:
-      "Local businesses see a 65% increase in Google Map Pack appearances for relevant searches.",
-  },
-];
-
 const SEOOptimizationPage = () => {
   const router = useRouter();
+  const t = useTranslations("ServicePage.SEO");
+
+  // SEO services data
+  const seoServices = [
+    {
+      title: t("sections.1.services.1.title"),
+      description: t("sections.1.services.1.desc"),
+      icon: Search,
+      features: [
+        t("sections.1.services.1.features.1"),
+        t("sections.1.services.1.features.2"),
+        t("sections.1.services.1.features.3"),
+        t("sections.1.services.1.features.4"),
+      ],
+    },
+    {
+      title: t("sections.1.services.2.title"),
+      description: t("sections.1.services.2.desc"),
+      icon: FileText,
+      features: [
+        t("sections.1.services.2.features.1"),
+        t("sections.1.services.2.features.2"),
+        t("sections.1.services.2.features.3"),
+        t("sections.1.services.2.features.4"),
+      ],
+    },
+    {
+      title: t("sections.1.services.3.title"),
+      description: t("sections.1.services.3.desc"),
+      icon: Layers,
+      features: [
+        t("sections.1.services.3.features.1"),
+        t("sections.1.services.3.features.2"),
+        t("sections.1.services.3.features.3"),
+        t("sections.1.services.3.features.4"),
+      ],
+    },
+    {
+      title: t("sections.1.services.4.title"),
+      description: t("sections.1.services.4.desc"),
+      icon: Link2,
+      features: [
+        t("sections.1.services.4.features.1"),
+        t("sections.1.services.4.features.2"),
+        t("sections.1.services.4.features.3"),
+        t("sections.1.services.4.features.4"),
+      ],
+    },
+  ];
+
+  // SEO approach
+  const seoApproach = [
+    {
+      number: "01",
+      title: t("sections.3.approach.1.title"),
+      description: t("sections.3.approach.1.desc"),
+      icon: Search,
+    },
+    {
+      number: "02",
+      title: t("sections.3.approach.2.title"),
+      description: t("sections.3.approach.2.desc"),
+      icon: Target,
+    },
+    {
+      number: "03",
+      title: t("sections.3.approach.3.title"),
+      description: t("sections.3.approach.3.desc"),
+      icon: FileText,
+    },
+    {
+      number: "04",
+      title: t("sections.3.approach.4.title"),
+      description: t("sections.3.approach.4.desc"),
+      icon: Link2,
+    },
+    {
+      number: "05",
+      title: t("sections.3.approach.5.title"),
+      description: t("sections.3.approach.5.desc"),
+      icon: BarChart3,
+    },
+  ];
+
+  // SEO packages
+  const seoPackages = [
+    {
+      title: t("sections.5.packages.1.title"),
+      price: "$89",
+      period: t("sections.5.packages.1.period"),
+      description: t("sections.5.packages.1.desc"),
+      features: [
+        t("sections.5.packages.1.features.1"),
+        t("sections.5.packages.1.features.2"),
+        t("sections.5.packages.1.features.3"),
+        t("sections.5.packages.1.features.4"),
+        t("sections.5.packages.1.features.5"),
+        t("sections.5.packages.1.features.6"),
+        t("sections.5.packages.1.features.7"),
+      ],
+    },
+    {
+      title: t("sections.5.packages.2.title"),
+      price: "$150",
+      period: t("sections.5.packages.2.period"),
+      description: t("sections.5.packages.2.desc"),
+      features: [
+        t("sections.5.packages.2.features.1"),
+        t("sections.5.packages.2.features.2"),
+        t("sections.5.packages.2.features.3"),
+        t("sections.5.packages.2.features.4"),
+        t("sections.5.packages.2.features.5"),
+        t("sections.5.packages.2.features.6"),
+        t("sections.5.packages.2.features.7"),
+        t("sections.5.packages.2.features.8"),
+        t("sections.5.packages.2.features.9"),
+      ],
+      highlighted: true,
+    },
+    {
+      title: t("sections.5.packages.3.title"),
+      price: "$500",
+      period: t("sections.5.packages.3.period"),
+      description: t("sections.5.packages.3.desc"),
+      features: [
+        t("sections.5.packages.3.features.1"),
+        t("sections.5.packages.3.features.2"),
+        t("sections.5.packages.3.features.3"),
+        t("sections.5.packages.3.features.4"),
+        t("sections.5.packages.3.features.5"),
+        t("sections.5.packages.3.features.6"),
+        t("sections.5.packages.3.features.7"),
+        t("sections.5.packages.3.features.8"),
+        t("sections.5.packages.3.features.9"),
+        t("sections.5.packages.3.features.10"),
+        t("sections.5.packages.3.features.11"),
+      ],
+    },
+  ];
+
+  // Results metrics
+  const resultMetrics = [
+    {
+      stat: "45%",
+      label: t('sections.2.metrics.1.title'),
+      description:
+        t('sections.2.metrics.1.desc'),
+    },
+    {
+      stat: "85%",
+      label: t('sections.2.metrics.2.title'),
+      description:
+        t('sections.2.metrics.2.desc'),
+    },
+    {
+      stat: "32%",
+      label: t('sections.2.metrics.3.title'),
+      description:
+        t('sections.2.metrics.3.desc'),
+    },
+    {
+      stat: "65%",
+      label: t('sections.2.metrics.4.title'),
+      description:
+        t('sections.2.metrics.4.desc'),
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-black text-white overflow-x-hidden">
@@ -240,18 +230,16 @@ const SEOOptimizationPage = () => {
           > */}
           <div className="max-w-3xl">
             <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent hover:bg-orange-900/20 mb-4 px-3 py-1">
-              SEO OPTIMIZATION
+              {t("badge.1")}
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Drive Organic Traffic &
+              {t("title.1")}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-orange-600 dark:via-orange-300 to-red-700 dark:to-red-500 block">
-                Boost Your Rankings
+                {t("title.2")}
               </span>
             </h1>
             <p className="text-lg md:text-xl dark:text-white/70 mb-8">
-              Data-driven SEO strategies that increase visibility, attract
-              qualified leads, and help your business dominate search engine
-              results.
+              {t("desc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
@@ -260,7 +248,7 @@ const SEOOptimizationPage = () => {
                 size="lg"
                 onClick={() => router.push("/contact")}
               >
-                Get a Free SEO Audit
+                {t("auditBtn")}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button
@@ -269,7 +257,7 @@ const SEOOptimizationPage = () => {
                 className="border-orange-700 text-white dark:text-orange-400 bg-orange-300/40 dark:bg-orange-950/20 hover:bg-orange-800/80 dark:hover:bg-orange-950/30 hover:text-white dark:hover:text-white"
                 onClick={() => router.push("#packages")}
               >
-                View SEO Packages
+                {t("packageBtn")}
                 <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
@@ -293,18 +281,16 @@ const SEOOptimizationPage = () => {
           > */}
           <div className="text-center mb-16">
             <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
-              OUR SERVICES
+              {t("badge.2")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
               {/* Changed orange Gradient here */}
               <GradientText gradient="from-orange-500 via-orange-400 to-red-400 dark:from-white dark:to-red-500">
-                Comprehensive SEO Solutions
+                {t("sections.1.title")}
               </GradientText>
             </h2>
             <p className="text-black dark:text-white/90 text-lg max-w-2xl mx-auto">
-              Our holistic approach to search engine optimization covers all
-              aspects needed to improve your website's visibility in search
-              results.
+              {t("sections.1.desc")}
             </p>
           </div>
           {/* </motion.div> */}
@@ -332,7 +318,9 @@ const SEOOptimizationPage = () => {
                     <h3 className="text-xl font-bold text-orange-500 dark:text-white mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-black dark:text-white/85 mb-4">{service.description}</p>
+                    <p className="text-black dark:text-white/85 mb-4">
+                      {service.description}
+                    </p>
 
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
@@ -366,16 +354,15 @@ const SEOOptimizationPage = () => {
           > */}
           <div className="text-center mb-16 ">
             <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
-              RESULTS
+              {t("badge.3")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
               <GradientText gradient="from-orange-500 via-orange-400 to-red-400 dark:from-white dark:to-red-500">
-                Proven Performance
+                {t("sections.2.title")}
               </GradientText>
             </h2>
             <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
-              Our data-driven approach consistently delivers measurable results
-              for our clients.
+              {t("sections.2.desc")}
             </p>
           </div>
           {/* </motion.div> */}
@@ -423,16 +410,15 @@ const SEOOptimizationPage = () => {
           > */}
           <div className="text-center mb-16">
             <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
-              OUR APPROACH
+              {t("badge.4")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
               <GradientText gradient="from-orange-500 via-orange-400 to-red-400 dark:from-white dark:to-red-500">
-                Our SEO Process
+                {t("sections.3.title")}
               </GradientText>
             </h2>
             <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
-              We follow a systematic approach to ensure your SEO campaign
-              delivers consistent results.
+              {t("sections.3.desc")}
             </p>
           </div>
           {/* </motion.div> */}
@@ -466,7 +452,9 @@ const SEOOptimizationPage = () => {
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-orange-700 dark:text-white/80">{step.description}</p>
+                    <p className="text-orange-700 dark:text-white/80">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
                 // </motion.div>
@@ -488,16 +476,15 @@ const SEOOptimizationPage = () => {
           > */}
           <div className="text-center  mb-16">
             <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
-              BENEFITS
+              {t("badge.5")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
               <GradientText gradient="from-orange-500 via-orange-400 to-red-400 dark:from-white dark:to-red-500">
-                Why Invest in SEO?
+                {t("sections.4.title")}
               </GradientText>
             </h2>
             <p className="text-black dark:text-white/70 text-lg max-w-2xl mx-auto">
-              Search engine optimization offers numerous advantages for
-              businesses looking to grow their online presence.
+              {t("sections.4.desc")}
             </p>
           </div>
           {/* </motion.div> */}
@@ -506,39 +493,33 @@ const SEOOptimizationPage = () => {
             {[
               {
                 icon: TrendingUp,
-                title: "Increased Organic Traffic",
-                description:
-                  "Drive more qualified visitors to your website without paying for each click.",
+                title: t("sections.4.cards.1.title"),
+                description: t("sections.4.cards.1.desc"),
               },
               {
                 icon: Award,
-                title: "Enhanced Credibility",
-                description:
-                  "Higher search rankings build trust and credibility with your target audience.",
+                title: t("sections.4.cards.2.title"),
+                description: t("sections.4.cards.2.desc"),
               },
               {
                 icon: Target,
-                title: "Better User Experience",
-                description:
-                  "SEO improvements also enhance the usability and user experience of your website.",
+                title: t("sections.4.cards.3.title"),
+                description: t("sections.4.cards.3.desc"),
               },
               {
                 icon: Zap,
-                title: "Cost-Effective Marketing",
-                description:
-                  "SEO provides one of the best ROIs compared to other digital marketing channels.",
+                title: t("sections.4.cards.4.title"),
+                description: t("sections.4.cards.4.desc"),
               },
               {
                 icon: BarChart3,
-                title: "Measurable Results",
-                description:
-                  "Track rankings, traffic, and conversions to see the direct impact on your business.",
+                title: t("sections.4.cards.5.title"),
+                description: t("sections.4.cards.5.desc"),
               },
               {
                 icon: Globe,
-                title: "Long-Term Strategy",
-                description:
-                  "Unlike paid advertising, SEO benefits compound over time for lasting results.",
+                title: t("sections.4.cards.6.title"),
+                description: t("sections.4.cards.6.desc"),
               },
             ].map((benefit, index) => (
               // <motion.div
@@ -557,7 +538,9 @@ const SEOOptimizationPage = () => {
                   <h3 className="text-xl font-bold text-black dark:text-white mb-3">
                     {benefit.title}
                   </h3>
-                  <p className="text-black/90 dark:text-white/70">{benefit.description}</p>
+                  <p className="text-black/90 dark:text-white/70">
+                    {benefit.description}
+                  </p>
                 </div>
               </div>
               // </motion.div>
@@ -566,94 +549,100 @@ const SEOOptimizationPage = () => {
         </div>
       </section>
 
-{/* Pricing */}
-<section id="packages" className="py-20">
-  <div className="container mx-auto px-4 md:px-8 lg:px-12">
-    <div className="text-center mb-16">
-      <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
-        PRICING
-      </Badge>
-      <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent ">
-        <GradientText gradient="from-orange-700 to-red-400 dark:from-white dark:to-red-500">
-          SEO Packages
-        </GradientText>
-      </h2>
-      <p className="text-black dark:text-white/70 text-lg max-w-2xl mx-auto">
-        Flexible SEO solutions designed to meet the needs of businesses at
-        every stage of growth.
-      </p>
-    </div>
+      {/* Pricing */}
+      <section id="packages" className="py-20">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12">
+          <div className="text-center mb-16">
+            <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
+              {t("badge.6")}
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent ">
+              <GradientText gradient="from-orange-700 to-red-400 dark:from-white dark:to-red-500">
+                {t("sections.5.title")}
+              </GradientText>
+            </h2>
+            <p className="text-black dark:text-white/70 text-lg max-w-2xl mx-auto">
+              {t("sections.5.desc")}
+            </p>
+          </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {seoPackages.map((pkg, index) => (
-        <div key={index} className="h-full">
-          <Card
-            className={`bg-orange-400 dark:bg-black/60 backdrop-blur-sm h-full flex flex-col hover:border-orange-900 ${
-              pkg.highlighted
-                ? "border-orange-600 shadow-lg shadow-orange-950/30 hover:border-red-800"
-                : "dark:border-orange-950/30"
-            }`}
-          >
-            <CardContent className="p-6 flex-grow flex flex-col">
-              <div className="h-full flex flex-col">
-                {/* Top section with fixed height */}
-                <div style={{ height: "220px" }} className="flex flex-col">
-                  {pkg.highlighted && (
-                    <Badge className="bg-black text-white border-transparent self-start mb-4 ">
-                      Most Popular
-                    </Badge>
-                  )}
-                  <h3 className="text-2xl font-bold text-black dark:text-white mb-2">
-                    {pkg.title}
-                  </h3>
-                  <div className="mb-4">
-                    <span className="text-3xl font-bold text-black dark:text-orange-400">
-                      {pkg.price}
-                    </span>
-                    <span className="text-black/80 dark:text-white ml-1">
-                      {pkg.period}
-                    </span>
-                  </div>
-                  <p className="text-black/90 dark:text-white/70">{pkg.description}</p>
-                </div>
-                
-                {/* What's Included section with consistent border position */}
-                <div className="border-t border-black/30 dark:border-orange-950/30 pt-6 mb-6">
-                  <h4 className="font-bold text-black dark:text-white mb-4">
-                    What's Included:
-                  </h4>
-                  <ul className="space-y-3">
-                    {pkg.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-orange-950 dark:text-orange-500 mr-3 flex-shrink-0" />
-                        <span className="text-black/80 dark:text-white/70">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {seoPackages.map((pkg, index) => (
+              <div key={index} className="h-full">
+                <Card
+                  className={`bg-orange-400 dark:bg-black/60 backdrop-blur-sm h-full flex flex-col hover:border-orange-900 ${
+                    pkg.highlighted
+                      ? "border-orange-600 shadow-lg shadow-orange-950/30 hover:border-red-800"
+                      : "dark:border-orange-950/30"
+                  }`}
+                >
+                  <CardContent className="p-6 flex-grow flex flex-col">
+                    <div className="h-full flex flex-col">
+                      {/* Top section with fixed height */}
+                      <div
+                        style={{ height: "220px" }}
+                        className="flex flex-col"
+                      >
+                        {pkg.highlighted && (
+                          <Badge className="bg-black text-white border-transparent self-start mb-4 ">
+                            {t("sections.5.packages.badge")}
+                          </Badge>
+                        )}
+                        <h3 className="text-2xl font-bold text-black dark:text-white mb-2">
+                          {pkg.title}
+                        </h3>
+                        <div className="mb-4">
+                          <span className="text-3xl font-bold text-black dark:text-orange-400">
+                            {pkg.price}
+                          </span>
+                          <span className="text-black/80 dark:text-white ml-1">
+                            {pkg.period}
+                          </span>
+                        </div>
+                        <p className="text-black/90 dark:text-white/70">
+                          {pkg.description}
+                        </p>
+                      </div>
 
-                {/* Button at bottom */}
-                <div className="mt-auto">
-                  <Button
-                    className={`w-full ${
-                      pkg.highlighted
-                        ? "bg-gradient-to-r from-orange-700 to-orange-700 dark:from-orange-700 dark:to-orange-900 hover:from-orange-700 hover:to-orange-800 dark:hover:from-orange-600 dark:hover:to-orange-800 dark:text-white"
-                        : "bg-orange-600/80 dark:bg-black border border-black dark:border-orange-800/30 dark:text-orange-400 hover:bg-orange-900"
-                    }`}
-                    onClick={() => router.push("/contact")}
-                  >
-                    Get Started
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
+                      {/* What's Included section with consistent border position */}
+                      <div className="border-t border-black/30 dark:border-orange-950/30 pt-6 mb-6">
+                        <h4 className="font-bold text-black dark:text-white mb-4">
+                          {t("sections.5.packages.includedLabel")}
+                        </h4>
+                        <ul className="space-y-3">
+                          {pkg.features.map((feature, idx) => (
+                            <li key={idx} className="flex items-start">
+                              <CheckCircle className="h-5 w-5 text-orange-950 dark:text-orange-500 mr-3 flex-shrink-0" />
+                              <span className="text-black/80 dark:text-white/70">
+                                {feature}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Button at bottom */}
+                      <div className="mt-auto">
+                        <Button
+                          className={`w-full ${
+                            pkg.highlighted
+                              ? "bg-gradient-to-r from-orange-700 to-orange-700 dark:from-orange-700 dark:to-orange-900 hover:from-orange-700 hover:to-orange-800 dark:hover:from-orange-600 dark:hover:to-orange-800 dark:text-white"
+                              : "bg-orange-600/80 dark:bg-black border border-black dark:border-orange-800/30 dark:text-orange-400 hover:bg-orange-900"
+                          }`}
+                          onClick={() => router.push("/contact")}
+                        >
+                          {t("sections.5.packages.startBtn")}
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
-            </CardContent>
-          </Card>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* CTA Section */}
       <section className="py-20 dark:bg-gradient-to-b dark:from-orange-950/10 dark:to-black">
@@ -667,18 +656,17 @@ const SEOOptimizationPage = () => {
           > */}
           <div className="max-w-4xl mx-auto bg-orange-600/80 dark:bg-black/60 border border-orange-900 hover:border-orange-600 transition-colors rounded-xl p-8 md:p-12 text-center  ">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Improve Your Search Rankings?
+              {t("cta.title")}
             </h2>
             <p className="text-lg text-black/80 dark:text-white/70 mb-8 max-w-2xl mx-auto">
-              Get a complimentary SEO audit and discover opportunities to
-              improve your website's visibility in search engines.
+              {t("cta.desc")}
             </p>
             <Button
               size="lg"
               className=" bg-gradient-to-r from-orange-600 to-orange-700 dark:from-orange-700 dark:to-orange-900 hover:from-orange-700 hover:to-orange-800 dark:hover:from-orange-600 dark:hover:to-orange-800 dark:text-white border border-orange-800/30 shadow-lg shadow-orange-950/20 px-8"
               onClick={() => router.push("/contact")}
             >
-              Request Your Free SEO Audit
+              {t("cta.reqBtn")}
               <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
           </div>

@@ -1203,6 +1203,211 @@
       "desc": "Contact us today for a free consultation. We'll help you choose the right features and development approach to create an e-commerce website that drives sales and growth for your business.",
       "getBtn": "Get Your E-commerce Website"
     }
+  },
+  "SEO": {
+    "badge": {
+      "1": "SEO OPTIMIZATION",
+      "2": "OUR SERVICES",
+      "3": "RESULTS",
+      "4": "OUR APPROACH",
+      "5": "BENEFITS",
+      "6": "PRICING"
+    },
+    "title": {
+      "1": "Drive Organic Traffic &",
+      "2": "Boost Your Rankings"
+    },
+    "desc": "Data-driven SEO strategies that increase visibility, attract qualified leads, and help your business dominate search engine results.",
+    "auditBtn": "Get a Free SEO Audit",
+    "packageBtn": "View SEO Packages",
+    "sections": {
+      "1": {
+        "title": "Comprehensive SEO Solutions",
+        "desc": "Our holistic approach to search engine optimization covers all aspects needed to improve your website's visibility in search results.",
+        "services": {
+          "1": {
+            "title": "Keyword Research",
+            "desc": "Comprehensive keyword research to identify high-value search terms that your target audience is using.",
+            "features": {
+              "1": "Competitor Keyword Analysis",
+              "2": "Search Volume Assessment",
+              "3": "Long-tail Keyword Discovery",
+              "4": "Keyword Difficulty Scoring"
+            }
+          },
+          "2": {
+            "title": "On-Page SEO",
+            "desc": "Optimization of individual pages to rank higher and earn more relevant traffic in search engines.",
+            "features": {
+              "1": "Title & Meta Optimization",
+              "2": "Content Structure Improvement",
+              "3": "Internal Linking Strategy",
+              "4": "Image Optimization"
+            }
+          },
+          "3": {
+            "title": "Technical SEO",
+            "desc": "Addressing technical aspects of your website to improve ranking in search engines.",
+            "features": {
+              "1": "Site Speed Optimization",
+              "2": "Mobile Responsiveness",
+              "3": "Schema Markup Implementation",
+              "4": "Crawl Error Resolution"
+            }
+          },
+          "4": {
+            "title": "Link Building",
+            "desc": "Strategic acquisition of backlinks from authoritative websites to boost your domain authority.",
+            "features": {
+              "1": "Quality Backlink Acquisition",
+              "2": "Broken Link Recovery",
+              "3": "Guest Posting Strategy",
+              "4": "Competitor Backlink Analysis"
+            }
+          }
+        }
+      },
+      "2": {
+        "title": "Proven Performance",
+        "desc": "Our data-driven approach consistently delivers measurable results for our clients.",
+        "metrics": {
+          "1": {
+            "title": "Average Traffic Increase",
+            "desc": "Our clients typically see a 45% increase in organic traffic within 6 months."
+          },
+          "2": {
+            "title": "Keyword Ranking Improvement",
+            "desc": "85% of target keywords showing significant ranking improvements within the first 3 months."
+          },
+          "3": {
+            "title": "Conversion Rate Lift",
+            "desc": "On average, our SEO services help improve conversion rates by 32% through qualified traffic."
+          },
+          "4": {
+            "title": "Local Search Visibility",
+            "desc": "Local businesses see a 65% increase in Google Map Pack appearances for relevant searches."
+          }
+        }
+      },
+      "3": {
+        "title": "Our SEO Process",
+        "desc": "We follow a systematic approach to ensure your SEO campaign delivers consistent results.",
+        "approach": {
+          "1": {
+            "title": "SEO Audit",
+            "desc": "We conduct a thorough analysis of your current SEO performance, identifying issues and opportunities."
+          },
+          "2": {
+            "title": "Strategy Development",
+            "desc": "We create a customized SEO strategy based on your business goals, target audience, and competitive landscape."
+          },
+          "3": {
+            "title": "On-Page Optimization",
+            "desc": "We optimize your website's content, structure, and technical elements to improve search engine rankings."
+          },
+          "4": {
+            "title": "Off-Page Strategy",
+            "desc": "We build high-quality backlinks and enhance your online presence across relevant platforms."
+          },
+          "5": {
+            "title": "Analytics & Reporting",
+            "desc": "We track key metrics and provide detailed reports on your SEO performance and ROI."
+          }
+        }
+      },
+      "4": {
+        "title": "Why Invest in SEO?",
+        "desc": "Search engine optimization offers numerous advantages for businesses looking to grow their online presence.",
+        "cards": {
+          "1": {
+            "title": "Increased Organic Traffic",
+            "desc": "Drive more qualified visitors to your website without paying for each click."
+          },
+          "2": {
+            "title": "Enhanced Credibility",
+            "desc": "Higher search rankings build trust and credibility with your target audience."
+          },
+          "3": {
+            "title": "Better User Experience",
+            "desc": "SEO improvements also enhance the usability and user experience of your website."
+          },
+          "4": {
+            "title": "Cost-Effective Marketing",
+            "desc": "SEO provides one of the best ROIs compared to other digital marketing channels."
+          },
+          "5": {
+            "title": "Measurable Results",
+            "desc": "Track rankings, traffic, and conversions to see the direct impact on your business."
+          },
+          "6": {
+            "title": "Long-Term Strategy",
+            "desc": "Unlike paid advertising, SEO benefits compound over time for lasting results."
+          }
+        }
+      },
+      "5": {
+        "title": "SEO Packages",
+        "desc": "Flexible SEO solutions designed to meet the needs of businesses at every stage of growth.",
+        "packages": {
+          "badge": "Most Popular",
+          "includedLabel": "What's Included:",
+          "startBtn": "Get Started",
+          "1": {
+            "title": "Starter SEO",
+            "desc": "Essential SEO services for small businesses looking to improve their local search presence.",
+            "period": "per month",
+            "features": {
+              "1": "Initial SEO Audit",
+              "2": "Keyword Research (up to 20 keywords)",
+              "3": "On-Page Optimization (5 pages)",
+              "4": "Basic Technical SEO",
+              "5": "Monthly Reporting",
+              "6": "Google Business Profile Optimization",
+              "7": "3-Month Minimum Commitment"
+            }
+          },
+          "2": {
+            "title": "Professional SEO",
+            "desc": "Comprehensive SEO solution for growing businesses competing in broader markets.",
+            "period": "per month",
+            "features": {
+              "1": "In-depth SEO Audit",
+              "2": "Advanced Keyword Research (up to 50 keywords)",
+              "3": "On-Page Optimization (15 pages)",
+              "4": "Technical SEO Implementation",
+              "5": "Content Optimization Strategy",
+              "6": "Monthly Link Building (5 quality links)",
+              "7": "Competitor Analysis",
+              "8": "Bi-weekly Reporting",
+              "9": "6-Month Minimum Commitment"
+            }
+          },
+          "3": {
+            "title": "Enterprise SEO",
+            "desc": "Strategic SEO partnership for large businesses with complex needs and competitive industries.",
+            "period": "per month",
+            "features": {
+              "1": "Comprehensive SEO Audit",
+              "2": "Extensive Keyword Research & Mapping",
+              "3": "Full Website Optimization",
+              "4": "Advanced Technical SEO",
+              "5": "Content Creation Strategy",
+              "6": "Aggressive Link Building Campaign",
+              "7": "International SEO (if applicable)",
+              "8": "E-commerce Optimization (if applicable)",
+              "9": "Weekly Reporting & Strategy Calls",
+              "10": "Dedicated SEO Manager",
+              "11": "12-Month Minimum Commitment"
+            }
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Improve Your Search Rankings?",
+      "desc": "Get a complimentary SEO audit and discover opportunities to improve your website's visibility in search engines.",
+      "reqBtn": "Request Your Free SEO Audit"
+    }
   }
 },
   "Portfolio" : {
