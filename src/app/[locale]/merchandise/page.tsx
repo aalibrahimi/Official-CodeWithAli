@@ -90,7 +90,7 @@ const MerchCard: React.FC<{
   description: string;
   colors: Color[];
   sizes: Size[];
-  paymentLink: string;
+  paymentLink?: string;
   available?: boolean;
   onAddToCart: (item: CartItem) => void;
 }> = ({
@@ -248,14 +248,31 @@ const MerchCard: React.FC<{
       
       {/* Button */}
       <div className="p-4 pt-0">
-        <Button
+        {/* <Button
           className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 dark:from-red-700 dark:to-red-900 dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-400/30 dark:border-red-800/30"
           disabled={!available}
           onClick={handleAddToCart}
           >
           {available ? 'Add to Cart' : 'Coming Soon'}
           {available && <ShoppingCart className="ml-2 h-4 w-4" />}
-        </Button>
+        </Button> */}
+        {paymentLink ? (
+          <Link href={paymentLink} target="_blank">
+          <Button
+            size="sm"
+            className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 dark:from-red-700 dark:to-red-900 dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-400/30 dark:border-red-800/30 hover:cursor-pointer"
+          >
+            {t('merchComp.buyBtn')}
+          </Button>
+        </Link>
+        ) : (
+              <Button
+                size="sm"
+                className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 dark:from-red-700 dark:to-red-900 dark:hover:from-red-600 dark:hover:to-red-800 text-white/60 border border-red-400/30 dark:border-red-800/30"
+              >
+                {t('merchComp.soonLabel')}
+              </Button>
+        )}
       </div>
     </div>
   );

@@ -1687,9 +1687,11 @@
         "1": "BESTSELLER",
         "2": "FEATURED"
       },
+      "buyBtn": "Buy Now",
       "wishlistLabel": "Add to Wishlist",
       "colorLabel": "Colors:",
-      "sizeLabel": "Sizes:"
+      "sizeLabel": "Sizes:",
+      "soonLabel": "Coming Soon..."
     },
     "items": {
       "1": {
