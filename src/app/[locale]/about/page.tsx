@@ -460,7 +460,7 @@ export default function AboutPage() {
             {/* Process Steps */}
             <div className="space-y-16 relative z-10">
               {/* Step 1 */}
-             
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
                 <div className="md:mr-5">
                   <div className="bg-red-700/80 dark:bg-black/60 border border-red-900 p-6 rounded-xl shadow-lg">
@@ -470,12 +470,15 @@ export default function AboutPage() {
                     <p className="text-red-950/90 dark:text-amber-50 mb-4 text-right">
                       {t("process.cards.desc1")}
                     </p>
-                    <ul className="text-black dark:text-red-300 pl-5 md:pl-0 mt-3 space-y-2 list-disc pr-5 " style = {{direction : "rtl"}} >
-                        <li>{t("process.cards.firstList.li1")}</li>
-                        <li>{t("process.cards.firstList.li2")}</li>
-                        <li>{t("process.cards.firstList.li3")}</li>
-                        <li>{t("process.cards.firstList.li4")}</li>
-                      </ul>
+                    <ul
+                      className="text-black dark:text-red-300 pl-5 md:pl-0 mt-3 space-y-2 list-disc pr-5 "
+                      style={{ direction: "rtl" }}
+                    >
+                      <li>{t("process.cards.firstList.li1")}</li>
+                      <li>{t("process.cards.firstList.li2")}</li>
+                      <li>{t("process.cards.firstList.li3")}</li>
+                      <li>{t("process.cards.firstList.li4")}</li>
+                    </ul>
                   </div>
                 </div>
 
@@ -515,7 +518,7 @@ export default function AboutPage() {
 
               {/* Step 3 */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
-                <div className=" md:mr-5" style={{ direction: 'rtl' }}>
+                <div className=" md:mr-5" style={{ direction: "rtl" }}>
                   <div className="bg-red-700/80 dark:bg-black/60 border border-red-900 p-6 rounded-xl">
                     <h3 className="text-2xl font-bold text-red-950 dark:text-white mb-3">
                       {t("process.cards.h3")}
@@ -524,7 +527,11 @@ export default function AboutPage() {
                       {t("process.cards.desc3")}
                     </p>
                     <ul className=" text-red-950 dark:text-red-300 pl-5 md:pl-0 m mt-3 space-y-2 list-disc pr-5">
-                      <li className=""> {t("process.cards.thirdList.li1")}  <span className="h-2 w-2 rounded-full bg-white/90 dark:bg-red-300 flex-shrink-0"></span> </li>
+                      <li className="">
+                        {" "}
+                        {t("process.cards.thirdList.li1")}{" "}
+                        <span className="h-2 w-2 rounded-full bg-white/90 dark:bg-red-300 flex-shrink-0"></span>{" "}
+                      </li>
                       <li className=""> {t("process.cards.thirdList.li2")} </li>
                       <li className=""> {t("process.cards.thirdList.li3")} </li>
                       <li className=""> {t("process.cards.thirdList.li4")} </li>
@@ -666,33 +673,43 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-7 font-bold">
-  {technologies.map((tech, index) => (
-    <Link
-      key={index}
-      href={tech.url}
-      target="_blank"
-      className="bg-forground dark:bg-black/60 border border-transparent hover:border-red-900 p-3 rounded-xl flex flex-col items-center text-center transition-colors duration-200"
-    >
-      {/* revist later */}
-      <div className={`w-11 h-11 rounded-lg flex items-center justify-center mb-3 
-        ${tech.logo === 'nextjs' ? 
-          'bg-black dark:bg-black ring-1 ring-black ' : 
-          'dark:bg-gradient-to-br from-red-700/40 to-red-400/10 dark:from-red-950/40 dark:to-red-900/10'
-        }`}>
-        <TechIcon 
-          name={tech.logo} 
-          className={tech.logo === 'nextjs' ? 'text-white dark:text-black scale-110' : ''} 
-        />
-      </div>
-      <span className={tech.logo === 'nextjs' ? 
-        'font-semibold text-black dark:text-white' : 
-        'text-black dark:text-white'
-      }>
-        {tech.name}
-      </span>
-    </Link>
-  ))}
-</div>
+            {technologies.map((tech, index) => (
+              <Link
+                key={index}
+                href={tech.url}
+                target="_blank"
+                className="bg-forground dark:bg-black/60 border border-transparent hover:border-red-900 p-3 rounded-xl flex flex-col items-center text-center transition-colors duration-200"
+              >
+                {/* revist later */}
+                <div
+                  className={`w-11 h-11 rounded-lg flex items-center justify-center mb-3 
+        ${
+          tech.logo === "nextjs"
+            ? "bg-black dark:bg-black ring-1 ring-black "
+            : "dark:bg-gradient-to-br from-red-700/40 to-red-400/10 dark:from-red-950/40 dark:to-red-900/10"
+        }`}
+                >
+                  <TechIcon
+                    name={tech.logo}
+                    className={
+                      tech.logo === "nextjs"
+                        ? "text-white dark:text-black scale-110"
+                        : ""
+                    }
+                  />
+                </div>
+                <span
+                  className={
+                    tech.logo === "nextjs"
+                      ? "font-semibold text-black dark:text-white"
+                      : "text-black dark:text-white"
+                  }
+                >
+                  {tech.name}
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

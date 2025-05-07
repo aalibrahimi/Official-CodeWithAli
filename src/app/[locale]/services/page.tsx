@@ -197,7 +197,7 @@ const processSteps = [
         
                 </span>
               </h1>
-              <p className="text-lg md:text-xl dark:text-white/80 mb-8">
+              <p className="text-2xl md:text-xl dark:text-white/70 mb-8  font-semibold">
               {t("Subdesc")}
               </p>
             </div>
@@ -222,8 +222,8 @@ const processSteps = [
                   //   transition={{ duration: 0.4, delay: index * 0.05 }}
                   // >
                   <div key={index}>
-                    <Card className="bg-red-900/90 dark:bg-black/60 border-red-900 backdrop-blur-sm h-full overflow-hidden group hover:border-red-800/50 transition-colors">
-                      <CardContent className="p-6 flex flex-col h-full">
+                    <Card className="bg-red-900 dark:bg-black/60 border-red-900 backdrop-blur-sm h-full overflow-hidden group hover:border-red-800/50 transition-colors">
+                      <CardContent className="p-6 flex flex-col h-full ">
                         <div className="mb-5">
                           {/* Could put this: from-red-500 to-red-600 dark:from-red-600 dark:to-red-800
                               as service icon color
@@ -264,13 +264,13 @@ const processSteps = [
                               </>
                             )}
                           </h3>
-                          <p className="text-white dark:text-red-200/60 mb-4">
+                          <p className="text-white  dark:text-red-200/60 mb-4">
                             {service.description}
                           </p>
 
                           <ul className="space-y-2 mb-5">
                             {service.features.map((feature, idx) => (
-                              <li key={idx} className="flex items-start">
+                              <li key={idx} className="flex items-start font-bold">
                                 <ChevronRight className="h-4 w-4 text-red-300 dark:text-red-500 mt-1 mr-2 flex-shrink-0" />
                                 <span className="text-white/80 dark:text-red-200/80 text-sm">
                                   {feature}

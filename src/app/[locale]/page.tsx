@@ -396,7 +396,7 @@ const HomePage = () => {
                       >
                         <service.icon className="w-full h-full text-white" />
                       </div>
-                      <h3 className="text-xl font-bold text-white dark:text-white mb-2">
+                      <h3 className="text-xl font-bold text-black dark:text-white mb-2">
                         {service.title}
                       </h3>
                       <p className="text-black dark:text-red-200/60">{service.description}</p>
@@ -405,7 +405,7 @@ const HomePage = () => {
                       <Link href={service.url} target="_blank">
                         <Button
                           variant="ghost"
-                          className="p-0 text-white dark:text-red-400 dark:hover:text-red-300 hover:bg-transparent group"
+                          className="p-0 text-black dark:text-red-400 dark:hover:text-red-300 hover:bg-transparent group"
                         >
                           {t("services.learnMore")}
                           <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
@@ -589,8 +589,8 @@ const HomePage = () => {
                   </div>
                   <div className="pt-6">
                     <div className="mb-4 flex items-center">
-                      <step.icon className="w-6 h-6 text-red-300 dark:text-red-500 mr-3" />
-                      <h3 className="text-xl font-bold text-red-950 dark:text-white">
+                      <step.icon className="w-6 h-6 text-black dark:text-red-500 mr-3" />
+                      <h3 className="text-xl font-bold text-white dark:text-white">
                         {step.title}
                       </h3>
                     </div>
@@ -600,7 +600,7 @@ const HomePage = () => {
 
                 {index < 3 && (
                   <div className="hidden lg:block absolute top-1/2 -right-0 transform translate-x-full">
-                    <ArrowRight className="w-6 h-6 text-red-800/70 dark:text-red-700/50" />
+                    <ArrowRight className="w-6 h-6 text-black dark:text-red-700/50" />
                   </div>
                 )}
               </motion.div>
@@ -700,7 +700,7 @@ const HomePage = () => {
       <ContactForm />
 
       {/* CTA Section */}
-      <section className="py-20 md:py-24 bg-gradient-to-b from-white via-white to-white  dark:from-red-950/10 dark:via-red-950/10 dark:to-black">
+      <section className="py-20 md:py-24 dark:bg-gradient-to-b dark:from-red-950/10 dark:via-red-950/10 dark:to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <motion.div
             className="max-w-4xl mx-auto bg-red-800  dark:bg-black/60 border  dark:border-red-900 rounded-xl p-8 md:p-12 text-center"

@@ -84,7 +84,7 @@ const PortfolioPage = () => {
         </div>
 
         {/* Heading */}
-        <div className="h-full relative z-10 flex flex-col items-center justify-center text-center" >
+        <div className="h-full relative z-10 flex flex-col items-center justify-center text-center font-semibold" >
           <div className="w-full h-full ">
             <div className="w-full h-full ">
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight  ">
