@@ -475,11 +475,11 @@ const UIUXDesignPage = () => {
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
               <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
-                {t("section.4.title")}
+                {t("sections.4.title")}
               </GradientText>
             </h2>
             <p className="text-black dark:text-white/80 text-lg max-w-2xl mx-auto">
-              {t("section.4.desc")}
+              {t("sections.4.desc")}
             </p>
           </div>
           {/* </motion.div> */}

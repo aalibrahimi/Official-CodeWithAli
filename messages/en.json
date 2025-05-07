@@ -1644,7 +1644,7 @@
       "2": "Coding Passion"
     },
     "desc": "High-quality apparel for developers, designers, and tech enthusiasts. Made for those who build digital excellence.",
-    "shopbtn": "Shop Now",
+    "shopBtn": "Shop Now",
     "heading": {
       "1": "Curated Collections",
       "2": "Shop The Collection"
@@ -1664,12 +1664,115 @@
       }
     },
     "category": {
+      "searchPlaceHolder": "Search products...",
       "1": "All",
       "2": "Hoodie",
       "3": "Shirt",
       "4": "Hat",
       "5": "Pants",
-      "6": "Other"
+      "6": "Other",
+      "sort": {
+        "title": "Sort By",
+        "option": {
+          "1": "Featured",
+          "2": "Price: Low to High",
+          "3": "Price: High to Low",
+          "4": "Alphabetical",
+          "5": "Newest"
+        }
+      }
+    },
+    "merchComp": {
+      "badge": {
+        "1": "BESTSELLER",
+        "2": "FEATURED"
+      },
+      "wishlistLabel": "Add to Wishlist",
+      "colorLabel": "Colors:",
+      "sizeLabel": "Sizes:"
+    },
+    "items": {
+      "1": {
+        "title": "Developer Hoodie",
+        "desc": "Stay warm while coding with our premium developer hoodie. Features a minimalist design with subtle code snippets on the sleeves.",
+        "category": "Hoodie",
+        "colors": {
+          "1": "Black",
+          "2": "Gray",
+          "3": "Navy",
+          "4": "White"
+        }
+      },
+      "2": {
+        "title": "Premium Code Hoodie",
+        "desc": "Our premium heavyweight hoodie with embroidered logo and code patterns. Includes hidden earbud channels in the hood.",
+        "category": "Hoodie",
+        "colors": {
+          "1": "Black",
+          "2": "Gray",
+          "3": "Navy",
+          "4": "White"
+        }
+      },
+      "3": {
+        "title": "Code Artist T-Shirt",
+        "desc": "Comfortable cotton t-shirt with our signature 'Code Artist' design on the front.",
+        "category": "Shirt",
+        "colors": {
+          "1": "Black",
+          "2": "White",
+          "3": "Red",
+          "4": "Blue",
+          "5": "Gray",
+          "6": "Light-Gray",
+          "7": "Navy"
+        }
+      },
+      "5": {
+        "title": "Developer Sweatshirt",
+        "desc": "Retro-inspired sweatshirt featuring vintage programming languages and syntax.",
+        "category": "Shirt",
+        "colors": {
+          "1": "Black",
+          "2": "Navy",
+          "3": "Gray",
+          "4": ""
+        }
+      },
+      "6": {
+        "title": "Premium Developer Sweatshirt",
+        "desc": "Premium sweatshirt with comfortable fabric and stylish developer-themed design.",
+        "category": "Shirt",
+        "colors": {
+          "1": "Black",
+          "2": "Navy",
+          "3": "Gray"
+        }
+      },
+      "7": {
+        "title": "Tech Beanie",
+        "desc": "Warm knitted beanie with a subtle embroidered code symbol. Perfect for winter coding.",
+        "category": "Hat",
+        "colors": {
+          "1": "Black"
+        }
+      },
+      "8": {
+        "title": "Cap",
+        "desc": "Wear your coding cap when going to meet ups while looking fresh and cool.",
+        "category": "Hat",
+        "colors": {
+          "1": "Black"
+        }
+      },
+      "9": {
+        "title": "CWA Mug",
+        "desc": "Our premium heavyweight hoodie with embroidered logo and code patterns. Includes hidden earbud channels in the hood.",
+        "category": "Other",
+        "colors": {
+          "1": "Black"
+        }
+      }
     },
     "features": {
       "1": {
@@ -1687,7 +1790,8 @@
     },
     "cta": {
       "title": "Get 15% Off Your First Order",
-      "desc": "Enter the promotion code at checkout and receive a 15% discount code for your first merchandise purchase."
+      "desc": "Enter the promotion code at checkout and receive a 15% discount code for your first merchandise purchase.",
+      "newsBtn": "Sign Up For Newsletter"
     }
   },
   "Contact": {

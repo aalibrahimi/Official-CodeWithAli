@@ -26,6 +26,7 @@ import {
   DropdownMenuTrigger 
 } from "@/components/ui/dropdown-menu";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { useTranslations } from "next-intl";
 
 // Types
 export type Category = "Hoodie" | "Shirt" | "Hat" | "Pants" | "Other";
@@ -56,135 +57,6 @@ interface CartItem {
   image: string;
   color: Color;
 }
-
-// Merchandise data (same as original, kept for reference)
-const merchandiseItems = [
-  {
-    id: 1,
-    name: "Developer Hoodie",
-    category: "Hoodie",
-    price: 59.99,
-    image: "blue_hoodie",
-    paymentLink: "",
-    colors: ["Black", "Gray", "Navy", "White"],
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    featured: true,
-    bestseller: true,
-    description: "Stay warm while coding with our premium developer hoodie. Features a minimalist design with subtle code snippets on the sleeves."
-  },
-  {
-    id: 2,
-    name: "Premium Code Hoodie",
-    category: "Hoodie",
-    price: 69.99,
-    image: "red_hoodie",
-    paymentLink: "https://buy.stripe.com/eVa02NgCa09PamQaEL",
-    colors: ["Black", "Gray", "Navy", "White"],
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    featured: true,
-    bestseller: true,
-    description: "Our premium heavyweight hoodie with embroidered logo and code patterns. Includes hidden earbud channels in the hood."
-  },
-  {
-    id: 3,
-    name: "Code Artist T-Shirt",
-    category: "Shirt",
-    price: 29.99,
-    image: "red_tshirt",
-    paymentLink: "",
-    colors: ["Black", "White", "Red", "Blue", "Gray", "Light-Gray", "Navy"],
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    featured: true,
-    bestseller: false,
-    description: "Comfortable cotton t-shirt with our signature 'Code Artist' design on the front."
-  },
-  {
-    id: 5,
-    name: "Developer Sweatshirt",
-    category: "Shirt",
-    price: 34.99,
-    image: "blue_sweatshirt",
-    paymentLink: "",
-    colors: ["Black", "Navy", "Gray"],
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    featured: false,
-    description: "Retro-inspired sweatshirt featuring vintage programming languages and syntax."
-  },
-  {
-    id: 6,
-    name: "Premium Developer Sweatshirt",
-    category: "Shirt",
-    price: 44.99,
-    image: "red_sweatshirt",
-    paymentLink: "",
-    colors: ["Black", "Navy", "Gray"],
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    featured: false,
-    description: "Premium sweatshirt with comfortable fabric and stylish developer-themed design."
-  },
-  {
-    id: 7,
-    name: "Tech Beanie",
-    category: "Hat",
-    price: 22.99,
-    image: "beanie",
-    paymentLink: "",
-    colors: ["Black"],
-    sizes: ["One Size"],
-    featured: true,
-    bestseller: false,
-    description: "Warm knitted beanie with a subtle embroidered code symbol. Perfect for winter coding.",
-    available: false
-  },
-  {
-    id: 8,
-    name: "Cap",
-    category: "Hat",
-    price: 22.99,
-    image: "cap",
-    paymentLink: "",
-    colors: ["Black"],
-    sizes: ["One Size"],
-    featured: true,
-    bestseller: false,
-    description: "Wear your coding cap when going to meet ups while looking fresh and cool.",
-    available: false
-  },
-  {
-    id: 9,
-    name: "CWA Mug",
-    category: "Other",
-    price: 69.99,
-    image: "mug", 
-    colors: ["Black"],
-    sizes: ["One Size"],
-    featured: true,
-    description: "Our premium heavyweight hoodie with embroidered logo and code patterns. Includes hidden earbud channels in the hood.",
-    available: false
-  },
-];
-
-// Featured collections (same as original)
-const collections = [
-  { 
-    name: "Winter Collection", 
-    image: "/merchandise/winter-collection.png",
-    description: "Stay warm and stylish with our winter coding apparel."
-  },
-  { 
-    name: "Essential Collection", 
-    image: "/merchandise/essential-collection.png",
-    description: "Must-have pieces for every developer's wardrobe."
-  },
-  { 
-    name: "Limited Edition", 
-    image: "/merchandise/limited-edition.png",
-    description: "Exclusive designs available for a limited time only."
-  }
-];
-
-// Filter categories (same as original)
-const categories = ["All", "Hoodie", "Shirt", "Hat", "Pants", "Other"];
 
 // Helper function to get the correct image path
 const getImagePath = (baseName: string, color: Color): string => {
@@ -249,7 +121,7 @@ const MerchCard: React.FC<{
     "Blue": "bg-blue-500",
     "Light-Gray": "bg-gray-300"
   };
-
+  
   const handleAddToCart = () => {
     if (available) {
       onAddToCart({
@@ -262,26 +134,27 @@ const MerchCard: React.FC<{
       });
     }
   };
-
+  
   // Get correct image path
   const imagePath = getImagePath(img, selectedColor);
-
+  const t = useTranslations('Merch')
+  
   return (
     <div 
-      className="relative bg-white dark:bg-black border border-red-300/40 dark:border-red-900/40 rounded-xl overflow-hidden transition-all duration-300 hover:border-red-700 hover:shadow-md hover:shadow-red-950/10 flex flex-col h-full"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+    className="relative bg-white dark:bg-black border border-red-300/40 dark:border-red-900/40 rounded-xl overflow-hidden transition-all duration-300 hover:border-red-700 hover:shadow-md hover:shadow-red-950/10 flex flex-col h-full"
+    onMouseEnter={() => setIsHovered(true)}
+    onMouseLeave={() => setIsHovered(false)}
     >
       {/* Product badges */}
       <div className="absolute top-3 left-3 z-10 flex flex-col gap-2">
         {bestseller && (
           <Badge className="bg-amber-200 dark:bg-amber-800/60 text-amber-800 dark:text-amber-300 border-transparent">
-            BESTSELLER
+            {t('merchComp.badge.1')}
           </Badge>
         )}
         {featured && !bestseller && (
           <Badge className="bg-red-200 dark:bg-red-900/60 text-red-800 dark:text-red-300 border-transparent">
-            FEATURED
+            {t('merchComp.badge.2')}
           </Badge>
         )}
       </div>
@@ -294,14 +167,14 @@ const MerchCard: React.FC<{
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-contain p-4 hover:scale-105 transition-transform duration-300"
-        />
+          />
         
         {/* Quick action buttons */}
         <div 
           className={`absolute top-3 right-3 flex flex-col gap-2 transition-opacity duration-300 ${
             isHovered ? 'opacity-100' : 'opacity-0'
           }`}
-        >
+          >
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -309,12 +182,12 @@ const MerchCard: React.FC<{
                   size="icon"
                   variant="secondary"
                   className="h-8 w-8 rounded-full bg-black/10 dark:bg-white/10 backdrop-blur-sm border-black/20 dark:border-white/20 text-black dark:text-white"
-                >
+                  >
                   <Heart className="h-4 w-4" />
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
-                <p>Add to Wishlist</p>
+                <p>{t('merchComp.wishlistLabel')}</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
@@ -338,17 +211,17 @@ const MerchCard: React.FC<{
         {/* Color swatches */}
         {colors.length > 0 && (
           <div className="mt-3">
-            <p className="text-xs text-red-600/70 dark:text-red-300/70 mb-1">Colors:</p>
+            <p className="text-xs text-red-600/70 dark:text-red-300/70 mb-1">{t('merchComp.colorLabel')}</p>
             <div className="flex flex-wrap gap-1">
               {colors.map((color) => (
                 <button
-                  key={color}
-                  className={`w-6 h-6 rounded-full ${colorClasses[color]} ${
-                    selectedColor === color ? 'ring-2 ring-red-500' : 'ring-1 ring-red-950/20'
-                  } ${color === 'White' ? 'border border-gray-300' : ''} transition-all duration-200`}
-                  title={color}
-                  onClick={() => setSelectedColor(color)}
-                  aria-label={`Select ${color} color`}
+                key={color}
+                className={`w-6 h-6 rounded-full ${colorClasses[color]} ${
+                  selectedColor === color ? 'ring-2 ring-red-500' : 'ring-1 ring-red-950/20'
+                } ${color === 'White' ? 'border border-gray-300' : ''} transition-all duration-200`}
+                title={color}
+                onClick={() => setSelectedColor(color)}
+                aria-label={`Select ${color} color`}
                 />
               ))}
             </div>
@@ -358,12 +231,12 @@ const MerchCard: React.FC<{
         {/* Sizes */}
         {sizes.length > 1 && (
           <div className="mt-2">
-            <p className="text-xs text-red-600/70 dark:text-red-300/70 mb-1">Sizes:</p>
+            <p className="text-xs text-red-600/70 dark:text-red-300/70 mb-1">{t('merchComp.sizeLabel')}</p>
             <div className="flex flex-wrap gap-1">
               {sizes.map((size) => (
                 <span 
-                  key={size}
-                  className="text-xs bg-red-100 dark:bg-red-950/20 text-red-600 dark:text-red-300/70 px-1.5 py-0.5 rounded"
+                key={size}
+                className="text-xs bg-red-100 dark:bg-red-950/20 text-red-600 dark:text-red-300/70 px-1.5 py-0.5 rounded"
                 >
                   {size}
                 </span>
@@ -379,7 +252,7 @@ const MerchCard: React.FC<{
           className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 dark:from-red-700 dark:to-red-900 dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-400/30 dark:border-red-800/30"
           disabled={!available}
           onClick={handleAddToCart}
-        >
+          >
           {available ? 'Add to Cart' : 'Coming Soon'}
           {available && <ShoppingCart className="ml-2 h-4 w-4" />}
         </Button>
@@ -425,7 +298,7 @@ const MiniCart: React.FC<{
                     alt={item.name}
                     fill
                     className="object-contain"
-                  />
+                    />
                 </div>
                 <div className="flex-grow">
                   <div className="flex justify-between">
@@ -435,7 +308,7 @@ const MiniCart: React.FC<{
                       variant="ghost" 
                       className="h-5 w-5 text-red-500/70 dark:text-red-300/70"
                       onClick={() => onRemoveItem(item.id)}
-                    >
+                      >
                       <X className="h-3 w-3" />
                     </Button>
                   </div>
@@ -458,12 +331,12 @@ const MiniCart: React.FC<{
               <Button 
                 variant="outline"
                 className="border-red-400/30 dark:border-red-800/30 text-red-500 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/30"
-              >
+                >
                 View Cart
               </Button>
               <Button
                 className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 dark:from-red-700 dark:to-red-900 dark:hover:from-red-600 dark:hover:to-red-800 text-white"
-              >
+                >
                 Checkout
               </Button>
             </div>
@@ -477,10 +350,141 @@ const MiniCart: React.FC<{
 // Main Page Component
 export default function MerchandisePage() {
   const router = useRouter();
+  const t = useTranslations('Merch');
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState("featured");
   
+  // Merchandise data (same as original, kept for reference)
+  const merchandiseItems = [
+    {
+      id: 1,
+      name: t('items.1.title'),
+      category: t('items.1.category'),
+      price: 59.99,
+      image: "blue_hoodie",
+      paymentLink: "",
+      colors: [t('items.1.colors.1'), t('items.1.colors.2'), t('items.1.colors.3'), t('items.1.colors.4')],
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      featured: true,
+      bestseller: true,
+      description: t('items.1.desc')
+    },
+    {
+      id: 2,
+      name: t('items.2.title'),
+      category: t('items.2.category'),
+      price: 69.99,
+      image: "red_hoodie",
+      paymentLink: "https://buy.stripe.com/eVa02NgCa09PamQaEL",
+      colors: [t('items.2.colors.1'), t('items.2.colors.2'), t('items.2.colors.3'), t('items.2.colors.4')],
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      featured: true,
+      bestseller: true,
+      description: t('items.2.desc')
+    },
+    {
+      id: 3,
+      name: t('items.3.title'),
+      category: t('items.3.category'),
+      price: 29.99,
+      image: "red_tshirt",
+      paymentLink: "",
+      colors: [t('items.3.colors.1'), t('items.3.colors.2'), t('items.3.colors.3'), t('items.3.colors.4'), t('items.3.colors.5'), t('items.3.colors.6'), t('items.3.colors.7')],
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      featured: true,
+      bestseller: false,
+      description: t('items.3.desc')
+    },
+    {
+      id: 5,
+      name: t('items.5.title'),
+      category: t('items.5.category'),
+      price: 34.99,
+      image: "blue_sweatshirt",
+      paymentLink: "",
+      colors: [t('items.5.colors.1'), t('items.5.colors.2'), t('items.5.colors.3')],
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      featured: false,
+      description: t('items.5.desc')
+    },
+    {
+      id: 6,
+      name: t('items.6.title'),
+      category: t('items.6.category'),
+      price: 44.99,
+      image: "red_sweatshirt",
+      paymentLink: "",
+      colors: [t('items.6.colors.1'), t('items.6.colors.2'), t('items.6.colors.3')],
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      featured: false,
+      description: t('items.6.desc')
+    },
+    {
+      id: 7,
+      name: t('items.7.title'),
+      category: t('items.7.category'),
+      price: 22.99,
+      image: "beanie",
+      paymentLink: "",
+      colors: [t('items.7.colors.1')],
+      sizes: ["One Size"],
+      featured: true,
+      bestseller: false,
+      description: t('items.7.desc'),
+      available: false
+    },
+    {
+      id: 8,
+      name: t('items.8.title'),
+      category: t('items.8.category'),
+      price: 22.99,
+      image: "cap",
+      paymentLink: "",
+      colors: [t('items.8.colors.1')],
+      sizes: ["One Size"],
+      featured: true,
+      bestseller: false,
+      description: t('items.8.title'),
+      available: false
+    },
+    {
+      id: 9,
+      name: t('items.9.title'),
+      category: t('items.9.category'),
+      price: 69.99,
+      image: "mug", 
+      colors: [t('items.9.colors.1')],
+      sizes: ["One Size"],
+      featured: true,
+      description: t('items.9.desc'),
+      available: false
+    },
+  ];
+  
+  // Featured collections (same as original)
+  const collections = [
+    { 
+      name: t('collection.1.title'), 
+      image: "/merchandise/winter-collection.png",
+      description: t('collection.1.desc')
+    },
+    { 
+      name: t('collection.2.title'), 
+      image: "/merchandise/essential-collection.png",
+      description: t('collection.2.desc')
+    },
+    { 
+      name: t('collection.3.title'), 
+      image: "/merchandise/limited-edition.png",
+      description: t('collection.3.desc')
+    }
+  ];
+
+  // Filter categories (same as original)
+const categories = [t('category.1'), t('category.2'), t('category.3'), t('category.4'), t('category.5'), t('category.6')];
+
+
   // Cart state
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -505,10 +509,10 @@ export default function MerchandisePage() {
     switch (sortBy) {
       case "price-low":
         return a.price - b.price;
-      case "price-high":
-        return b.price - a.price;
-      case "name":
-        return a.name.localeCompare(b.name);
+        case "price-high":
+          return b.price - a.price;
+          case "name":
+            return a.name.localeCompare(b.name);
       case "newest":
         return b.id - a.id;
       case "featured":
@@ -570,23 +574,22 @@ export default function MerchandisePage() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <Badge className="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 border-transparent mb-4 px-3 py-1">
-              OFFICIAL MERCHANDISE
+              {t('badge.1')}
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-black dark:text-white">
-              Wear Your
+              {t('title.1')}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600 block">
-                Coding Passion
+              {t('title.2')}
               </span>
             </h1>
             <p className="text-lg md:text-xl text-red-600/80 dark:text-red-200/80 mb-8">
-              High-quality apparel for developers, designers, and tech enthusiasts.
-              Made for those who build digital excellence.
+              {t('desc')}
             </p>
             <Button
               size="lg"
               className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 dark:from-red-700 dark:to-red-900 dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-400/30 dark:border-red-800/30 shadow-lg shadow-red-300/20 dark:shadow-red-950/20"
             >
-              Shop Now
+              {t('shopBtn')}
               <ShoppingCart className="ml-2 h-5 w-5" />
             </Button>
           </div>
@@ -598,9 +601,9 @@ export default function MerchandisePage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="mb-10">
             <Badge className="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 border-transparent mb-4 px-3 py-1">
-              FEATURED COLLECTIONS
+              {t('badge.2')}
             </Badge>
-            <h2 className="text-3xl font-bold text-black dark:text-white">Curated Collections</h2>
+            <h2 className="text-3xl font-bold text-black dark:text-white">{t('heading.1')}</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -631,9 +634,9 @@ export default function MerchandisePage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="mb-10">
             <Badge className="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 border-transparent mb-4 px-3 py-1">
-              OUR PRODUCTS
+              {t('badge.3')}
             </Badge>
-            <h2 className="text-3xl font-bold text-black dark:text-white">Shop The Collection</h2>
+            <h2 className="text-3xl font-bold text-black dark:text-white">{t('heading.2')}</h2>
           </div>
           
           {/* Search and Filter Controls */}
@@ -642,7 +645,7 @@ export default function MerchandisePage() {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-red-400/50 dark:text-red-300/50" />
               <Input
                 type="text"
-                placeholder="Search products..."
+                placeholder={t('category.searchPlaceHolder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-10 bg-red-50 dark:bg-red-950/10 border-red-300/50 dark:border-red-900/30 text-black dark:text-white"
@@ -668,7 +671,7 @@ export default function MerchandisePage() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="outline" size="sm" className="border-red-300/50 dark:border-red-800/30 text-red-500 dark:text-red-300">
-                    Sort By
+                    {t('category.sort.title')}
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="bg-white dark:bg-black/90 border-red-200/30 dark:border-red-950/30">
@@ -676,31 +679,31 @@ export default function MerchandisePage() {
                     className="text-red-500 dark:text-red-300/90 cursor-pointer hover:bg-red-50 dark:hover:bg-red-950/30"
                     onClick={() => setSortBy("featured")}
                   >
-                    Featured
+                    {t('category.sort.option.1')}
                   </DropdownMenuItem>
                   <DropdownMenuItem 
                     className="text-red-500 dark:text-red-300/90 cursor-pointer hover:bg-red-50 dark:hover:bg-red-950/30"
                     onClick={() => setSortBy("price-low")}
                   >
-                    Price: Low to High
+                    {t('category.sort.option.2')}
                   </DropdownMenuItem>
                   <DropdownMenuItem 
                     className="text-red-500 dark:text-red-300/90 cursor-pointer hover:bg-red-50 dark:hover:bg-red-950/30"
                     onClick={() => setSortBy("price-high")}
                   >
-                    Price: High to Low
+                    {t('category.sort.option.3')}
                   </DropdownMenuItem>
                   <DropdownMenuItem 
                     className="text-red-500 dark:text-red-300/90 cursor-pointer hover:bg-red-50 dark:hover:bg-red-950/30"
                     onClick={() => setSortBy("name")}
                   >
-                    Alphabetical
+                    {t('category.sort.option.4')}
                   </DropdownMenuItem>
                   <DropdownMenuItem 
                     className="text-red-500 dark:text-red-300/90 cursor-pointer hover:bg-red-50 dark:hover:bg-red-950/30"
                     onClick={() => setSortBy("newest")}
                   >
-                    Newest
+                    {t('category.sort.option.5')}
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -738,9 +741,9 @@ export default function MerchandisePage() {
               <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-red-500 dark:from-red-800 dark:to-red-900 rounded-full flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
                 <Tag className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-black dark:text-white mb-2">Premium Quality</h3>
+              <h3 className="text-xl font-bold text-black dark:text-white mb-2">{t('features.1.title')}</h3>
               <p className="text-red-600/80 dark:text-red-200/70">
-                All our merchandise is made with high-quality materials built to last through countless coding sessions.
+              {t('features.1.desc')}
               </p>
             </div>
             
@@ -748,9 +751,9 @@ export default function MerchandisePage() {
               <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-red-500 dark:from-red-800 dark:to-red-900 rounded-full flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
                 <TrendingUp className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-black dark:text-white mb-2">Unique Designs</h3>
+              <h3 className="text-xl font-bold text-black dark:text-white mb-2">{t('features.2.title')}</h3>
               <p className="text-red-600/80 dark:text-red-200/70">
-                Each piece features unique designs created by our in-house team of developer-artists.
+              {t('features.2.desc')}
               </p>
             </div>
             
@@ -758,9 +761,9 @@ export default function MerchandisePage() {
               <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-red-500 dark:from-red-800 dark:to-red-900 rounded-full flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
                 <CheckCircle className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-black dark:text-white mb-2">Free Shipping</h3>
+              <h3 className="text-xl font-bold text-black dark:text-white mb-2">{t('features.3.title')}</h3>
               <p className="text-red-600/80 dark:text-red-200/70">
-                Enjoy free shipping on all orders over $75. International shipping available to most countries.
+              {t('features.3.desc')}
               </p>
             </div>
           </div>
@@ -772,16 +775,16 @@ export default function MerchandisePage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto bg-white dark:bg-black/60 border border-red-300/40 dark:border-red-900/40 rounded-xl p-10 text-center hover:border-red-700/60 transition-all duration-300">
             <Badge className="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 border-transparent mb-4 px-3 py-1">
-              LIMITED TIME OFFER
+              {t('badge.4')}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
-              Get 15% Off Your First Order
+              {t('cta.title')}
             </h2>
             <Badge className="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 border-transparent mb-4 px-3 py-1">
-              CODE: CWA15
+              {t('badge.5')}
             </Badge>
             <p className="text-lg text-red-600/80 dark:text-red-200/70 mb-8 max-w-2xl mx-auto">
-              Enter the promotion code at checkout and receive a 15% discount code for your first merchandise purchase.
+              {t('cta.desc')}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link href="/merchandise">
@@ -789,7 +792,7 @@ export default function MerchandisePage() {
                   size="lg"
                   className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 dark:from-red-700 dark:to-red-900 dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-400/30 dark:border-red-800/30 shadow-lg shadow-red-300/20 dark:shadow-red-950/20"
                 >
-                  Shop Now
+                  {t('shopBtn')}
                   <ShoppingCart className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
@@ -798,7 +801,7 @@ export default function MerchandisePage() {
                 size="lg"
                 className="border-red-400/30 dark:border-red-800/30 text-red-500 dark:text-red-400 bg-red-50 dark:bg-red-950/20 hover:bg-red-100 dark:hover:bg-red-950/30 hover:text-red-700 dark:hover:text-white"
               >
-                Sign Up For Newsletter
+                {t('cta.newsBtn')}
                 <Send className="ml-2 h-5 w-5" />
               </Button>
             </div>
