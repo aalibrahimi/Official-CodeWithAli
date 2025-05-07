@@ -20,6 +20,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import GradientText from "@/MyComponents/GradientText";
+import { useTranslations } from "next-intl";
 
 // Animation variants
 // const fadeIn = {
@@ -31,89 +32,81 @@ import GradientText from "@/MyComponents/GradientText";
 //   },
 // };
 
-// Process steps
-const processSteps = [
-  {
-    title: "Discovery & Strategy",
-    description:
-      "We start by understanding your business objectives, target users, and market requirements to create a comprehensive app strategy.",
-    icon: Layers,
-  },
-  {
-    title: "UX/UI Design",
-    description:
-      "Our designers create intuitive, user-friendly interfaces with engaging visuals that align with your brand identity.",
-    icon: Palette,
-  },
-  {
-    title: "Development",
-    description:
-      "Our developers build your app using the most appropriate technologies, ensuring code quality and optimal performance.",
-    icon: Code,
-  },
-  {
-    title: "Testing & QA",
-    description:
-      "We conduct rigorous testing across devices and platforms to ensure functionality, performance, and security.",
-    icon: Settings,
-  },
-  {
-    title: "Deployment",
-    description:
-      "We handle the app store submission process and ensure your app meets all requirements for iOS and Android platforms.",
-    icon: Globe,
-  },
-  {
-    title: "Post-Launch Support",
-    description:
-      "We provide ongoing maintenance, updates, and support to keep your app running smoothly and up-to-date.",
-    icon: RefreshCw,
-  },
-];
-
-// App types
-const appTypes = [
-  {
-    title: "Native Apps",
-    description:
-      "Built specifically for iOS or Android platforms, offering the best performance and access to all device features.",
-      // I'll  let you update the technology part blazey
-    platforms: ["iOS (Swift/Objective-C)", "Android (Kotlin/Java)"],
-    benefits: [
-      "Optimal performance",
-      "Full access to device features",
-      "Superior user experience",
-      "Better store visibility",
-    ],
-  },
-  {
-    title: "Cross-Platform Apps",
-    description:
-      "Developed once and deployed on multiple platforms, reducing development time and costs.",
-    platforms: ["React Native", "Flutter", "Xamarin"],
-    benefits: [
-      "Cost-effective",
-      "Faster development",
-      "Easier maintenance",
-      "Consistent experience across platforms",
-    ],
-  },
-  {
-    title: "Progressive Web Apps",
-    description:
-      "Web applications that offer app-like experiences, accessible directly through web browsers without installation.",
-    platforms: ["HTML5", "CSS3", "JavaScript", "Service Workers"],
-    benefits: [
-      "No installation required",
-      "Works offline",
-      "Automatic updates",
-      "Lower development costs",
-    ],
-  },
-];
-
 const MobileAppDevelopmentPage = () => {
   const router = useRouter();
+  const t = useTranslations("ServicePage.mobileApp");
+
+  // Process steps
+  const processSteps = [
+    {
+      title: t("sections.3.steps.1.title"),
+      description: t("sections.3.steps.1.desc"),
+      icon: Layers,
+    },
+    {
+      title: t("sections.3.steps.2.title"),
+      description: t("sections.3.steps.2.desc"),
+      icon: Palette,
+    },
+    {
+      title: t("sections.3.steps.3.title"),
+      description: t("sections.3.steps.3.desc"),
+      icon: Code,
+    },
+    {
+      title: t("sections.3.steps.4.title"),
+      description: t("sections.3.steps.4.desc"),
+      icon: Settings,
+    },
+    {
+      title: t("sections.3.steps.5.title"),
+      description: t("sections.3.steps.5.desc"),
+      icon: Globe,
+    },
+    {
+      title: t("sections.3.steps.6.title"),
+      description: t("sections.3.steps.6.desc"),
+      icon: RefreshCw,
+    },
+  ];
+
+  // App types
+  const appTypes = [
+    {
+      title: t("sections.1.types.1.title"),
+      description: t("sections.1.types.1.desc"),
+      // I'll  let you update the technology part blazey
+      platforms: ["iOS (Swift/Objective-C)", "Android (Kotlin/Java)"],
+      benefits: [
+        t("sections.1.types.1.benefits.1"),
+        t("sections.1.types.1.benefits.2"),
+        t("sections.1.types.1.benefits.3"),
+        t("sections.1.types.1.benefits.4"),
+      ],
+    },
+    {
+      title: t("sections.1.types.2.title"),
+      description: t("sections.1.types.2.title"),
+      platforms: ["React Native", "Flutter", "Xamarin"],
+      benefits: [
+        t("sections.1.types.2.benefits.1"),
+        t("sections.1.types.2.benefits.2"),
+        t("sections.1.types.2.benefits.3"),
+        t("sections.1.types.2.benefits.4"),
+      ],
+    },
+    {
+      title: t("sections.1.types.3.title"),
+      description: t("sections.1.types.3.title"),
+      platforms: ["HTML5", "CSS3", "JavaScript", "Service Workers"],
+      benefits: [
+        t("sections.1.types.3.benefits.1"),
+        t("sections.1.types.3.benefits.2"),
+        t("sections.1.types.3.benefits.3"),
+        t("sections.1.types.3.benefits.4"),
+      ],
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-white overflow-x-hidden">
@@ -134,18 +127,16 @@ const MobileAppDevelopmentPage = () => {
             > */}
             <div className="lg:w-7/12">
               <Badge className="bg-blue-600/80 dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
-                MOBILE APP DEVELOPMENT
+                {t("badge.1")}
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                Custom Mobile Apps
+                {t("title.1")}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-400 to-blue-300 dark:to-blue-800 block mt-2">
-                  For iOS & Android
+                  {t("title.2")}
                 </span>
               </h1>
               <p className="text-lg text-white/80 dark:text-white mb-8">
-                We design and build innovative, high-performance mobile
-                applications that engage users, solve real problems, and help
-                your business grow in the mobile-first world.
+                {t("desc")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
@@ -154,7 +145,7 @@ const MobileAppDevelopmentPage = () => {
                      dark:hover:from-blue-600 dark:hover:to-blue-800 text-white border-blue-800/30 shadow-lg shadow-blue-950/20 px-8"
                   onClick={() => router.push("/contact")}
                 >
-                  Discuss Your App Idea
+                  {t("discussBtn")}
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
@@ -163,7 +154,7 @@ const MobileAppDevelopmentPage = () => {
                   className="border-blue-800/30 text-white dark:text-blue-400 bg-blue-500/40 dark:bg-blue-950/20 hover:bg-blue-800/80 dark:hover:bg-blue-950/30 hover:text-white dark:hover:text-white px-8"
                   onClick={() => router.push("/portfolio")}
                 >
-                  View Our Work
+                  {t("workBtn")}
                 </Button>
               </div>
             </div>
@@ -237,16 +228,15 @@ const MobileAppDevelopmentPage = () => {
             > */}
             <div>
               <Badge className="bg-blue-600/80 dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
-                APP SOLUTIONS
+                {t("badge.2")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
                 <GradientText gradient="from-blue-400 via-blue-500 dark:from-gray-200 dark:via-blue-400 to-blue-400">
-                  Mobile App Development Solutions
+                  {t("sections.1.title")}
                 </GradientText>
               </h2>
               <p className="text-black dark:text-amber-50 text-lg max-w-2xl mx-auto">
-                We offer a range of app development approaches to meet your
-                specific needs, budget, and timeline.
+                {t("sections.1.desc")}
               </p>
             </div>
             {/* </motion.div> */}
@@ -271,7 +261,7 @@ const MobileAppDevelopmentPage = () => {
 
                     <div className="mb-4">
                       <h4 className="text-sm font-semibold dark:text-blue-400  mb-2">
-                        Technologies:
+                        {t("sections.1.types.techLabel")}
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {type.platforms.map((platform, i) => (
@@ -287,7 +277,7 @@ const MobileAppDevelopmentPage = () => {
 
                     <div>
                       <h4 className="text-sm font-semibold dark:text-blue-300 mb-2">
-                        Benefits:
+                        {t("sections.1.types.benefitLabel")}
                       </h4>
                       <ul className="space-y-1">
                         {type.benefits.map((benefit, i) => (
@@ -321,16 +311,15 @@ const MobileAppDevelopmentPage = () => {
             > */}
             <div>
               <Badge className="bg-blue-600/80 dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
-                OUR EXPERTISE
+                {t("badge.3")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
                 <GradientText gradient="from-blue-400 via-blue-500 dark:from-gray-200 dark:via-blue-400 to-blue-400">
-                  What Sets our Mobile App Development Apart
+                  {t("sections.2.title")}
                 </GradientText>
               </h2>
-              <p className="text-whitee text-lg max-w-2xl mx-auto">
-                We combine technical excellence with creative design to deliver
-                mobile apps that users love and businesses rely on.
+              <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
+                {t("sections.2.desc")}
               </p>
             </div>
             {/* </motion.div> */}
@@ -339,39 +328,33 @@ const MobileAppDevelopmentPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "User-Centered Design",
-                description:
-                  "We create intuitive, engaging interfaces based on deep user research and iterative testing to ensure your app is a joy to use.",
+                title: t("sections.2.card.1.title"),
+                description: t("sections.2.card.1.desc"),
                 icon: Palette,
               },
               {
-                title: "High Performance",
-                description:
-                  "Our apps are optimized for speed, responsiveness, and efficient resource usage, even under demanding conditions.",
+                title: t("sections.2.card.2.title"),
+                description: t("sections.2.card.2.desc"),
                 icon: Zap,
               },
               {
-                title: "Cross-Platform Expertise",
-                description:
-                  "We develop for both iOS and Android, ensuring consistent experiences across all devices while leveraging platform-specific features.",
+                title: t("sections.2.card.3.title"),
+                description: t("sections.2.card.3.desc"),
                 icon: Smartphone,
               },
               {
-                title: "Advanced Functionality",
-                description:
-                  "From location services to payment processing, we implement complex features that make your app powerful and distinctive.",
+                title: t("sections.2.card.4.title"),
+                description: t("sections.2.card.4.desc"),
                 icon: Settings,
               },
               {
-                title: "Security & Compliance",
-                description:
-                  "We build with security-first principles and ensure compliance with GDPR, CCPA, and other relevant regulations.",
+                title: t("sections.2.card.5.title"),
+                description: t("sections.2.card.5.desc"),
                 icon: ShieldCheck,
               },
               {
-                title: "Scalable Architecture",
-                description:
-                  "Our apps are built on flexible, scalable architectures that can grow with your user base and evolving requirements.",
+                title: t("sections.2.card.6.title"),
+                description: t("sections.2.card.6.desc"),
                 icon: CloudCog,
               },
             ].map((feature, index) => (
@@ -391,7 +374,9 @@ const MobileAppDevelopmentPage = () => {
                     <h3 className="text-xl font-bold text-black dark:text-white mb-3">
                       {feature.title}
                     </h3>
-                    <p className="text-white dark:text-white/80">{feature.description}</p>
+                    <p className="text-white dark:text-white/80">
+                      {feature.description}
+                    </p>
                   </CardContent>
                 </Card>
               </div>
@@ -413,16 +398,15 @@ const MobileAppDevelopmentPage = () => {
             > */}
             <div>
               <Badge className="bg-blue-600/80 dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
-                OUR PROCESS
+                {t("badge.4")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
                 <GradientText gradient="from-blue-400 via-blue-500 dark:from-gray-200 dark:via-blue-400 to-blue-400">
-                  Mobile App Development Process
+                  {t("sections.3.title")}
                 </GradientText>
               </h2>
-              <p className="text-white text-lg max-w-2xl mx-auto">
-                Our structured approach ensures a smooth development journey
-                from concept to launch and beyond.
+              <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
+                {t("sections.3.desc")}
               </p>
             </div>
             {/* </motion.div> */}
@@ -453,7 +437,9 @@ const MobileAppDevelopmentPage = () => {
                             {step.title}
                           </h3>
                         </div>
-                        <p className="text-white dark:text-white/70">{step.description}</p>
+                        <p className="text-white dark:text-white/70">
+                          {step.description}
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -477,16 +463,15 @@ const MobileAppDevelopmentPage = () => {
             > */}
             <div>
               <Badge className="bg-blue-600/80 dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
-                FAQ
+                {t("badge.5")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
                 <GradientText gradient="from-blue-400 via-blue-500 dark:from-gray-200 dark:via-blue-400 to-blue-400">
-                  Frequently Asked Questions
+                  {t("sections.4.title")}
                 </GradientText>
               </h2>
-              <p className="text-white text-lg max-w-2xl mx-auto">
-                Common questions about our mobile app development process and
-                services.
+              <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
+                {t("sections.4.desc")}
               </p>
             </div>
             {/* </motion.div> */}
@@ -499,44 +484,39 @@ const MobileAppDevelopmentPage = () => {
                   value="general"
                   className="data-[state=active]:bg-blue-900/30 data-[state=active]:text-white"
                 >
-                  General
+                  {t("sections.4.tab.1")}
                 </TabsTrigger>
                 <TabsTrigger
                   value="technical"
                   className="data-[state=active]:bg-blue-900/30 data-[state=active]:text-white"
                 >
-                  Technical
+                  {t("sections.4.tab.2")}
                 </TabsTrigger>
                 <TabsTrigger
                   value="pricing"
                   className="data-[state=active]:bg-blue-900/30 data-[state=active]:text-white"
                 >
-                  Pricing
+                  {t("sections.4.tab.3")}
                 </TabsTrigger>
               </TabsList>
 
               <TabsContent value="general" className="space-y-4">
                 {[
                   {
-                    question: "How long does it take to develop a mobile app?",
-                    answer:
-                      "The timeline varies based on complexity and features. Simple apps can take 3-4 months, while complex apps may require 6-9 months from concept to launch. We'll provide a detailed timeline during the discovery phase.",
+                    question: t("sections.4.QA.1.Q"),
+                    answer: t("sections.4.QA.1.A"),
                   },
                   {
-                    question: "Should I develop for iOS, Android, or both?",
-                    answer:
-                      "This depends on your target audience and business goals. If your audience primarily uses one platform, starting there makes sense. However, most businesses benefit from developing for both platforms to maximize reach, which can be done efficiently with cross-platform development.",
+                    question: t("sections.4.QA.2.Q"),
+                    answer: t("sections.4.QA.2.A"),
                   },
                   {
-                    question: "How do you ensure my app will be successful?",
-                    answer:
-                      "Success starts with thorough research and planning. We conduct market analysis, define clear user personas, and focus on solving real user problems. We also implement analytics to track key metrics and make data-driven improvements post-launch.",
+                    question: t("sections.4.QA.3.Q"),
+                    answer: t("sections.4.QA.3.A"),
                   },
                   {
-                    question:
-                      "What ongoing support do you provide after launch?",
-                    answer:
-                      "We offer comprehensive maintenance packages including bug fixes, performance monitoring, compatibility updates for new OS versions, security patches, and feature enhancements. We recommend a maintenance plan to keep your app secure, stable, and relevant.",
+                    question: t("sections.4.QA.4.Q"),
+                    answer: t("sections.4.QA.4.A"),
                   },
                 ].map((faq, index) => (
                   <div
@@ -554,25 +534,20 @@ const MobileAppDevelopmentPage = () => {
               <TabsContent value="technical" className="space-y-4">
                 {[
                   {
-                    question:
-                      "Native vs. cross-platform: which is better for my app?",
-                    answer:
-                      "Native development offers optimal performance and access to all platform features, while cross-platform development is more cost-effective and faster to market. The choice depends on your app's requirements, budget, and timeline. We recommend native for performance-critical apps or those needing advanced device features, and cross-platform for most business apps with standard functionality.",
+                    question: t("sections.4.QA.5.Q"),
+                    answer: t("sections.4.QA.5.A"),
                   },
                   {
-                    question: "How do you handle app store approvals?",
-                    answer:
-                      "We have extensive experience with both Apple App Store and Google Play Store guidelines. We incorporate these requirements throughout the development process and handle the entire submission process, including preparing all required materials, responding to review questions, and making any necessary adjustments to ensure approval.",
+                    question: t("sections.4.QA.6.Q"),
+                    answer: t("sections.4.QA.6.A"),
                   },
                   {
-                    question: "Can you integrate my app with existing systems?",
-                    answer:
-                      "Yes, we specialize in integrating mobile apps with existing systems such as CRMs, ERPs, payment processors, and custom backends. We use secure APIs to ensure seamless data flow between your app and other business systems.",
+                    question: t("sections.4.QA.7.Q"),
+                    answer: t("sections.4.QA.7.A"),
                   },
                   {
-                    question: "How do you address app security?",
-                    answer:
-                      "Security is built into every stage of our development process. We implement encryption for data storage and transmission, secure authentication methods, input validation, and protection against common vulnerabilities. For apps handling sensitive data, we conduct security audits and penetration testing.",
+                    question: t("sections.4.QA.8.Q"),
+                    answer: t("sections.4.QA.8.A"),
                   },
                 ].map((faq, index) => (
                   <div
@@ -590,25 +565,20 @@ const MobileAppDevelopmentPage = () => {
               <TabsContent value="pricing" className="space-y-4">
                 {[
                   {
-                    question: "How much does it cost to develop a mobile app?",
-                    answer:
-                      "App development costs vary widely based on complexity, features, and platforms. Simple apps typically range from $15,000-$35,000, medium-complexity apps from $35,000-$60,000, and complex apps can exceed $100,000. We provide detailed estimates after understanding your specific requirements.",
+                    question: t("sections.4.QA.9.Q"),
+                    answer: t("sections.4.QA.9.A"),
                   },
                   {
-                    question:
-                      "What factors affect the cost of app development?",
-                    answer:
-                      "Key factors include: platforms (iOS, Android, or both), complexity of features, backend requirements, third-party integrations, design complexity, user authentication needs, and whether you need a custom CMS or admin panel. Additional factors include analytics implementation and security requirements.",
+                    question: t("sections.4.QA.10.Q"),
+                    answer: t("sections.4.QA.10.A"),
                   },
                   {
-                    question: "Do you offer payment plans?",
-                    answer:
-                      "Yes, we typically structure payments in milestones throughout the project. A common approach is 30% upfront, 30% at design approval, 30% at development completion, and 10% upon final delivery and approval. For larger projects, we can create more granular payment schedules.",
+                    question: t("sections.4.QA.11.Q"),
+                    answer: t("sections.4.QA.11.A"),
                   },
                   {
-                    question: "What ongoing costs should I expect?",
-                    answer:
-                      "Ongoing costs typically include app store fees ($99/year for Apple, $25 one-time for Google), server/hosting costs ($50-500/month depending on usage), maintenance and updates (typically 15-20% of initial development cost annually), and possible third-party service fees for integrations.",
+                    question: t("sections.4.QA.12.Q"),
+                    answer: t("sections.4.QA.12.A"),
                   },
                 ].map((faq, index) => (
                   <div
@@ -639,12 +609,10 @@ const MobileAppDevelopmentPage = () => {
           > */}
           <div className="max-w-4xl mx-auto bg-blue-900 dark:bg-black/60 border border-blue-900 rounded-xl p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Build Your Mobile App?
+              {t("cta.title")}
             </h2>
             <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-              Contact us today for a free consultation and discover how we can
-              help you create a mobile app that engages users and drives
-              business growth.
+              {t("cta.desc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -653,7 +621,7 @@ const MobileAppDevelopmentPage = () => {
                      dark:hover:from-blue-600 dark:hover:to-blue-800 text-white border border-blue-800/30 shadow-lg shadow-blue-950/20 px-8"
                 onClick={() => router.push("/contact")}
               >
-                Discuss Your App Idea
+                {t("discussBtn")}
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
               <Button
@@ -662,7 +630,7 @@ const MobileAppDevelopmentPage = () => {
                 className="border-blue-800/30 text-white dark:text-blue-400 bg-blue-500/40 dark:bg-blue-950/20 hover:bg-blue-800/80 dark:hover:bg-blue-950/30 hover:text-white dark:hover:text-white px-8"
                 onClick={() => router.push("/portfolio")}
               >
-                View Our Work
+                {t("workBtn")}
               </Button>
             </div>
           </div>

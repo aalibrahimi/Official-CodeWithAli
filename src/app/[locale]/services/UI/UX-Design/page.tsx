@@ -19,6 +19,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import GradientText from "@/MyComponents/GradientText";
+import { useTranslations } from "next-intl";
 
 // Animation variants
 const fadeIn = {
@@ -40,171 +41,172 @@ const fadeIn = {
 //   },
 // };
 
-// Design offerings data
-const designOfferings = [
-  {
-    title: "User Research",
-    description:
-      "We conduct comprehensive user research to understand your target audience's needs, behaviors, and pain points.",
-    icon: Users,
-    features: [
-      "Persona Development",
-      "User Interviews",
-      "Competitive Analysis",
-      "User Journey Mapping",
-    ],
-  },
-  {
-    title: "Interface Design",
-    description:
-      "We create beautiful, intuitive interfaces that balance aesthetics with functionality to enhance user experience.",
-    icon: Monitor,
-    features: [
-      "Wireframing",
-      "Visual Design",
-      "Interactive Prototyping",
-      "Design Systems",
-    ],
-  },
-  {
-    title: "Usability Testing",
-    description:
-      "We validate designs through rigorous testing to ensure they meet user needs and business objectives.",
-    icon: Eye,
-    features: [
-      "Heuristic Evaluation",
-      "A/B Testing",
-      "User Testing Sessions",
-      "Analytics Integration",
-    ],
-  },
-  {
-    title: "Design Systems",
-    description:
-      "We develop comprehensive design systems that ensure consistency while enabling scalability across all platforms.",
-    icon: Layers,
-    features: [
-      "Component Libraries",
-      "Style Guides",
-      "Documentation",
-      "Implementation Support",
-    ],
-  },
-];
-
-// Portfolio projects
-const portfolioProjects = [
-  {
-    title: "Financial App Redesign",
-    category: "Mobile App",
-    image: "/placeholder/ui-project-1.jpg",
-  },
-  {
-    title: "E-commerce Website",
-    category: "Web Design",
-    image: "/placeholder/ui-project-2.jpg",
-  },
-  {
-    title: "Healthcare Dashboard",
-    category: "Dashboard",
-    image: "/placeholder/ui-project-3.jpg",
-  },
-  {
-    title: "Fitness Tracking App",
-    category: "Mobile App",
-    image: "/placeholder/ui-project-4.jpg",
-  },
-];
-
-// Design process steps
-const designProcess = [
-  {
-    number: "01",
-    title: "Discovery",
-    description:
-      "We analyze your business goals, target audience, and current pain points to define clear objectives.",
-    icon: Lightbulb,
-  },
-  {
-    number: "02",
-    title: "Research",
-    description:
-      "We conduct user interviews, competitive analysis, and create user personas to guide our design decisions.",
-    icon: Users,
-  },
-  {
-    number: "03",
-    title: "Design",
-    description:
-      "We create wireframes, interactive prototypes, and visual designs that align with your brand and user needs.",
-    icon: PenTool,
-  },
-  {
-    number: "04",
-    title: "Test & Iterate",
-    description:
-      "We validate designs through usability testing and refine based on real user feedback.",
-    icon: Eye,
-  },
-  {
-    number: "05",
-    title: "Deliver",
-    description:
-      "We provide final assets, specifications, and implementation support to bring the design to life.",
-    icon: CheckCircle,
-  },
-];
-
-// Packages data
-const packages = [
-  {
-    title: "Essential",
-    price: "$2,500",
-    description:
-      "Perfect for startups and small businesses looking to improve their digital presence.",
-    features: [
-      "User Research & Personas",
-      "Wireframing",
-      "Basic UI Design",
-      "Limited Revisions",
-      "Basic Design Documentation",
-    ],
-  },
-  {
-    title: "Professional",
-    price: "$5,500",
-    description:
-      "Comprehensive solution for established businesses seeking a complete design overhaul.",
-    features: [
-      "Everything in Essential",
-      "In-depth User Research",
-      "Interactive Prototyping",
-      "Advanced UI/UX Design",
-      "Usability Testing",
-      "Design System Creation",
-      "Extended Revisions",
-    ],
-    highlighted: true,
-  },
-  {
-    title: "Enterprise",
-    price: "Custom",
-    description:
-      "Tailored solution for large organizations with complex requirements and multiple platforms.",
-    features: [
-      "Everything in Professional",
-      "Multi-platform Design",
-      "Advanced Design System",
-      "Extensive Usability Testing",
-      "Analytics Integration",
-      "Long-term Support",
-      "Training & Workshops",
-    ],
-  },
-];
 
 const UIUXDesignPage = () => {
   const router = useRouter();
+  const t = useTranslations('ServicePage.UI')
+  // Design offerings data
+  const designOfferings = [
+    {
+      title: t('sections.1.offerings.1.title'),
+      description:
+        t('sections.1.offerings.1.desc'),
+      icon: Users,
+      features: [
+        t('sections.1.offerings.1.features.1'),
+        t('sections.1.offerings.1.features.2'),
+        t('sections.1.offerings.1.features.3'),
+        t('sections.1.offerings.1.features.4'),
+      ],
+    },
+    {
+      title: t('sections.1.offerings.2.title'),
+      description:
+      t('sections.1.offerings.2.desc'),
+      icon: Monitor,
+      features: [
+        t('sections.1.offerings.2.features.1'),
+        t('sections.1.offerings.2.features.2'),
+        t('sections.1.offerings.2.features.3'),
+        t('sections.1.offerings.2.features.4'),
+      ],
+    },
+    {
+      title: t('sections.1.offerings.3.title'),
+      description:
+      t('sections.1.offerings.3.desc'),
+      icon: Eye,
+      features: [
+        t('sections.1.offerings.3.features.1'),
+        t('sections.1.offerings.3.features.2'),
+        t('sections.1.offerings.3.features.3'),
+        t('sections.1.offerings.3.features.4'),
+      ],
+    },
+    {
+      title: t('sections.1.offerings.4.title'),
+      description:
+      t('sections.1.offerings.4.desc'),
+      icon: Layers,
+      features: [
+        t('sections.1.offerings.4.features.1'),
+        t('sections.1.offerings.4.features.2'),
+        t('sections.1.offerings.4.features.3'),
+        t('sections.1.offerings.4.features.4'),
+      ],
+    },
+  ];
+  
+  // Portfolio projects
+  const portfolioProjects = [
+    {
+      title: t('sections.2.projects.1.title'),
+      category: t('sections.2.projects.1.category'),
+      image: "/placeholder/ui-project-1.jpg",
+    },
+    {
+      title: t('sections.2.projects.2.title'),
+      category: t('sections.2.projects.2.category'),
+      image: "/placeholder/ui-project-2.jpg",
+    },
+    {
+      title: t('sections.2.projects.3.title'),
+      category: t('sections.2.projects.3.category'),
+      image: "/placeholder/ui-project-3.jpg",
+    },
+    {
+      title: t('sections.2.projects.4.title'),
+      category: t('sections.2.projects.4.category'),
+      image: "/placeholder/ui-project-4.jpg",
+    },
+  ];
+  
+  // Design process steps
+  const designProcess = [
+    {
+      number: "01",
+      title: t('sections.3.process.1.title'),
+      description:
+        t('sections.3.process.1.desc'),
+      icon: Lightbulb,
+    },
+    {
+      number: "02",
+      title: t('sections.3.process.2.title'),
+      description:
+        t('sections.3.process.2.desc'),
+      icon: Users,
+    },
+    {
+      number: "03",
+      title: t('sections.3.process.3.title'),
+      description:
+        t('sections.3.process.3.desc'),
+      icon: PenTool,
+    },
+    {
+      number: "04",
+      title: t('sections.3.process.4.title'),
+      description:
+        t('sections.3.process.4.desc'),
+      icon: Eye,
+    },
+    {
+      number: "05",
+      title: t('sections.3.process.5.title'),
+      description:
+        t('sections.3.process.5.desc'),
+      icon: CheckCircle,
+    },
+  ];
+  
+  // Packages data
+  const packages = [
+    {
+      title: t('sections.5.package.1.title'),
+      price: "$2,500",
+      description:
+        t('sections.5.package.1.desc'),
+      features: [
+        t('sections.5.package.1.features.1'),
+        t('sections.5.package.1.features.2'),
+        t('sections.5.package.1.features.3'),
+        t('sections.5.package.1.features.4'),
+        t('sections.5.package.1.features.5'),
+      ],
+    },
+    {
+      title: t('sections.5.package.2.title'),
+      price: "$5,500",
+      description:
+      t('sections.5.package.2.desc'),
+      features: [
+        t('sections.5.package.2.features.1'),
+        t('sections.5.package.2.features.2'),
+        t('sections.5.package.2.features.3'),
+        t('sections.5.package.2.features.4'),
+        t('sections.5.package.2.features.5'),
+        t('sections.5.package.2.features.6'),
+        t('sections.5.package.2.features.7'),
+      ],
+      highlighted: true,
+    },
+    {
+      title: t('section.5.package.3.title'),
+      price: "Custom",
+      description:
+      t('section.5.package.3.desc'),
+      features: [
+        t('section.5.package.3.features.1'),
+        t('section.5.package.3.features.2'),
+        t('section.5.package.3.features.3'),
+        t('section.5.package.3.features.4'),
+        t('section.5.package.3.features.5'),
+        t('section.5.package.3.features.6'),
+        t('section.5.package.3.features.7'),
+      ],
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-white overflow-x-hidden">
@@ -224,18 +226,16 @@ const UIUXDesignPage = () => {
           > */}
           <div className="max-w-3xl">
             <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
-              UI/UX DESIGN
+              {t('badge.1')}
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              User-Focused Design
+              {t('title.1')}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-400 to-blue-300 dark:to-blue-500 block">
-                That Drives Results
+                {t('title.2')}
               </span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 mb-8">
-              We create intuitive, engaging user experiences that enhance brand
-              perception, increase conversion rates, and simplify complex
-              interactions.
+              {t('desc')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               {/* Need to fix visibility of this btn */}
@@ -245,7 +245,7 @@ const UIUXDesignPage = () => {
                 size="lg"
                 onClick={() => router.push("/contact")}
               >
-                Get a Free Consultation
+                {t('consultBtn')}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button
@@ -254,7 +254,7 @@ const UIUXDesignPage = () => {
                 className="border-purple-700 text-purple-950 dark:text-purple-400 bg-purple-300/40 dark:bg-purple-950/20 hover:bg-purple-800/80 dark:hover:bg-purple-950/30 hover:text-white dark:hover:text-white"
                 onClick={() => router.push("#portfolio")}
               >
-                View Our Work
+                {t('workBtn')}
                 <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
@@ -278,16 +278,15 @@ const UIUXDesignPage = () => {
           > */}
           <div className="text-center mb-16">
             <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
-              OUR SERVICES
+              {t('badge.2')}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
               <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
-                Comprehensive UI/UX Design Services
+                {t('sections.1.title')}
               </GradientText>
             </h2>
             <p className="text-black dark:text-white/90 text-lg max-w-2xl mx-auto">
-              We offer end-to-end design solutions that transform complex
-              challenges into seamless user experiences.
+            {t('sections.1.desc')}
             </p>
           </div>
           {/* </motion.div> */}
@@ -346,16 +345,15 @@ const UIUXDesignPage = () => {
           > */}
           <div className="text-center mb-16">
             <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
-              OUR WORK
+              {t('badge.3')}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
               <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
-                UI/UX Design Portfolio
+                {t('sections.2.title')}
               </GradientText>
             </h2>
             <p className="text-black dark:text-amber-50 text-lg max-w-2xl mx-auto">
-              Browse our recent design projects spanning various industries and
-              platforms.
+              {t('sections.2.desc')}
             </p>
           </div>
           {/* </motion.div> */}
@@ -401,7 +399,7 @@ const UIUXDesignPage = () => {
               className="border-purple-800/30 text-purple-950 dark:text-purple-400 bg-purple-300/40 dark:bg-purple-950/20 hover:bg-purple-800/80 dark:hover:bg-purple-950/30 hover:text-white dark:hover:text-white"
               onClick={() => router.push("/portfolio")}
             >
-              View All Projects
+              {t('viewAllBtn')}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
@@ -420,16 +418,15 @@ const UIUXDesignPage = () => {
           > */}
           <div className="text-center mb-16">
             <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
-              OUR PROCESS
+              {t('badge.4')}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
               <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
-                Our Design Process
+                {t('sections.3.title')}
               </GradientText>
             </h2>
             <p className="text-black dark:text-white/70 text-lg max-w-2xl mx-auto">
-              We follow a systematic approach to ensure every design solution
-              meets both user needs and business objectives.
+              {t('sections.3.desc')}
             </p>
           </div>
           {/* </motion.div> */}
@@ -487,16 +484,15 @@ const UIUXDesignPage = () => {
           > */}
           <div className="text-center mb-16">
             <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
-              CLIENT FEEDBACK
+              {t('badge.5')}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
               <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
-                What Our Clients Say
+                {t('section.4.title')}
               </GradientText>
             </h2>
             <p className="text-black dark:text-white/80 text-lg max-w-2xl mx-auto">
-              Hear from businesses who have transformed their digital presence
-              with our UI/UX design services.
+              {t('section.4.desc')}
             </p>
           </div>
           {/* </motion.div> */}
@@ -512,25 +508,25 @@ const UIUXDesignPage = () => {
             {[
               {
                 quote:
-                  "The redesign completely transformed our user engagement metrics. Conversion rates increased by 40% within the first month.",
-                author: "Sarah Johnson",
-                company: "TechStart Solutions",
+                  t('sections.4.quotes.1.quote'),
+                author: t('sections.4.quotes.1.author'),
+                company: t('sections.4.quotes.1.authDesc'),
                 // place holder images should be our logo until we can grab a different photo/idea
                 // sort of how like there are empty person shadow for authors ( your doctor invoice for ex) our logo would be that for us in our sites
                 image: "/codewithali.png",
               },
               {
                 quote:
-                  "Their user research uncovered pain points we had overlooked for years. The resulting interface designs have significantly improved customer satisfaction.",
-                author: "Michael Chen",
-                company: "Global Innovations",
+                  t('sections.4.quotes.2.quote'),
+                author: t('sections.4.quotes.2.author'),
+                company: t('sections.4.quotes.2.authDesc'),
                 image: "/codewithali.png",
               },
               {
                 quote:
-                  "Working with this team was seamless. They translated our complex requirements into an intuitive design that our users love.",
-                author: "Emma Rodriguez",
-                company: "HealthPlus",
+                  t('sections.4.quotes.3.quote'),
+                author: t('sections.4.quotes.3.author'),
+                company: t('sections.4.quotes.3.authDesc'),
                 image: "/codewithali.png",
               },
             ].map((testimonial, index) => (
@@ -583,16 +579,15 @@ const UIUXDesignPage = () => {
           > */}
           <div className="text-center mb-16">
             <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
-              PRICING
+              {t('badge.6')}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
               <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
-                UI/UX Design Packages
+                {t('sections.5.title')}
               </GradientText>
             </h2>
             <p className="text-black dark:text-white/80 text-lg max-w-2xl mx-auto">
-              Flexible options designed to meet the needs of businesses at every
-              stage of growth.
+              {t('sections.5.desc')}
             </p>
           </div>
           {/* </motion.div> */}
@@ -642,7 +637,7 @@ const UIUXDesignPage = () => {
                     <div className="mt-auto">
                       <div className="border-t border-purple-900 pt-6 mb-6">
                         <h4 className="font-bold dark:text-white mb-4">
-                          What's Included:
+                          {t('sections.5.package.whatIncluded')}
                         </h4>
                         <ul className="space-y-3">
                           {pkg.features.map((feature, idx) => (
@@ -664,7 +659,7 @@ const UIUXDesignPage = () => {
                         }`}
                         onClick={() => router.push("/contact")}
                       >
-                        Get Started
+                        {t('sections.5.package.startBtn')}
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </div>
@@ -689,15 +684,15 @@ const UIUXDesignPage = () => {
           > */}
           <div className="text-center mb-16">
             <Badge className="bg-purple-600/80 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
-              FAQ
+              {t('badge.7')}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
               <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
-                Frequently Asked Questions
+                {t('sections.6.title')}
               </GradientText>
             </h2>
             <p className="text-black dark:text-white/80 text-lg max-w-2xl mx-auto">
-              Common questions about our UI/UX design services and process.
+              {t('sections.6.desc')}
             </p>
           </div>
           {/* </motion.div> */}
@@ -709,44 +704,44 @@ const UIUXDesignPage = () => {
                   value="process"
                   className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-white dark:data-[state=active]:text-purple-400"
                 >
-                  Process
+                  {t('sections.6.tab.1')}
                 </TabsTrigger>
                 <TabsTrigger
                   value="pricing"
                   className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-white dark:data-[state=active]:text-purple-400"
                 >
-                  Pricing
+                  {t('sections.6.tab.2')}
                 </TabsTrigger>
                 <TabsTrigger
                   value="deliverables"
                   className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-white dark:data-[state=active]:text-purple-400"
                 >
-                  Deliverables
+                  {t('sections.6.tab.3')}
                 </TabsTrigger>
                 <TabsTrigger
                   value="timeline"
                   className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-purple-400"
                 >
-                  Timeline
+                  {t('sections.6.tab.4')}
                 </TabsTrigger>
               </TabsList>
 
               <TabsContent value="process" className="space-y-6">
                 {[
                   {
-                    question: "How do you approach the design process?",
+                    question: t('sections.6.QA.1.Q'),
                     answer:
-                      "Our design process is collaborative and iterative. We begin with discovery and research to understand your business and users. We then move into wireframing and prototyping, followed by visual design, testing, and implementation support.",
+                      t('sections.6.QA.1.A'),
                   },
                   {
-                    question: "Do you conduct user testing?",
+                    question: t('sections.6.QA.2.Q'),
                     answer:
-                      "Yes, user testing is an integral part of our process. We validate designs with real users to ensure they meet user needs and expectations. This helps identify and address issues early in the process.",
+                      t('sections.6.QA.2.A'),
                   },
                   {
-                    question: "How do you ensure designs align with our brand?",
+                    question: t('sections.6.QA.3.Q'),
                     answer:
-                      "We begin by conducting a thorough review of your existing brand guidelines and assets. Throughout the design process, we ensure consistency with your brand while enhancing the user experience.",
+                      t('sections.6.QA.3.A'),
                   },
                 ].map((faq, index) => (
                   // <motion.div
@@ -773,20 +768,20 @@ const UIUXDesignPage = () => {
                 {[
                   {
                     question:
-                      "How do you determine pricing for UI/UX projects?",
+                      t('sections.6.QA.4.Q'),
                     answer:
-                      "Our pricing is based on project scope, complexity, timeline, and deliverables. We offer structured packages as starting points, but can customize pricing based on your specific needs.",
+                      t('sections.6.QA.4.A'),
                   },
                   {
                     question:
-                      "Do you offer ongoing design support after project completion?",
+                      t('sections.6.QA.5.Q'),
                     answer:
-                      "Yes, we offer maintenance and support packages to ensure your design continues to evolve with your business needs and user feedback.",
+                      t('sections.6.QA.5.A'),
                   },
                   {
-                    question: "Is there a deposit required to start a project?",
+                    question: t('sections.6.QA.6.Q'),
                     answer:
-                      "Yes, we typically require a 50% deposit to begin work, with the remaining balance due upon project completion or according to agreed-upon milestones.",
+                      t('sections.6.QA.6.A'),
                   },
                 ].map((faq, index) => (
                   // <motion.div
@@ -813,19 +808,19 @@ const UIUXDesignPage = () => {
                 {[
                   {
                     question:
-                      "What deliverables can I expect from a UI/UX project?",
+                      t('sections.6.QA.7.Q'),
                     answer:
-                      "Depending on the project scope, deliverables may include user research reports, user personas, journey maps, wireframes, prototypes, UI design files, design systems, and implementation guidelines.",
+                      t('sections.6.QA.7.A'),
                   },
                   {
-                    question: "Do you provide development-ready files?",
+                    question: t('sections.6.QA.8.Q'),
                     answer:
-                      "Yes, we provide design specifications, assets, and documentation that developers need to implement the designs accurately. We can also work directly with your development team to ensure smooth implementation.",
+                      t('sections.6.QA.8.A'),
                   },
                   {
-                    question: "Do you create design systems?",
+                    question: t('sections.6.QA.9.Q'),
                     answer:
-                      "Yes, we specialize in creating comprehensive design systems that ensure consistency and scalability across your product. This includes component libraries, style guides, and documentation.",
+                      t('sections.6.QA.9.A'),
                   },
                 ].map((faq, index) => (
                   // <motion.div
@@ -852,20 +847,20 @@ const UIUXDesignPage = () => {
                 {[
                   {
                     question:
-                      "How long does a typical UI/UX design project take?",
+                      t('sections.6.QA.10.Q'),
                     answer:
-                      "Project timelines vary based on scope and complexity. A simple website redesign might take 4-6 weeks, while a complex application could take 3-6 months. We'll provide a detailed timeline during the proposal phase.",
+                      t('sections.6.QA.10.A'),
                   },
                   {
                     question:
-                      "Can you work on urgent projects with tight deadlines?",
+                      t('sections.6.QA.11.Q'),
                     answer:
-                      "We can accommodate rush projects depending on our current workload. Rush fees may apply for expedited timelines to ensure we can dedicate the necessary resources.",
+                      t('sections.6.QA.11.A'),
                   },
                   {
-                    question: "How do you handle project delays?",
+                    question: t('sections.6.QA.12.Q'),
                     answer:
-                      "We build buffer time into our project plans to account for revisions and unforeseen challenges. We communicate proactively if delays occur and work collaboratively to adjust timelines as needed.",
+                      t('sections.6.QA.12.A'),
                   },
                 ].map((faq, index) => (
                   // <motion.div
@@ -904,11 +899,10 @@ const UIUXDesignPage = () => {
           > */}
           <div className="max-w-4xl mx-auto bg-purple-600/80 dark:bg-black/60 border border-purple-900 rounded-xl p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Transform Your User Experience?
+              {t('cta.title')}
             </h2>
             <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-              Let's discuss how our UI/UX design services can help your business
-              achieve its goals through exceptional user experiences.
+              {t('cta.desc')}
             </p>
             <Button
               size="lg"
@@ -916,7 +910,7 @@ const UIUXDesignPage = () => {
                      dark:hover:from-purple-600 dark:hover:to-purple-800 text-white border border-purple-800/30 shadow-lg shadow-purple-950/20 px-8"
               onClick={() => router.push("/contact")}
             >
-              Schedule a Free Consultation
+              {t('consultBtn')}
               <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
           </div>

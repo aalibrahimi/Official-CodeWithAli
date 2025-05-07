@@ -580,6 +580,432 @@
       "title": "Ready to Start Your Website Project?",
       "desc": "Contact us today for a free consultation and discover how we can help you create a website that drives real business results."
     }
+  },
+  "mobileApp": {
+    "badge": {
+      "1": "MOBILE APP DEVELOPMENT",
+      "2": "APP SOLUTIONS",
+      "3": "OUR EXPERTISE",
+      "4": "OUR PROCESS",
+      "5": "FAQ"
+    },
+    "title": {
+      "1": "Custom Mobile Apps",
+      "2": "For iOS & Android"
+    },
+    "desc": "We design and build innovative, high-performance mobile applications that engage users, solve real problems, and help your business grow in the mobile-first world.",
+    "discussBtn": "Discuss Your App Idea",
+    "workBtn": "View Our Work",
+    "sections": {
+      "1": {
+        "title": "Mobile App Development Solutions",
+        "desc": "We offer a range of app development approaches to meet your specific needs, budget, and timeline.",
+        "types": {
+          "techLabel": "Technologies:",
+          "benefitLabel": "Benefits:",
+          "1": {
+            "title": "Native Apps",
+            "desc": "Built specifically for iOS or Android platforms, offering the best performance and access to all device features.",
+            "benefits": {
+              "1": "Optimal performance",
+              "2": "Full access to device features",
+              "3": "Superior user experience",
+              "4": "Better store visibility"
+            }
+          },
+          "2": {
+            "title": "Cross-Platform Apps",
+            "desc": "Developed once and deployed on multiple platforms, reducing development time and costs.",
+            "benefits": {
+              "1": "Cost-effective",
+              "2": "Faster development",
+              "3": "Easier maintenance",
+              "4": "Consistent experience across platforms"
+            }
+          },
+          "3": {
+            "title": "Progressive Web Apps",
+            "desc": "Web applications that offer app-like experiences, accessible directly through web browsers without installation.",
+            "benefits": {
+              "1": "No installation required",
+              "2": "Works offline",
+              "3": "Automatic updates",
+              "4": "Lower development costs"
+            }
+          }
+        }
+      },
+      "2": {
+        "title": "What Sets our Mobile App Development Apart",
+        "desc": "We combine technical excellence with creative design to deliver mobile apps that users love and businesses rely on.",
+        "card": {
+          "1": {
+            "title": "User-Centered Design",
+            "desc": "We create intuitive, engaging interfaces based on deep user research and iterative testing to ensure your app is a joy to use."
+          },
+          "2": {
+            "title": "High Performance",
+            "desc": "Our apps are optimized for speed, responsiveness, and efficient resource usage, even under demanding conditions."
+          },
+          "3": {
+            "title": "Cross-Platform Expertise",
+            "desc": "We develop for both iOS and Android, ensuring consistent experiences across all devices while leveraging platform-specific features."
+          },
+          "4": {
+            "title": "Advanced Functionality",
+            "desc": "From location services to payment processing, we implement complex features that make your app powerful and distinctive."
+          },
+          "5": {
+            "title": "Security & Compliance",
+            "desc": "We build with security-first principles and ensure compliance with GDPR, CCPA, and other relevant regulations."
+          },
+          "6": {
+            "title": "Scalable Architecture",
+            "desc": "Our apps are built on flexible, scalable architectures that can grow with your user base and evolving requirements."
+          }
+        }
+      },
+      "3": {
+        "title": "Mobile App Development Process",
+        "desc": "Our structured approach ensures a smooth development journey from concept to launch and beyond.",
+        "steps": {
+          "1": {
+            "title": "Discovery & Strategy",
+            "desc": "We start by understanding your business objectives, target users, and market requirements to create a comprehensive app strategy."
+          },
+          "2": {
+            "title": "UX/UI Design",
+            "desc": "Our designers create intuitive, user-friendly interfaces with engaging visuals that align with your brand identity."
+          },
+          "3": {
+            "title": "Development",
+            "desc": "Our developers build your app using the most appropriate technologies, ensuring code quality and optimal performance."
+          },
+          "4": {
+            "title": "Testing & QA",
+            "desc": "We conduct rigorous testing across devices and platforms to ensure functionality, performance, and security."
+          },
+          "5": {
+            "title": "Deployment",
+            "desc": "We handle the app store submission process and ensure your app meets all requirements for iOS and Android platforms."
+          },
+          "6": {
+            "title": "Post-Launch Support",
+            "desc": "We provide ongoing maintenance, updates, and support to keep your app running smoothly and up-to-date."
+          }
+        }
+      },
+      "4": {
+        "title": "Frequently Asked Questions",
+        "desc": "Common questions about our mobile app development process and services.",
+        "tab": {
+          "1": "General",
+          "2": "Technical",
+          "3": "Pricing"
+        },
+        "QA": {
+          "1": {
+            "Q": "How long does it take to develop a mobile app?",
+            "A": "The timeline varies based on complexity and features. Simple apps can take 3-4 months, while complex apps may require 6-9 months from concept to launch. We'll provide a detailed timeline during the discovery phase."
+          },
+          "2": {
+            "Q": "Should I develop for iOS, Android, or both?",
+            "A": "This depends on your target audience and business goals. If your audience primarily uses one platform, starting there makes sense. However, most businesses benefit from developing for both platforms to maximize reach, which can be done efficiently with cross-platform development."
+          },
+          "3": {
+            "Q": "How do you ensure my app will be successful?",
+            "A": "Success starts with thorough research and planning. We conduct market analysis, define clear user personas, and focus on solving real user problems. We also implement analytics to track key metrics and make data-driven improvements post-launch."
+          },
+          "4": {
+            "Q": "What ongoing support do you provide after launch?",
+            "A": "We offer comprehensive maintenance packages including bug fixes, performance monitoring, compatibility updates for new OS versions, security patches, and feature enhancements. We recommend a maintenance plan to keep your app secure, stable, and relevant."
+          },
+          "5": {
+            "Q": "Native vs. cross-platform: which is better for my app?",
+            "A": "Native development offers optimal performance and access to all platform features, while cross-platform development is more cost-effective and faster to market. The choice depends on your app's requirements, budget, and timeline. We recommend native for performance-critical apps or those needing advanced device features, and cross-platform for most business apps with standard functionality."
+          },
+          "6": {
+            "Q": "How do you handle app store approvals?",
+            "A": "We have extensive experience with both Apple App Store and Google Play Store guidelines. We incorporate these requirements throughout the development process and handle the entire submission process, including preparing all required materials, responding to review questions, and making any necessary adjustments to ensure approval."
+          },
+          "7": {
+            "Q": "Can you integrate my app with existing systems?",
+            "A": "Yes, we specialize in integrating mobile apps with existing systems such as CRMs, ERPs, payment processors, and custom backends. We use secure APIs to ensure seamless data flow between your app and other business systems."
+          },
+          "8": {
+            "Q": "How do you address app security?",
+            "A": "Security is built into every stage of our development process. We implement encryption for data storage and transmission, secure authentication methods, input validation, and protection against common vulnerabilities. For apps handling sensitive data, we conduct security audits and penetration testing."
+          },
+          "9": {
+            "Q": "How much does it cost to develop a mobile app?",
+            "A": "App development costs vary widely based on complexity, features, and platforms. Simple apps typically range from $15,000-$35,000, medium-complexity apps from $35,000-$60,000, and complex apps can exceed $100,000. We provide detailed estimates after understanding your specific requirements."
+          },
+          "10": {
+            "Q": "What factors affect the cost of app development?",
+            "A": "Key factors include: platforms (iOS, Android, or both), complexity of features, backend requirements, third-party integrations, design complexity, user authentication needs, and whether you need a custom CMS or admin panel. Additional factors include analytics implementation and security requirements."
+          },
+          "11": {
+            "Q": "Do you offer payment plans?",
+            "A": "Yes, we typically structure payments in milestones throughout the project. A common approach is 30% upfront, 30% at design approval, 30% at development completion, and 10% upon final delivery and approval. For larger projects, we can create more granular payment schedules."
+          },
+          "12": {
+            "Q": "What ongoing costs should I expect?",
+            "A": "Ongoing costs typically include app store fees ($99/year for Apple, $25 one-time for Google), server/hosting costs ($50-500/month depending on usage), maintenance and updates (typically 15-20% of initial development cost annually), and possible third-party service fees for integrations."
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Build Your Mobile App?",
+      "desc": "Contact us today for a free consultation and discover how we can help you create a mobile app that engages users and drives business growth."
+    }
+  },
+  "UI": {
+    "badge": {
+      "1": "UI/UX DESIGN",
+      "2": "OUR SERVICES",
+      "3": "OUR WORK",
+      "4": "OUR PROCESS",
+      "5": "CLIENT FEEDBACK",
+      "6": "PRICING",
+      "7": "FAQ"
+    },
+    "title": {
+      "1": "User-Focused Design",
+      "2": "That Drives Results"
+    },
+    "desc": "We create intuitive, engaging user experiences that enhance brand perception, increase conversion rates, and simplify complex interactions.",
+    "consultBtn": "Get a Free Consultation",
+    "workBtn": "View Our Work",
+    "viewAllBtn": "View All Projects",
+    "sections": {
+      "1": {
+        "title": "Comprehensive UI/UX Design Services",
+        "desc": "We offer end-to-end design solutions that transform complex challenges into seamless user experiences.",
+        "offerings": {
+          "1": {
+            "title": "User Research",
+            "desc": "We conduct comprehensive user research to understand your target audience's needs, behaviors, and pain points.",
+            "features": {
+              "1": "Persona Development",
+              "2": "User Interviews",
+              "3": "Competitive Analysis",
+              "4": "User Journey Mapping"
+            }
+          },
+          "2": {
+            "title": "Interface Design",
+            "desc": "We create beautiful, intuitive interfaces that balance aesthetics with functionality to enhance user experience.",
+            "features": {
+              "1": "Wireframing",
+              "2": "Visual Design",
+              "3": "Interactive Prototyping",
+              "4": "Design Systems"
+            }
+          },
+          "3": {
+            "title": "Usability Testing",
+            "desc": "We validate designs through rigorous testing to ensure they meet user needs and business objectives.",
+            "features": {
+              "1": "Heuristic Evaluation",
+              "2": "A/B Testing",
+              "3": "User Testing Sessions",
+              "4": "Analytics Integration"
+            }
+          },
+          "4": {
+            "title": "Design Systems",
+            "desc": "We develop comprehensive design systems that ensure consistency while enabling scalability across all platforms.",
+            "features": {
+              "1": "Component Libraries",
+              "2": "Style Guides",
+              "3": "Documentation",
+              "4": "Implementation Support"
+            }
+          }
+        }
+      },
+      "2": {
+        "title": "UI/UX Design Portfolio",
+        "desc": "Browse our recent design projects spanning various industries and platforms.",
+        "projects": {
+          "1": {
+            "title": "Financial App Redesign",
+            "category": "Mobile App"
+          },
+          "2": {
+            "title": "E-commerce Website",
+            "category": "Web Design"
+          },
+          "3": {
+            "title": "Healthcare Dashboard",
+            "category": "Dashboard"
+          },
+          "4": {
+            "title": "Fitness Tracking App",
+            "category": "Mobile App"
+          }
+        }
+      },
+      "3": {
+        "title": "Our Design Process",
+        "desc": "We follow a systematic approach to ensure every design solution meets both user needs and business objectives.",
+        "process": {
+          "1": {
+            "title": "Discovery",
+            "desc": "We analyze your business goals, target audience, and current pain points to define clear objectives."
+          },
+          "2": {
+            "title": "Research",
+            "desc": "We conduct user interviews, competitive analysis, and create user personas to guide our design decisions."
+          },
+          "3": {
+            "title": "Design",
+            "desc": "We create wireframes, interactive prototypes, and visual designs that align with your brand and user needs."
+          },
+          "4": {
+            "title": "Test & Iterate",
+            "desc": "We validate designs through usability testing and refine based on real user feedback."
+          },
+          "5": {
+            "title": "Deliver",
+            "desc": "We provide final assets, specifications, and implementation support to bring the design to life."
+          }
+        }
+
+      },
+      "4": {
+        "title": "What Our Clients Say",
+        "desc": "Hear from businesses who have transformed their digital presence with our UI/UX design services.",
+        "quotes": {
+          "1": {
+            "quote": "The redesign completely transformed our user engagement metrics. Conversion rates increased by 40% within the first month.",
+            "author": "Sarah Johnson",
+            "authDesc": "TechStart Solutions"
+          },
+          "2": {
+            "quote": "Their user research uncovered pain points we had overlooked for years. The resulting interface designs have significantly improved customer satisfaction.",
+            "author": "Michael Chen",
+            "authDesc": "Global Innovations"
+          },
+          "3": {
+            "quote": "Working with this team was seamless. They translated our complex requirements into an intuitive design that our users love.",
+            "author": "Emma Rodriguez",
+            "authDesc": "HealthPlus"
+          }
+        }
+      },
+      "5": {
+        "title": "UI/UX Design Packages",
+        "desc": "Flexible options designed to meet the needs of businesses at every stage of growth.",
+        "package": {
+          "startBtn": "Get Started",
+          "whatIncluded": "What's Included:",
+          "1": {
+            "title": "Essential",
+            "desc": "Perfect for startups and small businesses looking to improve their digital presence.",
+            "features": {
+              "1": "User Research & Personas",
+              "2": "Wireframing",
+              "3": "Basic UI Design",
+              "4": "Limited Revisions",
+              "5": "Basic Design Documentation"
+            }
+          },
+          "2": {
+            "title": "Professional",
+            "desc": "Comprehensive solution for established businesses seeking a complete design overhaul.",
+            "features": {
+              "1": "Everything in Essential",
+              "2": "In-depth User Research",
+              "3": "Interactive Prototyping",
+              "4": "Advanced UI/UX Design",
+              "5": "Usability Testing",
+              "6": "Design System Creation",
+              "7": "Extended Revisions"
+            }
+          },
+          "3": {
+            "title": "Enterprise",
+            "desc": "",
+            "features": {
+              "1": "Tailored solution for large organizations with complex requirements and multiple platforms.",
+              "2": "Everything in Professional",
+              "3": "Multi-platform Design",
+              "4": "Advanced Design System",
+              "5": "Extensive Usability Testing",
+              "6": "Analytics Integration",
+              "7": "Long-term Support",
+              "8": "Training & Workshops"
+            }
+          }
+        }
+      },
+      "6": {
+        "title": "Frequently Asked Questions",
+        "desc": "Common questions about our mobile app development process and services.",
+        "tab": {
+          "1": "Process",
+          "2": "Pricing",
+          "3": "Deliverables",
+          "4": "Timeline"
+        },
+        "QA": {
+          "1": {
+            "Q": "How do you approach the design process?",
+            "A": "Our design process is collaborative and iterative. We begin with discovery and research to understand your business and users. We then move into wireframing and prototyping, followed by visual design, testing, and implementation support."
+          },
+          "2": {
+            "Q": "Do you conduct user testing?",
+            "A": "Yes, user testing is an integral part of our process. We validate designs with real users to ensure they meet user needs and expectations. This helps identify and address issues early in the process."
+          },
+          "3": {
+            "Q": "How do you ensure designs align with our brand?",
+            "A": "We begin by conducting a thorough review of your existing brand guidelines and assets. Throughout the design process, we ensure consistency with your brand while enhancing the user experience."
+          },
+          "4": {
+            "Q": "How do you determine pricing for UI/UX projects?",
+            "A": "Our pricing is based on project scope, complexity, timeline, and deliverables. We offer structured packages as starting points, but can customize pricing based on your specific needs."
+          },
+          "5": {
+            "Q": "Do you offer ongoing design support after project completion?",
+            "A": "Yes, we offer maintenance and support packages to ensure your design continues to evolve with your business needs and user feedback."
+          },
+          "6": {
+            "Q": "Is there a deposit required to start a project?",
+            "A": "Yes, we typically require a 50% deposit to begin work, with the remaining balance due upon project completion or according to agreed-upon milestones."
+          },
+          "7": {
+            "Q": "What deliverables can I expect from a UI/UX project?",
+            "A": "Depending on the project scope, deliverables may include user research reports, user personas, journey maps, wireframes, prototypes, UI design files, design systems, and implementation guidelines."
+          },
+          "8": {
+            "Q": "Do you provide development-ready files?",
+            "A": "Yes, we provide design specifications, assets, and documentation that developers need to implement the designs accurately. We can also work directly with your development team to ensure smooth implementation."
+          },
+          "9": {
+            "Q": "Do you create design systems?",
+            "A": "Yes, we specialize in creating comprehensive design systems that ensure consistency and scalability across your product. This includes component libraries, style guides, and documentation."
+          },
+          "10": {
+            "Q": "How long does a typical UI/UX design project take?",
+            "A": "Project timelines vary based on scope and complexity. A simple website redesign might take 4-6 weeks, while a complex application could take 3-6 months. We'll provide a detailed timeline during the proposal phase."
+          },
+          "11": {
+            "Q": "Can you work on urgent projects with tight deadlines?",
+            "A": "We can accommodate rush projects depending on our current workload. Rush fees may apply for expedited timelines to ensure we can dedicate the necessary resources."
+          },
+          "12": {
+            "Q": "How do you handle project delays?",
+            "A": "We build buffer time into our project plans to account for revisions and unforeseen challenges. We communicate proactively if delays occur and work collaboratively to adjust timelines as needed."
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Transform Your User Experience?",
+      "desc": "Let's discuss how our UI/UX design services can help your business achieve its goals through exceptional user experiences."
+    }
   }
 },
   "Portfolio" : {
