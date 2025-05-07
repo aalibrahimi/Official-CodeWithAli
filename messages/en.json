@@ -759,6 +759,253 @@
       "title": "Ready to Build Your Mobile App?",
       "desc": "Contact us today for a free consultation and discover how we can help you create a mobile app that engages users and drives business growth."
     }
+  },
+  "UI": {
+    "badge": {
+      "1": "UI/UX DESIGN",
+      "2": "OUR SERVICES",
+      "3": "OUR WORK",
+      "4": "OUR PROCESS",
+      "5": "CLIENT FEEDBACK",
+      "6": "PRICING",
+      "7": "FAQ"
+    },
+    "title": {
+      "1": "User-Focused Design",
+      "2": "That Drives Results"
+    },
+    "desc": "We create intuitive, engaging user experiences that enhance brand perception, increase conversion rates, and simplify complex interactions.",
+    "consultBtn": "Get a Free Consultation",
+    "workBtn": "View Our Work",
+    "viewAllBtn": "View All Projects",
+    "sections": {
+      "1": {
+        "title": "Comprehensive UI/UX Design Services",
+        "desc": "We offer end-to-end design solutions that transform complex challenges into seamless user experiences.",
+        "offerings": {
+          "1": {
+            "title": "User Research",
+            "desc": "We conduct comprehensive user research to understand your target audience's needs, behaviors, and pain points.",
+            "features": {
+              "1": "Persona Development",
+              "2": "User Interviews",
+              "3": "Competitive Analysis",
+              "4": "User Journey Mapping"
+            }
+          },
+          "2": {
+            "title": "Interface Design",
+            "desc": "We create beautiful, intuitive interfaces that balance aesthetics with functionality to enhance user experience.",
+            "features": {
+              "1": "Wireframing",
+              "2": "Visual Design",
+              "3": "Interactive Prototyping",
+              "4": "Design Systems"
+            }
+          },
+          "3": {
+            "title": "Usability Testing",
+            "desc": "We validate designs through rigorous testing to ensure they meet user needs and business objectives.",
+            "features": {
+              "1": "Heuristic Evaluation",
+              "2": "A/B Testing",
+              "3": "User Testing Sessions",
+              "4": "Analytics Integration"
+            }
+          },
+          "4": {
+            "title": "Design Systems",
+            "desc": "We develop comprehensive design systems that ensure consistency while enabling scalability across all platforms.",
+            "features": {
+              "1": "Component Libraries",
+              "2": "Style Guides",
+              "3": "Documentation",
+              "4": "Implementation Support"
+            }
+          }
+        }
+      },
+      "2": {
+        "title": "UI/UX Design Portfolio",
+        "desc": "Browse our recent design projects spanning various industries and platforms.",
+        "projects": {
+          "1": {
+            "title": "Financial App Redesign",
+            "category": "Mobile App"
+          },
+          "2": {
+            "title": "E-commerce Website",
+            "category": "Web Design"
+          },
+          "3": {
+            "title": "Healthcare Dashboard",
+            "category": "Dashboard"
+          },
+          "4": {
+            "title": "Fitness Tracking App",
+            "category": "Mobile App"
+          }
+        }
+      },
+      "3": {
+        "title": "Our Design Process",
+        "desc": "We follow a systematic approach to ensure every design solution meets both user needs and business objectives.",
+        "process": {
+          "1": {
+            "title": "Discovery",
+            "desc": "We analyze your business goals, target audience, and current pain points to define clear objectives."
+          },
+          "2": {
+            "title": "Research",
+            "desc": "We conduct user interviews, competitive analysis, and create user personas to guide our design decisions."
+          },
+          "3": {
+            "title": "Design",
+            "desc": "We create wireframes, interactive prototypes, and visual designs that align with your brand and user needs."
+          },
+          "4": {
+            "title": "Test & Iterate",
+            "desc": "We validate designs through usability testing and refine based on real user feedback."
+          },
+          "5": {
+            "title": "Deliver",
+            "desc": "We provide final assets, specifications, and implementation support to bring the design to life."
+          }
+        }
+
+      },
+      "4": {
+        "title": "What Our Clients Say",
+        "desc": "Hear from businesses who have transformed their digital presence with our UI/UX design services.",
+        "quotes": {
+          "1": {
+            "quote": "The redesign completely transformed our user engagement metrics. Conversion rates increased by 40% within the first month.",
+            "author": "Sarah Johnson",
+            "authDesc": "TechStart Solutions"
+          },
+          "2": {
+            "quote": "Their user research uncovered pain points we had overlooked for years. The resulting interface designs have significantly improved customer satisfaction.",
+            "author": "Michael Chen",
+            "authDesc": "Global Innovations"
+          },
+          "3": {
+            "quote": "Working with this team was seamless. They translated our complex requirements into an intuitive design that our users love.",
+            "author": "Emma Rodriguez",
+            "authDesc": "HealthPlus"
+          }
+        }
+      },
+      "5": {
+        "title": "UI/UX Design Packages",
+        "desc": "Flexible options designed to meet the needs of businesses at every stage of growth.",
+        "package": {
+          "startBtn": "Get Started",
+          "whatIncluded": "What's Included:",
+          "1": {
+            "title": "Essential",
+            "desc": "Perfect for startups and small businesses looking to improve their digital presence.",
+            "features": {
+              "1": "User Research & Personas",
+              "2": "Wireframing",
+              "3": "Basic UI Design",
+              "4": "Limited Revisions",
+              "5": "Basic Design Documentation"
+            }
+          },
+          "2": {
+            "title": "Professional",
+            "desc": "Comprehensive solution for established businesses seeking a complete design overhaul.",
+            "features": {
+              "1": "Everything in Essential",
+              "2": "In-depth User Research",
+              "3": "Interactive Prototyping",
+              "4": "Advanced UI/UX Design",
+              "5": "Usability Testing",
+              "6": "Design System Creation",
+              "7": "Extended Revisions"
+            }
+          },
+          "3": {
+            "title": "Enterprise",
+            "desc": "",
+            "features": {
+              "1": "Tailored solution for large organizations with complex requirements and multiple platforms.",
+              "2": "Everything in Professional",
+              "3": "Multi-platform Design",
+              "4": "Advanced Design System",
+              "5": "Extensive Usability Testing",
+              "6": "Analytics Integration",
+              "7": "Long-term Support",
+              "8": "Training & Workshops"
+            }
+          }
+        }
+      },
+      "6": {
+        "title": "Frequently Asked Questions",
+        "desc": "Common questions about our mobile app development process and services.",
+        "tab": {
+          "1": "Process",
+          "2": "Pricing",
+          "3": "Deliverables",
+          "4": "Timeline"
+        },
+        "QA": {
+          "1": {
+            "Q": "How do you approach the design process?",
+            "A": "Our design process is collaborative and iterative. We begin with discovery and research to understand your business and users. We then move into wireframing and prototyping, followed by visual design, testing, and implementation support."
+          },
+          "2": {
+            "Q": "Do you conduct user testing?",
+            "A": "Yes, user testing is an integral part of our process. We validate designs with real users to ensure they meet user needs and expectations. This helps identify and address issues early in the process."
+          },
+          "3": {
+            "Q": "How do you ensure designs align with our brand?",
+            "A": "We begin by conducting a thorough review of your existing brand guidelines and assets. Throughout the design process, we ensure consistency with your brand while enhancing the user experience."
+          },
+          "4": {
+            "Q": "How do you determine pricing for UI/UX projects?",
+            "A": "Our pricing is based on project scope, complexity, timeline, and deliverables. We offer structured packages as starting points, but can customize pricing based on your specific needs."
+          },
+          "5": {
+            "Q": "Do you offer ongoing design support after project completion?",
+            "A": "Yes, we offer maintenance and support packages to ensure your design continues to evolve with your business needs and user feedback."
+          },
+          "6": {
+            "Q": "Is there a deposit required to start a project?",
+            "A": "Yes, we typically require a 50% deposit to begin work, with the remaining balance due upon project completion or according to agreed-upon milestones."
+          },
+          "7": {
+            "Q": "What deliverables can I expect from a UI/UX project?",
+            "A": "Depending on the project scope, deliverables may include user research reports, user personas, journey maps, wireframes, prototypes, UI design files, design systems, and implementation guidelines."
+          },
+          "8": {
+            "Q": "Do you provide development-ready files?",
+            "A": "Yes, we provide design specifications, assets, and documentation that developers need to implement the designs accurately. We can also work directly with your development team to ensure smooth implementation."
+          },
+          "9": {
+            "Q": "Do you create design systems?",
+            "A": "Yes, we specialize in creating comprehensive design systems that ensure consistency and scalability across your product. This includes component libraries, style guides, and documentation."
+          },
+          "10": {
+            "Q": "How long does a typical UI/UX design project take?",
+            "A": "Project timelines vary based on scope and complexity. A simple website redesign might take 4-6 weeks, while a complex application could take 3-6 months. We'll provide a detailed timeline during the proposal phase."
+          },
+          "11": {
+            "Q": "Can you work on urgent projects with tight deadlines?",
+            "A": "We can accommodate rush projects depending on our current workload. Rush fees may apply for expedited timelines to ensure we can dedicate the necessary resources."
+          },
+          "12": {
+            "Q": "How do you handle project delays?",
+            "A": "We build buffer time into our project plans to account for revisions and unforeseen challenges. We communicate proactively if delays occur and work collaboratively to adjust timelines as needed."
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Transform Your User Experience?",
+      "desc": "Let's discuss how our UI/UX design services can help your business achieve its goals through exceptional user experiences."
+    }
   }
 },
   "Portfolio" : {
