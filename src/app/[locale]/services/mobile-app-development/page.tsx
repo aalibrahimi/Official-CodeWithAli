@@ -154,7 +154,7 @@ const MobileAppDevelopmentPage = () => {
             </div>
 
             <div className="lg:w-5/12">
-              <div className="relative bg-blue-100 dark:bg-black/60 border border-blue-300 dark:border-blue-900 rounded-xl overflow-hidden shadow-2xl shadow-blue-950/20 p-5">
+              <div className="relative bg-blue-600/80 dark:bg-black/60 border border-blue-300 dark:border-blue-900 rounded-xl overflow-hidden shadow-2xl shadow-blue-950/20 p-5">
                 {/* Mobile app mockup illustration */}
                 <div className="flex justify-center">
                   <div className="w-48 h-96 bg-gradient-to-br from-blue-200 to-blue-100 dark:from-blue-950/40 dark:to-blue-900/10 rounded-xl overflow-hidden p-2 relative">

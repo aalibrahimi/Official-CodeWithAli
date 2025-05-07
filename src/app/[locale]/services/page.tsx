@@ -169,27 +169,21 @@ const processSteps = [
 
   return (
     <ClientOnly>
-      <div className="min-h-screen bg-white dark:bg-black text-white overflow-x-hidden">
+      <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white overflow-x-hidden">
         {/* Hero Section */}
         <section className="pt-24 pb-12 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-            <div className="absolute top-0 left-0 w-full h-full dark:bg-black opacity-70"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-red-50 dark:bg-black opacity-70"></div>
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-950 to-red-500 dark:bg-gradient-to-br dark:from-red-950/30 dark:to-transparent"></div>
           </div>
 
           <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-            {/* <motion.div
-              className="text-center max-w-3xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            > */}
             <div className="text-center max-w-3xl mx-auto">
-              <Badge className="bg-red-600/80 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-red-600 dark:bg-red-900/30 text-white dark:text-red-400 border-transparent mb-4 px-3 py-1">
               {t("badge")}
                 
               </Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              <h1 className="text-4xl text-white md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 {t("Header")}
                 
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-200 to-red-400 dark:from-red-400 dark:to-red-600 block">
@@ -197,82 +191,71 @@ const processSteps = [
         
                 </span>
               </h1>
-              <p className="text-2xl md:text-xl dark:text-white/70 mb-8  font-semibold">
+              <p className="text-lg md:text-xl text-white dark:text-red-200/80 mb-8">
               {t("Subdesc")}
               </p>
             </div>
-            {/* </motion.div> */}
           </div>
         </section>
 
         {/* Services Section */}
         <section className="py-16 relative overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-500/20 dark:bg-red-900/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-500/20 dark:bg-red-700/10 rounded-full blur-3xl"></div>
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-200 dark:bg-red-900/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-200 dark:bg-red-700/10 rounded-full blur-3xl"></div>
 
           <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-8">
               <AnimatePresence>
                 {services.map((service, index) => (
-                  // <motion.div
-                  //   key={index}
-                  //   initial={{ opacity: 0, y: 20 }}
-                  //   animate={{ opacity: 1, y: 0 }}
-                  //   exit={{ opacity: 0 }}
-                  //   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  // >
                   <div key={index}>
-                    <Card className="bg-red-900 dark:bg-black/60 border-red-900 backdrop-blur-sm h-full overflow-hidden group hover:border-red-800/50 transition-colors">
+                    <Card className="bg-white border-red-300 dark:bg-black/60 dark:border-red-900 backdrop-blur-sm h-full overflow-hidden group hover:border-red-500 dark:hover:border-red-800/50 transition-colors">
                       <CardContent className="p-6 flex flex-col h-full ">
                         <div className="mb-5">
-                          {/* Could put this: from-red-500 to-red-600 dark:from-red-600 dark:to-red-800
-                              as service icon color
-                          */}
                           <div
-                            className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.color} p-3 mb-4 transform group-hover:scale-110 transition-transform`}
+                            className={`w-12 h-12 rounded-lg bg-gradient-to-br from-red-400 to-red-600 dark:from-red-600 dark:to-red-700 p-3 mb-4 transform group-hover:scale-110 transition-transform`}
                           >
                             <service.icon className="w-full h-full text-white" />
                           </div>
-                          <h3 className="text-xl font-bold text-white mb-3">
+                          <h3 className="text-xl font-bold text-red-800 dark:text-white mb-3">
                             {service.title === "Website Development" ? (
                               <>
-                                <GradientText gradient="from-white via-pink-400 to-red-500">{service.title}</GradientText>
+                                <GradientText gradient="from-red-700 via-red-600 to-red-800 dark:from-white dark:via-pink-400 dark:to-red-500">{service.title}</GradientText>
                               </>
                             ) : service.title === "Mobile App Development" ? (
                               <>
-                                <GradientText gradient="from-white via-cyan-400 to-blue-400">{service.title}</GradientText>
+                                <GradientText gradient="from-blue-700 via-blue-600 to-blue-800 dark:from-white dark:via-cyan-400 dark:to-blue-400">{service.title}</GradientText>
                               </>
                             ) : service.title === "UI/UX Design" ? (
                               <>
-                                <GradientText gradient="from-white via-purple-500 to-blue-500">{service.title}</GradientText>
+                                <GradientText gradient="from-purple-700 via-purple-600 to-blue-800 dark:from-white dark:via-purple-500 dark:to-blue-500">{service.title}</GradientText>
                               </>
                             ) : service.title === "E-commerce Solutions" ? (
                               <>
-                                <GradientText gradient="from-white to-green-600">{service.title}</GradientText>
+                                <GradientText gradient="from-green-700 to-green-900 dark:from-white dark:to-green-600">{service.title}</GradientText>
                               </>
                             ) : service.title === "SEO Optimization" ? (
                               <>
-                                <GradientText gradient="from-white via-orange-400 to-red-600">{service.title}</GradientText>
+                                <GradientText gradient="from-orange-700 via-orange-600 to-red-800 dark:from-white dark:via-orange-400 dark:to-red-600">{service.title}</GradientText>
                               </>
                             ) : service.title === "Web Hosting & Maintenance" ? (
                               <>
-                                <GradientText gradient="from-white via-gray-500 to-gray-600">{service.title}</GradientText>
+                                <GradientText gradient="from-gray-700 via-gray-600 to-gray-800 dark:from-white dark:via-gray-500 dark:to-gray-600">{service.title}</GradientText>
                               </>
                             ) : (
                               <>
-                                <GradientText gradient="from-green-600 to-red-600">{service.title}</GradientText>
+                                <GradientText gradient="from-green-700 to-red-800 dark:from-green-600 dark:to-red-600">{service.title}</GradientText>
                               </>
                             )}
                           </h3>
-                          <p className="text-white  dark:text-red-200/60 mb-4">
+                          <p className="text-black dark:text-white/90 mb-4">
                             {service.description}
                           </p>
 
                           <ul className="space-y-2 mb-5">
                             {service.features.map((feature, idx) => (
                               <li key={idx} className="flex items-start font-bold">
-                                <ChevronRight className="h-4 w-4 text-red-300 dark:text-red-500 mt-1 mr-2 flex-shrink-0" />
-                                <span className="text-white/80 dark:text-red-200/80 text-sm">
+                                <ChevronRight className="h-4 w-4 text-black dark:text-red-500 mt-1 mr-2 flex-shrink-0" />
+                                <span className="text-black dark:text-white/80 font-bold text-sm">
                                   {feature}
                                 </span>
                               </li>
@@ -282,7 +265,7 @@ const processSteps = [
                         <div className="mt-auto pt-4">
                           <Link href={service.href} target="_blank">
                             <Button
-                              className="w-full bg-gradient-to-r from-red-500 to-red-600 dark:from-red-700 dark:to-red-900 hover:from-red-600 hover:to-red-800 
+                              className="w-full bg-gradient-to-r from-red-500 to-red-700 dark:from-red-700 dark:to-red-900 hover:from-red-600 hover:to-red-800 
                               dark:hover:from-red-600 dark:hover:to-red-800 text-white"
                             >
                               {t("Services.process.learn")}
@@ -294,7 +277,6 @@ const processSteps = [
                       </CardContent>
                     </Card>
                   </div>
-                  // </motion.div>
                 ))}
               </AnimatePresence>
             </div>
@@ -302,52 +284,39 @@ const processSteps = [
         </section>
 
         {/* Process Overview */}
-        <section className="py-20 dark:bg-red-950/10">
+        <section className="py-20 bg-red-50 dark:bg-red-950/10">
           <div className="container mx-auto px-4 md:px-8 lg:px-12">
             <div className="text-center mb-16">
-              {/* <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={fadeIn}
-              > */}
               <div>
-                <Badge className="bg-red-600/80 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
+                <Badge className="bg-red-600 dark:bg-red-900/30 text-white dark:text-red-400 border-transparent mb-4 px-3 py-1">
                    {t("Services.process.approach.badge")}
                 </Badge>
-                <h2 className="text-3xl text-red-500/80 dark:text-white md:text-4xl font-bold mb-6">
+                <h2 className="text-3xl text-red-800 dark:text-white md:text-4xl font-bold mb-6">
                 {t("Services.process.approach.title")}
                 </h2>
-                <p className="text-black dark:text-red-200/60 text-lg max-w-2xl mx-auto">
+                <p className="text-red-900 dark:text-white/80 text-lg max-w-2xl mx-auto">
                 {t("Services.process.approach.sub")}
                 </p>
               </div>
-              {/* </motion.div> */}
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {processSteps.map((step, index) => (
-                // <motion.div
-                //   key={index}
-                //   initial={{ opacity: 0, y: 20 }}
-                //   animate={{ opacity: 1, y: 0 }}
-                //   transition={{ duration: 0.4, delay: index * 0.1 }}
-                // >
                 <div key={index}>
-                  <div className="bg-red-900/90 dark:bg-black/60 border border-red-900 rounded-xl p-6 h-full">
+                  <div className="bg-white border-red-300 dark:bg-black/60 dark:border-red-900 rounded-xl p-6 h-full">
                     <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-red-600 dark:from-red-600 dark:to-red-800 flex items-center justify-center mr-3">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-red-700 dark:from-red-600 dark:to-red-800 flex items-center justify-center mr-3">
                         <span className="text-white font-bold">
                           {step.number}
                         </span>
                       </div>
-                      <h3 className="text-xl font-bold text-white">
+                      <h3 className="text-xl font-bold text-red-800 dark:text-white">
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-white/80 dark:text-red-200/60">{step.description}</p>
+                    <p className="text-red-900 dark:text-white/90">{step.description}</p>
                   </div>
                 </div>
-                // </motion.div>
               ))}
             </div>
           </div>
@@ -356,29 +325,22 @@ const processSteps = [
         {/* CTA Section - More responsive */}
         <section className="py-12 md:py-20">
           <div className="container mx-auto px-4">
-            {/* <motion.div
-              className="max-w-4xl mx-auto bg-black/60 border border-red-900 rounded-xl p-6 md:p-10 text-center"
-              initial="hidden"
-              animate="visible"
-              variants={fadeIn}
-            > */}
-            <div className="max-w-4xl mx-auto bg-red-900/90 dark:bg-black/60 border border-red-900 rounded-xl p-6 md:p-10 text-center">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 md:mb-6">
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-red-500 to-red-400 dark:bg-gradient-to-br border-3  border-red-950 dark:from-red-950/30 dark:to-transparent rounded-xl p-6 md:p-10 text-center">
+              <h2 className="text-2xl md:text-4xl font-bold text-white dark:text-white mb-4 md:mb-6">
                {t("Services.cta.title")}
               </h2>
-              <p className="text-base md:text-lg text-red-200/80 mb-6 md:mb-8 max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-black dark:text-white/80 mb-6 md:mb-8 max-w-2xl mx-auto">
               {t("Services.cta.header")}
               </p>
               <Button
                 className="w-full md:w-auto bg-gradient-to-r from-red-500 to-red-600 dark:from-red-700 dark:to-red-900 hover:from-red-600 hover:to-red-800 
-                     dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-4 md:px-8 py-2"
+                     dark:hover:from-red-600 dark:hover:to-red-800 text-black border border-red-400 dark:border-red-800/30 shadow-lg shadow-red-300/30 dark:shadow-red-950/20 px-4 md:px-8 py-2"
                 onClick={() => router.push("/contact")}
               >
                 {t("Services.cta.button")}
                 <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
-            {/* </motion.div> */}
           </div>
         </section>
       </div>
