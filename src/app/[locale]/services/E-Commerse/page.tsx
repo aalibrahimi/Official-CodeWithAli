@@ -156,7 +156,7 @@ const EcommerceSolutionsPage = () => {
     <section className="py-20 relative overflow-hidden border-b border-green-200 dark:border-green-900">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-100 to-green-300 dark:bg-gradient-to-br dark:from-green-950/30 dark:to-transparent"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white via-green-300 to-green-500 dark:bg-gradient-to-br dark:from-green-950/30 dark:via-transparent dark:to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
@@ -165,19 +165,19 @@ const EcommerceSolutionsPage = () => {
             <Badge className="bg-green-200 text-green-800 dark:bg-green-900/30 dark:text-green-400 border-transparent mb-4 px-3 py-1">
               {t("badge.1")}
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-green-950 dark:text-white">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-black dark:text-white">
               {t("title.1")}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-700 via-green-500 to-green-600 dark:from-white dark:via-green-400 dark:to-red-500 block">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-800 via-green-600 to-green-700 dark:from-white dark:via-green-400 dark:to-red-500 block">
                 {t("title.2")}
               </span>
             </h1>
-            <p className="text-lg text-black dark:text-white/90 mb-8 max-w-2xl">
+            <p className="text-lg font-semibold text-black dark:text-white/90 mb-8 max-w-2xl">
               {t("desc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-green-400 to-green-600 dark:from-green-700 dark:to-green-900 hover:from-green-500 hover:to-green-700 
+                className="bg-gradient-to-r from-green-600 to-green-700 dark:from-green-700 dark:to-green-900 hover:from-green-500 hover:to-green-700 
                    dark:hover:from-green-600 dark:hover:to-green-800 text-white border border-green-300 dark:border-green-800/30 shadow-lg shadow-green-200/50 dark:shadow-green-950/20 px-8"
                 onClick={() => router.push("/contact")}
               >
@@ -200,7 +200,7 @@ const EcommerceSolutionsPage = () => {
           </div>
 
           {/* Stats/Features Box */}
-          <div className="bg-green-200 text-green-800 dark:bg-black dark:text-white border border-green-300 dark:border-green-900 rounded-xl overflow-hidden shadow-xl p-6 md:p-8">
+          <div className="bg-green-800 text-white dark:bg-black dark:text-white border border-green-300 dark:border-green-900 rounded-xl overflow-hidden shadow-xl p-6 md:p-8">
             <h3 className="text-2xl font-bold text-center mb-6">
               {t("sections.1.title")}
             </h3>
@@ -231,10 +231,10 @@ const EcommerceSolutionsPage = () => {
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-400 to-green-600 dark:from-green-700 dark:to-green-900 flex items-center justify-center mx-auto mb-3">
                     <stat.icon className="w-6 h-6 text-white" />
                   </div>
-                  <div className="text-2xl md:text-3xl font-bold text-black dark:text-green-400">
+                  <div className="text-2xl md:text-3xl font-bold text-white dark:text-green-400">
                     {stat.value}
                   </div>
-                  <p className="text-sm text-black dark:text-white/80">{stat.label}</p>
+                  <p className="text-sm text-white dark:text-white/80">{stat.label}</p>
                 </div>
               ))}
             </div>

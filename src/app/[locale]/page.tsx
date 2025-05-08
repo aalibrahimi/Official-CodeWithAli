@@ -216,7 +216,7 @@ const HomePage = () => {
       <section className="pt-10 pb-20 md:pb-24 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-black via-red-950 to-red-800 dark:bg-gradient-to-br dark:from-red-950/30 dark:to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white via-red-300 to-red-500 dark:bg-gradient-to-br dark:from-red-950/30 dark:via-transparent dark:to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
@@ -225,13 +225,13 @@ const HomePage = () => {
               className="md:pr-8"
               {...getAnimationProps()}
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              <h1 className="text-4xl text-black dark:text-white md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 {t("hero.title.part1")}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-200 to-red-400 dark:from-red-400 dark:to-red-600 block">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-500 dark:from-red-400 dark:to-red-600 block">
                   {t("hero.title.part2")}
                 </span>
               </h1>
-              <p className="text-lg md:text-xl dark:text-red-200/80 mb-8 max-w-xl">
+              <p className="text-lg md:text-xl text-black font-semibold dark:text-red-200/80 mb-8 max-w-xl">
                 {t("hero.description")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -249,7 +249,7 @@ const HomePage = () => {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-red-800/30 text-white dark:text-red-400 bg-red-500/40 dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white dark:hover:text-white px-8 w-full sm:w-auto"
+                    className="border-red-800/30 text-black dark:text-red-400 bg-red-500/40 dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white dark:hover:text-white px-8 w-full sm:w-auto"
                   >
                     {t("hero.buttons.viewWork")}
                   </Button>
@@ -261,7 +261,7 @@ const HomePage = () => {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-red-800/30 text-white dark:text-red-400 bg-red-500/40 dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white px-8 w-full sm:w-auto 
+                    className="border-red-800/30 text-black dark:text-red-400 bg-red-500/40 dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white px-8 w-full sm:w-auto 
                               flex items-center gap-2 transition-all duration-300 ease-in-out 
                               group-hover:bg-red-950/30 group-hover:text-white dark:group-hover:text-white"
                   >
@@ -279,32 +279,32 @@ const HomePage = () => {
                 // Added ml-20 for LG so it doesnt cover the contact btn
                 className="hidden lg:block lg:ml-20 xl:ml-0 relative"
               >
-                <div className="relative bg-black border border-red-900 rounded-xl overflow-hidden shadow-2xl shadow-red-950/20 p-2">
+                <div className="relative bg-black/60 border border-red-900 rounded-xl overflow-hidden shadow-2xl shadow-red-950/20 p-2">
                   <div className="grid grid-cols-2 gap-2">
                     {/* Mock designs */}
-                    <div className="aspect-square bg-black rounded-lg overflow-hidden p-4 flex items-center justify-center">
+                    <div className="aspect-square bg-black/60 rounded-lg overflow-hidden p-4 flex items-center justify-center">
                       <div className="w-full h-full border-2 border-red-500/20 rounded-md flex items-center justify-center">
                         <Layers className="h-12 w-12 text-red-500/60" />
                       </div>
                     </div>
-                    <div className="aspect-square bg-black  to-red-900/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
+                    <div className="aspect-square bg-black/60  to-red-900/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
                       <div className="w-full h-full border-2 border-red-500/20 rounded-md flex items-center justify-center">
                         <Code className="h-12 w-12 text-red-500/60" />
                       </div>
                     </div>
-                    <div className="aspect-square bg-black  to-red-900/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
+                    <div className="aspect-square bg-black/60  to-red-900/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
                       <div className="w-full h-full border-2 border-red-500/20 rounded-md flex items-center justify-center">
                         <Smartphone className="h-12 w-12 text-red-500/60" />
                       </div>
                     </div>
-                    <div className="aspect-square bg-black  to-red-900/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
+                    <div className="aspect-square bg-black/60  to-red-900/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
                       <div className="w-full h-full border-2 border-red-500/20 rounded-md flex items-center justify-center">
                         <ShoppingBag className="h-12 w-12 text-red-500/60" />
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-2 p-4 bg-black  to-red-900/10 rounded-lg">
+                  <div className="mt-2 p-4 bg-black/60  to-red-900/10 rounded-lg">
                     <div className="flex items-center justify-between mb-3">
                       <div className="w-32 h-3 bg-red-800/30 rounded-full"></div>
                       <div className="flex space-x-2">

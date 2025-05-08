@@ -114,7 +114,7 @@ const MobileAppDevelopmentPage = () => {
       <section className="pt-24 pb-16 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-300 to-blue-400 dark:bg-gradient-to-br dark:from-blue-950/30 dark:to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white via-blue-300 to-blue-500 dark:bg-gradient-to-br dark:from-blue-950/30 dark:via-transparent dark:to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
@@ -129,7 +129,7 @@ const MobileAppDevelopmentPage = () => {
                   {t("title.2")}
                 </span>
               </h1>
-              <p className="text-lg text-black/80 dark:text-white/80 mb-8">
+              <p className="text-lg font-semibold text-black/80 dark:text-white/80 mb-8">
                 {t("desc")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -210,7 +210,7 @@ const MobileAppDevelopmentPage = () => {
               <Badge className="bg-blue-600 text-white dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.2")}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
                 <GradientText gradient="from-blue-700 via-blue-600 dark:from-gray-200 dark:via-blue-400 to-blue-500">
                   {t("sections.1.title")}
                 </GradientText>
@@ -278,7 +278,7 @@ const MobileAppDevelopmentPage = () => {
               <Badge className="bg-blue-600 text-white dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.3")}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
                 <GradientText gradient="from-blue-700 via-blue-600 dark:from-gray-200 dark:via-blue-400 to-blue-500">
                   {t("sections.2.title")}
                 </GradientText>
@@ -350,7 +350,7 @@ const MobileAppDevelopmentPage = () => {
               <Badge className="bg-blue-600 text-white dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.4")}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
                 <GradientText gradient="from-blue-700 via-blue-600 dark:from-gray-200 dark:via-blue-400 to-blue-500">
                   {t("sections.3.title")}
                 </GradientText>
@@ -400,7 +400,7 @@ const MobileAppDevelopmentPage = () => {
               <Badge className="bg-blue-600 text-white dark:bg-blue-900/30 dark:text-blue-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.5")}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#006674]">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
                 <GradientText gradient="from-blue-700 via-blue-600 dark:from-gray-200 dark:via-blue-400 to-blue-500">
                   {t("sections.4.title")}
                 </GradientText>

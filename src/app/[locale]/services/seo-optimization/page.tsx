@@ -214,7 +214,7 @@ const SEOOptimizationPage = () => {
       <section className="pt-24 pb-12 relative overflow-hidden border-b border-orange-600">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white to-orange-500 dark:bg-gradient-to-br dark:from-orange-950/30 dark:to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white via-orange-300 to-orange-400 dark:bg-gradient-to-br dark:from-orange-950/30 dark:via-transparent dark:to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
@@ -228,18 +228,18 @@ const SEOOptimizationPage = () => {
             <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent hover:bg-orange-900/20 mb-4 px-3 py-1">
               {t("badge.1")}
             </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-4xl text-black dark:text-white md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               {t("title.1")}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-orange-600 dark:via-orange-300 to-red-700 dark:to-red-500 block">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-700 via-orange-600 to-red-500 dark:from-orange-500 dark:via-orange-300 dark:to-red-500 block">
                 {t("title.2")}
               </span>
             </h1>
-            <p className="text-lg md:text-xl dark:text-white/70 mb-8">
+            <p className="text-lg font-semibold md:text-xl text-black dark:text-white/70 mb-8">
               {t("desc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
-                className="bg-gradient-to-r from-orange-500 to-orange-600 dark:from-orange-700 dark:to-orange-900 hover:from-orange-600 hover:to-orange-800 
+                className="bg-gradient-to-r from-orange-500 to-orange-600 dark:from-orange-700 dark:to-orange-900 hover:from-orange-600 hover:to-orange-700 
                      dark:hover:from-orange-600 dark:hover:to-orange-800 text-white"
                 size="lg"
                 onClick={() => router.push("/contact")}
@@ -250,7 +250,7 @@ const SEOOptimizationPage = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-orange-700 text-white dark:text-orange-400 bg-orange-300/40 dark:bg-orange-950/20 hover:bg-orange-800/80 dark:hover:bg-orange-950/30 hover:text-white dark:hover:text-white"
+                className="border-orange-700 text-orange-950 dark:text-orange-400 bg-orange-300/40 dark:bg-orange-950/20 hover:bg-orange-600/80 dark:hover:bg-orange-950/30 hover:text-white dark:hover:text-white"
                 onClick={() => router.push("#packages")}
               >
                 {t("packageBtn")}
@@ -279,7 +279,7 @@ const SEOOptimizationPage = () => {
             <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
               {t("badge.2")}
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
               {/* Changed orange Gradient here */}
               <GradientText gradient="from-orange-500 via-orange-400 to-red-400 dark:from-white dark:to-red-500">
                 {t("sections.1.title")}
@@ -352,7 +352,7 @@ const SEOOptimizationPage = () => {
             <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
               {t("badge.3")}
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
               <GradientText gradient="from-orange-500 via-orange-400 to-red-400 dark:from-white dark:to-red-500">
                 {t("sections.2.title")}
               </GradientText>
@@ -408,7 +408,7 @@ const SEOOptimizationPage = () => {
             <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
               {t("badge.4")}
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
               <GradientText gradient="from-orange-500 via-orange-400 to-red-400 dark:from-white dark:to-red-500">
                 {t("sections.3.title")}
               </GradientText>
@@ -474,7 +474,7 @@ const SEOOptimizationPage = () => {
             <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
               {t("badge.5")}
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#d66c29]">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
               <GradientText gradient="from-orange-500 via-orange-400 to-red-400 dark:from-white dark:to-red-500">
                 {t("sections.4.title")}
               </GradientText>

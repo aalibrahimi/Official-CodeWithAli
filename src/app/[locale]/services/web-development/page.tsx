@@ -154,7 +154,7 @@ const WebsiteDevelopmentPage = () => {
                   {t("title.2")}
                 </span>
               </h1>
-              <p className="text-lg text-gray-800 dark:text-amber-50 mb-8">
+              <p className="text-lg font-semibold text-gray-800 dark:text-amber-50 mb-8">
                 {t("desc")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -235,7 +235,7 @@ const WebsiteDevelopmentPage = () => {
               <Badge className="bg-pink-600 dark:bg-pink-900/30 text-white dark:text-pink-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.2")}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white bg-transparent">
                 <GradientText gradient="from-pink-700 via-pink-600 to-pink-500 dark:from-gray-200 dark:via-pink-400 dark:to-pink-400">
                   {t("sections.1.title")}
                 </GradientText>
@@ -324,7 +324,7 @@ const WebsiteDevelopmentPage = () => {
               <Badge className="bg-pink-600 dark:bg-pink-900/30 text-white dark:text-pink-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.3")}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white bg-transparent">
                 <GradientText gradient="from-pink-700 via-pink-600 to-pink-500 dark:from-gray-200 dark:via-pink-400 dark:to-pink-400">
                   {t("sections.2.title")}
                 </GradientText>
@@ -389,7 +389,7 @@ const WebsiteDevelopmentPage = () => {
               <Badge className="bg-pink-600 dark:bg-pink-900/30 text-white dark:text-pink-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.4")}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white bg-transparent">
                 <GradientText gradient="from-pink-700 via-pink-600 to-pink-500 dark:from-gray-200 dark:via-pink-400 dark:to-pink-400">
                   {t("sections.3.title")}
                 </GradientText>
@@ -447,7 +447,7 @@ const WebsiteDevelopmentPage = () => {
               <Badge className="bg-pink-600 dark:bg-pink-900/30 text-white dark:text-pink-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.5")}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white bg-transparent">
                 <GradientText gradient="from-pink-700 via-pink-600 to-pink-500 dark:from-gray-200 dark:via-pink-400 dark:to-pink-400">
                   {t("sections.4.title")}
                 </GradientText>
@@ -542,7 +542,7 @@ const WebsiteDevelopmentPage = () => {
               <Badge className="bg-pink-600 dark:bg-pink-900/30 text-white dark:text-pink-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.6")}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white bg-transparent [text-shadow:_0_0px_20px_#c236d2]">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white bg-transparent">
                 <GradientText gradient="from-pink-700 via-pink-600 to-pink-500 dark:from-gray-200 dark:via-pink-400 dark:to-pink-400">
                   {t("sections.5.title")}
                 </GradientText>

@@ -201,7 +201,7 @@ const UIUXDesignPage = () => {
       <section className="pt-24 pb-12 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-950 to-purple-500 dark:bg-gradient-to-br dark:from-purple-950/30 dark:to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white via-purple-300 to-purple-500 dark:bg-gradient-to-br dark:from-purple-950/30 dark:via-transparent dark:to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
@@ -215,13 +215,13 @@ const UIUXDesignPage = () => {
             <Badge className="bg-purple-600 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
               {t("badge.1")}
             </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-4xl text-black dark:text-white md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               {t("title.1")}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-400 to-blue-300 dark:to-blue-500 block">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-800 via-purple-600 to-blue-700 dark:via-purple-400 dark:to-blue-500 block">
                 {t("title.2")}
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 mb-8">{t("desc")}</p>
+            <p className="text-lg font-semibold md:text-xl text-black dark:text-white/80 mb-8">{t("desc")}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               {/* Need to fix visibility of this btn */}
               <Button
@@ -236,7 +236,7 @@ const UIUXDesignPage = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-purple-700 text-purple-950 dark:text-purple-400 bg-purple-300/40 dark:bg-purple-950/20 hover:bg-purple-800/80 dark:hover:bg-purple-950/30 hover:text-white dark:hover:text-white"
+                className="border-purple-700 text-purple-800 dark:text-purple-400 bg-purple-300/40 dark:bg-purple-950/20 hover:bg-purple-800/80 dark:hover:bg-purple-950/30 hover:text-white dark:hover:text-white"
                 onClick={() => router.push("#portfolio")}
               >
                 {t("workBtn")}
@@ -265,7 +265,7 @@ const UIUXDesignPage = () => {
             <Badge className="bg-purple-600 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
               {t("badge.2")}
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
               <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
                 {t("sections.1.title")}
               </GradientText>
@@ -332,7 +332,7 @@ const UIUXDesignPage = () => {
             <Badge className="bg-purple-600 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
               {t("badge.3")}
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
               <GradientText gradient="from-purple-500 via-purple-400 to-purple-500 dark:from-white dark:to-purple-500">
                 {t("sections.2.title")}
               </GradientText>
@@ -407,7 +407,7 @@ const UIUXDesignPage = () => {
             <Badge className="bg-purple-600 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
               {t("badge.4")}
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
               <GradientText gradient="from-purple-500 via-purple-400 to-purple-400 dark:from-white dark:to-blue-500">
                 {t("sections.3.title")}
               </GradientText>
@@ -473,7 +473,7 @@ const UIUXDesignPage = () => {
             <Badge className="bg-purple-600 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
               {t("badge.5")}
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
               <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
                 {t("sections.4.title")}
               </GradientText>
@@ -565,7 +565,7 @@ const UIUXDesignPage = () => {
             <Badge className="bg-purple-600 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
               {t("badge.6")}
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
               <GradientText gradient="from-purple-500 via-purple-400 to-purple-400 dark:from-white dark:to-blue-500">
                 {t("sections.5.title")}
               </GradientText>
@@ -678,7 +678,7 @@ const UIUXDesignPage = () => {
             <Badge className="bg-purple-600 dark:bg-purple-900/30 dark:text-purple-400 border-transparent mb-4 px-3 py-1">
               {t("badge.7")}
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#722ccf]">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
               <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
                 {t("sections.6.title")}
               </GradientText>

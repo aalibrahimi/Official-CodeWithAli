@@ -204,7 +204,7 @@ const WebHostingPage = (): JSX.Element => {
         <section className="pt-24 pb-12 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full z-0">
             <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-950 to-gray-500 dark:bg-gradient-to-br dark:from-gray-950/30 dark:to-transparent"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white via-gray-400 to-gray-500 dark:bg-gradient-to-br dark:from-gray-800/30 dark:via-transparent dark:to-transparent"></div>
           </div>
 
           <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
@@ -217,16 +217,16 @@ const WebHostingPage = (): JSX.Element => {
               <Badge className="bg-gray-600 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.1")}
               </Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              <h1 className="text-4xl text-black dark:text-white md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 {t("title.1")}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-400 to-gray-300 dark:to-gray-500 block">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-800 via-gray-700 to-gray-700 dark:to-gray-500 block">
                   {t("title.2")}
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-white mb-8">{t("desc")}</p>
+              <p className="text-lg md:text-xl font-semibold text-black dark:text-white mb-8">{t("desc")}</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
-                  className="bg-gradient-to-r from-gray-500 to-gray-600 dark:from-gray-700 dark:to-gray-900 hover:from-gray-600 hover:to-gray-800 
+                  className="bg-gradient-to-r from-gray-600 to-gray-700 dark:from-gray-700 dark:to-gray-900 hover:from-gray-600 hover:to-gray-800 
                      dark:hover:from-gray-600 dark:hover:to-gray-800 text-white"
                   size="lg"
                   onClick={() => router.push("/contact")}
@@ -237,7 +237,7 @@ const WebHostingPage = (): JSX.Element => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-gray-700 text-white dark:text-gray-400 bg-gray-300/40 dark:bg-gray-950/20 hover:bg-gray-800/80 dark:hover:bg-gray-950/30 hover:text-white dark:hover:text-white"
+                  className="border-gray-500 text-black dark:text-gray-400 bg-gray-400 brightness-110 dark:bg-gray-950/20 hover:bg-gray-500 dark:hover:bg-gray-950/30 hover:text-white dark:hover:text-white"
                   onClick={() => router.push("#packages")}
                 >
                   {t("plansBtn")}
@@ -269,7 +269,7 @@ const WebHostingPage = (): JSX.Element => {
               <Badge className="bg-gray-600 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.2")}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
                 <GradientText gradient="from-gray-500 via-gray-400 to-gray-400 dark:from-white dark:to-gray-500">
                   {t("sections.1.title")}
                 </GradientText>
@@ -330,7 +330,7 @@ const WebHostingPage = (): JSX.Element => {
               <Badge className="bg-gray-600 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.3")}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
                 <GradientText gradient="from-gray-500 via-gray-400 to-gray-400 dark:from-white dark:to-gray-500">
                   {t("sections.2.title")}
                 </GradientText>
@@ -408,7 +408,7 @@ const WebHostingPage = (): JSX.Element => {
               <Badge className="bg-gray-600 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.4")}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
                 <GradientText gradient="from-gray-500 via-gray-400 to-gray-400 dark:from-white dark:to-gray-500">
                   {t("sections.3.title")}
                 </GradientText>
@@ -461,7 +461,7 @@ const WebHostingPage = (): JSX.Element => {
               <Badge className="bg-gray-600 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.5")}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
                 <GradientText gradient="from-gray-500 via-gray-400 to-gray-400 dark:from-white dark:to-gray-500">
                   {t("sections.4.title")}
                 </GradientText>
@@ -554,7 +554,7 @@ const WebHostingPage = (): JSX.Element => {
               <Badge className="bg-gray-600 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
                 {t("badge.6")}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent [text-shadow:_0_0px_20px_#5e7c8a]">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
                 <GradientText gradient="from-gray-500 via-gray-400 to-gray-400 dark:from-white dark:to-gray-500">
                   {t("sections.5.title")}
                 </GradientText>

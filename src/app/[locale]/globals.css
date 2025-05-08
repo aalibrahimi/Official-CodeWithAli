@@ -425,7 +425,7 @@ h2 {
   font-size: 3em;
   margin-bottom: 30px;
   /* color: var(--primary-color); */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
 }
 
 .course-grid,
