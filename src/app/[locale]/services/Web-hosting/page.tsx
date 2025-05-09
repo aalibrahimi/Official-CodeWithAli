@@ -223,7 +223,9 @@ const WebHostingPage = (): JSX.Element => {
                   {t("title.2")}
                 </span>
               </h1>
-              <p className="text-lg md:text-xl font-semibold text-black dark:text-white mb-8">{t("desc")}</p>
+              <p className="text-lg md:text-xl font-semibold text-black dark:text-white mb-8">
+                {t("desc")}
+              </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   className="bg-gradient-to-r from-gray-600 to-gray-700 dark:from-gray-700 dark:to-gray-900 hover:from-gray-600 hover:to-gray-800 
@@ -254,8 +256,8 @@ const WebHostingPage = (): JSX.Element => {
           {/* I made this conditional render more efficient */}
           {!isMobile && !isReducedMotion && (
             <>
-              <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-900/20 dark:bg-gray-700/10 rounded-full blur-3xl"></div>
-              <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-800/20 dark:bg-gray-700/10 rounded-full blur-3xl"></div>
+              <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-500/30 dark:bg-gray-700/10 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-500/30 dark:bg-gray-700/10 rounded-full blur-3xl"></div>
             </>
           )}
 
@@ -270,7 +272,7 @@ const WebHostingPage = (): JSX.Element => {
                 {t("badge.2")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-                <GradientText gradient="from-gray-500 via-gray-400 to-gray-400 dark:from-white dark:to-gray-500">
+                <GradientText gradient="from-gray-700 via-gray-600 to-gray-500 dark:from-white dark:via-gray-400 dark:to-gray-500">
                   {t("sections.1.title")}
                 </GradientText>
               </h2>
@@ -288,7 +290,7 @@ const WebHostingPage = (): JSX.Element => {
                 //   {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
                 // >
                 <div key={index}>
-                  <Card className="bg-gray-300 dark:bg-black/60 border-gray-900 h-full group hover:border-gray-800/50 transition-colors">
+                  <Card className="bg-gray-200 dark:bg-black/60 border-gray-900 h-full group hover:border-gray-800/50 transition-colors">
                     <CardContent className="p-6">
                       <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-gray-700 to-gray-900 p-3 mb-4">
                         <service.icon className="w-full h-full text-white" />
@@ -331,7 +333,7 @@ const WebHostingPage = (): JSX.Element => {
                 {t("badge.3")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-                <GradientText gradient="from-gray-500 via-gray-400 to-gray-400 dark:from-white dark:to-gray-500">
+                <GradientText gradient="from-gray-700 via-gray-600 to-gray-500 dark:from-white dark:via-gray-400 dark:to-gray-500">
                   {t("sections.2.title")}
                 </GradientText>
               </h2>
@@ -379,7 +381,7 @@ const WebHostingPage = (): JSX.Element => {
                 //   {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
                 // >
                 <div key={index}>
-                  <div className="bg-gray-300 dark:bg-black/60 border border-gray-900 rounded-xl p-6 h-full">
+                  <div className="bg-gray-200 dark:bg-black/60 border border-gray-900 rounded-xl p-6 h-full">
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-gray-700 to-gray-900 p-3 mb-4">
                       <benefit.icon className="w-full h-full text-white" />
                     </div>
@@ -409,7 +411,7 @@ const WebHostingPage = (): JSX.Element => {
                 {t("badge.4")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-                <GradientText gradient="from-gray-500 via-gray-400 to-gray-400 dark:from-white dark:to-gray-500">
+                <GradientText gradient="from-gray-700 via-gray-600 to-gray-500 dark:from-white dark:via-gray-400 dark:to-gray-500">
                   {t("sections.3.title")}
                 </GradientText>
               </h2>
@@ -426,7 +428,7 @@ const WebHostingPage = (): JSX.Element => {
                 //   {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
                 // >
                 <div key={index}>
-                  <Card className="bg-gray-300 dark:bg-black/60 border-gray-900 h-full">
+                  <Card className="bg-gray-200 dark:bg-black/60 border-gray-900 h-full">
                     <CardContent className="p-6">
                       <h3 className="text-lg font-bold dark:text-white mb-4">
                         {tech.category}
@@ -451,7 +453,7 @@ const WebHostingPage = (): JSX.Element => {
         </section>
 
         {/* Process Section */}
-        <section className="py-20 bg-gray-950/5">
+        <section className="py-20 bg-gray-900/5">
           <div className="container mx-auto px-4 md:px-8 lg:px-12">
             {/* <motion.div
               className="text-center mb-16"
@@ -462,7 +464,7 @@ const WebHostingPage = (): JSX.Element => {
                 {t("badge.5")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-                <GradientText gradient="from-gray-500 via-gray-400 to-gray-400 dark:from-white dark:to-gray-500">
+                <GradientText gradient="from-gray-700 via-gray-600 to-gray-500 dark:from-white dark:via-gray-400 dark:to-gray-500">
                   {t("sections.4.title")}
                 </GradientText>
               </h2>
@@ -472,7 +474,7 @@ const WebHostingPage = (): JSX.Element => {
             </div>
             {/* </motion.div> */}
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
                   icon: Cloud,
@@ -524,7 +526,7 @@ const WebHostingPage = (): JSX.Element => {
                   )} */}
 
                   {/* Added a h-75 to this so they all are equal heights */}
-                  <div className="bg-gray-300 dark:bg-black/60 border border-gray-900 rounded-xl p-6 relative z-10 h-75">
+                  <div className="bg-gray-200 dark:bg-black/60 border border-gray-900 rounded-xl p-6 relative z-10 h-75">
                     <div className="flex flex-col items-center mb-4">
                       <div className="w-14 h-14 rounded-full bg-gradient-to-br from-black to-black flex items-center justify-center mb-4">
                         <step.icon className="h-6 w-6 text-white" />
@@ -555,7 +557,7 @@ const WebHostingPage = (): JSX.Element => {
                 {t("badge.6")}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-                <GradientText gradient="from-gray-500 via-gray-400 to-gray-400 dark:from-white dark:to-gray-500">
+                <GradientText gradient="from-gray-700 via-gray-600 to-gray-500 dark:from-white dark:via-gray-400 dark:to-gray-500">
                   {t("sections.5.title")}
                 </GradientText>
               </h2>
@@ -567,8 +569,14 @@ const WebHostingPage = (): JSX.Element => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {hostingPackages.map((pkg, index) => (
                 <div key={index} className="h-full">
+                  {/* Pushed this on top so heading can be same lvl as other headings */}
+                  {pkg.highlighted && (
+                    <Badge className="bg-gray-700 text-white absolute -translate-y-7 border-transparent self-start mb-4">
+                      {t("sections.5.packages.badge")}
+                    </Badge>
+                  )}
                   <Card
-                    className={`bg-gray-300 dark:bg-black/60 h-full flex flex-col ${
+                    className={`bg-gray-400/80 dark:bg-black/60 h-full flex flex-col ${
                       pkg.highlighted
                         ? "border-gray-600 shadow-lg shadow-gray-950/30"
                         : "dark:border-gray-900"
@@ -576,12 +584,7 @@ const WebHostingPage = (): JSX.Element => {
                   >
                     <CardContent className="p-6 flex flex-col h-full">
                       {/* Fixed height top section */}
-                      <div className="h-64">
-                        {pkg.highlighted && (
-                          <Badge className="bg-gray-700 text-white border-transparent self-start mb-4">
-                            {t("sections.5.packages.badge")}
-                          </Badge>
-                        )}
+                      <div className="h-60">
                         <h3 className="text-2xl font-bold text-black dark:text-white mb-2">
                           {pkg.title}
                         </h3>
@@ -607,7 +610,7 @@ const WebHostingPage = (): JSX.Element => {
                           <ul className="space-y-3">
                             {pkg.features.map((feature, idx) => (
                               <li key={idx} className="flex items-start">
-                                <CheckCircle className="h-5 w-5 text-gray-950 dark:text-gray-500 mr-3 flex-shrink-0" />
+                                <CheckCircle className="h-5 w-5 text-white/80 dark:text-gray-500 mr-3 flex-shrink-0" />
                                 <span className="text-black dark:text-gray-200/80">
                                   {feature}
                                 </span>
@@ -646,7 +649,7 @@ const WebHostingPage = (): JSX.Element => {
               className="max-w-4xl mx-auto bg-gray-300 dark:bg-black/60 border border-gray-900 rounded-xl p-8 md:p-12 text-center"
               {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
             > */}
-            <div className="max-w-4xl mx-auto bg-gray-300 dark:bg-black/60 border border-gray-900 rounded-xl p-8 md:p-12 text-center">
+            <div className="max-w-4xl mx-auto bg-gray-500/80 dark:bg-black/60 border border-gray-900 rounded-xl p-8 md:p-12 text-center">
               <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-black mb-6">
                 {t("cta.title")}
               </h2>

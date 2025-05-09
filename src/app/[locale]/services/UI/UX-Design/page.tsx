@@ -607,7 +607,7 @@ const UIUXDesignPage = () => {
                   <CardContent className="p-6 flex-grow flex flex-col">
                     <div className="flex flex-col h-full">
                       {/* Fixed height container for the top content */}
-                      <div className="h-64">
+                      <div className="h-60">
                         {" "}
                         {/* Adjust height as needed to fit your content */}
                         <h3 className="text-2xl font-bold text-black dark:text-white mb-2">
