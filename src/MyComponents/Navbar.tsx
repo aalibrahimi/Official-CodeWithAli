@@ -143,10 +143,10 @@ export function Navbar(): React.ReactElement {
                     title: t("routes.services.content.1.title"),
                     href: "/services/web-development",
                   },
-                  {
-                    title: t("routes.services.content.2.title"),
-                    href: "/services/mobile-app-development",
-                  },
+                  // {
+                  //   title: t("routes.services.content.2.title"),
+                  //   href: "/services/mobile-app-development",
+                  // },
                   {
                     title: t("routes.services.content.3.title"),
                     href: "/services/UI/UX-Design",

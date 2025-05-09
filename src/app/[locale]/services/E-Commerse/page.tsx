@@ -262,7 +262,8 @@ const EcommerceSolutionsPage = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Changed this to 3 cols at LG bc removed 2 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
               title: t("sections.2.features.1.title"),
@@ -274,11 +275,11 @@ const EcommerceSolutionsPage = () => {
               description: t("sections.2.features.2.desc"),
               icon: CreditCard,
             },
-            {
-              title: t("sections.2.features.3.title"),
-              description: t("sections.2.features.3.desc"),
-              icon: Truck,
-            },
+            // {
+            //   title: t("sections.2.features.3.title"),
+            //   description: t("sections.2.features.3.desc"),
+            //   icon: Truck,
+            // },
             {
               title: t("sections.2.features.4.title"),
               description: t("sections.2.features.4.desc"),
@@ -289,11 +290,11 @@ const EcommerceSolutionsPage = () => {
               description: t("sections.2.features.5.desc"),
               icon: Smartphone,
             },
-            {
-              title: t("sections.2.features.6.title"),
-              description: t("sections.2.features.6.desc"),
-              icon: BarChart3,
-            },
+            // {
+            //   title: t("sections.2.features.6.title"),
+            //   description: t("sections.2.features.6.desc"),
+            //   icon: BarChart3,
+            // },
             {
               title: t("sections.2.features.7.title"),
               description: t("sections.2.features.7.desc"),
@@ -331,7 +332,7 @@ const EcommerceSolutionsPage = () => {
             <Badge className="bg-green-200 text-green-800 dark:bg-green-900/30 dark:text-green-400 border-transparent mb-4 px-3 py-1">
               {t("badge.3")}
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-green-800 bg-transparent [text-shadow:_0_0px_20px_#1b8f1a]">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-green-800 bg-transparent">
               <GradientText gradient="from-green-600 via-green-500 dark:from-gray-200 dark:via-green-400 to-green-400">
                 {t("sections.3.title")}
               </GradientText>
@@ -423,7 +424,7 @@ const EcommerceSolutionsPage = () => {
             <Badge className="bg-green-200 text-green-800 dark:bg-green-900/30 dark:text-green-400 border-transparent mb-4 px-3 py-1">
               {t("badge.4")}
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-green-800 bg-transparent [text-shadow:_0_0px_20px_#1b8f1a]">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-green-800 bg-transparent">
               <GradientText gradient="from-green-600 via-green-500 dark:from-gray-200 dark:via-green-400 to-green-400">
                 {t("sections.4.title")}
               </GradientText>
@@ -502,7 +503,7 @@ const EcommerceSolutionsPage = () => {
             <Badge className="bg-green-200 text-green-800 dark:bg-green-900/30 dark:text-green-400 border-transparent mb-4 px-3 py-1">
               {t("badge.5")}
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-green-800 bg-transparent [text-shadow:_0_0px_20px_#1b8f1a]">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-green-800 bg-transparent">
               <GradientText gradient="from-green-600 via-green-500 dark:from-gray-200 dark:via-green-400 to-green-400">
                 {t("sections.5.title")}
               </GradientText>

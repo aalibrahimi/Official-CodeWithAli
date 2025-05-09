@@ -712,7 +712,7 @@ const UIUXDesignPage = () => {
                 </TabsTrigger>
                 <TabsTrigger
                   value="timeline"
-                  className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-purple-400"
+                  className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-white dark:data-[state=active]:text-purple-400"
                 >
                   {t("sections.6.tab.4")}
                 </TabsTrigger>

@@ -63,20 +63,20 @@ const services = [
       t("Services.features.first.4"),
     ],
   },
-  {
-    title: t("Services.titleLinks.2"),
-    description:
-    t("Services.desc.2"),
-    icon: Smartphone,
-    color: "from-red-700 to-red-900",
-    href: "/services/mobile-app-development",
-    features: [
-      t("Services.features.second.1"),
-      t("Services.features.second.2"),
-      t("Services.features.second.3"),
-      t("Services.features.second.4"),
-    ],
-  },
+  // {
+  //   title: t("Services.titleLinks.2"),
+  //   description:
+  //   t("Services.desc.2"),
+  //   icon: Smartphone,
+  //   color: "from-red-700 to-red-900",
+  //   href: "/services/mobile-app-development",
+  //   features: [
+  //     t("Services.features.second.1"),
+  //     t("Services.features.second.2"),
+  //     t("Services.features.second.3"),
+  //     t("Services.features.second.4"),
+  //   ],
+  // },
   {
     title: t("Services.titleLinks.3"),
     description:
@@ -217,13 +217,15 @@ const processSteps = [
                             <service.icon className="w-full h-full text-white" />
                           </div>
                           <h3 className="text-xl font-bold text-red-800 dark:text-white mb-3">
+                            {/* Removed Mobile Page. Add this back when want to show it again */}
+                            {/* : service.title === "Mobile App Development" ? (
+                              <>
+                                <GradientText gradient="from-blue-700 via-blue-600 to-blue-800 dark:from-white dark:via-cyan-400 dark:to-blue-400">{service.title}</GradientText>
+                              </>
+                            )  */}
                             {service.title === "Website Development" ? (
                               <>
                                 <GradientText gradient="from-red-700 via-red-600 to-red-800 dark:from-white dark:via-pink-400 dark:to-red-500">{service.title}</GradientText>
-                              </>
-                            ) : service.title === "Mobile App Development" ? (
-                              <>
-                                <GradientText gradient="from-blue-700 via-blue-600 to-blue-800 dark:from-white dark:via-cyan-400 dark:to-blue-400">{service.title}</GradientText>
                               </>
                             ) : service.title === "UI/UX Design" ? (
                               <>

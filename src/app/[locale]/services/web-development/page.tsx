@@ -83,10 +83,6 @@ const WebsiteDevelopmentPage = () => {
       description: t("sections.3.tech.1.desc"),
     },
     {
-      name: "WordPress",
-      description: t("sections.3.tech.2.desc"),
-    },
-    {
       name: "Shopify",
       description: t("sections.3.tech.3.desc"),
     },
@@ -583,10 +579,10 @@ const WebsiteDevelopmentPage = () => {
                     question: t("sections.5.QA.1.Q"),
                     answer: t("sections.5.QA.1.A"),
                   },
-                  {
-                    question: t("sections.5.QA.2.Q"),
-                    answer: t("sections.5.QA.2.A"),
-                  },
+                  // {
+                  //   question: t("sections.5.QA.2.Q"),
+                  //   answer: t("sections.5.QA.2.A"),
+                  // },
                   {
                     question: t("sections.5.QA.3.Q"),
                     answer: t("sections.5.QA.3.A"),
