@@ -146,13 +146,13 @@ export default function ContactForm({
           {/* HEADER */}
           {/* <motion.div className="text-center mb-12 " {...getAnimationProps()}> */}
           <div className="text-center mb-12">
-            <Badge className="bg-red-600/80 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-red-700 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
               {badge ? `${badge.toUpperCase()}` : `${t("badge")}`}
             </Badge>
             <h2 className="text-3xl text-white md:text-4xl font-bold mt-2 mb-4">
               {header ? `${header}` : `${t("header")}`}
             </h2>
-            <p className="text-black dark:text-red-200/60 max-w-2xl mx-auto">
+            <p className="text-white/80 dark:text-red-200/60 max-w-2xl mx-auto">
               {desc ? `${desc}` : `${t("desc")}`}
             </p>
           </div>
@@ -208,20 +208,17 @@ export default function ContactForm({
                   {/* Services */}
                   <div>
                     <Select onValueChange={(value) => setService(value)}>
-                    <label
-                      htmlFor="email"
-                      className="block text-white dark:text-red-200 font-medium mb-2"
-                    >
-                      {t("field.service.label")}
-                    </label>
+                      <label
+                        htmlFor="email"
+                        className="block text-white dark:text-red-200 font-medium mb-2"
+                      >
+                        {t("field.service.label")}
+                      </label>
                       <SelectTrigger
                         id="service"
                         className="w-full bg-white/90 dark:bg-red-950/20 border border-red-800 text-black dark:text-white focus:border-red-600 rounded-md h-12 text-base px-3 focus:bg-red-800"
-                     
-                     >
-                        
+                      >
                         <SelectValue
-                        
                           placeholder={t("field.service.placeholder")}
                         />
                       </SelectTrigger>
@@ -303,8 +300,8 @@ export default function ContactForm({
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="bg-gradient-to-r from-red-500 to-red-600 dark:from-red-700 dark:to-red-900 hover:from-red-600 hover:to-red-800 
-                     dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-700/40 shadow-lg shadow-red-950/20 px-10 py-6 text-lg font-medium"
+                    className="bg-gradient-to-r from-red-700 to-red-800 dark:from-red-700 dark:to-red-900 hover:from-red-800 hover:to-red-800/80 
+                     dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-700/40 shadow-lg shadow-red-950/20 px-10 py-6 text-lg font-medium hover:cursor-pointer"
                   >
                     {isSubmitting ? (
                       <>

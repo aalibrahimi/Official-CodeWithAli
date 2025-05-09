@@ -117,7 +117,7 @@ const HomePage = () => {
       image: "/knoz_website.png",
       url: "https://knoz.codewithali.com/",
     },
-    { 
+    {
       title: "Budgetary App",
       category: "Desktop Development",
       image: "/budgetary.png",
@@ -127,8 +127,8 @@ const HomePage = () => {
       title: "Mario's Hauling",
       category: "Web Development",
       image: "/marioshauling_website.png",
-      url: "https://marioshauling.codewithali.com/"
-    }
+      url: "https://marioshauling.codewithali.com/",
+    },
   ];
 
   // Testimonials
@@ -221,10 +221,7 @@ const HomePage = () => {
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              className="md:pr-8"
-              {...getAnimationProps()}
-            >
+            <motion.div className="md:pr-8" {...getAnimationProps()}>
               <h1 className="text-4xl text-black dark:text-white md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 {t("hero.title.part1")}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-500 dark:from-red-400 dark:to-red-600 block">
@@ -238,7 +235,7 @@ const HomePage = () => {
                 <Link href="/contact">
                   <Button
                     size="lg"
-                    className="bg-gradient-to-r from-red-500 to-red-600 dark:from-red-700 dark:to-red-900 hover:from-red-600 hover:to-red-800 
+                    className="bg-gradient-to-r from-red-600 to-red-700 dark:from-red-700 dark:to-red-900 hover:from-red-700 hover:to-red-800 
                      dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8 w-full sm:w-auto"
                   >
                     {t("hero.buttons.startProject")}
@@ -249,7 +246,7 @@ const HomePage = () => {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-red-800/30 text-black dark:text-red-400 bg-red-500/40 dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white dark:hover:text-white px-8 w-full sm:w-auto"
+                    className="border-red-800/30 text-red-900 dark:text-red-400 bg-red-500/40 dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white dark:hover:text-white px-8 w-full sm:w-auto"
                   >
                     {t("hero.buttons.viewWork")}
                   </Button>
@@ -261,7 +258,7 @@ const HomePage = () => {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-red-800/30 text-black dark:text-red-400 bg-red-500/40 dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white px-8 w-full sm:w-auto 
+                    className="border-red-800/30 text-red-900 dark:text-red-400 bg-red-500/40 dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white px-8 w-full sm:w-auto 
                               flex items-center gap-2 transition-all duration-300 ease-in-out 
                               group-hover:bg-red-950/30 group-hover:text-white dark:group-hover:text-white"
                   >
@@ -349,7 +346,9 @@ const HomePage = () => {
                 <div className="w-12 h-12 bg-transparent dark:bg-black rounded-lg flex items-center justify-center mb-3">
                   <industry.icon className="h-6 w-6 text-red-700 dark:text-red-500/70" />
                 </div>
-                <span className="text-red-800 dark:text-red-200/60 text-sm">{industry.name}</span>
+                <span className="text-red-800 dark:text-red-200/60 text-sm">
+                  {industry.name}
+                </span>
               </motion.div>
             ))}
           </div>
@@ -361,18 +360,16 @@ const HomePage = () => {
         id="services"
         className="py-20 md:py-24 relative overflow-hidden"
       >
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-500/20 dark:bg-red-900/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-500/20 dark:bg-red-700/10 rounded-full blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-500/30 dark:bg-red-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-500/30 dark:bg-red-700/10 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20">
           <div className="text-center mb-16">
-            <motion.div
-              {...getAnimationProps()}
-            >
-              <Badge className="bg-red-600/80 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
+            <motion.div {...getAnimationProps()}>
+              <Badge className="bg-red-700 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
                 {t("services.badge")}
               </Badge>
-              <h2 className="text-3xl text-red-500/80 dark:text-white md:text-4xl font-bold mb-6">
+              <h2 className="text-3xl bg-gradient-to-r from-red-700 via-red-600 to-red-500 dark:from-white dark:via-red-500 dark:to-red-700 bg-clip-text text-transparent md:text-4xl font-bold mb-6">
                 {t("services.title")}
               </h2>
               <p className="text-black dark:text-red-200/60 text-lg max-w-2xl mx-auto">
@@ -383,11 +380,8 @@ const HomePage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, index) => (
-              <motion.div
-                key={index}
-                {...getAnimationProps(index * 0.05)}
-              >
-                <Card className="bg-red-700/80 dark:bg-black/60 border-red-900 backdrop-blur-sm h-full overflow-hidden group">
+              <motion.div key={index} {...getAnimationProps(index * 0.05)}>
+                <Card className="bg-red-200 dark:bg-black/60 border-red-900 backdrop-blur-sm h-full overflow-hidden group">
                   <CardContent className="p-6 flex flex-col h-full">
                     <div className="mb-5">
                       <div
@@ -396,16 +390,18 @@ const HomePage = () => {
                       >
                         <service.icon className="w-full h-full text-white" />
                       </div>
-                      <h3 className="text-xl font-bold text-black dark:text-white mb-2">
+                      <h3 className="text-xl font-bold text-red-800 dark:text-white mb-2">
                         {service.title}
                       </h3>
-                      <p className="text-black dark:text-red-200/60">{service.description}</p>
+                      <p className="text-black dark:text-red-200/60">
+                        {service.description}
+                      </p>
                     </div>
                     <div className="mt-auto pt-4">
                       <Link href={service.url} target="_blank">
                         <Button
                           variant="ghost"
-                          className="p-0 text-black dark:text-red-400 dark:hover:text-red-300 hover:bg-transparent group"
+                          className="p-0 text-red-800 dark:text-red-400 dark:hover:text-red-300 hover:bg-transparent group"
                         >
                           {t("services.learnMore")}
                           <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
@@ -424,13 +420,11 @@ const HomePage = () => {
       <section id="work" className="py-20 md:py-24 dark:bg-red-950/10">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-16">
-            <motion.div
-              {...getAnimationProps()}
-            >
-              <Badge className="bg-red-600/80 dark:bg-red-900/50 dark:text-red-300 border-transparent mb-4 px-3 py-1">
+            <motion.div {...getAnimationProps()}>
+              <Badge className="bg-red-700 dark:bg-red-900/50 dark:text-red-300 border-transparent mb-4 px-3 py-1">
                 {t("portfolio.badge")}
               </Badge>
-              <h2 className="text-3xl text-red-500/80 dark:text-white md:text-4xl font-bold mb-6">
+              <h2 className="text-3xl bg-gradient-to-r from-red-700 via-red-600 to-red-500 dark:from-white dark:via-red-500 dark:to-red-700 bg-clip-text text-transparent md:text-4xl font-bold mb-6">
                 {t("portfolio.title")}
               </h2>
               <p className="text-black dark:text-red-200 text-lg max-w-2xl mx-auto">
@@ -502,10 +496,10 @@ const HomePage = () => {
                 </div>
 
                 <div className="mt-5">
-                  <Badge className="bg-red-700/80 dark:bg-red-800/30 dark:text-red-300 border-transparent text-base py-1 px-3">
+                  <Badge className="bg-red-700 dark:bg-red-800/30 dark:text-red-300 border-transparent text-base py-1 px-3">
                     {project.category}
                   </Badge>
-                  <h3 className="text-xl font-bold text-white mt-3">
+                  <h3 className="text-xl font-bold text-black dark:text-white mt-3">
                     {project.title}
                   </h3>
                 </div>
@@ -516,7 +510,7 @@ const HomePage = () => {
           <div className="text-center mt-16">
             <Link href="/portfolio">
               <Button
-                className="bg-gradient-to-r from-red-600/90 to-red-500/90 dark:from-red-700 dark:to-red-900 hover:from-red-700 hover:to-red-800 
+                className="bg-gradient-to-r from-red-600 to-red-700 dark:from-red-700 dark:to-red-900 hover:from-red-700 hover:to-red-800 
                      dark:hover:from-red-600 dark:hover:to-red-800 text-white border-2 border-red-800/40 shadow-lg shadow-red-950/20 px-8 py-6 text-lg font-medium"
               >
                 {t("portfolio.viewAllProjects")}
@@ -529,18 +523,16 @@ const HomePage = () => {
 
       {/* Process Section */}
       <section id="process" className="py-20 md:py-24 relative overflow-hidden">
-        <div className="absolute -top-40 left-40 w-80 h-80 bg-red-400/10 dark:bg-red-800/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 right-40 w-80 h-80 bg-red-400/10 dark:bg-red-700/10 rounded-full blur-3xl"></div>
+        <div className="absolute -top-40 left-40 w-80 h-80 bg-red-500/30 dark:bg-red-800/10 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 right-40 w-80 h-80 bg-red-500/30 dark:bg-red-700/10 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="text-center mb-16">
-            <motion.div
-              {...getAnimationProps()}
-            >
-              <Badge className="bg-red-600/80 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
+            <motion.div {...getAnimationProps()}>
+              <Badge className="bg-red-700 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
                 {t("process.badge")}
               </Badge>
-              <h2 className="text-3xl text-red-500/80 dark:text-white md:text-4xl font-bold mb-6">
+              <h2 className="text-3xl bg-gradient-to-r from-red-700 via-red-600 to-red-500 dark:from-white dark:via-red-500 dark:to-red-700 bg-clip-text text-transparent md:text-4xl font-bold mb-6">
                 {t("process.title")}
               </h2>
               <p className="text-black dark:text-white/80 text-lg max-w-2xl mx-auto">
@@ -581,26 +573,28 @@ const HomePage = () => {
                 {...getAnimationProps(index * 0.1)}
                 className="relative"
               >
-                <div className="bg-red-700/80 dark:bg-black/60 border border-red-900 rounded-xl p-6 h-full">
+                <div className="bg-red-200 dark:bg-black/60 border border-red-900 rounded-xl p-6 h-full">
                   <div className="absolute -top-5 -left-2">
-                    <span className="text-5xl font-bold text-black dark:text-white">
+                    <span className="text-5xl font-bold text-red-700/80 dark:text-white">
                       {step.number}
                     </span>
                   </div>
                   <div className="pt-6">
                     <div className="mb-4 flex items-center">
                       <step.icon className="w-6 h-6 text-black dark:text-red-500 mr-3" />
-                      <h3 className="text-xl font-bold text-white dark:text-white">
+                      <h3 className="text-xl font-bold text-red-800 dark:text-white">
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-white dark:text-red-200/60">{step.description}</p>
+                    <p className="text-black dark:text-red-200/60">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
 
                 {index < 3 && (
                   <div className="hidden lg:block absolute top-1/2 -right-0 transform translate-x-full">
-                    <ArrowRight className="w-6 h-6 text-black dark:text-red-700/50" />
+                    <ArrowRight className="w-6 h-6 text-red-700 dark:text-red-700/50" />
                   </div>
                 )}
               </motion.div>
@@ -616,13 +610,11 @@ const HomePage = () => {
       >
         <div className="max-w-5xl mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="text-center mb-16">
-            <motion.div
-              {...getAnimationProps()}
-            >
-              <Badge className="bg-red-600/80 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
+            <motion.div {...getAnimationProps()}>
+              <Badge className="bg-red-700 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
                 {t("testimonials.badge")}
               </Badge>
-              <h2 className="text-3xl text-red-500/80 dark:text-white md:text-4xl font-bold mb-6">
+              <h2 className="text-3xl bg-gradient-to-r from-red-700 via-red-600 to-red-500 dark:from-white dark:via-red-500 dark:to-red-700 bg-clip-text text-transparent md:text-4xl font-bold mb-6">
                 {t("testimonials.title")}
               </h2>
               <p className="text-black dark:text-red-200/60 text-lg max-w-2xl mx-auto">
@@ -643,7 +635,7 @@ const HomePage = () => {
                 }
                 exit={isReducedMotion ? { opacity: 1 } : { opacity: 0.9, y: 0 }}
                 transition={{ duration: 0.1 }}
-                className="bg-red-600/80 dark:bg-black/60 border border-red-900 rounded-xl p-8 md:p-10"
+                className="bg-red-200 dark:bg-black/60 border border-red-900 rounded-xl p-8 md:p-10"
               >
                 <div className="flex flex-col items-center">
                   <div className="mb-6">
@@ -668,10 +660,10 @@ const HomePage = () => {
                     &ldquo;{testimonials[activeTestimonial].content}&rdquo;
                   </p>
                   <div className="text-center">
-                    <div className="font-bold text-white dark:text-white">
+                    <div className="font-bold text-red-800 dark:text-white">
                       {testimonials[activeTestimonial].name}
                     </div>
-                    <div className="text-white/80 dark:text-red-400/70 text-sm">
+                    <div className="text-black/80 dark:text-red-400/70 text-sm">
                       {testimonials[activeTestimonial].position}
                     </div>
                   </div>
@@ -703,7 +695,7 @@ const HomePage = () => {
       <section className="py-20 md:py-24 dark:bg-gradient-to-b dark:from-red-950/10 dark:via-red-950/10 dark:to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <motion.div
-            className="max-w-4xl mx-auto bg-red-800  dark:bg-black/60 border  dark:border-red-900 rounded-xl p-8 md:p-12 text-center"
+            className="max-w-4xl mx-auto bg-red-800/90  dark:bg-black/60 border-3 border-red-950 dark:border-red-900 rounded-xl p-8 md:p-12 text-center"
             {...getAnimationProps()}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-white mb-6">
@@ -716,7 +708,7 @@ const HomePage = () => {
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-red-500 to-red-600 dark:from-red-700 dark:to-red-900 hover:from-red-600 hover:to-red-700 
+                  className="bg-gradient-to-r from-red-700 to-red-700 dark:from-red-700 dark:to-red-900 hover:from-red-800 hover:to-red-800 
                      dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8 w-full sm:w-auto"
                 >
                   {t("cta.buttons.startProject")}
@@ -727,7 +719,7 @@ const HomePage = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-red-800/30 text-white dark:text-red-400 bg-red-500 dark:bg-red-950/20 hover:bg-red-600 dark:hover:bg-red-950/30 hover:text-white dark:hover:text-white px-8 w-full sm:w-auto"
+                  className="border-red-800/30 text-white dark:text-red-400 bg-red-500 dark:bg-red-950/20 hover:bg-red-800 dark:hover:bg-red-950/30 hover:text-white dark:hover:text-white px-8 w-full sm:w-auto"
                 >
                   {t("cta.buttons.learnAboutUs")}
                 </Button>
