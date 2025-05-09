@@ -225,7 +225,7 @@ const SEOOptimizationPage = () => {
             transition={{ duration: 0.5 }}
           > */}
           <div className="max-w-3xl">
-            <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent hover:bg-orange-900/20 mb-4 px-3 py-1">
+            <Badge className="bg-orange-600 dark:bg-orange-900/30 dark:text-orange-400 border-transparent hover:bg-orange-900/20 mb-4 px-3 py-1">
               {t("badge.1")}
             </Badge>
             <h1 className="text-4xl text-black dark:text-white md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
@@ -264,8 +264,8 @@ const SEOOptimizationPage = () => {
 
       {/* Services Overview */}
       <section className="py-16 relative overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-400/20 dark:bg-orange-900/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-orange-400/20 dark:bg-orange-700/10 rounded-full blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-500/30 dark:bg-orange-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-orange-500/30 dark:bg-orange-700/10 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20">
           {/* <motion.div 
@@ -276,12 +276,12 @@ const SEOOptimizationPage = () => {
             variants={fadeIn}
           > */}
           <div className="text-center mb-16">
-            <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-orange-600 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
               {t("badge.2")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
               {/* Changed orange Gradient here */}
-              <GradientText gradient="from-orange-500 via-orange-400 to-red-400 dark:from-white dark:to-red-500">
+              <GradientText gradient="from-orange-700 via-orange-600 to-orange-500 dark:from-white dark:to-red-500">
                 {t("sections.1.title")}
               </GradientText>
             </h2>
@@ -311,7 +311,7 @@ const SEOOptimizationPage = () => {
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-orange-600 dark:from-orange-700 dark:to-orange-900 p-3 mb-4 transform group-hover:scale-110 transition-transform">
                       <service.icon className="w-full h-full text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-orange-500 dark:text-white mb-3">
+                    <h3 className="text-xl font-bold text-orange-700 dark:text-white mb-3">
                       {service.title}
                     </h3>
                     <p className="text-black dark:text-white/85 mb-4">
@@ -349,11 +349,11 @@ const SEOOptimizationPage = () => {
             variants={fadeIn}
           > */}
           <div className="text-center mb-16 ">
-            <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-orange-600 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
               {t("badge.3")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-              <GradientText gradient="from-orange-500 via-orange-400 to-red-400 dark:from-white dark:to-red-500">
+              <GradientText gradient="from-orange-700 via-orange-600 to-orange-500 dark:from-white dark:to-red-500">
                 {t("sections.2.title")}
               </GradientText>
             </h2>
@@ -373,7 +373,7 @@ const SEOOptimizationPage = () => {
               //   transition={{ duration: 0.5, delay: index * 0.1 }}
               // >
               <div key={index}>
-                <Card className="bg-orange-300  dark:bg-black/60 border-orange-950 h-full backdrop-blur-sm hover:border-orange-900 transition-colors">
+                <Card className="bg-orange-200  dark:bg-black/60 border-orange-950 h-full backdrop-blur-sm hover:border-orange-900 transition-colors">
                   <CardContent className="p-6 text-center">
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-400 to-orange-500 dark:from-orange-700 dark:to-orange-900 flex items-center justify-center mx-auto mb-4">
                       <TrendingUp className="h-8 w-8 text-white" />
@@ -384,7 +384,9 @@ const SEOOptimizationPage = () => {
                     <h3 className="text-lg font-bold dark:text-white mb-3">
                       {metric.label}
                     </h3>
-                    <p className="text-white/80">{metric.description}</p>
+                    <p className="text-black dark:text-white/80">
+                      {metric.description}
+                    </p>
                   </CardContent>
                 </Card>
               </div>
@@ -405,11 +407,11 @@ const SEOOptimizationPage = () => {
             variants={fadeIn}
           > */}
           <div className="text-center mb-16">
-            <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-orange-600 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
               {t("badge.4")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-              <GradientText gradient="from-orange-500 via-orange-400 to-red-400 dark:from-white dark:to-red-500">
+              <GradientText gradient="from-orange-700 via-orange-600 to-orange-500 dark:from-white dark:to-red-500">
                 {t("sections.3.title")}
               </GradientText>
             </h2>
@@ -444,11 +446,11 @@ const SEOOptimizationPage = () => {
                       <span className="text-sm font-bold text-black dark:text-orange-500 mr-2">
                         {step.number}
                       </span>
-                      <h3 className="text-xl font-bold text-orange-600 dark:text-white">
+                      <h3 className="text-xl font-bold text-orange-700 dark:text-white">
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-orange-700 dark:text-white/80">
+                    <p className="text-black dark:text-white/80">
                       {step.description}
                     </p>
                   </div>
@@ -471,11 +473,11 @@ const SEOOptimizationPage = () => {
             variants={fadeIn}
           > */}
           <div className="text-center  mb-16">
-            <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-orange-600 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
               {t("badge.5")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-              <GradientText gradient="from-orange-500 via-orange-400 to-red-400 dark:from-white dark:to-red-500">
+              <GradientText gradient="from-orange-700 via-orange-600 to-orange-500 dark:from-white dark:to-red-500">
                 {t("sections.4.title")}
               </GradientText>
             </h2>
@@ -527,14 +529,14 @@ const SEOOptimizationPage = () => {
               // >
               <div key={index}>
                 {/* cards esta aqui */}
-                <div className="bg-orange-300 dark:bg-black/60 border border-orange-950/30 rounded-xl p-6  backdrop-blur-sm h-full group hover:border-orange-800/50 transition-colors ">
+                <div className="bg-orange-200 dark:bg-black/60 border border-orange-950/30 rounded-xl p-6  backdrop-blur-sm h-full group hover:border-orange-800/50 transition-colors ">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-400 to-orange-500 dark:from-orange-700 dark:to-orange-900 p-3 mb-4">
                     <benefit.icon className="w-full h-full text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-black dark:text-white mb-3">
+                  <h3 className="text-xl font-bold text-orange-700 dark:text-white mb-3">
                     {benefit.title}
                   </h3>
-                  <p className="text-black/90 dark:text-white/70">
+                  <p className="text-black dark:text-white/70">
                     {benefit.description}
                   </p>
                 </div>
@@ -549,11 +551,11 @@ const SEOOptimizationPage = () => {
       <section id="packages" className="py-20">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-16">
-            <Badge className="bg-orange-600/80 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
+            <Badge className="bg-orange-600 dark:bg-orange-900/30 dark:text-orange-400 border-transparent mb-4 px-3 py-1">
               {t("badge.6")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent ">
-              <GradientText gradient="from-orange-700 to-red-400 dark:from-white dark:to-red-500">
+              <GradientText gradient="from-orange-700 via-orange-600 to-orange-500 dark:from-white dark:to-red-500">
                 {t("sections.5.title")}
               </GradientText>
             </h2>
@@ -565,8 +567,14 @@ const SEOOptimizationPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {seoPackages.map((pkg, index) => (
               <div key={index} className="h-full">
+                {/* Pushed this on top so heading can be same lvl as other headings */}
+                {pkg.highlighted && (
+                  <Badge className="bg-black text-white absolute -translate-y-7 border-transparent self-start mb-4 ">
+                    {t("sections.5.packages.badge")}
+                  </Badge>
+                )}
                 <Card
-                  className={`bg-orange-400 dark:bg-black/60 backdrop-blur-sm h-full flex flex-col hover:border-orange-900 ${
+                  className={`bg-orange-500/80 dark:bg-black/60 backdrop-blur-sm h-full flex flex-col hover:border-orange-900 ${
                     pkg.highlighted
                       ? "border-orange-600 shadow-lg shadow-orange-950/30 hover:border-red-800"
                       : "dark:border-orange-950/30"
@@ -579,11 +587,6 @@ const SEOOptimizationPage = () => {
                         style={{ height: "220px" }}
                         className="flex flex-col"
                       >
-                        {pkg.highlighted && (
-                          <Badge className="bg-black text-white border-transparent self-start mb-4 ">
-                            {t("sections.5.packages.badge")}
-                          </Badge>
-                        )}
                         <h3 className="text-2xl font-bold text-black dark:text-white mb-2">
                           {pkg.title}
                         </h3>
@@ -602,14 +605,14 @@ const SEOOptimizationPage = () => {
 
                       {/* What's Included section with consistent border position */}
                       <div className="border-t border-black/30 dark:border-orange-950/30 pt-6 mb-6">
-                        <h4 className="font-bold text-black dark:text-white mb-4">
+                        <h4 className="font-bold text-white/90 dark:text-white mb-4">
                           {t("sections.5.packages.includedLabel")}
                         </h4>
                         <ul className="space-y-3">
                           {pkg.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start">
-                              <CheckCircle className="h-5 w-5 text-orange-950 dark:text-orange-500 mr-3 flex-shrink-0" />
-                              <span className="text-black/80 dark:text-white/70">
+                              <CheckCircle className="h-5 w-5 text-white dark:text-orange-500 mr-3 flex-shrink-0" />
+                              <span className="text-black dark:text-white/70">
                                 {feature}
                               </span>
                             </li>
@@ -623,7 +626,7 @@ const SEOOptimizationPage = () => {
                           className={`w-full ${
                             pkg.highlighted
                               ? "bg-gradient-to-r from-orange-700 to-orange-700 dark:from-orange-700 dark:to-orange-900 hover:from-orange-700 hover:to-orange-800 dark:hover:from-orange-600 dark:hover:to-orange-800 dark:text-white"
-                              : "bg-orange-600/80 dark:bg-black border border-black dark:border-orange-800/30 dark:text-orange-400 hover:bg-orange-900"
+                              : "bg-black dark:bg-black border border-black dark:border-orange-800/30 dark:text-orange-400 hover:bg-orange-900"
                           }`}
                           onClick={() => router.push("/contact")}
                         >
@@ -650,11 +653,11 @@ const SEOOptimizationPage = () => {
             viewport={{ once: true }}
             variants={fadeIn}
           > */}
-          <div className="max-w-4xl mx-auto bg-orange-600/80 dark:bg-black/60 border border-orange-900 hover:border-orange-600 transition-colors rounded-xl p-8 md:p-12 text-center  ">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <div className="max-w-4xl mx-auto bg-orange-500/80 dark:bg-black/60 border border-orange-900 hover:border-orange-600 transition-colors rounded-xl p-8 md:p-12 text-center  ">
+            <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-6">
               {t("cta.title")}
             </h2>
-            <p className="text-lg text-black/80 dark:text-white/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-black dark:text-white/70 mb-8 max-w-2xl mx-auto">
               {t("cta.desc")}
             </p>
             <Button

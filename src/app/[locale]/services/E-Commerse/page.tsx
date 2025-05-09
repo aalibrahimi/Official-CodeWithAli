@@ -363,7 +363,7 @@ const EcommerceSolutionsPage = () => {
                       <div className="p-6 md:p-8 md:border-r border-green-300 dark:border-green-900 flex flex-col h-full md:min-h-[320px]">
                         <div>
                           {pkg.highlighted && (
-                            <Badge className="bg-green-700 text-white dark:bg-green-900/30 dark:text-green-400 border-transparent mb-3">
+                            <Badge className="bg-green-700 text-white dark:bg-green-950/70 dark:text-green-400 border-transparent mb-3">
                               {t("sections.3.packages.badge")}
                             </Badge>
                           )}
