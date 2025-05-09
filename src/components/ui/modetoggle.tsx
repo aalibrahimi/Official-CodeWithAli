@@ -10,6 +10,7 @@ export function ModeToggle() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+      // Dont know how to make it default dark mode
       const savedTheme = localStorage.getItem("theme") || "light";
       setTheme(savedTheme);
       document.documentElement.classList.toggle("dark", savedTheme === "dark");
@@ -18,6 +19,10 @@ export function ModeToggle() {
 
   // toggle between light and dark themes
   const toggleTheme = () => {
+    // Swapped the 'light' and 'dark'. Now it properly saves in localstorage, but it stays on dark mode.
+    // Doesnt save light mode
+
+    // Dont know how to make it default dark mode
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);

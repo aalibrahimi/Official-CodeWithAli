@@ -462,7 +462,7 @@ export default function MerchandisePage() {
       sizes: ["One Size"],
       featured: true,
       bestseller: false,
-      description: t('items.8.title'),
+      description: t('items.8.desc'),
       available: false
     },
     {
