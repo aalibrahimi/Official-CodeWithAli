@@ -505,7 +505,9 @@ const WebsiteDevelopmentPage = () => {
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-400 text-sm">{project.description}</p>
+                <p className="text-gray-700 dark:text-gray-400 text-sm">
+                  {project.description}
+                </p>
               </div>
               // </motion.div>
             ))}
@@ -687,7 +689,7 @@ const WebsiteDevelopmentPage = () => {
             viewport={{ once: true }}
             variants={fadeIn}
           > */}
-          <div className="max-w-4xl mx-auto bg-pink-700 dark:bg-black/60 border border-pink-300 dark:border-pink-900 rounded-xl p-8 md:p-12 text-center">
+          <div className="max-w-4xl mx-auto bg-pink-600/80 dark:bg-black/60 border border-pink-300 dark:border-pink-900 rounded-xl p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               {t("cta.title")}
             </h2>
@@ -707,7 +709,7 @@ const WebsiteDevelopmentPage = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white/30 text-black bg-white dark:text-white dark:bg-pink-950/20 hover:bg-rose-200 dark:hover:bg-pink-950/30 hover:text-white dark:hover:text-white px-8"
+                className="border-white/30 text-black bg-white dark:text-white dark:bg-pink-950/20 hover:bg-pink-200 dark:hover:bg-pink-950/30 hover:text-black dark:hover:text-white px-8"
                 onClick={() => router.push("/portfolio")}
               >
                 {t("workBtn")}

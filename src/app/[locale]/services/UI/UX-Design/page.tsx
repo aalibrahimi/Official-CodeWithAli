@@ -221,7 +221,9 @@ const UIUXDesignPage = () => {
                 {t("title.2")}
               </span>
             </h1>
-            <p className="text-lg font-semibold md:text-xl text-black dark:text-white/80 mb-8">{t("desc")}</p>
+            <p className="text-lg font-semibold md:text-xl text-black dark:text-white/80 mb-8">
+              {t("desc")}
+            </p>
             <div className="flex flex-col sm:flex-row gap-4">
               {/* Need to fix visibility of this btn */}
               <Button
@@ -250,8 +252,8 @@ const UIUXDesignPage = () => {
 
       {/* Services Overview */}
       <section className="py-16 relative overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/20 dark:bg-purple-900/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/20 dark:bg-purple-700/10 rounded-full blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-600/20 dark:bg-purple-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-600/20 dark:bg-purple-700/10 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20">
           {/* <motion.div
@@ -266,7 +268,7 @@ const UIUXDesignPage = () => {
               {t("badge.2")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-              <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
+              <GradientText gradient="from-purple-600 via-purple-500 to-purple-400 dark:from-white dark:to-blue-500">
                 {t("sections.1.title")}
               </GradientText>
             </h2>
@@ -286,15 +288,17 @@ const UIUXDesignPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {designOfferings.map((service, index) => (
               <motion.div key={index} variants={fadeIn}>
-                <Card className="bg-purple-300 dark:bg-black/60 border-purple-900 backdrop-blur-sm h-full group hover:border-purple-800/50 transition-colors">
+                <Card className="bg-purple-200 dark:bg-black/60 border-purple-900 backdrop-blur-sm h-full group hover:border-purple-800/50 transition-colors">
                   <CardContent className="p-6">
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 p-3 mb-4 transform group-hover:scale-110 transition-transform">
                       <service.icon className="w-full h-full text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-black dark:text-white mb-3">
+                    <h3 className="text-xl font-bold text-purple-700 dark:text-white mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-black dark:text-white/80 mb-4">{service.description}</p>
+                    <p className="text-black dark:text-white/80 mb-4">
+                      {service.description}
+                    </p>
 
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
@@ -354,8 +358,8 @@ const UIUXDesignPage = () => {
               //   transition={{ duration: 0.5, delay: index * 0.1 }}
               //   className="group"
               // >
-              
-             // ADD PHOTOS HERE TO HERE FOR THE PORTFOLIO SHOWCASE  ( BUDGETARY, TAKEOVER, 3DPC, OR ANY OTHER DESIGNS
+
+              // ADD PHOTOS HERE TO HERE FOR THE PORTFOLIO SHOWCASE  ( BUDGETARY, TAKEOVER, 3DPC, OR ANY OTHER DESIGNS
               <div key={index} className="group">
                 <div className="relative overflow-hidden rounded-xl aspect-[4/3] bg-purple-400 dark:bg-purple-950/20">
                   <div className="w-full h-full bg-gradient-to-tr from-purple-950 to-black/20 absolute inset-0 opacity-40 group-hover:opacity-0 transition-opacity"></div>
@@ -438,16 +442,16 @@ const UIUXDesignPage = () => {
                       <step.icon className="h-6 w-6 text-black dark:text-white" />
                     </div>
                   </div>
-                  <div className="bg-purple-400 dark:bg-black/60 border border-purple-900 rounded-xl p-6 flex-grow backdrop-blur-sm">
+                  <div className="bg-purple-200 dark:bg-black/60 border border-purple-900 rounded-xl p-6 flex-grow backdrop-blur-sm">
                     <div className="flex items-center mb-3">
-                      <span className="text-sm font-bold text-white dark:text-purple-500 mr-2">
+                      <span className="text-sm font-bold text-black dark:text-purple-500 mr-2">
                         {step.number}
                       </span>
-                      <h3 className="text-xl font-bold text-black dark:text-white">
+                      <h3 className="text-xl font-bold text-purple-700 dark:text-white">
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-black/80 font-bold dark:text-white/80">
+                    <p className="text-black dark:text-white/80">
                       {step.description}
                     </p>
                   </div>
@@ -474,7 +478,7 @@ const UIUXDesignPage = () => {
               {t("badge.5")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-              <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
+              <GradientText gradient="from-purple-600 via-purple-500 to-purple-400 dark:from-white dark:to-blue-500">
                 {t("sections.4.title")}
               </GradientText>
             </h2>
@@ -516,10 +520,10 @@ const UIUXDesignPage = () => {
             ].map((testimonial, index) => (
               // <motion.div key={index} variants={fadeIn} className="h-full">
               <div key={index} className="h-full">
-                <Card className="bg-purple-400 dark:bg-black/60 border-purple-900 backdrop-blur-sm h-full">
+                <Card className="bg-purple-200 dark:bg-black/60 border-purple-900 backdrop-blur-sm h-full">
                   <CardContent className="p-6 flex flex-col h-full">
                     <div className="mb-6">
-                      <MessageSquare className="h-8 w-8 text-black dark:text-purple-600 mb-4" />
+                      <MessageSquare className="h-8 w-8 text-purple-700 dark:text-purple-600 mb-4" />
                       <p className="text-black font-bold dark:text-white italic mb-6">
                         "{testimonial.quote}"
                       </p>
@@ -586,77 +590,80 @@ const UIUXDesignPage = () => {
               //   transition={{ duration: 0.5, delay: index * 0.1 }}
               //   className="h-full"
               // >
-              <div key={index} className="h-full" >
-              <Card
-  className={`bg-purple-400 dark:bg-black/60 backdrop-blur-sm h-full flex flex-col ${
-    pkg.highlighted
-      ? "border-purple-900 dark:border-purple-600 shadow-lg shadow-purple-950/30"
-      : "dark:border-purple-900"
-  }`}
->
-  <CardContent className="p-6 flex-grow flex flex-col">
-    <div className="flex flex-col h-full">
-      {/* Fixed height container for the top content */}
-      <div className="h-64"> {/* Adjust height as needed to fit your content */}
-        {pkg.highlighted && (
-          <Badge className="bg-purple-600 dark:bg-purple-900/30 dark:text-purple-400 border-transparent self-start mb-4">
-            {t('sections.5.package.whatIncluded')}
-          </Badge>
-        )}
-        <h3 className="text-2xl font-bold text-black dark:text-white mb-2">
-          {pkg.title}
-        </h3>
-        <div className="mb-4">
-          <span className="text-3xl font-bold text-black dark:text-purple-400">
-            {pkg.price}
-          </span>
-          {pkg.price !== "Custom" && (
-            <span className="text-black/80 dark:text-purple-200/60 ml-1">
-              {t('sections.5.package.startLabel')}
-            </span>
-          )}
-        </div>
-        <p className="text-black dark:text-white/70">
-          {pkg.description}
-        </p>
-      </div>
-      
-      {/* What's Included section - now starts at the same height */}
-      <div className="flex-grow">
-        <div className="border-t border-purple-900 pt-6 mb-6">
-          <h4 className="font-bold text-white/95 dark:text-white mb-4">
-            {t("sections.5.package.whatIncluded")}
-          </h4>
-          <ul className="space-y-3">
-            {pkg.features.map((feature, idx) => (
-              <li key={idx} className="flex items-start">
-                <CheckCircle className="h-5 w-5 text-white dark:text-purple-500 mr-3 flex-shrink-0" />
-                <span className="text-black dark:text-white/70">
-                  {feature}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+              <div key={index} className="h-full">
+                {/* Pushed this on top of card so card header stays same lvl as other ones */}
+                {pkg.highlighted && (
+                  <Badge className="bg-purple-600 absolute -translate-y-7 dark:bg-purple-900/30 dark:text-purple-400 border-transparent self-start mb-4">
+                    {t("sections.5.package.whatIncluded")}
+                  </Badge>
+                )}
+                <Card
+                  className={`bg-purple-400 dark:bg-black/60 backdrop-blur-sm h-full flex flex-col ${
+                    pkg.highlighted
+                      ? "border-purple-900 dark:border-purple-600 shadow-lg shadow-purple-950/30"
+                      : "dark:border-purple-900"
+                  }`}
+                >
+                  <CardContent className="p-6 flex-grow flex flex-col">
+                    <div className="flex flex-col h-full">
+                      {/* Fixed height container for the top content */}
+                      <div className="h-64">
+                        {" "}
+                        {/* Adjust height as needed to fit your content */}
+                        <h3 className="text-2xl font-bold text-black dark:text-white mb-2">
+                          {pkg.title}
+                        </h3>
+                        <div className="mb-4">
+                          <span className="text-3xl font-bold text-black dark:text-purple-400">
+                            {pkg.price}
+                          </span>
+                          {pkg.price !== "Custom" && (
+                            <span className="text-black/80 dark:text-purple-200/60 ml-1">
+                              {t("sections.5.package.startLabel")}
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-black dark:text-white/70">
+                          {pkg.description}
+                        </p>
+                      </div>
 
-      {/* Button always at the bottom */}
-      <div className="mt-auto pt-4">
-        <Button
-          className={`w-full ${
-            pkg.highlighted
-              ? "bg-gradient-to-r from-purple-500 to-purple-600 dark:from-purple-700 dark:to-purple-900 hover:from-purple-600 hover:to-purple-800 dark:hover:from-purple-600 dark:hover:to-purple-800 text-white"
-              : "bg-black border border-purple-800/30 dark:text-purple-400 hover:bg-purple-950/80 dark:hover:bg-purple-950/20"
-          }`}
-          onClick={() => router.push("/contact")}
-        >
-          {t("sections.5.package.startBtn")}
-          <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
-      </div>
-    </div>
-  </CardContent>
-</Card>
+                      {/* What's Included section - now starts at the same height */}
+                      <div className="flex-grow">
+                        <div className="border-t border-purple-900 pt-6 mb-6">
+                          <h4 className="font-bold text-white/95 dark:text-white mb-4">
+                            {t("sections.5.package.whatIncluded")}
+                          </h4>
+                          <ul className="space-y-3">
+                            {pkg.features.map((feature, idx) => (
+                              <li key={idx} className="flex items-start">
+                                <CheckCircle className="h-5 w-5 text-white dark:text-purple-500 mr-3 flex-shrink-0" />
+                                <span className="text-black dark:text-white/70">
+                                  {feature}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      {/* Button always at the bottom */}
+                      <div className="mt-auto pt-4">
+                        <Button
+                          className={`w-full ${
+                            pkg.highlighted
+                              ? "bg-gradient-to-r from-purple-500 to-purple-600 dark:from-purple-700 dark:to-purple-900 hover:from-purple-600 hover:to-purple-800 dark:hover:from-purple-600 dark:hover:to-purple-800 text-white"
+                              : "bg-black border border-purple-800/30 dark:text-purple-400 hover:bg-purple-950/80 dark:hover:bg-purple-950/20"
+                          }`}
+                          onClick={() => router.push("/contact")}
+                        >
+                          {t("sections.5.package.startBtn")}
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
               // </motion.div>
             ))}
@@ -679,7 +686,7 @@ const UIUXDesignPage = () => {
               {t("badge.7")}
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-              <GradientText gradient="from-purple-500 via-purple-400 to-blue-400 dark:from-white dark:to-blue-500">
+              <GradientText gradient="from-purple-600 via-purple-500 to-purple-400 dark:from-white dark:to-blue-500">
                 {t("sections.6.title")}
               </GradientText>
             </h2>
@@ -691,28 +698,28 @@ const UIUXDesignPage = () => {
 
           <div className="max-w-3xl mx-auto">
             <Tabs defaultValue="process" className="w-full">
-              <TabsList className="grid grid-cols-2 md:grid-cols-4 bg-purple-400 dark:bg-black/60 text-black dark:text-white border border-purple-900 rounded-lg p-1 mb-8">
+              <TabsList className="grid grid-cols-2 md:grid-cols-4 bg-purple-300 dark:bg-black/60 text-black dark:text-white border border-purple-900 rounded-lg p-1 mb-8">
                 <TabsTrigger
                   value="process"
-                  className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-white dark:data-[state=active]:text-purple-400"
+                  className="data-[state=active]:bg-purple-900/50 data-[state=active]:text-white dark:data-[state=active]:text-purple-400"
                 >
                   {t("sections.6.tab.1")}
                 </TabsTrigger>
                 <TabsTrigger
                   value="pricing"
-                  className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-white dark:data-[state=active]:text-purple-400"
+                  className="data-[state=active]:bg-purple-900/50 data-[state=active]:text-white dark:data-[state=active]:text-purple-400"
                 >
                   {t("sections.6.tab.2")}
                 </TabsTrigger>
                 <TabsTrigger
                   value="deliverables"
-                  className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-white dark:data-[state=active]:text-purple-400"
+                  className="data-[state=active]:bg-purple-900/50 data-[state=active]:text-white dark:data-[state=active]:text-purple-400"
                 >
                   {t("sections.6.tab.3")}
                 </TabsTrigger>
                 <TabsTrigger
                   value="timeline"
-                  className="data-[state=active]:bg-purple-900/20 data-[state=active]:text-white dark:data-[state=active]:text-purple-400"
+                  className="data-[state=active]:bg-purple-900/50 data-[state=active]:text-white dark:data-[state=active]:text-purple-400"
                 >
                   {t("sections.6.tab.4")}
                 </TabsTrigger>
@@ -742,12 +749,14 @@ const UIUXDesignPage = () => {
                   // >
                   <div
                     key={index}
-                    className="bg-purple-400 dark:bg-black/60 border border-purple-900 rounded-xl p-6"
+                    className="bg-white dark:bg-black/60 border border-purple-900 rounded-xl p-6"
                   >
-                    <h3 className="text-lg font-bold text-black dark:text-white mb-3">
+                    <h3 className="text-lg font-bold text-purple-700 dark:text-white mb-3">
                       {faq.question}
                     </h3>
-                    <p className="dark:text-white/80  text-black/80">{faq.answer}</p>
+                    <p className="dark:text-white/80 text-black/80">
+                      {faq.answer}
+                    </p>
                   </div>
                   // </motion.div>
                 ))}
@@ -777,12 +786,14 @@ const UIUXDesignPage = () => {
                   // >
                   <div
                     key={index}
-                    className="bg-purple-400 dark:bg-black/60 border border-purple-900 rounded-xl p-6"
+                    className="bg-white dark:bg-black/60 border border-purple-900 rounded-xl p-6"
                   >
-                    <h3 className="text-lg font-bold text-black dark:text-white mb-3">
+                    <h3 className="text-lg font-bold text-purple-700 dark:text-white mb-3">
                       {faq.question}
                     </h3>
-                    <p className="dark:text-white/80 text-black/80">{faq.answer}</p>
+                    <p className="dark:text-white/80 text-black/80">
+                      {faq.answer}
+                    </p>
                   </div>
                   // </motion.div>
                 ))}
@@ -812,12 +823,14 @@ const UIUXDesignPage = () => {
                   // >
                   <div
                     key={index}
-                    className="bg-purple-400 dark:bg-black/60 border border-purple-900 rounded-xl p-6"
+                    className="bg-white dark:bg-black/60 border border-purple-900 rounded-xl p-6"
                   >
-                    <h3 className="text-lg font-bold text-black dark:text-white mb-3">
+                    <h3 className="text-lg font-bold text-purple-700 dark:text-white mb-3">
                       {faq.question}
                     </h3>
-                    <p className="dark:text-white/80 text-black/80">{faq.answer}</p>
+                    <p className="dark:text-white/80 text-black/80">
+                      {faq.answer}
+                    </p>
                   </div>
                   // </motion.div>
                 ))}
@@ -847,12 +860,14 @@ const UIUXDesignPage = () => {
                   // >
                   <div
                     key={index}
-                    className="bg-purple-400 dark:bg-black/60 border border-purple-900 rounded-xl p-6"
+                    className="bg-white dark:bg-black/60 border border-purple-900 rounded-xl p-6"
                   >
-                    <h3 className="text-lg font-bold text-black dark:text-white mb-3">
+                    <h3 className="text-lg font-bold text-purple-700 dark:text-white mb-3">
                       {faq.question}
                     </h3>
-                    <p className="dark:text-white/80 text-black/80">{faq.answer}</p>
+                    <p className="dark:text-white/80 text-black/80">
+                      {faq.answer}
+                    </p>
                   </div>
                   // </motion.div>
                 ))}
