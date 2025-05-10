@@ -45,6 +45,7 @@ export function Navbar(): React.ReactElement {
     { code: "en", name: "English", flag: "🇺🇸" },
     { code: "es", name: "Español", flag: "🇪🇸" },
     { code: "ar", name: "العربية", flag: "🇮🇶" },
+    { code: "nl", name: "Nederlands", flag: "🇳🇱" }
   ];
 
   // Prevent hydration issues by rendering menu only after component is mounted
