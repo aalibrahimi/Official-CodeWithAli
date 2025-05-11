@@ -16,6 +16,8 @@ import {
   Cloud,
   Download,
   Globe,
+  ArrowLeft,
+  ChevronLeft,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -27,7 +29,8 @@ import {
   createBrowserOptimizedVariants,
 } from "../../../utils/browser-compatibility";
 import GradientText from "@/MyComponents/GradientText";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { isRtlLang } from "rtl-detect";
 
 // Types for our data
 interface HostingFeature {
@@ -67,6 +70,8 @@ interface ProcessStep {
 const WebHostingPage = (): JSX.Element => {
   const router = useRouter();
   const t = useTranslations("ServicePage.Hosting");
+  const locale = useLocale();
+  const isRTL = isRtlLang(locale);
 
   // Hosting features data
   const hostingFeatures: HostingFeature[] = [
@@ -234,7 +239,11 @@ const WebHostingPage = (): JSX.Element => {
                   onClick={() => router.push("/contact")}
                 >
                   {t("startBtn")}
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  {isRTL ? (
+                    <ArrowLeft className="ml-2 h-4 w-4" />
+                  ) : (
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  )}
                 </Button>
                 <Button
                   variant="outline"
@@ -243,7 +252,11 @@ const WebHostingPage = (): JSX.Element => {
                   onClick={() => router.push("#packages")}
                 >
                   {t("plansBtn")}
-                  <ChevronRight className="ml-2 h-4 w-4" />
+                  {isRTL ? (
+                    <ChevronLeft className="ml-2 h-4 w-4" />
+                  ) : (
+                    <ChevronRight className="ml-2 h-4 w-4" />
+                  )}
                 </Button>
               </div>
             </div>
@@ -436,7 +449,7 @@ const WebHostingPage = (): JSX.Element => {
                       <ul className="space-y-2">
                         {tech.technologies.map((item, idx) => (
                           <li key={idx} className="flex items-center">
-                            <div className="w-2 h-2 bg-gray-800 dark:bg-gray-600 rounded-full mr-3"></div>
+                            <div className={`w-2 h-2 bg-gray-800 dark:bg-gray-600 rounded-full ${isRTL ? "ml-3" : "mr-3"}`}></div>
                             <span className="text-black/80 dark:text-gray-200/80">
                               {item}
                             </span>
@@ -526,7 +539,7 @@ const WebHostingPage = (): JSX.Element => {
                   )} */}
 
                   {/* Added a h-75 to this so they all are equal heights */}
-                  <div className="bg-gray-200 dark:bg-black/60 border border-gray-900 rounded-xl p-6 relative z-10 h-75">
+                  <div className="bg-gray-200 dark:bg-black/60 border border-gray-900 rounded-xl p-6 relative z-10 h-auto md:h-100 lg:h-85">
                     <div className="flex flex-col items-center mb-4">
                       <div className="w-14 h-14 rounded-full bg-gradient-to-br from-black to-black flex items-center justify-center mb-4">
                         <step.icon className="h-6 w-6 text-white" />
@@ -610,7 +623,7 @@ const WebHostingPage = (): JSX.Element => {
                           <ul className="space-y-3">
                             {pkg.features.map((feature, idx) => (
                               <li key={idx} className="flex items-start">
-                                <CheckCircle className="h-5 w-5 text-white/80 dark:text-gray-500 mr-3 flex-shrink-0" />
+                                <CheckCircle className={`h-5 w-5 text-white/80 dark:text-gray-500 ${isRTL ? "ml-3" : "mr-3"} flex-shrink-0`} />
                                 <span className="text-black dark:text-gray-200/80">
                                   {feature}
                                 </span>
@@ -630,7 +643,11 @@ const WebHostingPage = (): JSX.Element => {
                             onClick={() => router.push("/contact")}
                           >
                             {t("sections.5.packages.startBtn")}
-                            <ArrowRight className="ml-2 h-4 w-4" />
+                            {isRTL ? (
+                              <ArrowLeft className="ml-2 h-4 w-4" />
+                            ) : (
+                              <ArrowRight className="ml-2 h-4 w-4" />
+                            )}
                           </Button>
                         </div>
                       </div>
@@ -662,7 +679,11 @@ const WebHostingPage = (): JSX.Element => {
                 onClick={() => router.push("/contact")}
               >
                 {t("cta.startBtn")}
-                <ChevronRight className="ml-2 h-5 w-5" />
+                {isRTL ? (
+                  <ChevronLeft className="ml-2 h-5 w-5" />
+                ) : (
+                  <ChevronRight className="ml-2 h-5 w-5" />
+                )}
               </Button>
             </div>
             {/* </motion.div> */}
