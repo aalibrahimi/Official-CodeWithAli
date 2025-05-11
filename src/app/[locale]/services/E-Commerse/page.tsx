@@ -18,12 +18,15 @@ import {
   PlusCircle,
   MinusCircle,
   Smartphone,
+  ChevronLeft,
+  ArrowLeft,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import GradientText from "@/MyComponents/GradientText";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { isRtlLang } from "rtl-detect";
 
 // Custom hook to detect mobile devices
 const useIsMobile = () => {
@@ -65,6 +68,8 @@ const EcommerceSolutionsPage = () => {
   const router = useRouter();
   const [activeFaq, setActiveFaq] = useState(null);
   const isMobile = useIsMobile();
+  const locale = useLocale();
+  const isRTL = isRtlLang(locale);
 
   // E-commerce packages
   const packages = [
@@ -182,7 +187,11 @@ const EcommerceSolutionsPage = () => {
                   onClick={() => router.push("/contact")}
                 >
                   {t("startBtn")}
-                  <ChevronRight className="ml-2 h-5 w-5" />
+                  {isRTL ? (
+                    <ChevronLeft className="ml-2 h-5 w-5" />
+                  ) : (
+                    <ChevronRight className="ml-2 h-5 w-5" />
+                  )}
                 </Button>
                 <Button
                   variant="outline"
@@ -393,7 +402,11 @@ const EcommerceSolutionsPage = () => {
                           onClick={() => router.push("/contact")}
                         >
                           {t("startBtn")}
-                          <ArrowRight className="ml-2 h-4 w-4" />
+                          {isRTL ? (
+                            <ArrowLeft className="ml-2 h-4 w-4" />
+                          ) : (
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          )}
                         </Button>
                       </div>
 
@@ -405,7 +418,7 @@ const EcommerceSolutionsPage = () => {
                         <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                           {pkg.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start">
-                              <Check className="w-5 h-5 text-green-600 dark:text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                              <Check className={`w-5 h-5 text-green-600 dark:text-green-500 mt-0.5 ${isRTL ? "ml-2" : "mr-2"} flex-shrink-0`} />
                               <span className="text-black dark:text-white">
                                 {feature}
                               </span>
@@ -476,14 +489,14 @@ const EcommerceSolutionsPage = () => {
             ].map((phase, index) => (
               <div key={index} className="relative mb-10 last:mb-0">
                 <div className="flex">
-                  <div className="flex-shrink-0 mr-6">
+                  <div className={`flex-shrink-0 ${isRTL ? "ml-6" : "mr-6"}`}>
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-green-600 dark:from-green-700 dark:to-green-900 flex items-center justify-center">
                       <span className="text-xl font-bold text-white">
                         {phase.step}
                       </span>
                     </div>
                     {index < 5 && (
-                      <div className="absolute top-16 -bottom-10 left-8 w-0.5 bg-green-300/60 dark:bg-green-900/40"></div>
+                      <div className={`absolute top-16 -bottom-10 ${isRTL ? "right-8" : "left-8"} w-0.5 bg-green-300/60 dark:bg-green-900/40`}></div>
                     )}
                   </div>
                   <div className="p-5 w-[800px] border-1 border-green-600 flex flex-col justify-center rounded-lg">
@@ -601,7 +614,11 @@ const EcommerceSolutionsPage = () => {
               onClick={() => router.push("/contact")}
             >
               {t("cta.getBtn")}
-              <ChevronRight className="ml-2 h-5 w-5" />
+              {isRTL ? (
+                <ChevronLeft className="ml-2 h-5 w-5" />
+              ) : (
+                <ChevronRight className="ml-2 h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
