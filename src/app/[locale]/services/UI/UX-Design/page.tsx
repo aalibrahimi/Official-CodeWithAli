@@ -13,13 +13,16 @@ import {
   Monitor,
   MessageSquare,
   CheckCircle,
+  ArrowLeft,
+  ChevronLeft,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import GradientText from "@/MyComponents/GradientText";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { isRtlLang } from "rtl-detect";
 
 // Animation variants
 const fadeIn = {
@@ -44,6 +47,9 @@ const fadeIn = {
 const UIUXDesignPage = () => {
   const router = useRouter();
   const t = useTranslations("ServicePage.UI");
+  const locale = useLocale();
+  const isRTL = isRtlLang(locale);
+
   // Design offerings data
   const designOfferings = [
     {
@@ -233,7 +239,11 @@ const UIUXDesignPage = () => {
                 onClick={() => router.push("/contact")}
               >
                 {t("consultBtn")}
-                <ArrowRight className="ml-2 h-4 w-4" />
+                {isRTL ? (
+                  <ArrowLeft className="ml-2 h-4 w-4" />
+                ) : (
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                )}
               </Button>
               <Button
                 variant="outline"
@@ -242,7 +252,11 @@ const UIUXDesignPage = () => {
                 onClick={() => router.push("#portfolio")}
               >
                 {t("workBtn")}
-                <ChevronRight className="ml-2 h-4 w-4" />
+                {isRTL ? (
+                  <ChevronLeft className="ml-2 h-4 w-4" />
+                ) : (
+                  <ChevronRight className="ml-2 h-4 w-4" />
+                )}
               </Button>
             </div>
           </div>
@@ -303,7 +317,11 @@ const UIUXDesignPage = () => {
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start">
-                          <ChevronRight className="h-4 w-4 text-black dark:text-purple-500 mt-1 mr-2 flex-shrink-0" />
+                          {isRTL ? (
+                            <ChevronLeft className="h-4 w-4 text-black dark:text-purple-500 mt-1 mr-2 flex-shrink-0" />
+                          ) : (
+                            <ChevronRight className="h-4 w-4 text-black dark:text-purple-500 mt-1 mr-2 flex-shrink-0" />
+                          )}
                           <span className="text-black dark:text-white text-sm">
                             {feature}
                           </span>
@@ -348,6 +366,7 @@ const UIUXDesignPage = () => {
           {/* </motion.div> */}
 
           {/* either comment this out blaze (below ) or add photos*/}
+          {/* Blaze: I'll add photos */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {portfolioProjects.map((project, index) => (
               // <motion.div
@@ -424,7 +443,7 @@ const UIUXDesignPage = () => {
 
           <div className="relative">
             {/* Connector line */}
-            <div className="absolute left-[27px] top-8 bottom-8 w-1 bg-gradient-to-b from-purple-700 to-purple-900 rounded-full hidden md:block"></div>
+            <div className={`absolute ${isRTL ? "right-[27px]" : "left-[27px]"} top-8 bottom-8 w-1 bg-gradient-to-b from-purple-700 to-purple-900 rounded-full hidden md:block`}></div>
 
             <div className="space-y-12 relative">
               {designProcess.map((step, index) => (
@@ -444,7 +463,7 @@ const UIUXDesignPage = () => {
                   </div>
                   <div className="bg-purple-200 dark:bg-black/60 border border-purple-900 rounded-xl p-6 flex-grow backdrop-blur-sm">
                     <div className="flex items-center mb-3">
-                      <span className="text-sm font-bold text-black dark:text-purple-500 mr-2">
+                      <span className={`text-sm font-bold text-black dark:text-purple-500 ${isRTL ? "ml-2" : "mr-2"}`}>
                         {step.number}
                       </span>
                       <h3 className="text-xl font-bold text-purple-700 dark:text-white">
@@ -529,7 +548,7 @@ const UIUXDesignPage = () => {
                       </p>
                     </div>
                     <div className="mt-auto flex items-center">
-                      <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+                      <div className={`w-12 h-12 rounded-full overflow-hidden ${isRTL ? "ml-4" : "mr-4"}`}>
                         <img
                           src={testimonial.image}
                           alt={testimonial.author}
@@ -637,7 +656,7 @@ const UIUXDesignPage = () => {
                           <ul className="space-y-3">
                             {pkg.features.map((feature, idx) => (
                               <li key={idx} className="flex items-start">
-                                <CheckCircle className="h-5 w-5 text-white dark:text-purple-500 mr-3 flex-shrink-0" />
+                                <CheckCircle className={`h-5 w-5 text-white dark:text-purple-500 ${isRTL ? "ml-3" : "mr-3"} flex-shrink-0`} />
                                 <span className="text-black dark:text-white/70">
                                   {feature}
                                 </span>
@@ -658,7 +677,11 @@ const UIUXDesignPage = () => {
                           onClick={() => router.push("/contact")}
                         >
                           {t("sections.5.package.startBtn")}
-                          <ArrowRight className="ml-2 h-4 w-4" />
+                          {isRTL ? (
+                            <ArrowLeft className="ml-2 h-4 w-4" />
+                          ) : (
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          )}
                         </Button>
                       </div>
                     </div>
@@ -901,7 +924,11 @@ const UIUXDesignPage = () => {
               onClick={() => router.push("/contact")}
             >
               {t("consultBtn")}
-              <ChevronRight className="ml-2 h-5 w-5" />
+              {isRTL ? (
+                <ChevronLeft className="ml-2 h-5 w-5" />
+              ) : (
+                <ChevronRight className="ml-2 h-5 w-5" />
+              )}
             </Button>
           </div>
           {/* </motion.div> */}
