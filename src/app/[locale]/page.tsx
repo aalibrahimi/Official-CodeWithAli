@@ -284,7 +284,7 @@ const HomePage = () => {
               <motion.div
                 {...getAnimationProps(0.2)}
                 // Added ml-20 for LG so it doesnt cover the contact btn
-                className={`hidden lg:block ${isRTL ? "lg:mr-20" : "lg:ml-20"} xl:ml-0 relative`}
+                className={`hidden lg:block ${isRTL ? "lg:${isRTL}0" : "lg:ml-20"} xl:ml-0 relative`}
               >
                 <div className="relative bg-black/60 border border-red-900 rounded-xl overflow-hidden shadow-2xl shadow-red-950/20 p-2">
                   <div className="grid grid-cols-2 gap-2">
@@ -757,16 +757,16 @@ const HomePage = () => {
             </div>
 
             <div className="flex flex-wrap items-center justify-center mt-8 text-white/95 dark:text-red-200/60">
-              <div className="flex items-center mr-4 mb-2">
-                <CheckCircle className="h-4 w-4 mr-2 text-red-300 dark:text-red-500" />
+              <div className={`flex items-center ${isRTL ? "ml-4" : "mr-4"} mb-2`}>
+                <CheckCircle className={`h-4 w-4 ${isRTL ? "ml-2" : "mr-2"} text-red-300 dark:text-red-500`} />
                 <span className="text-sm">{t("cta.features.1")}</span>
               </div>
-              <div className="flex items-center mr-4 mb-2">
-                <CheckCircle className="h-4 w-4 mr-2 text-red-300 dark:text-red-500" />
+              <div className={`flex items-center ${isRTL ? "ml-4" : "mr-4"} mb-2`}>
+                <CheckCircle className={`h-4 w-4 ${isRTL ? "ml-2" : "mr-2"} text-red-300 dark:text-red-500`} />
                 <span className="text-sm">{t("cta.features.2")}</span>
               </div>
               <div className="flex items-center mb-2">
-                <CheckCircle className="h-4 w-4 mr-2 text-red-300 dark:text-red-500" />
+                <CheckCircle className={`h-4 w-4 ${isRTL ? "ml-2" : "mr-2"} text-red-300 dark:text-red-500`} />
                 <span className="text-sm ">{t("cta.features.3")}</span>
               </div>
             </div>
