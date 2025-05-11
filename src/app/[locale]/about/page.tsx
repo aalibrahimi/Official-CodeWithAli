@@ -19,7 +19,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { TechIcon } from "@/MyComponents/tech-icons";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { isRtlLang } from "rtl-detect";
 
 // Team members data
 const teamMembers = [
@@ -73,6 +74,8 @@ const technologies = [
 export default function AboutPage() {
   const router = useRouter();
   const t = useTranslations("About");
+  const locale = useLocale();
+  const isRTL = isRtlLang(locale);
 
   // Company stats
   const stats = [
@@ -268,7 +271,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-red-200 dark:bg-black/60 border border-red-900 rounded-xl p-8 relative">
-              <div className="absolute -top-5 -left-5">
+              <div className={`absolute -top-5 ${isRTL ? "-right-5" : "-left-5"}`}>
                 <svg
                   width="48"
                   height="48"
@@ -294,7 +297,7 @@ export default function AboutPage() {
               </div>
 
               <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-white/60 to-white/60 dark:from-red-950/40 dark:to-red-900/10 flex items-center justify-center mr-4">
+                <div className={`w-12 h-12 rounded-full bg-gradient-to-br from-white/60 to-white/60 dark:from-red-950/40 dark:to-red-900/10 flex items-center justify-center ${isRTL ? "ml-4" : "mr-4"}`}>
                   <Users className="h-6 w-6 text-black dark:text-red-500/60" />
                 </div>
                 <div>
@@ -311,7 +314,7 @@ export default function AboutPage() {
             </div>
 
             <div className="bg-red-200 dark:bg-black/60 border border-red-900 rounded-xl p-8 relative">
-              <div className="absolute -top-5 -left-5">
+              <div className={`absolute -top-5 ${isRTL ? "-right-5" : "-left-5"}`}>
                 <svg
                   width="48"
                   height="48"
@@ -337,7 +340,7 @@ export default function AboutPage() {
               </div>
 
               <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-white/60 to-white/60 dark:from-red-950/40 dark:to-red-900/10 flex items-center justify-center mr-4">
+                <div className={`w-12 h-12 rounded-full bg-gradient-to-br from-white/60 to-white/60 dark:from-red-950/40 dark:to-red-900/10 flex items-center justify-center ${isRTL ? "ml-4" : "mr-4"}`}>
                   <Users className="h-6 w-6 text-black dark:text-red-500/60" />
                 </div>
                 <div>
@@ -353,7 +356,7 @@ export default function AboutPage() {
             </div>
             {/* third testimonial */}
             <div className="bg-red-200 dark:bg-black/60 border border-red-900 rounded-xl p-8 relative">
-              <div className="absolute -top-5 -left-5">
+              <div className={`absolute -top-5 ${isRTL ? "-right-5" : "-left-5"}`}>
                 <svg
                   width="48"
                   height="48"
@@ -379,7 +382,7 @@ export default function AboutPage() {
               </div>
 
               <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-white/60 to-white/60 dark:from-red-950/40 dark:to-red-900/10 flex items-center justify-center mr-4">
+                <div className={`w-12 h-12 rounded-full bg-gradient-to-br from-white/60 to-white/60 dark:from-red-950/40 dark:to-red-900/10 flex items-center justify-center ${isRTL ? "ml-4" : "mr-4"}`}>
                   <Users className="h-6 w-6 text-black dark:text-red-500/60" />
                 </div>
                 <div>
@@ -394,7 +397,7 @@ export default function AboutPage() {
             </div>
             {/* fourth testimonial */}
             <div className="bg-red-200 dark:bg-black/60 border border-red-900 rounded-xl p-8 relative">
-              <div className="absolute -top-5 -left-5">
+              <div className={`absolute -top-5 ${isRTL ? "-right-5" : "-left-5"}`}>
                 <svg
                   width="48"
                   height="48"
@@ -422,7 +425,7 @@ export default function AboutPage() {
               </div>
 
               <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-white/60 to-white/60 dark:from-red-950/40 dark:to-red-900/10 flex items-center justify-center mr-4">
+                <div className={`w-12 h-12 rounded-full bg-gradient-to-br from-white/60 to-white/60 dark:from-red-950/40 dark:to-red-900/10 flex items-center justify-center ${isRTL ? "ml-4" : "mr-4"}`}>
                   <Users className="h-6 w-6 text-black dark:text-red-500/60" />
                 </div>
                 <div>
@@ -638,7 +641,7 @@ export default function AboutPage() {
                   key={index}
                   className="bg-red-200 dark:bg-black/60 border border-red-900 rounded-xl p-4 flex"
                 >
-                  <div className="mr-4">
+                  <div className={`${isRTL ? "ml-4" : "mr-4"}`}>
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-red-500 to-red-600 dark:from-red-600 dark:to-red-800 flex items-center justify-center m">
                       <ValueIcon className="h-6 w-6 text-white" />
                     </div>
@@ -692,6 +695,7 @@ export default function AboutPage() {
                 >
                   <TechIcon
                     name={tech.logo}
+                    // @ts-expect-error
                     className={
                       tech.logo === "nextjs"
                         ? "text-white dark:text-black scale-110"
@@ -732,7 +736,11 @@ export default function AboutPage() {
                 onClick={() => router.push("/contact")}
               >
                 {t("cta.button")}
-                <Send className="ml-2 h-4 w-4" />
+                {isRTL ? (
+                  <Send className="ml-2 h-4 w-4 rotate-270" />
+                ) : (
+                  <Send className="ml-2 h-4 w-4" />
+                )}
               </Button>
               <Button
                 variant="outline"
