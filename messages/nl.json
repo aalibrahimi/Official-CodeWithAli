@@ -1800,8 +1800,9 @@
         "title": "Bedrijf",         
         "links": {           
           "1": "Over Ons",           
-          "2": "Portfolio",           
-          "3": "Contact"         
+          "2": "Portfolio",
+          "3": "Proces",           
+          "4": "Contact"         
         }       
       },       
       "contact": {         
