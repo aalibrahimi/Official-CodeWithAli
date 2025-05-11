@@ -1,9 +1,10 @@
 
 import { Button } from "@/components/ui/button";
 import { Facebook, Github, Heart, Instagram, Linkedin } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
+import { isRtlLang } from "rtl-detect";
 
 
 export default function Footer() {
@@ -39,6 +40,8 @@ export default function Footer() {
     },
   ];
   const t = useTranslations("Footer");
+  const locale = useLocale();
+  const isRTL = isRtlLang(locale);
     
     return (
         <>
@@ -174,7 +177,7 @@ export default function Footer() {
                     width={70}
                     height={70}
                   />
-                  <span className="ml-2 text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-red-900 dark:from-red-300 dark:to-red-500">
+                  <span className={`${isRTL ? "mr-2" : "ml-2"} text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-red-900 dark:from-red-300 dark:to-red-500`}>
                     CodeWithAli
                   </span>
                 </Link>

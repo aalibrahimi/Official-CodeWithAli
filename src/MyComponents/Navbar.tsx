@@ -18,6 +18,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { isRtlLang } from "rtl-detect";
 
 interface RouteItem {
   title: string;
@@ -67,6 +68,7 @@ export function Navbar(): React.ReactElement {
 
   const locale = useLocale();
   const pathname = usePathname();
+  const isRTL = isRtlLang(locale);
 
   const initialLanguage =
     languages.find((lang) => lang.code === locale) || languages[0];
@@ -101,7 +103,7 @@ export function Navbar(): React.ReactElement {
               height={70}
               priority
             />
-            <span className="ml-3 text-xl font-bold bg-gradient-to-r from-red-500 to-red-900 dark:from-red-300 dark:to-red-500 bg-clip-text text-transparent">
+            <span className={`${isRTL ? "mr-3" : "ml-3"} text-xl font-bold bg-gradient-to-r from-red-500 to-red-900 dark:from-red-300 dark:to-red-500 bg-clip-text text-transparent`}>
               CodeWithAli
             </span>
           </Link>

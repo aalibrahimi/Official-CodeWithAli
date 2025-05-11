@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useFormDataStore } from "./serviceform";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import {
   Select,
   SelectContent,
@@ -15,6 +15,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { isRtlLang } from "rtl-detect";
 
 interface Props {
   scrollToTop?: boolean | false;
@@ -32,6 +33,8 @@ export default function ContactForm({
   btnText,
 }: Props) {
   const t = useTranslations("Contact");
+  const locale = useLocale();
+  const isRTL = isRtlLang(locale);
 
   const {
     name,
@@ -310,7 +313,11 @@ export default function ContactForm({
                       </>
                     ) : (
                       <>
-                        <Send className="mr-2 h-5 w-5" />
+                        {isRTL ? (
+                          <Send className="mr-2 h-5 w-5 rotate-270" />
+                        ) : (
+                          <Send className="mr-2 h-5 w-5" />
+                        )}
                         {btnText ? `${btnText}` : `${t("submitbtn")}`}
                       </>
                     )}

@@ -19,13 +19,17 @@ import {
   Coffee,
   MessageSquare,
   Mail,
+  ChevronLeft,
+  ArrowLeft,
+  MoveUpLeft,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import ContactForm from "@/MyComponents/contact-form";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { isRtlLang } from "rtl-detect";
 
 // Animation variants with reduced intensity for mobile
 const fadeIn = {
@@ -52,6 +56,8 @@ const HomePage = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
   const [isReducedMotion, setIsReducedMotion] = useState(false);
+  const locale = useLocale();
+  const isRTL = isRtlLang(locale);
 
   // Services data
   const services = [
@@ -236,17 +242,21 @@ const HomePage = () => {
                   <Button
                     size="lg"
                     className="bg-gradient-to-r from-red-600 to-red-700 dark:from-red-700 dark:to-red-900 hover:from-red-700 hover:to-red-800 
-                     dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8 w-full sm:w-auto"
+                     dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8 w-full sm:w-45 xl:w-auto"
                   >
                     {t("hero.buttons.startProject")}
-                    <ChevronRight className="ml-2 h-5 w-5" />
+                    {isRTL ? (
+                      <ChevronLeft className="ml-2 h-5 w-5" />
+                    ) : (
+                      <ChevronRight className="ml-2 h-5 w-5" />
+                    )}
                   </Button>
                 </Link>
                 <Link href="/portfolio">
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-red-800/30 text-red-900 dark:text-red-400 bg-red-500/40 dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white dark:hover:text-white px-8 w-full sm:w-auto"
+                    className="border-red-800/30 text-red-900 dark:text-red-400 bg-red-500/40 dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white dark:hover:text-white px-8 w-full sm:w-38 xl:w-auto"
                   >
                     {t("hero.buttons.viewWork")}
                   </Button>
@@ -258,7 +268,7 @@ const HomePage = () => {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-red-800/30 text-red-900 dark:text-red-400 bg-red-500/40 dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white px-8 w-full sm:w-auto 
+                    className="border-red-800/30 text-red-900 dark:text-red-400 bg-red-500/40 dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white px-8 w-full sm:w-38 xl:w-auto 
                               flex items-center gap-2 transition-all duration-300 ease-in-out 
                               group-hover:bg-red-950/30 group-hover:text-white dark:group-hover:text-white"
                   >
@@ -274,7 +284,7 @@ const HomePage = () => {
               <motion.div
                 {...getAnimationProps(0.2)}
                 // Added ml-20 for LG so it doesnt cover the contact btn
-                className="hidden lg:block lg:ml-20 xl:ml-0 relative"
+                className={`hidden lg:block ${isRTL ? "lg:mr-20" : "lg:ml-20"} xl:ml-0 relative`}
               >
                 <div className="relative bg-black/60 border border-red-900 rounded-xl overflow-hidden shadow-2xl shadow-red-950/20 p-2">
                   <div className="grid grid-cols-2 gap-2">
@@ -346,7 +356,7 @@ const HomePage = () => {
                 <div className="w-12 h-12 bg-transparent dark:bg-black rounded-lg flex items-center justify-center mb-3">
                   <industry.icon className="h-6 w-6 text-red-700 dark:text-red-500/70" />
                 </div>
-                <span className="text-red-800 dark:text-red-200/60 text-sm">
+                <span className="text-red-800 dark:text-red-200/60 text-sm w-max">
                   {industry.name}
                 </span>
               </motion.div>
@@ -404,7 +414,11 @@ const HomePage = () => {
                           className="p-0 text-red-800 dark:text-red-400 dark:hover:text-red-300 hover:bg-transparent group"
                         >
                           {t("services.learnMore")}
-                          <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                          {isRTL ? (
+                            <ArrowLeft className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                          ) : (
+                            <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                          )}
                         </Button>
                       </Link>
                     </div>
@@ -488,7 +502,11 @@ const HomePage = () => {
                           className="border-2 border-red/60 text-white bg-red-700/80 dark:bg-red-700/50 px-6 py-5 hover:bg-red-950 dark:hover:bg-black hover:text-white text-base font-medium"
                         >
                           {t("portfolio.viewProject")}
-                          <MoveUpRight className="ml-2 h-5 w-5" />
+                          {isRTL ? (
+                            <MoveUpLeft className="ml-2 h-5 w-5" />
+                          ) : (
+                            <MoveUpRight className="ml-2 h-5 w-5" />
+                          )}
                         </Button>
                       </Link>
                     </div>
@@ -514,7 +532,11 @@ const HomePage = () => {
                      dark:hover:from-red-600 dark:hover:to-red-800 text-white border-2 border-red-800/40 shadow-lg shadow-red-950/20 px-8 py-6 text-lg font-medium"
               >
                 {t("portfolio.viewAllProjects")}
-                <ChevronRight className="ml-2 h-5 w-5" />
+                {isRTL ? (
+                  <ChevronLeft className="ml-2 h-5 w-5" />
+                ) : (
+                  <ChevronRight className="ml-2 h-5 w-5" />
+                )}
               </Button>
             </Link>
           </div>
@@ -593,8 +615,12 @@ const HomePage = () => {
                 </div>
 
                 {index < 3 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-0 transform translate-x-full">
-                    <ArrowRight className="w-6 h-6 text-red-700 dark:text-red-700/50" />
+                  <div className={`hidden lg:block absolute top-1/2 transform ${isRTL ? "left-0 -translate-x-full" : "-right-0 translate-x-full"}`}>
+                    {isRTL ? (
+                      <ArrowLeft className="w-6 h-6 text-red-700 dark:text-red-700/50" />
+                    ) : (
+                      <ArrowRight className="w-6 h-6 text-red-700 dark:text-red-700/50" />
+                    )}
                   </div>
                 )}
               </motion.div>
@@ -712,7 +738,11 @@ const HomePage = () => {
                      dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8 w-full sm:w-auto"
                 >
                   {t("cta.buttons.startProject")}
-                  <ChevronRight className=" ml-2 h-5 w-5" />
+                  {isRTL ? (
+                    <ChevronLeft className=" ml-2 h-5 w-5" />
+                  ) : (
+                    <ChevronRight className=" ml-2 h-5 w-5" />
+                  )}
                 </Button>
               </Link>
               <Link href="/about">

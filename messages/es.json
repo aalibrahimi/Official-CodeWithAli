@@ -1813,7 +1813,7 @@
       },
       "email": {
         "label": "Correo electrónico",
-        "placeholder": "tu@email.com"
+        "placeholder": "tu@correo.com"
       },
       "service": {
         "label": "Servicio Necesario",
