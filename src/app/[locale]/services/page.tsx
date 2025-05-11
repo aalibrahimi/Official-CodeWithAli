@@ -13,13 +13,16 @@ import {
   Palette,
   ArrowRight,
   ArrowUpRight,
+  ChevronLeft,
+  ArrowUpLeft,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import GradientText from "@/MyComponents/GradientText";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { isRtlLang } from "rtl-detect";
 
 // ClientOnly wrapper to prevent hydration issues
 const ClientOnly = ({ children }: any) => {
@@ -43,6 +46,8 @@ const ClientOnly = ({ children }: any) => {
 export default function ServicesPage() {
   const router = useRouter();
   const t = useTranslations("Serv");
+  const locale = useLocale();
+  const isRTL = isRtlLang(locale);
 
   // Services data
   const services = [
@@ -257,7 +262,11 @@ export default function ServicesPage() {
                                 key={idx}
                                 className="flex items-start font-bold"
                               >
-                                <ChevronRight className="h-4 w-4 text-black dark:text-red-500 mt-1 mr-2 flex-shrink-0" />
+                                {isRTL ? (
+                                  <ChevronLeft className="h-4 w-4 text-black dark:text-red-500 mt-1 mr-2 flex-shrink-0" />
+                                ) : (
+                                  <ChevronRight className="h-4 w-4 text-black dark:text-red-500 mt-1 mr-2 flex-shrink-0" />
+                                )}
                                 <span className="text-black dark:text-white/80 font-bold text-sm">
                                   {feature}
                                 </span>
@@ -273,7 +282,11 @@ export default function ServicesPage() {
                             >
                               {t("Services.process.learn")}
 
-                              <ArrowUpRight className="ml-2 h-4 w-4" />
+                              {isRTL ? (
+                                <ArrowUpLeft className="ml-2 h-4 w-4" />
+                              ) : (
+                                <ArrowUpRight className="ml-2 h-4 w-4" />
+                              )}
                             </Button>
                           </Link>
                         </div>
@@ -308,7 +321,7 @@ export default function ServicesPage() {
                 <div key={index}>
                   <div className="bg-red-200 border-1 border-red-300 dark:bg-black dark:border-red-900 rounded-xl p-6 h-full">
                     <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-red-700 dark:from-red-600 dark:to-red-800 flex items-center justify-center mr-3">
+                      <div className={`w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-red-700 dark:from-red-600 dark:to-red-800 flex items-center justify-center ${isRTL ? "ml-3" : "mr-3"}`}>
                         <span className="text-white font-bold">
                           {step.number}
                         </span>
@@ -343,7 +356,11 @@ export default function ServicesPage() {
                 onClick={() => router.push("/contact")}
               >
                 {t("Services.cta.button")}
-                <ChevronRight className="ml-2 h-4 w-4" />
+                {isRTL ? (
+                  <ChevronLeft className="ml-2 h-4 w-4" />
+                ) : (
+                  <ChevronRight className="ml-2 h-4 w-4" />
+                )}
               </Button>
             </div>
           </div>
