@@ -96,7 +96,7 @@ const PortfolioPage = () => {
         </div>
       </section>
 
-      <section className="dark:bg-red-950/10 h-full w-full p-10 overflow-y-clip">
+      <section className="dark:bg-red-950/10 h-full w-full p-5 lg:p-10 overflow-y-clip">
         <div className="h-full relative z-10">
           <div className="">
             <motion.div
