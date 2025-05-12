@@ -1798,7 +1798,7 @@
   },
   "Contact": {
     "badge": "CONTACT US",
-    "statusMsg": {
+    "status": {
       "success": "Thank You for reaching out!",
       "error": "There was an error submitting your message. Please try again."
     },

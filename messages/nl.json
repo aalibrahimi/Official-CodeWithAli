@@ -1789,7 +1789,7 @@
   },
   "Contact": {
     "badge": "NEEM CONTACT OP",
-    "statusMsg": {
+    "status": {
       "success": "Bedankt voor uw bericht!",
       "error": "Er was een fout bij het versturen van uw bericht. Probeer het opnieuw."
     },
