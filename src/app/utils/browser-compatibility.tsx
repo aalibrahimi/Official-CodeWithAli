@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef, ReactNode, JSX } from "react";
+import { useState, useEffect, useRef, ReactNode } from "react";
 import { MotionProps } from "motion/react";
 
 // Define TypeScript interfaces

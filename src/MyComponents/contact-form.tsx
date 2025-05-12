@@ -1,5 +1,4 @@
 "use client";
-import { motion } from "motion/react";
 import { Loader2, Send } from "lucide-react";
 import { FormEvent, useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
@@ -54,7 +53,9 @@ export default function ContactForm({
   };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  /* eslint-disable */
   const [isMounted, setIsMounted] = useState(false);
+  /* eslint-disable */
   const [isReducedMotion, setIsReducedMotion] = useState(false);
   const [status, setStatus] = useState<{
     type: "success" | "error" | null;
@@ -86,18 +87,18 @@ export default function ContactForm({
   }, []);
 
   // Apply conditional animation based on device capability and user preference
-  const getAnimationProps = (delay = 0) => {
-    if (!isMounted || isReducedMotion) {
-      return {}; // No animation on SSR or when reduced motion is preferred
-    }
+  // const getAnimationProps = (delay = 0) => {
+  //   if (!isMounted || isReducedMotion) {
+  //     return {}; // No animation on SSR or when reduced motion is preferred
+  //   }
 
-    return {
-      initial: { opacity: 0, y: 10 },
-      whileInView: { opacity: 1, y: 0 },
-      viewport: { once: true },
-      transition: { duration: 0.3, delay },
-    };
-  };
+  //   return {
+  //     initial: { opacity: 0, y: 10 },
+  //     whileInView: { opacity: 1, y: 0 },
+  //     viewport: { once: true },
+  //     transition: { duration: 0.3, delay },
+  //   };
+  // };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();

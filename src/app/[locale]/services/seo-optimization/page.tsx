@@ -35,15 +35,15 @@ import { isRtlLang } from "rtl-detect";
 //   },
 // };
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
+// const staggerContainer = {
+//   hidden: { opacity: 0 },
+//   visible: {
+//     opacity: 1,
+//     transition: {
+//       staggerChildren: 0.1,
+//     },
+//   },
+// };
 
 const SEOOptimizationPage = () => {
   const router = useRouter();

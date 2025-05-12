@@ -17,7 +17,9 @@ export function LampDemo() {
         }}
         className=" bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl "
       >
-        <TextAnimate children={'  Share Your Digital Identity With A Touch'} />
+        <TextAnimate>
+          Share Your Digital Identity With A Touch
+        </TextAnimate>
       </motion.h1>
     </LampContainer>
   );
