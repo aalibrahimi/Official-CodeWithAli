@@ -171,9 +171,11 @@
   --scrollbar-track-color: #333;
 } */
 
-* {
+/* * {
   transition: all 0.3s ease-in-out;
 }
+ */
+
 
 ::-webkit-scrollbar {
   width: 10px;
