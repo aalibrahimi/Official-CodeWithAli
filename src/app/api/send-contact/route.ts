@@ -1,4 +1,4 @@
-import { EmailContact } from '@/app/components/email-contact';
+import { EmailContact } from '@/MyComponents/email-contact';
 import React from 'react';
 import { Resend } from 'resend';
 

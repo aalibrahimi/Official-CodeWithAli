@@ -1,0 +1,1881 @@
+{
+  "HomePage": {
+    "hero": {
+      "title": {
+        "part1": "Bringing Your",
+        "part2": "Digital Vision to Life"
+      },
+      "description": "We design and develop stunning websites and powerful applications that elevate your brand and grow your business.",
+      "buttons": {
+        "startProject": "Start Your Project",
+        "viewWork": "View Our Work",
+        "contactUs": "Contact Us"
+      }
+    },
+    "clients": {
+      "title": "Trusted by businesses across industries",
+      "industries": {
+        "business": "Business",
+        "ecommerce": "E-commerce",
+        "education": "Education",
+        "healthcare": "Healthcare",
+        "realEstate": "Real Estate", 
+        "technology": "Technology"
+      }
+    },
+    "services": {
+      "badge": "OUR SERVICES",
+      "title": "Expert Solutions for Your Digital Needs",
+      "description": "From websites to mobile apps, we create custom digital solutions tailored to your business goals and user needs.",
+      "items": {
+        "1": {
+          "title": "Website Development",
+          "description": "Custom-designed responsive websites optimized for performance and conversions"
+        },
+        "2": {
+          "title": "Mobile App Development",
+          "description": "Native and cross-platform mobile applications for iOS and Android"
+        },
+        "3": {
+          "title": "UI/UX Design",
+          "description": "User-focused designs that enhance engagement and simplify interactions"
+        },
+        "4": {
+          "title": "E-commerce Solutions",
+          "description": "Fully-featured online stores with secure payment processing and inventory management"
+        },
+        "5": {
+          "title": "SEO Optimization",
+          "description": "Data-driven strategies to improve visibility and ranking in search engines"
+        },
+        "6": {
+          "title": "Web Hosting & Maintenance",
+          "description": "Reliable hosting services with regular updates, backups, and security monitoring"
+        }
+      },
+      "learnMore": "Learn more"
+    },
+    "portfolio": {
+      "badge": "OUR WORK",
+      "title": "Recent Projects",
+      "description": "Explore some of our latest work for clients across different industries.",
+      "viewProject": "View Project",
+      "viewAllProjects": "View All Projects"
+    },
+    "process": {
+      "badge": "OUR PROCESS",
+      "title": "How We Work",
+      "description": "Our streamlined process ensures clear communication and outstanding results for every project.",
+      "steps": {
+        "1": {
+          "title": "Discovery",
+          "description": "We learn about your business, goals, and requirements through in-depth consultations."
+        },
+        "2": {
+          "title": "Design",
+          "description": "Our designers create wireframes and visual mockups that align with your brand identity."
+        },
+        "3": {
+          "title": "Development",
+          "description": "Our developers build your solution with clean code and cutting-edge technologies."
+        },
+        "4": {
+          "title": "Deployment",
+          "description": "We launch your project, provide training, and offer ongoing support as needed."
+        }
+      }
+    },
+    "testimonials": {
+      "badge": "TESTIMONIALS",
+      "title": "What Our Clients Say",
+      "description": "Don't just take our word for it – hear from the businesses we've helped succeed.",
+      "items": {
+        "1": {
+          "name": "Alex Thompson",
+          "position": "CEO, TechStart Inc.",
+          "content": "They delivered our company website ahead of schedule and beyond our expectations. Their attention to detail and responsive design expertise made all the difference."
+        },
+        "2": {
+          "name": "Sarah Chen",
+          "position": "Marketing Director, StyleShop",
+          "content": "Our e-commerce site has seen a 45% increase in conversions since the redesign. Their team understood our brand and implemented exactly what we needed."
+        },
+        "3": {
+          "name": "Marcus Johnson",
+          "position": "Founder, HealthApp",
+          "content": "From concept to launch, they guided us through the entire app development process with expertise and professionalism. The final product exceeded our vision."
+        }
+      }
+    },
+    "cta": {
+      "title": "Let's Create Something Amazing Together",
+      "description": "Whether you need a website, mobile app, or complete digital strategy, we're here to bring your vision to life.",
+      "buttons": {
+        "startProject": "Start Your Project",
+        "learnAboutUs": "Learn About Us"
+      },
+      "features": {
+        "1": "Free Consultation",
+        "2": "Expert Team",
+        "3": "Ongoing Support"
+      }
+    }
+  },
+  "NavBar": {     
+    "labelSwitchLang": "Switch Language",     
+    "labelSelectLang": "Select Language",     
+    "dropdown": {       
+      "title": "My Account",       
+      "item1": "Profile",       
+      "item2": "Settings",       
+      "item3": "Dashboard",       
+      "logout": "Logout"     
+    },     
+    "labelLang": "Language",     
+    "routes": {       
+      "home": "Home",       
+      "about": "About",       
+      "portfolio": "Portfolio",       
+      "services": {      
+        "title": "Services",         
+        "content": {           
+          "1": {             
+            "title": "Website Development"           
+          },           
+          "2": {             
+            "title": "Mobile App Development"           
+          },           
+          "3": {             
+            "title": "UI/UX Design"           
+          },           
+          "4": {             
+            "title": "E-commerce Solutions"           
+          },           
+          "5": {             
+            "title": "SEO Optimization"           
+          },           
+          "6": {             
+            "title": "Web Hosting & Maintenance"           
+          }         
+        }       
+      },       
+      "merch": "Merchandise",       
+      "contact": "Contact"     
+    }   
+  },  
+  "About" : {
+    "badge" : "ABOUT US",
+    "title" : "We Are Passionate About",
+    "sub" : " Building Digital Excellence",
+    "desc" : " More than just developers, we're partners in your digital journey, committed to transforming your ideas into powerful digital experiences.",
+    "mission" : {
+      "header" : " Our Mission",
+      "desc" :  "At CodeWithAli, our mission is to empower businesses and individuals through thoughtfully crafted digital solutions. We believe technology should be both powerful and accessible, driving real results while providing exceptional user experiences.",
+      "sub" : "  Global Reach, Personal Touch",
+      "subDesc" : " We work with clients worldwide but maintain the personalized attention of a boutique agency. Every project receives our full dedication regardless of size.",
+      "sub2" : " Results-Driven Development",
+      "subDesc2" : " We measure our success by your success. Our solutions are designed to deliver measurable results, helping you achieve your business goals.",
+      "stats" : {
+        "1" : "Completed Projects",
+        "2" : "Client Satisfaction",
+        "3" : "Support Coverage",
+        "4" : "On-time Delivery"
+      },
+      "story" : {
+        "badge" : "SUCCESS STORIES",
+        "header" : "Clients We've Helped Succeed",
+        "title" : "Real results from businesses that trusted us with their digital needs."
+      },
+      "quots" : {
+        "1" : "CodeWithAli transformed our e-commerce platform, resulting in a 45% increase in conversions and a significant improvement in user satisfaction. Their technical expertise combined with strategic insights made all the difference.",
+        "2" : "Working with CodeWithAli on our business dashboard has been game-changing. Their team quickly understood our complex requirements and delivered a solution that has streamlined our operations and improved decision-making.",
+        "3" :  "The mobile app CodeWithAli developed for our healthcare service has received outstanding feedback from users. Their attention to security and user experience shows in every aspect of the finished product.",
+        "4" :  "As a startup, we needed a partner who could guide us through the technical challenges of launching our platform. CodeWithAli provided not just development expertise but valuable strategic input that helped shape our product."
+      },
+      "author" : {
+        "1" : "Emma Thompson",
+        "2" : "Michael Rodriguez",
+        "3" : "Dr. James Wilson",
+        "4" : "Sophia Chen"
+      },
+      "job": {
+        "1" : "CTO, StyleHub",
+        "2" : " Founder, DataVision Inc.",
+        "3" : " Director, HealthConnect",
+        "4" : " Co-founder, NextLevel Tech"
+      }
+    },
+    "process" : {
+      "badge" : "OUR PROCESS",
+      "header" : "How We Transform Ideas Into Reality",
+      "sub" : "Our proven development methodology ensures clear communication and outstanding results for every project.",
+      "cards" : {
+        "h1": " Discovery & Planning",
+        "h2" : "Design & Strategy",
+        "h3" : "Development & Testing",
+        "h4" : " Deployment & Support",
+        "desc1" : "We begin by understanding your business, goals, and requirements through in-depth consultations. This phase includes:",
+        "desc2" : "Our design team creates wireframes and visual mockups that align with your brand identity while our strategists plan the technical approach:",
+        "desc3" : "Our developers build your solution with clean code and cutting-edge technologies while ensuring quality through:",
+        "desc4" : "We launch your project, provide training, and offer ongoing support through:",
+        "firstList" : {
+          "li1" : "Stakeholder interview",
+          "li2" : "Business goal alignment",
+          "li3" : "Technical requirement gathering",
+          "li4" : "Project scope definition"
+        },
+        "secondList" : {
+          "li1" : "UX/UI design and wireframing",
+          "li2" : "Technical architecture planning",
+          "li3" : "Database structure design",
+          "li4" : "Technology stack selection"
+        },
+        "thirdList" : {
+          "li1" : " Agile development methodology",
+          "li2" : "Regular progress updates",
+          "li3" : "Comprehensive testing (unit, integration, UI)",
+          "li4" : "Performance optimization"
+        },
+        "fourthList" : {
+          "li1" : "Smooth deployment procedures",
+          "li2" : "Comprehensive documentation",
+          "li3" : "User training and knowledge transfer",
+          "li4" : "Ongoing maintenance and support options"
+        }
+      }
+  
+    },
+    "values" :  {
+      "badge" : "OUR VALUES",
+      "header" : " Principles That Guide Our Work",
+      "sub" : " Our core values shape everything we do, from how we work with clients to how we develop solutions.",
+      "title" : {
+        "h1" : "Quality",
+        "h2" : "Innovation",
+        "h3" : "Reliability",
+        "h4" : "Collaboration",
+        "d1" : "We never compromise on code quality or user experience. Every project receives our full attention to detail.",
+        "d2" : "We stay at the forefront of technology, constantly learning and implementing the latest best practices.",
+        "d3" : "We deliver on our promises, meeting deadlines and keeping our clients informed throughout the process.",
+        "d4" : "We work closely with our clients, valuing their input and ensuring their vision comes to life."
+      }
+    },
+
+    "tech" : {
+      "badge" : " OUR EXPERTISE",
+      "header" : "Technologies We Master",
+      "sub" : " We leverage cutting-edge technologies to build scalable, high-performance solutions."
+    },
+
+    "cta": {
+      "title" : "Ready to Work Together?",
+      "header" : "Let's discuss how we can help bring your vision to life with our expertise and dedication.",
+      "button" : "Get in Touch",
+      "button2" : "Explore Our Services",
+      "li" : "No Obligation Consultation",
+      "li2" : "Transparent Process",
+      "li3" : "Ongoing Support"
+    },
+
+    "story" :  {
+      "badge" : "OUR STORY",
+      "title" : "How We Started",
+      "header" : "From Passion to Purpose",
+      "sub" : "CodeWithAli began in 2019 when our founder Ali identified a gap in the market: businesses needed technical excellence combined with strategic guidance. What started as freelance consulting quickly grew as clients recognized our unique approach.",
+      "subDesc" : "Today, we've evolved into a full-service digital agency, maintaining our core values while expanding our capabilities to serve a diverse range of clients.",
+      "header2": "Our Growth Philosophy",
+      "sub2": "We believe in sustainable growth—both for our clients and ourselves. Rather than scaling rapidly at the expense of quality, we've carefully built our team with specialized experts who share our dedication to excellence.",
+      "subDesc2" : "This approach allows us to maintain close relationships with our clients while delivering the high-caliber work they've come to expect from us."
+   
+    }
+    } ,
+
+  "Serv" :
+  {
+    "badge": "OUR EXPERTISE",     
+    "Header": "Comprehensive Digital",
+    "Subheader" :  " Services & Solutions",
+    "Subdesc" : "  From website development to SEO optimization, we offer end-to-end digital solutions designed to help your business thrive in the digital landscape.",
+    "Services" : {
+      "titleLinks" :  {
+        "1" : "Website Development",
+        "2" : "Mobile App Development",
+        "3" : "UI/UX Design",
+        "4" : "E-commerce Solutions",
+        "5" : "SEO Optimization",
+        "6" : "Web Hosting & Maintenance"
+      },
+      "desc" : {
+        "1" :  "Custom-designed responsive websites optimized for performance and conversions",
+        "2" :  "Native and cross-platform mobile applications for iOS and Android",
+        "3" :  "User-focused designs that enhance engagement and simplify interactions",
+        "4" :  "Fully-featured online stores with secure payment processing and inventory management",
+        "5" :  "Data-driven strategies to improve visibility and ranking in search engines",
+        "6" :  "Reliable hosting services with regular updates, backups, and security monitoring"
+      },
+      "features" : {
+        "first" : {
+            "1" : "Responsive Design",
+            "2" : "SEO Optimization",
+            "3" : "Content Management",
+            "4" : "Performance Tuning"
+            
+        },
+        "second" : {
+          "1" : "iOS & Android Apps",
+          "2" : "Cross-Platform Solutions",
+          "3" : "App Store Deployment",
+          "4" : "Maintenance & Updates"
+        },
+        "third" : {
+          "1" : "User Research",
+          "2" : "Interface Design",
+          "3" : "Interface Design",
+          "4" : "Design Systems"
+        },
+        "fourth" : {
+          "1" : "Product Catalogs",
+          "2" : "Payment Processing",
+          "3" : "Inventory Management",
+          "4" : "Customer Management"
+        },
+        "fifth" : {
+          "1" : "Keyword Research",
+          "2" : "On-Page SEO",
+          "3" : "Content Strategy",
+          "4" : "Analytics & Reporting"
+        },
+        "sixth" : {
+          "1" : "Managed Hosting",
+          "2" : "Security Updates",
+          "3" : "Performance Monitoring",
+          "4" : "Regular Backups"
+        }
+      },
+      "process": {
+        "1" : "Discovery",
+        "2" : "Strategy",
+        "3" : "Execution",
+        "4" : "Support",
+        "numbers" : {
+          "1" : "01",
+          "2" : "02",
+          "3" : "03",
+          "4" : "04"
+        },
+        "desc" : {
+          "1" : "We begin by understanding your business, goals, target audience, and specific requirements.",
+          "2" : "We develop a comprehensive strategy and detailed project plan tailored to your objectives.",
+          "3" : "Our expert team implements the solution with regular updates and client feedback.",
+          "4" : "We provide ongoing support, maintenance, and optimization to ensure long-term success."
+        },
+        "learn" : "Learn More",
+        "approach" : {
+          "badge" : "OUR APPROACH",
+          "title" : " Our Service Delivery Process",
+          "sub" : " We follow a proven methodology to ensure successful outcomes for all our services."
+        }
+      },
+      "cta": {
+        "title" : " Ready to Get Started?",
+        "header" : " Contact us for a free consultation and let's discuss how our services can help you achieve your digital goals.",
+        "button" : " Schedule a Consultation"
+      }
+    }
+  },
+"ServicePage": {
+  "webDev": {
+    "badge": {
+      "1": "WEBSITE DEVELOPMENT",
+      "2": "KEY FEATURES",
+      "3": "OUR PROCESS",
+      "4": "TECHNOLOGIES",
+      "5": "CASE STUDIES",
+      "6": "FAQ"
+    },
+    "title": {
+      "1": "Custom Website Development",
+      "2": "That Drives Results"
+    },
+    "desc": "We design and develop stunning, high-performance websites that captivate your audience, establish your brand presence, and drive measurable business growth.",
+    "quoteBtn": "Get a Free Quote",
+    "workBtn": "View Our Work",
+    "sections": {
+      "1": {
+        "title": "What Sets Our Website Development Apart",
+        "desc": "We combine technical expertise with creative design to deliver websites that not only look great but also perform exceptionally well.",
+        "cards": {
+          "1": {
+            "title": "Responsive Design",
+            "desc": "We build websites that adapt seamlessly to any device, ensuring an optimal user experience on desktops, tablets, and smartphones."
+          },
+          "2": {
+            "title": "Performance Optimization",
+            "desc": "Our websites are optimized for speed with efficient code, image optimization, and caching strategies for lightning-fast load times."
+          },
+          "3": {
+            "title": "SEO-Friendly Structure",
+            "desc": "We implement SEO best practices from the ground up, ensuring your website ranks well in search engines and drives organic traffic."
+          },
+          "4": {
+            "title": "Custom Functionality",
+            "desc": "From interactive elements to complex business logic, we develop custom features that meet your specific requirements."
+          },
+          "5": {
+            "title": "Security Measures",
+            "desc": "We implement robust security practices to protect your website and user data from vulnerabilities and threats."
+          },
+          "6": {
+            "title": "Content Management",
+            "desc": "We build easy-to-use content management systems that empower you to update and maintain your website without technical knowledge."
+          }
+        }
+      },
+      "2": {
+        "title": "End-to-End Website Development Process",
+        "desc": "Our structured approach ensures a smooth development journey from concept to launch and beyond.",
+        "steps": {
+          "1": {
+            "title": "Discovery and Requirements",
+            "desc": "We begin by understanding your business goals, target audience, and specific requirements through in-depth consultations. This phase includes competitor analysis, content planning, and technical specifications."
+          },
+          "2": {
+            "title": "Planning and Architecture",
+            "desc": "We create a detailed project plan including site architecture, wireframes, and technical specifications that will guide the development process."
+          },
+          "3": {
+            "title": "Design",
+            "desc": "Our designers create visual mockups and prototypes that align with your brand identity while ensuring an optimal user experience."
+          },
+          "4": {
+            "title": "Development",
+            "desc": "Our developers build your website with clean, efficient code using modern frameworks and best practices for performance and security."
+          },
+          "5": {
+            "title": "Testing and QA",
+            "desc": "We rigorously test your website across devices and browsers to ensure functionality, performance, and accessibility standards are met."
+          },
+          "6": {
+            "title": "Launch and Training",
+            "desc": "We deploy your website to production servers and provide comprehensive training on content management and maintenance."
+          },
+          "7": {
+            "title": "Maintenance and Support",
+            "desc": "We offer ongoing support, regular updates, performance monitoring, and continuous improvement to keep your website secure and effective."
+          }
+        }
+      },
+      "3": {
+        "title": "Technologies We Utilize",
+        "desc": "We leverage cutting-edge technologies to build modern, high-performance websites.",
+        "tech": {
+          "1": {
+            "desc": "For building interactive user interfaces with optimal performance"
+          },
+          "2": {
+            "desc": "For content-focused websites with powerful CMS capabilities"
+          },
+          "3": {
+            "desc": "For e-commerce websites with robust product management"
+          },
+          "4": {
+            "desc": "For rapid, responsive design implementation"
+          },
+          "5": {
+            "desc": "For scalable backend development"
+          },
+          "6": {
+            "desc": "For efficient data querying and management"
+          },
+          "7": {
+            "desc": "For reliable, scalable hosting solutions"
+          }
+        }
+      },
+      "4": {
+        "title": "Success Stories",
+        "desc": "Explore some of our recent website development projects and the results we've achieved for our clients.",
+        "case": {
+          "imgPlaceholder": "Case Study Image:",
+          "viewBtn": "View Case Study",
+          "projectsBtn": "View All Projects",
+          "1": {
+            "title": "Construction Website Redesign",
+            "industry": "Construction",
+            "desc": "Redesigned an outdated construction website, boosting conversions by 45% and improving page load times by 60%."
+          },
+          "2": {
+            "title": "Budgeting Website launch",
+            "industry": "Financial Services",
+            "desc": "Developed a modern, responsive website that increased lead generation by 38% and reduced bounce rate by 25%."
+          },
+          "3": {
+            "title": "Iraqi Sweets",
+            "industry": "Baking Goods",
+            "desc": "Created a conversion-focused landing website that helped the client increase their customers count by 52% within the first month."
+          }
+        }
+      },
+      "5": {
+        "title": "Frequently Asked Questions",
+        "desc": "Common questions about our website development process and services.",
+        "tab": {
+          "1": "General",
+          "2": "Technical",
+          "3": "Pricing"
+        },
+        "QA": {
+          "1": {
+            "Q": "How long does it take to develop a website?",
+            "A": "The timeline varies depending on the complexity of the project. A simple website can be completed in 4-6 weeks, while more complex projects may take 8-12 weeks or longer. We'll provide a detailed timeline during the discovery and planning phase."
+          },
+          "2": {
+            "Q": "Will I be able to update the website myself?",
+            "A": "Yes, we build websites with user-friendly content management systems that allow you to easily update content, add pages, and make basic design changes without technical knowledge. We also provide training to ensure you're comfortable managing your site."
+          },
+          "3": {
+            "Q": "Do you provide ongoing maintenance and support?",
+            "A": "Yes, we offer various maintenance packages to keep your website secure, up-to-date, and performing optimally. These packages include regular updates, security monitoring, backups, and technical support."
+          },
+          "4": {
+            "Q": "Will my website be mobile-friendly?",
+            "A": "Absolutely. All our websites are built with responsive design, ensuring they look and function perfectly on all devices including desktops, tablets, and smartphones. This is essential for both user experience and search engine rankings."
+          },
+          "5": {
+            "Q": "What technologies do you use for website development?",
+            "A": "We use a range of modern technologies depending on your specific needs. For web applications and more complex sites, we use React, Next.js, and other modern frameworks. The choice of technology is based on your requirements, budget, and long-term goals."
+          },
+          "6": {
+            "Q": "Do you optimize websites for search engines?",
+            "A": "Yes, SEO best practices are integrated into our development process. We ensure proper site structure, optimized code, fast loading speeds, mobile responsiveness, and other technical SEO factors. For more comprehensive SEO services, we offer dedicated SEO packages."
+          },
+          "7": {
+            "Q": "Can you integrate third-party tools and services?",
+            "A": "Absolutely. We regularly integrate various third-party tools and services such as CRM systems, payment gateways, marketing automation platforms, analytics tools, and more. We ensure seamless integration and proper data flow between your website and external systems."
+          },
+          "8": {
+            "Q": "How do you ensure website security?",
+            "A": "We implement multiple security measures including secure coding practices, regular updates, SSL certificates, firewall protection, and security plugins. For e-commerce sites and applications handling sensitive data, we implement additional security layers and ensure compliance with relevant regulations."
+          },
+          "9": {
+            "Q": "How much does a website cost?",
+            "A": "Website costs vary depending on complexity, features, and requirements. Small business websites typically range from $899 - $3,500, while more complex sites with custom functionality range from $3500 - $9,000+. We provide detailed quotes after understanding your specific needs."
+          },
+          "10": {
+            "Q": "Do you offer payment plans?",
+            "A": "Yes, we typically structure payments in milestones throughout the project. A common breakdown is 40% upfront, 30% at the design approval stage, and 30% upon project completion. For larger projects, we can create custom payment schedules."
+          },
+          "11": {
+            "Q": "What ongoing costs should I expect?",
+            "A": "Ongoing costs typically include domain registration ($10-$20/year), hosting ($20-$100/month depending on traffic and requirements), and optional maintenance packages ($100-$500/month based on the level of support needed)."
+          },
+          "12": {
+            "Q": "Do you provide cost estimates before starting a project?",
+            "A": "Yes, we provide detailed proposals and cost estimates after our initial consultation. Our proposals outline all deliverables, timelines, and costs, so you know exactly what to expect before committing to the project."
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Start Your Website Project?",
+      "desc": "Contact us today for a free consultation and discover how we can help you create a website that drives real business results."
+    }
+  },
+  "mobileApp": {
+    "badge": {
+      "1": "MOBILE APP DEVELOPMENT",
+      "2": "APP SOLUTIONS",
+      "3": "OUR EXPERTISE",
+      "4": "OUR PROCESS",
+      "5": "FAQ"
+    },
+    "title": {
+      "1": "Custom Mobile Apps",
+      "2": "For iOS & Android"
+    },
+    "desc": "We design and build innovative, high-performance mobile applications that engage users, solve real problems, and help your business grow in the mobile-first world.",
+    "discussBtn": "Discuss Your App Idea",
+    "workBtn": "View Our Work",
+    "sections": {
+      "1": {
+        "title": "Mobile App Development Solutions",
+        "desc": "We offer a range of app development approaches to meet your specific needs, budget, and timeline.",
+        "types": {
+          "techLabel": "Technologies:",
+          "benefitLabel": "Benefits:",
+          "1": {
+            "title": "Native Apps",
+            "desc": "Built specifically for iOS or Android platforms, offering the best performance and access to all device features.",
+            "benefits": {
+              "1": "Optimal performance",
+              "2": "Full access to device features",
+              "3": "Superior user experience",
+              "4": "Better store visibility"
+            }
+          },
+          "2": {
+            "title": "Cross-Platform Apps",
+            "desc": "Developed once and deployed on multiple platforms, reducing development time and costs.",
+            "benefits": {
+              "1": "Cost-effective",
+              "2": "Faster development",
+              "3": "Easier maintenance",
+              "4": "Consistent experience across platforms"
+            }
+          },
+          "3": {
+            "title": "Progressive Web Apps",
+            "desc": "Web applications that offer app-like experiences, accessible directly through web browsers without installation.",
+            "benefits": {
+              "1": "No installation required",
+              "2": "Works offline",
+              "3": "Automatic updates",
+              "4": "Lower development costs"
+            }
+          }
+        }
+      },
+      "2": {
+        "title": "What Sets our Mobile App Development Apart",
+        "desc": "We combine technical excellence with creative design to deliver mobile apps that users love and businesses rely on.",
+        "card": {
+          "1": {
+            "title": "User-Centered Design",
+            "desc": "We create intuitive, engaging interfaces based on deep user research and iterative testing to ensure your app is a joy to use."
+          },
+          "2": {
+            "title": "High Performance",
+            "desc": "Our apps are optimized for speed, responsiveness, and efficient resource usage, even under demanding conditions."
+          },
+          "3": {
+            "title": "Cross-Platform Expertise",
+            "desc": "We develop for both iOS and Android, ensuring consistent experiences across all devices while leveraging platform-specific features."
+          },
+          "4": {
+            "title": "Advanced Functionality",
+            "desc": "From location services to payment processing, we implement complex features that make your app powerful and distinctive."
+          },
+          "5": {
+            "title": "Security & Compliance",
+            "desc": "We build with security-first principles and ensure compliance with GDPR, CCPA, and other relevant regulations."
+          },
+          "6": {
+            "title": "Scalable Architecture",
+            "desc": "Our apps are built on flexible, scalable architectures that can grow with your user base and evolving requirements."
+          }
+        }
+      },
+      "3": {
+        "title": "Mobile App Development Process",
+        "desc": "Our structured approach ensures a smooth development journey from concept to launch and beyond.",
+        "steps": {
+          "1": {
+            "title": "Discovery & Strategy",
+            "desc": "We start by understanding your business objectives, target users, and market requirements to create a comprehensive app strategy."
+          },
+          "2": {
+            "title": "UX/UI Design",
+            "desc": "Our designers create intuitive, user-friendly interfaces with engaging visuals that align with your brand identity."
+          },
+          "3": {
+            "title": "Development",
+            "desc": "Our developers build your app using the most appropriate technologies, ensuring code quality and optimal performance."
+          },
+          "4": {
+            "title": "Testing & QA",
+            "desc": "We conduct rigorous testing across devices and platforms to ensure functionality, performance, and security."
+          },
+          "5": {
+            "title": "Deployment",
+            "desc": "We handle the app store submission process and ensure your app meets all requirements for iOS and Android platforms."
+          },
+          "6": {
+            "title": "Post-Launch Support",
+            "desc": "We provide ongoing maintenance, updates, and support to keep your app running smoothly and up-to-date."
+          }
+        }
+      },
+      "4": {
+        "title": "Frequently Asked Questions",
+        "desc": "Common questions about our mobile app development process and services.",
+        "tab": {
+          "1": "General",
+          "2": "Technical",
+          "3": "Pricing"
+        },
+        "QA": {
+          "1": {
+            "Q": "How long does it take to develop a mobile app?",
+            "A": "The timeline varies based on complexity and features. Simple apps can take 3-4 months, while complex apps may require 6-9 months from concept to launch. We'll provide a detailed timeline during the discovery phase."
+          },
+          "2": {
+            "Q": "Should I develop for iOS, Android, or both?",
+            "A": "This depends on your target audience and business goals. If your audience primarily uses one platform, starting there makes sense. However, most businesses benefit from developing for both platforms to maximize reach, which can be done efficiently with cross-platform development."
+          },
+          "3": {
+            "Q": "How do you ensure my app will be successful?",
+            "A": "Success starts with thorough research and planning. We conduct market analysis, define clear user personas, and focus on solving real user problems. We also implement analytics to track key metrics and make data-driven improvements post-launch."
+          },
+          "4": {
+            "Q": "What ongoing support do you provide after launch?",
+            "A": "We offer comprehensive maintenance packages including bug fixes, performance monitoring, compatibility updates for new OS versions, security patches, and feature enhancements. We recommend a maintenance plan to keep your app secure, stable, and relevant."
+          },
+          "5": {
+            "Q": "Native vs. cross-platform: which is better for my app?",
+            "A": "Native development offers optimal performance and access to all platform features, while cross-platform development is more cost-effective and faster to market. The choice depends on your app's requirements, budget, and timeline. We recommend native for performance-critical apps or those needing advanced device features, and cross-platform for most business apps with standard functionality."
+          },
+          "6": {
+            "Q": "How do you handle app store approvals?",
+            "A": "We have extensive experience with both Apple App Store and Google Play Store guidelines. We incorporate these requirements throughout the development process and handle the entire submission process, including preparing all required materials, responding to review questions, and making any necessary adjustments to ensure approval."
+          },
+          "7": {
+            "Q": "Can you integrate my app with existing systems?",
+            "A": "Yes, we specialize in integrating mobile apps with existing systems such as CRMs, ERPs, payment processors, and custom backends. We use secure APIs to ensure seamless data flow between your app and other business systems."
+          },
+          "8": {
+            "Q": "How do you address app security?",
+            "A": "Security is built into every stage of our development process. We implement encryption for data storage and transmission, secure authentication methods, input validation, and protection against common vulnerabilities. For apps handling sensitive data, we conduct security audits and penetration testing."
+          },
+          "9": {
+            "Q": "How much does it cost to develop a mobile app?",
+            "A": "App development costs vary widely based on complexity, features, and platforms. Simple apps typically range from $15,000-$35,000, medium-complexity apps from $35,000-$60,000, and complex apps can exceed $100,000. We provide detailed estimates after understanding your specific requirements."
+          },
+          "10": {
+            "Q": "What factors affect the cost of app development?",
+            "A": "Key factors include: platforms (iOS, Android, or both), complexity of features, backend requirements, third-party integrations, design complexity, user authentication needs, and whether you need a custom CMS or admin panel. Additional factors include analytics implementation and security requirements."
+          },
+          "11": {
+            "Q": "Do you offer payment plans?",
+            "A": "Yes, we typically structure payments in milestones throughout the project. A common approach is 30% upfront, 30% at design approval, 30% at development completion, and 10% upon final delivery and approval. For larger projects, we can create more granular payment schedules."
+          },
+          "12": {
+            "Q": "What ongoing costs should I expect?",
+            "A": "Ongoing costs typically include app store fees ($99/year for Apple, $25 one-time for Google), server/hosting costs ($50-500/month depending on usage), maintenance and updates (typically 15-20% of initial development cost annually), and possible third-party service fees for integrations."
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Build Your Mobile App?",
+      "desc": "Contact us today for a free consultation and discover how we can help you create a mobile app that engages users and drives business growth."
+    }
+  },
+  "UI": {
+    "badge": {
+      "1": "UI/UX DESIGN",
+      "2": "OUR SERVICES",
+      "3": "OUR WORK",
+      "4": "OUR PROCESS",
+      "5": "CLIENT FEEDBACK",
+      "6": "PRICING",
+      "7": "FAQ"
+    },
+    "title": {
+      "1": "User-Focused Design",
+      "2": "That Drives Results"
+    },
+    "desc": "We create intuitive, engaging user experiences that enhance brand perception, increase conversion rates, and simplify complex interactions.",
+    "consultBtn": "Get a Free Consultation",
+    "workBtn": "View Our Work",
+    "viewAllBtn": "View All Projects",
+    "sections": {
+      "1": {
+        "title": "Comprehensive UI/UX Design Services",
+        "desc": "We offer end-to-end design solutions that transform complex challenges into seamless user experiences.",
+        "offerings": {
+          "1": {
+            "title": "User Research",
+            "desc": "We conduct comprehensive user research to understand your target audience's needs, behaviors, and pain points.",
+            "features": {
+              "1": "Persona Development",
+              "2": "User Interviews",
+              "3": "Competitive Analysis",
+              "4": "User Journey Mapping"
+            }
+          },
+          "2": {
+            "title": "Interface Design",
+            "desc": "We create beautiful, intuitive interfaces that balance aesthetics with functionality to enhance user experience.",
+            "features": {
+              "1": "Wireframing",
+              "2": "Visual Design",
+              "3": "Interactive Prototyping",
+              "4": "Design Systems"
+            }
+          },
+          "3": {
+            "title": "Usability Testing",
+            "desc": "We validate designs through rigorous testing to ensure they meet user needs and business objectives.",
+            "features": {
+              "1": "Heuristic Evaluation",
+              "2": "A/B Testing",
+              "3": "User Testing Sessions",
+              "4": "Analytics Integration"
+            }
+          },
+          "4": {
+            "title": "Design Systems",
+            "desc": "We develop comprehensive design systems that ensure consistency while enabling scalability across all platforms.",
+            "features": {
+              "1": "Component Libraries",
+              "2": "Style Guides",
+              "3": "Documentation",
+              "4": "Implementation Support"
+            }
+          }
+        }
+      },
+      "2": {
+        "title": "UI/UX Design Portfolio",
+        "desc": "Browse our recent design projects spanning various industries and platforms.",
+        "projects": {
+          "1": {
+            "title": "Financial App Redesign",
+            "category": "Mobile App"
+          },
+          "2": {
+            "title": "E-commerce Website",
+            "category": "Web Design"
+          },
+          "3": {
+            "title": "Healthcare Dashboard",
+            "category": "Dashboard"
+          },
+          "4": {
+            "title": "Fitness Tracking App",
+            "category": "Mobile App"
+          }
+        }
+      },
+      "3": {
+        "title": "Our Design Process",
+        "desc": "We follow a systematic approach to ensure every design solution meets both user needs and business objectives.",
+        "process": {
+          "1": {
+            "title": "Discovery",
+            "desc": "We analyze your business goals, target audience, and current pain points to define clear objectives."
+          },
+          "2": {
+            "title": "Research",
+            "desc": "We conduct user interviews, competitive analysis, and create user personas to guide our design decisions."
+          },
+          "3": {
+            "title": "Design",
+            "desc": "We create wireframes, interactive prototypes, and visual designs that align with your brand and user needs."
+          },
+          "4": {
+            "title": "Test & Iterate",
+            "desc": "We validate designs through usability testing and refine based on real user feedback."
+          },
+          "5": {
+            "title": "Deliver",
+            "desc": "We provide final assets, specifications, and implementation support to bring the design to life."
+          }
+        }
+
+      },
+      "4": {
+        "title": "What Our Clients Say",
+        "desc": "Hear from businesses who have transformed their digital presence with our UI/UX design services.",
+        "quotes": {
+          "1": {
+            "quote": "The redesign completely transformed our user engagement metrics. Conversion rates increased by 40% within the first month.",
+            "author": "Sarah Johnson",
+            "authDesc": "TechStart Solutions"
+          },
+          "2": {
+            "quote": "Their user research uncovered pain points we had overlooked for years. The resulting interface designs have significantly improved customer satisfaction.",
+            "author": "Michael Chen",
+            "authDesc": "Global Innovations"
+          },
+          "3": {
+            "quote": "Working with this team was seamless. They translated our complex requirements into an intuitive design that our users love.",
+            "author": "Emma Rodriguez",
+            "authDesc": "HealthPlus"
+          }
+        }
+      },
+      "5": {
+        "title": "UI/UX Design Packages",
+        "desc": "Flexible options designed to meet the needs of businesses at every stage of growth.",
+        "package": {
+          "startBtn": "Get Started",
+          "startLabel": "starting",
+          "whatIncluded": "What's Included:",
+          "1": {
+            "title": "Essential",
+            "desc": "Perfect for startups and small businesses looking to improve their digital presence.",
+            "features": {
+              "1": "User Research & Personas",
+              "2": "Wireframing",
+              "3": "Basic UI Design",
+              "4": "Limited Revisions",
+              "5": "Basic Design Documentation"
+            }
+          },
+          "2": {
+            "title": "Professional",
+            "desc": "Comprehensive solution for established businesses seeking a complete design overhaul.",
+            "features": {
+              "1": "Everything in Essential",
+              "2": "In-depth User Research",
+              "3": "Interactive Prototyping",
+              "4": "Advanced UI/UX Design",
+              "5": "Usability Testing",
+              "6": "Design System Creation",
+              "7": "Extended Revisions"
+            }
+          },
+          "3": {
+            "title": "Enterprise",
+            "desc": "Tailored solution for large organizations with complex requirements and multiple platforms.",
+            "features": {
+              "1": "Tailored solution for large organizations with complex requirements and multiple platforms.",
+              "2": "Everything in Professional",
+              "3": "Multi-platform Design",
+              "4": "Advanced Design System",
+              "5": "Extensive Usability Testing",
+              "6": "Analytics Integration",
+              "7": "Long-term Support",
+              "8": "Training & Workshops"
+            }
+          }
+        }
+      },
+      "6": {
+        "title": "Frequently Asked Questions",
+        "desc": "Common questions about our mobile app development process and services.",
+        "tab": {
+          "1": "Process",
+          "2": "Pricing",
+          "3": "Deliverables",
+          "4": "Timeline"
+        },
+        "QA": {
+          "1": {
+            "Q": "How do you approach the design process?",
+            "A": "Our design process is collaborative and iterative. We begin with discovery and research to understand your business and users. We then move into wireframing and prototyping, followed by visual design, testing, and implementation support."
+          },
+          "2": {
+            "Q": "Do you conduct user testing?",
+            "A": "Yes, user testing is an integral part of our process. We validate designs with real users to ensure they meet user needs and expectations. This helps identify and address issues early in the process."
+          },
+          "3": {
+            "Q": "How do you ensure designs align with our brand?",
+            "A": "We begin by conducting a thorough review of your existing brand guidelines and assets. Throughout the design process, we ensure consistency with your brand while enhancing the user experience."
+          },
+          "4": {
+            "Q": "How do you determine pricing for UI/UX projects?",
+            "A": "Our pricing is based on project scope, complexity, timeline, and deliverables. We offer structured packages as starting points, but can customize pricing based on your specific needs."
+          },
+          "5": {
+            "Q": "Do you offer ongoing design support after project completion?",
+            "A": "Yes, we offer maintenance and support packages to ensure your design continues to evolve with your business needs and user feedback."
+          },
+          "6": {
+            "Q": "Is there a deposit required to start a project?",
+            "A": "Yes, we typically require a 50% deposit to begin work, with the remaining balance due upon project completion or according to agreed-upon milestones."
+          },
+          "7": {
+            "Q": "What deliverables can I expect from a UI/UX project?",
+            "A": "Depending on the project scope, deliverables may include user research reports, user personas, journey maps, wireframes, prototypes, UI design files, design systems, and implementation guidelines."
+          },
+          "8": {
+            "Q": "Do you provide development-ready files?",
+            "A": "Yes, we provide design specifications, assets, and documentation that developers need to implement the designs accurately. We can also work directly with your development team to ensure smooth implementation."
+          },
+          "9": {
+            "Q": "Do you create design systems?",
+            "A": "Yes, we specialize in creating comprehensive design systems that ensure consistency and scalability across your product. This includes component libraries, style guides, and documentation."
+          },
+          "10": {
+            "Q": "How long does a typical UI/UX design project take?",
+            "A": "Project timelines vary based on scope and complexity. A simple website redesign might take 4-6 weeks, while a complex application could take 3-6 months. We'll provide a detailed timeline during the proposal phase."
+          },
+          "11": {
+            "Q": "Can you work on urgent projects with tight deadlines?",
+            "A": "We can accommodate rush projects depending on our current workload. Rush fees may apply for expedited timelines to ensure we can dedicate the necessary resources."
+          },
+          "12": {
+            "Q": "How do you handle project delays?",
+            "A": "We build buffer time into our project plans to account for revisions and unforeseen challenges. We communicate proactively if delays occur and work collaboratively to adjust timelines as needed."
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Transform Your User Experience?",
+      "desc": "Let's discuss how our UI/UX design services can help your business achieve its goals through exceptional user experiences."
+    }
+  },
+  "Ecom": {
+    "badge": {
+      "1": "E-COMMERCE SOLUTIONS",
+      "2": "FEATURES",
+      "3": "PACKAGES",
+      "4": "OUR PROCESS",
+      "5": "FAQ"
+    },
+    "title": {
+      "1": "Turn Your Products Into",
+      "2": "Online Success"
+    },
+    "desc": "We develop powerful, customized e-commerce websites that help you sell effectively online. We build the digital infrastructure you need while you focus on your products and customers.",
+    "startBtn": "Get Started",
+    "packageBtn": "View Packages",
+    "sections": {
+      "1": {
+        "title": "Why Choose Our E-commerce Solutions?",
+        "cards": {
+          "1": {
+            "title": "Average increase in conversion rates"
+          },
+          "2": {
+            "title": "Mobile traffic optimization"
+          },
+          "3": {
+            "title": "Uptime for your online store"
+          },
+          "4": {
+            "title": "Support and maintenance"
+          }
+        }
+      },
+      "2": {
+        "title": "E-commerce Website Features",
+        "desc": "We can implement a wide range of features to create a powerful online selling platform for your business.",
+        "features": {
+          "1": {
+            "title": "Product Management",
+            "desc": "Easily manage your products, categories, variations, and inventory levels."
+          },
+          "2": {
+            "title": "Secure Payments",
+            "desc": "Multiple payment gateways with secure checkout process and fraud protection."
+          },
+          "3": {
+            "title": "Shipping Options",
+            "desc": "Flexible shipping rules, real-time rates, and order tracking integration."
+          },
+          "4": {
+            "title": "Customer Accounts",
+            "desc": "User registration, order history, wishlists, and personalized experiences."
+          },
+          "5": {
+            "title": "Mobile Optimization",
+            "desc": "Responsive design ensuring perfect shopping experience on all devices."
+          },
+          "6": {
+            "title": "Analytics & Reporting",
+            "desc": "Comprehensive insights into sales, customers, and product performance."
+          },
+          "7": {
+            "title": "Marketing Tools",
+            "desc": "Discounts, coupons, abandoned cart recovery, and email marketing integration."
+          },
+          "8": {
+            "title": "Advanced Customization",
+            "desc": "Tailor your store's functionality and design to match your brand and needs."
+          }
+        }
+      },
+      "3": {
+        "title": "Choose Your E-commerce Package",
+        "desc": "We offer tailored packages to fit businesses at every stage of growth.",
+        "packages": {
+          "badge": "MOST POPULAR",
+          "payType": "one-time",
+          "includedLabel": "What's Included:",
+          "1": {
+            "title": "Basic E-commerce",
+            "desc": "Essential e-commerce functionality for businesses starting their online presence",
+            "features": {
+              "1": "Custom responsive design",
+              "2": "Product catalog setup",
+              "3": "Payment gateway integration",
+              "4": "Basic product filtering",
+              "5": "Contact form & essential pages",
+              "6": "On-page SEO optimization",
+              "7": "Mobile-friendly checkout",
+              "8": "2 hours of training"
+            }
+          },
+          "2": {
+            "title": "Advanced E-commerce",
+            "desc": "Enhanced features and functionality for growing online businesses",
+            "features": {
+              "1": "All Basic features",
+              "2": "Advanced product filtering & search",
+              "3": "Customer account creation",
+              "4": "Wishlist functionality",
+              "5": "Product reviews & ratings",
+              "6": "Multi-currency support",
+              "7": "Email marketing integration",
+              "8": "Analytics implementation",
+              "9": "4 hours of training"
+            }
+          },
+          "3": {
+            "title":"Premium E-commerce",
+            "desc": "Comprehensive solution with advanced features for established businesses",
+            "features": {
+              "1": "All Advanced features",
+              "2": "Custom functionality development",
+              "3": "Multiple payment gateways",
+              "4": "Advanced inventory management",
+              "5": "Third-party system integrations",
+              "6":"Multi-language support",
+              "7": "Custom reporting dashboards",
+              "8": "Advanced security features",
+              "9": "Comprehensive training program"
+            }
+          }
+        }
+      },
+      "4": {
+        "title": "How We Build Your E-commerce Website",
+        "desc": "Our proven development process ensures your e-commerce website is built right, on time, and ready to drive sales.",
+        "process": {
+          "1": {
+            "title": "Discovery & Planning",
+            "desc": "We analyze your business needs, target audience, and competitors to create a strategic roadmap for your e-commerce store."
+          },
+          "2": {
+            "title": "Design & User Experience",
+            "desc": "Our designers create an engaging, conversion-focused user experience that reflects your brand and appeals to your customers."
+          },
+          "3": {
+            "title": "Development & Configuration",
+            "desc": "We build your store with clean code, implement all features, and configure products, payment gateways, and shipping options."
+          },
+          "4": {
+            "title": "Testing & Quality Assurance",
+            "desc": "We rigorously test your store across devices and browsers to ensure functionality, performance, and security."
+          },
+          "5": {
+            "title": "Launch & Training",
+            "desc": "We deploy your store and provide comprehensive training so you can confidently manage your products, orders, and customers."
+          },
+          "6": {
+            "title": "Support & Growth",
+            "desc": "We provide ongoing support and strategic guidance to help your e-commerce business grow and evolve."
+          }
+        }
+      },
+      "5": {
+        "title": "Frequently Asked Questions",
+        "desc": "Common questions about our e-commerce solutions and services.",
+        "tab": {
+          "1": "Process",
+          "2": "Pricing",
+          "3": "Deliverables",
+          "4": "Timeline"
+        },
+        "QA": {
+          "1": {
+            "Q": "How long does it take to build an e-commerce website?",
+            "A": "The timeline depends on the complexity of your project. A basic e-commerce store can be up and running in 3-4 weeks, while more complex projects may take 8-12 weeks. During our initial consultation, we'll provide a detailed timeline based on your specific requirements."
+          },
+          "2": {
+            "Q": "Can you migrate my existing online store to a new platform?",
+            "A": "Yes, we provide comprehensive migration services. We can transfer your product catalog, customer accounts, and order history from your current platform to a new Shopify, WooCommerce, or custom solution. Our process ensures minimal disruption and preserves your SEO value during the transition."
+          },
+          "3": {
+            "Q": "Do you provide training on how to manage my e-commerce website?",
+            "A": "Absolutely! We include comprehensive training sessions as part of our packages. We'll teach you and your team how to add/edit products, manage inventory, process orders, update content, and use all the features of your e-commerce platform. We also provide detailed documentation and recorded training sessions for future reference."
+          },
+          "4": {
+            "Q": "What payment processors can you integrate with my website?",
+            "A": "We can integrate your website with all major payment processors including Stripe, PayPal, Square, Authorize.net, Braintree, and many others. We can also implement region-specific payment methods and multiple payment options to maximize your conversion rates and provide convenience for your customers."
+          },
+          "5": {
+            "Q": "Can you help with SEO for my e-commerce store?",
+            "A": "Yes, we build your store with SEO best practices from the ground up. This includes optimized site structure, proper metadata, clean code, mobile optimization, and fast loading speeds. We also offer ongoing SEO services to help improve your visibility and rankings over time."
+          },
+          "6": {
+            "Q": "Do you offer maintenance and support after launch?",
+            "A": "Yes, we provide ongoing maintenance and support packages to keep your store running smoothly. These include regular updates, security monitoring, performance optimization, and technical support. We recommend a maintenance plan to protect your investment and ensure your store remains secure and up-to-date."
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Create Your Custom E-commerce Website?",
+      "desc": "Contact us today for a free consultation. We'll help you choose the right features and development approach to create an e-commerce website that drives sales and growth for your business.",
+      "getBtn": "Get Your E-commerce Website"
+    }
+  },
+  "SEO": {
+    "badge": {
+      "1": "SEO OPTIMIZATION",
+      "2": "OUR SERVICES",
+      "3": "RESULTS",
+      "4": "OUR APPROACH",
+      "5": "BENEFITS",
+      "6": "PRICING"
+    },
+    "title": {
+      "1": "Drive Organic Traffic &",
+      "2": "Boost Your Rankings"
+    },
+    "desc": "Data-driven SEO strategies that increase visibility, attract qualified leads, and help your business dominate search engine results.",
+    "auditBtn": "Get a Free SEO Audit",
+    "packageBtn": "View SEO Packages",
+    "sections": {
+      "1": {
+        "title": "Comprehensive SEO Solutions",
+        "desc": "Our holistic approach to search engine optimization covers all aspects needed to improve your website's visibility in search results.",
+        "services": {
+          "1": {
+            "title": "Keyword Research",
+            "desc": "Comprehensive keyword research to identify high-value search terms that your target audience is using.",
+            "features": {
+              "1": "Competitor Keyword Analysis",
+              "2": "Search Volume Assessment",
+              "3": "Long-tail Keyword Discovery",
+              "4": "Keyword Difficulty Scoring"
+            }
+          },
+          "2": {
+            "title": "On-Page SEO",
+            "desc": "Optimization of individual pages to rank higher and earn more relevant traffic in search engines.",
+            "features": {
+              "1": "Title & Meta Optimization",
+              "2": "Content Structure Improvement",
+              "3": "Internal Linking Strategy",
+              "4": "Image Optimization"
+            }
+          },
+          "3": {
+            "title": "Technical SEO",
+            "desc": "Addressing technical aspects of your website to improve ranking in search engines.",
+            "features": {
+              "1": "Site Speed Optimization",
+              "2": "Mobile Responsiveness",
+              "3": "Schema Markup Implementation",
+              "4": "Crawl Error Resolution"
+            }
+          },
+          "4": {
+            "title": "Link Building",
+            "desc": "Strategic acquisition of backlinks from authoritative websites to boost your domain authority.",
+            "features": {
+              "1": "Quality Backlink Acquisition",
+              "2": "Broken Link Recovery",
+              "3": "Guest Posting Strategy",
+              "4": "Competitor Backlink Analysis"
+            }
+          }
+        }
+      },
+      "2": {
+        "title": "Proven Performance",
+        "desc": "Our data-driven approach consistently delivers measurable results for our clients.",
+        "metrics": {
+          "1": {
+            "title": "Average Traffic Increase",
+            "desc": "Our clients typically see a 45% increase in organic traffic within 6 months."
+          },
+          "2": {
+            "title": "Keyword Ranking Improvement",
+            "desc": "85% of target keywords showing significant ranking improvements within the first 3 months."
+          },
+          "3": {
+            "title": "Conversion Rate Lift",
+            "desc": "On average, our SEO services help improve conversion rates by 32% through qualified traffic."
+          },
+          "4": {
+            "title": "Local Search Visibility",
+            "desc": "Local businesses see a 65% increase in Google Map Pack appearances for relevant searches."
+          }
+        }
+      },
+      "3": {
+        "title": "Our SEO Process",
+        "desc": "We follow a systematic approach to ensure your SEO campaign delivers consistent results.",
+        "approach": {
+          "1": {
+            "title": "SEO Audit",
+            "desc": "We conduct a thorough analysis of your current SEO performance, identifying issues and opportunities."
+          },
+          "2": {
+            "title": "Strategy Development",
+            "desc": "We create a customized SEO strategy based on your business goals, target audience, and competitive landscape."
+          },
+          "3": {
+            "title": "On-Page Optimization",
+            "desc": "We optimize your website's content, structure, and technical elements to improve search engine rankings."
+          },
+          "4": {
+            "title": "Off-Page Strategy",
+            "desc": "We build high-quality backlinks and enhance your online presence across relevant platforms."
+          },
+          "5": {
+            "title": "Analytics & Reporting",
+            "desc": "We track key metrics and provide detailed reports on your SEO performance and ROI."
+          }
+        }
+      },
+      "4": {
+        "title": "Why Invest in SEO?",
+        "desc": "Search engine optimization offers numerous advantages for businesses looking to grow their online presence.",
+        "cards": {
+          "1": {
+            "title": "Increased Organic Traffic",
+            "desc": "Drive more qualified visitors to your website without paying for each click."
+          },
+          "2": {
+            "title": "Enhanced Credibility",
+            "desc": "Higher search rankings build trust and credibility with your target audience."
+          },
+          "3": {
+            "title": "Better User Experience",
+            "desc": "SEO improvements also enhance the usability and user experience of your website."
+          },
+          "4": {
+            "title": "Cost-Effective Marketing",
+            "desc": "SEO provides one of the best ROIs compared to other digital marketing channels."
+          },
+          "5": {
+            "title": "Measurable Results",
+            "desc": "Track rankings, traffic, and conversions to see the direct impact on your business."
+          },
+          "6": {
+            "title": "Long-Term Strategy",
+            "desc": "Unlike paid advertising, SEO benefits compound over time for lasting results."
+          }
+        }
+      },
+      "5": {
+        "title": "SEO Packages",
+        "desc": "Flexible SEO solutions designed to meet the needs of businesses at every stage of growth.",
+        "packages": {
+          "badge": "Most Popular",
+          "includedLabel": "What's Included:",
+          "startBtn": "Get Started",
+          "1": {
+            "title": "Starter SEO",
+            "desc": "Essential SEO services for small businesses looking to improve their local search presence.",
+            "period": "per month",
+            "features": {
+              "1": "Initial SEO Audit",
+              "2": "Keyword Research (up to 20 keywords)",
+              "3": "On-Page Optimization (5 pages)",
+              "4": "Basic Technical SEO",
+              "5": "Monthly Reporting",
+              "6": "Google Business Profile Optimization",
+              "7": "3-Month Minimum Commitment"
+            }
+          },
+          "2": {
+            "title": "Professional SEO",
+            "desc": "Comprehensive SEO solution for growing businesses competing in broader markets.",
+            "period": "per month",
+            "features": {
+              "1": "In-depth SEO Audit",
+              "2": "Advanced Keyword Research (up to 50 keywords)",
+              "3": "On-Page Optimization (15 pages)",
+              "4": "Technical SEO Implementation",
+              "5": "Content Optimization Strategy",
+              "6": "Monthly Link Building (5 quality links)",
+              "7": "Competitor Analysis",
+              "8": "Bi-weekly Reporting",
+              "9": "6-Month Minimum Commitment"
+            }
+          },
+          "3": {
+            "title": "Enterprise SEO",
+            "desc": "Strategic SEO partnership for large businesses with complex needs and competitive industries.",
+            "period": "per month",
+            "features": {
+              "1": "Comprehensive SEO Audit",
+              "2": "Extensive Keyword Research & Mapping",
+              "3": "Full Website Optimization",
+              "4": "Advanced Technical SEO",
+              "5": "Content Creation Strategy",
+              "6": "Aggressive Link Building Campaign",
+              "7": "International SEO (if applicable)",
+              "8": "E-commerce Optimization (if applicable)",
+              "9": "Weekly Reporting & Strategy Calls",
+              "10": "Dedicated SEO Manager",
+              "11": "12-Month Minimum Commitment"
+            }
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Improve Your Search Rankings?",
+      "desc": "Get a complimentary SEO audit and discover opportunities to improve your website's visibility in search engines.",
+      "reqBtn": "Request Your Free SEO Audit"
+    }
+  },
+  "Hosting": {
+    "badge": {
+      "1": "WEB HOSTING & MAINTENANCE",
+      "2": "OUR SERVICES",
+      "3": "BENEFITS",
+      "4": "TECHNOLOGY",
+      "5": "OUR PROCESS",
+      "6": "PRICING"
+    },
+    "title": {
+      "1": "Reliable Hosting",
+      "2": "& Expert Maintenance"
+    },
+    "desc": "Keep your website secure, fast, and always online with our professional hosting and maintenance services backed by 24/7 monitoring and support.",
+    "startBtn": "Get Started Today",
+    "plansBtn": "View Hosting Plans",
+    "sections": {
+      "1": {
+        "title": "Comprehensive Hosting Solutions",
+        "desc": "Beyond just server space, we provide a full suite of services to keep your website performing at its best.",
+        "hostFeatures": {
+          "1": {
+            "title": "Managed Hosting",
+            "desc": "Fully managed hosting environment with expert monitoring and optimization for optimal performance.",
+            "features": {
+              "1": "24/7 Server Monitoring",
+              "2": "Performance Optimization",
+              "3": "Resource Management",
+              "4": "Scalable Infrastructure"
+            }
+          },
+          "2": {
+            "title": "Security Services",
+            "desc": "Comprehensive security measures to protect your website from threats and vulnerabilities.",
+            "features": {
+              "1": "Malware Scanning",
+              "2": "DDoS Protection",
+              "3": "SSL Certificates",
+              "4": "Firewall Configuration"
+            }
+          },
+          "3": {
+            "title": "Performance Monitoring",
+            "desc": "Continuous monitoring and optimization to ensure your website maintains peak performance.",
+            "features": {
+              "1": "Uptime Monitoring",
+              "2": "Page Speed Analysis",
+              "3": "Load Testing",
+              "4": "Performance Reports"
+            }
+          },
+          "4": {
+            "title": "Regular Backups",
+            "desc": "Automated backup systems ensuring your data is always safe and recoverable in case of emergencies.",
+            "features": {
+              "1": "Daily Automated Backups",
+              "2": "Secure Offsite Storage",
+              "3": "Quick Restoration",
+              "4": "Data Retention Policies"
+            }
+          }
+        }
+      },
+      "2": {
+        "title": "Why Choose Our Hosting",
+        "desc": "Experience the peace of mind that comes with professional, managed hosting solutions.",
+        "cards": {
+          "1": {
+            "title": "Superior Performance",
+            "desc": "Optimized server configurations and premium hardware deliver lightning-fast loading times for your visitors."
+          },
+          "2": {
+            "title": "Enhanced Security",
+            "desc": "Advanced security protocols and continuous monitoring protect your site from threats and vulnerabilities."
+          },
+          "3": {
+            "title": "Exceptional Uptime",
+            "desc": "Our robust infrastructure and proactive monitoring ensures your website stays online 99.9% of the time."
+          },
+          "4": {
+            "title": "Regular Updates",
+            "desc": "Automatic updates for your CMS, plugins, and server software keep your site secure and functioning smoothly."
+          },
+          "5": {
+            "title": "Seamless Scalability",
+            "desc": "Easily scale your resources as your business grows, without service interruptions or technical headaches."
+          },
+          "6": {
+            "title": "Data Protection",
+            "desc": "Automated backup systems ensure your valuable data is always protected and quickly recoverable."
+          }
+        }
+      },
+      "3": {
+        "title": "Our Technology Stack",
+        "desc": "We leverage industry-leading technologies to deliver reliable, secure, and high-performance hosting solutions.",
+        "stack": {
+          "1": {
+            "category": "Hosting Infrastructure"
+          },
+          "2": {
+            "category": "Content Delivery"
+          },
+          "3": {
+            "category": "Database Solutions"
+          },
+          "4": {
+            "category": "CMS Platforms"
+          }
+        }
+      },
+      "4": {
+        "title": "How We Maintain Your Website",
+        "desc": "Our systematic approach ensures your website remains secure, updated, and performing optimally.",
+        "cards": {
+          "stepLabel": "STEP",
+          "1": {
+            "title": "Server Monitoring",
+            "desc": "We continuously monitor your server for uptime, resource usage, and potential issues to ensure optimal performance."
+          },
+          "2": {
+            "title": "Regular Updates",
+            "desc": "We perform regular updates to your CMS, plugins, themes, and server software to maintain security and functionality."
+          },
+          "3": {
+            "title": "Security Scans",
+            "desc": "We conduct regular security scans to identify and remediate vulnerabilities before they can be exploited."
+          },
+          "4": {
+            "title": "Performance Testing",
+            "desc": "We regularly test your site's performance and make necessary optimizations to improve speed and user experience."
+          },
+          "5": {
+            "title": "Backup Management",
+            "desc": "We maintain regular backups of your site and database, ensuring your data is always protected and recoverable."
+          },
+          "6": {
+            "title": "Proactive Support",
+            "desc": "We address potential issues before they impact your site, and provide fast resolution when problems arise."
+          }
+        }
+      },
+      "5": {
+        "title": "Hosting & Maintenance Plans",
+        "desc": "Choose the hosting solution that best fits your business needs and budget.",
+        "packages": {
+          "badge": "Most Popular",
+          "includedLabel": "What's Included:",
+          "startBtn": "Get Started",
+          "1": {
+            "title": "Standard",
+            "desc": "Perfect for small business websites and blogs with moderate traffic.",
+            "period": "per month",
+            "features": {
+              "1": "Shared Hosting Environment",
+              "2": "5GB Storage",
+              "3": "50GB Monthly Bandwidth",
+              "4": "Weekly Backups",
+              "5": "SSL Certificate",
+              "6": "Basic Security Protection",
+              "7": "Email Support"
+            }
+          },
+          "2": {
+            "title": "Professional",
+            "desc": "Ideal for growing businesses, e-commerce sites, and high-traffic content sites.",
+            "period": "per month",
+            "features": {
+              "1": "VPS Hosting",
+              "2": "20GB SSD Storage",
+              "3": "Unlimited Bandwidth",
+              "4": "Daily Backups",
+              "5": "Premium SSL Certificate",
+              "6": "Advanced Security Protection",
+              "7": "CDN Integration",
+              "8": "Priority Support",
+              "9": "Monthly Performance Reports"
+            }
+          },
+          "3": {
+            "title": "Enterprise",
+            "desc": "Comprehensive solution for large businesses with complex requirements and high traffic volumes.",
+            "period": "per month",
+            "features": {
+              "1": "Dedicated Hosting",
+              "2": "100GB SSD Storage",
+              "3": "Unlimited Bandwidth",
+              "4": "Real-time Backups",
+              "5": "Extended Validation SSL",
+              "6": "Enterprise-grade Security",
+              "7": "Global CDN",
+              "8": "Load Balancing",
+              "9": "24/7 Dedicated Support",
+              "10": "Custom Infrastructure"
+            }
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready for Reliable Hosting?",
+      "desc": "Get in touch today to discuss your hosting needs and learn how our solutions can help your business maintain a secure, fast, and reliable online presence.",
+      "startBtn": "Get Started Today"
+    }
+  }
+},
+  "Portfolio" : {
+    "title" : "Our",
+    "title2" : "Portfolio",
+    "sub" : "Discover the full spectrum of our creations.",
+    "category" : {
+      "1" : "Web Development",
+      "2" : "Desktop Development",
+      "3" : "",
+      "4" : "",
+      "5" : "",
+      "6" : ""
+    },
+    "holder": "Project Image Placeholder",
+    "viewbtn": "View Project"
+  },
+  "Merch": {
+    "badge": {
+      "1": "OFFICIAL MERCHANDISE",
+      "2": "FEATURED COLLECTIONS",
+      "3": "OUR PRODUCTS",
+      "4": "LIMITED TIME OFFER",
+      "5": "CODE: CWA15"
+    },
+    "title": {
+      "1": "Wear Your",
+      "2": "Coding Passion"
+    },
+    "desc": "High-quality apparel for developers, designers, and tech enthusiasts. Made for those who build digital excellence.",
+    "shopBtn": "Shop Now",
+    "heading": {
+      "1": "Curated Collections",
+      "2": "Shop The Collection"
+    },
+    "collection": {
+      "1": {
+        "title": "Winter Collection",
+        "desc": "Stay warm and stylish with our winter coding apparel."
+      },
+      "2": {
+        "title": "Essential Collection",
+        "desc": "Must-have pieces for every developer's wardrobe."
+      },
+      "3": {
+        "title": "Limited Edition",
+        "desc": "Exclusive designs available for a limited time only."
+      }
+    },
+    "category": {
+      "searchPlaceHolder": "Search products...",
+      "1": "All",
+      "2": "Hoodie",
+      "3": "Shirt",
+      "4": "Hat",
+      "5": "Pants",
+      "6": "Other",
+      "sort": {
+        "title": "Sort By",
+        "option": {
+          "1": "Featured",
+          "2": "Price: Low to High",
+          "3": "Price: High to Low",
+          "4": "Alphabetical",
+          "5": "Newest"
+        }
+      }
+    },
+    "merchComp": {
+      "badge": {
+        "1": "BESTSELLER",
+        "2": "FEATURED"
+      },
+      "buyBtn": "Buy Now",
+      "wishlistLabel": "Add to Wishlist",
+      "colorLabel": "Colors:",
+      "sizeLabel": "Sizes:",
+      "soonLabel": "Coming Soon..."
+    },
+    "items": {
+      "1": {
+        "title": "Developer Hoodie",
+        "desc": "Stay warm while coding with our premium developer hoodie. Features a minimalist design with subtle code snippets on the sleeves.",
+        "category": "Hoodie",
+        "colors": {
+          "1": "Black",
+          "2": "Gray",
+          "3": "Navy",
+          "4": "White"
+        }
+      },
+      "2": {
+        "title": "Premium Code Hoodie",
+        "desc": "Our premium heavyweight hoodie with embroidered logo and code patterns. Includes hidden earbud channels in the hood.",
+        "category": "Hoodie",
+        "colors": {
+          "1": "Black",
+          "2": "Gray",
+          "3": "Navy",
+          "4": "White"
+        }
+      },
+      "3": {
+        "title": "Code Artist T-Shirt",
+        "desc": "Comfortable cotton t-shirt with our signature 'Code Artist' design on the front.",
+        "category": "Shirt",
+        "colors": {
+          "1": "Black",
+          "2": "White",
+          "3": "Red",
+          "4": "Blue",
+          "5": "Gray",
+          "6": "Light-Gray",
+          "7": "Navy"
+        }
+      },
+      "5": {
+        "title": "Developer Sweatshirt",
+        "desc": "Retro-inspired sweatshirt featuring vintage programming languages and syntax.",
+        "category": "Shirt",
+        "colors": {
+          "1": "Black",
+          "2": "Navy",
+          "3": "Gray",
+          "4": ""
+        }
+      },
+      "6": {
+        "title": "Premium Developer Sweatshirt",
+        "desc": "Premium sweatshirt with comfortable fabric and stylish developer-themed design.",
+        "category": "Shirt",
+        "colors": {
+          "1": "Black",
+          "2": "Navy",
+          "3": "Gray"
+        }
+      },
+      "7": {
+        "title": "Tech Beanie",
+        "desc": "Warm knitted beanie with a subtle embroidered code symbol. Perfect for winter coding.",
+        "category": "Hat",
+        "colors": {
+          "1": "Black"
+        }
+      },
+      "8": {
+        "title": "Cap",
+        "desc": "Wear your coding cap when going to meet ups while looking fresh and cool.",
+        "category": "Hat",
+        "colors": {
+          "1": "Black"
+        }
+      },
+      "9": {
+        "title": "CWA Mug",
+        "desc": "Drink from our mug to get inspired and become the best Tech Nerd you ever dreamed of!",
+        "category": "Other",
+        "colors": {
+          "1": "Black"
+        }
+      }
+    },
+    "features": {
+      "1": {
+        "title": "Premium Quality",
+        "desc": "All our merchandise is made with high-quality materials built to last through countless coding sessions."
+      },
+      "2": {
+        "title": "Unique Designs",
+        "desc": "Each piece features unique designs created by our in-house team of developer-artists."
+      },
+      "3": {
+        "title": "Free Shipping",
+        "desc": "Enjoy free shipping on all orders over $75. International shipping available to most countries."
+      }
+    },
+    "cta": {
+      "title": "Get 15% Off Your First Order",
+      "desc": "Enter the promotion code at checkout and receive a 15% discount code for your first merchandise purchase.",
+      "newsBtn": "Sign Up For Newsletter"
+    }
+  },
+  "Contact": {
+    "badge": "CONTACT US",
+    "statusMsg": {
+      "success": "Thank You for reaching out!",
+      "error": "There was an error submitting your message. Please try again."
+    },
+    "header": "Ready to Start Your Project?",
+    "desc": "Tell us about your project and we'll get back to you within 24 hours with a free consultation.",
+    "submitbtn": "Send Message",
+    "submitLoad": "Sending...",
+    "field": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Enter your full name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "your@email.com"
+      },
+      "service": {
+        "label": "Service Needed",
+        "placeholder": "Select a service",
+        "option": {
+          "1": "Website Development",
+          "2": "Mobile App Development",
+          "3": "UI/UX Design",
+          "4": "E-commerce Solutions",
+          "5": "SEO Optimization",
+          "6": "Web Hosting & Maintenance"
+        }
+      },
+      "details": {
+        "label": "Project Details",
+        "placeholder": "Tell us about your project requirements and goals..."
+      }
+    }
+  },
+  "Footer": {     
+    "compDesc": "We design and develop digital experiences that help businesses and individuals succeed online.",     
+    "rights": "Your Company. All rights reserved.",     
+    "customLink": "Github",     
+    "cwaMark": "Designed By",     
+    "nav": {       
+      "company": {         
+        "title": "Services",         
+        "links": {           
+          "1": "Website Development",           
+          "2": "Mobile App Development",           
+          "3": "UI/UX Design",           
+          "4": "E-commerce Solutions",           
+          "5": "SEO Optimization",           
+          "6": "Web Hosting"         
+        }       
+      },       
+      "resources": {         
+        "title": "Company",         
+        "links": {           
+          "1": "About",           
+          "2": "Portfolio",
+          "3": "Process",           
+          "4": "Contact"         
+        }       
+      },       
+      "contact": {         
+        "title": "Contact",         
+        "links": {           
+          "1": "unfold@codewithali.com",           
+          "2": "(408) 690-4009",           
+          "3": "Get a Quote"          
+        }       
+      },       
+      "legal": {         
+        "title": "Privacy",         
+        "links": {           
+          "1": "CodeWithAli. All rights reserved.",           
+          "2": "Privacy Policy",           
+          "3": "Terms of Service",           
+          "4": "Cookie Policy"         
+        }       
+      }     
+    }   
+  } 
+}

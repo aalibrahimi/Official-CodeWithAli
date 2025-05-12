@@ -1,0 +1,1872 @@
+{
+  "HomePage": {
+    "hero": {
+      "title": {
+        "part1": "Uw Digitale Visie",
+        "part2": "Tot Leven Brengen"
+      },
+      "description": "Wij ontwerpen en ontwikkelen prachtige websites en krachtige applicaties die uw merk verheffen en uw bedrijf laten groeien.",
+      "buttons": {
+        "startProject": "Start Uw Project",
+        "viewWork": "Bekijk Ons Werk",
+        "contactUs": "Neem Contact Op"
+      }
+    },
+    "clients": {
+      "title": "Vertrouwd door bedrijven in verschillende sectoren",
+      "industries": {
+        "business": "Bedrijfsleven",
+        "ecommerce": "E-commerce",
+        "education": "Onderwijs",
+        "healthcare": "Gezondheidszorg",
+        "realEstate": "Vastgoed", 
+        "technology": "Technologie"
+      }
+    },
+    "services": {
+      "badge": "ONZE DIENSTEN",
+      "title": "Expertoplossingen voor Uw Digitale Behoeften",
+      "description": "Van websites tot mobiele apps, wij creëren aangepaste digitale oplossingen die zijn afgestemd op uw bedrijfsdoelen en gebruikersbehoeften.",
+      "items": {
+        "1": {
+          "title": "Website Ontwikkeling",
+          "description": "Op maat ontworpen responsieve websites geoptimaliseerd voor prestaties en conversies"
+        },
+        "2": {
+          "title": "Mobiele App Ontwikkeling",
+          "description": "Native en cross-platform mobiele applicaties voor iOS en Android"
+        },
+        "3": {
+          "title": "UI/UX Ontwerp",
+          "description": "Gebruikersgerichte ontwerpen die betrokkenheid vergroten en interacties vereenvoudigen"
+        },
+        "4": {
+          "title": "E-commerce Oplossingen",
+          "description": "Volledig uitgeruste online winkels met veilige betalingsverwerking en voorraadbeheer"
+        },
+        "5": {
+          "title": "SEO Optimalisatie",
+          "description": "Datagestuurde strategieën om zichtbaarheid en ranking in zoekmachines te verbeteren"
+        },
+        "6": {
+          "title": "Web Hosting & Onderhoud",
+          "description": "Betrouwbare hostingdiensten met regelmatige updates, back-ups en beveiligingsmonitoring"
+        }
+      },
+      "learnMore": "Meer informatie"
+    },
+    "portfolio": {
+      "badge": "ONS WERK",
+      "title": "Recente Projecten",
+      "description": "Ontdek enkele van onze nieuwste werken voor klanten in verschillende sectoren.",
+      "viewProject": "Bekijk Project",
+      "viewAllProjects": "Bekijk Alle Projecten"
+    },
+    "process": {
+      "badge": "ONS PROCES",
+      "title": "Hoe Wij Werken",
+      "description": "Ons gestroomlijnde proces zorgt voor duidelijke communicatie en uitstekende resultaten voor elk project.",
+      "steps": {
+        "1": {
+          "title": "Ontdekking",
+          "description": "We leren over uw bedrijf, doelen en vereisten via diepgaande consultaties."
+        },
+        "2": {
+          "title": "Ontwerp",
+          "description": "Onze ontwerpers maken wireframes en visuele mockups die aansluiten bij uw merkidentiteit."
+        },
+        "3": {
+          "title": "Ontwikkeling",
+          "description": "Onze ontwikkelaars bouwen uw oplossing met schone code en cutting-edge technologieën."
+        },
+        "4": {
+          "title": "Implementatie",
+          "description": "We lanceren uw project, bieden training aan en bieden doorlopende ondersteuning indien nodig."
+        }
+      }
+    },
+    "testimonials": {
+      "badge": "GETUIGENISSEN",
+      "title": "Wat Onze Klanten Zeggen",
+      "description": "Neem niet alleen ons woord aan - hoor van de bedrijven die we hebben geholpen succes te behalen.",
+      "items": {
+        "1": {
+          "name": "Alex Thompson",
+          "position": "CEO, TechStart Inc.",
+          "content": "Ze hebben onze bedrijfswebsite eerder dan gepland opgeleverd en hebben onze verwachtingen overtroffen. Hun oog voor detail en expertise in responsief ontwerp maakten het verschil."
+        },
+        "2": {
+          "name": "Sarah Chen",
+          "position": "Marketing Directeur, StyleShop",
+          "content": "Onze e-commerce site heeft een toename van 45% in conversies gezien sinds de herontwerp. Hun team begreep ons merk en implementeerde precies wat we nodig hadden."
+        },
+        "3": {
+          "name": "Marcus Johnson",
+          "position": "Oprichter, HealthApp",
+          "content": "Van concept tot lancering hebben ze ons door het hele app-ontwikkelingsproces geleid met expertise en professionaliteit. Het eindproduct overtrof onze visie."
+        }
+      }
+    },
+    "cta": {
+      "title": "Laten We Samen Iets Geweldigs Creëren",
+      "description": "Of u nu een website, mobiele app of complete digitale strategie nodig heeft, wij staan klaar om uw visie tot leven te brengen.",
+      "buttons": {
+        "startProject": "Start Uw Project",
+        "learnAboutUs": "Leer Over Ons"
+      },
+      "features": {
+        "1": "Gratis Consultatie",
+        "2": "Expert Team",
+        "3": "Doorlopende Ondersteuning"
+      }
+    }
+  },
+  "NavBar": {     
+    "labelSwitchLang": "Wissel van Taal",     
+    "labelSelectLang": "Selecteer Taal",     
+    "dropdown": {       
+      "title": "Mijn Account",       
+      "item1": "Profiel",       
+      "item2": "Instellingen",       
+      "item3": "Dashboard",       
+      "logout": "Uitloggen"     
+    },     
+    "labelLang": "Taal",     
+    "routes": {       
+      "home": "Home",       
+      "about": "Over Ons",       
+      "portfolio": "Portfolio",       
+      "services": {      
+        "title": "Diensten",         
+        "content": {           
+          "1": {             
+            "title": "Website Ontwikkeling"           
+          },           
+          "2": {             
+            "title": "Mobiele App Ontwikkeling"           
+          },           
+          "3": {             
+            "title": "UI/UX Ontwerp"           
+          },           
+          "4": {             
+            "title": "E-commerce Oplossingen"           
+          },           
+          "5": {             
+            "title": "SEO Optimalisatie"           
+          },           
+          "6": {             
+            "title": "Web Hosting & Onderhoud"           
+          }         
+        }       
+      },       
+      "merch": "Merchandise",       
+      "contact": "Contact"     
+    }   
+  },  
+  "About": {
+    "badge": "OVER ONS",
+    "title": "Wij Zijn Gepassioneerd Over",
+    "sub": " Het Bouwen van Digitale Excellentie",
+    "desc": " Meer dan alleen ontwikkelaars, we zijn partners in uw digitale reis, toegewijd aan het transformeren van uw ideeën in krachtige digitale ervaringen.",
+    "mission": {
+      "header": " Onze Missie",
+      "desc": "Bij CodeWithAli is onze missie om bedrijven en individuen te versterken door zorgvuldig ontworpen digitale oplossingen. Wij geloven dat technologie zowel krachtig als toegankelijk moet zijn, echte resultaten moet leveren en tegelijkertijd uitzonderlijke gebruikerservaringen moet bieden.",
+      "sub": "  Wereldwijd Bereik, Persoonlijke Aanpak",
+      "subDesc": " We werken met klanten wereldwijd maar behouden de persoonlijke aandacht van een boutique-bureau. Elk project krijgt onze volledige toewijding, ongeacht de omvang.",
+      "sub2": " Resultaatgerichte Ontwikkeling",
+      "subDesc2": " We meten ons succes af aan uw succes. Onze oplossingen zijn ontworpen om meetbare resultaten te leveren, zodat u uw bedrijfsdoelen kunt bereiken.",
+      "stats": {
+        "1": "Voltooide Projecten",
+        "2": "Klanttevredenheid",
+        "3": "Ondersteuningsdekking",
+        "4": "Tijdige Levering"
+      },
+      "story": {
+        "badge": "SUCCESVERHALEN",
+        "header": "Klanten Die We Hebben Geholpen Slagen",
+        "title": "Echte resultaten van bedrijven die ons hun digitale behoeften hebben toevertrouwd."
+      },
+      "quots": {
+        "1": "CodeWithAli heeft ons e-commerce platform getransformeerd, wat resulteerde in een stijging van 45% in conversies en een significante verbetering in gebruikerstevredenheid. Hun technische expertise in combinatie met strategische inzichten maakte het verschil.",
+        "2": "Het samenwerken met CodeWithAli aan ons bedrijfsdashboard is baanbrekend geweest. Hun team begreep snel onze complexe vereisten en leverde een oplossing die onze activiteiten heeft gestroomlijnd en besluitvorming heeft verbeterd.",
+        "3": "De mobiele app die CodeWithAli heeft ontwikkeld voor onze gezondheidsdienst heeft uitstekende feedback van gebruikers ontvangen. Hun aandacht voor veiligheid en gebruikerservaring is zichtbaar in elk aspect van het eindproduct.",
+        "4": "Als startup hadden we een partner nodig die ons door de technische uitdagingen van het lanceren van ons platform kon leiden. CodeWithAli bood niet alleen ontwikkelingsexpertise maar ook waardevolle strategische input die hielp bij het vormgeven van ons product."
+      },
+      "author": {
+        "1": "Emma Thompson",
+        "2": "Michael Rodriguez",
+        "3": "Dr. James Wilson",
+        "4": "Sophia Chen"
+      },
+      "job": {
+        "1": "CTO, StyleHub",
+        "2": " Oprichter, DataVision Inc.",
+        "3": " Directeur, HealthConnect",
+        "4": " Mede-oprichter, NextLevel Tech"
+      }
+    },
+    "process": {
+      "badge": "ONS PROCES",
+      "header": "Hoe We Ideeën Omzetten in Realiteit",
+      "sub": "Onze bewezen ontwikkelingsmethodologie zorgt voor duidelijke communicatie en uitstekende resultaten voor elk project.",
+      "cards": {
+        "h1": " Ontdekking & Planning",
+        "h2": "Ontwerp & Strategie",
+        "h3": "Ontwikkeling & Testen",
+        "h4": " Implementatie & Ondersteuning",
+        "desc1": "We beginnen met het begrijpen van uw bedrijf, doelen en vereisten via diepgaande consultaties. Deze fase omvat:",
+        "desc2": "Ons ontwerpteam maakt wireframes en visuele mockups die aansluiten bij uw merkidentiteit terwijl onze strategen de technische aanpak plannen:",
+        "desc3": "Onze ontwikkelaars bouwen uw oplossing met schone code en geavanceerde technologieën terwijl ze kwaliteit waarborgen door:",
+        "desc4": "We lanceren uw project, bieden training aan en bieden doorlopende ondersteuning via:",
+        "firstList": {
+          "li1": "Stakeholder interview",
+          "li2": "Afstemming op bedrijfsdoelen",
+          "li3": "Technische vereisten verzamelen",
+          "li4": "Projectomvang definiëren"
+        },
+        "secondList": {
+          "li1": "UX/UI ontwerp en wireframing",
+          "li2": "Technische architectuur planning",
+          "li3": "Database structuur ontwerp",
+          "li4": "Technologie stack selectie"
+        },
+        "thirdList": {
+          "li1": " Agile ontwikkelingsmethodologie",
+          "li2": "Regelmatige voortgangsupdates",
+          "li3": "Uitgebreide testen (unit, integratie, UI)",
+          "li4": "Prestatie-optimalisatie"
+        },
+        "fourthList": {
+          "li1": "Soepele implementatieprocedures",
+          "li2": "Uitgebreide documentatie",
+          "li3": "Gebruikerstraining en kennisoverdracht",
+          "li4": "Doorlopende onderhouds- en ondersteuningsopties"
+        }
+      }
+    },
+    "values": {
+      "badge": "ONZE WAARDEN",
+      "header": " Principes Die Ons Werk Leiden",
+      "sub": " Onze kernwaarden vormen alles wat we doen, van hoe we met klanten werken tot hoe we oplossingen ontwikkelen.",
+      "title": {
+        "h1": "Kwaliteit",
+        "h2": "Innovatie",
+        "h3": "Betrouwbaarheid",
+        "h4": "Samenwerking",
+        "d1": "We doen nooit concessies aan codekwaliteit of gebruikerservaring. Elk project krijgt onze volledige aandacht voor detail.",
+        "d2": "We blijven voorop lopen in technologie, leren constant en implementeren de nieuwste best practices.",
+        "d3": "We komen onze beloftes na, halen deadlines en houden onze klanten gedurende het hele proces op de hoogte.",
+        "d4": "We werken nauw samen met onze klanten, waarderen hun input en zorgen ervoor dat hun visie tot leven komt."
+      }
+    },
+    "tech": {
+      "badge": " ONZE EXPERTISE",
+      "header": "Technologieën Die We Beheersen",
+      "sub": " We benutten geavanceerde technologieën om schaalbare, hoogwaardige oplossingen te bouwen."
+    },
+    "cta": {
+      "title": "Klaar om Samen te Werken?",
+      "header": "Laten we bespreken hoe we kunnen helpen uw visie tot leven te brengen met onze expertise en toewijding.",
+      "button": "Neem Contact Op",
+      "button2": "Ontdek Onze Diensten",
+      "li": "Consultatie Zonder Verplichtingen",
+      "li2": "Transparant Proces",
+      "li3": "Doorlopende Ondersteuning"
+    },
+    "story": {
+      "badge": "ONS VERHAAL",
+      "title": "Hoe We Zijn Begonnen",
+      "header": "Van Passie naar Doel",
+      "sub": "CodeWithAli begon in 2019 toen onze oprichter Ali een gat in de markt identificeerde: bedrijven hadden technische excellentie nodig in combinatie met strategische begeleiding. Wat begon als freelance consultancy groeide snel toen klanten onze unieke aanpak herkenden.",
+      "subDesc": "Vandaag zijn we uitgegroeid tot een full-service digitaal bureau, waarbij we onze kernwaarden behouden terwijl we onze mogelijkheden uitbreiden om een diverse reeks klanten te bedienen.",
+      "header2": "Onze Groei Filosofie",
+      "sub2": "We geloven in duurzame groei—zowel voor onze klanten als voor onszelf. In plaats van snel te schalen ten koste van kwaliteit, hebben we zorgvuldig ons team opgebouwd met gespecialiseerde experts die onze toewijding aan excellentie delen.",
+      "subDesc2": "Deze aanpak stelt ons in staat om nauwe relaties met onze klanten te onderhouden terwijl we het hoogwaardige werk leveren dat ze van ons gewend zijn."
+    }
+  },
+  "Serv": {
+    "badge": "ONZE EXPERTISE",     
+    "Header": "Uitgebreide Digitale",
+    "Subheader": " Diensten & Oplossingen",
+    "Subdesc": "  Van website-ontwikkeling tot SEO-optimalisatie, wij bieden end-to-end digitale oplossingen ontworpen om uw bedrijf te laten floreren in het digitale landschap.",
+    "Services": {
+      "titleLinks": {
+        "1": "Website Ontwikkeling",
+        "2": "Mobiele App Ontwikkeling",
+        "3": "UI/UX Ontwerp",
+        "4": "E-commerce Oplossingen",
+        "5": "SEO Optimalisatie",
+        "6": "Web Hosting & Onderhoud"
+      },
+      "desc": {
+        "1": "Op maat ontworpen responsieve websites geoptimaliseerd voor prestaties en conversies",
+        "2": "Native en cross-platform mobiele applicaties voor iOS en Android",
+        "3": "Gebruikersgerichte ontwerpen die betrokkenheid vergroten en interacties vereenvoudigen",
+        "4": "Volledig uitgeruste online winkels met veilige betalingsverwerking en voorraadbeheer",
+        "5": "Datagestuurde strategieën om zichtbaarheid en ranking in zoekmachines te verbeteren",
+        "6": "Betrouwbare hostingdiensten met regelmatige updates, back-ups en beveiligingsmonitoring"
+      },
+      "features": {
+        "first": {
+          "1": "Responsief Ontwerp",
+          "2": "SEO Optimalisatie",
+          "3": "Content Management",
+          "4": "Prestatie Afstemming"
+        },
+        "second": {
+          "1": "iOS & Android Apps",
+          "2": "Cross-Platform Oplossingen",
+          "3": "App Store Implementatie",
+          "4": "Onderhoud & Updates"
+        },
+        "third": {
+          "1": "Gebruikersonderzoek",
+          "2": "Interface Ontwerp",
+          "3": "Interface Ontwerp",
+          "4": "Ontwerpsystemen"
+        },
+        "fourth": {
+          "1": "Productcatalogi",
+          "2": "Betalingsverwerking",
+          "3": "Voorraadbeheer",
+          "4": "Klantbeheer"
+        },
+        "fifth": {
+          "1": "Zoekwoordenonderzoek",
+          "2": "On-Page SEO",
+          "3": "Content Strategie",
+          "4": "Analytics & Rapportage"
+        },
+        "sixth": {
+          "1": "Beheerde Hosting",
+          "2": "Beveiligingsupdates",
+          "3": "Prestatiemonitoring",
+          "4": "Regelmatige Back-ups"
+        }
+      },
+      "process": {
+        "1": "Ontdekking",
+        "2": "Strategie",
+        "3": "Uitvoering",
+        "4": "Ondersteuning",
+        "numbers": {
+          "1": "01",
+          "2": "02",
+          "3": "03",
+          "4": "04"
+        },
+        "desc": {
+          "1": "We beginnen met het begrijpen van uw bedrijf, doelen, doelgroep en specifieke vereisten.",
+          "2": "We ontwikkelen een uitgebreide strategie en gedetailleerd projectplan op maat van uw doelstellingen.",
+          "3": "Ons expertteam implementeert de oplossing met regelmatige updates en klantfeedback.",
+          "4": "We bieden doorlopende ondersteuning, onderhoud en optimalisatie om langdurig succes te garanderen."
+        },
+        "learn": "Meer Informatie",
+        "approach": {
+          "badge": "ONZE AANPAK",
+          "title": " Ons Dienstverlening Proces",
+          "sub": " We volgen een bewezen methodologie om succesvolle resultaten te garanderen voor al onze diensten."
+        }
+      },
+      "cta": {
+        "title": " Klaar om te Beginnen?",
+        "header": " Neem contact met ons op voor een gratis consultatie en laten we bespreken hoe onze diensten u kunnen helpen uw digitale doelen te bereiken.",
+        "button": " Plan een Consultatie"
+      }
+    }
+  },
+  "ServicePage": {
+    "webDev": {
+      "badge": {
+        "1": "WEBSITE ONTWIKKELING",
+        "2": "BELANGRIJKSTE FUNCTIES",
+        "3": "ONS PROCES",
+        "4": "TECHNOLOGIEËN",
+        "5": "CASESTUDIES",
+        "6": "VEELGESTELDE VRAGEN"
+      },
+      "title": {
+        "1": "Op Maat Gemaakte Website Ontwikkeling",
+        "2": "Die Resultaten Oplevert"
+      },
+      "desc": "Wij ontwerpen en ontwikkelen verbluffende, hoogwaardige websites die uw publiek boeien, uw merkpresentie vestigen en meetbare bedrijfsgroei stimuleren.",
+      "quoteBtn": "Krijg een Gratis Offerte",
+      "workBtn": "Bekijk Ons Werk",
+      "sections": {
+        "1": {
+          "title": "Wat Onze Website Ontwikkeling Onderscheidt",
+          "desc": "We combineren technische expertise met creatief ontwerp om websites te leveren die er niet alleen geweldig uitzien, maar ook uitzonderlijk goed presteren.",
+          "cards": {
+            "1": {
+              "title": "Responsief Ontwerp",
+              "desc": "We bouwen websites die zich naadloos aanpassen aan elk apparaat, voor een optimale gebruikerservaring op desktops, tablets en smartphones."
+            },
+            "2": {
+              "title": "Prestatie-optimalisatie",
+              "desc": "Onze websites zijn geoptimaliseerd voor snelheid met efficiënte code, beeldoptimalisatie en cachingstrategieën voor bliksemsnelle laadtijden."
+            },
+            "3": {
+              "title": "SEO-vriendelijke Structuur",
+              "desc": "We implementeren SEO-best practices vanaf de basis, zodat uw website goed scoort in zoekmachines en organisch verkeer genereert."
+            },
+            "4": {
+              "title": "Aangepaste Functionaliteit",
+              "desc": "Van interactieve elementen tot complexe bedrijfslogica, we ontwikkelen aangepaste functies die aan uw specifieke eisen voldoen."
+            },
+            "5": {
+              "title": "Beveiligingsmaatregelen",
+              "desc": "We implementeren robuuste beveiligingspraktijken om uw website en gebruikersgegevens te beschermen tegen kwetsbaarheden en bedreigingen."
+            },
+            "6": {
+              "title": "Contentbeheer",
+              "desc": "We bouwen gebruiksvriendelijke contentmanagementsystemen waarmee u uw website kunt bijwerken en onderhouden zonder technische kennis."
+            }
+          }
+        },
+        "2": {
+          "title": "End-to-End Website Ontwikkelingsproces",
+          "desc": "Onze gestructureerde aanpak zorgt voor een soepele ontwikkelingsreis van concept tot lancering en verder.",
+          "steps": {
+            "1": {
+              "title": "Ontdekking en Vereisten",
+              "desc": "We beginnen met het begrijpen van uw bedrijfsdoelen, doelgroep en specifieke vereisten via diepgaande consultaties. Deze fase omvat concurrentieanalyse, contentplanning en technische specificaties."
+            },
+            "2": {
+              "title": "Planning en Architectuur",
+              "desc": "We maken een gedetailleerd projectplan inclusief site-architectuur, wireframes en technische specificaties die het ontwikkelingsproces zullen leiden."
+            },
+            "3": {
+              "title": "Ontwerp",
+              "desc": "Onze ontwerpers maken visuele mockups en prototypes die aansluiten bij uw merkidentiteit en zorgen voor een optimale gebruikerservaring."
+            },
+            "4": {
+              "title": "Ontwikkeling",
+              "desc": "Onze ontwikkelaars bouwen uw website met schone, efficiënte code met behulp van moderne frameworks en best practices voor prestaties en veiligheid."
+            },
+            "5": {
+              "title": "Testen en QA",
+              "desc": "We testen uw website grondig op verschillende apparaten en browsers om ervoor te zorgen dat functionaliteit, prestaties en toegankelijkheidsnormen worden gehaald."
+            },
+            "6": {
+              "title": "Lancering en Training",
+              "desc": "We implementeren uw website op productieservers en bieden uitgebreide training aan op het gebied van contentbeheer en onderhoud."
+            },
+            "7": {
+              "title": "Onderhoud en Ondersteuning",
+              "desc": "We bieden doorlopende ondersteuning, regelmatige updates, prestatiemonitoring en continue verbetering om uw website veilig en effectief te houden."
+            }
+          }
+        },
+        "3": {
+          "title": "Technologieën Die We Gebruiken",
+          "desc": "We maken gebruik van geavanceerde technologieën om moderne, hoogwaardige websites te bouwen.",
+          "tech": {
+            "1": {
+              "desc": "Voor het bouwen van interactieve gebruikersinterfaces met optimale prestaties"
+            },
+            "2": {
+              "desc": "Voor contentgerichte websites met krachtige CMS-mogelijkheden"
+            },
+            "3": {
+              "desc": "Voor e-commerce websites met robuust productbeheer"
+            },
+            "4": {
+              "desc": "Voor snelle, responsieve ontwerp implementatie"
+            },
+            "5": {
+              "desc": "Voor schaalbare backend-ontwikkeling"
+            },
+            "6": {
+              "desc": "Voor efficiënte data-opvraging en -beheer"
+            },
+            "7": {
+              "desc": "Voor betrouwbare, schaalbare hostingoplossingen"
+            }
+          }
+        },
+        "4": {
+          "title": "Succesverhalen",
+          "desc": "Verken enkele van onze recente website-ontwikkelingsprojecten en de resultaten die we voor onze klanten hebben behaald.",
+          "case": {
+            "imgPlaceholder": "Case Study Afbeelding:",
+            "viewBtn": "Bekijk Case Study",
+            "projectsBtn": "Bekijk Alle Projecten",
+            "1": {
+              "title": "Bouw Website Herontwerp",
+              "industry": "Bouw",
+              "desc": "Herontwerp van een verouderde bouwwebsite, wat leidde tot 45% meer conversies en een verbetering van 60% in paginalaadtijden."
+            },
+            "2": {
+              "title": "Budgetteringswebsite Lancering",
+              "industry": "Financiële Dienstverlening",
+              "desc": "Ontwikkeling van een moderne, responsieve website die de leadgeneratie met 38% verhoogde en de bouncepercentage met 25% verlaagde."
+            },
+            "3": {
+              "title": "Iraakse Zoetwaren",
+              "industry": "Bakproducten",
+              "desc": "Creatie van een conversie-gerichte landingswebsite die de klant hielp hun klantenbestand binnen de eerste maand met 52% te verhogen."
+            }
+          }
+        },
+        "5": {
+          "title": "Veelgestelde Vragen",
+          "desc": "Veelvoorkomende vragen over ons website-ontwikkelingsproces en -diensten.",
+          "tab": {
+            "1": "Algemeen",
+            "2": "Technisch",
+            "3": "Prijzen"
+          },
+          "QA": {
+            "1": {
+              "Q": "Hoelang duurt het om een website te ontwikkelen?",
+              "A": "De tijdlijn varieert afhankelijk van de complexiteit van het project. Een eenvoudige website kan in 4-6 weken worden voltooid, terwijl meer complexe projecten 8-12 weken of langer kunnen duren. We zullen een gedetailleerde tijdlijn verstrekken tijdens de ontdekkings- en planningsfase."
+            },
+            "2": {
+              "Q": "Kan ik de website zelf bijwerken?",
+              "A": "Ja, we bouwen websites met gebruiksvriendelijke content management systemen waarmee u gemakkelijk content kunt bijwerken, pagina's kunt toevoegen en eenvoudige ontwerpwijzigingen kunt aanbrengen zonder technische kennis. We bieden ook training om ervoor te zorgen dat u comfortabel bent met het beheren van uw site."
+            },
+            "3": {
+              "Q": "Biedt u doorlopend onderhoud en ondersteuning?",
+              "A": "Ja, we bieden verschillende onderhoudspakketten om uw website veilig, up-to-date en optimaal presterend te houden. Deze pakketten omvatten regelmatige updates, beveiligingsmonitoring, back-ups en technische ondersteuning."
+            },
+            "4": {
+              "Q": "Zal mijn website mobiel-vriendelijk zijn?",
+              "A": "Absoluut. Al onze websites worden gebouwd met responsief ontwerp, zodat ze er perfect uitzien en functioneren op alle apparaten, waaronder desktops, tablets en smartphones. Dit is essentieel voor zowel gebruikerservaring als zoekmachinenrangschikkingen."
+            },
+            "5": {
+              "Q": "Welke technologieën gebruikt u voor website-ontwikkeling?",
+              "A": "We gebruiken een reeks moderne technologieën afhankelijk van uw specifieke behoeften. Voor webapplicaties en meer complexe sites gebruiken we React, Next.js en andere moderne frameworks. De keuze van technologie is gebaseerd op uw vereisten, budget en langetermijndoelen."
+            },
+            "6": {
+              "Q": "Optimaliseert u websites voor zoekmachines?",
+              "A": "Ja, SEO best practices zijn geïntegreerd in ons ontwikkelingsproces. We zorgen voor de juiste sitestructuur, geoptimaliseerde code, snelle laadtijden, mobiele responsiviteit en andere technische SEO-factoren. Voor meer uitgebreide SEO-diensten bieden we speciale SEO-pakketten."
+            },
+            "7": {
+              "Q": "Kunt u tools en diensten van derden integreren?",
+              "A": "Absoluut. We integreren regelmatig verschillende tools en diensten van derden zoals CRM-systemen, betalingsgateways, marketing automatiseringsplatforms, analysetools en meer. We zorgen voor naadloze integratie en een goede gegevensstroom tussen uw website en externe systemen."
+            },
+            "8": {
+              "Q": "Hoe zorgt u voor websitebeveiliging?",
+              "A": "We implementeren meerdere beveiligingsmaatregelen, waaronder veilige codeerpraktijken, regelmatige updates, SSL-certificaten, firewallbescherming en beveiligingsplugins. Voor e-commerce sites en applicaties die gevoelige gegevens verwerken, implementeren we extra beveiligingslagen en zorgen we voor naleving van relevante regelgeving."
+            },
+            "9": {
+              "Q": "Hoeveel kost een website?",
+              "A": "Website kosten variëren afhankelijk van complexiteit, functies en vereisten. Kleine bedrijfswebsites hebben doorgaans een bereik van €899 - €3.500, terwijl meer complexe sites met aangepaste functionaliteit tussen €3.500 - €9.000+ liggen. We geven gedetailleerde offertes na het begrijpen van uw specifieke behoeften."
+            },
+            "10": {
+              "Q": "Biedt u betalingsregelingen aan?",
+              "A": "Ja, we structureren betalingen meestal in mijlpalen gedurende het project. Een gebruikelijke verdeling is 40% vooraf, 30% in de ontwerpgoedkeuringsfase en 30% bij voltooiing van het project. Voor grotere projecten kunnen we aangepaste betalingsschema's maken."
+            },
+            "11": {
+              "Q": "Welke doorlopende kosten kan ik verwachten?",
+              "A": "Doorlopende kosten omvatten doorgaans domeinregistratie (€10-€20/jaar), hosting (€20-€100/maand afhankelijk van verkeer en vereisten) en optionele onderhoudspakketten (€100-€500/maand gebaseerd op het niveau van ondersteuning dat nodig is)."
+            },
+            "12": {
+              "Q": "Geeft u kostenramingen voordat u een project start?",
+              "A": "Ja, we verstrekken gedetailleerde voorstellen en kostenramingen na onze eerste consultatie. Onze voorstellen schetsen alle leveringen, tijdlijnen en kosten, zodat u precies weet wat u kunt verwachten voordat u zich verbindt aan het project."
+            }
+          }
+        }
+      },
+      "cta": {
+        "title": "Klaar om Uw Website Project te Starten?",
+        "desc": "Neem vandaag nog contact met ons op voor een gratis consultatie en ontdek hoe we u kunnen helpen een website te creëren die echte bedrijfsresultaten oplevert."
+      }
+    },
+    "mobileApp": {
+      "badge": {
+        "1": "MOBIELE APP ONTWIKKELING",
+        "2": "APP OPLOSSINGEN",
+        "3": "ONZE EXPERTISE",
+        "4": "ONS PROCES",
+        "5": "FAQ"
+      },
+      "title": {
+        "1": "Op Maat Gemaakte Mobiele Apps",
+        "2": "Voor iOS & Android"
+      },
+      "desc": "Wij ontwerpen en bouwen innovatieve, hoogwaardige mobiele applicaties die gebruikers betrekken, echte problemen oplossen en uw bedrijf helpen groeien in de mobile-first wereld.",
+      "discussBtn": "Bespreek Uw App Idee",
+      "workBtn": "Bekijk Ons Werk",
+      "sections": {
+        "1": {
+          "title": "Mobiele App Ontwikkelingsoplossingen",
+          "desc": "We bieden een reeks app-ontwikkelingsbenaderingen om aan uw specifieke behoeften, budget en tijdlijn te voldoen.",
+          "types": {
+            "techLabel": "Technologieën:",
+            "benefitLabel": "Voordelen:",
+            "1": {
+              "title": "Native Apps",
+              "desc": "Specifiek gebouwd voor iOS of Android platforms, bieden de beste prestaties en toegang tot alle apparaatfuncties.",
+              "benefits": {
+                "1": "Optimale prestaties",
+                "2": "Volledige toegang tot apparaatfuncties",
+                "3": "Superieure gebruikerservaring",
+                "4": "Betere zichtbaarheid in de app store"
+              }
+            },
+            "2": {
+              "title": "Cross-Platform Apps",
+              "desc": "Eenmalig ontwikkeld en op meerdere platforms geïmplementeerd, wat ontwikkeltijd en kosten vermindert.",
+              "benefits": {
+                "1": "Kosteneffectief",
+                "2": "Snellere ontwikkeling",
+                "3": "Eenvoudiger onderhoud",
+                "4": "Consistente ervaring over platforms heen"
+              }
+            },
+            "3": {
+              "title": "Progressive Web Apps",
+              "desc": "Webapplicaties die app-achtige ervaringen bieden, direct toegankelijk via webbrowsers zonder installatie.",
+              "benefits": {
+                "1": "Geen installatie vereist",
+                "2": "Werkt offline",
+                "3": "Automatische updates",
+                "4": "Lagere ontwikkelingskosten"
+              }
+            }
+          }
+        },
+        "2": {
+          "title": "Wat Onze Mobiele App Ontwikkeling Onderscheidt",
+          "desc": "We combineren technische excellentie met creatief ontwerp om mobiele apps te leveren waar gebruikers van houden en bedrijven op vertrouwen.",
+          "card": {
+            "1": {
+              "title": "Gebruikersgerichte Ontwerp",
+              "desc": "We creëren intuïtieve, aantrekkelijke interfaces op basis van diepgaand gebruikersonderzoek en iteratieve tests om ervoor te zorgen dat uw app een plezier is om te gebruiken."
+            },
+            "2": {
+              "title": "Hoge Prestaties",
+              "desc": "Onze apps zijn geoptimaliseerd voor snelheid, responsiviteit en efficiënt bronnengebruik, zelfs onder veeleisende omstandigheden."
+            },
+            "3": {
+              "title": "Cross-Platform Expertise",
+              "desc": "We ontwikkelen voor zowel iOS als Android, en zorgen voor consistente ervaringen op alle apparaten terwijl we platformspecifieke functies benutten."
+            },
+            "4": {
+              "title": "Geavanceerde Functionaliteit",
+              "desc": "Van locatiediensten tot betalingsverwerking, we implementeren complexe functies die uw app krachtig en onderscheidend maken."
+            },
+            "5": {
+              "title": "Beveiliging & Compliance",
+              "desc": "We bouwen met security-first principes en zorgen voor naleving van AVG, CCPA en andere relevante regelgeving."
+            },
+            "6": {
+              "title": "Schaalbare Architectuur",
+              "desc": "Onze apps zijn gebouwd op flexibele, schaalbare architecturen die kunnen meegroeien met uw gebruikersbasis en evoluerende vereisten."
+            }
+          }
+        },
+        "3": {
+          "title": "Mobiele App Ontwikkelingsproces",
+          "desc": "Onze gestructureerde aanpak zorgt voor een soepele ontwikkelingsreis van concept tot lancering en verder.",
+          "steps": {
+            "1": {
+              "title": "Ontdekking & Strategie",
+              "desc": "We beginnen met het begrijpen van uw bedrijfsdoelstellingen, doelgebruikers en marktvereisten om een uitgebreide app-strategie te creëren."
+            },
+            "2": {
+              "title": "UX/UI Ontwerp",
+              "desc": "Onze ontwerpers creëren intuïtieve, gebruiksvriendelijke interfaces met aantrekkelijke visuals die aansluiten bij uw merkidentiteit."
+            },
+            "3": {
+              "title": "Ontwikkeling",
+              "desc": "Onze ontwikkelaars bouwen uw app met de meest geschikte technologieën, en zorgen voor codekwaliteit en optimale prestaties."
+            },
+            "4": {
+              "title": "Testen & QA",
+              "desc": "We voeren grondige tests uit op verschillende apparaten en platforms om functionaliteit, prestaties en veiligheid te garanderen."
+            },
+            "5": {
+              "title": "Implementatie",
+              "desc": "We behandelen het app store indieningsproces en zorgen ervoor dat uw app aan alle vereisten voldoet voor iOS en Android platforms."
+            },
+            "6": {
+              "title": "Ondersteuning Na Lancering",
+              "desc": "We bieden doorlopend onderhoud, updates en ondersteuning om uw app soepel en up-to-date te houden."
+            }
+          }
+        },
+        "4": {
+          "title": "Veelgestelde Vragen",
+          "desc": "Veelvoorkomende vragen over ons mobiele app ontwikkelingsproces en -diensten.",
+          "tab": {
+            "1": "Algemeen",
+            "2": "Technisch",
+            "3": "Prijzen"
+          },
+          "QA": {
+            "1": {
+              "Q": "Hoelang duurt het om een mobiele app te ontwikkelen?",
+              "A": "De tijdlijn varieert op basis van complexiteit en functies. Eenvoudige apps kunnen 3-4 maanden duren, terwijl complexe apps 6-9 maanden kunnen vereisen van concept tot lancering. We zullen een gedetailleerde tijdlijn geven tijdens de ontdekkingsfase."
+            },
+            "2": {
+              "Q": "Moet ik ontwikkelen voor iOS, Android, of beide?",
+              "A": "Dit hangt af van uw doelgroep en bedrijfsdoelen. Als uw publiek voornamelijk één platform gebruikt, is het logisch om daar te beginnen. De meeste bedrijven hebben echter baat bij het ontwikkelen voor beide platforms om het bereik te maximaliseren, wat efficiënt kan worden gedaan met cross-platform ontwikkeling."
+            },
+            "3": {
+              "Q": "Hoe zorgt u ervoor dat mijn app succesvol zal zijn?",
+              "A": "Succes begint met grondig onderzoek en planning. We voeren marktanalyse uit, definiëren duidelijke gebruikerspersona's en richten ons op het oplossen van echte gebruikersproblemen. We implementeren ook analytics om belangrijke metrieken bij te houden en datagestuurde verbeteringen te maken na de lancering."
+            },
+            "4": {
+              "Q": "Welke doorlopende ondersteuning biedt u na de lancering?",
+              "A": "We bieden uitgebreide onderhoudspakketten inclusief bugfixes, prestatiemonitoring, compatibiliteitsupdates voor nieuwe OS-versies, beveiligingspatches en functieverbeteringen. We raden een onderhoudsplan aan om uw app veilig, stabiel en relevant te houden."
+            },
+            "5": {
+              "Q": "Native vs. cross-platform: wat is beter voor mijn app?",
+              "A": "Native ontwikkeling biedt optimale prestaties en toegang tot alle platformfuncties, terwijl cross-platform ontwikkeling kosteneffectiever is en sneller naar de markt brengt. De keuze hangt af van de vereisten van uw app, budget en tijdlijn. We raden native aan voor prestatie-kritische apps of apps die geavanceerde apparaatfuncties nodig hebben, en cross-platform voor de meeste bedrijfsapps met standaardfunctionaliteit."
+            },
+            "6": {
+              "Q": "Hoe gaat u om met goedkeuringen voor app stores?",
+              "A": "We hebben uitgebreide ervaring met zowel Apple App Store als Google Play Store richtlijnen. We integreren deze vereisten gedurende het hele ontwikkelingsproces en behandelen het volledige indieningsproces, inclusief het voorbereiden van alle benodigde materialen, reageren op reviewvragen en het maken van eventuele noodzakelijke aanpassingen om goedkeuring te garanderen."
+            },
+            "7": {
+              "Q": "Kunt u mijn app integreren met bestaande systemen?",
+              "A": "Ja, we zijn gespecialiseerd in het integreren van mobiele apps met bestaande systemen zoals CRM's, ERP's, betalingsverwerkers en aangepaste backends. We gebruiken veilige API's om een naadloze gegevensstroom te garanderen tussen uw app en andere bedrijfssystemen."
+            },
+            "8": {
+              "Q": "Hoe pakt u app-beveiliging aan?",
+              "A": "Beveiliging is ingebouwd in elke fase van ons ontwikkelingsproces. We implementeren encryptie voor gegevensopslag en -overdracht, veilige authenticatiemethoden, inputvalidatie en bescherming tegen veelvoorkomende kwetsbaarheden. Voor apps die gevoelige gegevens verwerken, voeren we beveiligingsaudits en penetratietests uit."
+            },
+            "9": {
+              "Q": "Hoeveel kost het om een mobiele app te ontwikkelen?",
+              "A": "De kosten voor app-ontwikkeling variëren sterk op basis van complexiteit, functies en platforms. Eenvoudige apps hebben doorgaans een bereik van €15.000-€35.000, apps met gemiddelde complexiteit van €35.000-€60.000, en complexe apps kunnen meer dan €100.000 kosten. We geven gedetailleerde schattingen na het begrijpen van uw specifieke vereisten."
+            },
+            "10": {
+              "Q": "Welke factoren beïnvloeden de kosten van app-ontwikkeling?",
+              "A": "Belangrijke factoren zijn: platforms (iOS, Android of beide), complexiteit van functies, backend-vereisten, integraties met derden, ontwerpcompplexiteit, gebruikersauthenticatiebehoeften, en of u een aangepast CMS of admin panel nodig heeft. Aanvullende factoren zijn analyticsimplementatie en beveiligingsvereisten."
+            },
+            "11": {
+              "Q": "Biedt u betalingsregelingen aan?",
+              "A": "Ja, we structureren betalingen meestal in mijlpalen gedurende het project. Een gebruikelijke aanpak is 30% vooraf, 30% bij ontwerpgoedkeuring, 30% bij voltooiing van de ontwikkeling, en 10% bij de definitieve oplevering en goedkeuring. Voor grotere projecten kunnen we meer gedetailleerde betalingsschema's maken."
+            },
+            "12": {
+              "Q": "Welke doorlopende kosten kan ik verwachten?",
+              "A": "Doorlopende kosten omvatten doorgaans app store kosten (€99/jaar voor Apple, €25 eenmalig voor Google), server/hosting kosten (€50-500/maand afhankelijk van gebruik), onderhoud en updates (meestal 15-20% van de initiële ontwikkelingskosten jaarlijks), en mogelijke kosten voor diensten van derden voor integraties."
+            }
+          }
+        }
+      },
+      "cta": {
+        "title": "Klaar om Uw Mobiele App te Bouwen?",
+        "desc": "Neem vandaag nog contact met ons op voor een gratis consultatie en ontdek hoe we u kunnen helpen een mobiele app te creëren die gebruikers betrekt en bedrijfsgroei stimuleert."
+      }
+    },
+    "UI": {
+      "badge": {
+        "1": "UI/UX ONTWERP",
+        "2": "ONZE DIENSTEN",
+        "3": "ONS WERK",
+        "4": "ONS PROCES",
+        "5": "KLANTENFEEDBACK",
+        "6": "PRIJZEN",
+        "7": "FAQ"
+      },
+      "title": {
+        "1": "Gebruikersgerichte Ontwerp",
+        "2": "Dat Resultaten Oplevert"
+      },
+      "desc": "We creëren intuïtieve, aantrekkelijke gebruikerservaringen die merkperceptie verbeteren, conversiepercentages verhogen en complexe interacties vereenvoudigen.",
+      "consultBtn": "Krijg een Gratis Consultatie",
+      "workBtn": "Bekijk Ons Werk",
+      "viewAllBtn": "Bekijk Alle Projecten",
+      "sections": {
+        "1": {
+          "title": "Uitgebreide UI/UX Ontwerpdiensten",
+          "desc": "We bieden end-to-end ontwerpoplossingen die complexe uitdagingen transformeren in naadloze gebruikerservaringen.",
+          "offerings": {
+            "1": {
+              "title": "Gebruikersonderzoek",
+              "desc": "We voeren uitgebreid gebruikersonderzoek uit om de behoeften, gedragingen en pijnpunten van uw doelgroep te begrijpen.",
+              "features": {
+                "1": "Persona Ontwikkeling",
+                "2": "Gebruikersinterviews",
+                "3": "Concurrentieanalyse",
+                "4": "Gebruikersreis Mapping"
+              }
+            },
+            "2": {
+              "title": "Interface Ontwerp",
+              "desc": "We creëren mooie, intuïtieve interfaces die esthetiek en functionaliteit in balans brengen om de gebruikerservaring te verbeteren.",
+              "features": {
+                "1": "Wireframing",
+                "2": "Visueel Ontwerp",
+                "3": "Interactieve Prototyping",
+                "4": "Ontwerpsystemen"
+              }
+            },
+            "3": {
+              "title": "Bruikbaarheidstesten",
+              "desc": "We valideren ontwerpen door middel van grondige tests om ervoor te zorgen dat ze voldoen aan gebruikersbehoeften en bedrijfsdoelstellingen.",
+              "features": {
+                "1": "Heuristische Evaluatie",
+                "2": "A/B Testen",
+                "3": "Gebruikerstestsessies",
+                "4": "Analytics Integratie"
+              }
+            },
+            "4": {
+              "title": "Ontwerpsystemen",
+              "desc": "We ontwikkelen uitgebreide ontwerpsystemen die consistentie waarborgen en tegelijkertijd schaalbaarheid mogelijk maken over alle platforms.",
+              "features": {
+                "1": "Componentbibliotheken",
+                "2": "Stijlgidsen",
+                "3": "Documentatie",
+                "4": "Implementatieondersteuning"
+              }
+            }
+          }
+        },
+        "2": {
+          "title": "UI/UX Ontwerp Portfolio",
+          "desc": "Bekijk onze recente ontwerpprojecten in verschillende sectoren en platforms.",
+          "projects": {
+            "1": {
+              "title": "Financiële App Herontwerp",
+              "category": "Mobiele App"
+            },
+            "2": {
+              "title": "E-commerce Website",
+              "category": "Web Ontwerp"
+            },
+            "3": {
+              "title": "Gezondheidszorg Dashboard",
+              "category": "Dashboard"
+            },
+            "4": {
+              "title": "Fitness Tracking App",
+              "category": "Mobiele App"
+            }
+          }
+        },
+        "3": {
+          "title": "Ons Ontwerpproces",
+          "desc": "We volgen een systematische aanpak om ervoor te zorgen dat elke ontwerpoplossing voldoet aan zowel gebruikersbehoeften als bedrijfsdoelstellingen.",
+          "process": {
+            "1": {
+              "title": "Ontdekking",
+              "desc": "We analyseren uw bedrijfsdoelen, doelgroep en huidige pijnpunten om duidelijke doelstellingen te definiëren."
+            },
+            "2": {
+              "title": "Onderzoek",
+              "desc": "We voeren gebruikersinterviews, concurrentieanalyse uit en creëren gebruikerspersona's om onze ontwerpbeslissingen te leiden."
+            },
+            "3": {
+              "title": "Ontwerp",
+              "desc": "We creëren wireframes, interactieve prototypes en visuele ontwerpen die aansluiten bij uw merk en gebruikersbehoeften."
+            },
+            "4": {
+              "title": "Testen & Itereren",
+              "desc": "We valideren ontwerpen door bruikbaarheidstests en verfijnen op basis van echte gebruikersfeedback."
+            },
+            "5": {
+              "title": "Opleveren",
+              "desc": "We leveren definitieve assets, specificaties en implementatieondersteuning om het ontwerp tot leven te brengen."
+            }
+          }
+        },
+        "4": {
+          "title": "Wat Onze Klanten Zeggen",
+          "desc": "Hoor van bedrijven die hun digitale aanwezigheid hebben getransformeerd met onze UI/UX ontwerpdiensten.",
+          "quotes": {
+            "1": {
+              "quote": "Het herontwerp heeft onze gebruikersbetrokkenheidsmetrieken volledig getransformeerd. Conversiepercentages stegen met 40% binnen de eerste maand.",
+              "author": "Sarah Johnson",
+              "authDesc": "TechStart Solutions"
+            },
+            "2": {
+              "quote": "Hun gebruikersonderzoek onthulde pijnpunten die we jarenlang over het hoofd hadden gezien. De resulterende interface-ontwerpen hebben de klanttevredenheid aanzienlijk verbeterd.",
+              "author": "Michael Chen",
+              "authDesc": "Global Innovations"
+            },
+            "3": {
+              "quote": "Samenwerken met dit team verliep naadloos. Ze vertaalden onze complexe vereisten naar een intuïtief ontwerp waar onze gebruikers van houden.",
+              "author": "Emma Rodriguez",
+              "authDesc": "HealthPlus"
+            }
+          }
+        },
+        "5": {
+          "title": "UI/UX Ontwerp Pakketten",
+          "desc": "Flexibele opties ontworpen om te voldoen aan de behoeften van bedrijven in elke groeifase.",
+          "package": {
+            "startBtn": "Aan de Slag",
+            "startLabel": "vanaf",
+            "whatIncluded": "Wat is inbegrepen:",
+            "1": {
+              "title": "Essentieel",
+              "desc": "Perfect voor startups en kleine bedrijven die hun digitale aanwezigheid willen verbeteren.",
+              "features": {
+                "1": "Gebruikersonderzoek & Persona's",
+                "2": "Wireframing",
+                "3": "Basis UI Ontwerp",
+                "4": "Beperkte Revisies",
+                "5": "Basis Ontwerpdocumentatie"
+              }
+            },
+            "2": {
+              "title": "Professioneel",
+              "desc": "Uitgebreide oplossing voor gevestigde bedrijven die op zoek zijn naar een complete ontwerpvernieuwing.",
+              "features": {
+                "1": "Alles in Essentieel",
+                "2": "Diepgaand Gebruikersonderzoek",
+                "3": "Interactieve Prototyping",
+                "4": "Geavanceerd UI/UX Ontwerp",
+                "5": "Bruikbaarheidstests",
+                "6": "Ontwerpsysteem Creatie",
+                "7": "Uitgebreide Revisies"
+              }
+            },
+            "3": {
+              "title": "Enterprise",
+              "desc": "Op maat gemaakte oplossing voor grote organisaties met complexe vereisten en meerdere platforms.",
+              "features": {
+                "1": "Op maat gemaakte oplossing voor grote organisaties met complexe vereisten en meerdere platforms.",
+                "2": "Alles in Professioneel",
+                "3": "Multi-platform Ontwerp",
+                "4": "Geavanceerd Ontwerpsysteem",
+                "5": "Uitgebreide Bruikbaarheidstests",
+                "6": "Analytics Integratie",
+                "7": "Langetermijn Ondersteuning",
+                "8": "Training & Workshops"
+              }
+            }
+          }
+        },
+        "6": {
+          "title": "Veelgestelde Vragen",
+          "desc": "Veelvoorkomende vragen over ons mobiele app ontwikkelingsproces en -diensten.",
+          "tab": {
+            "1": "Proces",
+            "2": "Prijzen",
+            "3": "Leveringen",
+            "4": "Tijdlijn"
+          },
+          "QA": {
+            "1": {
+              "Q": "Hoe benadert u het ontwerpproces?",
+              "A": "Ons ontwerpproces is collaboratief en iteratief. We beginnen met ontdekking en onderzoek om uw bedrijf en gebruikers te begrijpen. Vervolgens gaan we verder met wireframing en prototyping, gevolgd door visueel ontwerp, testen en implementatieondersteuning."
+            },
+            "2": {
+              "Q": "Voert u gebruikerstests uit?",
+              "A": "Ja, gebruikerstesten zijn een integraal onderdeel van ons proces. We valideren ontwerpen met echte gebruikers om ervoor te zorgen dat ze voldoen aan gebruikersbehoeften en verwachtingen. Dit helpt problemen vroeg in het proces te identificeren en aan te pakken."
+            },
+            "3": {
+              "Q": "Hoe zorgt u ervoor dat ontwerpen aansluiten bij ons merk?",
+              "A": "We beginnen met een grondige beoordeling van uw bestaande merkrichtlijnen en assets. Gedurende het hele ontwerpproces zorgen we voor consistentie met uw merk terwijl we de gebruikerservaring verbeteren."
+            },
+            "4": {
+              "Q": "Hoe bepaalt u de prijzen voor UI/UX projecten?",
+              "A": "Onze prijzen zijn gebaseerd op projectomvang, complexiteit, tijdlijn en leveringen. We bieden gestructureerde pakketten als uitgangspunten, maar kunnen prijzen aanpassen op basis van uw specifieke behoeften."
+            },
+            "5": {
+              "Q": "Biedt u doorlopende ontwerpondersteuning na projectvoltooiing?",
+              "A": "Ja, we bieden onderhouds- en ondersteuningspakketten om ervoor te zorgen dat uw ontwerp blijft evolueren met uw bedrijfsbehoeften en gebruikersfeedback."
+            },
+            "6": {
+              "Q": "Is er een aanbetaling vereist om een project te starten?",
+              "A": "Ja, we vereisen meestal een aanbetaling van 50% om te beginnen met werken, waarbij het resterende saldo verschuldigd is bij projectvoltooiing of volgens overeengekomen mijlpalen."
+            },
+            "7": {
+              "Q": "Welke leveringen kan ik verwachten van een UI/UX project?",
+              "A": "Afhankelijk van de projectomvang kunnen leveringen bestaan uit gebruikersonderzoeksrapporten, gebruikerspersona's, reiskaarten, wireframes, prototypes, UI ontwerpbestanden, ontwerpsystemen en implementatierichtlijnen."
+            },
+            "8": {
+              "Q": "Levert u ontwikkelingsklare bestanden?",
+              "A": "Ja, we leveren ontwerpspecificaties, assets en documentatie die ontwikkelaars nodig hebben om de ontwerpen nauwkeurig te implementeren. We kunnen ook direct samenwerken met uw ontwikkelingsteam om een soepele implementatie te garanderen."
+            },
+            "9": {
+              "Q": "Maakt u ontwerpsystemen?",
+              "A": "Ja, we zijn gespecialiseerd in het creëren van uitgebreide ontwerpsystemen die consistentie en schaalbaarheid in uw product garanderen. Dit omvat componentbibliotheken, stijlgidsen en documentatie."
+            },
+            "10": {
+              "Q": "Hoelang duurt een typisch UI/UX ontwerpproject?",
+              "A": "Projecttijdlijnen variëren op basis van omvang en complexiteit. Een eenvoudig website herontwerp kan 4-6 weken duren, terwijl een complexe applicatie 3-6 maanden kan duren. We zullen een gedetailleerde tijdlijn verstrekken tijdens de voorstelfase."
+            },
+            "11": {
+              "Q": "Kunt u werken aan dringende projecten met strakke deadlines?",
+              "A": "We kunnen spoedprojecten accommoderen, afhankelijk van onze huidige werkbelasting. Spoedkosten kunnen van toepassing zijn voor versnelde tijdlijnen om ervoor te zorgen dat we de nodige middelen kunnen toewijzen."
+            },
+            "12": {
+              "Q": "Hoe gaat u om met projectvertragingen?",
+              "A": "We bouwen buffertijd in onze projectplannen om rekening te houden met revisies en onvoorziene uitdagingen. We communiceren proactief als er vertragingen optreden en werken samen om tijdlijnen aan te passen indien nodig."
+            }
+          }
+        }
+      },
+      "cta": {
+        "title": "Klaar om Uw Gebruikerservaring te Transformeren?",
+        "desc": "Laten we bespreken hoe onze UI/UX ontwerpdiensten uw bedrijf kunnen helpen zijn doelen te bereiken door uitzonderlijke gebruikerservaringen."
+      }
+    },
+    "Ecom": {
+      "badge": {
+        "1": "E-COMMERCE OPLOSSINGEN",
+        "2": "FUNCTIES",
+        "3": "PAKKETTEN",
+        "4": "ONS PROCES",
+        "5": "FAQ"
+      },
+      "title": {
+        "1": "Zet Uw Producten Om In",
+        "2": "Online Succes"
+      },
+      "desc": "We ontwikkelen krachtige, aangepaste e-commerce websites die u helpen effectief online te verkopen. We bouwen de digitale infrastructuur die u nodig heeft terwijl u zich concentreert op uw producten en klanten.",
+      "startBtn": "Aan de Slag",
+      "packageBtn": "Bekijk Pakketten",
+      "sections": {
+        "1": {
+          "title": "Waarom Kiezen voor Onze E-commerce Oplossingen?",
+          "cards": {
+            "1": {
+              "title": "Gemiddelde toename in conversieratio's"
+            },
+            "2": {
+              "title": "Mobiele verkeer optimalisatie"
+            },
+            "3": {
+              "title": "Uptime voor uw online winkel"
+            },
+            "4": {
+              "title": "Ondersteuning en onderhoud"
+            }
+          }
+        },
+        "2": {
+          "title": "E-commerce Website Functies",
+          "desc": "We kunnen een breed scala aan functies implementeren om een krachtig online verkoopplatform voor uw bedrijf te creëren.",
+          "features": {
+            "1": {
+              "title": "Productbeheer",
+              "desc": "Beheer eenvoudig uw producten, categorieën, variaties en voorraadniveaus."
+            },
+            "2": {
+              "title": "Veilige Betalingen",
+              "desc": "Meerdere betalingsgateways met veilig afrekenproces en fraudebescherming."
+            },
+            "3": {
+              "title": "Verzendopties",
+              "desc": "Flexibele verzendregels, realtime tarieven en ordertracking integratie."
+            },
+            "4": {
+              "title": "Klantaccounts",
+              "desc": "Gebruikersregistratie, ordergeschiedenis, verlanglijstjes en gepersonaliseerde ervaringen."
+            },
+            "5": {
+              "title": "Mobiele Optimalisatie",
+              "desc": "Responsief ontwerp dat zorgt voor perfecte winkelervaring op alle apparaten."
+            },
+            "6": {
+              "title": "Analytics & Rapportage",
+              "desc": "Uitgebreide inzichten in verkoop, klanten en productprestaties."
+            },
+            "7": {
+              "title": "Marketingtools",
+              "desc": "Kortingen, coupons, verlaten winkelwagen herstel en e-mailmarketing integratie."
+            },
+            "8": {
+              "title": "Geavanceerde Aanpassing",
+              "desc": "Pas de functionaliteit en het ontwerp van uw winkel aan uw merk en behoeften aan."
+            }
+          }
+        },
+        "3": {
+          "title": "Kies Uw E-commerce Pakket",
+          "desc": "We bieden op maat gemaakte pakketten voor bedrijven in elke groeifase.",
+          "packages": {
+            "badge": "MEEST POPULAIR",
+            "payType": "eenmalig",
+            "includedLabel": "Wat is inbegrepen:",
+            "1": {
+              "title": "Basis E-commerce",
+              "desc": "Essentiële e-commerce functionaliteit voor bedrijven die hun online aanwezigheid starten",
+              "features": {
+                "1": "Aangepast responsief ontwerp",
+                "2": "Productcatalogus setup",
+                "3": "Betalingsgateway integratie",
+                "4": "Basis productfiltering",
+                "5": "Contactformulier & essentiële pagina's",
+                "6": "On-page SEO optimalisatie",
+                "7": "Mobiel-vriendelijke checkout",
+                "8": "2 uur training"
+              }
+            },
+            "2": {
+              "title": "Geavanceerde E-commerce",
+              "desc": "Verbeterde functies en functionaliteit voor groeiende online bedrijven",
+              "features": {
+                "1": "Alle Basis functies",
+                "2": "Geavanceerde productfiltering & zoeken",
+                "3": "Klantaccount aanmaak",
+                "4": "Verlanglijstje functionaliteit",
+                "5": "Productbeoordelingen & ratings",
+                "6": "Multi-valuta ondersteuning",
+                "7": "E-mailmarketing integratie",
+                "8": "Analytics implementatie",
+                "9": "4 uur training"
+              }
+            },
+            "3": {
+              "title": "Premium E-commerce",
+              "desc": "Uitgebreide oplossing met geavanceerde functies voor gevestigde bedrijven",
+              "features": {
+                "1": "Alle Geavanceerde functies",
+                "2": "Aangepaste functionaliteitsontwikkeling",
+                "3": "Meerdere betalingsgateways",
+                "4": "Geavanceerd voorraadbeheer",
+                "5": "Integraties met systemen van derden",
+                "6": "Multi-taal ondersteuning",
+                "7": "Aangepaste rapportage dashboards",
+                "8": "Geavanceerde beveiligingsfuncties",
+                "9": "Uitgebreid trainingsprogramma"
+              }
+            }
+          }
+        },
+        "4": {
+          "title": "Hoe We Uw E-commerce Website Bouwen",
+          "desc": "Ons bewezen ontwikkelingsproces zorgt ervoor dat uw e-commerce website correct wordt gebouwd, op tijd, en klaar om verkoop te genereren.",
+          "process": {
+            "1": {
+              "title": "Ontdekking & Planning",
+              "desc": "We analyseren uw bedrijfsbehoeften, doelgroep en concurrenten om een strategische roadmap voor uw e-commerce winkel te creëren."
+            },
+            "2": {
+              "title": "Ontwerp & Gebruikerservaring",
+              "desc": "Onze ontwerpers creëren een aantrekkelijke, conversie-gerichte gebruikerservaring die uw merk weerspiegelt en aantrekkelijk is voor uw klanten."
+            },
+            "3": {
+              "title": "Ontwikkeling & Configuratie",
+              "desc": "We bouwen uw winkel met schone code, implementeren alle functies en configureren producten, betalingsgateways en verzendopties."
+            },
+            "4": {
+              "title": "Testen & Kwaliteitsborging",
+              "desc": "We testen uw winkel grondig op verschillende apparaten en browsers om functionaliteit, prestaties en veiligheid te garanderen."
+            },
+            "5": {
+              "title": "Lancering & Training",
+              "desc": "We implementeren uw winkel en bieden uitgebreide training zodat u met vertrouwen uw producten, bestellingen en klanten kunt beheren."
+            },
+            "6": {
+              "title": "Ondersteuning & Groei",
+              "desc": "We bieden doorlopende ondersteuning en strategische begeleiding om uw e-commerce bedrijf te helpen groeien en evolueren."
+            }
+          }
+        },
+        "5": {
+          "title": "Veelgestelde Vragen",
+          "desc": "Veelvoorkomende vragen over onze e-commerce oplossingen en diensten.",
+          "tab": {
+            "1": "Proces",
+            "2": "Prijzen",
+            "3": "Leveringen",
+            "4": "Tijdlijn"
+          },
+          "QA": {
+            "1": {
+              "Q": "Hoelang duurt het om een e-commerce website te bouwen?",
+              "A": "De tijdlijn hangt af van de complexiteit van uw project. Een basis e-commerce winkel kan in 3-4 weken operationeel zijn, terwijl meer complexe projecten 8-12 weken kunnen duren. Tijdens onze eerste consultatie zullen we een gedetailleerde tijdlijn geven op basis van uw specifieke vereisten."
+            },
+            "2": {
+              "Q": "Kunt u mijn bestaande online winkel migreren naar een nieuw platform?",
+              "A": "Ja, we bieden uitgebreide migratiediensten. We kunnen uw productcatalogus, klantaccounts en ordergeschiedenis overzetten van uw huidige platform naar een nieuwe Shopify, WooCommerce of aangepaste oplossing. Ons proces zorgt voor minimale verstoring en behoudt uw SEO-waarde tijdens de transitie."
+            },
+            "3": {
+              "Q": "Biedt u training over hoe ik mijn e-commerce website kan beheren?",
+              "A": "Absoluut! We nemen uitgebreide trainingssessies op in onze pakketten. We leren u en uw team hoe u producten kunt toevoegen/bewerken, voorraad kunt beheren, bestellingen kunt verwerken, content kunt bijwerken en alle functies van uw e-commerce platform kunt gebruiken. We bieden ook gedetailleerde documentatie en opgenomen trainingssessies voor toekomstige referentie."
+            },
+            "4": {
+              "Q": "Welke betalingsverwerkers kunt u integreren met mijn website?",
+              "A": "We kunnen uw website integreren met alle grote betalingsverwerkers, waaronder Stripe, PayPal, Square, Authorize.net, Braintree en vele anderen. We kunnen ook regio-specifieke betaalmethoden en meerdere betalingsopties implementeren om uw conversiepercentages te maximaliseren en gemak te bieden voor uw klanten."
+            },
+            "5": {
+              "Q": "Kunt u helpen met SEO voor mijn e-commerce winkel?",
+              "A": "Ja, we bouwen uw winkel met SEO best practices vanaf de basis. Dit omvat geoptimaliseerde sitestructuur, correcte metadata, schone code, mobiele optimalisatie en snelle laadtijden. We bieden ook doorlopende SEO-diensten om uw zichtbaarheid en rankings in de loop van de tijd te helpen verbeteren."
+            },
+            "6": {
+              "Q": "Biedt u onderhoud en ondersteuning na de lancering?",
+              "A": "Ja, we bieden doorlopende onderhouds- en ondersteuningspakketten om uw winkel soepel te laten draaien. Deze omvatten regelmatige updates, beveiligingsmonitoring, prestatie-optimalisatie en technische ondersteuning. We raden een onderhoudsplan aan om uw investering te beschermen en ervoor te zorgen dat uw winkel veilig en up-to-date blijft."
+            }
+          }
+        }
+      },
+      "cta": {
+        "title": "Klaar om Uw Aangepaste E-commerce Website te Creëren?",
+        "desc": "Neem vandaag contact met ons op voor een gratis consultatie. We helpen u bij het kiezen van de juiste functies en ontwikkelingsaanpak om een e-commerce website te creëren die verkoop en groei stimuleert voor uw bedrijf.",
+        "getBtn": "Krijg Uw E-commerce Website"
+      }
+    },
+    "SEO": {
+      "badge": {
+        "1": "SEO OPTIMALISATIE",
+        "2": "ONZE DIENSTEN",
+        "3": "RESULTATEN",
+        "4": "ONZE AANPAK",
+        "5": "VOORDELEN",
+        "6": "PRIJZEN"
+      },
+      "title": {
+        "1": "Vergroot Organisch Verkeer &",
+        "2": "Verbeter Uw Rankings"
+      },
+      "desc": "Datagestuurde SEO-strategieën die zichtbaarheid verhogen, gekwalificeerde leads aantrekken en uw bedrijf helpen de zoekresultaten te domineren.",
+      "auditBtn": "Krijg een Gratis SEO Audit",
+      "packageBtn": "Bekijk SEO Pakketten",
+      "sections": {
+        "1": {
+          "title": "Uitgebreide SEO Oplossingen",
+          "desc": "Onze holistische benadering van zoekmachineoptimalisatie dekt alle aspecten die nodig zijn om de zichtbaarheid van uw website in zoekresultaten te verbeteren.",
+          "services": {
+            "1": {
+              "title": "Zoekwoordenonderzoek",
+              "desc": "Uitgebreid zoekwoordenonderzoek om waardevolle zoektermen te identificeren die uw doelgroep gebruikt.",
+              "features": {
+                "1": "Concurrent Zoekwoordenanalyse",
+                "2": "Zoekvolume Beoordeling",
+                "3": "Long-tail Zoekwoorden Ontdekking",
+                "4": "Zoekwoord Moeilijkheidsscoring"
+              }
+            },
+            "2": {
+              "title": "On-Page SEO",
+              "desc": "Optimalisatie van individuele pagina's om hoger te rangschikken en meer relevant verkeer in zoekmachines te verdienen.",
+              "features": {
+                "1": "Titel & Meta Optimalisatie",
+                "2": "Content Structuur Verbetering",
+                "3": "Interne Linkstrategie",
+                "4": "Afbeeldingsoptimalisatie"
+              }
+            },
+            "3": {
+              "title": "Technische SEO",
+              "desc": "Aanpak van technische aspecten van uw website om ranking in zoekmachines te verbeteren.",
+              "features": {
+                "1": "Site Snelheidsoptimalisatie",
+                "2": "Mobiele Responsiviteit",
+                "3": "Schema Markup Implementatie",
+                "4": "Crawl Fout Oplossing"
+              }
+            },
+            "4": {
+              "title": "Link Building",
+              "desc": "Strategische acquisitie van backlinks van gezaghebbende websites om uw domeinautoriteit te vergroten.",
+              "features": {
+                "1": "Kwaliteit Backlink Acquisitie",
+                "2": "Gebroken Link Herstel",
+                "3": "Gastblog Strategie",
+                "4": "Concurrent Backlink Analyse"
+              }
+            }
+          }
+        },
+        "2": {
+          "title": "Bewezen Prestaties",
+          "desc": "Onze datagestuurde aanpak levert consequent meetbare resultaten voor onze klanten.",
+          "metrics": {
+            "1": {
+              "title": "Gemiddelde Verkeerstoename",
+              "desc": "Onze klanten zien doorgaans een stijging van 45% in organisch verkeer binnen 6 maanden."
+            },
+            "2": {
+              "title": "Zoekwoord Ranking Verbetering",
+              "desc": "85% van de doelzoekwoorden tonen significante rankingverbeteringen binnen de eerste 3 maanden."
+            },
+            "3": {
+              "title": "Conversieratio Verhoging",
+              "desc": "Gemiddeld helpen onze SEO-diensten conversiepercentages met 32% te verbeteren door gekwalificeerd verkeer."
+            },
+            "4": {
+              "title": "Lokale Zoek Zichtbaarheid",
+              "desc": "Lokale bedrijven zien een stijging van 65% in Google Map Pack verschijningen voor relevante zoekopdrachten."
+            }
+          }
+        },
+        "3": {
+          "title": "Ons SEO Proces",
+          "desc": "We volgen een systematische aanpak om ervoor te zorgen dat uw SEO-campagne consistente resultaten oplevert.",
+          "approach": {
+            "1": {
+              "title": "SEO Audit",
+              "desc": "We voeren een grondige analyse uit van uw huidige SEO-prestaties, en identificeren problemen en kansen."
+            },
+            "2": {
+              "title": "Strategie Ontwikkeling",
+              "desc": "We creëren een aangepaste SEO-strategie op basis van uw bedrijfsdoelen, doelgroep en concurrentieomgeving."
+            },
+            "3": {
+              "title": "On-Page Optimalisatie",
+              "desc": "We optimaliseren de content, structuur en technische elementen van uw website om zoekmachinenrankings te verbeteren."
+            },
+            "4": {
+              "title": "Off-Page Strategie",
+              "desc": "We bouwen hoogwaardige backlinks en verbeteren uw online aanwezigheid op relevante platforms."
+            },
+            "5": {
+              "title": "Analytics & Rapportage",
+              "desc": "We volgen belangrijke metrieken en bieden gedetailleerde rapporten over uw SEO-prestaties en ROI."
+            }
+          }
+        },
+        "4": {
+          "title": "Waarom Investeren in SEO?",
+          "desc": "Zoekmachineoptimalisatie biedt talrijke voordelen voor bedrijven die hun online aanwezigheid willen laten groeien.",
+          "cards": {
+            "1": {
+              "title": "Verhoogd Organisch Verkeer",
+              "desc": "Stuur meer gekwalificeerde bezoekers naar uw website zonder voor elke klik te betalen."
+            },
+            "2": {
+              "title": "Verbeterde Geloofwaardigheid",
+              "desc": "Hogere zoekrankings bouwen vertrouwen en geloofwaardigheid op bij uw doelgroep."
+            },
+            "3": {
+              "title": "Betere Gebruikerservaring",
+              "desc": "SEO-verbeteringen verbeteren ook de bruikbaarheid en gebruikerservaring van uw website."
+            },
+            "4": {
+              "title": "Kosteneffectieve Marketing",
+              "desc": "SEO biedt een van de beste ROI's vergeleken met andere digitale marketingkanalen."
+            },
+            "5": {
+              "title": "Meetbare Resultaten",
+              "desc": "Volg rankings, verkeer en conversies om de directe impact op uw bedrijf te zien."
+            },
+            "6": {
+              "title": "Langetermijn Strategie",
+              "desc": "In tegenstelling tot betaalde advertenties, worden SEO-voordelen over tijd opgebouwd voor blijvende resultaten."
+            }
+          }
+        },
+        "5": {
+          "title": "SEO Pakketten",
+          "desc": "Flexibele SEO-oplossingen ontworpen om te voldoen aan de behoeften van bedrijven in elke groeifase.",
+          "packages": {
+            "badge": "Meest Populair",
+            "includedLabel": "Wat is inbegrepen:",
+            "startBtn": "Aan de Slag",
+            "1": {
+              "title": "Starter SEO",
+              "desc": "Essentiële SEO-diensten voor kleine bedrijven die hun lokale zoekpresentie willen verbeteren.",
+              "period": "per maand",
+              "features": {
+                "1": "Initiële SEO Audit",
+                "2": "Zoekwoordenonderzoek (tot 20 zoekwoorden)",
+                "3": "On-Page Optimalisatie (5 pagina's)",
+                "4": "Basis Technische SEO",
+                "5": "Maandelijkse Rapportage",
+                "6": "Google Bedrijfsprofiel Optimalisatie",
+                "7": "3-Maanden Minimale Verbintenis"
+              }
+            },
+            "2": {
+              "title": "Professionele SEO",
+              "desc": "Uitgebreide SEO-oplossing voor groeiende bedrijven die concurreren in bredere markten.",
+              "period": "per maand",
+              "features": {
+                "1": "Diepgaande SEO Audit",
+                "2": "Geavanceerd Zoekwoordenonderzoek (tot 50 zoekwoorden)",
+                "3": "On-Page Optimalisatie (15 pagina's)",
+                "4": "Technische SEO Implementatie",
+                "5": "Content Optimalisatie Strategie",
+                "6": "Maandelijkse Link Building (5 kwaliteitslinks)",
+                "7": "Concurrentieanalyse",
+                "8": "Tweewekelijkse Rapportage",
+                "9": "6-Maanden Minimale Verbintenis"
+              }
+            },
+            "3": {
+              "title": "Enterprise SEO",
+              "desc": "Strategisch SEO-partnerschap voor grote bedrijven met complexe behoeften en competitieve industrieën.",
+              "period": "per maand",
+              "features": {
+                "1": "Uitgebreide SEO Audit",
+                "2": "Uitgebreid Zoekwoordenonderzoek & Mapping",
+                "3": "Volledige Website Optimalisatie",
+                "4": "Geavanceerde Technische SEO",
+                "5": "Content Creatie Strategie",
+                "6": "Agressieve Link Building Campagne",
+                "7": "Internationale SEO (indien van toepassing)",
+                "8": "E-commerce Optimalisatie (indien van toepassing)",
+                "9": "Wekelijkse Rapportage & Strategiegesprekken",
+                "10": "Toegewijde SEO Manager",
+                "11": "12-Maanden Minimale Verbintenis"
+              }
+            }
+          }
+        }
+      },
+      "cta": {
+        "title": "Klaar om Uw Zoekrankings te Verbeteren?",
+        "desc": "Krijg een gratis SEO-audit en ontdek kansen om de zichtbaarheid van uw website in zoekmachines te verbeteren.",
+        "reqBtn": "Vraag Uw Gratis SEO Audit Aan"
+      }
+    },
+    "Hosting": {
+      "badge": {
+        "1": "WEB HOSTING & ONDERHOUD",
+        "2": "ONZE DIENSTEN",
+        "3": "VOORDELEN",
+        "4": "TECHNOLOGIE",
+        "5": "ONS PROCES",
+        "6": "PRIJZEN"
+      },
+      "title": {
+        "1": "Betrouwbare Hosting",
+        "2": "& Expert Onderhoud"
+      },
+      "desc": "Houd uw website veilig, snel en altijd online met onze professionele hosting- en onderhoudsdiensten, ondersteund door 24/7 monitoring en support.",
+      "startBtn": "Begin Vandaag",
+      "plansBtn": "Bekijk Hosting Plannen",
+      "sections": {
+        "1": {
+          "title": "Uitgebreide Hosting Oplossingen",
+          "desc": "Meer dan alleen serverruimte, we bieden een volledig pakket diensten om uw website optimaal te laten presteren.",
+          "hostFeatures": {
+            "1": {
+              "title": "Beheerde Hosting",
+              "desc": "Volledig beheerde hostingomgeving met expertmonitoring en optimalisatie voor optimale prestaties.",
+              "features": {
+                "1": "24/7 Server Monitoring",
+                "2": "Prestatie Optimalisatie",
+                "3": "Bronbeheer",
+                "4": "Schaalbare Infrastructuur"
+              }
+            },
+            "2": {
+              "title": "Beveiligingsdiensten",
+              "desc": "Uitgebreide beveiligingsmaatregelen om uw website te beschermen tegen bedreigingen en kwetsbaarheden.",
+              "features": {
+                "1": "Malware Scanning",
+                "2": "DDoS Bescherming",
+                "3": "SSL Certificaten",
+                "4": "Firewall Configuratie"
+              }
+            },
+            "3": {
+              "title": "Prestatiemonitoring",
+              "desc": "Continue monitoring en optimalisatie om ervoor te zorgen dat uw website topprestaties blijft leveren.",
+              "features": {
+                "1": "Uptime Monitoring",
+                "2": "Pagina Snelheid Analyse",
+                "3": "Belastingtests",
+                "4": "Prestatie Rapporten"
+              }
+            },
+            "4": {
+              "title": "Regelmatige Back-ups",
+              "desc": "Geautomatiseerde back-upsystemen zorgen ervoor dat uw gegevens altijd veilig zijn en herstelbaar in geval van noodsituaties.",
+              "features": {
+                "1": "Dagelijkse Geautomatiseerde Back-ups",
+                "2": "Veilige Offsite Opslag",
+                "3": "Snelle Herstel",
+                "4": "Gegevensbewaarbeleid"
+              }
+            }
+          }
+        },
+        "2": {
+          "title": "Waarom Kiezen voor Onze Hosting",
+          "desc": "Ervaar de gemoedsrust die komt met professionele, beheerde hostingoplossingen.",
+          "cards": {
+            "1": {
+              "title": "Superieure Prestaties",
+              "desc": "Geoptimaliseerde serverconfiguraties en premium hardware leveren bliksemsnelle laadtijden voor uw bezoekers."
+            },
+            "2": {
+              "title": "Verbeterde Beveiliging",
+              "desc": "Geavanceerde beveiligingsprotocollen en continue monitoring beschermen uw site tegen bedreigingen en kwetsbaarheden."
+            },
+            "3": {
+              "title": "Uitzonderlijke Uptime",
+              "desc": "Onze robuuste infrastructuur en proactieve monitoring zorgt ervoor dat uw website 99,9% van de tijd online blijft."
+            },
+            "4": {
+              "title": "Regelmatige Updates",
+              "desc": "Automatische updates voor uw CMS, plugins en serversoftware houden uw site veilig en soepel functionerend."
+            },
+            "5": {
+              "title": "Naadloze Schaalbaarheid",
+              "desc": "Schaal eenvoudig uw bronnen naarmate uw bedrijf groeit, zonder serviceonderbrekingen of technische hoofdpijn."
+            },
+            "6": {
+              "title": "Gegevensbescherming",
+              "desc": "Geautomatiseerde back-upsystemen zorgen ervoor dat uw waardevolle gegevens altijd beschermd zijn en snel herstelbaar."
+            }
+          }
+        },
+        "3": {
+          "title": "Onze Technologie Stack",
+          "desc": "We maken gebruik van toonaangevende technologieën om betrouwbare, veilige en hoogwaardige hostingoplossingen te leveren.",
+          "stack": {
+            "1": {
+              "category": "Hosting Infrastructuur"
+            },
+            "2": {
+              "category": "Content Delivery"
+            },
+            "3": {
+              "category": "Database Oplossingen"
+            },
+            "4": {
+              "category": "CMS Platforms"
+            }
+          }
+        },
+        "4": {
+          "title": "Hoe We Uw Website Onderhouden",
+          "desc": "Onze systematische aanpak zorgt ervoor dat uw website veilig, bijgewerkt en optimaal presterend blijft.",
+          "cards": {
+            "stepLabel": "STAP",
+            "1": {
+              "title": "Server Monitoring",
+              "desc": "We monitoren continu uw server voor uptime, bronnengebruik en potentiële problemen om optimale prestaties te garanderen."
+            },
+            "2": {
+              "title": "Regelmatige Updates",
+              "desc": "We voeren regelmatig updates uit aan uw CMS, plugins, thema's en serversoftware om veiligheid en functionaliteit te behouden."
+            },
+            "3": {
+              "title": "Beveiligingsscans",
+              "desc": "We voeren regelmatig beveiligingsscans uit om kwetsbaarheden te identificeren en te verhelpen voordat ze kunnen worden misbruikt."
+            },
+            "4": {
+              "title": "Prestatietests",
+              "desc": "We testen regelmatig de prestaties van uw site en maken noodzakelijke optimalisaties om snelheid en gebruikerservaring te verbeteren."
+            },
+            "5": {
+              "title": "Back-up Beheer",
+              "desc": "We onderhouden regelmatige back-ups van uw site en database, zodat uw gegevens altijd beschermd en herstelbaar zijn."
+            },
+            "6": {
+              "title": "Proactieve Ondersteuning",
+              "desc": "We pakken potentiële problemen aan voordat ze uw site beïnvloeden, en bieden snelle oplossingen wanneer problemen zich voordoen."
+            }
+          }
+        },
+        "5": {
+          "title": "Hosting & Onderhoudsplannen",
+          "desc": "Kies de hostingoplossing die het beste past bij uw bedrijfsbehoeften en budget.",
+          "packages": {
+            "badge": "Meest Populair",
+            "includedLabel": "Wat is inbegrepen:",
+            "startBtn": "Aan de Slag",
+            "1": {
+              "title": "Standaard",
+              "desc": "Perfect voor kleine bedrijfswebsites en blogs met gematigd verkeer.",
+              "period": "per maand",
+              "features": {
+                "1": "Gedeelde Hostingomgeving",
+                "2": "5GB Opslag",
+                "3": "50GB Maandelijkse Bandbreedte",
+                "4": "Wekelijkse Back-ups",
+                "5": "SSL Certificaat",
+                "6": "Basis Beveiligingsbescherming",
+                "7": "E-mail Ondersteuning"
+              }
+            },
+            "2": {
+              "title": "Professioneel",
+              "desc": "Ideaal voor groeiende bedrijven, e-commerce sites en sites met veel verkeer.",
+              "period": "per maand",
+              "features": {
+                "1": "VPS Hosting",
+                "2": "20GB SSD Opslag",
+                "3": "Onbeperkte Bandbreedte",
+                "4": "Dagelijkse Back-ups",
+                "5": "Premium SSL Certificaat",
+                "6": "Geavanceerde Beveiligingsbescherming",
+                "7": "CDN Integratie",
+                "8": "Prioriteit Ondersteuning",
+                "9": "Maandelijkse Prestatierapporten"
+              }
+            },
+            "3": {
+              "title": "Enterprise",
+              "desc": "Uitgebreide oplossing voor grote bedrijven met complexe vereisten en hoge verkeersvolumes.",
+              "period": "per maand",
+              "features": {
+                "1": "Toegewijde Hosting",
+                "2": "100GB SSD Opslag",
+                "3": "Onbeperkte Bandbreedte",
+                "4": "Realtime Back-ups",
+                "5": "Extended Validation SSL",
+                "6": "Enterprise-grade Beveiliging",
+                "7": "Wereldwijde CDN",
+                "8": "Load Balancing",
+                "9": "24/7 Toegewijde Ondersteuning",
+                "10": "Aangepaste Infrastructuur"
+              }
+            }
+          }
+        }
+      },
+      "cta": {
+        "title": "Klaar voor Betrouwbare Hosting?",
+        "desc": "Neem vandaag contact op om uw hostingbehoeften te bespreken en ontdek hoe onze oplossingen uw bedrijf kunnen helpen een veilige, snelle en betrouwbare online aanwezigheid te behouden.",
+        "startBtn": "Begin Vandaag"
+      }
+    }
+  },
+  "Portfolio": {
+    "title": "Ons",
+    "title2": "Portfolio",
+    "sub": "Ontdek het volledige spectrum van onze creaties.",
+    "category": {
+      "1": "Web Ontwikkeling",
+      "2": "Desktop Ontwikkeling",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": ""
+    },
+    "holder": "Project Afbeelding Placeholder",
+    "viewbtn": "Bekijk Project"
+  },
+  "Merch": {
+    "badge": {
+      "1": "OFFICIËLE MERCHANDISE",
+      "2": "UITGELICHTE COLLECTIES",
+      "3": "ONZE PRODUCTEN",
+      "4": "TIJDELIJKE AANBIEDING",
+      "5": "CODE: CWA15"
+    },
+    "title": {
+      "1": "Draag Uw",
+      "2": "Codeerpassie"
+    },
+    "desc": "Hoogwaardige kleding voor ontwikkelaars, ontwerpers en tech-enthousiasten. Gemaakt voor degenen die digitale excellentie bouwen.",
+    "shopBtn": "Nu Winkelen",
+    "heading": {
+      "1": "Samengestelde Collecties",
+      "2": "Shop De Collectie"
+    },
+    "collection": {
+      "1": {
+        "title": "Wintercollectie",
+        "desc": "Blijf warm en stijlvol met onze winter codeerkleding."
+      },
+      "2": {
+        "title": "Essentiële Collectie",
+        "desc": "Must-have stukken voor de garderobe van elke ontwikkelaar."
+      },
+      "3": {
+        "title": "Limited Edition",
+        "desc": "Exclusieve ontwerpen, alleen voor beperkte tijd beschikbaar."
+      }
+    },
+    "category": {
+      "searchPlaceHolder": "Zoek producten...",
+      "1": "Alle",
+      "2": "Hoodie",
+      "3": "Shirt",
+      "4": "Pet",
+      "5": "Broek",
+      "6": "Overig",
+      "sort": {
+        "title": "Sorteer Op",
+        "option": {
+          "1": "Uitgelicht",
+          "2": "Prijs: Laag naar Hoog",
+          "3": "Prijs: Hoog naar Laag",
+          "4": "Alfabetisch",
+          "5": "Nieuwste"
+        }
+      }
+    },
+    "merchComp": {
+      "badge": {
+        "1": "BESTSELLER",
+        "2": "UITGELICHT"
+      },
+      "buyBtn": "Nu Kopen",
+      "wishlistLabel": "Toevoegen aan Verlanglijst",
+      "colorLabel": "Kleuren:",
+      "sizeLabel": "Maten:",
+      "soonLabel": "Binnenkort..."
+    },
+    "items": {
+      "1": {
+        "title": "Ontwikkelaar Hoodie",
+        "desc": "Blijf warm tijdens het coderen met onze premium ontwikkelaar hoodie. Met een minimalistisch ontwerp met subtiele codefragmenten op de mouwen.",
+        "category": "Hoodie",
+        "colors": {
+          "1": "Zwart",
+          "2": "Grijs",
+          "3": "Marine",
+          "4": "Wit"
+        }
+      },
+      "2": {
+        "title": "Premium Code Hoodie",
+        "desc": "Onze premium zwaargewicht hoodie met geborduurde logo en codepatronen. Inclusief verborgen oordopkanalen in de capuchon.",
+        "category": "Hoodie",
+        "colors": {
+          "1": "Zwart",
+          "2": "Grijs",
+          "3": "Marine",
+          "4": "Wit"
+        }
+      },
+      "3": {
+        "title": "Code Artiest T-Shirt",
+        "desc": "Comfortabel katoenen t-shirt met ons kenmerkende 'Code Artiest' ontwerp op de voorkant.",
+        "category": "Shirt",
+        "colors": {
+          "1": "Zwart",
+          "2": "Wit",
+          "3": "Rood",
+          "4": "Blauw",
+          "5": "Grijs",
+          "6": "Lichtgrijs",
+          "7": "Marine"
+        }
+      },
+      "5": {
+        "title": "Ontwikkelaar Sweatshirt",
+        "desc": "Retro-geïnspireerd sweatshirt met vintage programmeertalen en syntax.",
+        "category": "Shirt",
+        "colors": {
+          "1": "Zwart",
+          "2": "Marine",
+          "3": "Grijs",
+          "4": ""
+        }
+      },
+      "6": {
+        "title": "Premium Ontwikkelaar Sweatshirt",
+        "desc": "Premium sweatshirt met comfortabele stof en stijlvol ontwikkelaar-thema ontwerp.",
+        "category": "Shirt",
+        "colors": {
+          "1": "Zwart",
+          "2": "Marine",
+          "3": "Grijs"
+        }
+      },
+      "7": {
+        "title": "Tech Muts",
+        "desc": "Warme gebreide muts met een subtiel geborduurd codesymbool. Perfect voor winter coderen.",
+        "category": "Pet",
+        "colors": {
+          "1": "Zwart"
+        }
+      },
+      "8": {
+        "title": "Pet",
+        "desc": "Draag je codeer pet als je naar meetups gaat en er fris en cool uitziet.",
+        "category": "Pet",
+        "colors": {
+          "1": "Zwart"
+        }
+      },
+      "9": {
+        "title": "CWA Mok",
+        "desc": "Drink uit onze mok om geïnspireerd te raken en de beste Tech Nerd te worden die je ooit hebt gedroomd!",
+        "category": "Overig",
+        "colors": {
+          "1": "Zwart"
+        }
+      }
+    },
+    "features": {
+      "1": {
+        "title": "Premium Kwaliteit",
+        "desc": "Al onze merchandise is gemaakt met hoogwaardige materialen die gebouwd zijn om talloze codeersessies te doorstaan."
+      },
+      "2": {
+        "title": "Unieke Ontwerpen",
+        "desc": "Elk stuk heeft unieke ontwerpen gemaakt door ons interne team van ontwikkelaar-artiesten."
+      },
+      "3": {
+        "title": "Gratis Verzending",
+        "desc": "Geniet van gratis verzending op alle bestellingen boven €75. Internationale verzending beschikbaar naar de meeste landen."
+      }
+    },
+    "cta": {
+      "title": "Krijg 15% Korting op Uw Eerste Bestelling",
+      "desc": "Voer de promotiecode in bij het afrekenen en ontvang een kortingscode van 15% voor uw eerste merchandise aankoop.",
+      "newsBtn": "Meld U Aan Voor Nieuwsbrief"
+    }
+  },
+  "Contact": {
+    "badge": "NEEM CONTACT OP",
+    "statusMsg": {
+      "success": "Bedankt voor uw bericht!",
+      "error": "Er was een fout bij het versturen van uw bericht. Probeer het opnieuw."
+    },
+    "header": "Klaar om Uw Project te Starten?",
+    "desc": "Vertel ons over uw project en we nemen binnen 24 uur contact met u op voor een gratis consultatie.",
+    "submitbtn": "Bericht Versturen",
+    "submitLoad": "Versturen...",
+    "field": {
+      "name": {
+        "label": "Naam",
+        "placeholder": "Vul uw volledige naam in"
+      },
+      "email": {
+        "label": "E-mail",
+        "placeholder": "uw@email.com"
+      },
+      "service": {
+        "label": "Benodigde Dienst",
+        "placeholder": "Selecteer een dienst",
+        "option": {
+          "1": "Website Ontwikkeling",
+          "2": "Mobiele App Ontwikkeling",
+          "3": "UI/UX Ontwerp",
+          "4": "E-commerce Oplossingen",
+          "5": "SEO Optimalisatie",
+          "6": "Web Hosting & Onderhoud"
+        }
+      },
+      "details": {
+        "label": "Project Details",
+        "placeholder": "Vertel ons over uw projectvereisten en doelen..."
+      }
+    }
+  },
+  "Footer": {     
+    "compDesc": "Wij ontwerpen en ontwikkelen digitale ervaringen die bedrijven en individuen helpen online te slagen.",     
+    "rights": "Uw Bedrijf. Alle rechten voorbehouden.",     
+    "customLink": "Github",     
+    "cwaMark": "Ontworpen Door",     
+    "nav": {       
+      "company": {         
+        "title": "Diensten",         
+        "links": {           
+          "1": "Website Ontwikkeling",           
+          "2": "Mobiele App Ontwikkeling",           
+          "3": "UI/UX Ontwerp",           
+          "4": "E-commerce Oplossingen",           
+          "5": "SEO Optimalisatie",           
+          "6": "Web Hosting"         
+        }       
+      },       
+      "resources": {         
+        "title": "Bedrijf",         
+        "links": {           
+          "1": "Over Ons",           
+          "2": "Portfolio",
+          "3": "Proces",           
+          "4": "Contact"         
+        }       
+      },       
+      "contact": {         
+        "title": "Contact",         
+        "links": {           
+          "1": "unfold@codewithali.com",           
+          "2": "(408) 690-4009",           
+          "3": "Vraag een Offerte Aan"          
+        }       
+      },       
+      "legal": {         
+        "title": "Privacy",         
+        "links": {           
+          "1": "CodeWithAli. Alle rechten voorbehouden.",           
+          "2": "Privacybeleid",           
+          "3": "Servicevoorwaarden",           
+          "4": "Cookiebeleid"         
+        }       
+      }     
+    }   
+  }
+}
