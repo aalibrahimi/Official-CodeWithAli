@@ -14,13 +14,16 @@ import {
   Settings,
   ShieldCheck,
   RefreshCw,
+  ChevronLeft,
+  ArrowLeft,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@radix-ui/react-tabs";
 import GradientText from "@/MyComponents/GradientText";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { isRtlLang } from "rtl-detect";
 // import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 // Animation variants
@@ -36,6 +39,8 @@ import { useTranslations } from "next-intl";
 const WebsiteDevelopmentPage = () => {
   const t = useTranslations("ServicePage.webDev");
   const router = useRouter();
+  const locale = useLocale();
+  const isRTL = isRtlLang(locale);
 
   // Process steps
   const processSteps = [
@@ -161,7 +166,11 @@ const WebsiteDevelopmentPage = () => {
                   onClick={() => router.push("/contact")}
                 >
                   {t("quoteBtn")}
-                  <ChevronRight className="ml-2 h-5 w-5" />
+                  {isRTL ? (
+                    <ChevronLeft className="ml-2 h-5 w-5" />
+                  ) : (
+                    <ChevronRight className="ml-2 h-5 w-5" />
+                  )}
                 </Button>
                 <Button
                   variant="outline"
@@ -181,7 +190,7 @@ const WebsiteDevelopmentPage = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
             > */}
-            <div className="lg:w-5/12">
+            <div className="hidden lg:block lg:w-5/12">
               <div className="relative bg-gray-900/80 dark:bg-black/60 border border-pink-900 rounded-xl overflow-hidden shadow-2xl shadow-pink-950/20 p-5">
                 {/* Website mockup illustration */}
                 <div className="w-full aspect-[4/3] bg-gradient-to-br from-pink-800/40 to-pink-700/10 dark:from-pink-950/40 dark:to-pink-900/10 rounded-lg overflow-hidden p-4">
@@ -352,7 +361,7 @@ const WebsiteDevelopmentPage = () => {
                       </div>
                       <div>
                         <div className="flex items-center mb-2">
-                          <step.icon className="w-5 h-5 text-pink-700 dark:text-pink-500 mr-2" />
+                          <step.icon className={`w-5 h-5 text-pink-700 dark:text-pink-500 ${isRTL ? "ml-2" : "mr-2"}`} />
                           <h3 className="text-xl font-bold text-pink-800 dark:text-white">
                             {step.title}
                           </h3>
@@ -412,7 +421,7 @@ const WebsiteDevelopmentPage = () => {
                 className="bg-pink-100 dark:bg-black/60 border border-pink-300 dark:border-pink-900 rounded-lg p-6"
               >
                 <div className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-pink-700 dark:text-pink-500 mt-1 mr-3 flex-shrink-0" />
+                  <CheckCircle className={`w-5 h-5 text-pink-700 dark:text-pink-500 mt-1 ${isRTL ? "ml-3" : "mr-3"} flex-shrink-0`} />
                   <div>
                     <h4 className="text-lg font-bold text-pink-800 dark:text-white mb-1">
                       {tech.name}
@@ -496,7 +505,11 @@ const WebsiteDevelopmentPage = () => {
                         className="border-2 border-pink-400/60 hover:text-white text-white bg-pink-700/50 hover:bg-pink-700/70"
                       >
                         {t("sections.4.case.viewBtn")}
-                        <ArrowRight className="ml-2 h-4 w-4" />
+                        {isRTL ? (
+                          <ArrowLeft className="ml-2 h-4 w-4" />
+                        ) : (
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        )}
                       </Button>
                     </div>
                   </div>
@@ -520,7 +533,11 @@ const WebsiteDevelopmentPage = () => {
               onClick={() => router.push("/portfolio")}
             >
               {t("sections.4.case.projectsBtn")}
-              <ChevronRight className="ml-2 h-5 w-5" />
+              {isRTL ? (
+                <ChevronLeft className="ml-2 h-5 w-5" />
+              ) : (
+                <ChevronRight className="ml-2 h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -704,7 +721,11 @@ const WebsiteDevelopmentPage = () => {
                 onClick={() => router.push("/contact")}
               >
                 {t("quoteBtn")}
-                <ChevronRight className="ml-2 h-5 w-5" />
+                {isRTL ? (
+                  <ChevronLeft className="ml-2 h-5 w-5" />
+                ) : (
+                  <ChevronRight className="ml-2 h-5 w-5" />
+                )}
               </Button>
               <Button
                 variant="outline"

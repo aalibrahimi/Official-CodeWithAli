@@ -106,9 +106,9 @@ export default function Footer() {
                         title: t("nav.resources.links.2"),
                         href: "/portfolio",
                       },
-                      { title: "Process", href: "/#process" },
+                      { title: t("nav.resources.links.3"), href: "/#process" },
                       {
-                        title: t("nav.resources.links.3"),
+                        title: t("nav.resources.links.4"),
                         href: "/contact",
                       },
                     ].map((item) => (

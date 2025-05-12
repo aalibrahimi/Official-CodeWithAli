@@ -755,7 +755,7 @@ export default function AboutPage() {
             {/* Features list - stacked on mobile */}
             <div className="mt-6 md:mt-8 space-y-3 md:space-y-0 md:flex md:items-center md:justify-center text-red-200/60">
               <div className="flex items-center justify-center">
-                <CheckCircle className="h-4 w-4 mr-2 text-red-200 dark:text-red-500" />
+                <CheckCircle className={`h-4 w-4 ${isRTL ? "ml-2" : "mr-2"} text-red-200 dark:text-red-500`} />
                 <span className="text-xs text-white dark:text-red-300 md:text-sm">
                   {t("cta.li")}
                 </span>
@@ -764,7 +764,7 @@ export default function AboutPage() {
               <span className="hidden md:inline mx-4 text-white">•</span>
 
               <div className="flex items-center justify-center">
-                <CheckCircle className="h-4 w-4 mr-2 text-red-200 dark:text-red-500" />
+                <CheckCircle className={`h-4 w-4 ${isRTL ? "ml-2" : "mr-2"} text-red-200 dark:text-red-500`} />
                 <span className="text-xs text-white dark:text-red-300 md:text-sm">
                   {t("cta.li2")}
                 </span>
@@ -773,7 +773,7 @@ export default function AboutPage() {
               <span className="hidden md:inline mx-4 text-white">•</span>
 
               <div className="flex items-center justify-center">
-                <CheckCircle className="h-4 w-4 mr-2 text-red-200 dark:text-red-500" />
+                <CheckCircle className={`h-4 w-4 ${isRTL ? "ml-2" : "mr-2"} text-red-200 dark:text-red-500`} />
                 <span className="text-xs text-white dark:text-red-300 md:text-sm">
                   {t("cta.li3")}
                 </span>

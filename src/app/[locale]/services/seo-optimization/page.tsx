@@ -15,12 +15,15 @@ import {
   Layers,
   FileText,
   Link2,
+  ArrowLeft,
+  ChevronLeft,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import GradientText from "@/MyComponents/GradientText";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { isRtlLang } from "rtl-detect";
 
 // Animation variants
 // const fadeIn = {
@@ -45,6 +48,8 @@ const staggerContainer = {
 const SEOOptimizationPage = () => {
   const router = useRouter();
   const t = useTranslations("ServicePage.SEO");
+  const locale = useLocale();
+  const isRTL = isRtlLang(locale);
 
   // SEO services data
   const seoServices = [
@@ -245,7 +250,11 @@ const SEOOptimizationPage = () => {
                 onClick={() => router.push("/contact")}
               >
                 {t("auditBtn")}
-                <ArrowRight className="ml-2 h-4 w-4" />
+                {isRTL ? (
+                  <ArrowLeft className="ml-2 h-4 w-4" />
+                ) : (
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                )}
               </Button>
               <Button
                 variant="outline"
@@ -254,7 +263,11 @@ const SEOOptimizationPage = () => {
                 onClick={() => router.push("#packages")}
               >
                 {t("packageBtn")}
-                <ChevronRight className="ml-2 h-4 w-4" />
+                {isRTL ? (
+                  <ChevronLeft className="ml-2 h-4 w-4" />
+                ) : (
+                  <ChevronRight className="ml-2 h-4 w-4" />
+                )}
               </Button>
             </div>
           </div>
@@ -321,7 +334,11 @@ const SEOOptimizationPage = () => {
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start">
-                          <ChevronRight className="h-4 w-4 text-orange-950 dark:text-orange-500 mt-1 mr-2 flex-shrink-0" />
+                          {isRTL ? (
+                            <ChevronLeft className="h-4 w-4 text-orange-950 dark:text-orange-500 mt-1 mr-2 flex-shrink-0" />
+                          ) : (
+                            <ChevronRight className="h-4 w-4 text-orange-950 dark:text-orange-500 mt-1 mr-2 flex-shrink-0" />
+                          )}
                           <span className="text-black dark:text-white/80 text-sm">
                             {feature}
                           </span>
@@ -423,7 +440,7 @@ const SEOOptimizationPage = () => {
 
           <div className="relative">
             {/* Connector line */}
-            <div className="absolute left-[27px] top-8 bottom-8 w-1 bg-gradient-to-b from-orange-300 to-orange-400 dark:from-orange-700 dark:to-orange-900 rounded-full hidden md:block"></div>
+            <div className={`absolute ${isRTL ? "right-[27px]" : "left-[27px]"} top-8 bottom-8 w-1 bg-gradient-to-b from-orange-300 to-orange-400 dark:from-orange-700 dark:to-orange-900 rounded-full hidden md:block`}></div>
 
             <div className="space-y-12 relative">
               {seoApproach.map((step, index) => (
@@ -443,7 +460,7 @@ const SEOOptimizationPage = () => {
                   </div>
                   <div className="bg-gray-50 dark:bg-black/60 border border-orange-300 hover:border-orange-400 dark:border-orange-950 dark:hover:border-orange-900 transition-colors rounded-xl p-6 flex-grow backdrop-blur-sm">
                     <div className="flex items-center mb-3">
-                      <span className="text-sm font-bold text-black dark:text-orange-500 mr-2">
+                      <span className={`text-sm font-bold text-black dark:text-orange-500 ${isRTL ? "ml-2" : "mr-2"}`}>
                         {step.number}
                       </span>
                       <h3 className="text-xl font-bold text-orange-700 dark:text-white">
@@ -611,7 +628,7 @@ const SEOOptimizationPage = () => {
                         <ul className="space-y-3">
                           {pkg.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start">
-                              <CheckCircle className="h-5 w-5 text-white dark:text-orange-500 mr-3 flex-shrink-0" />
+                              <CheckCircle className={`h-5 w-5 text-white dark:text-orange-500 ${isRTL ? "ml-3" : "mr-3"} flex-shrink-0`} />
                               <span className="text-black dark:text-white/70">
                                 {feature}
                               </span>
@@ -631,7 +648,11 @@ const SEOOptimizationPage = () => {
                           onClick={() => router.push("/contact")}
                         >
                           {t("sections.5.packages.startBtn")}
-                          <ArrowRight className="ml-2 h-4 w-4" />
+                          {isRTL ? (
+                            <ArrowLeft className="ml-2 h-4 w-4" />
+                          ) : (
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          )}
                         </Button>
                       </div>
                     </div>
@@ -666,7 +687,11 @@ const SEOOptimizationPage = () => {
               onClick={() => router.push("/contact")}
             >
               {t("cta.reqBtn")}
-              <ChevronRight className="ml-2 h-5 w-5" />
+              {isRTL ? (
+                <ChevronLeft className="ml-2 h-5 w-5" />
+              ) : (
+                <ChevronRight className="ml-2 h-5 w-5" />
+              )}
             </Button>
           </div>
           {/* </motion.div> */}

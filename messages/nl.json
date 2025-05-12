@@ -377,7 +377,52 @@
   },
   "ServicePage": {
     "webDev": {
+      "badge": {
+        "1": "WEBSITE ONTWIKKELING",
+        "2": "BELANGRIJKSTE FUNCTIES",
+        "3": "ONS PROCES",
+        "4": "TECHNOLOGIEËN",
+        "5": "CASESTUDIES",
+        "6": "VEELGESTELDE VRAGEN"
+      },
+      "title": {
+        "1": "Op Maat Gemaakte Website Ontwikkeling",
+        "2": "Die Resultaten Oplevert"
+      },
+      "desc": "Wij ontwerpen en ontwikkelen verbluffende, hoogwaardige websites die uw publiek boeien, uw merkpresentie vestigen en meetbare bedrijfsgroei stimuleren.",
+      "quoteBtn": "Krijg een Gratis Offerte",
+      "workBtn": "Bekijk Ons Werk",
       "sections": {
+        "1": {
+          "title": "Wat Onze Website Ontwikkeling Onderscheidt",
+          "desc": "We combineren technische expertise met creatief ontwerp om websites te leveren die er niet alleen geweldig uitzien, maar ook uitzonderlijk goed presteren.",
+          "cards": {
+            "1": {
+              "title": "Responsief Ontwerp",
+              "desc": "We bouwen websites die zich naadloos aanpassen aan elk apparaat, voor een optimale gebruikerservaring op desktops, tablets en smartphones."
+            },
+            "2": {
+              "title": "Prestatie-optimalisatie",
+              "desc": "Onze websites zijn geoptimaliseerd voor snelheid met efficiënte code, beeldoptimalisatie en cachingstrategieën voor bliksemsnelle laadtijden."
+            },
+            "3": {
+              "title": "SEO-vriendelijke Structuur",
+              "desc": "We implementeren SEO-best practices vanaf de basis, zodat uw website goed scoort in zoekmachines en organisch verkeer genereert."
+            },
+            "4": {
+              "title": "Aangepaste Functionaliteit",
+              "desc": "Van interactieve elementen tot complexe bedrijfslogica, we ontwikkelen aangepaste functies die aan uw specifieke eisen voldoen."
+            },
+            "5": {
+              "title": "Beveiligingsmaatregelen",
+              "desc": "We implementeren robuuste beveiligingspraktijken om uw website en gebruikersgegevens te beschermen tegen kwetsbaarheden en bedreigingen."
+            },
+            "6": {
+              "title": "Contentbeheer",
+              "desc": "We bouwen gebruiksvriendelijke contentmanagementsystemen waarmee u uw website kunt bijwerken en onderhouden zonder technische kennis."
+            }
+          }
+        },
         "2": {
           "title": "End-to-End Website Ontwikkelingsproces",
           "desc": "Onze gestructureerde aanpak zorgt voor een soepele ontwikkelingsreis van concept tot lancering en verder.",
