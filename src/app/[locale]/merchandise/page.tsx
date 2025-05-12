@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import {
   ShoppingCart,
   ShoppingBag,
@@ -13,7 +12,6 @@ import {
   Send,
   Search,
   Heart,
-  X,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -104,9 +102,8 @@ const MerchCard: React.FC<{
   sizes: Size[];
   paymentLink?: string;
   available?: boolean;
-  onAddToCart: (item: CartItem) => void;
+  onAddToCart?: (item: CartItem) => void;
 }> = ({
-  id,
   featured,
   bestseller,
   name,
@@ -117,8 +114,8 @@ const MerchCard: React.FC<{
   colors,
   sizes,
   paymentLink,
-  available = true,
-  onAddToCart,
+  // available = true,
+  // onAddToCart,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [selectedColor, setSelectedColor] = useState<Color>(colors[0]);
@@ -134,18 +131,18 @@ const MerchCard: React.FC<{
     "Light-Gray": "bg-gray-300",
   };
 
-  const handleAddToCart = () => {
-    if (available) {
-      onAddToCart({
-        id,
-        name,
-        price,
-        quantity: 1,
-        image: img,
-        color: selectedColor,
-      });
-    }
-  };
+  // const handleAddToCart = () => {
+  //   if (available) {
+  //     onAddToCart({
+  //       id,
+  //       name,
+  //       price,
+  //       quantity: 1,
+  //       image: img,
+  //       color: selectedColor,
+  //     });
+  //   }
+  // };
 
   // Get correct image path
   const imagePath = getImagePath(img, selectedColor);
@@ -301,115 +298,114 @@ const MerchCard: React.FC<{
 };
 
 // Mini cart component
-const MiniCart: React.FC<{
-  items: CartItem[];
-  isOpen: boolean;
-  onClose: () => void;
-  onRemoveItem: (id: number) => void;
-}> = ({ items, isOpen, onClose, onRemoveItem }) => {
-  if (!isOpen) return null;
+// const MiniCart: React.FC<{
+//   items: CartItem[];
+//   isOpen: boolean;
+//   onClose: () => void;
+//   onRemoveItem: (id: number) => void;
+// }> = ({ items, isOpen, onClose, onRemoveItem }) => {
+//   if (!isOpen) return null;
 
-  const totalItems = items.reduce((total, item) => total + item.quantity, 0);
-  const subtotal = items.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
+//   const totalItems = items.reduce((total, item) => total + item.quantity, 0);
+//   const subtotal = items.reduce(
+//     (total, item) => total + item.price * item.quantity,
+//     0
+//   );
 
-  return (
-    <div className="absolute top-16 right-0 w-72 bg-white dark:bg-black border border-red-300/40 dark:border-red-900/40 rounded-xl shadow-lg shadow-black/30 z-50 overflow-hidden">
-      <div className="p-4 border-b border-red-200/50 dark:border-red-950/30 flex justify-between items-center">
-        <h3 className="font-medium text-black dark:text-white">
-          Cart ({totalItems})
-        </h3>
-        <Button
-          size="icon"
-          variant="ghost"
-          className="h-7 w-7"
-          onClick={onClose}
-        >
-          <X className="h-4 w-4" />
-        </Button>
-      </div>
+//   return (
+//     <div className="absolute top-16 right-0 w-72 bg-white dark:bg-black border border-red-300/40 dark:border-red-900/40 rounded-xl shadow-lg shadow-black/30 z-50 overflow-hidden">
+//       <div className="p-4 border-b border-red-200/50 dark:border-red-950/30 flex justify-between items-center">
+//         <h3 className="font-medium text-black dark:text-white">
+//           Cart ({totalItems})
+//         </h3>
+//         <Button
+//           size="icon"
+//           variant="ghost"
+//           className="h-7 w-7"
+//           onClick={onClose}
+//         >
+//           <X className="h-4 w-4" />
+//         </Button>
+//       </div>
 
-      {items.length === 0 ? (
-        <div className="p-6 text-center">
-          <ShoppingBag className="h-8 w-8 mx-auto text-red-400/60 dark:text-red-500/40 mb-2" />
-          <p className="text-red-500/70 dark:text-red-300/70">
-            Your cart is empty
-          </p>
-        </div>
-      ) : (
-        <>
-          <div className="max-h-60 overflow-y-auto">
-            {items.map((item) => (
-              <div
-                key={item.id}
-                className="flex p-3 border-b border-red-200/30 dark:border-red-950/20"
-              >
-                <div className="w-12 h-12 relative rounded overflow-hidden mr-3 flex-shrink-0">
-                  <Image
-                    src={getImagePath(item.image, item.color)}
-                    alt={item.name}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <div className="flex-grow">
-                  <div className="flex justify-between">
-                    <h4 className="text-sm font-medium text-black dark:text-white">
-                      {item.name}
-                    </h4>
-                    <Button
-                      size="icon"
-                      variant="ghost"
-                      className="h-5 w-5 text-red-500/70 dark:text-red-300/70"
-                      onClick={() => onRemoveItem(item.id)}
-                    >
-                      <X className="h-3 w-3" />
-                    </Button>
-                  </div>
-                  <div className="flex justify-between items-center mt-1">
-                    <span className="text-xs text-red-500/70 dark:text-red-300/70">
-                      {item.color}, Qty: {item.quantity}
-                    </span>
-                    <span className="text-sm font-medium text-black dark:text-white">
-                      ${(item.price * item.quantity).toFixed(2)}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="p-4 border-t border-red-200/50 dark:border-red-950/30">
-            <div className="flex justify-between mb-4">
-              <span className="text-red-500/70 dark:text-red-300/70">
-                Subtotal:
-              </span>
-              <span className="font-medium text-black dark:text-white">
-                ${subtotal.toFixed(2)}
-              </span>
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              <Button
-                variant="outline"
-                className="border-red-400/30 dark:border-red-800/30 text-red-500 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/30"
-              >
-                View Cart
-              </Button>
-              <Button className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 dark:from-red-700 dark:to-red-900 dark:hover:from-red-600 dark:hover:to-red-800 text-white">
-                Checkout
-              </Button>
-            </div>
-          </div>
-        </>
-      )}
-    </div>
-  );
-};
+//       {items.length === 0 ? (
+//         <div className="p-6 text-center">
+//           <ShoppingBag className="h-8 w-8 mx-auto text-red-400/60 dark:text-red-500/40 mb-2" />
+//           <p className="text-red-500/70 dark:text-red-300/70">
+//             Your cart is empty
+//           </p>
+//         </div>
+//       ) : (
+//         <>
+//           <div className="max-h-60 overflow-y-auto">
+//             {items.map((item) => (
+//               <div
+//                 key={item.id}
+//                 className="flex p-3 border-b border-red-200/30 dark:border-red-950/20"
+//               >
+//                 <div className="w-12 h-12 relative rounded overflow-hidden mr-3 flex-shrink-0">
+//                   <Image
+//                     src={getImagePath(item.image, item.color)}
+//                     alt={item.name}
+//                     fill
+//                     className="object-contain"
+//                   />
+//                 </div>
+//                 <div className="flex-grow">
+//                   <div className="flex justify-between">
+//                     <h4 className="text-sm font-medium text-black dark:text-white">
+//                       {item.name}
+//                     </h4>
+//                     <Button
+//                       size="icon"
+//                       variant="ghost"
+//                       className="h-5 w-5 text-red-500/70 dark:text-red-300/70"
+//                       onClick={() => onRemoveItem(item.id)}
+//                     >
+//                       <X className="h-3 w-3" />
+//                     </Button>
+//                   </div>
+//                   <div className="flex justify-between items-center mt-1">
+//                     <span className="text-xs text-red-500/70 dark:text-red-300/70">
+//                       {item.color}, Qty: {item.quantity}
+//                     </span>
+//                     <span className="text-sm font-medium text-black dark:text-white">
+//                       ${(item.price * item.quantity).toFixed(2)}
+//                     </span>
+//                   </div>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//           <div className="p-4 border-t border-red-200/50 dark:border-red-950/30">
+//             <div className="flex justify-between mb-4">
+//               <span className="text-red-500/70 dark:text-red-300/70">
+//                 Subtotal:
+//               </span>
+//               <span className="font-medium text-black dark:text-white">
+//                 ${subtotal.toFixed(2)}
+//               </span>
+//             </div>
+//             <div className="grid grid-cols-2 gap-2">
+//               <Button
+//                 variant="outline"
+//                 className="border-red-400/30 dark:border-red-800/30 text-red-500 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/30"
+//               >
+//                 View Cart
+//               </Button>
+//               <Button className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 dark:from-red-700 dark:to-red-900 dark:hover:from-red-600 dark:hover:to-red-800 text-white">
+//                 Checkout
+//               </Button>
+//             </div>
+//           </div>
+//         </>
+//       )}
+//     </div>
+//   );
+// };
 
 // Main Page Component
 export default function MerchandisePage() {
-  const router = useRouter();
   const t = useTranslations("Merch");
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
@@ -578,8 +574,7 @@ export default function MerchandisePage() {
   ];
 
   // Cart state
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  // const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   // Filter merchandise based on selected category and search
   const filteredItems = merchandiseItems.filter((item) => {
@@ -621,42 +616,42 @@ export default function MerchandisePage() {
   });
 
   // Get featured items
-  const featuredItems = merchandiseItems.filter((item) => item.featured);
+  // const featuredItems = merchandiseItems.filter((item) => item.featured);
 
   // Add to cart handler
-  const handleAddToCart = (item: CartItem) => {
-    setCartItems((prev) => {
-      const existing = prev.find(
-        (i) => i.id === item.id && i.color === item.color
-      );
+  // const handleAddToCart = (item: CartItem) => {
+  //   setCartItems((prev) => {
+  //     const existing = prev.find(
+  //       (i) => i.id === item.id && i.color === item.color
+  //     );
 
-      if (existing) {
-        // Update quantity if item already in cart
-        return prev.map((i) =>
-          i.id === item.id && i.color === item.color
-            ? { ...i, quantity: i.quantity + 1 }
-            : i
-        );
-      } else {
-        // Add new item
-        return [...prev, item];
-      }
-    });
+  //     if (existing) {
+  //       // Update quantity if item already in cart
+  //       return prev.map((i) =>
+  //         i.id === item.id && i.color === item.color
+  //           ? { ...i, quantity: i.quantity + 1 }
+  //           : i
+  //       );
+  //     } else {
+  //       // Add new item
+  //       return [...prev, item];
+  //     }
+  //   });
 
-    // Show cart
-    setIsCartOpen(true);
-  };
+  //   // Show cart
+  //   setIsCartOpen(true);
+  // };
 
   // Remove from cart handler
-  const handleRemoveFromCart = (id: number) => {
-    setCartItems((prev) => prev.filter((item) => item.id !== id));
-  };
+  // const handleRemoveFromCart = (id: number) => {
+  //   setCartItems((prev) => prev.filter((item) => item.id !== id));
+  // };
 
   // Total cart items count
-  const cartItemsCount = cartItems.reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
+  // const cartItemsCount = cartItems.reduce(
+  //   (total, item) => total + item.quantity,
+  //   0
+  // );
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-black text-black dark:text-white overflow-x-hidden">
@@ -840,7 +835,7 @@ export default function MerchandisePage() {
                 sizes={item.sizes as Size[]}
                 paymentLink={item.paymentLink}
                 available={item.available}
-                onAddToCart={handleAddToCart}
+                // onAddToCart={handleAddToCart}
               />
             ))}
           </div>

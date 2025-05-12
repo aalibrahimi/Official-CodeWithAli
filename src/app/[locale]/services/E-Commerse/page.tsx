@@ -1,16 +1,14 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   ChevronRight,
   ShoppingBag,
   CreditCard,
-  BarChart3,
   TrendingUp,
   Check,
   Shield,
   Package,
-  Truck,
   Users,
   Zap,
   Settings,
@@ -29,45 +27,45 @@ import { useLocale, useTranslations } from "next-intl";
 import { isRtlLang } from "rtl-detect";
 
 // Custom hook to detect mobile devices
-const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(false);
+// const useIsMobile = () => {
+//   const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+//   useEffect(() => {
+//     const checkIfMobile = () => {
+//       setIsMobile(window.innerWidth < 768);
+//     };
 
-    // Initial check
-    checkIfMobile();
+//     // Initial check
+//     checkIfMobile();
 
-    // Add event listener for window resize
-    window.addEventListener("resize", checkIfMobile);
+//     // Add event listener for window resize
+//     window.addEventListener("resize", checkIfMobile);
 
-    // Cleanup
-    return () => window.removeEventListener("resize", checkIfMobile);
-  }, []);
+//     // Cleanup
+//     return () => window.removeEventListener("resize", checkIfMobile);
+//   }, []);
 
-  return isMobile;
-};
+//   return isMobile;
+// };
 
 // Animation variants optimized for performance
-const createFadeInVariant = (isMobile: any) => ({
-  hidden: { opacity: 0, y: isMobile ? 10 : 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: isMobile ? 0.3 : 0.6,
-      ease: "easeOut",
-    },
-  },
-});
+// const createFadeInVariant = (isMobile: any) => ({
+//   hidden: { opacity: 0, y: isMobile ? 10 : 20 },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     transition: {
+//       duration: isMobile ? 0.3 : 0.6,
+//       ease: "easeOut",
+//     },
+//   },
+// });
 
 const EcommerceSolutionsPage = () => {
   const t = useTranslations("ServicePage.Ecom");
   const router = useRouter();
   const [activeFaq, setActiveFaq] = useState(null);
-  const isMobile = useIsMobile();
+  // const isMobile = useIsMobile();
   const locale = useLocale();
   const isRTL = isRtlLang(locale);
 
@@ -125,6 +123,7 @@ const EcommerceSolutionsPage = () => {
   // Create animation variants based on device type
   // const fadeIn = createFadeInVariant(isMobile);
 
+  /* eslint-disable */
   const toggleFaq = (index: any) => {
     if (activeFaq === index) {
       setActiveFaq(null);

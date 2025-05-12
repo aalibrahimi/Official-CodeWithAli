@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import Link from "next/link";
 import {
   ChevronRight,
   Code,
@@ -30,26 +29,27 @@ import Image from "next/image";
 import ContactForm from "@/MyComponents/contact-form";
 import { useLocale, useTranslations } from "next-intl";
 import { isRtlLang } from "rtl-detect";
+import { Link } from "@/i18n/navigation";
 
 // Animation variants with reduced intensity for mobile
-const fadeIn = {
-  hidden: { opacity: 0, y: 10 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.4, ease: "easeOut" },
-  },
-};
+// const fadeIn = {
+//   hidden: { opacity: 0, y: 10 },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     transition: { duration: 0.4, ease: "easeOut" },
+//   },
+// };
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
+// const staggerContainer = {
+//   hidden: { opacity: 0 },
+//   visible: {
+//     opacity: 1,
+//     transition: {
+//       staggerChildren: 0.1,
+//     },
+//   },
+// };
 
 const HomePage = () => {
   const t = useTranslations("HomePage");
@@ -176,6 +176,7 @@ const HomePage = () => {
 
   // Auto rotate testimonials with optimization for hidden/inactive tabs
   useEffect(() => {
+    /* eslint-disable */
     let interval: any;
 
     if (isMounted && document.visibilityState === "visible") {

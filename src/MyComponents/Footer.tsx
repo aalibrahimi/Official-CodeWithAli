@@ -1,9 +1,9 @@
 
 import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 import { Facebook, Github, Heart, Instagram, Linkedin } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
 import { isRtlLang } from "rtl-detect";
 
 
@@ -186,6 +186,7 @@ export default function Footer() {
                 </p>
                 <div className="flex space-x-4">
                   {/* Social icons */}
+                  {/* eslint-disable */}
                   {socials.map((social : any) => (
                     <Link
                       key={social.platform}

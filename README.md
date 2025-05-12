@@ -1,6 +1,6 @@
 # CodeWithAli
 
- At CodeWithAli, we empower individuals and businesses with the tools, knowledge, and applications needed to thrive in the digital age.
+ At CodeWithAli, we design, develop and host websites for individual clients aiming to strengthen their online presence. As well as for companies seeking a modern, feature-rich platform to boost business growth.
 
 >*\*CodeWithAli is licensed under the terms of the GNU GPLv3 License*
 

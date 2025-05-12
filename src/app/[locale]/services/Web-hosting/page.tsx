@@ -26,7 +26,6 @@ import { Badge } from "@/components/ui/badge";
 import {
   ClientOnly,
   useResponsive,
-  createBrowserOptimizedVariants,
 } from "../../../utils/browser-compatibility";
 import GradientText from "@/MyComponents/GradientText";
 import { useLocale, useTranslations } from "next-intl";
@@ -54,18 +53,18 @@ interface HostingPackage {
   highlighted?: boolean;
 }
 
-interface Benefit {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-}
+// interface Benefit {
+//   icon: React.ElementType;
+//   title: string;
+//   description: string;
+// }
 
-interface ProcessStep {
-  icon: React.ElementType;
-  step: string;
-  title: string;
-  description: string;
-}
+// interface ProcessStep {
+//   icon: React.ElementType;
+//   step: string;
+//   title: string;
+//   description: string;
+// }
 
 const WebHostingPage = (): JSX.Element => {
   const router = useRouter();
@@ -200,7 +199,7 @@ const WebHostingPage = (): JSX.Element => {
 
   // I created an optimized version of the animation variants
   // This prevents Safari/Firefox from struggling with the animations at leaast in theory
-  const fadeIn = createBrowserOptimizedVariants();
+  // const fadeIn = createBrowserOptimizedVariants();
 
   return (
     <ClientOnly>

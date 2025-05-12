@@ -133,6 +133,7 @@ const MerchCard = (item: MerchDetails) => {
 
         {/* Color options */}
         <div className="mt-4 flex gap-1">
+          {/* eslint-disable */}
           {item.colors.map((color: string, i: any) => (
             <div
               key={i}

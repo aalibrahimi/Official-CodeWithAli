@@ -10,7 +10,6 @@ import {
   Rocket,
   Send,
   CheckCircle,
-  Coffee,
   Globe,
   BarChart,
   Heart,
@@ -18,37 +17,37 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { TechIcon } from "@/MyComponents/tech-icons";
-import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { isRtlLang } from "rtl-detect";
+import { Link } from "@/i18n/navigation";
 
 // Team members data
-const teamMembers = [
-  {
-    name: "Ali Ibrahim",
-    role: "Founder & Lead Developer",
-    bio: "Full-stack developer with 8+ years of experience building web applications and mentoring junior developers.",
-    image: "/team/ali.jpg", // Replace with actual image path
-  },
-  {
-    name: "Maya Rodriguez",
-    role: "UI/UX Designer",
-    bio: "Creative designer with a passion for creating intuitive, user-friendly interfaces that deliver exceptional user experiences.",
-    image: "/team/maya.jpg",
-  },
-  {
-    name: "David Chen",
-    role: "Backend Specialist",
-    bio: "Expert in scalable architecture and database optimization with experience at leading tech companies.",
-    image: "/team/david.jpg",
-  },
-  {
-    name: "Sarah Johnson",
-    role: "Project Manager",
-    bio: "Certified project manager who ensures smooth delivery and clear communication throughout the development process.",
-    image: "/team/sarah.jpg",
-  },
-];
+// const teamMembers = [
+//   {
+//     name: "Ali Ibrahim",
+//     role: "Founder & Lead Developer",
+//     bio: "Full-stack developer with 8+ years of experience building web applications and mentoring junior developers.",
+//     image: "/team/ali.jpg", // Replace with actual image path
+//   },
+//   {
+//     name: "Maya Rodriguez",
+//     role: "UI/UX Designer",
+//     bio: "Creative designer with a passion for creating intuitive, user-friendly interfaces that deliver exceptional user experiences.",
+//     image: "/team/maya.jpg",
+//   },
+//   {
+//     name: "David Chen",
+//     role: "Backend Specialist",
+//     bio: "Expert in scalable architecture and database optimization with experience at leading tech companies.",
+//     image: "/team/david.jpg",
+//   },
+//   {
+//     name: "Sarah Johnson",
+//     role: "Project Manager",
+//     bio: "Certified project manager who ensures smooth delivery and clear communication throughout the development process.",
+//     image: "/team/sarah.jpg",
+//   },
+// ];
 
 // Tech stack - corrected to use consistent object structure
 const technologies = [
@@ -695,7 +694,7 @@ export default function AboutPage() {
                 >
                   <TechIcon
                     name={tech.logo}
-                    // @ts-expect-error
+                    // @ts-expect-error: Should expect className
                     className={
                       tech.logo === "nextjs"
                         ? "text-white dark:text-black scale-110"
@@ -784,8 +783,4 @@ export default function AboutPage() {
       </section>
     </div>
   );
-}
-
-function useTranslation(arg0: string) {
-  throw new Error("Function not implemented.");
 }

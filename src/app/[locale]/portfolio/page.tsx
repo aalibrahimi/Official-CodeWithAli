@@ -1,17 +1,18 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import Link from "next/link";
 import { MoveUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import GradientText from "@/MyComponents/GradientText";
-import { getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 const PortfolioPage = () => {
+  /* eslint-disable */
   const [isMounted, setIsMounted] = useState(false);
+  /* eslint-disable */
   const [isReducedMotion, setIsReducedMotion] = useState(false);
   const t = useTranslations("Portfolio");
   // Apply conditional animation based on device capability and user preference

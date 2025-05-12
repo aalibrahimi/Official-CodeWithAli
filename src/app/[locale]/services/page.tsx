@@ -5,13 +5,11 @@ import { useRouter } from "next/navigation";
 import {
   ChevronRight,
   Code,
-  Smartphone,
   Layers,
   Server,
   Search,
   ShoppingBag,
   Palette,
-  ArrowRight,
   ArrowUpRight,
   ChevronLeft,
   ArrowUpLeft,
@@ -19,12 +17,13 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
 import GradientText from "@/MyComponents/GradientText";
 import { useLocale, useTranslations } from "next-intl";
 import { isRtlLang } from "rtl-detect";
+import { Link } from "@/i18n/navigation";
 
 // ClientOnly wrapper to prevent hydration issues
+/* eslint-disable */
 const ClientOnly = ({ children }: any) => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {

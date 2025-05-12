@@ -544,7 +544,7 @@ const UIUXDesignPage = () => {
                     <div className="mb-6">
                       <MessageSquare className="h-8 w-8 text-purple-700 dark:text-purple-600 mb-4" />
                       <p className="text-black font-bold dark:text-white italic mb-6">
-                        "{testimonial.quote}"
+                        &quot;{testimonial.quote}&quot;
                       </p>
                     </div>
                     <div className="mt-auto flex items-center">
