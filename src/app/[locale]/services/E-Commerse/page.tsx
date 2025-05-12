@@ -498,7 +498,7 @@ const EcommerceSolutionsPage = () => {
                       <div className={`absolute top-16 -bottom-10 ${isRTL ? "right-8" : "left-8"} w-0.5 bg-green-300/60 dark:bg-green-900/40`}></div>
                     )}
                   </div>
-                  <div className="p-5 w-[800px] border-1 border-green-600 flex flex-col justify-center rounded-lg">
+                  <div className="p-5 lg:w-[800px] border-1 border-green-600 flex flex-col justify-center rounded-lg">
                     <h3 className="text-xl font-bold text-green-800 dark:text-white mb-3">
                       {phase.title}
                     </h3>
