@@ -47,6 +47,7 @@ const staggerContainer = {
 };
 
 // Services data
+// Final commit before reaching main
 const services = [
   {
     title: "Website Development",
