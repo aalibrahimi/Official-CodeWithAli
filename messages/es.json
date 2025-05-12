@@ -1,0 +1,1881 @@
+{
+  "HomePage": {
+    "hero": {
+      "title": {
+        "part1": "Dando Vida a Tu",
+        "part2": "Visión Digital"
+      },
+      "description": "Diseñamos y desarrollamos sitios web impresionantes y aplicaciones potentes que elevan tu marca y hacen crecer tu negocio.",
+      "buttons": {
+        "startProject": "Inicia Tu Proyecto",
+        "viewWork": "Ver Nuestro Trabajo",
+        "contactUs": "Contáctanos"
+      }
+    },
+    "clients": {
+      "title": "De confianza para empresas de diversas industrias",
+      "industries": {
+        "business": "Negocios",
+        "ecommerce": "Comercio Electrónico",
+        "education": "Educación",
+        "healthcare": "Salud",
+        "realEstate": "Bienes Raíces", 
+        "technology": "Tecnología"
+      }
+    },
+    "services": {
+      "badge": "NUESTROS SERVICIOS",
+      "title": "Soluciones Expertas para Tus Necesidades Digitales",
+      "description": "Desde sitios web hasta aplicaciones móviles, creamos soluciones digitales personalizadas adaptadas a tus objetivos de negocio y necesidades de usuario.",
+      "items": {
+        "1": {
+          "title": "Desarrollo Web",
+          "description": "Sitios web responsive diseñados a medida y optimizados para rendimiento y conversiones"
+        },
+        "2": {
+          "title": "Desarrollo de Aplicaciones Móviles",
+          "description": "Aplicaciones móviles nativas y multiplataforma para iOS y Android"
+        },
+        "3": {
+          "title": "Diseño UI/UX",
+          "description": "Diseños centrados en el usuario que mejoran la interacción y simplifican la experiencia"
+        },
+        "4": {
+          "title": "Soluciones de Comercio Electrónico",
+          "description": "Tiendas online completas con procesamiento de pagos seguro y gestión de inventario"
+        },
+        "5": {
+          "title": "Optimización SEO",
+          "description": "Estrategias basadas en datos para mejorar la visibilidad y posicionamiento en motores de búsqueda"
+        },
+        "6": {
+          "title": "Hosting Web y Mantenimiento",
+          "description": "Servicios de hosting confiables con actualizaciones regulares, copias de seguridad y monitoreo de seguridad"
+        }
+      },
+      "learnMore": "Saber más"
+    },
+    "portfolio": {
+      "badge": "NUESTRO TRABAJO",
+      "title": "Proyectos Recientes",
+      "description": "Explora algunos de nuestros últimos trabajos para clientes de diferentes industrias.",
+      "viewProject": "Ver Proyecto",
+      "viewAllProjects": "Ver Todos los Proyectos"
+    },
+    "process": {
+      "badge": "NUESTRO PROCESO",
+      "title": "Cómo Trabajamos",
+      "description": "Nuestro proceso optimizado garantiza una comunicación clara y resultados excepcionales en cada proyecto.",
+      "steps": {
+        "1": {
+          "title": "Descubrimiento",
+          "description": "Conocemos tu negocio, objetivos y requisitos a través de consultas detalladas."
+        },
+        "2": {
+          "title": "Diseño",
+          "description": "Nuestros diseñadores crean wireframes y maquetas visuales que se alinean con la identidad de tu marca."
+        },
+        "3": {
+          "title": "Desarrollo",
+          "description": "Nuestros desarrolladores construyen tu solución con código limpio y tecnologías de vanguardia."
+        },
+        "4": {
+          "title": "Implementación",
+          "description": "Lanzamos tu proyecto, proporcionamos capacitación y ofrecemos soporte continuo según sea necesario."
+        }
+      }
+    },
+    "testimonials": {
+      "badge": "TESTIMONIOS",
+      "title": "Lo Que Dicen Nuestros Clientes",
+      "description": "No solo tomes nuestra palabra – escucha de las empresas que hemos ayudado a tener éxito.",
+      "items": {
+        "1": {
+          "name": "Alex Thompson",
+          "position": "CEO, TechStart Inc.",
+          "content": "Entregaron nuestro sitio web antes de lo programado y superando nuestras expectativas. Su atención al detalle y experiencia en diseño responsive marcaron la diferencia."
+        },
+        "2": {
+          "name": "Sarah Chen",
+          "position": "Directora de Marketing, StyleShop",
+          "content": "Nuestra tienda de comercio electrónico ha visto un aumento del 45% en conversiones desde el rediseño. Su equipo entendió nuestra marca e implementó exactamente lo que necesitábamos."
+        },
+        "3": {
+          "name": "Marcus Johnson",
+          "position": "Fundador, HealthApp",
+          "content": "Desde el concepto hasta el lanzamiento, nos guiaron a través de todo el proceso de desarrollo de la aplicación con experiencia y profesionalismo. El producto final superó nuestra visión."
+        }
+      }
+    },
+    "cta": {
+      "title": "Creemos Algo Increíble Juntos",
+      "description": "Ya sea que necesites un sitio web, una aplicación móvil o una estrategia digital completa, estamos aquí para dar vida a tu visión.",
+      "buttons": {
+        "startProject": "Inicia Tu Proyecto",
+        "learnAboutUs": "Conoce Más Sobre Nosotros"
+      },
+      "features": {
+        "1": "Consulta Gratuita",
+        "2": "Equipo Experto",
+        "3": "Soporte Continuo"
+      }
+    }
+  },
+  "NavBar": {     
+    "labelSwitchLang": "Cambiar Idioma",     
+    "labelSelectLang": "Seleccionar Idioma",     
+    "dropdown": {       
+      "title": "Mi Cuenta",       
+      "item1": "Perfil",       
+      "item2": "Configuración",       
+      "item3": "Panel de Control",       
+      "logout": "Cerrar Sesión"     
+    },     
+    "labelLang": "Idioma",     
+    "routes": {       
+      "home": "Inicio",       
+      "about": "Nosotros",       
+      "portfolio": "Portafolio",       
+      "services": {      
+        "title": "Servicios",         
+        "content": {           
+          "1": {             
+            "title": "Desarrollo Web"           
+          },           
+          "2": {             
+            "title": "Desarrollo de Aplicaciones Móviles"           
+          },           
+          "3": {             
+            "title": "Diseño UI/UX"           
+          },           
+          "4": {             
+            "title": "Soluciones de Comercio Electrónico"           
+          },           
+          "5": {             
+            "title": "Optimización SEO"           
+          },           
+          "6": {             
+            "title": "Hosting Web y Mantenimiento"           
+          }         
+        }       
+      },       
+      "merch": "Mercancía",       
+      "contact": "Contacto"     
+    }   
+  },  
+  "About" : {
+    "badge" : "SOBRE NOSOTROS",
+    "title" : "Somos Apasionados Por",
+    "sub" : " Construir Excelencia Digital",
+    "desc" : " Más que simples desarrolladores, somos socios en tu viaje digital, comprometidos a transformar tus ideas en experiencias digitales poderosas.",
+    "mission" : {
+      "header" : " Nuestra Misión",
+      "desc" :  "En CodeWithAli, nuestra misión es potenciar a empresas e individuos a través de soluciones digitales cuidadosamente elaboradas. Creemos que la tecnología debe ser tanto potente como accesible, impulsando resultados reales mientras proporciona experiencias de usuario excepcionales.",
+      "sub" : "  Alcance Global, Trato Personal",
+      "subDesc" : " Trabajamos con clientes de todo el mundo pero mantenemos la atención personalizada de una agencia boutique. Cada proyecto recibe nuestra dedicación completa independientemente de su tamaño.",
+      "sub2" : " Desarrollo Orientado a Resultados",
+      "subDesc2" : " Medimos nuestro éxito por tu éxito. Nuestras soluciones están diseñadas para entregar resultados medibles, ayudándote a alcanzar tus objetivos de negocio.",
+      "stats" : {
+        "1" : "Proyectos Completados",
+        "2" : "Satisfacción del Cliente",
+        "3" : "Cobertura de Soporte",
+        "4" : "Entrega a Tiempo"
+      },
+      "story" : {
+        "badge" : "HISTORIAS DE ÉXITO",
+        "header" : "Clientes a los Que Hemos Ayudado a Tener Éxito",
+        "title" : "Resultados reales de empresas que confiaron en nosotros para sus necesidades digitales."
+      },
+      "quots" : {
+        "1" : "CodeWithAli transformó nuestra plataforma de comercio electrónico, resultando en un aumento del 45% en conversiones y una mejora significativa en la satisfacción del usuario. Su experiencia técnica combinada con visión estratégica marcó la diferencia.",
+        "2" : "Trabajar con CodeWithAli en nuestro panel de control empresarial ha sido transformador. Su equipo entendió rápidamente nuestros complejos requisitos y entregó una solución que ha optimizado nuestras operaciones y mejorado la toma de decisiones.",
+        "3" :  "La aplicación móvil que CodeWithAli desarrolló para nuestro servicio de salud ha recibido comentarios excepcionales de los usuarios. Su atención a la seguridad y experiencia de usuario se muestra en cada aspecto del producto terminado.",
+        "4" :  "Como startup, necesitábamos un socio que pudiera guiarnos a través de los desafíos técnicos de lanzar nuestra plataforma. CodeWithAli proporcionó no solo experiencia en desarrollo sino también valiosa contribución estratégica que ayudó a dar forma a nuestro producto."
+      },
+      "author" : {
+        "1" : "Emma Thompson",
+        "2" : "Michael Rodriguez",
+        "3" : "Dr. James Wilson",
+        "4" : "Sophia Chen"
+      },
+      "job": {
+        "1" : "CTO, StyleHub",
+        "2" : " Fundador, DataVision Inc.",
+        "3" : " Director, HealthConnect",
+        "4" : " Co-fundadora, NextLevel Tech"
+      }
+    },
+    "process" : {
+      "badge" : "NUESTRO PROCESO",
+      "header" : "Cómo Transformamos Ideas en Realidad",
+      "sub" : "Nuestra metodología de desarrollo probada garantiza una comunicación clara y resultados sobresalientes en cada proyecto.",
+      "cards" : {
+        "h1": " Descubrimiento y Planificación",
+        "h2" : "Diseño y Estrategia",
+        "h3" : "Desarrollo y Pruebas",
+        "h4" : " Implementación y Soporte",
+        "desc1" : "Comenzamos por entender tu negocio, objetivos y requisitos a través de consultas detalladas. Esta fase incluye:",
+        "desc2" : "Nuestro equipo de diseño crea wireframes y maquetas visuales que se alinean con la identidad de tu marca mientras nuestros estrategas planifican el enfoque técnico:",
+        "desc3" : "Nuestros desarrolladores construyen tu solución con código limpio y tecnologías de vanguardia mientras garantizan la calidad a través de:",
+        "desc4" : "Lanzamos tu proyecto, proporcionamos capacitación y ofrecemos soporte continuo a través de:",
+        "firstList" : {
+          "li1" : "Entrevista con las partes interesadas",
+          "li2" : "Alineación de objetivos de negocio",
+          "li3" : "Recopilación de requisitos técnicos",
+          "li4" : "Definición del alcance del proyecto"
+        },
+        "secondList" : {
+          "li1" : "Diseño UX/UI y wireframing",
+          "li2" : "Planificación de arquitectura técnica",
+          "li3" : "Diseño de estructura de base de datos",
+          "li4" : "Selección de stack tecnológico"
+        },
+        "thirdList" : {
+          "li1" : " Metodología de desarrollo ágil",
+          "li2" : "Actualizaciones regulares de progreso",
+          "li3" : "Pruebas exhaustivas (unitarias, integración, UI)",
+          "li4" : "Optimización de rendimiento"
+        },
+        "fourthList" : {
+          "li1" : "Procedimientos de implementación fluidos",
+          "li2" : "Documentación completa",
+          "li3" : "Capacitación de usuarios y transferencia de conocimiento",
+          "li4" : "Opciones de mantenimiento y soporte continuo"
+        }
+      }
+  
+    },
+    "values" :  {
+      "badge" : "NUESTROS VALORES",
+      "header" : " Principios Que Guían Nuestro Trabajo",
+      "sub" : " Nuestros valores fundamentales dan forma a todo lo que hacemos, desde cómo trabajamos con los clientes hasta cómo desarrollamos soluciones.",
+      "title" : {
+        "h1" : "Calidad",
+        "h2" : "Innovación",
+        "h3" : "Confiabilidad",
+        "h4" : "Colaboración",
+        "d1" : "Nunca comprometemos la calidad del código o la experiencia del usuario. Cada proyecto recibe toda nuestra atención al detalle.",
+        "d2" : "Nos mantenemos a la vanguardia de la tecnología, constantemente aprendiendo e implementando las últimas mejores prácticas.",
+        "d3" : "Cumplimos nuestras promesas, respetando los plazos y manteniendo a nuestros clientes informados durante todo el proceso.",
+        "d4" : "Trabajamos estrechamente con nuestros clientes, valorando su aportación y asegurando que su visión cobre vida."
+      }
+    },
+
+    "tech" : {
+      "badge" : " NUESTRA EXPERIENCIA",
+      "header" : "Tecnologías Que Dominamos",
+      "sub" : " Aprovechamos tecnologías de vanguardia para construir soluciones escalables y de alto rendimiento."
+    },
+
+    "cta": {
+      "title" : "¿Listo para Trabajar Juntos?",
+      "header" : "Hablemos sobre cómo podemos ayudar a dar vida a tu visión con nuestra experiencia y dedicación.",
+      "button" : "Ponte en Contacto",
+      "button2" : "Explora Nuestros Servicios",
+      "li" : "Consulta Sin Compromiso",
+      "li2" : "Proceso Transparente",
+      "li3" : "Soporte Continuo"
+    },
+
+    "story" :  {
+      "badge" : "NUESTRA HISTORIA",
+      "title" : "Cómo Empezamos",
+      "header" : "De la Pasión al Propósito",
+      "sub" : "CodeWithAli comenzó en 2019 cuando nuestro fundador Ali identificó una brecha en el mercado: las empresas necesitaban excelencia técnica combinada con orientación estratégica. Lo que comenzó como consultoría freelance creció rápidamente a medida que los clientes reconocieron nuestro enfoque único.",
+      "subDesc" : "Hoy, hemos evolucionado a una agencia digital de servicio completo, manteniendo nuestros valores fundamentales mientras expandimos nuestras capacidades para servir a una amplia gama de clientes.",
+      "header2": "Nuestra Filosofía de Crecimiento",
+      "sub2": "Creemos en el crecimiento sostenible, tanto para nuestros clientes como para nosotros mismos. En lugar de escalar rápidamente a expensas de la calidad, hemos construido cuidadosamente nuestro equipo con expertos especializados que comparten nuestra dedicación a la excelencia.",
+      "subDesc2" : "Este enfoque nos permite mantener relaciones cercanas con nuestros clientes mientras entregamos el trabajo de alto calibre que han llegado a esperar de nosotros."
+   
+    }
+    },
+
+  "Serv" :
+  {
+    "badge": "NUESTRA EXPERIENCIA",     
+    "Header": "Servicios y Soluciones",
+    "Subheader" :  " Digitales Integrales",
+    "Subdesc" : "  Desde desarrollo web hasta optimización SEO, ofrecemos soluciones digitales integrales diseñadas para ayudar a tu negocio a prosperar en el panorama digital.",
+    "Services" : {
+      "titleLinks" :  {
+        "1" : "Desarrollo Web",
+        "2" : "Desarrollo de Aplicaciones Móviles",
+        "3" : "Diseño UI/UX",
+        "4" : "Soluciones de Comercio Electrónico",
+        "5" : "Optimización SEO",
+        "6" : "Hosting Web y Mantenimiento"
+      },
+      "desc" : {
+        "1" :  "Sitios web responsive diseñados a medida y optimizados para rendimiento y conversiones",
+        "2" :  "Aplicaciones móviles nativas y multiplataforma para iOS y Android",
+        "3" :  "Diseños centrados en el usuario que mejoran la interacción y simplifican la experiencia",
+        "4" :  "Tiendas online completas con procesamiento de pagos seguro y gestión de inventario",
+        "5" :  "Estrategias basadas en datos para mejorar la visibilidad y posicionamiento en motores de búsqueda",
+        "6" :  "Servicios de hosting confiables con actualizaciones regulares, copias de seguridad y monitoreo de seguridad"
+      },
+      "features" : {
+        "first" : {
+            "1" : "Diseño Responsive",
+            "2" : "Optimización SEO",
+            "3" : "Gestión de Contenido",
+            "4" : "Optimización de Rendimiento"
+            
+        },
+        "second" : {
+          "1" : "Apps iOS y Android",
+          "2" : "Soluciones Multiplataforma",
+          "3" : "Despliegue en App Store",
+          "4" : "Mantenimiento y Actualizaciones"
+        },
+        "third" : {
+          "1" : "Investigación de Usuario",
+          "2" : "Diseño de Interfaz",
+          "3" : "Diseño de Interfaz",
+          "4" : "Sistemas de Diseño"
+        },
+        "fourth" : {
+          "1" : "Catálogos de Productos",
+          "2" : "Procesamiento de Pagos",
+          "3" : "Gestión de Inventario",
+          "4" : "Gestión de Clientes"
+        },
+        "fifth" : {
+          "1" : "Investigación de Palabras Clave",
+          "2" : "SEO On-Page",
+          "3" : "Estrategia de Contenido",
+          "4" : "Análisis e Informes"
+        },
+        "sixth" : {
+          "1" : "Hosting Gestionado",
+          "2" : "Actualizaciones de Seguridad",
+          "3" : "Monitoreo de Rendimiento",
+          "4" : "Copias de Seguridad Regulares"
+        }
+      },
+      "process": {
+        "1" : "Descubrimiento",
+        "2" : "Estrategia",
+        "3" : "Ejecución",
+        "4" : "Soporte",
+        "numbers" : {
+          "1" : "01",
+          "2" : "02",
+          "3" : "03",
+          "4" : "04"
+        },
+        "desc" : {
+          "1" : "Comenzamos por entender tu negocio, objetivos, público objetivo y requisitos específicos.",
+          "2" : "Desarrollamos una estrategia integral y un plan de proyecto detallado adaptado a tus objetivos.",
+          "3" : "Nuestro equipo experto implementa la solución con actualizaciones regulares y retroalimentación del cliente.",
+          "4" : "Proporcionamos soporte continuo, mantenimiento y optimización para garantizar el éxito a largo plazo."
+        },
+        "learn" : "Saber Más",
+        "approach" : {
+          "badge" : "NUESTRO ENFOQUE",
+          "title" : " Nuestro Proceso de Entrega de Servicios",
+          "sub" : " Seguimos una metodología probada para garantizar resultados exitosos en todos nuestros servicios."
+        }
+      },
+      "cta": {
+        "title" : " ¿Listo para Comenzar?",
+        "header" : " Contáctanos para una consulta gratuita y hablemos sobre cómo nuestros servicios pueden ayudarte a alcanzar tus objetivos digitales.",
+        "button" : " Programar una Consulta"
+      }
+    }
+  },
+"ServicePage": {
+  "webDev": {
+    "badge": {
+      "1": "DESARROLLO WEB",
+      "2": "CARACTERÍSTICAS PRINCIPALES",
+      "3": "NUESTRO PROCESO",
+      "4": "TECNOLOGÍAS",
+      "5": "CASOS DE ESTUDIO",
+      "6": "PREGUNTAS FRECUENTES"
+    },
+    "title": {
+      "1": "Desarrollo Web Personalizado",
+      "2": "Que Impulsa Resultados"
+    },
+    "desc": "Diseñamos y desarrollamos sitios web impresionantes y de alto rendimiento que cautivan a tu audiencia, establecen la presencia de tu marca e impulsan un crecimiento empresarial medible.",
+    "quoteBtn": "Obtener Presupuesto Gratis",
+    "workBtn": "Ver Nuestro Trabajo",
+    "sections": {
+      "1": {
+        "title": "Lo Que Distingue Nuestro Desarrollo Web",
+        "desc": "Combinamos experiencia técnica con diseño creativo para entregar sitios web que no solo se ven geniales sino que también funcionan excepcionalmente bien.",
+        "cards": {
+          "1": {
+            "title": "Diseño Responsive",
+            "desc": "Construimos sitios web que se adaptan perfectamente a cualquier dispositivo, garantizando una experiencia de usuario óptima en escritorios, tablets y smartphones."
+          },
+          "2": {
+            "title": "Optimización de Rendimiento",
+            "desc": "Nuestros sitios web están optimizados para velocidad con código eficiente, optimización de imágenes y estrategias de almacenamiento en caché para tiempos de carga ultrarrápidos."
+          },
+          "3": {
+            "title": "Estructura Amigable con SEO",
+            "desc": "Implementamos las mejores prácticas de SEO desde el principio, asegurando que tu sitio web se posicione bien en los motores de búsqueda y genere tráfico orgánico."
+          },
+          "4": {
+            "title": "Funcionalidad Personalizada",
+            "desc": "Desde elementos interactivos hasta lógica de negocio compleja, desarrollamos características personalizadas que satisfacen tus requisitos específicos."
+          },
+          "5": {
+            "title": "Medidas de Seguridad",
+            "desc": "Implementamos prácticas de seguridad robustas para proteger tu sitio web y los datos de los usuarios contra vulnerabilidades y amenazas."
+          },
+          "6": {
+            "title": "Gestión de Contenido",
+            "desc": "Construimos sistemas de gestión de contenido fáciles de usar que te permiten actualizar y mantener tu sitio web sin conocimientos técnicos."
+          }
+        }
+      },
+      "2": {
+        "title": "Proceso de Desarrollo Web Integral",
+        "desc": "Nuestro enfoque estructurado garantiza un recorrido de desarrollo fluido desde el concepto hasta el lanzamiento y más allá.",
+        "steps": {
+          "1": {
+            "title": "Descubrimiento y Requisitos",
+            "desc": "Comenzamos por entender tus objetivos de negocio, público objetivo y requisitos específicos a través de consultas detalladas. Esta fase incluye análisis de competidores, planificación de contenido y especificaciones técnicas."
+          },
+          "2": {
+            "title": "Planificación y Arquitectura",
+            "desc": "Creamos un plan de proyecto detallado que incluye arquitectura del sitio, wireframes y especificaciones técnicas que guiarán el proceso de desarrollo."
+          },
+          "3": {
+            "title": "Diseño",
+            "desc": "Nuestros diseñadores crean maquetas visuales y prototipos que se alinean con la identidad de tu marca mientras garantizan una experiencia de usuario óptima."
+          },
+          "4": {
+            "title": "Desarrollo",
+            "desc": "Nuestros desarrolladores construyen tu sitio web con código limpio y eficiente utilizando frameworks modernos y mejores prácticas para rendimiento y seguridad."
+          },
+          "5": {
+            "title": "Pruebas y Control de Calidad",
+            "desc": "Probamos rigurosamente tu sitio web en diferentes dispositivos y navegadores para garantizar que se cumplan los estándares de funcionalidad, rendimiento y accesibilidad."
+          },
+          "6": {
+            "title": "Lanzamiento y Capacitación",
+            "desc": "Implementamos tu sitio web en servidores de producción y proporcionamos capacitación completa sobre gestión de contenido y mantenimiento."
+          },
+          "7": {
+            "title": "Mantenimiento y Soporte",
+            "desc": "Ofrecemos soporte continuo, actualizaciones regulares, monitoreo de rendimiento y mejora continua para mantener tu sitio web seguro y efectivo."
+          }
+        }
+      },
+      "3": {
+        "title": "Tecnologías Que Utilizamos",
+        "desc": "Aprovechamos tecnologías de vanguardia para construir sitios web modernos y de alto rendimiento.",
+        "tech": {
+          "1": {
+            "desc": "Para construir interfaces de usuario interactivas con rendimiento óptimo"
+          },
+          "2": {
+            "desc": "Para sitios web centrados en contenido con poderosas capacidades de CMS"
+          },
+          "3": {
+            "desc": "Para sitios web de comercio electrónico con gestión robusta de productos"
+          },
+          "4": {
+            "desc": "Para implementación rápida de diseño responsive"
+          },
+          "5": {
+            "desc": "Para desarrollo backend escalable"
+          },
+          "6": {
+            "desc": "Para consulta y gestión eficiente de datos"
+          },
+          "7": {
+            "desc": "Para soluciones de hosting confiables y escalables"
+          }
+        }
+      },
+      "4": {
+        "title": "Historias de Éxito",
+        "desc": "Explora algunos de nuestros proyectos recientes de desarrollo web y los resultados que hemos logrado para nuestros clientes.",
+        "case": {
+          "imgPlaceholder": "Imagen del Caso de Estudio:",
+          "viewBtn": "Ver Caso de Estudio",
+          "projectsBtn": "Ver Todos los Proyectos",
+          "1": {
+            "title": "Rediseño de Sitio Web de Construcción",
+            "industry": "Construcción",
+            "desc": "Rediseñamos un sitio web de construcción obsoleto, aumentando las conversiones en un 45% y mejorando los tiempos de carga de página en un 60%."
+          },
+          "2": {
+            "title": "Lanzamiento de Sitio Web de Presupuesto",
+            "industry": "Servicios Financieros",
+            "desc": "Desarrollamos un sitio web moderno y responsive que aumentó la generación de leads en un 38% y redujo la tasa de rebote en un 25%."
+          },
+          "3": {
+            "title": "Dulces Iraquíes",
+            "industry": "Productos de Panadería",
+            "desc": "Creamos un sitio web de aterrizaje enfocado en conversiones que ayudó al cliente a aumentar su número de clientes en un 52% durante el primer mes."
+          }
+        }
+      },
+      "5": {
+        "title": "Preguntas Frecuentes",
+        "desc": "Preguntas comunes sobre nuestro proceso y servicios de desarrollo web.",
+        "tab": {
+          "1": "General",
+          "2": "Técnico",
+          "3": "Precios"
+        },
+        "QA": {
+          "1": {
+            "Q": "¿Cuánto tiempo tarda desarrollar un sitio web?",
+            "A": "El tiempo varía según la complejidad del proyecto. Un sitio web simple puede completarse en 4-6 semanas, mientras que proyectos más complejos pueden tomar 8-12 semanas o más. Proporcionaremos un cronograma detallado durante la fase de descubrimiento y planificación."
+          },
+          "2": {
+            "Q": "¿Podré actualizar el sitio web yo mismo?",
+            "A": "Sí, construimos sitios web con sistemas de gestión de contenido fáciles de usar que te permiten actualizar contenido, agregar páginas y hacer cambios básicos de diseño sin conocimientos técnicos. También proporcionamos capacitación para asegurar que te sientas cómodo gestionando tu sitio."
+          },
+          "3": {
+            "Q": "¿Proporcionan mantenimiento y soporte continuo?",
+            "A": "Sí, ofrecemos varios paquetes de mantenimiento para mantener tu sitio web seguro, actualizado y funcionando de manera óptima. Estos paquetes incluyen actualizaciones regulares, monitoreo de seguridad, copias de seguridad y soporte técnico."
+          },
+          "4": {
+            "Q": "¿Mi sitio web será compatible con dispositivos móviles?",
+            "A": "Absolutamente. Todos nuestros sitios web se construyen con diseño responsive, asegurando que se vean y funcionen perfectamente en todos los dispositivos, incluyendo escritorios, tablets y smartphones. Esto es esencial tanto para la experiencia del usuario como para los rankings en motores de búsqueda."
+          },
+          "5": {
+            "Q": "¿Qué tecnologías utilizan para el desarrollo web?",
+            "A": "Usamos una variedad de tecnologías modernas dependiendo de tus necesidades específicas. Para aplicaciones web y sitios más complejos, usamos React, Next.js y otros frameworks modernos. La elección de tecnología se basa en tus requisitos, presupuesto y objetivos a largo plazo."
+          },
+          "6": {
+            "Q": "¿Optimizan los sitios web para motores de búsqueda?",
+            "A": "Sí, las mejores prácticas de SEO están integradas en nuestro proceso de desarrollo. Garantizamos una estructura de sitio adecuada, código optimizado, velocidades de carga rápidas, capacidad de respuesta móvil y otros factores técnicos de SEO. Para servicios de SEO más completos, ofrecemos paquetes de SEO dedicados."
+          },
+          "7": {
+            "Q": "¿Pueden integrar herramientas y servicios de terceros?",
+            "A": "Absolutamente. Regularmente integramos varias herramientas y servicios de terceros como sistemas CRM, pasarelas de pago, plataformas de automatización de marketing, herramientas analíticas y más. Aseguramos una integración perfecta y un flujo de datos adecuado entre tu sitio web y sistemas externos."
+          },
+          "8": {
+            "Q": "¿Cómo garantizan la seguridad del sitio web?",
+            "A": "Implementamos múltiples medidas de seguridad incluyendo prácticas de codificación segura, actualizaciones regulares, certificados SSL, protección de firewall y plugins de seguridad. Para sitios de comercio electrónico y aplicaciones que manejan datos sensibles, implementamos capas adicionales de seguridad y aseguramos el cumplimiento con regulaciones relevantes."
+          },
+          "9": {
+            "Q": "¿Cuánto cuesta un sitio web?",
+            "A": "Los costos del sitio web varían según la complejidad, características y requisitos. Los sitios web para pequeñas empresas típicamente oscilan entre $899 - $3,500, mientras que sitios más complejos con funcionalidad personalizada van desde $3500 - $9,000+. Proporcionamos presupuestos detallados después de entender tus necesidades específicas."
+          },
+          "10": {
+            "Q": "¿Ofrecen planes de pago?",
+            "A": "Sí, típicamente estructuramos los pagos en hitos a lo largo del proyecto. Un desglose común es 40% por adelantado, 30% en la etapa de aprobación del diseño y 30% al completar el proyecto. Para proyectos más grandes, podemos crear calendarios de pago personalizados."
+          },
+          "11": {
+            "Q": "¿Qué costos continuos debo esperar?",
+            "A": "Los costos continuos típicamente incluyen registro de dominio ($10-$20/año), hosting ($20-$100/mes dependiendo del tráfico y requisitos), y paquetes de mantenimiento opcionales ($100-$500/mes basados en el nivel de soporte necesario)."
+          },
+          "12": {
+            "Q": "¿Proporcionan estimaciones de costos antes de iniciar un proyecto?",
+            "A": "Sí, proporcionamos propuestas detalladas y estimaciones de costos después de nuestra consulta inicial. Nuestras propuestas detallan todos los entregables, cronogramas y costos, para que sepas exactamente qué esperar antes de comprometerte con el proyecto."
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Listo para Iniciar Tu Proyecto Web?",
+      "desc": "Contáctanos hoy para una consulta gratuita y descubre cómo podemos ayudarte a crear un sitio web que impulse resultados reales para tu negocio."
+    }
+  },
+  "mobileApp": {
+    "badge": {
+      "1": "DESARROLLO DE APLICACIONES MÓVILES",
+      "2": "SOLUCIONES DE APPS",
+      "3": "NUESTRA EXPERIENCIA",
+      "4": "NUESTRO PROCESO",
+      "5": "PREGUNTAS FRECUENTES"
+    },
+    "title": {
+      "1": "Aplicaciones Móviles Personalizadas",
+      "2": "Para iOS y Android"
+    },
+    "desc": "Diseñamos y construimos aplicaciones móviles innovadoras y de alto rendimiento que involucran a los usuarios, resuelven problemas reales y ayudan a tu negocio a crecer en el mundo móvil.",
+    "discussBtn": "Discutir Tu Idea de App",
+    "workBtn": "Ver Nuestro Trabajo",
+    "sections": {
+      "1": {
+        "title": "Soluciones de Desarrollo de Aplicaciones Móviles",
+        "desc": "Ofrecemos una variedad de enfoques de desarrollo de aplicaciones para satisfacer tus necesidades específicas, presupuesto y cronograma.",
+        "types": {
+          "techLabel": "Tecnologías:",
+          "benefitLabel": "Beneficios:",
+          "1": {
+            "title": "Aplicaciones Nativas",
+            "desc": "Construidas específicamente para plataformas iOS o Android, ofreciendo el mejor rendimiento y acceso a todas las características del dispositivo.",
+            "benefits": {
+              "1": "Rendimiento óptimo",
+              "2": "Acceso completo a características del dispositivo",
+              "3": "Experiencia de usuario superior",
+              "4": "Mejor visibilidad en tiendas"
+            }
+          },
+          "2": {
+            "title": "Aplicaciones Multiplataforma",
+            "desc": "Desarrolladas una vez y desplegadas en múltiples plataformas, reduciendo el tiempo y costos de desarrollo.",
+            "benefits": {
+              "1": "Rentable",
+              "2": "Desarrollo más rápido",
+              "3": "Mantenimiento más sencillo",
+              "4": "Experiencia consistente en plataformas"
+            }
+          },
+          "3": {
+            "title": "Aplicaciones Web Progresivas",
+            "desc": "Aplicaciones web que ofrecen experiencias similares a las apps, accesibles directamente a través de navegadores web sin instalación.",
+            "benefits": {
+              "1": "No requiere instalación",
+              "2": "Funciona sin conexión",
+              "3": "Actualizaciones automáticas",
+              "4": "Menores costos de desarrollo"
+            }
+          }
+        }
+      },
+      "2": {
+        "title": "Lo Que Distingue Nuestro Desarrollo de Aplicaciones Móviles",
+        "desc": "Combinamos excelencia técnica con diseño creativo para entregar aplicaciones móviles que los usuarios aman y en las que las empresas confían.",
+        "card": {
+          "1": {
+            "title": "Diseño Centrado en el Usuario",
+            "desc": "Creamos interfaces intuitivas y atractivas basadas en investigación profunda de usuarios y pruebas iterativas para garantizar que tu app sea un placer de usar."
+          },
+          "2": {
+            "title": "Alto Rendimiento",
+            "desc": "Nuestras apps están optimizadas para velocidad, capacidad de respuesta y uso eficiente de recursos, incluso bajo condiciones exigentes."
+          },
+          "3": {
+            "title": "Experiencia Multiplataforma",
+            "desc": "Desarrollamos para iOS y Android, garantizando experiencias consistentes en todos los dispositivos mientras aprovechamos características específicas de cada plataforma."
+          },
+          "4": {
+            "title": "Funcionalidad Avanzada",
+            "desc": "Desde servicios de localización hasta procesamiento de pagos, implementamos características complejas que hacen que tu app sea potente y distintiva."
+          },
+          "5": {
+            "title": "Seguridad y Cumplimiento",
+            "desc": "Construimos con principios de seguridad prioritaria y garantizamos el cumplimiento con GDPR, CCPA y otras regulaciones relevantes."
+          },
+          "6": {
+            "title": "Arquitectura Escalable",
+            "desc": "Nuestras apps se construyen sobre arquitecturas flexibles y escalables que pueden crecer con tu base de usuarios y requisitos en evolución."
+          }
+        }
+      },
+      "3": {
+        "title": "Proceso de Desarrollo de Aplicaciones Móviles",
+        "desc": "Nuestro enfoque estructurado garantiza un recorrido de desarrollo fluido desde el concepto hasta el lanzamiento y más allá.",
+        "steps": {
+          "1": {
+            "title": "Descubrimiento y Estrategia",
+            "desc": "Comenzamos por entender tus objetivos de negocio, usuarios objetivo y requisitos del mercado para crear una estrategia de app integral."
+          },
+          "2": {
+            "title": "Diseño UX/UI",
+            "desc": "Nuestros diseñadores crean interfaces intuitivas y amigables con visuales atractivos que se alinean con la identidad de tu marca."
+          },
+          "3": {
+            "title": "Desarrollo",
+            "desc": "Nuestros desarrolladores construyen tu app utilizando las tecnologías más apropiadas, garantizando calidad de código y rendimiento óptimo."
+          },
+          "4": {
+            "title": "Pruebas y Control de Calidad",
+            "desc": "Realizamos pruebas rigurosas en dispositivos y plataformas para garantizar funcionalidad, rendimiento y seguridad."
+          },
+          "5": {
+            "title": "Implementación",
+            "desc": "Gestionamos el proceso de envío a las tiendas de aplicaciones y nos aseguramos de que tu app cumpla con todos los requisitos para plataformas iOS y Android."
+          },
+          "6": {
+            "title": "Soporte Post-Lanzamiento",
+            "desc": "Proporcionamos mantenimiento, actualizaciones y soporte continuos para mantener tu app funcionando sin problemas y actualizada."
+          }
+        }
+      },
+      "4": {
+        "title": "Preguntas Frecuentes",
+        "desc": "Preguntas comunes sobre nuestro proceso de desarrollo de aplicaciones móviles y servicios.",
+        "tab": {
+          "1": "General",
+          "2": "Técnico",
+          "3": "Precios"
+        },
+        "QA": {
+          "1": {
+            "Q": "¿Cuánto tiempo tarda desarrollar una aplicación móvil?",
+            "A": "El cronograma varía según la complejidad y características. Las aplicaciones simples pueden tomar 3-4 meses, mientras que las aplicaciones complejas pueden requerir 6-9 meses desde el concepto hasta el lanzamiento. Proporcionaremos un cronograma detallado durante la fase de descubrimiento."
+          },
+          "2": {
+            "Q": "¿Debería desarrollar para iOS, Android o ambos?",
+            "A": "Esto depende de tu público objetivo y objetivos de negocio. Si tu audiencia principalmente usa una plataforma, comenzar allí tiene sentido. Sin embargo, la mayoría de los negocios se benefician de desarrollar para ambas plataformas para maximizar el alcance, lo que puede hacerse eficientemente con desarrollo multiplataforma."
+          },
+          "3": {
+            "Q": "¿Cómo garantizan que mi aplicación tendrá éxito?",
+            "A": "El éxito comienza con investigación y planificación minuciosas. Realizamos análisis de mercado, definimos personas de usuario claras y nos enfocamos en resolver problemas reales de los usuarios. También implementamos análisis para rastrear métricas clave y hacer mejoras basadas en datos después del lanzamiento."
+          },
+          "4": {
+            "Q": "¿Qué soporte continuo proporcionan después del lanzamiento?",
+            "A": "Ofrecemos paquetes de mantenimiento integrales que incluyen corrección de errores, monitoreo de rendimiento, actualizaciones de compatibilidad para nuevas versiones de SO, parches de seguridad y mejoras de características. Recomendamos un plan de mantenimiento para mantener tu app segura, estable y relevante."
+          },
+          "5": {
+            "Q": "Nativo vs. multiplataforma: ¿cuál es mejor para mi app?",
+            "A": "El desarrollo nativo ofrece rendimiento óptimo y acceso a todas las características de la plataforma, mientras que el desarrollo multiplataforma es más rentable y más rápido para salir al mercado. La elección depende de los requisitos de tu app, presupuesto y cronograma. Recomendamos nativo para apps críticas en rendimiento o que necesitan características avanzadas del dispositivo, y multiplataforma para la mayoría de las apps de negocio con funcionalidad estándar."
+          },
+          "6": {
+            "Q": "¿Cómo manejan las aprobaciones de las tiendas de aplicaciones?",
+            "A": "Tenemos amplia experiencia con las directrices tanto de Apple App Store como de Google Play Store. Incorporamos estos requisitos a lo largo del proceso de desarrollo y manejamos todo el proceso de envío, incluida la preparación de todos los materiales requeridos, responder a preguntas de revisión y hacer los ajustes necesarios para garantizar la aprobación."
+          },
+          "7": {
+            "Q": "¿Pueden integrar mi app con sistemas existentes?",
+            "A": "Sí, nos especializamos en integrar aplicaciones móviles con sistemas existentes como CRMs, ERPs, procesadores de pago y backends personalizados. Utilizamos APIs seguras para garantizar un flujo de datos perfecto entre tu app y otros sistemas de negocio."
+          },
+          "8": {
+            "Q": "¿Cómo abordan la seguridad de la app?",
+            "A": "La seguridad está integrada en cada etapa de nuestro proceso de desarrollo. Implementamos encriptación para almacenamiento y transmisión de datos, métodos de autenticación seguros, validación de entrada y protección contra vulnerabilidades comunes. Para apps que manejan datos sensibles, realizamos auditorías de seguridad y pruebas de penetración."
+          },
+          "9": {
+            "Q": "¿Cuánto cuesta desarrollar una aplicación móvil?",
+            "A": "Los costos de desarrollo de apps varían ampliamente según la complejidad, características y plataformas. Las apps simples típicamente oscilan entre $15,000-$35,000, apps de complejidad media desde $35,000-$60,000, y apps complejas pueden exceder $100,000. Proporcionamos estimaciones detalladas después de entender tus requisitos específicos."
+          },
+          "10": {
+            "Q": "¿Qué factores afectan el costo del desarrollo de apps?",
+            "A": "Los factores clave incluyen: plataformas (iOS, Android o ambas), complejidad de características, requisitos de backend, integraciones de terceros, complejidad de diseño, necesidades de autenticación de usuario y si necesitas un CMS personalizado o panel de administración. Factores adicionales incluyen implementación de análisis y requisitos de seguridad."
+          },
+          "11": {
+            "Q": "¿Ofrecen planes de pago?",
+            "A": "Sí, típicamente estructuramos los pagos en hitos a lo largo del proyecto. Un enfoque común es 30% por adelantado, 30% en la aprobación del diseño, 30% al completar el desarrollo y 10% tras la entrega final y aprobación. Para proyectos más grandes, podemos crear calendarios de pago más detallados."
+          },
+          "12": {
+            "Q": "¿Qué costos continuos debo esperar?",
+            "A": "Los costos continuos típicamente incluyen tarifas de tiendas de aplicaciones ($99/año para Apple, $25 una sola vez para Google), costos de servidor/hosting ($50-500/mes dependiendo del uso), mantenimiento y actualizaciones (típicamente 15-20% del costo inicial de desarrollo anualmente), y posibles tarifas de servicios de terceros para integraciones."
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Listo para Construir Tu Aplicación Móvil?",
+      "desc": "Contáctanos hoy para una consulta gratuita y descubre cómo podemos ayudarte a crear una aplicación móvil que involucre a los usuarios e impulse el crecimiento del negocio."
+    }
+  },
+  "UI": {
+    "badge": {
+      "1": "DISEÑO UI/UX",
+      "2": "NUESTROS SERVICIOS",
+      "3": "NUESTRO TRABAJO",
+      "4": "NUESTRO PROCESO",
+      "5": "COMENTARIOS DE CLIENTES",
+      "6": "PRECIOS",
+      "7": "PREGUNTAS FRECUENTES"
+    },
+    "title": {
+      "1": "Diseño Centrado en el Usuario",
+      "2": "Que Impulsa Resultados"
+    },
+    "desc": "Creamos experiencias de usuario intuitivas y atractivas que mejoran la percepción de la marca, aumentan las tasas de conversión y simplifican interacciones complejas.",
+    "consultBtn": "Obtener una Consulta Gratuita",
+    "workBtn": "Ver Nuestro Trabajo",
+    "viewAllBtn": "Ver Todos los Proyectos",
+    "sections": {
+      "1": {
+        "title": "Servicios Integrales de Diseño UI/UX",
+        "desc": "Ofrecemos soluciones de diseño integrales que transforman desafíos complejos en experiencias de usuario fluidas.",
+        "offerings": {
+          "1": {
+            "title": "Investigación de Usuario",
+            "desc": "Realizamos investigación exhaustiva de usuarios para entender las necesidades, comportamientos y puntos problemáticos de tu público objetivo.",
+            "features": {
+              "1": "Desarrollo de Personas",
+              "2": "Entrevistas con Usuarios",
+              "3": "Análisis Competitivo",
+              "4": "Mapeo de Recorrido del Usuario"
+            }
+          },
+          "2": {
+            "title": "Diseño de Interfaz",
+            "desc": "Creamos interfaces hermosas e intuitivas que equilibran estética con funcionalidad para mejorar la experiencia del usuario.",
+            "features": {
+              "1": "Wireframing",
+              "2": "Diseño Visual",
+              "3": "Creación de Prototipos Interactivos",
+              "4": "Sistemas de Diseño"
+            }
+          },
+          "3": {
+            "title": "Pruebas de Usabilidad",
+            "desc": "Validamos diseños a través de pruebas rigurosas para asegurar que cumplan con las necesidades de los usuarios y los objetivos del negocio.",
+            "features": {
+              "1": "Evaluación Heurística",
+              "2": "Pruebas A/B",
+              "3": "Sesiones de Prueba con Usuarios",
+              "4": "Integración de Análisis"
+            }
+          },
+          "4": {
+            "title": "Sistemas de Diseño",
+            "desc": "Desarrollamos sistemas de diseño integrales que garantizan consistencia mientras permiten escalabilidad en todas las plataformas.",
+            "features": {
+              "1": "Bibliotecas de Componentes",
+              "2": "Guías de Estilo",
+              "3": "Documentación",
+              "4": "Soporte de Implementación"
+            }
+          }
+        }
+      },
+      "2": {
+        "title": "Portafolio de Diseño UI/UX",
+        "desc": "Explora nuestros proyectos recientes de diseño que abarcan diversas industrias y plataformas.",
+        "projects": {
+          "1": {
+            "title": "Rediseño de App Financiera",
+            "category": "Aplicación Móvil"
+          },
+          "2": {
+            "title": "Sitio Web de Comercio Electrónico",
+            "category": "Diseño Web"
+          },
+          "3": {
+            "title": "Panel de Control de Salud",
+            "category": "Panel de Control"
+          },
+          "4": {
+            "title": "App de Seguimiento Fitness",
+            "category": "Aplicación Móvil"
+          }
+        }
+      },
+      "3": {
+        "title": "Nuestro Proceso de Diseño",
+        "desc": "Seguimos un enfoque sistemático para garantizar que cada solución de diseño cumpla tanto con las necesidades de los usuarios como con los objetivos de negocio.",
+        "process": {
+          "1": {
+            "title": "Descubrimiento",
+            "desc": "Analizamos tus objetivos de negocio, público objetivo y puntos problemáticos actuales para definir objetivos claros."
+          },
+          "2": {
+            "title": "Investigación",
+            "desc": "Realizamos entrevistas con usuarios, análisis competitivo y creamos personas de usuario para guiar nuestras decisiones de diseño."
+          },
+          "3": {
+            "title": "Diseño",
+            "desc": "Creamos wireframes, prototipos interactivos y diseños visuales que se alinean con tu marca y las necesidades de los usuarios."
+          },
+          "4": {
+            "title": "Prueba e Iteración",
+            "desc": "Validamos diseños a través de pruebas de usabilidad y refinamos basándonos en retroalimentación real de usuarios."
+          },
+          "5": {
+            "title": "Entrega",
+            "desc": "Proporcionamos activos finales, especificaciones y soporte de implementación para dar vida al diseño."
+          }
+        }
+
+      },
+      "4": {
+        "title": "Lo Que Dicen Nuestros Clientes",
+        "desc": "Escucha de empresas que han transformado su presencia digital con nuestros servicios de diseño UI/UX.",
+        "quotes": {
+          "1": {
+            "quote": "El rediseño transformó completamente nuestras métricas de participación de usuarios. Las tasas de conversión aumentaron un 40% durante el primer mes.",
+            "author": "Sarah Johnson",
+            "authDesc": "TechStart Solutions"
+          },
+          "2": {
+            "quote": "Su investigación de usuarios descubrió puntos problemáticos que habíamos pasado por alto durante años. Los diseños de interfaz resultantes han mejorado significativamente la satisfacción del cliente.",
+            "author": "Michael Chen",
+            "authDesc": "Global Innovations"
+          },
+          "3": {
+            "quote": "Trabajar con este equipo fue perfecto. Tradujeron nuestros complejos requisitos en un diseño intuitivo que nuestros usuarios adoran.",
+            "author": "Emma Rodriguez",
+            "authDesc": "HealthPlus"
+          }
+        }
+      },
+      "5": {
+        "title": "Paquetes de Diseño UI/UX",
+        "desc": "Opciones flexibles diseñadas para satisfacer las necesidades de negocios en cada etapa de crecimiento.",
+        "package": {
+          "startBtn": "Comenzar",
+          "startLabel": "desde",
+          "whatIncluded": "Qué Incluye:",
+          "1": {
+            "title": "Esencial",
+            "desc": "Perfecto para startups y pequeñas empresas que buscan mejorar su presencia digital.",
+            "features": {
+              "1": "Investigación de Usuario y Personas",
+              "2": "Wireframing",
+              "3": "Diseño UI Básico",
+              "4": "Revisiones Limitadas",
+              "5": "Documentación de Diseño Básica"
+            }
+          },
+          "2": {
+            "title": "Profesional",
+            "desc": "Solución integral para empresas establecidas que buscan una renovación completa de diseño.",
+            "features": {
+              "1": "Todo en Esencial",
+              "2": "Investigación de Usuario en Profundidad",
+              "3": "Creación de Prototipos Interactivos",
+              "4": "Diseño UI/UX Avanzado",
+              "5": "Pruebas de Usabilidad",
+              "6": "Creación de Sistema de Diseño",
+              "7": "Revisiones Extendidas"
+            }
+          },
+          "3": {
+            "title": "Empresarial",
+            "desc": "Solución a medida para grandes organizaciones con requisitos complejos y múltiples plataformas.",
+            "features": {
+              "1": "Solución a medida para grandes organizaciones con requisitos complejos y múltiples plataformas.",
+              "2": "Todo en Profesional",
+              "3": "Diseño Multiplataforma",
+              "4": "Sistema de Diseño Avanzado",
+              "5": "Pruebas de Usabilidad Extensas",
+              "6": "Integración de Análisis",
+              "7": "Soporte a Largo Plazo",
+              "8": "Capacitación y Talleres"
+            }
+          }
+        }
+      },
+      "6": {
+        "title": "Preguntas Frecuentes",
+        "desc": "Preguntas comunes sobre nuestro proceso de desarrollo de aplicaciones móviles y servicios.",
+        "tab": {
+          "1": "Proceso",
+          "2": "Precios",
+          "3": "Entregables",
+          "4": "Cronograma"
+        },
+        "QA": {
+          "1": {
+            "Q": "¿Cómo abordan el proceso de diseño?",
+            "A": "Nuestro proceso de diseño es colaborativo e iterativo. Comenzamos con descubrimiento e investigación para entender tu negocio y usuarios. Luego pasamos a wireframing y creación de prototipos, seguido de diseño visual, pruebas e implementación de soporte."
+          },
+          "2": {
+            "Q": "¿Realizan pruebas con usuarios?",
+            "A": "Sí, las pruebas con usuarios son una parte integral de nuestro proceso. Validamos diseños con usuarios reales para asegurar que cumplan con las necesidades y expectativas de los usuarios. Esto ayuda a identificar y abordar problemas al principio del proceso."
+          },
+          "3": {
+            "Q": "¿Cómo aseguran que los diseños se alineen con nuestra marca?",
+            "A": "Comenzamos realizando una revisión exhaustiva de tus pautas de marca y activos existentes. A lo largo del proceso de diseño, aseguramos consistencia con tu marca mientras mejoramos la experiencia del usuario."
+          },
+          "4": {
+            "Q": "¿Cómo determinan los precios para proyectos UI/UX?",
+            "A": "Nuestros precios se basan en el alcance del proyecto, complejidad, cronograma y entregables. Ofrecemos paquetes estructurados como puntos de partida, pero podemos personalizar los precios según tus necesidades específicas."
+          },
+          "5": {
+            "Q": "¿Ofrecen soporte de diseño continuo después de completar el proyecto?",
+            "A": "Sí, ofrecemos paquetes de mantenimiento y soporte para asegurar que tu diseño continúe evolucionando con las necesidades de tu negocio y la retroalimentación de los usuarios."
+          },
+          "6": {
+            "Q": "¿Se requiere un depósito para iniciar un proyecto?",
+            "A": "Sí, típicamente requerimos un depósito del 50% para comenzar a trabajar, con el saldo restante pagadero al completar el proyecto o según los hitos acordados."
+          },
+          "7": {
+            "Q": "¿Qué entregables puedo esperar de un proyecto UI/UX?",
+            "A": "Dependiendo del alcance del proyecto, los entregables pueden incluir informes de investigación de usuarios, personas de usuario, mapas de recorrido, wireframes, prototipos, archivos de diseño UI, sistemas de diseño y pautas de implementación."
+          },
+          "8": {
+            "Q": "¿Proporcionan archivos listos para desarrollo?",
+            "A": "Sí, proporcionamos especificaciones de diseño, activos y documentación que los desarrolladores necesitan para implementar los diseños con precisión. También podemos trabajar directamente con tu equipo de desarrollo para asegurar una implementación fluida."
+          },
+          "9": {
+            "Q": "¿Crean sistemas de diseño?",
+            "A": "Sí, nos especializamos en crear sistemas de diseño integrales que aseguran consistencia y escalabilidad a través de tu producto. Esto incluye bibliotecas de componentes, guías de estilo y documentación."
+          },
+          "10": {
+            "Q": "¿Cuánto tiempo toma un proyecto típico de diseño UI/UX?",
+            "A": "Los cronogramas del proyecto varían según el alcance y complejidad. Un rediseño simple de sitio web podría tomar 4-6 semanas, mientras que una aplicación compleja podría tomar 3-6 meses. Proporcionaremos un cronograma detallado durante la fase de propuesta."
+          },
+          "11": {
+            "Q": "¿Pueden trabajar en proyectos urgentes con plazos ajustados?",
+            "A": "Podemos acomodar proyectos urgentes dependiendo de nuestra carga de trabajo actual. Pueden aplicarse tarifas por urgencia para cronogramas acelerados para asegurar que podamos dedicar los recursos necesarios."
+          },
+          "12": {
+            "Q": "¿Cómo manejan los retrasos en el proyecto?",
+            "A": "Incorporamos tiempo de buffer en nuestros planes de proyecto para tener en cuenta revisiones y desafíos imprevistos. Comunicamos proactivamente si ocurren retrasos y trabajamos de manera colaborativa para ajustar los cronogramas según sea necesario."
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Listo para Transformar Tu Experiencia de Usuario?",
+      "desc": "Hablemos sobre cómo nuestros servicios de diseño UI/UX pueden ayudar a tu negocio a alcanzar sus objetivos a través de experiencias de usuario excepcionales."
+    }
+  },
+  "Ecom": {
+    "badge": {
+      "1": "SOLUCIONES DE COMERCIO ELECTRÓNICO",
+      "2": "CARACTERÍSTICAS",
+      "3": "PAQUETES",
+      "4": "NUESTRO PROCESO",
+      "5": "PREGUNTAS FRECUENTES"
+    },
+    "title": {
+      "1": "Convierte Tus Productos En",
+      "2": "Éxito Online"
+    },
+    "desc": "Desarrollamos sitios web de comercio electrónico potentes y personalizados que te ayudan a vender efectivamente en línea. Construimos la infraestructura digital que necesitas mientras te concentras en tus productos y clientes.",
+    "startBtn": "Comenzar",
+    "packageBtn": "Ver Paquetes",
+    "sections": {
+      "1": {
+        "title": "¿Por Qué Elegir Nuestras Soluciones de Comercio Electrónico?",
+        "cards": {
+          "1": {
+            "title": "Aumento promedio en tasas de conversión"
+          },
+          "2": {
+            "title": "Optimización de tráfico móvil"
+          },
+          "3": {
+            "title": "Tiempo de actividad para tu tienda online"
+          },
+          "4": {
+            "title": "Soporte y mantenimiento"
+          }
+        }
+      },
+      "2": {
+        "title": "Características del Sitio Web de Comercio Electrónico",
+        "desc": "Podemos implementar una amplia gama de características para crear una potente plataforma de venta online para tu negocio.",
+        "features": {
+          "1": {
+            "title": "Gestión de Productos",
+            "desc": "Gestiona fácilmente tus productos, categorías, variaciones y niveles de inventario."
+          },
+          "2": {
+            "title": "Pagos Seguros",
+            "desc": "Múltiples pasarelas de pago con proceso de pago seguro y protección contra fraudes."
+          },
+          "3": {
+            "title": "Opciones de Envío",
+            "desc": "Reglas de envío flexibles, tarifas en tiempo real e integración de seguimiento de pedidos."
+          },
+          "4": {
+            "title": "Cuentas de Cliente",
+            "desc": "Registro de usuario, historial de pedidos, listas de deseos y experiencias personalizadas."
+          },
+          "5": {
+            "title": "Optimización Móvil",
+            "desc": "Diseño responsive que garantiza una experiencia de compra perfecta en todos los dispositivos."
+          },
+          "6": {
+            "title": "Análisis e Informes",
+            "desc": "Información completa sobre ventas, clientes y rendimiento de productos."
+          },
+          "7": {
+            "title": "Herramientas de Marketing",
+            "desc": "Descuentos, cupones, recuperación de carritos abandonados e integración de email marketing."
+          },
+          "8": {
+            "title": "Personalización Avanzada",
+            "desc": "Adapta la funcionalidad y el diseño de tu tienda para que coincidan con tu marca y necesidades."
+          }
+        }
+      },
+      "3": {
+        "title": "Elige Tu Paquete de Comercio Electrónico",
+        "desc": "Ofrecemos paquetes a medida para adaptarse a negocios en cada etapa de crecimiento.",
+        "packages": {
+          "badge": "MÁS POPULAR",
+          "payType": "único pago",
+          "includedLabel": "Qué Incluye:",
+          "1": {
+            "title": "Comercio Electrónico Básico",
+            "desc": "Funcionalidad esencial de comercio electrónico para negocios que inician su presencia online",
+            "features": {
+              "1": "Diseño responsive personalizado",
+              "2": "Configuración de catálogo de productos",
+              "3": "Integración de pasarela de pago",
+              "4": "Filtrado básico de productos",
+              "5": "Formulario de contacto y páginas esenciales",
+              "6": "Optimización SEO on-page",
+              "7": "Pago móvil amigable",
+              "8": "2 horas de capacitación"
+            }
+          },
+          "2": {
+            "title": "Comercio Electrónico Avanzado",
+            "desc": "Características y funcionalidades mejoradas para negocios online en crecimiento",
+            "features": {
+              "1": "Todas las características Básicas",
+              "2": "Filtrado y búsqueda avanzada de productos",
+              "3": "Creación de cuenta de cliente",
+              "4": "Funcionalidad de lista de deseos",
+              "5": "Reseñas y calificaciones de productos",
+              "6": "Soporte multi-moneda",
+              "7": "Integración de email marketing",
+              "8": "Implementación de análisis",
+              "9": "4 horas de capacitación"
+            }
+          },
+          "3": {
+            "title":"Comercio Electrónico Premium",
+            "desc": "Solución integral con características avanzadas para negocios establecidos",
+            "features": {
+              "1": "Todas las características Avanzadas",
+              "2": "Desarrollo de funcionalidad personalizada",
+              "3": "Múltiples pasarelas de pago",
+              "4": "Gestión avanzada de inventario",
+              "5": "Integraciones de sistemas de terceros",
+              "6":"Soporte multi-idioma",
+              "7": "Paneles de informes personalizados",
+              "8": "Características de seguridad avanzadas",
+              "9": "Programa de capacitación integral"
+            }
+          }
+        }
+      },
+      "4": {
+        "title": "Cómo Construimos Tu Sitio Web de Comercio Electrónico",
+        "desc": "Nuestro proceso de desarrollo probado garantiza que tu sitio web de comercio electrónico se construya correctamente, a tiempo y listo para impulsar ventas.",
+        "process": {
+          "1": {
+            "title": "Descubrimiento y Planificación",
+            "desc": "Analizamos las necesidades de tu negocio, público objetivo y competidores para crear una hoja de ruta estratégica para tu tienda de comercio electrónico."
+          },
+          "2": {
+            "title": "Diseño y Experiencia de Usuario",
+            "desc": "Nuestros diseñadores crean una experiencia de usuario atractiva y enfocada en conversiones que refleja tu marca y atrae a tus clientes."
+          },
+          "3": {
+            "title": "Desarrollo y Configuración",
+            "desc": "Construimos tu tienda con código limpio, implementamos todas las características y configuramos productos, pasarelas de pago y opciones de envío."
+          },
+          "4": {
+            "title": "Pruebas y Control de Calidad",
+            "desc": "Probamos rigurosamente tu tienda en dispositivos y navegadores para garantizar funcionalidad, rendimiento y seguridad."
+          },
+          "5": {
+            "title": "Lanzamiento y Capacitación",
+            "desc": "Implementamos tu tienda y proporcionamos capacitación integral para que puedas gestionar con confianza tus productos, pedidos y clientes."
+          },
+          "6": {
+            "title": "Soporte y Crecimiento",
+            "desc": "Proporcionamos soporte continuo y orientación estratégica para ayudar a tu negocio de comercio electrónico a crecer y evolucionar."
+          }
+        }
+      },
+      "5": {
+        "title": "Preguntas Frecuentes",
+        "desc": "Preguntas comunes sobre nuestras soluciones y servicios de comercio electrónico.",
+        "tab": {
+          "1": "Proceso",
+          "2": "Precios",
+          "3": "Entregables",
+          "4": "Cronograma"
+        },
+        "QA": {
+          "1": {
+            "Q": "¿Cuánto tiempo toma construir un sitio web de comercio electrónico?",
+            "A": "El cronograma depende de la complejidad de tu proyecto. Una tienda de comercio electrónico básica puede estar funcionando en 3-4 semanas, mientras que proyectos más complejos pueden tomar 8-12 semanas. Durante nuestra consulta inicial, proporcionaremos un cronograma detallado basado en tus requisitos específicos."
+          },
+          "2": {
+            "Q": "¿Pueden migrar mi tienda online existente a una nueva plataforma?",
+            "A": "Sí, proporcionamos servicios de migración integrales. Podemos transferir tu catálogo de productos, cuentas de clientes e historial de pedidos desde tu plataforma actual a una nueva solución Shopify, WooCommerce o personalizada. Nuestro proceso garantiza una interrupción mínima y preserva tu valor SEO durante la transición."
+          },
+          "3": {
+            "Q": "¿Proporcionan capacitación sobre cómo gestionar mi sitio web de comercio electrónico?",
+            "A": "¡Absolutamente! Incluimos sesiones de capacitación integrales como parte de nuestros paquetes. Te enseñaremos a ti y a tu equipo cómo añadir/editar productos, gestionar inventario, procesar pedidos, actualizar contenido y usar todas las características de tu plataforma de comercio electrónico. También proporcionamos documentación detallada y sesiones de capacitación grabadas para referencia futura."
+          },
+          "4": {
+            "Q": "¿Qué procesadores de pago pueden integrar con mi sitio web?",
+            "A": "Podemos integrar tu sitio web con todos los principales procesadores de pago incluyendo Stripe, PayPal, Square, Authorize.net, Braintree y muchos otros. También podemos implementar métodos de pago específicos de región y múltiples opciones de pago para maximizar tus tasas de conversión y proporcionar conveniencia para tus clientes."
+          },
+          "5": {
+            "Q": "¿Pueden ayudar con SEO para mi tienda de comercio electrónico?",
+            "A": "Sí, construimos tu tienda con las mejores prácticas de SEO desde el principio. Esto incluye estructura de sitio optimizada, metadatos adecuados, código limpio, optimización móvil y velocidades de carga rápidas. También ofrecemos servicios de SEO continuos para ayudar a mejorar tu visibilidad y rankings con el tiempo."
+          },
+          "6": {
+            "Q": "¿Ofrecen mantenimiento y soporte después del lanzamiento?",
+            "A": "Sí, proporcionamos paquetes de mantenimiento y soporte continuos para mantener tu tienda funcionando sin problemas. Estos incluyen actualizaciones regulares, monitoreo de seguridad, optimización de rendimiento y soporte técnico. Recomendamos un plan de mantenimiento para proteger tu inversión y asegurar que tu tienda permanezca segura y actualizada."
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Listo para Crear Tu Sitio Web de Comercio Electrónico Personalizado?",
+      "desc": "Contáctanos hoy para una consulta gratuita. Te ayudaremos a elegir las características y enfoque de desarrollo adecuados para crear un sitio web de comercio electrónico que impulse ventas y crecimiento para tu negocio.",
+      "getBtn": "Obtén Tu Sitio Web de Comercio Electrónico"
+    }
+  },
+  "SEO": {
+    "badge": {
+      "1": "OPTIMIZACIÓN SEO",
+      "2": "NUESTROS SERVICIOS",
+      "3": "RESULTADOS",
+      "4": "NUESTRO ENFOQUE",
+      "5": "BENEFICIOS",
+      "6": "PRECIOS"
+    },
+    "title": {
+      "1": "Impulsa el Tráfico Orgánico y",
+      "2": "Mejora Tu Posicionamiento"
+    },
+    "desc": "Estrategias de SEO basadas en datos que aumentan la visibilidad, atraen leads cualificados y ayudan a tu negocio a dominar los resultados de los motores de búsqueda.",
+    "auditBtn": "Obtén un Audit SEO Gratuito",
+    "packageBtn": "Ver Paquetes SEO",
+    "sections": {
+      "1": {
+        "title": "Soluciones SEO Integrales",
+        "desc": "Nuestro enfoque holístico para la optimización de motores de búsqueda cubre todos los aspectos necesarios para mejorar la visibilidad de tu sitio web en los resultados de búsqueda.",
+        "services": {
+          "1": {
+            "title": "Investigación de Palabras Clave",
+            "desc": "Investigación completa de palabras clave para identificar términos de búsqueda de alto valor que tu público objetivo está utilizando.",
+            "features": {
+              "1": "Análisis de Palabras Clave de Competidores",
+              "2": "Evaluación de Volumen de Búsqueda",
+              "3": "Descubrimiento de Palabras Clave Long-tail",
+              "4": "Puntuación de Dificultad de Palabras Clave"
+            }
+          },
+          "2": {
+            "title": "SEO On-Page",
+            "desc": "Optimización de páginas individuales para clasificar más alto y obtener tráfico más relevante en los motores de búsqueda.",
+            "features": {
+              "1": "Optimización de Título y Meta",
+              "2": "Mejora de Estructura de Contenido",
+              "3": "Estrategia de Enlazado Interno",
+              "4": "Optimización de Imágenes"
+            }
+          },
+          "3": {
+            "title": "SEO Técnico",
+            "desc": "Abordar aspectos técnicos de tu sitio web para mejorar el ranking en los motores de búsqueda.",
+            "features": {
+              "1": "Optimización de Velocidad del Sitio",
+              "2": "Capacidad de Respuesta Móvil",
+              "3": "Implementación de Schema Markup",
+              "4": "Resolución de Errores de Rastreo"
+            }
+          },
+          "4": {
+            "title": "Construcción de Enlaces",
+            "desc": "Adquisición estratégica de backlinks desde sitios web con autoridad para impulsar la autoridad de tu dominio.",
+            "features": {
+              "1": "Adquisición de Backlinks de Calidad",
+              "2": "Recuperación de Enlaces Rotos",
+              "3": "Estrategia de Guest Posting",
+              "4": "Análisis de Backlinks de Competidores"
+            }
+          }
+        }
+      },
+      "2": {
+        "title": "Rendimiento Probado",
+        "desc": "Nuestro enfoque basado en datos ofrece consistentemente resultados medibles para nuestros clientes.",
+        "metrics": {
+          "1": {
+            "title": "Aumento Promedio de Tráfico",
+            "desc": "Nuestros clientes típicamente ven un aumento del 45% en tráfico orgánico dentro de 6 meses."
+          },
+          "2": {
+            "title": "Mejora de Posicionamiento de Palabras Clave",
+            "desc": "85% de las palabras clave objetivo muestran mejoras significativas de posicionamiento dentro de los primeros 3 meses."
+          },
+          "3": {
+            "title": "Aumento de Tasa de Conversión",
+            "desc": "En promedio, nuestros servicios SEO ayudan a mejorar las tasas de conversión en un 32% a través de tráfico cualificado."
+          },
+          "4": {
+            "title": "Visibilidad en Búsqueda Local",
+            "desc": "Los negocios locales ven un aumento del 65% en apariciones en Google Map Pack para búsquedas relevantes."
+          }
+        }
+      },
+      "3": {
+        "title": "Nuestro Proceso SEO",
+        "desc": "Seguimos un enfoque sistemático para asegurar que tu campaña SEO ofrezca resultados consistentes.",
+        "approach": {
+          "1": {
+            "title": "Auditoría SEO",
+            "desc": "Realizamos un análisis exhaustivo de tu rendimiento SEO actual, identificando problemas y oportunidades."
+          },
+          "2": {
+            "title": "Desarrollo de Estrategia",
+            "desc": "Creamos una estrategia SEO personalizada basada en tus objetivos de negocio, público objetivo y panorama competitivo."
+          },
+          "3": {
+            "title": "Optimización On-Page",
+            "desc": "Optimizamos el contenido, estructura y elementos técnicos de tu sitio web para mejorar los rankings en motores de búsqueda."
+          },
+          "4": {
+            "title": "Estrategia Off-Page",
+            "desc": "Construimos backlinks de alta calidad y mejoramos tu presencia online en plataformas relevantes."
+          },
+          "5": {
+            "title": "Análisis e Informes",
+            "desc": "Seguimos métricas clave y proporcionamos informes detallados sobre tu rendimiento SEO y ROI."
+          }
+        }
+      },
+      "4": {
+        "title": "¿Por Qué Invertir en SEO?",
+        "desc": "La optimización de motores de búsqueda ofrece numerosas ventajas para negocios que buscan hacer crecer su presencia online.",
+        "cards": {
+          "1": {
+            "title": "Aumento de Tráfico Orgánico",
+            "desc": "Dirige más visitantes cualificados a tu sitio web sin pagar por cada clic."
+          },
+          "2": {
+            "title": "Credibilidad Mejorada",
+            "desc": "Rankings más altos en búsquedas generan confianza y credibilidad con tu público objetivo."
+          },
+          "3": {
+            "title": "Mejor Experiencia de Usuario",
+            "desc": "Las mejoras en SEO también mejoran la usabilidad y experiencia de usuario de tu sitio web."
+          },
+          "4": {
+            "title": "Marketing Rentable",
+            "desc": "SEO proporciona uno de los mejores ROIs en comparación con otros canales de marketing digital."
+          },
+          "5": {
+            "title": "Resultados Medibles",
+            "desc": "Sigue rankings, tráfico y conversiones para ver el impacto directo en tu negocio."
+          },
+          "6": {
+            "title": "Estrategia a Largo Plazo",
+            "desc": "A diferencia de la publicidad de pago, los beneficios del SEO se acumulan con el tiempo para resultados duraderos."
+          }
+        }
+      },
+      "5": {
+        "title": "Paquetes SEO",
+        "desc": "Soluciones SEO flexibles diseñadas para satisfacer las necesidades de negocios en cada etapa de crecimiento.",
+        "packages": {
+          "badge": "Más Popular",
+          "includedLabel": "Qué Incluye:",
+          "startBtn": "Comenzar",
+          "1": {
+            "title": "SEO Inicial",
+            "desc": "Servicios SEO esenciales para pequeños negocios que buscan mejorar su presencia en búsquedas locales.",
+            "period": "por mes",
+            "features": {
+              "1": "Auditoría SEO Inicial",
+              "2": "Investigación de Palabras Clave (hasta 20 palabras clave)",
+              "3": "Optimización On-Page (5 páginas)",
+              "4": "SEO Técnico Básico",
+              "5": "Informes Mensuales",
+              "6": "Optimización de Perfil de Google Business",
+              "7": "Compromiso Mínimo de 3 Meses"
+            }
+          },
+          "2": {
+            "title": "SEO Profesional",
+            "desc": "Solución SEO integral para negocios en crecimiento que compiten en mercados más amplios.",
+            "period": "por mes",
+            "features": {
+              "1": "Auditoría SEO en Profundidad",
+              "2": "Investigación Avanzada de Palabras Clave (hasta 50 palabras clave)",
+              "3": "Optimización On-Page (15 páginas)",
+              "4": "Implementación de SEO Técnico",
+              "5": "Estrategia de Optimización de Contenido",
+              "6": "Construcción Mensual de Enlaces (5 enlaces de calidad)",
+              "7": "Análisis de Competidores",
+              "8": "Informes Quincenales",
+              "9": "Compromiso Mínimo de 6 Meses"
+            }
+          },
+          "3": {
+            "title": "SEO Empresarial",
+            "desc": "Alianza estratégica SEO para grandes empresas con necesidades complejas e industrias competitivas.",
+            "period": "por mes",
+            "features": {
+              "1": "Auditoría SEO Integral",
+              "2": "Investigación y Mapeo Extensivo de Palabras Clave",
+              "3": "Optimización Completa del Sitio Web",
+              "4": "SEO Técnico Avanzado",
+              "5": "Estrategia de Creación de Contenido",
+              "6": "Campaña Agresiva de Construcción de Enlaces",
+              "7": "SEO Internacional (si aplica)",
+              "8": "Optimización de Comercio Electrónico (si aplica)",
+              "9": "Informes Semanales y Llamadas de Estrategia",
+              "10": "Gerente SEO Dedicado",
+              "11": "Compromiso Mínimo de 12 Meses"
+            }
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Listo para Mejorar Tus Rankings de Búsqueda?",
+      "desc": "Obtén una auditoría SEO gratuita y descubre oportunidades para mejorar la visibilidad de tu sitio web en los motores de búsqueda.",
+      "reqBtn": "Solicita Tu Auditoría SEO Gratuita"
+    }
+  },
+  "Hosting": {
+    "badge": {
+      "1": "HOSTING WEB Y MANTENIMIENTO",
+      "2": "NUESTROS SERVICIOS",
+      "3": "BENEFICIOS",
+      "4": "TECNOLOGÍA",
+      "5": "NUESTRO PROCESO",
+      "6": "PRECIOS"
+    },
+    "title": {
+      "1": "Hosting Confiable",
+      "2": "y Mantenimiento Experto"
+    },
+    "desc": "Mantén tu sitio web seguro, rápido y siempre online con nuestros servicios profesionales de hosting y mantenimiento respaldados por monitoreo y soporte 24/7.",
+    "startBtn": "Comienza Hoy",
+    "plansBtn": "Ver Planes de Hosting",
+    "sections": {
+      "1": {
+        "title": "Soluciones de Hosting Integrales",
+        "desc": "Más allá de solo espacio en servidor, proporcionamos un conjunto completo de servicios para mantener tu sitio web funcionando en su mejor estado.",
+        "hostFeatures": {
+          "1": {
+            "title": "Hosting Gestionado",
+            "desc": "Entorno de hosting completamente gestionado con monitoreo y optimización experta para un rendimiento óptimo.",
+            "features": {
+              "1": "Monitoreo de Servidor 24/7",
+              "2": "Optimización de Rendimiento",
+              "3": "Gestión de Recursos",
+              "4": "Infraestructura Escalable"
+            }
+          },
+          "2": {
+            "title": "Servicios de Seguridad",
+            "desc": "Medidas de seguridad integrales para proteger tu sitio web de amenazas y vulnerabilidades.",
+            "features": {
+              "1": "Escaneo de Malware",
+              "2": "Protección DDoS",
+              "3": "Certificados SSL",
+              "4": "Configuración de Firewall"
+            }
+          },
+          "3": {
+            "title": "Monitoreo de Rendimiento",
+            "desc": "Monitoreo y optimización continuos para asegurar que tu sitio web mantenga un rendimiento máximo.",
+            "features": {
+              "1": "Monitoreo de Disponibilidad",
+              "2": "Análisis de Velocidad de Página",
+              "3": "Pruebas de Carga",
+              "4": "Informes de Rendimiento"
+            }
+          },
+          "4": {
+            "title": "Copias de Seguridad Regulares",
+            "desc": "Sistemas de respaldo automatizados que aseguran que tus datos estén siempre seguros y recuperables en caso de emergencias.",
+            "features": {
+              "1": "Copias de Seguridad Diarias Automatizadas",
+              "2": "Almacenamiento Seguro Fuera del Sitio",
+              "3": "Restauración Rápida",
+              "4": "Políticas de Retención de Datos"
+            }
+          }
+        }
+      },
+      "2": {
+        "title": "Por Qué Elegir Nuestro Hosting",
+        "desc": "Experimenta la tranquilidad que viene con soluciones de hosting gestionado profesionales.",
+        "cards": {
+          "1": {
+            "title": "Rendimiento Superior",
+            "desc": "Configuraciones de servidor optimizadas y hardware premium ofrecen tiempos de carga ultrarrápidos para tus visitantes."
+          },
+          "2": {
+            "title": "Seguridad Mejorada",
+            "desc": "Protocolos de seguridad avanzados y monitoreo continuo protegen tu sitio de amenazas y vulnerabilidades."
+          },
+          "3": {
+            "title": "Tiempo de Actividad Excepcional",
+            "desc": "Nuestra robusta infraestructura y monitoreo proactivo aseguran que tu sitio web permanezca online el 99.9% del tiempo."
+          },
+          "4": {
+            "title": "Actualizaciones Regulares",
+            "desc": "Actualizaciones automáticas para tu CMS, plugins y software de servidor mantienen tu sitio seguro y funcionando sin problemas."
+          },
+          "5": {
+            "title": "Escalabilidad Sin Problemas",
+            "desc": "Escala fácilmente tus recursos a medida que tu negocio crece, sin interrupciones de servicio o dolores de cabeza técnicos."
+          },
+          "6": {
+            "title": "Protección de Datos",
+            "desc": "Sistemas de respaldo automatizados aseguran que tus valiosos datos estén siempre protegidos y rápidamente recuperables."
+          }
+        }
+      },
+      "3": {
+        "title": "Nuestro Stack Tecnológico",
+        "desc": "Aprovechamos tecnologías líderes en la industria para ofrecer soluciones de hosting confiables, seguras y de alto rendimiento.",
+        "stack": {
+          "1": {
+            "category": "Infraestructura de Hosting"
+          },
+          "2": {
+            "category": "Entrega de Contenido"
+          },
+          "3": {
+            "category": "Soluciones de Base de Datos"
+          },
+          "4": {
+            "category": "Plataformas CMS"
+          }
+        }
+      },
+      "4": {
+        "title": "Cómo Mantenemos Tu Sitio Web",
+        "desc": "Nuestro enfoque sistemático asegura que tu sitio web permanezca seguro, actualizado y funcionando de manera óptima.",
+        "cards": {
+          "stepLabel": "PASO",
+          "1": {
+            "title": "Monitoreo de Servidor",
+            "desc": "Monitoreamos continuamente tu servidor para tiempo de actividad, uso de recursos y posibles problemas para asegurar un rendimiento óptimo."
+          },
+          "2": {
+            "title": "Actualizaciones Regulares",
+            "desc": "Realizamos actualizaciones regulares a tu CMS, plugins, temas y software de servidor para mantener la seguridad y funcionalidad."
+          },
+          "3": {
+            "title": "Escaneos de Seguridad",
+            "desc": "Realizamos escaneos de seguridad regulares para identificar y remediar vulnerabilidades antes de que puedan ser explotadas."
+          },
+          "4": {
+            "title": "Pruebas de Rendimiento",
+            "desc": "Probamos regularmente el rendimiento de tu sitio y hacemos las optimizaciones necesarias para mejorar la velocidad y experiencia de usuario."
+          },
+          "5": {
+            "title": "Gestión de Copias de Seguridad",
+            "desc": "Mantenemos copias de seguridad regulares de tu sitio y base de datos, asegurando que tus datos estén siempre protegidos y recuperables."
+          },
+          "6": {
+            "title": "Soporte Proactivo",
+            "desc": "Abordamos los problemas potenciales antes de que impacten tu sitio, y proporcionamos resolución rápida cuando surgen problemas."
+          }
+        }
+      },
+      "5": {
+        "title": "Planes de Hosting y Mantenimiento",
+        "desc": "Elige la solución de hosting que mejor se adapte a las necesidades y presupuesto de tu negocio.",
+        "packages": {
+          "badge": "Más Popular",
+          "includedLabel": "Qué Incluye:",
+          "startBtn": "Comenzar",
+          "1": {
+            "title": "Estándar",
+            "desc": "Perfecto para sitios web de pequeñas empresas y blogs con tráfico moderado.",
+            "period": "por mes",
+            "features": {
+              "1": "Entorno de Hosting Compartido",
+              "2": "5GB de Almacenamiento",
+              "3": "50GB de Ancho de Banda Mensual",
+              "4": "Copias de Seguridad Semanales",
+              "5": "Certificado SSL",
+              "6": "Protección de Seguridad Básica",
+              "7": "Soporte por Email"
+            }
+          },
+          "2": {
+            "title": "Profesional",
+            "desc": "Ideal para negocios en crecimiento, sitios de comercio electrónico y sitios de contenido de alto tráfico.",
+            "period": "por mes",
+            "features": {
+              "1": "Hosting VPS",
+              "2": "20GB de Almacenamiento SSD",
+              "3": "Ancho de Banda Ilimitado",
+              "4": "Copias de Seguridad Diarias",
+              "5": "Certificado SSL Premium",
+              "6": "Protección de Seguridad Avanzada",
+              "7": "Integración CDN",
+              "8": "Soporte Prioritario",
+              "9": "Informes Mensuales de Rendimiento"
+            }
+          },
+          "3": {
+            "title": "Empresarial",
+            "desc": "Solución integral para grandes empresas con requisitos complejos y volúmenes de tráfico alto.",
+            "period": "por mes",
+            "features": {
+              "1": "Hosting Dedicado",
+              "2": "100GB de Almacenamiento SSD",
+              "3": "Ancho de Banda Ilimitado",
+              "4": "Copias de Seguridad en Tiempo Real",
+              "5": "SSL de Validación Extendida",
+              "6": "Seguridad de Nivel Empresarial",
+              "7": "CDN Global",
+              "8": "Balanceo de Carga",
+              "9": "Soporte Dedicado 24/7",
+              "10": "Infraestructura Personalizada"
+            }
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Listo para un Hosting Confiable?",
+      "desc": "Ponte en contacto hoy para discutir tus necesidades de hosting y aprende cómo nuestras soluciones pueden ayudar a tu negocio a mantener una presencia online segura, rápida y confiable.",
+      "startBtn": "Comienza Hoy"
+    }
+  }
+},
+  "Portfolio" : {
+    "title" : "Nuestro",
+    "title2" : "Portafolio",
+    "sub" : "Descubre el espectro completo de nuestras creaciones.",
+    "category" : {
+      "1" : "Desarrollo Web",
+      "2" : "Desarrollo de Escritorio",
+      "3" : "",
+      "4" : "",
+      "5" : "",
+      "6" : ""
+    },
+    "holder": "Marcador de Imagen del Proyecto",
+    "viewbtn": "Ver Proyecto"
+  },
+  "Merch": {
+    "badge": {
+      "1": "MERCANCÍA OFICIAL",
+      "2": "COLECCIONES DESTACADAS",
+      "3": "NUESTROS PRODUCTOS",
+      "4": "OFERTA POR TIEMPO LIMITADO",
+      "5": "CÓDIGO: CWA15"
+    },
+    "title": {
+      "1": "Viste Tu",
+      "2": "Pasión Por El Código"
+    },
+    "desc": "Ropa de alta calidad para desarrolladores, diseñadores y entusiastas de la tecnología. Hecha para aquellos que construyen excelencia digital.",
+    "shopBtn": "Comprar Ahora",
+    "heading": {
+      "1": "Colecciones Seleccionadas",
+      "2": "Explorar La Colección"
+    },
+    "collection": {
+      "1": {
+        "title": "Colección de Invierno",
+        "desc": "Mantente abrigado y con estilo con nuestra ropa de invierno para programadores."
+      },
+      "2": {
+        "title": "Colección Esencial",
+        "desc": "Piezas imprescindibles para el guardarropa de todo desarrollador."
+      },
+      "3": {
+        "title": "Edición Limitada",
+        "desc": "Diseños exclusivos disponibles solo por tiempo limitado."
+      }
+    },
+    "category": {
+      "searchPlaceHolder": "Buscar productos...",
+      "1": "Todos",
+      "2": "Sudadera",
+      "3": "Camisa",
+      "4": "Gorra",
+      "5": "Pantalones",
+      "6": "Otros",
+      "sort": {
+        "title": "Ordenar Por",
+        "option": {
+          "1": "Destacados",
+          "2": "Precio: Bajo a Alto",
+          "3": "Precio: Alto a Bajo",
+          "4": "Alfabético",
+          "5": "Más Nuevos"
+        }
+      }
+    },
+    "merchComp": {
+      "badge": {
+        "1": "MÁS VENDIDO",
+        "2": "DESTACADO"
+      },
+      "buyBtn": "Comprar Ahora",
+      "wishlistLabel": "Añadir a Lista de Deseos",
+      "colorLabel": "Colores:",
+      "sizeLabel": "Tallas:",
+      "soonLabel": "Próximamente..."
+    },
+    "items": {
+      "1": {
+        "title": "Sudadera de Desarrollador",
+        "desc": "Mantente abrigado mientras programas con nuestra sudadera premium para desarrolladores. Presenta un diseño minimalista con sutiles fragmentos de código en las mangas.",
+        "category": "Sudadera",
+        "colors": {
+          "1": "Negro",
+          "2": "Gris",
+          "3": "Azul Marino",
+          "4": "Blanco"
+        }
+      },
+      "2": {
+        "title": "Sudadera Premium de Código",
+        "desc": "Nuestra sudadera premium de peso pesado con logotipo bordado y patrones de código. Incluye canales ocultos para auriculares en la capucha.",
+        "category": "Sudadera",
+        "colors": {
+          "1": "Negro",
+          "2": "Gris",
+          "3": "Azul Marino",
+          "4": "Blanco"
+        }
+      },
+      "3": {
+        "title": "Camiseta Code Artist",
+        "desc": "Camiseta de algodón cómoda con nuestro diseño característico 'Code Artist' en el frente.",
+        "category": "Camisa",
+        "colors": {
+          "1": "Negro",
+          "2": "Blanco",
+          "3": "Rojo",
+          "4": "Azul",
+          "5": "Gris",
+          "6": "Gris Claro",
+          "7": "Azul Marino"
+        }
+      },
+      "5": {
+        "title": "Sudadera de Desarrollador",
+        "desc": "Sudadera de inspiración retro con lenguajes de programación y sintaxis vintage.",
+        "category": "Camisa",
+        "colors": {
+          "1": "Negro",
+          "2": "Azul Marino",
+          "3": "Gris",
+          "4": ""
+        }
+      },
+      "6": {
+        "title": "Sudadera Premium de Desarrollador",
+        "desc": "Sudadera premium con tela cómoda y diseño elegante con temática de desarrollador.",
+        "category": "Camisa",
+        "colors": {
+          "1": "Negro",
+          "2": "Azul Marino",
+          "3": "Gris"
+        }
+      },
+      "7": {
+        "title": "Gorro Tech",
+        "desc": "Gorro de punto cálido con un sutil símbolo de código bordado. Perfecto para programar en invierno.",
+        "category": "Gorra",
+        "colors": {
+          "1": "Negro"
+        }
+      },
+      "8": {
+        "title": "Gorra",
+        "desc": "Usa tu gorra de programación cuando vayas a reuniones mientras luces fresco y genial.",
+        "category": "Gorra",
+        "colors": {
+          "1": "Negro"
+        }
+      },
+      "9": {
+        "title": "Taza CWA",
+        "desc": "¡Bebe de nuestra taza para inspirarte y convertirte en el mejor Nerd Tecnológico que jamás hayas soñado!",
+        "category": "Otros",
+        "colors": {
+          "1": "Negro"
+        }
+      }
+    },
+    "features": {
+      "1": {
+        "title": "Calidad Premium",
+        "desc": "Toda nuestra mercancía está fabricada con materiales de alta calidad diseñados para durar a través de innumerables sesiones de programación."
+      },
+      "2": {
+        "title": "Diseños Únicos",
+        "desc": "Cada pieza presenta diseños únicos creados por nuestro equipo interno de artistas-desarrolladores."
+      },
+      "3": {
+        "title": "Envío Gratuito",
+        "desc": "Disfruta de envío gratuito en todos los pedidos superiores a $75. Envío internacional disponible para la mayoría de los países."
+      }
+    },
+    "cta": {
+      "title": "Obtén 15% de Descuento en Tu Primer Pedido",
+      "desc": "Ingresa el código de promoción al finalizar la compra y recibe un código de descuento del 15% para tu primera compra de mercancía.",
+      "newsBtn": "Suscríbete al Boletín"
+    }
+  },
+  "Contact": {
+    "badge": "CONTÁCTANOS",
+    "statusMsg": {
+      "success": "¡Gracias por contactarnos!",
+      "error": "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo."
+    },
+    "header": "¿Listo para Iniciar Tu Proyecto?",
+    "desc": "Cuéntanos sobre tu proyecto y nos pondremos en contacto contigo dentro de las 24 horas con una consulta gratuita.",
+    "submitbtn": "Enviar Mensaje",
+    "submitLoad": "Enviando...",
+    "field": {
+      "name": {
+        "label": "Nombre",
+        "placeholder": "Ingresa tu nombre completo"
+      },
+      "email": {
+        "label": "Correo electrónico",
+        "placeholder": "tu@correo.com"
+      },
+      "service": {
+        "label": "Servicio Necesario",
+        "placeholder": "Selecciona un servicio",
+        "option": {
+          "1": "Desarrollo Web",
+          "2": "Desarrollo de Aplicaciones Móviles",
+          "3": "Diseño UI/UX",
+          "4": "Soluciones de Comercio Electrónico",
+          "5": "Optimización SEO",
+          "6": "Hosting Web y Mantenimiento"
+        }
+      },
+      "details": {
+        "label": "Detalles del Proyecto",
+        "placeholder": "Cuéntanos sobre los requisitos y objetivos de tu proyecto..."
+      }
+    }
+  },
+  "Footer": {     
+    "compDesc": "Diseñamos y desarrollamos experiencias digitales que ayudan a empresas e individuos a tener éxito en línea.",     
+    "rights": "Tu Empresa. Todos los derechos reservados.",     
+    "customLink": "Github",     
+    "cwaMark": "Diseñado Por",     
+    "nav": {       
+      "company": {         
+        "title": "Servicios",         
+        "links": {           
+          "1": "Desarrollo Web",           
+          "2": "Desarrollo de Aplicaciones Móviles",           
+          "3": "Diseño UI/UX",           
+          "4": "Soluciones de Comercio Electrónico",           
+          "5": "Optimización SEO",           
+          "6": "Hosting Web"         
+        }       
+      },       
+      "resources": {         
+        "title": "Empresa",         
+        "links": {           
+          "1": "Nosotros",           
+          "2": "Portafolio",
+          "3": "Proceso",           
+          "4": "Contacto"         
+        }       
+      },       
+      "contact": {         
+        "title": "Contacto",         
+        "links": {           
+          "1": "unfold@codewithali.com",           
+          "2": "(408) 690-4009",           
+          "3": "Obtener una Cotización"          
+        }       
+      },       
+      "legal": {         
+        "title": "Privacidad",         
+        "links": {           
+          "1": "CodeWithAli. Todos los derechos reservados.",           
+          "2": "Política de Privacidad",           
+          "3": "Términos de Servicio",           
+          "4": "Política de Cookies"         
+        }       
+      }     
+    }   
+  } 
+}

@@ -10,6 +10,7 @@ export function ModeToggle() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+      // Dont know how to make it default dark mode
       const savedTheme = localStorage.getItem("theme") || "light";
       setTheme(savedTheme);
       document.documentElement.classList.toggle("dark", savedTheme === "dark");
@@ -18,6 +19,10 @@ export function ModeToggle() {
 
   // toggle between light and dark themes
   const toggleTheme = () => {
+    // Swapped the 'light' and 'dark'. Now it properly saves in localstorage, but it stays on dark mode.
+    // Doesnt save light mode
+
+    // Dont know how to make it default dark mode
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
@@ -25,11 +30,11 @@ export function ModeToggle() {
   };
   return (
     <Button
-      variant="outline"
+      variant="ghost"
       size="icon"
       onClick={toggleTheme}
       aria-label="Toggle theme"
-      className="bg-rose-200 hover:bg-rose-300 dark:bg-pink-400 dark:text-black dark:hover:bg-pink-500 dark:hover:text-white transition-colors duration-75"
+      className="bg-transparent text-black hover:bg-red-800 hover:text-white border-none rounded-full dark:text-white dark:hover:bg-red-800 dark:hover:text-white transition-colors duration-75"
     >
       <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
       <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
