@@ -30,11 +30,11 @@ export function ModeToggle() {
   };
   return (
     <Button
-      variant="outline"
+      variant="ghost"
       size="icon"
       onClick={toggleTheme}
       aria-label="Toggle theme"
-      className="bg-black text-white hover:bg-red-800 hover:text-white dark:bg-white dark:text-black dark:hover:bg-red-800 dark:hover:text-white transition-colors duration-75"
+      className="bg-transparent text-black hover:bg-red-800 hover:text-white border-none rounded-full dark:text-white dark:hover:bg-red-800 dark:hover:text-white transition-colors duration-75"
     >
       <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
       <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />

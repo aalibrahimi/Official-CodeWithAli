@@ -46,7 +46,7 @@ export function Navbar(): React.ReactElement {
     { code: "en", name: "English", flag: "🇺🇸" },
     { code: "es", name: "Español", flag: "🇪🇸" },
     { code: "ar", name: "العربية", flag: "🇮🇶" },
-    { code: "nl", name: "Nederlands", flag: "🇳🇱" }
+    { code: "nl", name: "Nederlands", flag: "🇳🇱" },
   ];
 
   // Prevent hydration issues by rendering menu only after component is mounted
@@ -98,34 +98,36 @@ export function Navbar(): React.ReactElement {
               src="/codewithali.png"
               alt="CodeWithAli"
               draggable={false}
-              className="logo rounded-full border-2 border-red-800/50 shadow-lg shadow-red-900/20"
-              width={70}
-              height={70}
+              className="w-12 h-auto rounded-full border-2 border-red-800/50 shadow-lg shadow-red-900/20"
+              width={500}
+              height={500}
               priority
             />
-            <span className={`${isRTL ? "mr-3" : "ml-3"} text-xl font-bold bg-gradient-to-r from-red-500 to-red-900 dark:from-red-300 dark:to-red-500 bg-clip-text text-transparent`}>
+            <span
+              className={`${isRTL ? "mr-3" : "ml-3"} text-xl font-bold bg-gradient-to-r from-red-500 to-red-900 dark:from-red-300 dark:to-red-500 bg-clip-text text-transparent`}
+            >
               CodeWithAli
             </span>
           </Link>
         </div>
 
         {/* Regular nav for larger screens */}
-        <nav className="nav-links desktop-nav hidden md:flex space-x-8">
+        <nav className="hidden lg:flex justify-center gap-8 text-lg">
           <Link
             href="/"
-            className="text-black dark:text-white hover:text-red-400 transition-colors"
+            className="text-black dark:text-white hover:text-red-400 dark:hover:text-red-500 transition-colors"
           >
             {t("routes.home")}
           </Link>
           <Link
             href="/about"
-            className="text-black dark:text-white hover:text-red-400 transition-colors"
+            className="text-black dark:text-white hover:text-red-400 dark:hover:text-red-500 transition-colors"
           >
             {t("routes.about")}
           </Link>
           <Link
             href="/portfolio"
-            className="text-black dark:text-white hover:text-red-400 transition-colors"
+            className="text-black dark:text-white hover:text-red-400 dark:hover:text-red-500 transition-colors"
           >
             {t("routes.portfolio")}
           </Link>
@@ -180,13 +182,13 @@ export function Navbar(): React.ReactElement {
           </div>
           <Link
             href="/merchandise"
-            className="text-black dark:text-white hover:text-red-400 transition-colors"
+            className="text-black dark:text-white hover:text-red-400 dark:hover:text-red-500 transition-colors"
           >
             {t("routes.merch")}
           </Link>
           <Link
             href="/#contact"
-            className="text-black dark:text-white hover:text-red-400 transition-colors"
+            className="text-black dark:text-white hover:text-red-400 dark:hover:text-red-500 transition-colors"
           >
             {t("routes.contact")}
           </Link>
@@ -197,7 +199,7 @@ export function Navbar(): React.ReactElement {
           {/* Language Switcher */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="flex items-center gap-1 px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+              <button className="flex items-center gap-1 px-2 py-1 rounded-md hover:text-white dark:hover:text-white hover:bg-red-800 dark:hover:bg-red-800 transition-colors">
                 <Globe className="h-4 w-4" />
                 <span className="hidden sm:inline-block">
                   {currentLanguage.flag}
@@ -207,9 +209,11 @@ export function Navbar(): React.ReactElement {
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="end"
-              className="bg-white dark:bg-gray-950 text-black dark:text-white"
+              className="bg-white dark:bg-black text-black dark:text-white"
             >
-              <DropdownMenuLabel>{t("labelSelectLang")}</DropdownMenuLabel>
+              <DropdownMenuLabel className="font-semibold">
+                {t("labelSelectLang")}
+              </DropdownMenuLabel>
               <DropdownMenuSeparator />
               {languages.map((language) => (
                 <DropdownMenuItem
@@ -229,17 +233,17 @@ export function Navbar(): React.ReactElement {
           </DropdownMenu>
 
           <ModeToggle />
-        </div>
 
-        {/* Mobile menu button */}
-        <div className="mobile-menu block md:hidden">
-          <button
-            className="menu-toggle w-10 h-10 flex items-center justify-center bg-red-900/20 hover:bg-red-900/40 rounded-full text-red-400 transition-colors"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? "✕" : "☰"}
-          </button>
+          {/* Mobile menu button */}
+          <div className="block lg:hidden">
+            <button
+              className="w-10 h-10 flex items-center justify-center text-black dark:text-white text-2xl transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? "✕" : "☰"}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -256,60 +260,60 @@ export function Navbar(): React.ReactElement {
 
           {/* Sidebar with hardware-accelerated transforms */}
           <div
-            className={`fixed top-0 right-0 h-full w-64 bg-black border-l border-red-900/30 shadow-lg shadow-black/50 p-8 transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
+            className={`fixed top-0 right-0 h-full w-64 bg-white dark:bg-black border-l border-red-900/30 shadow-lg shadow-black/50 p-8 transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
               isMenuOpen ? "translate-x-0" : "translate-x-full"
             }`}
             style={{ willChange: "transform" }}
           >
             <div className="flex justify-end mb-8">
               <button
-                className="w-8 h-8 flex items-center justify-center bg-red-900/30 rounded-full text-red-400"
+                className="w-8 h-8 flex items-center justify-center bg-red-200 text-red-500 dark:bg-red-500/30 dark:text-red-300 rounded-full"
                 onClick={() => setIsMenuOpen(false)}
                 aria-label="Close menu"
               >
                 ✕
               </button>
             </div>
-            <div className="flex flex-col space-y-6">
+            <div className="flex flex-col space-y-6 text-lg">
               <Link
                 href="/"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
+                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/50 pb-2"
               >
                 {t("routes.home")}
               </Link>
               <Link
                 href="/about"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
+                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/50 pb-2"
               >
                 {t("routes.about")}
               </Link>
               <Link
                 href="/portfolio"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
+                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/50 pb-2"
               >
                 {t("routes.portfolio")}
               </Link>
               <Link
                 href="/services"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
+                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/50 pb-2"
               >
                 {t("routes.services.title")}
               </Link>
               <Link
                 href="/merchandise"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
+                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/50 pb-2"
               >
                 {t("routes.merch")}
               </Link>
               <Link
                 href="/#contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/20 pb-2"
+                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/50 pb-2"
               >
                 {t("routes.contact")}
               </Link>

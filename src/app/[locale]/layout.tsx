@@ -1,5 +1,3 @@
-// import "../Styles/globals.css";
-// import "../Styles/mediaSizing.css";
 import { routing } from "@/i18n/routing";
 import { Navbar } from "@/MyComponents/Navbar";
 import Footer from "@/MyComponents/Footer";
@@ -27,7 +25,7 @@ export default async function RootLayout({
     // Override HTML attributes from the parent layout
     <html lang={locale} dir={direction} suppressHydrationWarning> 
       <body>
-      <NextIntlClientProvider>
+        <NextIntlClientProvider>
           <div className="flex min-h-screen flex-col">
             <Navbar />
             <main className="flex-1 w-full bg-black/10">{children}</main>
