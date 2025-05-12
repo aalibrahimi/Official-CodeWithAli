@@ -5,11 +5,8 @@ import { ModeToggle } from "@/components/ui/modetoggle";
 
 import { cn } from "@/lib/utils";
 import { Globe } from "lucide-react"; // Import icons for menu toggle and language
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
-import { usePathname } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,20 +16,20 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { isRtlLang } from "rtl-detect";
+import Image from "next/image";
 
-interface RouteItem {
-  title: string;
-  href?: string;
-  content?: {
-    title: string;
-    href: string;
-    description: string;
-  }[];
-}
+// interface RouteItem {
+//   title: string;
+//   href?: string;
+//   content?: {
+//     title: string;
+//     href: string;
+//     description: string;
+//   }[];
+// }
 
 export function Navbar(): React.ReactElement {
   const t = useTranslations("NavBar");
-  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -141,7 +138,7 @@ export function Navbar(): React.ReactElement {
             >
               {t("routes.services.title")}
             </Link>
-            <div className="absolute left-0 mt-2 w-56 text-black dark:text-white bg-white dark:bg-black border border-gray-200 dark:border-red-900/30 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+            <div className="absolute left-0 mt-2 px-2 w-56 text-black dark:text-white bg-white dark:bg-black border border-gray-200 dark:border-red-900/30 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
               <div className="py-2">
                 {[
                   {
@@ -172,7 +169,7 @@ export function Navbar(): React.ReactElement {
                   <Link
                     key={service.title}
                     href={service.href}
-                    className="block px-4 py-2 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-red-900/20"
+                    className="flex items-center px-4 py-2 w-50 h-auto text-black hover:text-red-800 dark:text-white dark:hover:text-red-400 hover:border-b-2 hover:border-red-400 dark:hover:border-red-500/80 hover:bg-red-200/60 dark:hover:bg-red-900/20"
                   >
                     {service.title}
                   </Link>
@@ -252,7 +249,7 @@ export function Navbar(): React.ReactElement {
         <>
           {/* Overlay - separate from sidebar for better performance */}
           <div
-            className={`fixed inset-0 bg-black/70 z-40 md:hidden transition-opacity duration-300 ${
+            className={`fixed inset-0 bg-black/70 z-40 lg:hidden transition-opacity duration-300 ${
               isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
             onClick={() => setIsMenuOpen(false)}
@@ -260,7 +257,7 @@ export function Navbar(): React.ReactElement {
 
           {/* Sidebar with hardware-accelerated transforms */}
           <div
-            className={`fixed top-0 right-0 h-full w-64 bg-white dark:bg-black border-l border-red-900/30 shadow-lg shadow-black/50 p-8 transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
+            className={`fixed top-0 right-0 h-full w-64 bg-white dark:bg-black border-l border-red-900/30 shadow-lg shadow-black/50 p-8 transform transition-transform duration-300 ease-in-out z-50 lg:hidden ${
               isMenuOpen ? "translate-x-0" : "translate-x-full"
             }`}
             style={{ willChange: "transform" }}
