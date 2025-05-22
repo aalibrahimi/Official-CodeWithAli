@@ -11,6 +11,7 @@ import {
   Calendar,
   CheckCircle,
   Clock,
+  Filter,
   Mail,
   Menu,
   MessageSquare,
@@ -208,6 +209,94 @@ const WeeklyTechNewsletter = () => {
     },
   ];
 
+   const bentoPosts: Post[] = [
+    {
+      id: "b1",
+      title: "WebGPU: Practical Examples for Real-World Applications",
+      excerpt: "A hands-on guide to implementing WebGPU in your applications with practical code examples.",
+      author: {
+        name: "Maya Rodriguez",
+        avatar: "/team/maya.jpg"
+      },
+      date: "2025-05-18",
+      readTime: "10 min",
+      category: "web-development",
+      tags: ["WebGPU", "Performance", "Graphics"],
+      image: "/blog/webgpu-examples.jpg",
+      url: "/blog/webgpu-practical-examples",
+      likes: 183,
+      comments: 27
+    },
+    {
+      id: "b2",
+      title: "Building Type-Safe APIs with tRPC and Next.js",
+      excerpt: "How to leverage tRPC to create fully type-safe APIs with Next.js applications.",
+      author: {
+        name: "David Chen",
+        avatar: "/team/david.jpg"
+      },
+      date: "2025-05-17",
+      readTime: "8 min",
+      category: "web-development",
+      tags: ["tRPC", "TypeScript", "Next.js", "API"],
+      image: "/blog/trpc-next.jpg",
+      url: "/blog/type-safe-apis-trpc-nextjs",
+      likes: 142,
+      comments: 19
+    },
+    {
+      id: "b3",
+      title: "AI-Powered Code Reviews: The Future of Quality Assurance",
+      excerpt: "How machine learning is transforming code reviews and quality assurance processes.",
+      author: {
+        name: "Sarah Johnson",
+        avatar: "/team/sarah.jpg"
+      },
+      date: "2025-05-16",
+      readTime: "12 min",
+      category: "ai-ml",
+      tags: ["AI", "Code Review", "DevOps"],
+      image: "/blog/ai-code-reviews.jpg",
+      url: "/blog/ai-powered-code-reviews",
+      likes: 205,
+      comments: 31
+    },
+    {
+      id: "b4",
+      title: "Understanding the Atomic CSS Revolution in 2025",
+      excerpt: "Why atomic CSS libraries like Tailwind have transformed frontend development.",
+      author: {
+        name: "Ali Ibrahim",
+        avatar: "/team/ali.jpg"
+      },
+      date: "2025-05-15",
+      readTime: "6 min",
+      category: "web-development",
+      tags: ["CSS", "Tailwind", "Styling"],
+      image: "/blog/atomic-css.jpg",
+      url: "/blog/atomic-css-revolution",
+      likes: 167,
+      comments: 22
+    },
+    {
+      id: "b5",
+      title: "The Rise of Edge Computing in Web Applications",
+      excerpt: "How edge computing is changing the way we build and deploy modern web applications.",
+      author: {
+        name: "David Chen",
+        avatar: "/team/david.jpg"
+      },
+      date: "2025-05-14",
+      readTime: "9 min",
+      category: "tech-trends",
+      tags: ["Edge Computing", "Performance", "Architecture"],
+      image: "/blog/edge-computing.jpg",
+      url: "/blog/edge-computing-web-applications",
+      likes: 129,
+      comments: 17
+    },
+  ];
+
   //   FormatDate for display ( I love this method very quick and easy)
   const formateDate = (dateString: string) => {
     const options: Intl.DateTimeFormatOptions = {
@@ -260,19 +349,22 @@ const WeeklyTechNewsletter = () => {
               {/* Blog Button */}
               <Button
                 className={`text-sm font-medium ${activeTab === "blog" ? "text-white dark:text-red-500 " : "text-white hover:bg-red-700 bg-red-600 dark:text-gray-300  dark:hover:text-red-500"}`}
-              >
+                onClick={() => setActiveTab("blog")}
+             >
                 Blog
               </Button>
               {/* Need to edit here for the dark mode background  */}
               {/* Developer Q&A */}
               <Button
                 className={`text-sm font-medium ${activeTab === "qa" ? " text-white dark:text-red-500" : "text-white bg-red-600 hover:bg-red-700 dark:text-black dark:bg-white dark:hover:bg-gray-200"} `}
-              >
+                onClick={() => setActiveTab("qa")}
+             >
                 Developer Q&A
               </Button>
               {/* Community Chat */}
               <Button
                 className={`text-sm font-medium ${activeTab === "chat" ? "text-red-500 dark:text-white" : "text-white bg-red-600 hover:bg-red-700 dark:text-black dark:bg-white dark:hover:bg-gray-200"}`}
+                onClick={() => setActiveCategory("chat")}
               >
                 Community Chat
               </Button>
@@ -602,6 +694,151 @@ const WeeklyTechNewsletter = () => {
             </section>
           </>
         )}
+
+   {activeTab === "blog" && (
+          <>
+            {/* Bento Grid Blog Section */}
+            <section className="py-12">
+              <div className="container mx-auto px-4">
+                <div className="flex justify-between items-center mb-10">
+                  <h2 className="font-serif text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
+                    Latest Articles
+                  </h2>
+                  
+                  <div className="flex items-center space-x-3">
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      className="border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300"
+                      onClick={() => setActiveCategory("all")}
+                    >
+                      <Filter className="h-4 w-4 mr-2" />
+                      Filter
+                    </Button>
+                  </div>
+                </div>
+                
+                {/* Bento Grid Layout */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+                  {/* Large Feature Card */}
+                  <Card className="md:col-span-2 lg:row-span-2 overflow-hidden group hover:shadow-md transition-shadow">
+                    <div className="relative aspect-video">
+                      <img 
+                        src="/api/placeholder/800/450" 
+                        alt={bentoPosts[0].title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                      <div className="absolute bottom-6 left-6 right-6">
+                        <Badge className="mb-3 bg-white/90 dark:bg-black/80 text-red-600 dark:text-red-400 border-transparent">
+                          {categories.find(lolzy => lolzy.slug === bentoPosts[0].category)?.name}
+                        </Badge>
+                        <h3 className="font-serif text-2xl md:text-3xl font-bold text-white mb-2">
+                          {bentoPosts[0].title}
+                        </h3>
+                        <p className="text-white/90 mb-4 line-clamp-2">
+                          {bentoPosts[0].excerpt}
+                        </p>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center">
+                            <Avatar className="h-8 w-8 mr-2 border-2 border-white">
+                              <AvatarImage src="/api/placeholder/32/32" alt={bentoPosts[0].author.name} />
+                              <AvatarFallback>{bentoPosts[0].author.name.charAt(0)}</AvatarFallback>
+                            </Avatar>
+                            <div>
+                              <p className="text-sm font-medium text-white">{bentoPosts[0].author.name}</p>
+                              <div className="flex items-center text-xs text-white/80">
+                                <span>{formateDate(bentoPosts[0].date)}</span>
+                                <span className="mx-2">•</span>
+                                <span>{bentoPosts[0].readTime}</span>
+                              </div>
+                            </div>
+                          </div>
+                          <Link href={bentoPosts[0].url}>
+                            <Button 
+                              size="sm" 
+                              className="bg-white/90 hover:bg-white text-gray-900 border-transparent"
+                            >
+                              Read
+                              <ArrowRight className="ml-1 h-3 w-3" />
+                            </Button>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
+                  
+                  {/* Standard Cards */}
+                  {bentoPosts.slice(1).map((post) => (
+                    <Card key={post.id} className="overflow-hidden group hover:shadow-md transition-shadow">
+                      <div className="aspect-[16/9]">
+                        <img 
+                          src="/api/placeholder/400/225" 
+                          alt={post.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                      <CardHeader className="pb-2">
+                        <div className="flex justify-between items-center mb-2">
+                          <Badge className="bg-gray-100 text-gray-700 dark:bg-gray-900 dark:text-gray-300 border-transparent">
+                            {categories.find(cat => cat.slug === post.category)?.name}
+                          </Badge>
+                          <div className="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                            <Clock className="h-3 w-3 mr-1" />
+                            <span>{post.readTime}</span>
+                          </div>
+                        </div>
+                        <Link href={post.url}>
+                          <CardTitle className="text-xl group-hover:text-red-600 dark:group-hover:text-red-500 transition-colors line-clamp-2">
+                            {post.title}
+                          </CardTitle>
+                        </Link>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-gray-700 dark:text-gray-300 line-clamp-2 mb-4">
+                          {post.excerpt}
+                        </p>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center">
+                            <Avatar className="h-6 w-6 mr-2">
+                              <AvatarImage src="/api/placeholder/24/24" alt={post.author.name} />
+                              <AvatarFallback>{post.author.name.charAt(0)}</AvatarFallback>
+                            </Avatar>
+                            <span className="text-sm text-gray-900 dark:text-white">{post.author.name}</span>
+                          </div>
+                          <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
+                            <div className="flex items-center">
+                              <ThumbsUp className="h-3 w-3 mr-1" />
+                              <span className="text-xs">{post.likes}</span>
+                            </div>
+                            <div className="flex items-center">
+                              <MessageSquare className="h-3 w-3 mr-1" />
+                              <span className="text-xs">{post.comments}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+                
+                <div className="mt-12 text-center">
+                  <Link href="/blog">
+                    <Button>
+                      View All Articles
+                      {isRTL ? (
+                        <ArrowLeft className="ml-2 h-4 w-4" />
+                      ) : (
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      )}
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </section>
+          </>
+        )}
+
       </main>
     </div>
   );
