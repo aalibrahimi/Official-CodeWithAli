@@ -8,6 +8,7 @@ import {
   ArrowLeft,
   ArrowRight,
   Bell,
+  BookmarkIcon,
   Calendar,
   CheckCircle,
   Clock,
@@ -664,8 +665,8 @@ const WeeklyTechNewsletter = () => {
                         </Link>
                         <p className="text-gray-700 dark:text-gray-300 mb-4">{lolzy.excerpt}</p>
 
-                        <div className="">
-                            <div className="">
+                        <div className="flex items-center justify-between">
+                            <div className="flex items-center">
                                 <Avatar className="h-8 w-8 mr-3">
                                     <AvatarImage src="/codewithali.png" alt={lolzy.author.name} />
                                     <AvatarFallback> {lolzy.author.name.charAt(0)} </AvatarFallback>
@@ -684,9 +685,26 @@ const WeeklyTechNewsletter = () => {
                             </div>
 
                         <div className="flex items-center space-x-3">
-                            <Button className="text-gray-600 dark:text-gray-400 hover:text-red-600  dark:hover:text-red-500 bg-white/50 hover:bg-white/60 ">
+                            <Button className="text-gray-600  mt-1 dark:text-gray-400 hover:text-red-600  dark:hover:text-red-500 bg-white/50 hover:bg-white/60 dark:bg-black dark:border-1">
                                 <ThumbsUp className="h-4 w-4" />
                             </Button>
+                            <Button className="text-gray-600 mt-1 dark:text-gray-400 hover:bg-gray-50 hover:text-red-600 dark:hover:text-red-500 bg-white dark:bg-black dark:border-1">
+                              <BookmarkIcon className="h-4 w-4" />
+                            </Button>
+                            <Link
+                            href={lolzy.url}>
+                              <Button 
+                              variant="outline"
+                              size="sm"
+                              className="border-gray-300 dark:border-gray-700 text-gray dark:text-gray-300 hover:bg-red-50 hover:text-red-600 hover:border-red-300 dark:hover:text-red-400 dark:hover:border-red-800 dark:bg-black mt-1" >
+                                Read More
+                                {isRTL ? (
+                                  <ArrowLeft className="h-4 w-4 ml-1" />
+                                ) : (
+                                  <ArrowRight className="h-4 w-4 ml-1" />
+                                )}
+                              </Button>
+                            </Link>
                         </div>
 
                         </div>
