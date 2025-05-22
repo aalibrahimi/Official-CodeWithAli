@@ -13,13 +13,23 @@ import {
   Clock,
   Mail,
   Menu,
+  MessageSquare,
   Rss,
   Search,
+  Share2,
+  ThumbsUp,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import Image from "next/image";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 interface Category {
   name: string;
@@ -80,7 +90,7 @@ const WeeklyTechNewsletter = () => {
     { name: "Developer Q&A", slug: "developer-qa", count: 9 },
   ];
 
-//   const newsletter issues
+  //   const newsletter issues
 
   const newsletterIssues: NewsletterIssue[] = [
     {
@@ -112,15 +122,17 @@ const WeeklyTechNewsletter = () => {
     },
   ];
 
-//   Const Featured post
-const featuredPost: Post = {
-    id: "1", 
-    title: "The State of Web Development in 2025: Trends, Tools, and Techniques",
-    excerpt: "An in-depth analysis of the latest web development landscape, including the rise of AI-assisted coding, WebGPU adoption, and the evolution of JS frameworks.",
-    author: {    
-        name: "Ali Alibrahimi",
-        avatar: "codewithali.png",
-        role: "Founder, CodeWithAli"
+  //   Const Featured post
+  const featuredPost: Post = {
+    id: "1",
+    title:
+      "The State of Web Development in 2025: Trends, Tools, and Techniques",
+    excerpt:
+      "An in-depth analysis of the latest web development landscape, including the rise of AI-assisted coding, WebGPU adoption, and the evolution of JS frameworks.",
+    author: {
+      name: "Ali Alibrahimi",
+      avatar: "codewithali.png",
+      role: "Founder, CodeWithAli",
     },
     date: "2025-05-20",
     readTime: "15 min",
@@ -129,10 +141,72 @@ const featuredPost: Post = {
     // our questions or blogs will be seen first
     tags: ["Web Development", " 2025 Trends", "JavaScript", "AI"],
     url: "/blog/state-of-the-web-development-2025",
+    image: "codewithali.png",
     likes: 247,
     comments: 53,
-    shares: 129
-};
+    shares: 129,
+  };
+
+  // WWeekly Spotlights
+  const weeklySpotlights: Post[] = [
+    {
+      id: "s1",
+      title:
+        "Implementing Zero-Bundle-Size React Hooks for Performance Optimization",
+      excerpt:
+        "Learn how to create efficient custom hooks that don't increase your bundle size while improving component performance and reusability",
+      author: {
+        name: "Ali Alibrahimi",
+        avatar: "codewithali.png",
+      },
+      date: "2025-05-19",
+      readTime: "11 min",
+      category: " Web-Development",
+      tags: ["React", "Hooks", " Performance"],
+      url: "/blog/zerobundleSize",
+      image: "/blog/lolzy",
+      likes: 215,
+      comments: 42,
+    },
+    {
+      id: "s2",
+      title:
+        "AI-Assisted Code Generation: A Developer's Guide to Responsible Use",
+      excerpt:
+        "How to effectively integrate AI code generation tools into your workflow while maintaining code quality and security.",
+      author: {
+        name: "Maya Rodriguez",
+        avatar: "/team/maya.jpg",
+      },
+      date: "2025-05-17",
+      readTime: "13 min",
+      category: "ai-ml",
+      tags: ["AI", "Code Generation", "Ethics"],
+      image: "/blog/ai-code-generation.jpg",
+      url: "/blog/ai-assisted-code-generation-guide",
+      likes: 189,
+      comments: 37,
+    },
+    {
+      id: "s3",
+      title:
+        "Sustainable Web Development: Reducing Your Application's Carbon Footprint",
+      excerpt:
+        "Practical techniques for building more environmentally friendly web applications through optimization and efficient resource use.",
+      author: {
+        name: "Sarah Johnson",
+        avatar: "/team/sarah.jpg",
+      },
+      date: "2025-05-16",
+      readTime: "9 min",
+      category: "tech-trends",
+      tags: ["Sustainability", "Optimization", "Green Coding"],
+      image: "/blog/sustainable-web-dev.jpg",
+      url: "/blog/sustainable-web-development",
+      likes: 172,
+      comments: 29,
+    },
+  ];
 
   //   FormatDate for display ( I love this method very quick and easy)
   const formateDate = (dateString: string) => {
@@ -318,7 +392,7 @@ const featuredPost: Post = {
                         <div className="aspect-[16/9]">
                           <Image
                             // src={NewsletterIssue.image }
-                            src="/merch"
+                            src="/codewithali.png"
                             alt={issue.title}
                             height={225}
                             width={225}
@@ -343,19 +417,19 @@ const featuredPost: Post = {
                           </CardTitle>
                         </CardHeader>
                         <CardContent className="">
-                            <p className="text-gray-700 dark:text-gray-300"> {issue.description} </p>
+                          <p className="text-gray-700 dark:text-gray-300">
+                            {" "}
+                            {issue.description}{" "}
+                          </p>
                         </CardContent>
 
                         <CardFooter className="pt-2  text-red-600 dark:text-red-500 flex items-center text-sm font-medium">
-                            Read Issue
-                        {isRTL  ?
-                        (
+                          Read Issue
+                          {isRTL ? (
                             <ArrowLeft className="h-4 w-4 ml-1" />
-
-                        )   : (
+                          ) : (
                             <ArrowRight className="h-4 w-4 ml-1" />
-                        ) 
-                    }
+                          )}
                         </CardFooter>
                       </Card>
                     </Link>
@@ -364,50 +438,168 @@ const featuredPost: Post = {
               </div>
             </section>
 
-    {/* Featured Article */}
-    <section className="py-12 bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
-                     <Image
-                        // src={NewsletterIssue.image }
-                        src="/merch"
-                        alt="lol"
-                        // alt={featured.Posttitle}
-                        height={225}
-                        width={225}
-                        className="w-full h-full object-cover "
-                        />
-                        <div className="absolute top-4 left-4">
-                            <Badge className="bg-red-100 text-red">
-                                Featured
-                            </Badge>
-                        </div>
-                </div>
-                <div>
+            {/* Featured Article */}
+            <section className="py-12 bg-gray-50 dark:bg-gray-900">
+              <div className="container mx-auto px-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+                    <Image
+                      // src={NewsletterIssue.image }
+                      src="/codewithali.png"
+                      alt="lol"
+                      // alt={featured.Posttitle}
+                      height={225}
+                      width={225}
+                      className="w-full h-full object-cover "
+                    />
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-red-100 text-red">Featured</Badge>
+                    </div>
+                  </div>
+                  <div>
                     <div className="flex items-center text-gray dark:text-gray-400 text-sm mb-4">
-                        <div className="flex items-center">
-                            <Calendar className="h-4 w-4 mr-1" />
-                            <span>{formateDate(featuredPost.date)}</span>
-                        </div>
-                        <span className="mx-2">•</span>
-                        <div className="flex items-center">
-                            <Clock className="h-4 w-4 mr-1" />
-                            <span>{featuredPost.readTime}</span>
-                        </div>
+                      <div className="flex items-center">
+                        <Calendar className="h-4 w-4 mr-1" />
+                        <span>{formateDate(featuredPost.date)}</span>
+                      </div>
+                      <span className="mx-2">•</span>
+                      <div className="flex items-center">
+                        <Clock className="h-4 w-4 mr-1" />
+                        <span>{featuredPost.readTime}</span>
+                      </div>
                     </div>
                     <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                        {featuredPost.title}
+                      {featuredPost.title}
                     </h2>
                     <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxd">
-                        {featuredPost.excerpt}
+                      {featuredPost.excerpt}
                     </p>
+                    <div className="">
+                      <Avatar className="h-10 w-10 mr-3">
+                        <AvatarImage
+                          src="codewithali.png"
+                          alt={featuredPost.author.name}
+                        />
+                        <AvatarFallback>
+                          {featuredPost.author.name.charAt(0)}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="font-medium text-gray-900 dark:text-wwhite">
+                          {featuredPost.author.name}
+                        </p>
+                        <p className="text-sm text-gray-600 dark:text-graay-400">
+                          {" "}
+                          {featuredPost.author.role}{" "}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-4 mb-6">
+                      <div className="flex items-center text-gray-600 dark:text-gray-400">
+                        <ThumbsUp className="h-4 w-4 mr-1" />
+                        <span>{featuredPost.likes}</span>
+                      </div>
+                      <div className="flex items-center text-gray-600 dark:text-gray-400">
+                        <MessageSquare className="h-4 w-4 mr-1" />
+                        <span>{featuredPost.comments}</span>
+                      </div>
+                      <div className="flex items-center text-gray-600 dark:text-gray-400">
+                        <Share2 className="h-4 w-4 mr-1" />
+                        <span>{featuredPost.shares}</span>
+                      </div>
+                    </div>
 
+                    <Link href={featuredPost.url}>
+                      <Button className="bg-red-600 hover:bg-red-700 text-white">
+                        Read Article
+                        {isRTL ? (
+                          <ArrowLeft className="h-4 w-4 ml-1" />
+                        ) : (
+                          <ArrowRight className="h-4 w-4 ml-1" />
+                        )}
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
-            </div>
-        </div>
-    </section>
+              </div>
+            </section>
 
+            {/* Weekly  Spotlights - Im gonna put the image on the left and the text on the right */}
+
+            <section className="py-12">
+              <div className="container mx-auto px-4">
+                <h2 className="font-serif text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-10">
+                  Weekly Spotlights
+                </h2>
+
+                <div className="space-y-12">
+                  {weeklySpotlights.map((lolzy) => (
+                    // finally get to use this html tag ( first time using them  lol)
+                    <article
+                      key={lolzy.id}
+                      className="grid grid-cols-1 md:grid-cols-12 gap-8  items-center pb-12 border-b border-gray-200 dark:border-gray-800 last:border-0  last:pb-0 group"
+                    >
+                      <div className="md:col-span-4">
+                        <Link
+                          href={lolzy.url}
+                          className="block rounded-lg overflow-hidden aspect-[4/3]"
+                        >
+                          <Image
+                            src="/codewithali.png"
+                            alt={lolzy.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            height={225}
+                            width={225}
+                          />
+                        </Link>
+                      </div>
+
+                      <div className="md:col-span-8">
+                        <div className="mb-3">
+                            <Badge className="bg-gray-100 text-gray-700 dark:bg-gray-900 dark:text-gray-300 border-transparent" > 
+                                {/* This is very interesting I needd you to understand this: What this does see is */}
+                                {/* It displays a category label in a badge, showing the user-friendly name if available, or falling back to the raw value */}
+                                {categories.find( blaze => blaze.slug === lolzy.category)?.name || lolzy.category }
+                            </Badge>
+                        </div>
+
+                        <Link href={lolzy.url} >
+                            <h3 className="font-serif text-2xl font-bold text-gary-900 dark:bg-gray-900 dark:text-gray-300 "> {lolzy.title} </h3>
+                        </Link>
+                        <p className="text-gray-700 dark:text-gray-300 mb-4">{lolzy.excerpt}</p>
+
+                        <div className="">
+                            <div className="">
+                                <Avatar className="h-8 w-8 mr-3">
+                                    <AvatarImage src="/codewithali.png" alt={lolzy.author.name} />
+                                    <AvatarFallback> {lolzy.author.name.charAt(0)} </AvatarFallback>
+                                </Avatar>
+
+                                <div>
+                                    <p className="text-sm font-medium text-gray-900 dark:text-white"> {lolzy.author.name } </p>
+                                    <div className="flex items-center text-xs text-gray-600 dark:text-gray-400">
+                                        <Calendar className="h-3 w-3 mr-1" />
+                                        <span> {formateDate(lolzy.date)} </span>
+                                         <span className="mx-2">•</span>
+                                         <Clock className="h-3 w-3 mr-1" />
+                                         <span> {lolzy.readTime} </span>     
+                                    </div>
+                                </div>
+                            </div>
+
+                        <div className="flex items-center space-x-3">
+                            <Button className="text-gray-600 dark:text-gray-400 hover:text-red-600  dark:hover:text-red-500 bg-white/50 hover:bg-white/60 ">
+                                <ThumbsUp className="h-4 w-4" />
+                            </Button>
+                        </div>
+
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            </section>
           </>
         )}
       </main>
