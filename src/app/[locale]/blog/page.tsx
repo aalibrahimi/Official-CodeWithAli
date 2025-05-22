@@ -195,7 +195,7 @@ const WeeklyTechNewsletter = () => {
       excerpt:
         "Practical techniques for building more environmentally friendly web applications through optimization and efficient resource use.",
       author: {
-        name: "Sarah Johnson",
+        name: "Cruzation Cruz",
         avatar: "/team/sarah.jpg",
       },
       date: "2025-05-16",
@@ -232,7 +232,7 @@ const WeeklyTechNewsletter = () => {
       title: "Building Type-Safe APIs with tRPC and Next.js",
       excerpt: "How to leverage tRPC to create fully type-safe APIs with Next.js applications.",
       author: {
-        name: "David Chen",
+        name: "Sam DaChimpion",
         avatar: "/team/david.jpg"
       },
       date: "2025-05-17",
@@ -249,7 +249,7 @@ const WeeklyTechNewsletter = () => {
       title: "AI-Powered Code Reviews: The Future of Quality Assurance",
       excerpt: "How machine learning is transforming code reviews and quality assurance processes.",
       author: {
-        name: "Sarah Johnson",
+        name: "Cruzation Cruz",
         avatar: "/team/sarah.jpg"
       },
       date: "2025-05-16",
@@ -283,7 +283,7 @@ const WeeklyTechNewsletter = () => {
       title: "The Rise of Edge Computing in Web Applications",
       excerpt: "How edge computing is changing the way we build and deploy modern web applications.",
       author: {
-        name: "David Chen",
+        name: "Sam DaChimpion",
         avatar: "/team/david.jpg"
       },
       date: "2025-05-14",
@@ -311,7 +311,10 @@ const WeeklyTechNewsletter = () => {
   //  Grab the email value from the user from the section below - first get the const for email and setEmail to an empty String
   //  Once you grab the value of the email we are going to set the setIsSubcribed to True which willl trigger a message  to show them they have subcribed to us and handle email system integeration
   const handleSubscribe = (e: React.FormEvent) => {
+    // This is very important since by default what happens is that the website has to refresh the page to retrieve the data
+    // by preventing this default behavior, this lets us handle form submission with Javascript instead of letting  browser take over
     e.preventDefault();
+    // This if statement simply checks if the email state variable is empty or not ( only go on when they enter something in there)
     if (email) {
       setIsSubscribed(true);
       setTimeout(() => {
@@ -417,7 +420,7 @@ const WeeklyTechNewsletter = () => {
                     developers
                   </p>
                   <form
-                    action=""
+                     onSubmit={handleSubscribe}
                     className="flex flex-col sm:flex-row max-w-lg mx-auto gap-3"
                   >
                     <div className="relative flex-grow">
@@ -440,6 +443,7 @@ const WeeklyTechNewsletter = () => {
                       Subscribe
                     </Button>
                   </form>
+                  
                   {/* // It doesnt yet but it should send you a subscription thank you message when you enter your email */}
                   {isSubscribed && (
                     <div className="mt-4 bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-900/30 rounded-lg p-4 max-w-lg mx-auto">
@@ -719,13 +723,17 @@ const WeeklyTechNewsletter = () => {
                 </div>
                 
                 {/* Bento Grid Layout */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+                {/* Masonry-Style Layout */}
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {/* Large Feature Card */}
-                  <Card className="md:col-span-2 lg:row-span-2 overflow-hidden group hover:shadow-md transition-shadow">
+                  <Card className="md:col-span-2 overflow-hidden group hover:shadow-md transition-shadow">
                     <div className="relative aspect-video">
-                      <img 
-                        src="/api/placeholder/800/450" 
+                      <Image
+                        src="/codewithali.png" 
                         alt={bentoPosts[0].title}
+                        height={225}
+                        width={225}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -772,9 +780,11 @@ const WeeklyTechNewsletter = () => {
                   {bentoPosts.slice(1).map((post) => (
                     <Card key={post.id} className="overflow-hidden group hover:shadow-md transition-shadow">
                       <div className="aspect-[16/9]">
-                        <img 
-                          src="/api/placeholder/400/225" 
+                        <Image 
+                          src="/codewithali.png" 
                           alt={post.title}
+                          height={225}
+                          width={225}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                       </div>
