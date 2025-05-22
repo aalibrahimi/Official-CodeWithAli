@@ -10,6 +10,7 @@ import {
   Bell,
   Calendar,
   CheckCircle,
+  Clock,
   Mail,
   Menu,
   Rss,
@@ -34,6 +35,28 @@ interface NewsletterIssue {
   image: string;
   url: string;
 }
+// Post
+interface Post {
+  id: string;
+  title: string;
+  excerpt: string;
+  content?: string;
+  author: {
+    name: string;
+    avatar: string;
+    role?: string;
+  };
+  date: string;
+  readTime: string;
+  category: string;
+  tags: string[];
+  image: string;
+  featured?: boolean;
+  url: string;
+  likes?: number;
+  comments?: number;
+  shares?: number;
+}
 
 const WeeklyTechNewsletter = () => {
   const t = useTranslations("Blog");
@@ -56,6 +79,8 @@ const WeeklyTechNewsletter = () => {
     { name: "Tech Trends", slug: "tech-trends", count: 11 },
     { name: "Developer Q&A", slug: "developer-qa", count: 9 },
   ];
+
+//   const newsletter issues
 
   const newsletterIssues: NewsletterIssue[] = [
     {
@@ -86,6 +111,28 @@ const WeeklyTechNewsletter = () => {
       url: "/newsletter/23-micro-frontend",
     },
   ];
+
+//   Const Featured post
+const featuredPost: Post = {
+    id: "1", 
+    title: "The State of Web Development in 2025: Trends, Tools, and Techniques",
+    excerpt: "An in-depth analysis of the latest web development landscape, including the rise of AI-assisted coding, WebGPU adoption, and the evolution of JS frameworks.",
+    author: {    
+        name: "Ali Alibrahimi",
+        avatar: "codewithali.png",
+        role: "Founder, CodeWithAli"
+    },
+    date: "2025-05-20",
+    readTime: "15 min",
+    category: "tech-trends",
+    // if you hadn't noticed by now, IM trying to add a lot of tags/categories to optimize our SEO so that when people on the web search for these answers guess what?
+    // our questions or blogs will be seen first
+    tags: ["Web Development", " 2025 Trends", "JavaScript", "AI"],
+    url: "/blog/state-of-the-web-development-2025",
+    likes: 247,
+    comments: 53,
+    shares: 129
+};
 
   //   FormatDate for display ( I love this method very quick and easy)
   const formateDate = (dateString: string) => {
@@ -319,7 +366,46 @@ const WeeklyTechNewsletter = () => {
 
     {/* Featured Article */}
     <section className="py-12 bg-gray-50 dark:bg-gray-900">
-        
+        <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+                     <Image
+                        // src={NewsletterIssue.image }
+                        src="/merch"
+                        alt="lol"
+                        // alt={featured.Posttitle}
+                        height={225}
+                        width={225}
+                        className="w-full h-full object-cover "
+                        />
+                        <div className="absolute top-4 left-4">
+                            <Badge className="bg-red-100 text-red">
+                                Featured
+                            </Badge>
+                        </div>
+                </div>
+                <div>
+                    <div className="flex items-center text-gray dark:text-gray-400 text-sm mb-4">
+                        <div className="flex items-center">
+                            <Calendar className="h-4 w-4 mr-1" />
+                            <span>{formateDate(featuredPost.date)}</span>
+                        </div>
+                        <span className="mx-2">•</span>
+                        <div className="flex items-center">
+                            <Clock className="h-4 w-4 mr-1" />
+                            <span>{featuredPost.readTime}</span>
+                        </div>
+                    </div>
+                    <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                        {featuredPost.title}
+                    </h2>
+                    <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxd">
+                        {featuredPost.excerpt}
+                    </p>
+
+                </div>
+            </div>
+        </div>
     </section>
 
           </>
