@@ -275,6 +275,10 @@ export default function Footer() {
                           title: t("nav.resources.links.4"),
                           href: "/contact",
                         },
+                        {
+                          title: "Terms & Conditions",
+                          href: "/terms",
+                        },
                       ].map((item) => (
                         <li key={item.title}>
                           <Link
