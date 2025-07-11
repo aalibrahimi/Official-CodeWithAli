@@ -4,18 +4,20 @@ import { useForm } from "@tanstack/react-form";
 import { zodValidator } from "@tanstack/zod-form-adapter";
 import { z } from "zod";
 import {
-    AlertTriangle,
+  AlertTriangle,
   Book,
   Calendar,
   CheckCircle,
   Clock,
   CreditCard,
+  Download,
   Edit,
   Eye,
   FileText,
   Globe,
   Hash,
   Lock,
+  Mail,
   MapPin,
   RotateCcw,
   Save,
@@ -211,15 +213,68 @@ export default function ContractForm() {
     form.getFieldValue("agreedToPrivacy");
 
   if (showSuccess) {
-    <p>hi</p>;
-  }
+    return (
+      <div className="min-h-screen bg-gradient-to-b dark:from-black bg-black dark:via-black dark:to-black   flex items-center justify-center p-6">
+        <div className="max-w-2xl w-full bg-white dark:bg-black/40 border border-red-950/20 rounded-2xl backdrop-blur-sm">
+          <div className="p-12 text-center">
+            <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+              <CheckCircle className="w-10 h-10 text-white" />
+            </div>
+            <h1 className="text-3xl font-bold text-black dark:text-white mb-4">
+              Contract Successfully Executed!
+            </h1>
+            <p className="text-black dark:text-gray-300 mb-6">
+              Thank you, <strong>{form.getFieldValue("clientName")}</strong>!
+              Your service agreement has been legally executed.
+            </p>
 
+            <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4 mb-6">
+              <h3 className="font-semibold text-black dark:text-white mb-2">
+                What happens next?
+              </h3>
+              <ul className="text-sm text-black dark:text-green-400 space-y-1 text-left">
+                <li>
+                  • Contract ID:{" "}
+                  {/* <code className="text-green-300">
+                    #{sessionData.sessionId}
+                  </code> */}
+                </li>
+                <li>• PDF copy sent to {form.getFieldValue("clientEmail")}</li>
+                <li>• Invoice for 50% deposit will arrive within 2 hours</li>
+                <li>• Project begins upon deposit confirmation</li>
+                <li>• Kickoff call scheduled within 24 hours</li>
+              </ul>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button
+                className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all"
+                onClick={() => window.print()}
+              >
+                <Download className="w-4 h-4" />
+                Print Contract
+              </button>
+              <button
+                className="border border-red-500/20 text-red-400 hover:bg-red-500/10 px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all"
+                onClick={() =>
+                  (window.location.href = "mailto:unfold@codewithali.com")
+                }
+              >
+                <Mail className="w-4 h-4" />
+                Contact Support
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="min-h-screen dark:bg-gradient-to-b dark:from-black dark:via-black dark:to-red-950 bg-white">
       {/* Progress bar here */}
       <div className="text-white fixed top-0 left-0 w-full bg-gray-800 z-50 ">
         <div
-          className="h-full bg-gradient-to-r from-red-500 to-red-500 transition-all duration-500 ease-out"
+          className="h-full bg-gradient-to-r from-red-500 to-red-600 transition-all duration-500 ease-out"
           style={{ width: `${formProgress}%` }}
         />
       </div>
@@ -372,339 +427,336 @@ export default function ContractForm() {
                   </div>
                 )}
               </form.Field>
+            </div>
+            <div className="grid md:grid-cols-2 gap-4">
+              <form.Field name="companyName">
+                {(field) => (
+                  <div>
+                    <label className="text-black dark:text-white">
+                      Company Name <span className="text-red-400">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      placeholder="Company Name"
+                      onBlur={field.handleBlur}
+                      className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
+                    />
 
-              <div className="grid md:grid-cols-2 gap-4">
-                <form.Field name="companyName">
-                  {(field) => (
-                    <div>
-                      <label className="text-black dark:text-white">
-                        Company Name <span className="text-red-400">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        value={field.state.value}
-                        onChange={(e) => field.handleChange(e.target.value)}
-                        placeholder="Company Name"
-                        onBlur={field.handleBlur}
-                        className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
-                      />
-
-                      {/* If thats true then I simply don't even needd this zod validation right?  */}
-                      {/* {field.state.meta.errors && (
+                    {/* If thats true then I simply don't even needd this zod validation right?  */}
+                    {/* {field.state.meta.errors && (
                                 <p className="text-red-400 mt-1"> */}
-                      {/* Is this an error because its optional ? which would make the most sense since there would be no errors if the user wrote or didn't write in the box */}
-                      {/* field.state.meta.errors[0]?.message || */}
-                      {/* { field.state.meta.errors}
+                    {/* Is this an error because its optional ? which would make the most sense since there would be no errors if the user wrote or didn't write in the box */}
+                    {/* field.state.meta.errors[0]?.message || */}
+                    {/* { field.state.meta.errors}
                                 </p>
                              )} */}
-                    </div>
-                  )}
-                </form.Field>
+                  </div>
+                )}
+              </form.Field>
 
-                <form.Field
-                  // no need for validator since its optional
-                  name="clientPhone"
-                >
-                  {(field) => (
-                    <div>
-                      <label className="text-black dark:text-white">
-                        Telephone Number
-                      </label>
-                      <input
-                        type="tel"
-                        value={field.state.value}
-                        onChange={(e) => field.handleChange(e.target.value)}
-                        onBlur={field.handleBlur}
-                        placeholder="+1 (533) 490-5902"
-                        className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
-                      />
-                    </div>
-                  )}
-                </form.Field>
+              <form.Field
+                // no need for validator since its optional
+                name="clientPhone"
+              >
+                {(field) => (
+                  <div>
+                    <label className="text-black dark:text-white">
+                      Telephone Number
+                    </label>
+                    <input
+                      type="tel"
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      onBlur={field.handleBlur}
+                      placeholder="+1 (533) 490-5902"
+                      className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
+                    />
+                  </div>
+                )}
+              </form.Field>
 
-                <form.Field
-                  name="projectDescription"
-                  validators={{
-                    onChange: contractSchema.shape.projectDescription,
-                  }}
-                >
-                  {(field) => (
-                    <div>
-                      <label className="text-black dark:text-white">
-                        Project Description{" "}
-                        <span className="text-red-400">*</span>
-                      </label>
-                      <textarea
-                        value={field.state.value}
-                        onChange={(e) => field.handleChange(e.target.value)}
-                        onBlur={field.handleBlur}
-                        rows={4}
-                        className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
-                      />
+              <form.Field
+                name="projectDescription"
+                validators={{
+                  onChange: contractSchema.shape.projectDescription,
+                }}
+              >
+                {(field) => (
+                  <div>
+                    <label className="text-black dark:text-white">
+                      Project Description{" "}
+                      <span className="text-red-400">*</span>
+                    </label>
+                    <textarea
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      onBlur={field.handleBlur}
+                      rows={4}
+                      className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
+                    />
 
-                      {field.state.meta.errors && (
-                        <p className="text-red-400 mt-1">
-                          {field.state.meta.errors[0]?.message}
-                        </p>
-                      )}
-                    </div>
-                  )}
-                </form.Field>
-                <form.Field name="projectBudget">
-                  {(field) => (
-                    <div>
-                      <label className="text-black dark:text-white">
-                        Project Budget
-                      </label>
-                      <select
-                        value={field.state.value}
-                        onChange={(e) => field.handleChange(e.target.value)}
-                        className="w-full px-3 py-2 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
-                      >
-                        <option value="">Select Budget</option>
-                        <option value="under-5k">Under 50000</option>
-                        <option value="5k-10k">$5,000 - $10,000</option>
-                        <option value="10k-25k">$10,000 - $25,000</option>
-                        <option value="25k-50k">$25,000 - $50,000</option>
-                        <option value="over 5k+">over $50,000</option>
-                      </select>
-                    </div>
-                  )}
-                </form.Field>
+                    {field.state.meta.errors && (
+                      <p className="text-red-400 mt-1">
+                        {field.state.meta.errors[0]?.message}
+                      </p>
+                    )}
+                  </div>
+                )}
+              </form.Field>
+              <form.Field name="projectBudget">
+                {(field) => (
+                  <div>
+                    <label className="text-black dark:text-white">
+                      Project Budget
+                    </label>
+                    <select
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      className="w-full px-3 py-2 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
+                    >
+                      <option value="">Select Budget</option>
+                      <option value="under-5k">Under 50000</option>
+                      <option value="5k-10k">$5,000 - $10,000</option>
+                      <option value="10k-25k">$10,000 - $25,000</option>
+                      <option value="25k-50k">$25,000 - $50,000</option>
+                      <option value="over 5k+">over $50,000</option>
+                    </select>
+                  </div>
+                )}
+              </form.Field>
+            </div>
+            {/* Terms Summary */}
+            <div className="bg-white text-black  dark:bg-black/40 border border-red-950/20 rounded-2xl backdrop-blur-sm">
+              <div className="p-6 border-b border-red-950">
+                <h2 className="flex items-center gap-2 text-black dark:text-white text-xl font-semibold">
+                  <FileText className="h-4 w-4" />
+                  Key Terms Summary
+                </h2>
+              </div>
+              <div className="p-6 gap-6">
+                <div className=" p-4 bg-red-500/10 border border-red-500/20 rounded-lg mb-4">
+                  <div className="flex items-center gap-2 mb-2 text-red-500">
+                    <CreditCard className="w-4 h-4 text-red-500" />
+                    <h4 className="font-semibold text-black dark:text-white">
+                      Payment Terms
+                    </h4>
+                  </div>
+                  {/* === PAYMENT TERMS ====  */}
+                  <ul className=" text-sm text-black dark:text-gray-300 space-y-1 ">
+                    <li>• 50% deposit due upon agreement</li>
+                    <li>• 50% final payment upon completion</li>
+                    <li>• Late payments incur 1.5% monthly fee</li>
+                    <li>• All payments in USD</li>
+                  </ul>
+                </div>
 
-                {/* Terms Summary */}
-                <div className="bg-white text-black  dark:bg-black/40 border border-red-950/20 rounded-2xl backdrop-blur-sm">
-                  <div className="p-6 border-b border-red-950">
+                {/* ===== REVISION POLICY ==== */}
+                <div className="p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg mb-4">
+                  <div className="flex items-centeer gap-2 mb-2 text-yellow-500">
+                    <RotateCcw className="h-4 w-4" />
+                    <h4 className="font-semibold text-black dark:text-white">
+                      Revision Policy
+                    </h4>
+                  </div>
+                  <ul className="text-sm text-black dark:text-gray-300 space-y-1">
+                    <li>
+                      • <strong>NO REFUNDS</strong> - Revisions only
+                    </li>
+                    <li>• 3 design revision rounds included</li>
+                    <li>• Additional revisions: $75/hour</li>
+                    <li>• Unlimited commitment to satisfaction</li>
+                  </ul>
+                </div>
+
+                {/* ==== PROJECT TIMELINE ==== */}
+                <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg mb-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Clock className="h-4 w-4 text-blue-500" />
+                    <h4 className="font-semibold text-black dark:text-white">
+                      Project Timeline
+                    </h4>
+                  </div>
+                  <ul className="text-sm text-black dark:text-gray-300 space-y-1">
+                    <li>• Typical projects: 2-12 weeks</li>
+                    <li>• Client response: within 3 business days</li>
+                    <li>• Delays may extend timeline</li>
+                    <li>• Final delivery upon approval</li>
+                  </ul>
+                </div>
+
+                {/* ==== Intellectual Property ==== */}
+                <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg mb-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Shield className="h-4 w-4 text-green-500" />
+                    <h4 className="font-semibold  text-black dark:text-white">
+                      Intellectual Property
+                    </h4>
+                  </div>
+                  <ul className="text-black dark:text-gray-300 space-y-1 text-sm">
+                    <li>• Client owns final deliverables</li>
+                    <li>• Ownership transfers upon full payment</li>
+                    <li>• CodeWithAli retains methodologies</li>
+                    <li>• Portfolio display rights reserved</li>
+                  </ul>
+                </div>
+
+                <div className="flex items-center justify-center">
+                  <Button
+                    type="button"
+                    variant={"default"}
+                    onClick={() => window.open("/terms", "_blank")}
+                    className="border border-red-500/20 text-white  bg-red-950 hover:bg-red-500/10 px-6 py-2 rounded-lg flex items-center gap-2 transition-all"
+                  >
+                    {/* might remove eye bc it might just look creepy */}
+                    <Book className="h-4 w-4" />
+                    View Complete Terms and Conditions
+                  </Button>
+                </div>
+
+                {/* This is the important part */}
+                {/* ===== Agreeement Checkboxes */}
+                <div className="bg-white dark:bg-black/40 border-red-950/20 rounded-2xl backdrop-blur-sm">
+                  <div className="p-6 border-b border-red-950/20">
                     <h2 className="flex items-center gap-2 text-black dark:text-white text-xl font-semibold">
-                      <FileText className="h-4 w-4" />
-                      Key Terms Summary
+                      <CheckCircle className="h-4 w-4" />
+                      Required Agreements
                     </h2>
                   </div>
-                  <div className="p-6 gap-6">
-                    <div className="grid md:grid-cols-2 gap-6 mb-4">
-                      <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
-                        <CreditCard className="w-4 h-4 text-red-500" />
-                        <h4 className="font-semibold text-black dark:text-white">
-                          Payment Terms
-                        </h4>
-                        {/* === PAYMENT TERMS ====  */}
-                        <ul className="text-sm text-black dark:text-gray-300 space-y-1">
-                          <li>• 50% deposit due upon agreement</li>
-                          <li>• 50% final payment upon completion</li>
-                          <li>• Late payments incur 1.5% monthly fee</li>
-                          <li>• All payments in USD</li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    {/* ===== REVISION POLICY ==== */}
-                    <div className="p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg mb-4">
-                      <div className="flex items-centeer gap-2 mb-2 text-yellow-500">
-                        <RotateCcw className="h-4 w-4" />
-                        <h4 className="font-semibold text-black dark:text-white">
-                          Revision Policy
-                        </h4>
-                      </div>
-                      <ul className="text-sm text-black dark:text-gray-300 space-y-1">
-                        <li>
-                          • <strong>NO REFUNDS</strong> - Revisions only
-                        </li>
-                        <li>• 3 design revision rounds included</li>
-                        <li>• Additional revisions: $75/hour</li>
-                        <li>• Unlimited commitment to satisfaction</li>
-                      </ul>
-                    </div>
-
-                    {/* ==== PROJECT TIMELINE ==== */}
-                    <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg mb-4">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Clock className="h-4 w-4 text-blue-500" />
-                        <h4 className="font-semibold text-black dark:text-white">
-                          Project Timeline
-                        </h4>
-                      </div>
-                      <ul className="text-sm text-black dark:text-gray-300 space-y-1">
-                        <li>• Typical projects: 2-12 weeks</li>
-                        <li>• Client response: within 3 business days</li>
-                        <li>• Delays may extend timeline</li>
-                        <li>• Final delivery upon approval</li>
-                      </ul>
-                    </div>
-
-                    {/* ==== Intellectual Property ==== */}
-                    <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg mb-4">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Shield className="h-4 w-4 text-green-500" />
-                        <h4 className="font-semibold  text-black dark:text-white">
-                          Intellectual Property
-                        </h4>
-                      </div>
-                      <ul className="text-black dark:text-gray-300 space-y-1 text-sm">
-                        <li>• Client owns final deliverables</li>
-                        <li>• Ownership transfers upon full payment</li>
-                        <li>• CodeWithAli retains methodologies</li>
-                        <li>• Portfolio display rights reserved</li>
-                      </ul>
-                    </div>
-
-                    <div className="flex items-center justify-center">
-                      <Button
-                        type="button"
-                        variant={"default"}
-                        onClick={() => window.open("/terms", "_blank")}
-                        className="border border-red-500/20 text-white  bg-red-950 hover:bg-red-500/10 px-6 py-2 rounded-lg flex items-center gap-2 transition-all"
-                      >
-                        {/* might remove eye bc it might just look creepy */}
-                        <Book className="h-4 w-4" />
-                        View Complete Terms and Conditions
-                      </Button>
-                    </div>
-
-                    {/* This is the important part */}
-                    {/* ===== Agreeement Checkboxes */}
-                    <div className="bg-white dark:bg-black/40 border-red-950/20 rounded-2xl backdrop-blur-sm">
-                      <div className="p-6 border-b border-red-950/20">
-                        <h2 className="flex items-center gap-2 text-black dark:text-white text-xl font-semibold">
-                          <CheckCircle className="h-4 w-4" />
-                          Required Agreements
-                        </h2>
-                      </div>
-                      <div className="p-6 space-y-6">
-                        <div className="space-y-4">
-                          {[
-                            {
-                              name: "agreedToTerms",
-                              label: "Terms and Conditions",
-                              desc: "I have read, understood, and agree to be bound by the Terms and Conditions of CodeWithAli.",
-                            },
-                            {
-                              name: "agreedToRevisionPolicy",
-                              label: "Revision Policy",
-                              desc: "I acknowledge and agree to the NO REFUND policy and revision-based satisfication approach.",
-                            },
-                            {
-                              name: "agreedToPaymentTerms",
-                              label: "Payment Term",
-                              desc: "I agree to the payment terms including the 50% deposit requirement aand latae payment fees.",
-                            },
-                            {
-                              name: "agreedToTimeline",
-                              label: "Project Timeilne",
-                              desc: "I understand the project timeline requiurements and agree to provide timely feedback",
-                            },
-                            {
-                              name: "agreedToPrivacy",
-                              label: "Privacy Terms",
-                              desc: "I agree to the private privacy and the data collection practices for this contract",
-                            },
-                          ].map((item) => (
-                            <form.Field
-                              key={item.name}
-                              name={item.name as keyof ContractFormData}
-                              validators={{
-                                onChange:
-                                  contractSchema.shape[
-                                    item.name as keyof typeof contractSchema.shape
-                                  ],
-                              }}
-                            >
-                              {(field) => (
-                                <div className="p-4 border border-gray-700/50 rounded-lg hover:border-red-500/30 transition-colors">
-                                  <div className="flex items-start space-x-3">
-                                    <input
-                                      type="checkbox"
-                                      id={item.name}
-                                      checked={field.state.value as boolean}
-                                      onChange={(e) =>
-                                        field.handleChange(e.target.checked)
-                                      }
-                                      className="mt-1 w-4 h-4 text-red-600 bg-gray-900 border-gray-700 rounded focus:ring-red-500"
-                                    />
-
-                                    <div className="flex-1">
-                                      <label
-                                        htmlFor={item.name}
-                                        className="text-black dark:text-white"
-                                      >
-                                        {item.label}{" "}
-                                        <span className="text-red-400">*</span>
-                                      </label>
-                                      <p className="text-sm text-black dark:text-gray-400 mt-1">
-                                        {" "}
-                                        {item.desc}
-                                      </p>
-                                    </div>
-                                  </div>
-                                  {field.state.meta.errors && (
-                                    <p className="text-red-400 text-sm mt-2 ml-7">
-                                      {field.state.meta.errors[0]?.message}
-                                    </p>
-                                  )}
-                                </div>
-                              )}
-                            </form.Field>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Digital Signature */}
-                    <div className="bg-white dark:bg-black/40 border border-red-950 rounded-2xl backdrop-blur-sm">
-                      <div className="p-6 bordder-b border-red-950">
-                        <h2 className="flex items-center gap-2 text-black dark:text-white text-xl font-semibold">
-                          <Edit className="h-4 w-4 text-red-800" />
-                          Digital Signature
-                        </h2>
-                      </div>
-                      <div className="p-6 space-y-4">
+                  <div className="p-6 space-y-6">
+                    <div className="space-y-4">
+                      {[
+                        {
+                          name: "agreedToTerms",
+                          label: "Terms and Conditions",
+                          desc: "I have read, understood, and agree to be bound by the Terms and Conditions of CodeWithAli.",
+                        },
+                        {
+                          name: "agreedToRevisionPolicy",
+                          label: "Revision Policy",
+                          desc: "I acknowledge and agree to the NO REFUND policy and revision-based satisfication approach.",
+                        },
+                        {
+                          name: "agreedToPaymentTerms",
+                          label: "Payment Term",
+                          desc: "I agree to the payment terms including the 50% deposit requirement aand latae payment fees.",
+                        },
+                        {
+                          name: "agreedToTimeline",
+                          label: "Project Timeilne",
+                          desc: "I understand the project timeline requiurements and agree to provide timely feedback",
+                        },
+                        {
+                          name: "agreedToPrivacy",
+                          label: "Privacy Terms",
+                          desc: "I agree to the private privacy and the data collection practices for this contract",
+                        },
+                      ].map((item) => (
                         <form.Field
-                          name="signature"
+                          key={item.name}
+                          name={item.name as keyof ContractFormData}
                           validators={{
-                            onChange: contractSchema.shape.signature,
+                            onChange:
+                              contractSchema.shape[
+                                item.name as keyof typeof contractSchema.shape
+                              ],
                           }}
                         >
                           {(field) => (
-                            <div>
-                              <label className="text-black dark:text-white">
-                                Signature{" "}
-                                <span className="text-red-400">*</span>
-                              </label>
-                              <input
-                                type="text"
-                                value={field.state.value}
-                                onChange={(e) =>
-                                  field.handleChange(e.target.value)
-                                }
-                                placeholder="Type your Full Name as your Digital Signature"
-                                className="w-full px-4 py-2 bg-white/80 border rounded-md text-lg  focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all"
-                              />
+                            <div className="p-4 border border-gray-700/50 rounded-lg hover:border-red-500/30 transition-colors">
+                              <div className="flex items-start space-x-3">
+                                <input
+                                  type="checkbox"
+                                  id={item.name}
+                                  checked={field.state.value as boolean}
+                                  onChange={(e) =>
+                                    field.handleChange(e.target.checked)
+                                  }
+                                  className="mt-1 w-4 h-4 text-red-600 bg-gray-900 border-gray-700 rounded focus:ring-red-500"
+                                />
 
+                                <div className="flex-1">
+                                  <label
+                                    htmlFor={item.name}
+                                    className="text-black dark:text-white"
+                                  >
+                                    {item.label}{" "}
+                                    <span className="text-red-400">*</span>
+                                  </label>
+                                  <p className="text-sm text-black dark:text-gray-400 mt-1">
+                                    {" "}
+                                    {item.desc}
+                                  </p>
+                                </div>
+                              </div>
                               {field.state.meta.errors && (
-                                <p className="text-red-400 text-sm mt-1">
+                                <p className="text-red-400 text-sm mt-2 ml-7">
                                   {field.state.meta.errors[0]?.message}
                                 </p>
                               )}
-                              <p className="text-xs dark:text-gray-400 text-black/70 mt-1">
-                                By Typing your name above, you are providing a
-                                legally binding digital signature
-                              </p>
                             </div>
                           )}
                         </form.Field>
+                      ))}
+                    </div>
+                  </div>
+                </div>
 
-                        <div className="grid md:grid-cols-2 gap-4 p-4 bg-gray-900/30 rounded-lg">
-                          <div>
-                            <label className="block text-sm font-medium text-black dark:text-white mb-1">
-                              Signature Data
-                            </label>
-                            {/* calender */}
-                            <div className="flex items-center gap-2 text-gray-300">
-                              <Calendar className="w-4 h-4 text-red-400" />
-                              <span>{currentDate}</span>
-                            </div>
-                          </div>
-                          {/* Contract ID */}
-                          {/* <div>
+                {/* Digital Signature */}
+                <div className="bg-white dark:bg-black/40 border border-red-950 rounded-2xl backdrop-blur-sm">
+                  <div className="p-6 bordder-b border-red-950">
+                    <h2 className="flex items-center gap-2 text-black dark:text-white text-xl font-semibold">
+                      <Edit className="h-4 w-4 text-red-800" />
+                      Digital Signature
+                    </h2>
+                  </div>
+                  <div className="p-6 space-y-4">
+                    <form.Field
+                      name="signature"
+                      validators={{
+                        onChange: contractSchema.shape.signature,
+                      }}
+                    >
+                      {(field) => (
+                        <div>
+                          <label className="text-black dark:text-white">
+                            Signature <span className="text-red-400">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            value={field.state.value}
+                            onChange={(e) => field.handleChange(e.target.value)}
+                            placeholder="Type your Full Name as your Digital Signature"
+                            className="w-full px-4 py-2 bg-white/80 border rounded-md text-lg  focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all"
+                          />
+
+                          {field.state.meta.errors && (
+                            <p className="text-red-400 text-sm mt-1">
+                              {field.state.meta.errors[0]?.message}
+                            </p>
+                          )}
+                          <p className="text-xs dark:text-gray-400 text-black/70 mt-1">
+                            By Typing your name above, you are providing a
+                            legally binding digital signature
+                          </p>
+                        </div>
+                      )}
+                    </form.Field>
+
+                    <div className="flex flex-col gap-4 p-4 bg-gray-900/30 rounded-lg">
+                      <div className="text-center">
+                        <label className="block text-sm font-medium text-black dark:text-white mb-1">
+                          Signature Data
+                        </label>
+                        {/* calender */}
+                        <div className="flex justify-self-center items-center gap-2 text-gray-300">
+                          <Calendar className="w-4 h-4 text-red-400" />
+                          <span>{currentDate}</span>
+                        </div>
+                      </div>
+                      {/* Contract ID */}
+                      {/* <div>
                             <label className="block text-sm font-medium text-black dark:text-white mb-1">
                               Contract ID
                             </label>
@@ -715,71 +767,77 @@ export default function ContractForm() {
                               </span>
                             </div>
                           </div> */}
-                          <div className="p-4 bg-yellow-500/10 border border-eylloww-500/20 rounded-lg">
-                            <div className="flex items-start gap-2">
-                                <AlertTriangle className="w-4 h-4 text-yellow-400 mt-0.5" />
-                                <div className="text-sm text-yellow-400">
-                                    <strong>Legal Notice:</strong> This digital signature creates a legally binding Contract. All session data including IP address, location, and device information is recorded for verification process
-                                </div>
-                            </div>
+                      <div className="p-4 bg-yellow-500/10 border border-eylloww-500/20 rounded-lg">
+                        <div className="flex items-start gap-2">
+                          <AlertTriangle className="w-4 h-4 text-yellow-400 mt-0.5" />
+                          <div className="text-sm text-yellow-400">
+                            <strong>Legal Notice:</strong> This digital
+                            signature creates a legally binding Contract. All
+                            session data including IP address, location, and
+                            device information is recorded for verification
+                            process
                           </div>
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
 
-                    {/* Finaal Touch to make sure everything works */}
-                    {/* Submit button */}
-                    <div className="text-center my-4">
-                        <form.Subscribe
-                        selector={(state) => [state.canSubmit, state.isSubmitting]}
-                        >
-                            {([canSubmit, isSubmitting]) => (
-                                <Button
-                                onClick={form.handleSubmit}
-                                disabled={!canSubmit || isSubmitting}
-                                 className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 disabled:opacity-50 disabled:cursor-not-allowed text-white px-16 py-4 text-lg font-semibold transition-all transform hover:scale-105 disabled:hover:scale-100 items-center justify-center gap-3 mx-auto mx-w-[300px]">
-                                 {isSubmitting ? (
-                                    <>
-                                    <div className="animate-spin rounded-full h-4 w-5 border-b-2 border-white">
-                                        Executing Agreement....
-                                    </div>
+                {/* Finaal Touch to make sure everything works */}
+                {/* Submit button */}
+                <div className="text-center my-4">
+                  <form.Subscribe
+                    selector={(state) => [state.canSubmit, state.isSubmitting]}
+                  >
+                    {([canSubmit, isSubmitting]) => (
+                      <Button
+                        onClick={form.handleSubmit}
+                        disabled={!canSubmit || isSubmitting}
+                        className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 disabled:opacity-50 disabled:cursor-not-allowed text-white px-16 py-4 text-lg font-semibold transition-all transform hover:scale-105 disabled:hover:scale-100 items-center justify-center gap-3 mx-auto mx-w-[300px]"
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <div className="animate-spin rounded-full h-4 w-5 border-b-2 border-white">
+                              Executing Agreement....
+                            </div>
+                          </>
+                        ) : (
+                          <>
+                            <Edit className="w-5 h-5" />
+                            Execute Service Agreement
+                          </>
+                        )}
+                      </Button>
+                    )}
+                  </form.Subscribe>
 
-                                    </> 
-                                 ) : (
-                                    <>
-                                    <Edit className="w-5 h-5" />
-                                    Execute Service Agreement
-                                    </>
-                                 )}   
+                  <div className="my-2">
+                    {!allAgreed && (
+                      <p className="text-red-400 text-sm">
+                        Please complete all the required agreements above to
+                        continue
+                      </p>
+                    )}
+                    <p className="text-sm text-gray-500 max-w-md mx-auto">
+                      By Clicking "Executive Service Agreement", you confirm
+                      legally to enter this binding contract. Progress:{" "}
+                      {Math.round(formProgress)}% complete.
+                    </p>
+                  </div>
+                </div>
 
-                                </Button>
-                            )}
-
-                        </form.Subscribe>
-
-                        <div className="my-2">
-                            {!allAgreed && (
-                                <p className="text-red-400 text-sm">
-                                    Please complete all the required agreements above to continue
-                                </p>
-                            )}
-                            <p className="text-sm text-gray-500 max-w-md mx-auto">
-                                By Clicking "Executive Service Agreement",  you confirm legally to enter this binding contract. Progress: {Math.round(formProgress)}% complete.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Footer */}
-                    <div className="mt-12 pt-8  border-t border-gray-700">
-                        <div className="text-center text-sm text-black dark:text-gray-400">
-                            <p className="mb-2">
-                                Questions about this agreement? Contact us at {' '}
-                                <a href="mailto:unfold@codewithali.com" className="text-red-400 hover:text-red-300">
-                                    unfold@codewithali.com
-                                </a>
-                            </p>
-                        </div>
-                    </div>
+                {/* Footer */}
+                <div className="mt-12 pt-8  border-t border-gray-700">
+                  <div className="text-center text-sm text-black dark:text-gray-400">
+                    <p className="mb-2">
+                      Questions about this agreement? Contact us at{" "}
+                      <a
+                        href="mailto:unfold@codewithali.com"
+                        className="text-red-400 hover:text-red-300"
+                      >
+                        unfold@codewithali.com
+                      </a>
+                    </p>
                   </div>
                 </div>
               </div>
