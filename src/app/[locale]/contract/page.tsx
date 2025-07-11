@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "@tanstack/react-form";
+import { zodValidator } from '@tanstack/zod-form-adapter';
+import { z } from 'zod';
 import {
   Clock,
   FileText,
@@ -12,6 +14,47 @@ import {
   Shield,
   Smartphone,
 } from "lucide-react";
+
+
+
+// Time for some zod validaation schema
+const contractSchema = z.object({
+    clientName: z.string()
+        .min(2, 'Full name must be at least 2 characters')
+        .max(100, 'Name too long')
+        .regex(/^[a-zA-Z\s\-\.]+$/, 'Name can only contain letters,spaces, hyphens, and periods.'),
+    clientEmail: z.string()
+        .email("Please enter a valid email")
+        .toLowerCase(),
+    companyName: z.string().optional(),
+    projectDescription: z.string()
+        .min(10, 'Please provide a detailed project description')
+        .max(2000, 'Description too long'),
+        // using refine to accept ONLY True, without it we would be accepting both true and false which is not what we want
+    agreedToTerms: z.boolean().refine(val => val === true, {
+        message: 'You must aggree to the Terms and Conditions'
+    }),
+      agreedToRevisionPolicy: z.boolean().refine(val => val === true,  {
+         message: 'You must acknowledge the revision policy'
+    }),
+    agreedToPaymentTerms: z.boolean().refine(val => val === true, {
+        message:'You must agreee to the Payment Terms'
+    }),
+    agreedToPrivacy:  z.boolean().refine(val => val === true, {
+        message: 'You must agree to our Privacy terms'
+    }),
+    agreedToTimeline: z.boolean().refine(val => val === true, {
+        message: 'You must accept our timeline schedule'
+    }),
+    signature: z.string()
+        .min(2, 'Digital signature is required')
+        .max(100, 'Signature too long'),
+    // I'll let you decided if we should make the phone number optional or required @blaze
+    clientPhone: z.string().optional(),
+    projectBudget: z.string().optional()
+})
+
+type ContractFormData = z.infer<typeof contractSchema>
 
 export default function ContractForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -52,6 +95,7 @@ export default function ContractForm() {
       agreedToTerms: false,
       agreedToRevisionPolicy: false,
       agreedToPaymentTerms: false,
+      agreedToTimeline: false,
       agreedToPrivacy: false,
       signature: "",
       clientPhone: "",
@@ -247,7 +291,14 @@ export default function ContractForm() {
         </div>
         <div className="p-6 space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
-                
+                <form.Field
+                name="clientName"
+                validators={{
+                    onChange: contractSchema.shape.clientName
+                }}
+                >
+
+                </form.Field>
             </div>
         </div>
       </div>
