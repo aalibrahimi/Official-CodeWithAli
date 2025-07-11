@@ -146,7 +146,8 @@ export default function ContractForm() {
         setIsSubmitting(false);
       }
     },
-    // validatorAdapter: zodValidator,
+    // why am i getting this issue?
+    validatorAdapter: zodValidator,
   });
 
   // Auto-save functionality
@@ -272,7 +273,7 @@ export default function ContractForm() {
   return (
     <div className="min-h-screen dark:bg-gradient-to-b dark:from-black dark:via-black dark:to-red-950 bg-white">
       {/* Progress bar here */}
-      <div className="text-white fixed top-0 left-0 w-full bg-gray-800 z-50 ">
+      <div className="text-white fixed top-0 left-0 w-full h-1 bg-gray-800 z-50 ">
         <div
           className="h-full bg-gradient-to-r from-red-500 to-red-600 transition-all duration-500 ease-out"
           style={{ width: `${formProgress}%` }}
@@ -350,7 +351,7 @@ export default function ContractForm() {
         </div>
 
         {/* Client Information */}
-        <div className="dark:bg-black/80 border-red-950 border-3 rounded-2xl  backdrop-blur-sm">
+        <div className=" dark:bg-black/80 border-red-950 border-3 rounded-2xl  backdrop-blur-sm">
           <div className="p-6 border-b border-red-950/20">
             <h2 className="flex items-center gap-2  text-black dark:text-white text-xl font-semibold">
               Client Information
@@ -380,7 +381,7 @@ export default function ContractForm() {
                       value={field.state.value}
                       onChange={(e) => field.handleChange(e.target.value)}
                       onBlur={field.handleBlur}
-                      className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
+                      className="w-full px-3 py-1 bg-white border  border-black  dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
                       placeholder="Enter Your Full Legal Name"
                     />
                     {/* Zod generates these error messages */}
@@ -415,7 +416,7 @@ export default function ContractForm() {
                       value={field.state.value}
                       onChange={(e) => field.handleChange(e.target.value)}
                       onBlur={field.handleBlur}
-                      className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
+                      className="w-full px-3 py-1 bg-white border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
                       placeholder="Enter Email Adddress"
                     />
                     {/* Zod validations time again */}
@@ -441,7 +442,7 @@ export default function ContractForm() {
                       onChange={(e) => field.handleChange(e.target.value)}
                       placeholder="Company Name"
                       onBlur={field.handleBlur}
-                      className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
+                      className="w-full px-3 py-1 bg-white border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
                     />
 
                     {/* If thats true then I simply don't even needd this zod validation right?  */}
@@ -471,40 +472,15 @@ export default function ContractForm() {
                       onChange={(e) => field.handleChange(e.target.value)}
                       onBlur={field.handleBlur}
                       placeholder="+1 (533) 490-5902"
-                      className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
+                      className="w-full px-3 py-1 bg-white border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
                     />
                   </div>
                 )}
               </form.Field>
 
-              <form.Field
-                name="projectDescription"
-                validators={{
-                  onChange: contractSchema.shape.projectDescription,
-                }}
-              >
-                {(field) => (
-                  <div>
-                    <label className="text-black dark:text-white">
-                      Project Description{" "}
-                      <span className="text-red-400">*</span>
-                    </label>
-                    <textarea
-                      value={field.state.value}
-                      onChange={(e) => field.handleChange(e.target.value)}
-                      onBlur={field.handleBlur}
-                      rows={4}
-                      className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
-                    />
+            <div className="grid grid-col-1 space-y-4 col-span-2 w-full">
 
-                    {field.state.meta.errors && (
-                      <p className="text-red-400 mt-1">
-                        {field.state.meta.errors[0]?.message}
-                      </p>
-                    )}
-                  </div>
-                )}
-              </form.Field>
+            
               <form.Field name="projectBudget">
                 {(field) => (
                   <div>
@@ -526,6 +502,35 @@ export default function ContractForm() {
                   </div>
                 )}
               </form.Field>
+                <form.Field
+                name="projectDescription"
+                validators={{
+                  onChange: contractSchema.shape.projectDescription,
+                }}
+              >
+                {(field) => (
+                  <div>
+                    <label className="text-black dark:text-white">
+                      Project Description{" "}
+                      <span className="text-red-400">*</span>
+                    </label>
+                    <textarea
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      onBlur={field.handleBlur}
+                      rows={4}
+                      className="w-full px-3 py-1 bg-white border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
+                    />
+
+                    {field.state.meta.errors && (
+                      <p className="text-red-400 mt-1">
+                        {field.state.meta.errors[0]?.message}
+                      </p>
+                    )}
+                  </div>
+                )}
+              </form.Field>
+            </div>
             </div>
             {/* Terms Summary */}
             <div className="bg-white text-black  dark:bg-black/40 border border-red-950/20 rounded-2xl backdrop-blur-sm">
@@ -704,7 +709,9 @@ export default function ContractForm() {
                 </div>
 
                 {/* Digital Signature */}
-                <div className="bg-white dark:bg-black/40 border border-red-950 rounded-2xl backdrop-blur-sm">
+                <div className="px-6">
+
+                <div className=" bg-white  dark:bg-black/40 border border-red-950 rounded-2xl backdrop-blur-sm">
                   <div className="p-6 bordder-b border-red-950">
                     <h2 className="flex items-center gap-2 text-black dark:text-white text-xl font-semibold">
                       <Edit className="h-4 w-4 text-red-800" />
@@ -728,7 +735,7 @@ export default function ContractForm() {
                             value={field.state.value}
                             onChange={(e) => field.handleChange(e.target.value)}
                             placeholder="Type your Full Name as your Digital Signature"
-                            className="w-full px-4 py-2 bg-white/80 border rounded-md text-lg  focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all"
+                            className="w-full px-4 py-2 bg-white border rounded-md text-lg  focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all"
                           />
 
                           {field.state.meta.errors && (
@@ -744,15 +751,15 @@ export default function ContractForm() {
                       )}
                     </form.Field>
 
-                    <div className="flex flex-col gap-4 p-4 bg-gray-900/30 rounded-lg">
+                    <div className=" flex flex-col gap-4 p-4 bg-white dark:bg-black rounded-lg">
                       <div className="text-center">
                         <label className="block text-sm font-medium text-black dark:text-white mb-1">
                           Signature Data
                         </label>
                         {/* calender */}
                         <div className="flex justify-self-center items-center gap-2 text-gray-300">
-                          <Calendar className="w-4 h-4 text-red-400" />
-                          <span>{currentDate}</span>
+                          <Calendar className="w-4 h-4 dark:text-red-400 text-red-800" />
+                          <span className="text-black/80 dark:text-gray-300  ">{currentDate}</span>
                         </div>
                       </div>
                       {/* Contract ID */}
@@ -782,6 +789,7 @@ export default function ContractForm() {
                     </div>
                   </div>
                 </div>
+                </div>
 
                 {/* Finaal Touch to make sure everything works */}
                 {/* Submit button */}
@@ -797,9 +805,9 @@ export default function ContractForm() {
                       >
                         {isSubmitting ? (
                           <>
-                            <div className="animate-spin rounded-full h-4 w-5 border-b-2 border-white">
+                            <div className="animate-spin rounded-full h-4 w-5 border-b-2 border-white"> </div>
                               Executing Agreement....
-                            </div>
+                           
                           </>
                         ) : (
                           <>
