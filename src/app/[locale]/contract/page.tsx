@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "@tanstack/react-form";
-import { zodValidator } from '@tanstack/zod-form-adapter';
-import { z } from 'zod';
+import { zodValidator } from "@tanstack/zod-form-adapter";
+import { z } from "zod";
 import {
   Clock,
   FileText,
@@ -15,47 +15,49 @@ import {
   Smartphone,
 } from "lucide-react";
 
-
-
 // Time for some zod validaation schema
 const contractSchema = z.object({
-    clientName: z.string()
-        .min(2, 'Full name must be at least 2 characters')
-        .max(100, 'Name too long')
-        .regex(/^[a-zA-Z\s\-\.]+$/, 'Name can only contain letters,spaces, hyphens, and periods.'),
-    clientEmail: z.string()
-        .email("Please enter a valid email")
-        .toLowerCase(),
-    companyName: z.string().optional(),
-    projectDescription: z.string()
-        .min(10, 'Please provide a detailed project description')
-        .max(2000, 'Description too long'),
-        // using refine to accept ONLY True, without it we would be accepting both true and false which is not what we want
-    agreedToTerms: z.boolean().refine(val => val === true, {
-        message: 'You must aggree to the Terms and Conditions'
-    }),
-      agreedToRevisionPolicy: z.boolean().refine(val => val === true,  {
-         message: 'You must acknowledge the revision policy'
-    }),
-    agreedToPaymentTerms: z.boolean().refine(val => val === true, {
-        message:'You must agreee to the Payment Terms'
-    }),
-    agreedToPrivacy:  z.boolean().refine(val => val === true, {
-        message: 'You must agree to our Privacy terms'
-    }),
-    agreedToTimeline: z.boolean().refine(val => val === true, {
-        message: 'You must accept our timeline schedule'
-    }),
-    signature: z.string()
-        .min(2, 'Digital signature is required')
-        .max(100, 'Signature too long'),
-    // I'll let you decided if we should make the phone number optional or required @blaze
-    clientPhone: z.string().optional(),
-    projectBudget: z.string().optional()
-})
-// z.infer is a utility that extracts typescript from a zod schema and then automatically  converts the validation rules into typescript types, so we don't need to manually define them 
+  clientName: z
+    .string()
+    .min(2, "Full name must be at least 2 characters")
+    .max(100, "Name too long")
+    .regex(
+      /^[a-zA-Z\s\-\.]+$/,
+      "Name can only contain letters,spaces, hyphens, and periods."
+    ),
+  clientEmail: z.string().email("Please enter a valid email").toLowerCase(),
+  companyName: z.string().optional(),
+  projectDescription: z
+    .string()
+    .min(10, "Please provide a detailed project description")
+    .max(2000, "Description too long"),
+  // using refine to accept ONLY True, without it we would be accepting both true and false which is not what we want
+  agreedToTerms: z.boolean().refine((val) => val === true, {
+    message: "You must aggree to the Terms and Conditions",
+  }),
+  agreedToRevisionPolicy: z.boolean().refine((val) => val === true, {
+    message: "You must acknowledge the revision policy",
+  }),
+  agreedToPaymentTerms: z.boolean().refine((val) => val === true, {
+    message: "You must agreee to the Payment Terms",
+  }),
+  agreedToPrivacy: z.boolean().refine((val) => val === true, {
+    message: "You must agree to our Privacy terms",
+  }),
+  agreedToTimeline: z.boolean().refine((val) => val === true, {
+    message: "You must accept our timeline schedule",
+  }),
+  signature: z
+    .string()
+    .min(2, "Digital signature is required")
+    .max(100, "Signature too long"),
+  // I'll let you decided if we should make the phone number optional or required @blaze
+  clientPhone: z.string().optional(),
+  projectBudget: z.string().optional(),
+});
+// z.infer is a utility that extracts typescript from a zod schema and then automatically  converts the validation rules into typescript types, so we don't need to manually define them
 
-type ContractFormData = z.infer<typeof contractSchema>
+type ContractFormData = z.infer<typeof contractSchema>;
 
 export default function ContractForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -283,84 +285,162 @@ export default function ContractForm() {
           </div>
         </div>
 
-      {/* Client Information */}
-      <div className="dark:bg-black/80 border-red-950/20 rounded-2xl backdrop-blur-sm">
-        <div className="p-6 border-b border-red-950/20">
+        {/* Client Information */}
+        <div className="dark:bg-black/80 border-red-950/20 rounded-2xl backdrop-blur-sm">
+          <div className="p-6 border-b border-red-950/20">
             <h2 className="flex items-center gap-2 text-white text-xl font-semibold">
-                Client Information
+              Client Information
             </h2>
-        </div>
-        <div className="p-6 space-y-4">
+          </div>
+          <div className="p-6 space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
-                {/* ==== CLIENT NAME ==== */}
-                {/* Just for my own benefit of understanding  */}
-                <form.Field  
+              {/* ==== CLIENT NAME ==== */}
+              {/* Just for my own benefit of understanding  */}
+              <form.Field
                 name="clientName" // Tanstack Form
                 validators={{
-                    onChange: contractSchema.shape.clientName // Zod Validation here
+                  onChange: contractSchema.shape.clientName, // Zod Validation here
                 }}
-                >
-                    
-                {(field) => (  // TanStack form render prop
-                    // JSX HERE
-                    <div>
-                        <label className="text-black dark:text-white block text-sm font-medium mb-2">Full Legal Name <span className="text-red-400">*</span></label>
-                        <input 
-                        type="text"  
-                        // Field States and Methods ( all from tanstacky )
-                        value={field.state.value}
-                        onChange={(e) => field.handleChange(e.target.value)}
-                        onBlur={field.handleBlur}
-                        className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all" 
-                       placeholder="Enter Your Full Legal Name"
-                       />
-                       {/* Zod generates these error messages */}
-                    {field.state.meta.errors &&  (
-                        <p className="text-red-400 text-sm mt-1">
-                            {/* this would crash without .message */}
-                            {/* displays the first error message that is written out  ( once the user fixes that first issue, then the second error slides into the 0 index meaning we never need to show more than 0 index and 
+              >
+                {(
+                  field // TanStack form render prop
+                ) => (
+                  // JSX HERE
+                  <div>
+                    <label className="text-black dark:text-white block text-sm font-medium mb-2">
+                      Full Legal Name <span className="text-red-400">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      // Field States and Methods ( all from tanstacky )
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      onBlur={field.handleBlur}
+                      className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
+                      placeholder="Enter Your Full Legal Name"
+                    />
+                    {/* Zod generates these error messages */}
+                    {field.state.meta.errors && (
+                      <p className="text-red-400 text-sm mt-1">
+                        {/* this would crash without .message */}
+                        {/* displays the first error message that is written out  ( once the user fixes that first issue, then the second error slides into the 0 index meaning we never need to show more than 0 index and 
                                 if we did it must display multiple errors at the same time to the user aand thaat might just scare off the user
                             ) */}
-                            {field.state.meta.errors[0]?.message} {/* usually good to add a fallback without option changing in case there is no message from zod, ( format issues ) might give the user an undefined error message for strings for example*/}
-                        </p>
+                        {field.state.meta.errors[0]?.message}{" "}
+                        {/* usually good to add a fallback without option changing in case there is no message from zod, ( format issues ) might give the user an undefined error message for strings for example*/}
+                      </p>
                     )}
-                    </div>
+                  </div>
                 )}
+              </form.Field>
+
+              <form.Field
+                name="clientEmail"
+                validators={{
+                  onChange: contractSchema.shape.clientEmail,
+                }}
+              >
+                {(field) => (
+                  <div>
+                    <label className="text-black dark:text-white block text-sm font-medium mb-2">
+                      Email Address
+                      <span className="text-red-400">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      onBlur={field.handleBlur}
+                      className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
+                      placeholder="Enter Email Adddress"
+                    />
+                    {/* Zod validations time again */}
+                    {field.state.meta.errors && (
+                      <p className="text-redd-400 text-sm mt-1">
+                        {field.state.meta.errors[0]?.message}
+                      </p>
+                    )}
+                  </div>
+                )}
+              </form.Field>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <form.Field name="companyName">
+                  {(field) => (
+                    <div>
+                      <label className="text-black dark:text-white">
+                        Company Name <span className="text-red-400">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        value={field.state.value}
+                        onChange={(e) => field.handleChange(e.target.value)}
+                        placeholder="Company Name"
+                        onBlur={field.handleBlur}
+                        className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
+                      />
+
+                      {/* If thats true then I simply don't even needd this zod validation right?  */}
+                      {/* {field.state.meta.errors && (
+                                <p className="text-red-400 mt-1"> */}
+                      {/* Is this an error because its optional ? which would make the most sense since there would be no errors if the user wrote or didn't write in the box */}
+                      {/* field.state.meta.errors[0]?.message || */}
+                      {/* { field.state.meta.errors}
+                                </p>
+                             )} */}
+                    </div>
+                  )}
                 </form.Field>
 
                 <form.Field
-                name = "clientEmail"
+                  // no need for validator since its optional
+                  name="clientPhone"
+                >
+                  {(field) => (
+                    <div>
+                      <label className="text-black dark:text-white">
+                        Telephone Number
+                      </label>
+                      <input
+                       type="tel" 
+                        value={field.state.value}
+                        onChange={(e) => field.handleChange(e.target.value)}
+                        onBlur={field.handleBlur}
+                        placeholder="+1 (533) 490-5902"
+                        className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all" />
+                    </div>
+                  )}
+                </form.Field>
+
+                <form.Field
+                name="projectDescription"
                 validators={{
-                    onChange: contractSchema.shape.clientEmail
+                    onChange: contractSchema.shape.projectDescription
                 }}
                 >
                     {(field) => (
                         <div>
-                            <label className="text-black dark:text-white block text-sm font-medium mb-2">Email Address 
-                        <span className="text-red-400">*</span>
-                        </label>
-                        <input 
-                        type="email"
-                        value={field.state.value}
-                        onChange={(e) => field.handleChange(e.target.value)}
-                        onBlur={field.handleBlur}
-                        className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all" 
-                        placeholder="Enter Email Adddress" />
-                        {/* Zod validations time again */}
+                            <label className="text-black dark:text-white">Project Description <span className="text-red-400">*</span></label>
+                            <textarea 
+                            value={field.state.value}
+                            onChange={(e) => field.handleChange(e.target.value)}
+                            onBlur={field.handleBlur}
+                            rows={4}
+                             className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"  />
+                        
                         {field.state.meta.errors && (
-                            <p className="text-redd-400 text-sm mt-1">
+                            <p className="text-red-400 mt-1">
                                 {field.state.meta.errors[0]?.message}
                             </p>
                         )}
-
                         </div>
-)}
+                    )} 
 
                 </form.Field>
-
+              </div>
             </div>
+          </div>
         </div>
-      </div>
         {/* </form.provider> */}
       </div>
     </div>
