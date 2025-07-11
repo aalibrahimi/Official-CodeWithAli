@@ -4,8 +4,12 @@ import { useForm } from "@tanstack/react-form";
 import { zodValidator } from "@tanstack/zod-form-adapter";
 import { z } from "zod";
 import {
+  Book,
+  CheckCircle,
   Clock,
   CreditCard,
+  Edit,
+  Eye,
   FileText,
   Globe,
   Hash,
@@ -16,6 +20,7 @@ import {
   Shield,
   Smartphone,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 // Time for some zod validaation schema
 const contractSchema = z.object({
@@ -288,7 +293,7 @@ export default function ContractForm() {
         </div>
 
         {/* Client Information */}
-        <div className="dark:bg-black/80 border-red-950 border-3 rounded-2xl backdrop-blur-sm">
+        <div className="dark:bg-black/80 border-red-950 border-3 rounded-2xl  backdrop-blur-sm">
           <div className="p-6 border-b border-red-950/20">
             <h2 className="flex items-center gap-2  text-black dark:text-white text-xl font-semibold">
               Client Information
@@ -480,13 +485,13 @@ export default function ContractForm() {
                         <h4 className="font-semibold text-black dark:text-white">
                           Payment Terms
                         </h4>
-                      {/* === PAYMENT TERMS ====  */}
-                      <ul className="text-sm text-black dark:text-gray-300 space-y-1">
-                        <li>• 50% deposit due upon agreement</li>
-                        <li>• 50% final payment upon completion</li>
-                        <li>• Late payments incur 1.5% monthly fee</li>
-                        <li>• All payments in USD</li>
-                      </ul>
+                        {/* === PAYMENT TERMS ====  */}
+                        <ul className="text-sm text-black dark:text-gray-300 space-y-1">
+                          <li>• 50% deposit due upon agreement</li>
+                          <li>• 50% final payment upon completion</li>
+                          <li>• Late payments incur 1.5% monthly fee</li>
+                          <li>• All payments in USD</li>
+                        </ul>
                       </div>
                     </div>
 
@@ -509,12 +514,141 @@ export default function ContractForm() {
                     </div>
 
                     {/* ==== PROJECT TIMELINE ==== */}
-                    <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
-                        <div className="flex items-center gap-2 mb-2">
-                            <Shield className="h-4 w-4 text-blue-500" />
-                            <h4 className="font-semibold text-black dark:text-white">
-                                Project Timeline
-                            </h4>
+                    <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg mb-4">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Clock className="h-4 w-4 text-blue-500" />
+                        <h4 className="font-semibold text-black dark:text-white">
+                          Project Timeline
+                        </h4>
+                      </div>
+                      <ul className="text-sm text-black dark:text-gray-300 space-y-1">
+                        <li>• Typical projects: 2-12 weeks</li>
+                        <li>• Client response: within 3 business days</li>
+                        <li>• Delays may extend timeline</li>
+                        <li>• Final delivery upon approval</li>
+                      </ul>
+                    </div>
+
+                    {/* ==== Intellectual Property ==== */}
+                    <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg mb-4">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Shield className="h-4 w-4 text-green-500" />
+                        <h4 className="font-semibold  text-black dark:text-white">
+                          Intellectual Property
+                        </h4>
+                      </div>
+                      <ul className="text-black dark:text-gray-300 space-y-1 text-sm">
+                        <li>• Client owns final deliverables</li>
+                        <li>• Ownership transfers upon full payment</li>
+                        <li>• CodeWithAli retains methodologies</li>
+                        <li>• Portfolio display rights reserved</li>
+                      </ul>
+                    </div>
+
+                    <div className="flex items-center justify-center">
+                      <Button
+                        type="button"
+                        variant={"default"}
+                        onClick={() => window.open("/terms", "_blank")}
+                        className="border border-red-500/20 text-white  bg-red-950 hover:bg-red-500/10 px-6 py-2 rounded-lg flex items-center gap-2 transition-all"
+                      >
+                        {/* might remove eye bc it might just look creepy */}
+                        <Book className="h-4 w-4" />
+                        View Complete Terms and Conditions
+                      </Button>
+                    </div>
+
+                    {/* This is the important part */}
+                    {/* ===== Agreeement Checkboxes */}
+                    <div className="bg-white dark:bg-black/40 border-red-950/20 rounded-2xl backdrop-blur-sm">
+                    <div className="p-6 border-b border-red-950/20">
+                        <h2 className="flex items-center gap-2 text-black dark:text-white text-xl font-semibold">
+                            <CheckCircle className="h-4 w-4" />
+                            Required Agreements
+                        </h2>
+                    </div>
+                    <div className="p-6 space-y-6">
+                        <div className="space-y-4">
+                            {[
+                                { name : 'agreedToTerms', label: 'Terms and Conditions', desc: 'I have read, understood, and agree to be bound by the Terms and Conditions of CodeWithAli.'},
+                                { name: 'agreedToRevisionPolicy', label: 'Revision Policy', desc: 'I acknowledge and agree to the NO REFUND policy and revision-based satisfication approach.'},
+                                { name: 'agreedToPaymentTerms', label: "Payment Term", desc: 'I agree to the payment terms including the 50% deposit requirement aand latae payment fees.'},
+                                { name: 'agreedToTimeline', label: 'Project Timeilne', desc: 'I understand the project timeline requiurements and agree to provide timely feedback'},
+                                { name: 'agreedToPrivacy' , label: 'Privacy Terms', desc: 'I agree to the private privacy and the data collection practices for this contract'}
+                            ].map((item) => (
+                                <form.Field
+                                key={item.name}
+                                name={item.name as keyof ContractFormData}
+                                validators={{
+                                    onChange: contractSchema.shape[item.name as keyof typeof contractSchema.shape],
+                                }}
+                                >
+                                    {(field) => (
+                                        <div className="p-4 border border-gray-700/50 rounded-lg hover:border-red-500/30 transition-colors">
+                                            <div className="flex items-start space-x-3">
+                                                <input type="checkbox" 
+                                                id={item.name}
+                                                checked={field.state.value as boolean}
+                                                onChange={(e) => field.handleChange(e.target.checked)}
+                                                 className="mt-1 w-4 h-4 text-red-600 bg-gray-900 border-gray-700 rounded focus:ring-red-500" />
+                                                
+                                                <div className="flex-1">
+                                                    <label htmlFor={item.name} className="text-black dark:text-white">
+                                                        {item.label} <span className="text-red-400">*</span>
+                                                    </label>
+                                                    <p className="text-sm text-black dark:text-gray-400 mt-1"> {item.desc}</p>
+                                                </div>
+                                            </div>
+                                            {field.state.meta.errors && (
+                                                <p className="text-red-400 text-sm mt-2 ml-7">
+                                                    {field.state.meta.errors[0]?.message}
+                                                </p>
+                                            )}
+                                        </div>
+                                    )}
+                                </form.Field>
+                            ))}
+                        </div>
+                    </div>
+                    </div>
+
+                    {/* Digital Signature */}
+                    <div className="bg-white dark:bg-black/40 border border-red-950 rounded-2xl backdrop-blur-sm">
+                        <div className="p-6 bordder-b border-red-950">
+                            <h2 className="flex items-center gap-2 text-black dark:text-white text-xl font-semibold">
+                                <Edit className="h-4 w-4 text-red-800" />
+                                Digital Signature
+                            </h2>
+                        </div>
+                        <div className="p-6 space-y-4">
+                            <form.Field
+                            name="signature"
+                            validators={{
+                                onChange: contractSchema.shape.signature,
+                            }}
+                            >
+                                {(field) => (
+                                    <div>
+                                        <label className="text-black dark:text-white">Signature <span className="text-red-400">*</span></label>
+                                        <input
+                                         type="text" 
+                                         value={field.state.value}
+                                         onChange={(e) => field.handleChange(e.target.value)}
+                                         placeholder="Type your Full Name as your Digital Signature"
+                                         className="w-full px-4 py-2 bg-white/80 border rounded-md text-lg  focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all" />
+
+                                         {field.state.meta.errors  && (
+                                            <p className="text-red-400 text-sm mt-1">
+                                                {field.state.meta.errors[0]?.message}
+                                            </p>
+                                         )}
+                                         <p className="text-xs dark:text-gray-400 text-black/70 mt-1">
+                                            By Typing your name above, you are providing a legally binding digital signature
+                                         </p>
+                                    </div>
+                                )}
+
+                            </form.Field>
                         </div>
                     </div>
                   </div>
