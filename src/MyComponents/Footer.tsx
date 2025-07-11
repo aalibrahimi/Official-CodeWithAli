@@ -279,6 +279,10 @@ export default function Footer() {
                           title: "Terms & Conditions",
                           href: "/terms",
                         },
+                        {
+                          title: "contract",
+                          href: "/contract",
+                        },
                       ].map((item) => (
                         <li key={item.title}>
                           <Link
