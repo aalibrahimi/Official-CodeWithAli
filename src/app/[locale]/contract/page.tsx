@@ -53,6 +53,7 @@ const contractSchema = z.object({
     clientPhone: z.string().optional(),
     projectBudget: z.string().optional()
 })
+// z.infer is a utility that extracts typescript from a zod schema and then automatically  converts the validation rules into typescript types, so we don't need to manually define them 
 
 type ContractFormData = z.infer<typeof contractSchema>
 
@@ -291,14 +292,72 @@ export default function ContractForm() {
         </div>
         <div className="p-6 space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
-                <form.Field
-                name="clientName"
+                {/* ==== CLIENT NAME ==== */}
+                {/* Just for my own benefit of understanding  */}
+                <form.Field  
+                name="clientName" // Tanstack Form
                 validators={{
-                    onChange: contractSchema.shape.clientName
+                    onChange: contractSchema.shape.clientName // Zod Validation here
                 }}
                 >
+                    
+                {(field) => (  // TanStack form render prop
+                    // JSX HERE
+                    <div>
+                        <label className="text-black dark:text-white block text-sm font-medium mb-2">Full Legal Name <span className="text-red-400">*</span></label>
+                        <input 
+                        type="text"  
+                        // Field States and Methods ( all from tanstacky )
+                        value={field.state.value}
+                        onChange={(e) => field.handleChange(e.target.value)}
+                        onBlur={field.handleBlur}
+                        className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all" 
+                       placeholder="Enter Your Full Legal Name"
+                       />
+                       {/* Zod generates these error messages */}
+                    {field.state.meta.errors &&  (
+                        <p className="text-red-400 text-sm mt-1">
+                            {/* this would crash without .message */}
+                            {/* displays the first error message that is written out  ( once the user fixes that first issue, then the second error slides into the 0 index meaning we never need to show more than 0 index and 
+                                if we did it must display multiple errors at the same time to the user aand thaat might just scare off the user
+                            ) */}
+                            {field.state.meta.errors[0]?.message} {/* usually good to add a fallback without option changing in case there is no message from zod, ( format issues ) might give the user an undefined error message for strings for example*/}
+                        </p>
+                    )}
+                    </div>
+                )}
+                </form.Field>
+
+                <form.Field
+                name = "clientEmail"
+                validators={{
+                    onChange: contractSchema.shape.clientEmail
+                }}
+                >
+                    {(field) => (
+                        <div>
+                            <label className="text-black dark:text-white block text-sm font-medium mb-2">Email Address 
+                        <span className="text-red-400">*</span>
+                        </label>
+                        <input 
+                        type="email"
+                        value={field.state.value}
+                        onChange={(e) => field.handleChange(e.target.value)}
+                        onBlur={field.handleBlur}
+                        className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all" 
+                        placeholder="Enter Email Adddress" />
+                        {/* Zod validations time again */}
+                        {field.state.meta.errors && (
+                            <p className="text-redd-400 text-sm mt-1">
+                                {field.state.meta.errors[0]?.message}
+                            </p>
+                        )}
+
+                        </div>
+)}
 
                 </form.Field>
+
             </div>
         </div>
       </div>
