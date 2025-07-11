@@ -4,7 +4,9 @@ import { useForm } from "@tanstack/react-form";
 import { zodValidator } from "@tanstack/zod-form-adapter";
 import { z } from "zod";
 import {
+    AlertTriangle,
   Book,
+  Calendar,
   CheckCircle,
   Clock,
   CreditCard,
@@ -561,94 +563,221 @@ export default function ContractForm() {
                     {/* This is the important part */}
                     {/* ===== Agreeement Checkboxes */}
                     <div className="bg-white dark:bg-black/40 border-red-950/20 rounded-2xl backdrop-blur-sm">
-                    <div className="p-6 border-b border-red-950/20">
+                      <div className="p-6 border-b border-red-950/20">
                         <h2 className="flex items-center gap-2 text-black dark:text-white text-xl font-semibold">
-                            <CheckCircle className="h-4 w-4" />
-                            Required Agreements
+                          <CheckCircle className="h-4 w-4" />
+                          Required Agreements
                         </h2>
-                    </div>
-                    <div className="p-6 space-y-6">
+                      </div>
+                      <div className="p-6 space-y-6">
                         <div className="space-y-4">
-                            {[
-                                { name : 'agreedToTerms', label: 'Terms and Conditions', desc: 'I have read, understood, and agree to be bound by the Terms and Conditions of CodeWithAli.'},
-                                { name: 'agreedToRevisionPolicy', label: 'Revision Policy', desc: 'I acknowledge and agree to the NO REFUND policy and revision-based satisfication approach.'},
-                                { name: 'agreedToPaymentTerms', label: "Payment Term", desc: 'I agree to the payment terms including the 50% deposit requirement aand latae payment fees.'},
-                                { name: 'agreedToTimeline', label: 'Project Timeilne', desc: 'I understand the project timeline requiurements and agree to provide timely feedback'},
-                                { name: 'agreedToPrivacy' , label: 'Privacy Terms', desc: 'I agree to the private privacy and the data collection practices for this contract'}
-                            ].map((item) => (
-                                <form.Field
-                                key={item.name}
-                                name={item.name as keyof ContractFormData}
-                                validators={{
-                                    onChange: contractSchema.shape[item.name as keyof typeof contractSchema.shape],
-                                }}
-                                >
-                                    {(field) => (
-                                        <div className="p-4 border border-gray-700/50 rounded-lg hover:border-red-500/30 transition-colors">
-                                            <div className="flex items-start space-x-3">
-                                                <input type="checkbox" 
-                                                id={item.name}
-                                                checked={field.state.value as boolean}
-                                                onChange={(e) => field.handleChange(e.target.checked)}
-                                                 className="mt-1 w-4 h-4 text-red-600 bg-gray-900 border-gray-700 rounded focus:ring-red-500" />
-                                                
-                                                <div className="flex-1">
-                                                    <label htmlFor={item.name} className="text-black dark:text-white">
-                                                        {item.label} <span className="text-red-400">*</span>
-                                                    </label>
-                                                    <p className="text-sm text-black dark:text-gray-400 mt-1"> {item.desc}</p>
-                                                </div>
-                                            </div>
-                                            {field.state.meta.errors && (
-                                                <p className="text-red-400 text-sm mt-2 ml-7">
-                                                    {field.state.meta.errors[0]?.message}
-                                                </p>
-                                            )}
-                                        </div>
-                                    )}
-                                </form.Field>
-                            ))}
+                          {[
+                            {
+                              name: "agreedToTerms",
+                              label: "Terms and Conditions",
+                              desc: "I have read, understood, and agree to be bound by the Terms and Conditions of CodeWithAli.",
+                            },
+                            {
+                              name: "agreedToRevisionPolicy",
+                              label: "Revision Policy",
+                              desc: "I acknowledge and agree to the NO REFUND policy and revision-based satisfication approach.",
+                            },
+                            {
+                              name: "agreedToPaymentTerms",
+                              label: "Payment Term",
+                              desc: "I agree to the payment terms including the 50% deposit requirement aand latae payment fees.",
+                            },
+                            {
+                              name: "agreedToTimeline",
+                              label: "Project Timeilne",
+                              desc: "I understand the project timeline requiurements and agree to provide timely feedback",
+                            },
+                            {
+                              name: "agreedToPrivacy",
+                              label: "Privacy Terms",
+                              desc: "I agree to the private privacy and the data collection practices for this contract",
+                            },
+                          ].map((item) => (
+                            <form.Field
+                              key={item.name}
+                              name={item.name as keyof ContractFormData}
+                              validators={{
+                                onChange:
+                                  contractSchema.shape[
+                                    item.name as keyof typeof contractSchema.shape
+                                  ],
+                              }}
+                            >
+                              {(field) => (
+                                <div className="p-4 border border-gray-700/50 rounded-lg hover:border-red-500/30 transition-colors">
+                                  <div className="flex items-start space-x-3">
+                                    <input
+                                      type="checkbox"
+                                      id={item.name}
+                                      checked={field.state.value as boolean}
+                                      onChange={(e) =>
+                                        field.handleChange(e.target.checked)
+                                      }
+                                      className="mt-1 w-4 h-4 text-red-600 bg-gray-900 border-gray-700 rounded focus:ring-red-500"
+                                    />
+
+                                    <div className="flex-1">
+                                      <label
+                                        htmlFor={item.name}
+                                        className="text-black dark:text-white"
+                                      >
+                                        {item.label}{" "}
+                                        <span className="text-red-400">*</span>
+                                      </label>
+                                      <p className="text-sm text-black dark:text-gray-400 mt-1">
+                                        {" "}
+                                        {item.desc}
+                                      </p>
+                                    </div>
+                                  </div>
+                                  {field.state.meta.errors && (
+                                    <p className="text-red-400 text-sm mt-2 ml-7">
+                                      {field.state.meta.errors[0]?.message}
+                                    </p>
+                                  )}
+                                </div>
+                              )}
+                            </form.Field>
+                          ))}
                         </div>
-                    </div>
+                      </div>
                     </div>
 
                     {/* Digital Signature */}
                     <div className="bg-white dark:bg-black/40 border border-red-950 rounded-2xl backdrop-blur-sm">
-                        <div className="p-6 bordder-b border-red-950">
-                            <h2 className="flex items-center gap-2 text-black dark:text-white text-xl font-semibold">
-                                <Edit className="h-4 w-4 text-red-800" />
-                                Digital Signature
-                            </h2>
+                      <div className="p-6 bordder-b border-red-950">
+                        <h2 className="flex items-center gap-2 text-black dark:text-white text-xl font-semibold">
+                          <Edit className="h-4 w-4 text-red-800" />
+                          Digital Signature
+                        </h2>
+                      </div>
+                      <div className="p-6 space-y-4">
+                        <form.Field
+                          name="signature"
+                          validators={{
+                            onChange: contractSchema.shape.signature,
+                          }}
+                        >
+                          {(field) => (
+                            <div>
+                              <label className="text-black dark:text-white">
+                                Signature{" "}
+                                <span className="text-red-400">*</span>
+                              </label>
+                              <input
+                                type="text"
+                                value={field.state.value}
+                                onChange={(e) =>
+                                  field.handleChange(e.target.value)
+                                }
+                                placeholder="Type your Full Name as your Digital Signature"
+                                className="w-full px-4 py-2 bg-white/80 border rounded-md text-lg  focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all"
+                              />
+
+                              {field.state.meta.errors && (
+                                <p className="text-red-400 text-sm mt-1">
+                                  {field.state.meta.errors[0]?.message}
+                                </p>
+                              )}
+                              <p className="text-xs dark:text-gray-400 text-black/70 mt-1">
+                                By Typing your name above, you are providing a
+                                legally binding digital signature
+                              </p>
+                            </div>
+                          )}
+                        </form.Field>
+
+                        <div className="grid md:grid-cols-2 gap-4 p-4 bg-gray-900/30 rounded-lg">
+                          <div>
+                            <label className="block text-sm font-medium text-black dark:text-white mb-1">
+                              Signature Data
+                            </label>
+                            {/* calender */}
+                            <div className="flex items-center gap-2 text-gray-300">
+                              <Calendar className="w-4 h-4 text-red-400" />
+                              <span>{currentDate}</span>
+                            </div>
+                          </div>
+                          {/* Contract ID */}
+                          {/* <div>
+                            <label className="block text-sm font-medium text-black dark:text-white mb-1">
+                              Contract ID
+                            </label>
+                            <div className="flex items-center gap-2 text-gray-300">
+                              <Hash className="w-4 h-4 text-red-400" />
+                              <span className="text-sm font-mono">
+                                {sessionData.sessionId.slice(-12)}
+                              </span>
+                            </div>
+                          </div> */}
+                          <div className="p-4 bg-yellow-500/10 border border-eylloww-500/20 rounded-lg">
+                            <div className="flex items-start gap-2">
+                                <AlertTriangle className="w-4 h-4 text-yellow-400 mt-0.5" />
+                                <div className="text-sm text-yellow-400">
+                                    <strong>Legal Notice:</strong> This digital signature creates a legally binding Contract. All session data including IP address, location, and device information is recorded for verification process
+                                </div>
+                            </div>
+                          </div>
                         </div>
-                        <div className="p-6 space-y-4">
-                            <form.Field
-                            name="signature"
-                            validators={{
-                                onChange: contractSchema.shape.signature,
-                            }}
-                            >
-                                {(field) => (
-                                    <div>
-                                        <label className="text-black dark:text-white">Signature <span className="text-red-400">*</span></label>
-                                        <input
-                                         type="text" 
-                                         value={field.state.value}
-                                         onChange={(e) => field.handleChange(e.target.value)}
-                                         placeholder="Type your Full Name as your Digital Signature"
-                                         className="w-full px-4 py-2 bg-white/80 border rounded-md text-lg  focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all" />
+                      </div>
+                    </div>
 
-                                         {field.state.meta.errors  && (
-                                            <p className="text-red-400 text-sm mt-1">
-                                                {field.state.meta.errors[0]?.message}
-                                            </p>
-                                         )}
-                                         <p className="text-xs dark:text-gray-400 text-black/70 mt-1">
-                                            By Typing your name above, you are providing a legally binding digital signature
-                                         </p>
+                    {/* Finaal Touch to make sure everything works */}
+                    {/* Submit button */}
+                    <div className="text-center my-4">
+                        <form.Subscribe
+                        selector={(state) => [state.canSubmit, state.isSubmitting]}
+                        >
+                            {([canSubmit, isSubmitting]) => (
+                                <Button
+                                onClick={form.handleSubmit}
+                                disabled={!canSubmit || isSubmitting}
+                                 className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 disabled:opacity-50 disabled:cursor-not-allowed text-white px-16 py-4 text-lg font-semibold transition-all transform hover:scale-105 disabled:hover:scale-100 items-center justify-center gap-3 mx-auto mx-w-[300px]">
+                                 {isSubmitting ? (
+                                    <>
+                                    <div className="animate-spin rounded-full h-4 w-5 border-b-2 border-white">
+                                        Executing Agreement....
                                     </div>
-                                )}
 
-                            </form.Field>
+                                    </> 
+                                 ) : (
+                                    <>
+                                    <Edit className="w-5 h-5" />
+                                    Execute Service Agreement
+                                    </>
+                                 )}   
+
+                                </Button>
+                            )}
+
+                        </form.Subscribe>
+
+                        <div className="my-2">
+                            {!allAgreed && (
+                                <p className="text-red-400 text-sm">
+                                    Please complete all the required agreements above to continue
+                                </p>
+                            )}
+                            <p className="text-sm text-gray-500 max-w-md mx-auto">
+                                By Clicking "Executive Service Agreement",  you confirm legally to enter this binding contract. Progress: {Math.round(formProgress)}% complete.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Footer */}
+                    <div className="mt-12 pt-8  border-t border-gray-700">
+                        <div className="text-center text-sm text-black dark:text-gray-400">
+                            <p className="mb-2">
+                                Questions about this agreement? Contact us at {' '}
+                                <a href="mailto:unfold@codewithali.com" className="text-red-400 hover:text-red-300">
+                                    unfold@codewithali.com
+                                </a>
+                            </p>
                         </div>
                     </div>
                   </div>
