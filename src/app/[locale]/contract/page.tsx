@@ -5,11 +5,13 @@ import { zodValidator } from "@tanstack/zod-form-adapter";
 import { z } from "zod";
 import {
   Clock,
+  CreditCard,
   FileText,
   Globe,
   Hash,
   Lock,
   MapPin,
+  RotateCcw,
   Save,
   Shield,
   Smartphone,
@@ -255,10 +257,10 @@ export default function ContractForm() {
         </div>
         {/* <form.provider> */}
 
-        <div className="space-y-8">
+        <div className="mb-10">
           {/* Session information Paanel - Display only */}
 
-          <div className="dark:bg-black/40 border border-red-950/20 rounded-2xl backdrop-blur-sm p-6">
+          <div className="dark:bg-black/40 border border-red-950 rounded-2xl backdrop-blur-sm p-6">
             <h3 className="text-black dark:text-white font-semibold mb-4 flex items-center gap-2">
               <Hash className="h-4 w-4" />
               Session Information
@@ -286,9 +288,9 @@ export default function ContractForm() {
         </div>
 
         {/* Client Information */}
-        <div className="dark:bg-black/80 border-red-950/20 rounded-2xl backdrop-blur-sm">
+        <div className="dark:bg-black/80 border-red-950 border-3 rounded-2xl backdrop-blur-sm">
           <div className="p-6 border-b border-red-950/20">
-            <h2 className="flex items-center gap-2 text-white text-xl font-semibold">
+            <h2 className="flex items-center gap-2  text-black dark:text-white text-xl font-semibold">
               Client Information
             </h2>
           </div>
@@ -402,41 +404,121 @@ export default function ContractForm() {
                         Telephone Number
                       </label>
                       <input
-                       type="tel" 
+                        type="tel"
                         value={field.state.value}
                         onChange={(e) => field.handleChange(e.target.value)}
                         onBlur={field.handleBlur}
                         placeholder="+1 (533) 490-5902"
-                        className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all" />
+                        className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
+                      />
                     </div>
                   )}
                 </form.Field>
 
                 <form.Field
-                name="projectDescription"
-                validators={{
-                    onChange: contractSchema.shape.projectDescription
-                }}
+                  name="projectDescription"
+                  validators={{
+                    onChange: contractSchema.shape.projectDescription,
+                  }}
                 >
-                    {(field) => (
-                        <div>
-                            <label className="text-black dark:text-white">Project Description <span className="text-red-400">*</span></label>
-                            <textarea 
-                            value={field.state.value}
-                            onChange={(e) => field.handleChange(e.target.value)}
-                            onBlur={field.handleBlur}
-                            rows={4}
-                             className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"  />
-                        
-                        {field.state.meta.errors && (
-                            <p className="text-red-400 mt-1">
-                                {field.state.meta.errors[0]?.message}
-                            </p>
-                        )}
-                        </div>
-                    )} 
+                  {(field) => (
+                    <div>
+                      <label className="text-black dark:text-white">
+                        Project Description{" "}
+                        <span className="text-red-400">*</span>
+                      </label>
+                      <textarea
+                        value={field.state.value}
+                        onChange={(e) => field.handleChange(e.target.value)}
+                        onBlur={field.handleBlur}
+                        rows={4}
+                        className="w-full px-3 py-1 bg-black/10 border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
+                      />
 
+                      {field.state.meta.errors && (
+                        <p className="text-red-400 mt-1">
+                          {field.state.meta.errors[0]?.message}
+                        </p>
+                      )}
+                    </div>
+                  )}
                 </form.Field>
+                <form.Field name="projectBudget">
+                  {(field) => (
+                    <div>
+                      <label className="text-black dark:text-white">
+                        Project Budget
+                      </label>
+                      <select
+                        value={field.state.value}
+                        onChange={(e) => field.handleChange(e.target.value)}
+                        className="w-full px-3 py-2 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
+                      >
+                        <option value="">Select Budget</option>
+                        <option value="under-5k">Under 50000</option>
+                        <option value="5k-10k">$5,000 - $10,000</option>
+                        <option value="10k-25k">$10,000 - $25,000</option>
+                        <option value="25k-50k">$25,000 - $50,000</option>
+                        <option value="over 5k+">over $50,000</option>
+                      </select>
+                    </div>
+                  )}
+                </form.Field>
+
+                {/* Terms Summary */}
+                <div className="bg-white text-black  dark:bg-black/40 border border-red-950/20 rounded-2xl backdrop-blur-sm">
+                  <div className="p-6 border-b border-red-950">
+                    <h2 className="flex items-center gap-2 text-black dark:text-white text-xl font-semibold">
+                      <FileText className="h-4 w-4" />
+                      Key Terms Summary
+                    </h2>
+                  </div>
+                  <div className="p-6 gap-6">
+                    <div className="grid md:grid-cols-2 gap-6 mb-4">
+                      <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
+                        <CreditCard className="w-4 h-4 text-red-500" />
+                        <h4 className="font-semibold text-black dark:text-white">
+                          Payment Terms
+                        </h4>
+                      {/* === PAYMENT TERMS ====  */}
+                      <ul className="text-sm text-black dark:text-gray-300 space-y-1">
+                        <li>• 50% deposit due upon agreement</li>
+                        <li>• 50% final payment upon completion</li>
+                        <li>• Late payments incur 1.5% monthly fee</li>
+                        <li>• All payments in USD</li>
+                      </ul>
+                      </div>
+                    </div>
+
+                    {/* ===== REVISION POLICY ==== */}
+                    <div className="p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg mb-4">
+                      <div className="flex items-centeer gap-2 mb-2 text-yellow-500">
+                        <RotateCcw className="h-4 w-4" />
+                        <h4 className="font-semibold text-black dark:text-white">
+                          Revision Policy
+                        </h4>
+                      </div>
+                      <ul className="text-sm text-black dark:text-gray-300 space-y-1">
+                        <li>
+                          • <strong>NO REFUNDS</strong> - Revisions only
+                        </li>
+                        <li>• 3 design revision rounds included</li>
+                        <li>• Additional revisions: $75/hour</li>
+                        <li>• Unlimited commitment to satisfaction</li>
+                      </ul>
+                    </div>
+
+                    {/* ==== PROJECT TIMELINE ==== */}
+                    <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                        <div className="flex items-center gap-2 mb-2">
+                            <Shield className="h-4 w-4 text-blue-500" />
+                            <h4 className="font-semibold text-black dark:text-white">
+                                Project Timeline
+                            </h4>
+                        </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
