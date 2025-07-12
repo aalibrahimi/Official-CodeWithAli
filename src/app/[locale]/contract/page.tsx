@@ -19,6 +19,7 @@ import {
   Shield,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 // Time for some zod validaation schema
 const contractSchema = z.object({
@@ -270,7 +271,7 @@ export default function ContractForm() {
       {/* Progress bar here */}
       <div className="text-white fixed top-0 left-0 w-full h-1 bg-gray-800 z-50 ">
         <div
-          className="h-full bg-gradient-to-r from-red-500 to-red-600 transition-all duration-500 ease-out"
+          className="h-full bg-gradient-to-r from-red-500 to-red-600 transition-all duration-500 ease-out "
           style={{ width: `${formProgress}%` }}
         />
       </div>
@@ -286,7 +287,7 @@ export default function ContractForm() {
       <div className="container mx-auto px-6 pt-24 pb-12 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 mb-4 b-red-500/20  text-black border-black dark:text-red-400 border dark:border-red-500/50 px-4 py-2 roundedd-full text-sm">
+          <div className="inline-flex items-center gap-2 mb-4 b-red-500/20   text-black border-black dark:text-red-400 border dark:border-red-500/50 px-4 py-2 roundedd-full text-sm">
             <FileText className="w-4 h-4" />
             Service Agreeement - {Math.round(formProgress)}% Complete
           </div>
@@ -376,7 +377,7 @@ export default function ContractForm() {
                       value={field.state.value}
                       onChange={(e) => field.handleChange(e.target.value)}
                       onBlur={field.handleBlur}
-                      className="w-full px-3 py-1 bg-white border  border-black  dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
+                      className="w-full px-3 py-1 bg-white border border-black  dark:border-red-950/60 dark:bg-black  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
                       placeholder="Enter Your Full Legal Name"
                     />
                     {/* Zod generates these error messages */}
@@ -411,7 +412,7 @@ export default function ContractForm() {
                       value={field.state.value}
                       onChange={(e) => field.handleChange(e.target.value)}
                       onBlur={field.handleBlur}
-                      className="w-full px-3 py-1 bg-white border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
+                      className="w-full px-3 py-1 bg-white border border-black dark:border-red-950/60 dark:bg-black  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
                       placeholder="Enter Email Adddress"
                     />
                     {/* Zod validations time again */}
@@ -437,7 +438,7 @@ export default function ContractForm() {
                       onChange={(e) => field.handleChange(e.target.value)}
                       placeholder="Company Name"
                       onBlur={field.handleBlur}
-                      className="w-full px-3 py-1 bg-white border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
+                      className="w-full px-3 py-1 bg-white border border-black dark:border-red-950/60 dark:bg-black  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
                     />
 
                     {/* If thats true then I simply don't even needd this zod validation right?  */}
@@ -467,7 +468,7 @@ export default function ContractForm() {
                       onChange={(e) => field.handleChange(e.target.value)}
                       onBlur={field.handleBlur}
                       placeholder="+1 (533) 490-5902"
-                      className="w-full px-3 py-1 bg-white border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
+                      className="w-full px-3 py-1 bg-white border border-black dark:border-red-950/60 dark:bg-black  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
                     />
                   </div>
                 )}
@@ -482,18 +483,23 @@ export default function ContractForm() {
                     <label className="text-black dark:text-white">
                       Project Budget
                     </label>
-                    <select
-                      value={field.state.value}
-                      onChange={(e) => field.handleChange(e.target.value)}
-                      className="w-full px-3 py-2 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
-                    >
-                      <option value="">Select Budget</option>
-                      <option value="under-5k">Under 50000</option>
-                      <option value="5k-10k">$5,000 - $10,000</option>
-                      <option value="10k-25k">$10,000 - $25,000</option>
-                      <option value="25k-50k">$25,000 - $50,000</option>
-                      <option value="over 5k+">over $50,000</option>
-                    </select>
+                  <Select
+                    value={field.state.value}
+                      onValueChange={(e) => field.handleChange(e)}
+                     
+                  >
+                    <SelectTrigger  className="w-full px-3 py-2  border border-gray-700 rounded-lg text-black focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all">
+                      <SelectValue placeholder="Select Budget" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="under-5K">Under $5,000</SelectItem>
+                      <SelectItem value="5k-10">$5,000 - $10,000</SelectItem>
+                      <SelectItem value="10k-25k">$10,000 - $25,000 </SelectItem>
+                      <SelectItem value="25k-50k">$25,000 - $50,000</SelectItem>
+                      <SelectItem value="over 5k+"> $50,000 +</SelectItem>
+                    </SelectContent>
+                  </Select>
+        
                   </div>
                 )}
               </form.Field>
@@ -514,7 +520,7 @@ export default function ContractForm() {
                       onChange={(e) => field.handleChange(e.target.value)}
                       onBlur={field.handleBlur}
                       rows={4}
-                      className="w-full px-3 py-1 bg-white border border-black dark:border-white/50 dark:bg-gray-900/50  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
+                      className="w-full px-3 py-1 max-h-[300px] bg-white border border-black dark:border-red-950/60 dark:bg-black  rounded-sm text-black dark:text-white focus:ring-2 focus:ring-red-500 focus-border-transparent transition-all"
                     />
 
                     {field.state.meta.errors && (
