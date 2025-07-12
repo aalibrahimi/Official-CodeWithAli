@@ -23,6 +23,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import GradientText from "@/MyComponents/GradientText";
 import { useLocale, useTranslations } from "next-intl";
 import { isRtlLang } from "rtl-detect";
+import Image from "next/image";
 
 // Animation variants
 const fadeIn = {
@@ -549,7 +550,7 @@ const UIUXDesignPage = () => {
                     </div>
                     <div className="mt-auto flex items-center">
                       <div className={`w-12 h-12 rounded-full overflow-hidden ${isRTL ? "ml-4" : "mr-4"}`}>
-                        <img
+                        <Image
                           src={testimonial.image}
                           alt={testimonial.author}
                           className="w-full h-full object-cover"

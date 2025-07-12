@@ -123,7 +123,7 @@ export default function TermsAndConditions() {
             Terms and Conditions
           </h1>
           <p className="text-black dark:text-gray-400 text-lg">
-            These terms govern your use of CodeWithAli's website development and digital services.
+            These terms govern your use of CodeWithAli&apos;s website development and digital services.
           </p>
           <p className="text-sm text-gray-500 mt-4">
             Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
@@ -141,7 +141,7 @@ export default function TermsAndConditions() {
             </CardHeader>
             <CardContent className="space-y-4 text-black/70 dark:text-gray-300">
               <p>
-                Welcome to CodeWithAli. These Terms and Conditions ("Terms") govern your use of our website development, application development, and digital services. By contacting us or engaging our services, you agree to be bound by these Terms.
+                Welcome to CodeWithAli. These Terms and Conditions (&quot;Terms&quot;) govern your use of our website development, application development, and digital services. By contacting us or engaging our services, you agree to be bound by these Terms.
               </p>
               <p>
                 CodeWithAli is a professional web development company specializing in custom websites, web applications, mobile apps, UI/UX design, e-commerce solutions, SEO optimization, and hosting services for businesses and individuals.
@@ -460,7 +460,7 @@ export default function TermsAndConditions() {
               <div>
                 <h4 className="font-semibold dark:text-white text-black mb-2">Our Satisfaction Guarantee</h4>
                 <p className="text-sm">
-                  We are dedicated to your complete satisfaction. If you're not happy with any aspect of the project, we will work tirelessly to address your concerns through additional revisions, adjustments, or alternative solutions. Our goal is to deliver a final product that exceeds your expectations and drives real business results.
+                  We are dedicated to your complete satisfaction. If you&apos;re not happy with any aspect of the project, we will work tirelessly to address your concerns through additional revisions, adjustments, or alternative solutions. Our goal is to deliver a final product that exceeds your expectations and drives real business results.
                 </p>
               </div>
             </CardContent>
@@ -540,7 +540,7 @@ export default function TermsAndConditions() {
               <div>
                 <h4 className="font-semibold dark:text-white text-black mb-2">Liability Limitation</h4>
                 <p className="text-sm mb-3">
-                  CodeWithAli's liability for any claim related to our services is limited to the total amount paid for the specific project or service in question. Under no circumstances shall our liability exceed this amount.
+                  CodeWithAli&apos;s liability for any claim related to our services is limited to the total amount paid for the specific project or service in question. Under no circumstances shall our liability exceed this amount.
                 </p>
               </div>
 
@@ -574,7 +574,7 @@ export default function TermsAndConditions() {
               <div>
                 <h4 className="font-semibold dark:text-white text-black mb-2">Warranty Disclaimer</h4>
                 <p className="text-sm">
-                  Our services are provided "as is" except for the express warranties in our revision policy. We disclaim all other warranties, express or implied, including warranties of merchantability and fitness for a particular purpose.
+                  Our services are provided &quot;as is&quot; except for the express warranties in our revision policy. We disclaim all other warranties, express or implied, including warranties of merchantability and fitness for a particular purpose.
                 </p>
               </div>
             </CardContent>
