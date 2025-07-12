@@ -81,7 +81,7 @@ export default function TermsAndConditions() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-black to-red-950/20">
+    <div className="min-h-screen bg-gradient-to-b dark:from-black dark:via-black bg-white dark:to-red-950/20">
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 w-full h-1 bg-gray-800 z-50">
         <div 
@@ -92,7 +92,7 @@ export default function TermsAndConditions() {
 
       {/* Floating Navigation */}
       <div className="fixed left-6 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block">
-        <Card className="bg-black/80 backdrop-blur-sm border-red-950/50 p-4">
+        <Card className="bg-white dark:bg-black/80 backdrop-blur-sm border-red-950/50 p-4">
           <div className="space-y-2">
             {sections.map((section) => (
               <button
@@ -100,8 +100,8 @@ export default function TermsAndConditions() {
                 onClick={() => scrollToSection(section.id)}
                 className={`flex items-center gap-2 p-2 rounded-md text-sm transition-all duration-200 w-full text-left ${
                   activeSection === section.id
-                    ? "bg-red-500/20 text-red-400 border-l-2 border-red-500"
-                    : "text-gray-400 hover:text-white hover:bg-gray-800/50"
+                    ? "bg-red-500 dark:bg-red-500/20 dark:text-white text-black border-l-2 border-red-950 dark:border-red-500"
+                    : "text-black dark:text-gray-400 hover:dark:text-white hover:bg-red-700 dark:hover:bg-gray-800/50"
                 }`}
               >
                 {section.icon}
@@ -115,14 +115,14 @@ export default function TermsAndConditions() {
       <div className="container mx-auto px-6 pt-24 pb-12 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-12">
-          <Badge className="mb-4 bg-red-500/20 text-red-400 border-red-500/50">
+          <Badge className="mb-4 dark:bg-red-500/20 bg-red-500 text-white dark:text-red-400 border-red-500/50">
             <FileText className="w-3 h-3 mr-1" />
             Terms of Service
           </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-red-200 to-red-300 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black bg-gradient-to-r dark:from-white dark:via-red-200 dark:to-red-300 bg-clip-text dark:text-transparent">
             Terms and Conditions
           </h1>
-          <p className="text-gray-400 text-lg">
+          <p className="text-black dark:text-gray-400 text-lg">
             These terms govern your use of CodeWithAli's website development and digital services.
           </p>
           <p className="text-sm text-gray-500 mt-4">
@@ -132,14 +132,14 @@ export default function TermsAndConditions() {
 
         {/* Overview Section */}
         <section id="overview" className="mb-16">
-          <Card className="bg-black/40 border-red-950/20">
+          <Card className="bg-white dark:bg-black/40 border-red-950/20">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
-                <FileText className="w-5 h-5 text-red-400" />
+              <CardTitle className="flex items-center gap-2 dark:text-white text-black">
+                <FileText className="w-5 h-5 text-red-700 dark:text-red-400" />
                 Overview
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4 text-gray-300">
+            <CardContent className="space-y-4 text-black/70 dark:text-gray-300">
               <p>
                 Welcome to CodeWithAli. These Terms and Conditions ("Terms") govern your use of our website development, application development, and digital services. By contacting us or engaging our services, you agree to be bound by these Terms.
               </p>
@@ -147,7 +147,7 @@ export default function TermsAndConditions() {
                 CodeWithAli is a professional web development company specializing in custom websites, web applications, mobile apps, UI/UX design, e-commerce solutions, SEO optimization, and hosting services for businesses and individuals.
               </p>
               <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
-                <p className="text-sm text-red-400">
+                <p className="text-sm dark:text-red-400 text-red-800">
                   <strong>Important:</strong> By contacting us, you acknowledge that you have read and agree to these Terms. If you do not agree with any part of these Terms, please do not use our services.
                 </p>
               </div>
@@ -157,21 +157,21 @@ export default function TermsAndConditions() {
 
         {/* Acceptance of Terms */}
         <section id="acceptance" className="mb-16">
-          <Card className="bg-black/40 border-red-950/20">
+          <Card className="bg-white dark:bg-black/40 border-red-950/20">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
-                <CheckCircle className="w-5 h-5 text-red-400" />
+              <CardTitle className="flex items-center gap-2 dark:text-white text-black">
+                <CheckCircle className="w-5 h-5 dark:text-red-400 text-red-800" />
                 Acceptance of Terms
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4 text-gray-300">
+            <CardContent className="space-y-4 text-black/70 dark:text-gray-300">
               <p>
                 By contacting CodeWithAli, visiting our website, or engaging our services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.
               </p>
               
               <div className="space-y-3">
                 <div>
-                  <h4 className="font-semibold text-white mb-2">Eligibility</h4>
+                  <h4 className="font-semibold dark:text-white text-black mb-2">Eligibility</h4>
                   <ul className="space-y-1 list-disc list-inside text-sm">
                     <li>You must be at least 18 years old or the legal age of majority in your jurisdiction</li>
                     <li>You must have the legal capacity to enter into binding contracts</li>
@@ -181,14 +181,14 @@ export default function TermsAndConditions() {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold text-white mb-2">Agreement Formation</h4>
+                  <h4 className="font-semibold dark:text-white text-black mb-2">Agreement Formation</h4>
                   <p className="text-sm">
                     These Terms become effective when you first contact us via email, phone, contact form, or any other communication method. A binding agreement is formed upon your acceptance of our project proposal and payment of the required deposit.
                   </p>
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-white mb-2">Modifications</h4>
+                  <h4 className="font-semibold dark:text-white text-black mb-2">Modifications</h4>
                   <p className="text-sm">
                     We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting on our website. Continued use of our services constitutes acceptance of the modified Terms.
                   </p>
@@ -200,17 +200,17 @@ export default function TermsAndConditions() {
 
         {/* Services Description */}
         <section id="services" className="mb-16">
-          <Card className="bg-black/40 border-red-950/20">
+          <Card className="bg-white dark:bg-black/40 border-red-950/20">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
-                <Code className="w-5 h-5 text-red-400" />
+              <CardTitle className="flex items-center gap-2 dark:text-white text-black">
+                <Code className="w-5 h-5 dark:text-red-400 text-red-800" />
                 Services Description
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6 text-gray-300">
+            <CardContent className="space-y-6 text-black/70 dark:text-gray-300">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-semibold text-white mb-3">Development Services</h4>
+                  <h4 className="font-semibold dark:text-white text-black mb-3">Development Services</h4>
                   <ul className="space-y-1 list-disc list-inside text-sm">
                     <li>Custom website development</li>
                     <li>Web application development</li>
@@ -221,7 +221,7 @@ export default function TermsAndConditions() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white mb-3">Design & Support Services</h4>
+                  <h4 className="font-semibold dark:text-white text-black mb-3">Design & Support Services</h4>
                   <ul className="space-y-1 list-disc list-inside text-sm">
                     <li>UI/UX design and prototyping</li>
                     <li>Responsive design implementation</li>
@@ -234,11 +234,11 @@ export default function TermsAndConditions() {
               </div>
 
               <div>
-                <h4 className="font-semibold text-white mb-2">Service Scope</h4>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Service Scope</h4>
                 <p className="text-sm mb-3">
                   All services are provided on a project basis according to the scope and specifications agreed upon in writing. Any additional work outside the original scope will be quoted separately and requires written approval.
                 </p>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-black dark:text-gray-400">
                   Project timelines typically range from 2-12 weeks depending on complexity and client responsiveness.
                 </p>
               </div>
@@ -248,19 +248,19 @@ export default function TermsAndConditions() {
 
         {/* Client Responsibilities */}
         <section id="client-responsibilities" className="mb-16">
-          <Card className="bg-black/40 border-red-950/20">
+          <Card className="bg-white dark:bg-black/40 border-red-950/20">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
-                <Users className="w-5 h-5 text-red-400" />
+              <CardTitle className="flex items-center gap-2 dark:text-white text-black">
+                <Users className="w-5 h-5 dark:text-red-400 text-red-800" />
                 Client Responsibilities
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6 text-gray-300">
+            <CardContent className="space-y-6 text-black/70 dark:text-gray-300">
               <div>
-                <h4 className="font-semibold text-white mb-3">Required Client Actions</h4>
+                <h4 className="font-semibold dark:text-white text-black mb-3">Required Client Actions</h4>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h5 className="font-medium text-white mb-2">Content & Materials</h5>
+                    <h5 className="font-medium dark:text-white text-black mb-2">Content & Materials</h5>
                     <ul className="space-y-1 list-disc list-inside text-sm">
                       <li>Provide all necessary content, images, and text</li>
                       <li>Ensure all materials are original or properly licensed</li>
@@ -269,7 +269,7 @@ export default function TermsAndConditions() {
                     </ul>
                   </div>
                   <div>
-                    <h5 className="font-medium text-white mb-2">Communication & Feedback</h5>
+                    <h5 className="font-medium dark:text-white text-black mb-2">Communication & Feedback</h5>
                     <ul className="space-y-1 list-disc list-inside text-sm">
                       <li>Respond to communications within 3 business days</li>
                       <li>Provide clear, specific feedback on deliverables</li>
@@ -281,7 +281,7 @@ export default function TermsAndConditions() {
               </div>
 
               <div>
-                <h4 className="font-semibold text-white mb-3">Technical Requirements</h4>
+                <h4 className="font-semibold dark:text-white text-black mb-3">Technical Requirements</h4>
                 <ul className="space-y-1 list-disc list-inside text-sm">
                   <li>Provide access to hosting accounts, domains, and third-party services</li>
                   <li>Share login credentials for necessary platforms and tools</li>
@@ -301,43 +301,43 @@ export default function TermsAndConditions() {
 
         {/* Payment Terms */}
         <section id="payment" className="mb-16">
-          <Card className="bg-black/40 border-red-950/20">
+          <Card className="bg-white dark:bg-black/40 border-red-950/20">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
-                <CreditCard className="w-5 h-5 text-red-400" />
+              <CardTitle className="flex items-center gap-2 dark:text-white text-black">
+                <CreditCard className="w-5 h-5 dark:text-red-400 text-red-800" />
                 Payment Terms
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6 text-gray-300">
+            <CardContent className="space-y-6 text-black/70 dark:text-gray-300">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-semibold text-white mb-3">Payment Schedule</h4>
+                  <h4 className="font-semibold dark:text-white text-black mb-3">Payment Schedule</h4>
                   <div className="space-y-3">
-                    <div className="p-3 bg-gray-900/50 rounded-lg">
+                    <div className="p-3  rounded-lg">
                       <div className="flex items-center gap-2 mb-1">
-                        <CreditCard className="w-4 h-4 text-red-400" />
-                        <span className="font-medium text-white">Project Deposit</span>
+                        <CreditCard className="w-4 h-4 dark:text-red-400 text-red-800" />
+                        <span className="font-medium dark:text-white text-black">Project Deposit</span>
                       </div>
                       <p className="text-sm">50% due upon project agreement</p>
                     </div>
-                    <div className="p-3 bg-gray-900/50 rounded-lg">
+                    <div className="p-3  rounded-lg">
                       <div className="flex items-center gap-2 mb-1">
                         <CheckCircle className="w-4 h-4 text-green-400" />
-                        <span className="font-medium text-white">Final Payment</span>
+                        <span className="font-medium dark:text-white text-black">Final Payment</span>
                       </div>
                       <p className="text-sm">50% due upon project completion</p>
                     </div>
-                    <div className="p-3 bg-gray-900/50 rounded-lg">
+                    <div className="p-3  rounded-lg">
                       <div className="flex items-center gap-2 mb-1">
                         <RefreshCw className="w-4 h-4 text-blue-400" />
-                        <span className="font-medium text-white">Ongoing Services</span>
+                        <span className="font-medium dark:text-white text-black">Ongoing Services</span>
                       </div>
                       <p className="text-sm">Monthly billing for maintenance & hosting</p>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white mb-3">Payment Methods</h4>
+                  <h4 className="font-semibold dark:text-white text-black mb-3">Payment Methods</h4>
                   <ul className="space-y-2 list-disc list-inside text-sm">
                     <li>Bank transfer (ACH/Wire)</li>
                     <li>Credit/Debit cards</li>
@@ -346,16 +346,16 @@ export default function TermsAndConditions() {
                     <li>Cryptocurrency (Bitcoin, Ethereum)</li>
                   </ul>
                   
-                  <h4 className="font-semibold text-white mb-2 mt-4">Currency</h4>
-                  <p className="text-sm text-gray-400">
+                  <h4 className="font-semibold dark:text-white text-black mb-2 mt-4">Currency</h4>
+                  <p className="text-sm text-black dark:text-gray-400">
                     All prices are quoted in USD unless otherwise specified. International clients may be subject to currency conversion fees.
                   </p>
                 </div>
               </div>
 
               <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
-                <h5 className="font-medium text-white mb-2">Late Payment Policy</h5>
-                <p className="text-sm text-red-400">
+                <h5 className="font-medium dark:text-white text-black mb-2">Late Payment Policy</h5>
+                <p className="text-sm dark:text-red-400 text-red-800">
                   Payments not received within 30 days of the due date will incur a 1.5% monthly service charge. Projects may be suspended until payment is received. We reserve the right to pursue legal action for severely delinquent accounts.
                 </p>
               </div>
@@ -365,17 +365,17 @@ export default function TermsAndConditions() {
 
         {/* Intellectual Property */}
         <section id="intellectual-property" className="mb-16">
-          <Card className="bg-black/40 border-red-950/20">
+          <Card className="bg-white dark:bg-black/40 border-red-950/20">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
-                <Shield className="w-5 h-5 text-red-400" />
+              <CardTitle className="flex items-center gap-2 dark:text-white text-black">
+                <Shield className="w-5 h-5 dark:text-red-400 text-red-800" />
                 Intellectual Property Rights
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6 text-gray-300">
+            <CardContent className="space-y-6 text-black/70 dark:text-gray-300">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
-                  <h5 className="font-medium text-white mb-2">Client Ownership</h5>
+                  <h5 className="font-medium dark:text-white text-black mb-2">Client Ownership</h5>
                   <ul className="space-y-1 text-sm">
                     <li>• Final delivered code and designs</li>
                     <li>• Custom graphics and content created for the project</li>
@@ -384,7 +384,7 @@ export default function TermsAndConditions() {
                   </ul>
                 </div>
                 <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
-                  <h5 className="font-medium text-white mb-2">CodeWithAli Retention</h5>
+                  <h5 className="font-medium dark:text-white text-black mb-2">CodeWithAli Retention</h5>
                   <ul className="space-y-1 text-sm">
                     <li>• General methodologies and techniques</li>
                     <li>• Pre-existing code libraries and frameworks</li>
@@ -395,14 +395,14 @@ export default function TermsAndConditions() {
               </div>
 
               <div>
-                <h4 className="font-semibold text-white mb-2">Third-Party Components</h4>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Third-Party Components</h4>
                 <p className="text-sm mb-3">
                   Projects may incorporate third-party libraries, frameworks, plugins, or tools. These components remain subject to their respective licenses and terms of use. Client is responsible for compliance with third-party license requirements.
                 </p>
               </div>
 
               <div>
-                <h4 className="font-semibold text-white mb-2">Client-Provided Materials</h4>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Client-Provided Materials</h4>
                 <p className="text-sm">
                   Client warrants that all materials, content, images, and information provided for the project are either original work or properly licensed. Client indemnifies CodeWithAli against any claims of copyright or trademark infringement related to client-provided materials.
                 </p>
@@ -413,40 +413,40 @@ export default function TermsAndConditions() {
 
         {/* Revision Policy */}
         <section id="revisions" className="mb-16">
-          <Card className="bg-black/40 border-red-950/20">
+          <Card className="bg-white dark:bg-black/40 border-red-950/20">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
-                <RefreshCw className="w-5 h-5 text-red-400" />
+              <CardTitle className="flex items-center gap-2 dark:text-white text-black">
+                <RefreshCw className="w-5 h-5 dark:text-red-400 text-red-800" />
                 Revision Policy (No Refund Policy)
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6 text-gray-300">
+            <CardContent className="space-y-6 text-black/70 dark:text-gray-300">
               <div className="p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
-                <p className="text-sm text-yellow-400">
+                <p className="text-sm dark:text-yellow-400 text-yellow-800">
                   <strong>No Refunds:</strong> We do not offer refunds under any circumstances. Instead, we are committed to working with you through revisions and adjustments to ensure your complete satisfaction with the final deliverable.
                 </p>
               </div>
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-semibold text-white mb-3">Included Revisions</h4>
+                  <h4 className="font-semibold dark:text-white text-black mb-3">Included Revisions</h4>
                   <div className="space-y-3">
-                    <div className="p-3 bg-gray-900/50 rounded-lg">
-                      <h5 className="font-medium text-white mb-1">Design Phase</h5>
+                    <div className="p-3  rounded-lg">
+                      <h5 className="font-medium dark:text-white text-black mb-1">Design Phase</h5>
                       <p className="text-sm">Up to 3 rounds of design revisions</p>
                     </div>
-                    <div className="p-3 bg-gray-900/50 rounded-lg">
-                      <h5 className="font-medium text-white mb-1">Development Phase</h5>
+                    <div className="p-3  rounded-lg">
+                      <h5 className="font-medium dark:text-white text-black mb-1">Development Phase</h5>
                       <p className="text-sm">Up to 2 rounds of functionality revisions</p>
                     </div>
-                    <div className="p-3 bg-gray-900/50 rounded-lg">
-                      <h5 className="font-medium text-white mb-1">Content Updates</h5>
+                    <div className="p-3  rounded-lg">
+                      <h5 className="font-medium dark:text-white text-black mb-1">Content Updates</h5>
                       <p className="text-sm">Minor text and image updates</p>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white mb-3">Additional Services</h4>
+                  <h4 className="font-semibold dark:text-white text-black mb-3">Additional Services</h4>
                   <ul className="space-y-2 text-sm">
                     <li><strong>Extra Revisions:</strong> $75 per hour</li>
                     <li><strong>Scope Changes:</strong> Quoted separately</li>
@@ -458,7 +458,7 @@ export default function TermsAndConditions() {
               </div>
 
               <div>
-                <h4 className="font-semibold text-white mb-2">Our Satisfaction Guarantee</h4>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Our Satisfaction Guarantee</h4>
                 <p className="text-sm">
                   We are dedicated to your complete satisfaction. If you're not happy with any aspect of the project, we will work tirelessly to address your concerns through additional revisions, adjustments, or alternative solutions. Our goal is to deliver a final product that exceeds your expectations and drives real business results.
                 </p>
@@ -469,38 +469,38 @@ export default function TermsAndConditions() {
 
         {/* Project Timeline */}
         <section id="project-timeline" className="mb-16">
-          <Card className="bg-black/40 border-red-950/20">
+          <Card className="bg-white dark:bg-black/40 border-red-950/20">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
-                <Clock className="w-5 h-5 text-red-400" />
+              <CardTitle className="flex items-center gap-2 dark:text-white text-black">
+                <Clock className="w-5 h-5 dark:text-red-400 text-red-800" />
                 Project Timeline & Delivery
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4 text-gray-300">
+            <CardContent className="space-y-4 text-black/70 dark:text-gray-300">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-semibold text-white mb-3">Typical Project Phases</h4>
+                  <h4 className="font-semibold dark:text-white text-black mb-3">Typical Project Phases</h4>
                   <div className="space-y-2">
                     <div className="flex justify-between">
                       <span className="text-sm">Discovery & Planning</span>
-                      <span className="text-sm text-gray-400">1-2 weeks</span>
+                      <span className="text-sm text-black dark:text-gray-400">1-2 weeks</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-sm">Design & Mockups</span>
-                      <span className="text-sm text-gray-400">1-3 weeks</span>
+                      <span className="text-sm text-black dark:text-gray-400">1-3 weeks</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-sm">Development & Testing</span>
-                      <span className="text-sm text-gray-400">2-8 weeks</span>
+                      <span className="text-sm text-black dark:text-gray-400">2-8 weeks</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-sm">Review & Launch</span>
-                      <span className="text-sm text-gray-400">1 week</span>
+                      <span className="text-sm text-black dark:text-gray-400">1 week</span>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white mb-3">Timeline Factors</h4>
+                  <h4 className="font-semibold dark:text-white text-black mb-3">Timeline Factors</h4>
                   <ul className="space-y-1 list-disc list-inside text-sm">
                     <li>Project complexity and scope</li>
                     <li>Client response time for feedback</li>
@@ -512,7 +512,7 @@ export default function TermsAndConditions() {
               </div>
 
               <div>
-                <h4 className="font-semibold text-white mb-2">Delivery Terms</h4>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Delivery Terms</h4>
                 <p className="text-sm">
                   Project timelines are estimates based on normal circumstances and assume timely client feedback and material provision. Final delivery occurs upon completion of all agreed-upon features and client approval. Rush delivery may be available for an additional fee.
                 </p>
@@ -523,22 +523,22 @@ export default function TermsAndConditions() {
 
         {/* Limitations & Liability */}
         <section id="limitations" className="mb-16">
-          <Card className="bg-black/40 border-red-950/20">
+          <Card className="bg-white dark:bg-black/40 border-red-950/20">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
-                <AlertTriangle className="w-5 h-5 text-red-400" />
+              <CardTitle className="flex items-center gap-2 text-black dark:dark:text-white ">
+                <AlertTriangle className="w-5 h-5 dark:text-red-400 text-red-800" />
                 Limitations of Liability
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4 text-gray-300">
+            <CardContent className="space-y-4 text-black/70 dark:text-gray-300">
               <div className="p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
-                <p className="text-sm text-yellow-400">
+                <p className="text-sm dark:text-yellow-400 text-yellow-800">
                   <strong>Important Legal Notice:</strong> Please read this section carefully as it affects your legal rights and remedies.
                 </p>
               </div>
 
               <div>
-                <h4 className="font-semibold text-white mb-2">Liability Limitation</h4>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Liability Limitation</h4>
                 <p className="text-sm mb-3">
                   CodeWithAli's liability for any claim related to our services is limited to the total amount paid for the specific project or service in question. Under no circumstances shall our liability exceed this amount.
                 </p>
@@ -546,7 +546,7 @@ export default function TermsAndConditions() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-semibold text-white mb-3">Excluded Damages</h4>
+                  <h4 className="font-semibold dark:text-white text-black mb-3">Excluded Damages</h4>
                   <ul className="space-y-1 list-disc list-inside text-sm">
                     <li>Indirect or consequential damages</li>
                     <li>Loss of profits or business opportunities</li>
@@ -557,7 +557,7 @@ export default function TermsAndConditions() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white mb-3">Force Majeure</h4>
+                  <h4 className="font-semibold dark:text-white text-black mb-3">Force Majeure</h4>
                   <p className="text-sm mb-3">
                     We are not liable for delays or failures due to circumstances beyond our reasonable control, including:
                   </p>
@@ -572,7 +572,7 @@ export default function TermsAndConditions() {
               </div>
 
               <div>
-                <h4 className="font-semibold text-white mb-2">Warranty Disclaimer</h4>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Warranty Disclaimer</h4>
                 <p className="text-sm">
                   Our services are provided "as is" except for the express warranties in our revision policy. We disclaim all other warranties, express or implied, including warranties of merchantability and fitness for a particular purpose.
                 </p>
@@ -583,16 +583,16 @@ export default function TermsAndConditions() {
 
         {/* Governing Law */}
         <section id="governing-law" className="mb-16">
-          <Card className="bg-black/40 border-red-950/20">
+          <Card className="bg-white dark:bg-black/40 border-red-950/20">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
-                <Scale className="w-5 h-5 text-red-400" />
+              <CardTitle className="flex items-center gap-2 dark:text-white text-black">
+                <Scale className="w-5 h-5 dark:text-red-400 text-red-800" />
                 Governing Law & Dispute Resolution
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4 text-gray-300">
+            <CardContent className="space-y-4 text-black/70 dark:text-gray-300">
               <div>
-                <h4 className="font-semibold text-white mb-2">Applicable Law</h4>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Applicable Law</h4>
                 <p className="text-sm mb-3">
                   These Terms and Conditions are governed by and construed in accordance with the laws of the State of California, United States, without regard to its conflict of law principles.
                 </p>
@@ -600,7 +600,7 @@ export default function TermsAndConditions() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-semibold text-white mb-3">Dispute Resolution Process</h4>
+                  <h4 className="font-semibold dark:text-white text-black mb-3">Dispute Resolution Process</h4>
                   <ol className="space-y-2 list-decimal list-inside text-sm">
                     <li><strong>Good Faith Negotiation</strong> - Initial attempt to resolve disputes directly</li>
                     <li><strong>Mediation</strong> - Neutral third-party mediation if negotiation fails</li>
@@ -609,11 +609,11 @@ export default function TermsAndConditions() {
                   </ol>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white mb-3">Jurisdiction & Venue</h4>
+                  <h4 className="font-semibold dark:text-white text-black mb-3">Jurisdiction & Venue</h4>
                   <p className="text-sm mb-3">
                     Any legal proceedings must be brought in the state or federal courts located in San Jose, California. Both parties consent to the exclusive jurisdiction of these courts.
                   </p>
-                  <p className="text-sm text-gray-400">
+                  <p className="text-sm text-black/70 dark:text-gray-400">
                     We encourage resolving any disputes through direct communication and good faith negotiation before pursuing formal legal proceedings.
                   </p>
                 </div>
@@ -624,14 +624,14 @@ export default function TermsAndConditions() {
 
         {/* Contact Information */}
         <section id="contact" className="mb-16">
-          <Card className="bg-black/40 border-red-950/20">
+          <Card className="bg-white dark:bg-black/40 border-red-950/20">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
-                <Mail className="w-5 h-5 text-red-400" />
+              <CardTitle className="flex items-center gap-2 dark:text-white text-black">
+                <Mail className="w-5 h-5 dark:text-red-400 text-red-800" />
                 Contact Information
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6 text-gray-300">
+            <CardContent className="space-y-6 text-black/70 dark:text-gray-300">
               <p>
                 For questions about these Terms and Conditions, project inquiries, or support issues, please contact us:
               </p>
@@ -639,18 +639,18 @@ export default function TermsAndConditions() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <Mail className="w-5 h-5 text-red-400" />
+                    <Mail className="w-5 h-5 dark:text-red-400 text-red-800" />
                     <div>
-                      <p className="font-semibold text-white">Email Support</p>
+                      <p className="font-semibold dark:text-white text-black">Email Support</p>
                       <p className="text-sm">unfold@codewithali.com</p>
-                      <p className="text-sm text-gray-400">Response within 24 hours</p>
+                      <p className="text-sm text-black/70 dark:text-gray-400">Response within 24 hours</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-3">
-                    <Globe className="w-5 h-5 text-red-400" />
+                    <Globe className="w-5 h-5 dark:text-red-400 text-red-800" />
                     <div>
-                      <p className="font-semibold text-white">Website</p>
+                      <p className="font-semibold dark:text-white text-black">Website</p>
                       <p className="text-sm">www.codewithali.com</p>
                     </div>
                   </div>
@@ -658,9 +658,9 @@ export default function TermsAndConditions() {
                 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <Settings className="w-5 h-5 text-red-400 mt-1" />
+                    <Settings className="w-5 h-5 dark:text-red-400 text-red-800 mt-1" />
                     <div>
-                      <p className="font-semibold text-white">Business Location</p>
+                      <p className="font-semibold dark:text-white text-black">Business Location</p>
                       <p className="text-sm">
                         San Jose, California<br />
                         United States
@@ -669,12 +669,12 @@ export default function TermsAndConditions() {
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <Clock className="w-5 h-5 text-red-400 mt-1" />
+                    <Clock className="w-5 h-5 dark:text-red-400 text-red-800 mt-1" />
                     <div>
-                      <p className="font-semibold text-white">Business Hours</p>
+                      <p className="font-semibold dark:text-white text-black">Business Hours</p>
                       <p className="text-sm">
                         Monday - Friday: 9:00 AM - 6:00 PM PST<br />
-                        <span className="text-gray-400">Emergency support available</span>
+                        <span className="text-black/70 dark:text-gray-400">Emergency support available</span>
                       </p>
                     </div>
                   </div>
@@ -684,12 +684,12 @@ export default function TermsAndConditions() {
               <Separator className="bg-gray-700" />
 
               <div className="text-center">
-                <p className="text-sm text-gray-400 mb-4">
+                <p className="text-sm text-black dark:text-gray-400 mb-4">
                   These Terms and Conditions constitute the entire agreement between you and CodeWithAli regarding the use of our services.
                 </p>
                 <Button 
                   variant="outline" 
-                  className="border-red-500/20 text-red-400 hover:bg-red-500/10"
+                  className="border-red-500/20 dark:text-red-400 text-red-800 hover:bg-red-500/10"
                   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 >
                   <ChevronUp className="w-4 h-4 mr-2" />
@@ -702,13 +702,13 @@ export default function TermsAndConditions() {
 
         {/* Final Agreement Card */}
         <section className="mb-16">
-          <Card className="bg-gradient-to-r from-red-600/20 to-red-800/20 border-red-500/30">
+          <Card className="bg-gradient-to-r bg-red-800 from-red-600/20 to-red-800/20 border-red-500/30">
             <CardContent className="p-8 text-center">
-              <h3 className="text-2xl font-bold text-white mb-4">Agreement Acknowledgment</h3>
-              <p className="text-gray-300 mb-6">
+              <h3 className="text-2xl font-bold dark:text-white text-white mb-4">Agreement Acknowledgment</h3>
+              <p className="text-white dark:text-gray-300 mb-6">
                 By contacting CodeWithAli, submitting a project inquiry, or engaging our services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions in their entirety.
               </p>
-              <div className="flex items-center justify-center gap-2 text-sm text-red-400">
+              <div className="flex items-center justify-center gap-2 text-sm dark:text-red-400 text-white">
                 <CheckCircle className="w-4 h-4" />
                 <span>Effective as of the date you first contact us or engage our services</span>
               </div>
