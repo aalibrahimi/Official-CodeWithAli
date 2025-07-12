@@ -1,7 +1,6 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "@tanstack/react-form";
-import { zodValidator } from "@tanstack/zod-form-adapter";
 import { z } from "zod";
 import {
   AlertTriangle,
@@ -12,17 +11,12 @@ import {
   CreditCard,
   Download,
   Edit,
-  Eye,
   FileText,
-  Globe,
   Hash,
   Lock,
   Mail,
-  MapPin,
   RotateCcw,
-  Save,
   Shield,
-  Smartphone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -71,6 +65,7 @@ const contractSchema = z.object({
 type ContractFormData = z.infer<typeof contractSchema>;
 
 export default function ContractForm() {
+  /* eslint-disable */
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [currentDate, setCurrentDate] = useState("");
@@ -78,8 +73,8 @@ export default function ContractForm() {
 
   // })
   const [formProgress, setFormProgress] = useState(0);
-  const [autoSaved, setAutoSaved] = useState(false);
-  const autoSavedTimeoutRef = useRef<NodeJS.Timeout>();
+  // const [autoSaved, setAutoSaved] = useState(false);
+  // const autoSavedTimeoutRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
     const today = new Date().toLocaleDateString("en-US", {
@@ -147,7 +142,7 @@ export default function ContractForm() {
       }
     },
     // why am i getting this issue?
-    validatorAdapter: zodValidator,
+    // validatorAdapter: zodValidator,
   });
 
   // Auto-save functionality
@@ -281,12 +276,12 @@ export default function ContractForm() {
       </div>
 
       {/* auto saved indicator */}
-      {autoSaved && (
+      {/* {autoSaved && (
         <div className="fixed top-4 right-4 z-50 bg-green-500/20 border border-green-500/40 text-green-400 px-4 py-2 rounded-lg flex items-center gap-2 backdrop-blur-sm">
           <Save className="w-4 h-4" />
           <span className="text-sm">Draft saved</span>
         </div>
-      )}
+      )} */}
 
       <div className="container mx-auto px-6 pt-24 pb-12 max-w-4xl">
         {/* Header */}
@@ -827,7 +822,7 @@ export default function ContractForm() {
                       </p>
                     )}
                     <p className="text-sm text-gray-500 max-w-md mx-auto">
-                      By Clicking "Executive Service Agreement", you confirm
+                      By Clicking &quot;Executive Service Agreement&quot;, you confirm
                       legally to enter this binding contract. Progress:{" "}
                       {Math.round(formProgress)}% complete.
                     </p>
