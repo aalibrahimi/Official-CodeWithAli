@@ -81,7 +81,7 @@ export default function TermsAndConditions() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b dark:from-black dark:via-black bg-white dark:to-red-950">
+    <div className="min-h-screen bg-gradient-to-b dark:from-black dark:via-black bg-white dark:to-black">
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 w-full h-1 bg-gray-800 z-50">
         <div 
@@ -100,8 +100,8 @@ export default function TermsAndConditions() {
                 onClick={() => scrollToSection(section.id)}
                 className={`flex items-center gap-2 p-2 rounded-md text-sm transition-all duration-200 w-full text-left ${
                   activeSection === section.id
-                    ? "bg-red-500 dark:bg-red-500/20 dark:text-white text-black border-l-2 border-red-950 dark:border-red-500"
-                    : "text-black dark:text-gray-400 hover:dark:text-white hover:bg-red-700 dark:hover:bg-gray-800/50"
+                    ? "bg-red-500 dark:bg-red-500/20 dark:text-white text-white border-l-2 border-red-950 dark:border-red-500"
+                    : "text-black dark:text-gray-400 hover:text-white  dark:hover:text-white hover:bg-red-700 dark:hover:bg-gray-800/50"
                 }`}
               >
                 {section.icon}
@@ -118,7 +118,7 @@ export default function TermsAndConditions() {
           <Badge className="mb-4 dark:bg-red-500/20 bg-red-500 text-white dark:text-red-400 border-red-500/50">
             <FileText className="w-3 h-3 mr-1" />
             Terms of Service
-          </Badge>
+          </Badge>b
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black bg-gradient-to-r dark:from-white dark:via-red-200 dark:to-red-300 bg-clip-text dark:text-transparent">
             Terms and Conditions
           </h1>
@@ -291,7 +291,7 @@ export default function TermsAndConditions() {
               </div>
 
               <div className="p-4 bg-orange-500/10 border border-orange-500/20 rounded-lg">
-                <p className="text-sm text-orange-400">
+                <p className="text-sm text-orange-500 dark:text-orange-400">
                   <strong>Important:</strong> Delays in client responses or provision of materials may result in project timeline extensions and potential additional fees for extended project management.
                 </p>
               </div>
@@ -613,7 +613,7 @@ export default function TermsAndConditions() {
                   <p className="text-sm mb-3">
                     Any legal proceedings must be brought in the state or federal courts located in San Jose, California. Both parties consent to the exclusive jurisdiction of these courts.
                   </p>
-                  <p className="text-sm text-black/70 dark:text-gray-400">
+                  <p className="text-sm text-black/70 dark:text-gray-300">
                     We encourage resolving any disputes through direct communication and good faith negotiation before pursuing formal legal proceedings.
                   </p>
                 </div>
@@ -702,7 +702,7 @@ export default function TermsAndConditions() {
 
         {/* Final Agreement Card */}
         <section className="mb-16">
-          <Card className="bg-gradient-to-r bg-red-800 from-red-600/20 to-red-800/20 border-red-500/30">
+          <Card className="bg-red-800 dark:bg-red-950/20 border-red-500/30">
             <CardContent className="p-8 text-center">
               <h3 className="text-2xl font-bold dark:text-white text-white mb-4">Agreement Acknowledgment</h3>
               <p className="text-white dark:text-gray-300 mb-6">
