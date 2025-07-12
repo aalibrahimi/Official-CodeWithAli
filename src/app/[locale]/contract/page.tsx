@@ -38,13 +38,13 @@ const contractSchema = z.object({
     .max(2000, "Description too long"),
   // using refine to accept ONLY True, without it we would be accepting both true and false which is not what we want
   agreedToTerms: z.boolean().refine((val) => val === true, {
-    message: "You must aggree to the Terms and Conditions",
+    message: "You must agree to the Terms and Conditions",
   }),
   agreedToRevisionPolicy: z.boolean().refine((val) => val === true, {
     message: "You must acknowledge the revision policy",
   }),
   agreedToPaymentTerms: z.boolean().refine((val) => val === true, {
-    message: "You must agreee to the Payment Terms",
+    message: "You must agree to the Payment Terms",
   }),
   agreedToPrivacy: z.boolean().refine((val) => val === true, {
     message: "You must agree to our Privacy terms",
@@ -266,7 +266,7 @@ export default function ContractForm() {
     );
   }
   return (
-    <div className="min-h-screen dark:bg-gradient-to-b dark:from-black dark:via-black dark:to-red-950 bg-white">
+    <div className="min-h-screen dark:bg-gradient-to-b dark:from-black dark:via-black dark:to-black bg-white">
       {/* Progress bar here */}
       <div className="text-white fixed top-0 left-0 w-full h-1 bg-gray-800 z-50 ">
         <div
@@ -528,10 +528,10 @@ export default function ContractForm() {
             </div>
             </div>
             {/* Terms Summary */}
-            <div className="bg-white text-black  dark:bg-black/40 border border-red-950/20 rounded-2xl backdrop-blur-sm">
+            <div className="bg-white text-black  dark:bg-black/40 border-none dark:border border-red-950/20 rounded-2xl backdrop-blur-sm">
               <div className="p-6 border-b border-red-950">
                 <h2 className="flex items-center gap-2 text-black dark:text-white text-xl font-semibold">
-                  <FileText className="h-4 w-4" />
+                  <FileText className="h-4 w-4 text-red-800 dark:text-red-500" />
                   Key Terms Summary
                 </h2>
               </div>
@@ -607,7 +607,7 @@ export default function ContractForm() {
                     type="button"
                     variant={"default"}
                     onClick={() => window.open("/terms", "_blank")}
-                    className="border border-red-500/20 text-white  bg-red-950 hover:bg-red-500/10 px-6 py-2 rounded-lg flex items-center gap-2 transition-all"
+                    className="border border-red-500/20 text-white  dark:bg-red-950 bg-red-500 hover:bg-red-600 px-6 py-2 rounded-lg flex items-center gap-2 transition-all"
                   >
                     {/* might remove eye bc it might just look creepy */}
                     <Book className="h-4 w-4" />
@@ -618,9 +618,9 @@ export default function ContractForm() {
                 {/* This is the important part */}
                 {/* ===== Agreeement Checkboxes */}
                 <div className="bg-white dark:bg-black/40 border-red-950/20 rounded-2xl backdrop-blur-sm">
-                  <div className="p-6 border-b border-red-950/20">
+                  <div className="p-6 border-b border-red-600 dark:border-red-950/20">
                     <h2 className="flex items-center gap-2 text-black dark:text-white text-xl font-semibold">
-                      <CheckCircle className="h-4 w-4" />
+                      <CheckCircle className="h-4 w-4 text-green-500 dark:text-green-400" />
                       Required Agreements
                     </h2>
                   </div>
@@ -679,7 +679,7 @@ export default function ContractForm() {
                                 <div className="flex-1">
                                   <label
                                     htmlFor={item.name}
-                                    className="text-black dark:text-white"
+                                    className="text-black font-bold dark:text-white"
                                   >
                                     {item.label}{" "}
                                     <span className="text-red-400">*</span>
@@ -722,7 +722,7 @@ export default function ContractForm() {
                     >
                       {(field) => (
                         <div>
-                          <label className="text-black dark:text-white">
+                          <label className="ml-1  text-black dark:text-white">
                             Signature <span className="text-red-400">*</span>
                           </label>
                           <input
@@ -738,7 +738,7 @@ export default function ContractForm() {
                               {field.state.meta.errors[0]?.message}
                             </p>
                           )}
-                          <p className="text-xs dark:text-gray-400 text-black/70 mt-1">
+                          <p className="text-xs ml-2 mt-2 font-bold dark:text-gray-400 text-black/70 mt-1">
                             By Typing your name above, you are providing a
                             legally binding digital signature
                           </p>
@@ -796,7 +796,7 @@ export default function ContractForm() {
                       <Button
                         onClick={form.handleSubmit}
                         disabled={!canSubmit || isSubmitting}
-                        className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 disabled:opacity-50 disabled:cursor-not-allowed text-white px-16 py-4 text-lg font-semibold transition-all transform hover:scale-105 disabled:hover:scale-100 items-center justify-center gap-3 mx-auto mx-w-[300px]"
+                        className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 disabled:opacity-50 disabled:cursor-not-allowed text-white px-16 py-4 text-lg font-semibold transition-all transform  disabled:hover:scale-100 items-center justify-center gap-3 mx-auto mx-w-[300px]"
                       >
                         {isSubmitting ? (
                           <>
@@ -816,7 +816,7 @@ export default function ContractForm() {
 
                   <div className="my-2">
                     {!allAgreed && (
-                      <p className="text-red-400 text-sm">
+                      <p className="dark:text-red-400 text-red-800 text-sm">
                         Please complete all the required agreements above to
                         continue
                       </p>
@@ -830,13 +830,13 @@ export default function ContractForm() {
                 </div>
 
                 {/* Footer */}
-                <div className="mt-12 pt-8  border-t border-gray-700">
+                <div className="mt-12 pt-8  border-t border-red-600 dark:border-gray-700">
                   <div className="text-center text-sm text-black dark:text-gray-400">
                     <p className="mb-2">
                       Questions about this agreement? Contact us at{" "}
                       <a
                         href="mailto:unfold@codewithali.com"
-                        className="text-red-400 hover:text-red-300"
+                        className="dark:text-red-400 text-red-800  hover:text-red-300"
                       >
                         unfold@codewithali.com
                       </a>
