@@ -267,7 +267,7 @@ export default function ContractForm() {
     );
   }
   return (
-    <div className="min-h-screen dark:bg-gradient-to-b dark:from-black dark:via-black dark:to-black bg-white">
+    <div className="min-h-screen w-full dark:bg-gradient-to-b dark:from-black dark:via-black dark:to-black bg-white">
       {/* Progress bar here */}
       <div className="text-white fixed top-0 left-0 w-full h-1 bg-gray-800 z-50 ">
         <div
@@ -284,7 +284,7 @@ export default function ContractForm() {
         </div>
       )} */}
 
-      <div className="container mx-auto px-6 pt-24 pb-12 max-w-4xl">
+      <div className="container md:mx-auto px-2 md:px-6 pt-24 pb-12 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 mb-4 b-red-500/20   text-black border-black dark:text-red-400 border dark:border-red-500/50 px-4 py-2 roundedd-full text-sm">
@@ -347,7 +347,7 @@ export default function ContractForm() {
         </div> */}
 
         {/* Client Information */}
-        <div className=" dark:bg-black/80 border-red-950 border-3 rounded-2xl  backdrop-blur-sm">
+        <div className="w-full dark:bg-black/80 border-red-950 border-3 rounded-2xl backdrop-blur-sm">
           <div className="p-6 border-b border-red-950/20">
             <h2 className="flex items-center gap-2  text-black dark:text-white text-xl font-semibold">
               Client Information
@@ -488,15 +488,15 @@ export default function ContractForm() {
                       onValueChange={(e) => field.handleChange(e)}
                      
                   >
-                    <SelectTrigger  className="w-full px-3 py-2  border border-gray-700 rounded-lg text-black focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all">
+                    <SelectTrigger className="w-full px-3 py-2 border border-black dark:border-red-950/60 rounded-lg text-black dark:text-white focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all">
                       <SelectValue placeholder="Select Budget" />
                     </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="under-5K">Under $5,000</SelectItem>
-                      <SelectItem value="5k-10">$5,000 - $10,000</SelectItem>
-                      <SelectItem value="10k-25k">$10,000 - $25,000 </SelectItem>
-                      <SelectItem value="25k-50k">$25,000 - $50,000</SelectItem>
-                      <SelectItem value="over 5k+"> $50,000 +</SelectItem>
+                    <SelectContent className="bg-gray-50 dark:bg-[#020202] dark:text-white border border-black dark:border-red-950/60">
+                      <SelectItem value="under-5K" className="hover:!bg-gray-300 dark:hover:!bg-red-950/60">Under $5,000</SelectItem>
+                      <SelectItem value="5k-10" className="hover:!bg-gray-300 dark:hover:!bg-red-950/60">$5,000 - $10,000</SelectItem>
+                      <SelectItem value="10k-25k" className="hover:!bg-gray-300 dark:hover:!bg-red-950/60">$10,000 - $25,000 </SelectItem>
+                      <SelectItem value="25k-50k" className="hover:!bg-gray-300 dark:hover:!bg-red-950/60">$25,000 - $50,000</SelectItem>
+                      <SelectItem value="over 5k+" className="hover:!bg-gray-300 dark:hover:!bg-red-950/60"> $50,000 +</SelectItem>
                     </SelectContent>
                   </Select>
         
@@ -630,7 +630,7 @@ export default function ContractForm() {
                       Required Agreements
                     </h2>
                   </div>
-                  <div className="p-6 space-y-6">
+                  <div className="py-6 md:p-6 space-y-6">
                     <div className="space-y-4">
                       {[
                         {
@@ -710,7 +710,7 @@ export default function ContractForm() {
                 </div>
 
                 {/* Digital Signature */}
-                <div className="px-6">
+                <div className="md:px-6">
 
                 <div className=" bg-white  dark:bg-black/40 border border-red-950 rounded-2xl backdrop-blur-sm">
                   <div className="p-6 bordder-b border-red-950">
@@ -736,7 +736,7 @@ export default function ContractForm() {
                             value={field.state.value}
                             onChange={(e) => field.handleChange(e.target.value)}
                             placeholder="Type your Full Name as your Digital Signature"
-                            className="w-full px-4 py-2 bg-white border rounded-md text-lg  focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all"
+                            className="w-full px-4 pb-6 pt-2 md:py-2 bg-white border rounded-md text-wrap md:text-lg placeholder:text-wrap  focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all"
                           />
 
                           {field.state.meta.errors && (
@@ -744,7 +744,7 @@ export default function ContractForm() {
                               {field.state.meta.errors[0]?.message}
                             </p>
                           )}
-                          <p className="text-xs ml-2 mt-2 font-bold dark:text-gray-400 text-black/70 mt-1">
+                          <p className="text-xs ml-2 mt-2 font-bold dark:text-gray-400 text-black/70">
                             By Typing your name above, you are providing a
                             legally binding digital signature
                           </p>
@@ -802,19 +802,18 @@ export default function ContractForm() {
                       <Button
                         onClick={form.handleSubmit}
                         disabled={!canSubmit || isSubmitting}
-                        className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 disabled:opacity-50 disabled:cursor-not-allowed text-white px-16 py-4 text-lg font-semibold transition-all transform  disabled:hover:scale-100 items-center justify-center gap-3 mx-auto mx-w-[300px]"
+                        className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 disabled:opacity-50 disabled:cursor-not-allowed text-white px-16 py-4 text-lg font-semibold transition-all transform  disabled:hover:scale-100 items-center justify-center gap-3 mx-auto h-max w-full max-w-[300px]"
                       >
                         {isSubmitting ? (
-                          <>
+                          <div className="flex items-center gap-1">
                             <div className="animate-spin rounded-full h-4 w-5 border-b-2 border-white"> </div>
-                              Executing Agreement....
-                           
-                          </>
+                            <span className="text-sm md:text-md">Executing Agreement....</span>
+                          </div>
                         ) : (
-                          <>
+                          <div className="flex items-center gap-1">
                             <Edit className="w-5 h-5" />
-                            Execute Service Agreement
-                          </>
+                            <span className="text-sm md:text-md">Execute Service Agreement</span>
+                          </div>
                         )}
                       </Button>
                     )}
