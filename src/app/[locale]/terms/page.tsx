@@ -118,7 +118,7 @@ export default function TermsAndConditions() {
           <Badge className="mb-4 dark:bg-red-500/20 bg-red-500 text-white dark:text-red-400 border-red-500/50">
             <FileText className="w-3 h-3 mr-1" />
             Terms of Service
-          </Badge>b
+          </Badge>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black bg-gradient-to-r dark:from-white dark:via-red-200 dark:to-red-300 bg-clip-text dark:text-transparent">
             Terms and Conditions
           </h1>
