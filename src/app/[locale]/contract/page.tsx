@@ -320,8 +320,8 @@ export default function ContractForm() {
         </div>
         {/* <form.provider> */}
 
-        <div className="mb-10">
           {/* Session information Paanel - Display only */}
+        {/* <div className="mb-10">
 
           <div className="dark:bg-black/40 border border-red-950 rounded-2xl backdrop-blur-sm p-6">
             <h3 className="text-black dark:text-white font-semibold mb-4 flex items-center gap-2">
@@ -331,7 +331,7 @@ export default function ContractForm() {
             <div className="grid md:grid-cols-2 gap-4 text-sm">
               <div className="flex items-center gap-2 text-black dark:text-gray-300">
                 <Globe className="h-4 w-4" />
-                {/* <span>IP: {sessionDate.ipAddress}</span> */}
+               
                 <span>IP: Tracking IP address...</span>
               </div>
               <div className="flex items-center gap-2 text-black dark:text-gray-300">
@@ -348,7 +348,7 @@ export default function ContractForm() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Client Information */}
         <div className=" dark:bg-black/80 border-red-950 border-3 rounded-2xl  backdrop-blur-sm">
@@ -421,7 +421,7 @@ export default function ContractForm() {
                     />
                     {/* Zod validations time again */}
                     {field.state.meta.errors && (
-                      <p className="text-redd-400 text-sm mt-1">
+                      <p className="text-red-400 text-sm mt-1">
                         {field.state.meta.errors[0]?.message}
                       </p>
                     )}
@@ -776,8 +776,8 @@ export default function ContractForm() {
                           </div> */}
                       <div className="p-4 bg-yellow-500/10 border border-eylloww-500/20 rounded-lg">
                         <div className="flex items-start gap-2">
-                          <AlertTriangle className="w-4 h-4 text-yellow-400 mt-0.5" />
-                          <div className="text-sm text-yellow-400">
+                          <AlertTriangle className="w-4 h-4 dark:text-yellow-400 text-yellow-700 mt-0.5" />
+                          <div className="text-sm dark:text-yellow-400 text-yellow-700">
                             <strong>Legal Notice:</strong> This digital
                             signature creates a legally binding Contract. All
                             session data including IP address, location, and
