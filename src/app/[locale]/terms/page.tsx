@@ -19,6 +19,11 @@ import {
   Globe,
   Settings,
   Clock,
+  PenTool,
+  FilePen,
+  ShieldOff,
+  Scale3dIcon,
+  Link2Off,
 } from "lucide-react";
 
 interface Section {
@@ -30,14 +35,20 @@ interface Section {
 const sections: Section[] = [
   { id: "overview", title: "Overview", icon: <FileText className="w-4 h-4" /> },
   { id: "acceptance", title: "Acceptance of Terms", icon: <CheckCircle className="w-4 h-4" /> },
+  { id: "contract-formation", title: "Contract Formation", icon: <PenTool className="w-4 h-4" /> },
   { id: "services", title: "Services Description", icon: <Code className="w-4 h-4" /> },
   { id: "client-responsibilities", title: "Client Responsibilities", icon: <Users className="w-4 h-4" /> },
   { id: "payment", title: "Payment Terms", icon: <CreditCard className="w-4 h-4" /> },
   { id: "intellectual-property", title: "Intellectual Property", icon: <Shield className="w-4 h-4" /> },
   { id: "revisions", title: "Revision Policy", icon: <RefreshCw className="w-4 h-4" /> },
   { id: "project-timeline", title: "Project Timeline", icon: <Clock className="w-4 h-4" /> },
+  { id: "liability-waiver", title: "Liability Waiver", icon: <FilePen className="h-4 w-4" /> },
+  { id: "assumption-risk", title: "Assumption of Risk", icon: <ShieldOff className="h-4 w-4" /> },
+  { id: "indemnification", title: "Client Indemnification", icon: <Shield className="h-4 w-4" /> },
+  { id: "mandatory-arbitration", title: "Mandatory Arbitration", icon : <Scale3dIcon className="h-4 w-4" /> },
   { id: "limitations", title: "Limitations & Liability", icon: <AlertTriangle className="w-4 h-4" /> },
   { id: "governing-law", title: "Governing Law", icon: <Scale className="w-4 h-4" /> },
+  { id: "severability", title: "Severability Clause", icon: <Link2Off className="h-4 w-4"/> },
   { id: "contact", title: "Contact Information", icon: <Mail className="w-4 h-4" /> },
 ];
 
@@ -148,7 +159,7 @@ export default function TermsAndConditions() {
               </p>
               <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
                 <p className="text-sm dark:text-red-400 text-red-800">
-                  <strong>Important:</strong> By contacting us, you acknowledge that you have read and agree to these Terms. If you do not agree with any part of these Terms, please do not use our services.
+                  <strong>Important:</strong> By contacting us, you acknowledge that you have read and agree to these Terms. If you do not agree with any part of these Terms, please do not use our services. These Terms include binding arbitration and liability limitations that affect your legal rights.
                 </p>
               </div>
             </CardContent>
@@ -198,6 +209,50 @@ export default function TermsAndConditions() {
           </Card>
         </section>
 
+        {/* Contract Formation */}
+        <section id="contract-formation" className="mb-16">
+          <Card className="bg-white dark:bg-black/40 border-red-950/20">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 dark:text-white text-black">
+                <PenTool className="w-5 h-5 dark:text-red-400 text-red-800" />
+                Contract Formation & Legal Binding
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-black/70 dark:text-gray-300">
+              <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                <p className="text-sm dark:text-blue-400 text-blue-800">
+                  <strong>Legal Notice:</strong> Once you sign our service contract or make a deposit payment, you enter into a legally binding agreement that includes all terms, limitations, and arbitration requirements outlined herein.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Contract Execution Process</h4>
+                <ol className="space-y-2 list-decimal list-inside text-sm">
+                  <li><strong>Initial Contact:</strong> Client contacts CodeWithAli expressing interest in services</li>
+                  <li><strong>Consultation:</strong> We discuss project requirements and provide initial quote</li>
+                  <li><strong>Proposal Acceptance:</strong> Client accepts written proposal and these Terms</li>
+                  <li><strong>Contract Signing:</strong> Formal service agreement is executed</li>
+                  <li><strong>Deposit Payment:</strong> Contract becomes binding upon receipt of deposit</li>
+                </ol>
+              </div>
+
+              <div>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Legal Consequences of Contract Execution</h4>
+                <p className="text-sm mb-3">
+                  Upon contract execution and deposit payment, you agree that:
+                </p>
+                <ul className="space-y-1 list-disc list-inside text-sm">
+                  <li>CodeWithAli is NOT liable for any business consequences, losses, or damages resulting from our services</li>
+                  <li>All disputes must be resolved through binding arbitration as outlined in these Terms</li>
+                  <li>You waive your right to pursue legal action through courts except as specifically allowed herein</li>
+                  <li>You assume full responsibility for all outcomes and consequences of the delivered services</li>
+                  <li>All liability limitations and waivers become immediately effective and enforceable</li>
+                </ul>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
         {/* Services Description */}
         <section id="services" className="mb-16">
           <Card className="bg-white dark:bg-black/40 border-red-950/20">
@@ -236,7 +291,7 @@ export default function TermsAndConditions() {
               <div>
                 <h4 className="font-semibold dark:text-white text-black mb-2">Service Scope</h4>
                 <p className="text-sm mb-3">
-                  All services are provided on a project basis according to the scope and specifications agreed upon in writing. Any additional work outside the original scope will be quoted separately and requires written approval.
+                  All services are provided on a project basis according to the scope and specifications agreed upon in writing. Any additional work outside the original scope will be quoted separately and requires written approval (including email consent from designated point of contact). We make no guarantees regarding business outcomes, revenue generation, or market success of delivered projects.
                 </p>
                 <p className="text-sm text-black dark:text-gray-400">
                   Project timelines typically range from 2-12 weeks depending on complexity and client responsiveness.
@@ -291,8 +346,8 @@ export default function TermsAndConditions() {
               </div>
 
               <div className="p-4 bg-orange-500/10 border border-orange-500/20 rounded-lg">
-                <p className="text-sm text-orange-500 dark:text-orange-400">
-                  <strong>Important:</strong> Delays in client responses or provision of materials may result in project timeline extensions and potential additional fees for extended project management.
+                <p className="text-sm text-orange-700 dark:text-orange-400">
+                  <strong>Important:</strong> Delays in client responses or provision of materials may result in project timeline extensions and potential additional fees for extended project management. Client assumes full responsibility for all business and legal consequences of the final delivered product.
                 </p>
               </div>
             </CardContent>
@@ -313,21 +368,21 @@ export default function TermsAndConditions() {
                 <div>
                   <h4 className="font-semibold dark:text-white text-black mb-3">Payment Schedule</h4>
                   <div className="space-y-3">
-                    <div className="p-3  rounded-lg">
+                    <div className="p-3 rounded-lg">
                       <div className="flex items-center gap-2 mb-1">
                         <CreditCard className="w-4 h-4 dark:text-red-400 text-red-800" />
                         <span className="font-medium dark:text-white text-black">Project Deposit</span>
                       </div>
                       <p className="text-sm">50% due upon project agreement</p>
                     </div>
-                    <div className="p-3  rounded-lg">
+                    <div className="p-3 rounded-lg">
                       <div className="flex items-center gap-2 mb-1">
                         <CheckCircle className="w-4 h-4 text-green-400" />
                         <span className="font-medium dark:text-white text-black">Final Payment</span>
                       </div>
                       <p className="text-sm">50% due upon project completion</p>
                     </div>
-                    <div className="p-3  rounded-lg">
+                    <div className="p-3 rounded-lg">
                       <div className="flex items-center gap-2 mb-1">
                         <RefreshCw className="w-4 h-4 text-blue-400" />
                         <span className="font-medium dark:text-white text-black">Ongoing Services</span>
@@ -356,7 +411,7 @@ export default function TermsAndConditions() {
               <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
                 <h5 className="font-medium dark:text-white text-black mb-2">Late Payment Policy</h5>
                 <p className="text-sm dark:text-red-400 text-red-800">
-                  Payments not received within 30 days of the due date will incur a 1.5% monthly service charge. Projects may be suspended until payment is received. We reserve the right to pursue legal action for severely delinquent accounts.
+                  Payments not received within 30 days of the due date will incur a 1.5% monthly service charge. Projects may be suspended until payment is received. We reserve the right to pursue legal action for severely delinquent accounts. All legal fees and collection costs will be borne by the client.
                 </p>
               </div>
             </CardContent>
@@ -397,14 +452,17 @@ export default function TermsAndConditions() {
               <div>
                 <h4 className="font-semibold dark:text-white text-black mb-2">Third-Party Components</h4>
                 <p className="text-sm mb-3">
-                  Projects may incorporate third-party libraries, frameworks, plugins, or tools. These components remain subject to their respective licenses and terms of use. Client is responsible for compliance with third-party license requirements.
+                  Projects may incorporate third-party libraries, frameworks, plugins, or tools. These components remain subject to their respective licenses and terms of use. Client is responsible for compliance with third-party license requirements and any associated costs or legal obligations.
+                </p>
+                <p className="text-sm text-black/70 dark:text-gray-400">
+                  <strong>Open Source Disclosure:</strong> Upon request, CodeWithAli will provide identification of open-source software components used in the project and links to their respective licenses.
                 </p>
               </div>
 
               <div>
                 <h4 className="font-semibold dark:text-white text-black mb-2">Client-Provided Materials</h4>
                 <p className="text-sm">
-                  Client warrants that all materials, content, images, and information provided for the project are either original work or properly licensed. Client indemnifies CodeWithAli against any claims of copyright or trademark infringement related to client-provided materials.
+                  Client warrants that all materials, content, images, and information provided for the project are either original work or properly licensed. Client indemnifies CodeWithAli against any claims of copyright or trademark infringement related to client-provided materials and agrees to defend and hold harmless CodeWithAli from any resulting legal actions or costs.
                 </p>
               </div>
             </CardContent>
@@ -423,7 +481,7 @@ export default function TermsAndConditions() {
             <CardContent className="space-y-6 text-black/70 dark:text-gray-300">
               <div className="p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
                 <p className="text-sm dark:text-yellow-400 text-yellow-800">
-                  <strong>No Refunds:</strong> We do not offer refunds under any circumstances. Instead, we are committed to working with you through revisions and adjustments to ensure your complete satisfaction with the final deliverable.
+                  <strong>No Refunds:</strong> We do not offer refunds under any circumstances. Instead, we are committed to working with you through revisions and adjustments to ensure your complete satisfaction with the final deliverable. All payments are final and non-refundable.
                 </p>
               </div>
               
@@ -431,15 +489,15 @@ export default function TermsAndConditions() {
                 <div>
                   <h4 className="font-semibold dark:text-white text-black mb-3">Included Revisions</h4>
                   <div className="space-y-3">
-                    <div className="p-3  rounded-lg">
+                    <div className="p-3 rounded-lg">
                       <h5 className="font-medium dark:text-white text-black mb-1">Design Phase</h5>
                       <p className="text-sm">Up to 3 rounds of design revisions</p>
                     </div>
-                    <div className="p-3  rounded-lg">
+                    <div className="p-3 rounded-lg">
                       <h5 className="font-medium dark:text-white text-black mb-1">Development Phase</h5>
                       <p className="text-sm">Up to 2 rounds of functionality revisions</p>
                     </div>
-                    <div className="p-3  rounded-lg">
+                    <div className="p-3 rounded-lg">
                       <h5 className="font-medium dark:text-white text-black mb-1">Content Updates</h5>
                       <p className="text-sm">Minor text and image updates</p>
                     </div>
@@ -460,7 +518,7 @@ export default function TermsAndConditions() {
               <div>
                 <h4 className="font-semibold dark:text-white text-black mb-2">Our Satisfaction Guarantee</h4>
                 <p className="text-sm">
-                  We are dedicated to your complete satisfaction. If you&apos;re not happy with any aspect of the project, we will work tirelessly to address your concerns through additional revisions, adjustments, or alternative solutions. Our goal is to deliver a final product that exceeds your expectations and drives real business results.
+                  We are dedicated to your complete satisfaction. If you&apos;re not happy with any aspect of the project, we will work tirelessly to address your concerns through additional revisions, adjustments, or alternative solutions. Our goal is to deliver a final product that exceeds your expectations and drives real business results. However, satisfaction does not entitle client to refunds - only to continued work until project meets agreed specifications.
                 </p>
               </div>
             </CardContent>
@@ -513,8 +571,220 @@ export default function TermsAndConditions() {
 
               <div>
                 <h4 className="font-semibold dark:text-white text-black mb-2">Delivery Terms</h4>
+                <p className="text-sm mb-3">
+                  <strong>Project Completion Definition:</strong> &quot;Project completion&quot; occurs when CodeWithAli delivers all agreed-upon features and functionality as specified in the project scope, or if client fails to provide feedback or approval within 10 business days after delivery notification, whichever comes first.
+                </p>
                 <p className="text-sm">
-                  Project timelines are estimates based on normal circumstances and assume timely client feedback and material provision. Final delivery occurs upon completion of all agreed-upon features and client approval. Rush delivery may be available for an additional fee.
+                  Project timelines are estimates based on normal circumstances and assume timely client feedback and material provision. Rush delivery may be available for an additional fee. CodeWithAli is not liable for any business losses due to delivery delays.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Liability Waiver */}
+        <section id="liability-waiver" className="mb-16">
+          <Card className="bg-white dark:bg-black/40 border-red-950/20">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 dark:text-white text-black">
+                <FilePen className="w-5 h-5 dark:text-red-400 text-red-800" />
+                Comprehensive Liability Waiver
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-black/70 dark:text-gray-300">
+              <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
+                <p className="text-sm dark:text-red-400 text-red-800">
+                  <strong>LIABILITY WAIVER:</strong> By signing our contract and engaging our services, you waive claims against CodeWithAli for consequences, damages, or losses resulting from our services, except for claims arising from our gross negligence, willful misconduct, or material breach of this Agreement.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Release of Claims</h4>
+                <p className="text-sm mb-3">
+                  Client releases, waives, discharges, and holds harmless CodeWithAli from liability, claims, demands, actions, and causes of action arising out of or related to any loss, damage, or injury that may be sustained by Client or any third party in connection with our services, except for claims arising from CodeWithAli&apos;s gross negligence, willful misconduct, or material breach of this Agreement.
+                </p>
+                
+                <h4 className="font-semibold dark:text-white text-black mb-2">Specific Waived Claims Include:</h4>
+                <ul className="space-y-1 list-disc list-inside text-sm">
+                  <li>Loss of business revenue or profits</li>
+                  <li>Damage to business reputation or relationships</li>
+                  <li>Website downtime or technical failures</li>
+                  <li>Data loss or security breaches</li>
+                  <li>SEO ranking losses or penalties</li>
+                  <li>Third-party service failures or costs</li>
+                  <li>Market performance of delivered solutions</li>
+                  <li>Compliance issues with laws or regulations</li>
+                  <li>Compatibility issues with other systems</li>
+                  <li>Any economic or consequential damages</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Scope of Waiver</h4>
+                <p className="text-sm">
+                  This waiver applies to all claims, whether arising from contract, tort, negligence, strict liability, or any other legal theory. It covers all damages, whether direct, indirect, incidental, consequential, or punitive. The waiver extends to CodeWithAli&apos;s employees, contractors, and affiliates.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Assumption of Risk */}
+        <section id="assumption-risk" className="mb-16">
+          <Card className="bg-white dark:bg-black/40 border-red-950/20">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 dark:text-white text-black">
+                <ShieldOff className="w-5 h-5 dark:text-red-400 text-red-800" />
+                Client Assumption of Risk
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-black/70 dark:text-gray-300">
+              <div className="p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
+                <p className="text-sm dark:text-yellow-400 text-yellow-800">
+                  <strong>Risk Acknowledgment:</strong> Client acknowledges and assumes all risks associated with website development, digital marketing, and online business operations. Technology projects inherently carry risks that client voluntarily accepts.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Acknowledged Risks</h4>
+                <p className="text-sm mb-3">
+                  Client understands and voluntarily assumes the following risks:
+                </p>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <h5 className="font-medium dark:text-white text-black mb-2">Technical Risks</h5>
+                    <ul className="space-y-1 list-disc list-inside text-sm">
+                      <li>Website or application downtime</li>
+                      <li>Security vulnerabilities</li>
+                      <li>Data loss or corruption</li>
+                      <li>Compatibility issues</li>
+                      <li>Performance problems</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="font-medium dark:text-white text-black mb-2">Business Risks</h5>
+                    <ul className="space-y-1 list-disc list-inside text-sm">
+                      <li>Market rejection of product</li>
+                      <li>Competition and market changes</li>
+                      <li>Regulatory compliance issues</li>
+                      <li>Revenue or profit shortfalls</li>
+                      <li>Customer acquisition failures</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Risk Mitigation Responsibility</h4>
+                <p className="text-sm">
+                  Client acknowledges that they are solely responsible for implementing appropriate risk mitigation strategies for their business. CodeWithAli provides development services only and makes no warranties about business outcomes or success. Client assumes full responsibility for backup strategies, security measures, and business continuity planning.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Client Indemnification */}
+        <section id="indemnification" className="mb-16">
+          <Card className="bg-white dark:bg-black/40 border-red-950/20">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 dark:text-white text-black">
+                <Shield className="w-5 h-5 dark:text-red-400 text-red-800" />
+                Client Indemnification Clause
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-black/70 dark:text-gray-300">
+              <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                <p className="text-sm dark:text-blue-400 text-blue-800">
+                  <strong>Client Protection Obligation:</strong> Client agrees to defend, indemnify, and hold harmless CodeWithAli from any claims, lawsuits, or legal actions arising from the client&apos;s use of our services or the delivered work product.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Indemnification Scope</h4>
+                <p className="text-sm mb-3">
+                  Client agrees to indemnify CodeWithAli against all claims, damages, costs, and expenses (including reasonable attorney fees) arising from or related to:
+                </p>
+                <ul className="space-y-1 list-disc list-inside text-sm">
+                  <li>Client&apos;s use of the delivered website, application, or digital services</li>
+                  <li>Content provided by client or placed on the delivered solution</li>
+                  <li>Client&apos;s business operations or practices</li>
+                  <li>Violation of any laws or regulations by client</li>
+                  <li>Third-party claims against client related to the delivered work</li>
+                  <li>Copyright or trademark infringement claims</li>
+                  <li>Privacy law violations or data breaches on client&apos;s systems</li>
+                  <li>Any modifications made by client or third parties to delivered work</li>
+                </ul>
+                <p className="text-sm mt-3 text-gray-600 dark:text-gray-400">
+                  <em>This indemnification does not apply to claims arising from CodeWithAli&apos;s gross negligence, willful misconduct, or material breach of this Agreement.</em>
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Defense Obligation</h4>
+                <p className="text-sm">
+                  Client agrees to provide immediate notice of any claims and to assume the defense of any lawsuits or legal proceedings. If client fails to defend, CodeWithAli may do so at client&apos;s expense. Client will reimburse all costs, including attorney fees, regardless of the outcome of any legal proceedings.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Mandatory Arbitration */}
+        <section id="mandatory-arbitration" className="mb-16">
+          <Card className="bg-white dark:bg-black/40 border-red-950/20">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 dark:text-white text-black">
+                <Scale3dIcon className="w-5 h-5 dark:text-red-400 text-red-800" />
+                Mandatory Binding Arbitration
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-black/70 dark:text-gray-300">
+              <div className="p-4 bg-purple-500/10 border border-purple-500/20 rounded-lg">
+                <p className="text-sm dark:text-purple-400 text-purple-800">
+                  <strong>BINDING ARBITRATION:</strong> You waive your right to sue CodeWithAli in court. All disputes must be resolved through binding arbitration. You cannot participate in class action lawsuits against CodeWithAli.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Arbitration Requirements</h4>
+                <p className="text-sm mb-3">
+                  Any dispute, claim, or controversy arising from or relating to these Terms or our services must be resolved through binding arbitration. This includes all contract, tort, statutory, or other legal claims.
+                </p>
+                
+                <div className="space-y-3">
+                  <div>
+                    <h5 className="font-medium dark:text-white text-black mb-1">Arbitration Process</h5>
+                    <ul className="space-y-1 list-disc list-inside text-sm">
+                      <li>Disputes will be arbitrated under California arbitration law</li>
+                      <li>Arbitration will be conducted in Santa Clara County, California</li>
+                      <li>Parties will split arbitrator fees and administrative costs equally</li>
+                      <li>Each party pays their own attorney fees</li>
+                      <li>If CodeWithAli prevails, client may be responsible for our attorney fees</li>
+                      <li>Arbitration decision is final and binding with limited appeal rights</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Fee Allocation</h4>
+                <p className="text-sm mb-3">
+                  Standard arbitration fee allocation applies:
+                </p>
+                <ul className="space-y-1 list-disc list-inside text-sm">
+                  <li>Arbitrator fees split equally between parties</li>
+                  <li>Administrative fees split equally between parties</li>
+                  <li>Each party responsible for their own legal representation costs</li>
+                  <li>Venue and facility costs split equally</li>
+                  <li>Prevailing party may recover attorney fees as determined by arbitrator</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Class Action Waiver</h4>
+                <p className="text-sm">
+                  Client waives the right to participate in any class action, collective action, or representative proceeding against CodeWithAli. All disputes must be brought individually. This arbitration clause survives termination of our relationship.
                 </p>
               </div>
             </CardContent>
@@ -525,7 +795,7 @@ export default function TermsAndConditions() {
         <section id="limitations" className="mb-16">
           <Card className="bg-white dark:bg-black/40 border-red-950/20">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-black dark:dark:text-white ">
+              <CardTitle className="flex items-center gap-2 dark:text-white text-black">
                 <AlertTriangle className="w-5 h-5 dark:text-red-400 text-red-800" />
                 Limitations of Liability
               </CardTitle>
@@ -540,7 +810,7 @@ export default function TermsAndConditions() {
               <div>
                 <h4 className="font-semibold dark:text-white text-black mb-2">Liability Limitation</h4>
                 <p className="text-sm mb-3">
-                  CodeWithAli&apos;s liability for any claim related to our services is limited to the total amount paid for the specific project or service in question. Under no circumstances shall our liability exceed this amount.
+                  CodeWithAli&apos;s liability for any claim related to our services is limited to the total amount paid for the specific project or service in question. Under no circumstances shall our liability exceed this amount, except for claims arising from our gross negligence, willful misconduct, or material breach of this Agreement.
                 </p>
               </div>
 
@@ -604,19 +874,59 @@ export default function TermsAndConditions() {
                   <ol className="space-y-2 list-decimal list-inside text-sm">
                     <li><strong>Good Faith Negotiation</strong> - Initial attempt to resolve disputes directly</li>
                     <li><strong>Mediation</strong> - Neutral third-party mediation if negotiation fails</li>
-                    <li><strong>Arbitration</strong> - Binding arbitration under California law</li>
-                    <li><strong>Court Jurisdiction</strong> - California state courts as last resort</li>
+                    <li><strong>Binding Arbitration</strong> - Final resolution through arbitration under California law</li>
+                    <li><strong>Court Enforcement</strong> - Courts only to enforce arbitration awards</li>
                   </ol>
                 </div>
                 <div>
-                  <h4 className="font-semibold dark:text-white text-black mb-3">Jurisdiction & Venue</h4>
+                  <h4 className="font-semibold dark:text-white text-black mb-3">Limited Court Jurisdiction</h4>
                   <p className="text-sm mb-3">
-                    Any legal proceedings must be brought in the state or federal courts located in San Jose, California. Both parties consent to the exclusive jurisdiction of these courts.
+                    California state and federal courts in San Jose have jurisdiction only for:
                   </p>
-                  <p className="text-sm text-black/70 dark:text-gray-300">
-                    We encourage resolving any disputes through direct communication and good faith negotiation before pursuing formal legal proceedings.
+                  <ul className="space-y-1 list-disc list-inside text-sm">
+                    <li>Enforcing arbitration awards</li>
+                    <li>Compelling arbitration if refused</li>
+                    <li>Emergency injunctive relief to prevent irreparable harm</li>
+                    <li>Collection of awarded damages</li>
+                  </ul>
+                  <p className="text-sm text-black/70 dark:text-gray-300 mt-3">
+                    <em>All substantive disputes must be resolved through arbitration as outlined above.</em>
                   </p>
                 </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Severability Clause */}
+        <section id="severability" className="mb-16">
+          <Card className="bg-white dark:bg-black/40 border-red-950/20">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 dark:text-white text-black">
+                <Link2Off className="w-5 h-5 dark:text-red-400 text-red-800" />
+                Severability & Enforceability
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-black/70 dark:text-gray-300">
+              <div>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Severability Provision</h4>
+                <p className="text-sm mb-3">
+                  If any provision of these Terms is found to be unenforceable or invalid by a court of competent jurisdiction, such provision will be modified to the minimum extent necessary to make it enforceable, and the remainder of these Terms will remain in full force and effect.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Savings Clause</h4>
+                <p className="text-sm mb-3">
+                  The parties intend for these Terms to be enforced to the fullest extent permitted by law. If any limitation on liability, arbitration requirement, or other protective provision is deemed excessive, it shall be reduced to the maximum amount or scope permitted by law rather than being invalidated entirely.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Entire Agreement</h4>
+                <p className="text-sm">
+                  These Terms constitute the complete and exclusive agreement between the parties and supersede all prior agreements, understandings, and representations. No modification is valid unless in writing and signed by CodeWithAli. Client&apos;s purchase orders or terms are hereby rejected and will not apply.
+                </p>
               </div>
             </CardContent>
           </Card>
