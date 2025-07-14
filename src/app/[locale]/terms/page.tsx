@@ -730,7 +730,7 @@ export default function TermsAndConditions() {
           </Card>
         </section>
 
-        {/* Mandatory Arbitration */}
+  {/* Mandatory Arbitration */}
         <section id="mandatory-arbitration" className="mb-16">
           <Card className="bg-white dark:bg-black/40 border-red-950/20">
             <CardHeader>
@@ -747,20 +747,20 @@ export default function TermsAndConditions() {
               </div>
 
               <div>
-                <h4 className="font-semibold dark:text-white text-black mb-2">Arbitration Requirements</h4>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Dispute Resolution Tiers</h4>
                 <p className="text-sm mb-3">
-                  Any dispute, claim, or controversy arising from or relating to these Terms or our services must be resolved through binding arbitration. This includes all contract, tort, statutory, or other legal claims.
+                  <strong>Small Claims:</strong> Disputes involving $5,000 or less may be filed in small claims court in Santa Clara County, California, at the filing party&apos;s option.
+                </p>
+                <p className="text-sm mb-3">
+                  <strong>Arbitration:</strong> All other disputes must be resolved through binding arbitration under California arbitration law.
                 </p>
                 
                 <div className="space-y-3">
                   <div>
                     <h5 className="font-medium dark:text-white text-black mb-1">Arbitration Process</h5>
                     <ul className="space-y-1 list-disc list-inside text-sm">
-                      <li>Disputes will be arbitrated under California arbitration law</li>
                       <li>Arbitration will be conducted in Santa Clara County, California</li>
-                      <li>Parties will split arbitrator fees and administrative costs equally</li>
-                      <li>Each party pays their own attorney fees</li>
-                      <li>If CodeWithAli prevails, client may be responsible for our attorney fees</li>
+                      <li>Each party pays their own attorney fees unless otherwise awarded</li>
                       <li>Arbitration decision is final and binding with limited appeal rights</li>
                     </ul>
                   </div>
@@ -768,17 +768,32 @@ export default function TermsAndConditions() {
               </div>
 
               <div>
-                <h4 className="font-semibold dark:text-white text-black mb-2">Fee Allocation</h4>
+                <h4 className="font-semibold dark:text-white text-black mb-2">Fair Fee Allocation System</h4>
                 <p className="text-sm mb-3">
-                  Standard arbitration fee allocation applies:
+                  <strong>Initiating Party Responsibility:</strong> The party initiating arbitration proceedings pays all arbitration and administrative fees upfront to demonstrate good faith and prevent frivolous claims.
                 </p>
-                <ul className="space-y-1 list-disc list-inside text-sm">
-                  <li>Arbitrator fees split equally between parties</li>
-                  <li>Administrative fees split equally between parties</li>
-                  <li>Each party responsible for their own legal representation costs</li>
-                  <li>Venue and facility costs split equally</li>
-                  <li>Prevailing party may recover attorney fees as determined by arbitrator</li>
-                </ul>
+                
+                <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-lg mb-3">
+                  <p className="text-sm dark:text-blue-400 text-blue-800">
+                    <strong>Fee Recovery for Legitimate Claims:</strong> If the initiating party substantially prevails (wins 75% or more of their claim), they may recover their arbitration fees from the losing party. This ensures legitimate disputes aren&apos;t financially penalized while deterring bad faith actions.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="font-medium dark:text-white text-black mb-2">Anti-Abuse Protection</h5>
+                  <ul className="space-y-1 list-disc list-inside text-sm">
+                    <li><strong>Frivolous Claim Penalties:</strong> If a claim is deemed frivolous or brought in bad faith, the initiating party pays all costs including CodeWithAli&apos;s attorney fees</li>
+                    <li><strong>Good Faith Requirement:</strong> All parties must engage in good faith dispute resolution and provide honest, complete information</li>
+                    <li><strong>Escalating Consequences:</strong> Repeat frivolous filers may be barred from future arbitration and required to use courts</li>
+                  </ul>
+                </div>
+
+                <div className="mt-3">
+                  <h5 className="font-medium dark:text-white text-black mb-2">CodeWithAli Protection</h5>
+                  <p className="text-sm text-black/70 dark:text-gray-400">
+                    If CodeWithAli is forced to initiate arbitration due to client non-payment or breach of contract, client agrees to reimburse all arbitration costs and attorney fees regardless of outcome, as these disputes arise from client&apos;s failure to meet contractual obligations.
+                  </p>
+                </div>
               </div>
 
               <div>
