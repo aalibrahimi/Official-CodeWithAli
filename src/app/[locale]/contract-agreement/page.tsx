@@ -277,7 +277,7 @@ export default function PCBuilderPartnershipContract() {
                       <div>
                         <h4 className="font-semibold mb-2 text-blue-600">Amazon Affiliate Commissions (Shared)</h4>
                         <ul className="text-sm space-y-1 dark:text-gray-300">
-                          <li>• <strong>Total Amazon affiliate rate:</strong> ~4-10% (varies by category)</li>
+                          <li>• <strong>Total Amazon affiliate rate:</strong> ~15-30% (varies by category)</li>
                           <li>• <strong>CodeWithAli share:</strong> 20% of gross affiliate revenue</li>
                           <li>• <strong>Phantom Forge share:</strong> 10% of gross affiliate revenue</li>
                           <li>• <strong>Payment method:</strong> Monthly distribution via PayPal/Bank transfer</li>
