@@ -59,18 +59,18 @@ export default function PCBuilderPartnershipContract() {
     }
   };
 
-  const copyContract = async () => {
-    if (typeof navigator !== 'undefined' && navigator.clipboard && contractRef.current) {
-      try {
-        const contractText = contractRef.current.innerText || '';
-        await navigator.clipboard.writeText(contractText);
-        alert('Contract copied to clipboard!');
-      } catch (err) {
-        console.error('Failed to copy contract:', err);
-        alert('Failed to copy contract to clipboard');
-      }
-    }
-  };
+//   const copyContract = async () => {
+//     if (typeof navigator !== 'undefined' && navigator.clipboard && contractRef.current) {
+//       try {
+//         const contractText = contractRef.current.innerText || '';
+//         await navigator.clipboard.writeText(contractText);
+//         alert('Contract copied to clipboard!');
+//       } catch (err) {
+//         console.error('Failed to copy contract:', err);
+//         alert('Failed to copy contract to clipboard');
+//       }
+//     }
+//   };
 
   const coreFeatures = [
     'Interactive PC parts builder/configurator',
@@ -108,10 +108,10 @@ export default function PCBuilderPartnershipContract() {
               <Printer className="w-4 h-4 mr-2" />
               Print Contract
             </Button>
-            <Button variant="outline" onClick={copyContract}>
+            {/* <Button variant="outline" onClick={copyContract}>
               <Copy className="w-4 h-4 mr-2 text-black dark:text-white" />
               <span className="text-black dark:text-white">Copy Text</span> 
-            </Button>
+            </Button> */}
           </div>
 
           {/* Contract Document */}
