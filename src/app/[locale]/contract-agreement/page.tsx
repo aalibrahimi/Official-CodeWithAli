@@ -249,8 +249,8 @@ export default function PCBuilderPartnershipContract() {
                     </div>
 
                     <div className="mt-4 p-3 bg-white dark:bg-black rounded  ">
-                      <h4 className="font-semibold mb-2 text-black darkk:text-white ">Non-Payment Protection</h4>
-                      <ul className="text-sm space-y-1 text-black darkk:text-white ">
+                      <h4 className="font-semibold mb-2 text-black dark:text-white ">Non-Payment Protection</h4>
+                      <ul className="text-sm space-y-1 text-black dark:text-white ">
                         <li>• CodeWithAli retains full copyright and IP ownership until final payment</li>
                         <li>• Website access/hosting may be suspended for payments over 30 days late</li>
                         <li>• Outstanding balances over 60 days may result in project termination</li>
