@@ -20,11 +20,11 @@ import {
 
 export default function JamesChengContractAgreement() {
   const [contractData] = useState({
-    // Pre-filled client info
+    // Pre-filled client infofww
     clientName: 'James Cheng',
     clientEmail: 'jcusa168@gmail.com',
     clientPhone: '+1 (408) 394-7480',
-    clientAddress: 'California, United States',
+    clientAddress: 'San Jose, California, United States',
     
     // Pre-filled project details
     projectTitle: 'AI-Powered Object Scanning Mobile Application',
@@ -221,7 +221,7 @@ export default function JamesChengContractAgreement() {
                     <p className="dark:text-gray-300">{contractData.clientEmail}</p>
                     <p className="dark:text-gray-300">{contractData.clientPhone}</p>
                     <p className="text-sm mt-2 dark:text-gray-300">{contractData.clientAddress}</p>
-                    <p className="text-sm mt-2 text-green-600 font-medium">Role: Project Owner & Stakeholder</p>
+                    <p className="text-sm mt-2 text-green-600 font-medium">Role: Client </p>
                   </div>
                 </div>
               </section>
@@ -299,7 +299,7 @@ export default function JamesChengContractAgreement() {
                   {weeklyTimeline.map((week, index) => (
                     <div key={index} className="bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-lg p-4">
                       <div className="flex items-center gap-3 mb-3">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                        <div className="w-15 h-15 mr-5 self-center rounded-full bg-blue-500 border  flex items-center justify-center">
                           <span className="text-white font-bold text-sm">{week.week}</span>
                         </div>
                         <div>
@@ -309,7 +309,7 @@ export default function JamesChengContractAgreement() {
                           </p>
                         </div>
                       </div>
-                      <ul className="space-y-1 ml-15">
+                      <ul className="space-y-1 ml-22">
                         {week.tasks.map((task, taskIndex) => (
                           <li key={taskIndex} className="flex items-start gap-2 text-sm dark:text-gray-300">
                             <CheckCircle className="w-3 h-3 text-green-500 mt-0.5 flex-shrink-0" />
