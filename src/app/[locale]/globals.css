@@ -204,3 +204,9 @@ body {
   flex-direction: column;
   align-items: center;
 }
+/* In your globals.css */
+@media print {
+  .max-w-6xl { max-width: none !important; }
+  .no-print { display: none !important; }
+  body { -webkit-print-color-adjust: exact; }
+}
