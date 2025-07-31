@@ -69,19 +69,18 @@ export default function JamesChengContractAgreement() {
     'Support for paintwork, scriptures, and artwork analysis',
     'Comprehensive admin dashboard for content management',
     'Training data upload and management system',
-    'User authentication and profile management',
     'Offline scanning capabilities with cloud sync',
     'Image preprocessing and enhancement algorithms',
     'Custom AI model training pipeline'
   ];
 
   const advancedFeatures = [
-    'Multi-language AI descriptions and analysis',
+    'AI descriptions and analysis',
     'Historical scan data and analytics',
     'Advanced image filtering and enhancement',
     'Batch processing for multiple scans',
     'API integration for external data sources',
-    'Real-time collaboration features',
+  
     'Advanced security and data encryption',
     'Performance optimization and caching',
     'Comprehensive error handling and logging',
@@ -106,9 +105,10 @@ export default function JamesChengContractAgreement() {
       tasks: [
         'Mobile app framework setup (React Native/Flutter)',
         'Basic camera functionality implementation',
-        'Database design and backend infrastructure setup',
-        'User authentication system development',
+        'Database design and backend infrastructure setup ',
         'Admin dashboard foundation and basic UI'
+        // 'Initial API endpoints for data retrieval and storage
+        
       ]
     },
     {
@@ -149,7 +149,7 @@ export default function JamesChengContractAgreement() {
       title: 'Final Delivery & Deployment',
       tasks: [
         'Final testing and quality assurance',
-        'App store submission preparation',
+        'Transfer codebse to client repository',
         'Documentation and user manual creation',
         'Client training and handover',
         'Post-launch support setup and monitoring'
@@ -563,7 +563,7 @@ export default function JamesChengContractAgreement() {
                         Date: _______________
                       </p>
                       <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-                        Title: Project Owner & Primary Stakeholder
+                        Title: Project Client
                       </p>
                     </div>
                   </div>
