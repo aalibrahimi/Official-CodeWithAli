@@ -1,11 +1,11 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { useLocale, useTranslations } from "next-intl";
-import { isRtlLang } from "rtl-detect";
+import React, { useState } from "react";
+import { useLocale } from "next-intl";
+// import { isRtlLang } from "rtl-detect";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
-  ArrowLeft,
+
   ArrowRight,
   Bell,
   BookmarkIcon,
@@ -71,9 +71,9 @@ interface Post {
 }
 
 const WeeklyTechNewsletter = () => {
-  const t = useTranslations("Blog");
+  // const t = useTranslations("Blog");
   const locale = useLocale();
-  const isRTL = isRtlLang(locale);
+  // const isRTL = isRtlLang(locale);
 
   // State
   const [searchQuery, setSearchQuery] = useState("");
@@ -473,11 +473,12 @@ const WeeklyTechNewsletter = () => {
                       Viw All Issues
                       {/* little styling for the reversey hehe */}
                       {/* Unnecessary but I am challenging myself after all */}
-                      {isRTL ? (
+                      {/* {isRTL ? (
                         <ArrowLeft className="ml-2 h-4 ww-4" />
                       ) : (
                         <ArrowRight className="mr-2 h-4 w-4" />
-                      )}
+                      )} */}
+                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
                 </div>
@@ -522,11 +523,12 @@ const WeeklyTechNewsletter = () => {
 
                         <CardFooter className="pt-2  text-red-600 dark:text-red-500 flex items-center text-sm font-medium">
                           Read Issue
-                          {isRTL ? (
+                          {/* {isRTL ? (
                             <ArrowLeft className="h-4 w-4 ml-1" />
                           ) : (
                             <ArrowRight className="h-4 w-4 ml-1" />
-                          )}
+                          )} */}
+                           <ArrowRight className="ml-2 h-4 w-4" />
                         </CardFooter>
                       </Card>
                     </Link>
@@ -609,11 +611,12 @@ const WeeklyTechNewsletter = () => {
                     <Link href={featuredPost.url}>
                       <Button className="bg-red-600 hover:bg-red-700 text-white">
                         Read Article
-                        {isRTL ? (
+                        {/* {isRTL ? (
                           <ArrowLeft className="h-4 w-4 ml-1" />
                         ) : (
                           <ArrowRight className="h-4 w-4 ml-1" />
-                        )}
+                        )} */}
+                       <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </Link>
                   </div>
@@ -698,11 +701,12 @@ const WeeklyTechNewsletter = () => {
                               size="sm"
                               className="border-gray-300 dark:border-gray-700 text-gray dark:text-gray-300 hover:bg-red-50 hover:text-red-600 hover:border-red-300 dark:hover:text-red-400 dark:hover:border-red-800 dark:bg-black mt-1" >
                                 Read More
-                                {isRTL ? (
+                                {/* {isRTL ? (
                                   <ArrowLeft className="h-4 w-4 ml-1" />
                                 ) : (
                                   <ArrowRight className="h-4 w-4 ml-1" />
-                                )}
+                                )} */}
+                               <ArrowRight className="ml-2 h-4 w-4" />
                               </Button>
                             </Link>
                         </div>
@@ -854,11 +858,12 @@ const WeeklyTechNewsletter = () => {
                   <Link href="/blog">
                     <Button>
                       View All Articles
-                      {isRTL ? (
+                      {/* {isRTL ? (
                         <ArrowLeft className="ml-2 h-4 w-4" />
                       ) : (
                         <ArrowRight className="ml-2 h-4 w-4" />
-                      )}
+                      )} */}
+                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
                 </div>
@@ -866,7 +871,7 @@ const WeeklyTechNewsletter = () => {
             </section>
           </>
         )}
-
+{activeCategory && "hi"}
       </main>
     </div>
   );
