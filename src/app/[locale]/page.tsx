@@ -26,7 +26,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import ContactForm from "@/MyComponents/contact-form";
+// import ContactForm from "@/MyComponents/contact-form";
 import { useLocale, useTranslations } from "next-intl";
 import { isRtlLang } from "rtl-detect";
 import { Link } from "@/i18n/navigation";

@@ -5,7 +5,6 @@ import { MoveUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import GradientText from "@/MyComponents/GradientText";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 

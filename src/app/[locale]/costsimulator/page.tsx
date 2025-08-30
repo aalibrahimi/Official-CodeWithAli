@@ -1,6 +1,6 @@
 // src/app/[locale]/cost-simulator/page.tsx
 "use client";
-import React, { useState, useEffect, useCallback, useMemo } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import {
   Calculator,
@@ -8,7 +8,7 @@ import {
   ShoppingBag,
   Palette,
   Settings,
-  Search,
+  // Search,
   CheckCircle,
   ArrowRight,
   Share2,
