@@ -165,7 +165,7 @@ export default function ServicesPage() {
         <section className="pt-24 pb-12 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
             <div className="absolute top-0 left-0 w-full h-full bg-red-50 dark:bg-black opacity-70"></div>
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white via-red-300 to-red-500 dark:bg-gradient-to-br dark:from-red-950/30 dark:via-transparent dark:to-transparent"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-500 via-red-700 to-red-900 dark:bg-gradient-to-br  dark:from-red-950/30 dark:via-transparent dark:to-transparent"></div>
           </div>
 
           <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
@@ -176,7 +176,7 @@ export default function ServicesPage() {
               <h1 className="text-4xl text-black dark:text-white md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 {t("Header")}
 
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-500 dark:from-red-400 dark:to-red-600 block">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white dark:from-red-400 dark:to-red-600 block">
                   {t("Subheader")}
                 </span>
               </h1>
@@ -189,8 +189,8 @@ export default function ServicesPage() {
 
         {/* Services Section */}
         <section className="py-16 relative overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-500/30 dark:bg-red-900/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-500/30 dark:bg-red-700/10 rounded-full blur-3xl"></div>
+          {/* <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-500/30 dark:bg-red-900/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-500/30 dark:bg-red-700/10 rounded-full blur-3xl"></div> */}
 
           <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-8">
@@ -299,14 +299,14 @@ export default function ServicesPage() {
         </section>
 
         {/* Process / Approach Overview */}
-        <section className="py-20 bg-red-50 dark:bg-red-950/10">
+        <section className="py-20 bg-red-700 dark:bg-red-950/10">
           <div className="container mx-auto px-4 md:px-8 lg:px-12">
             <div className="text-center mb-16">
               <div>
                 <Badge className="bg-red-700 dark:bg-red-900/30 text-white dark:text-red-400 border-transparent mb-4 px-3 py-1">
                   {t("Services.process.approach.badge")}
                 </Badge>
-                <h2 className="text-3xl bg-gradient-to-r from-red-700 via-red-600 to-red-500 dark:from-white dark:via-red-500 dark:to-red-700 bg-clip-text text-transparent md:text-4xl font-bold mb-6">
+                <h2 className="text-3xl bg-gradient-to-r from-white via-white to-white dark:from-white dark:via-red-500 dark:to-red-700 bg-clip-text text-transparent md:text-4xl font-bold mb-6">
                   {t("Services.process.approach.title")}
                 </h2>
                 <p className="text-black dark:text-white/80 text-lg max-w-2xl mx-auto">
@@ -318,7 +318,7 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {processSteps.map((step, index) => (
                 <div key={index}>
-                  <div className="bg-red-200 border-1 border-red-300 dark:bg-black dark:border-red-900 rounded-xl p-6 h-full">
+                  <div className="bg-white border-1 border-red-300 dark:bg-black dark:border-red-900 rounded-xl p-6 h-full">
                     <div className="flex items-center mb-4">
                       <div className={`w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-red-700 dark:from-red-600 dark:to-red-800 flex items-center justify-center ${isRTL ? "ml-3" : "mr-3"}`}>
                         <span className="text-white font-bold">
@@ -342,7 +342,7 @@ export default function ServicesPage() {
         {/* CTA Section - More responsive */}
         <section className="py-12 md:py-20">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto bg-gradient-to-br from-red-800/90 to-red-800/90 dark:bg-gradient-to-br border-3 border-red-950 dark:from-red-950/30 dark:to-transparent rounded-xl p-6 md:p-10 text-center">
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-red-700 to-red-700 dark:bg-gradient-to-br border-3 border-red-950 dark:from-red-950/30 dark:to-transparent rounded-xl p-6 md:p-10 text-center">
               <h2 className="text-2xl md:text-4xl font-bold text-white dark:text-white mb-4 md:mb-6">
                 {t("Services.cta.title")}
               </h2>

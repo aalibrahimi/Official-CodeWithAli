@@ -75,18 +75,17 @@ const PortfolioPage = () => {
         {/* BG */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 border-b-[1px] border-b-red-950/50">
           <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-white via-red-300 to-red-500 dark:bg-gradient-to-br dark:from-red-950/30 dark:via-transparent dark:to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full  bg-gradient-to-br from-red-500 via-red-700 to-red-900 dark:bg-gradient-to-br  dark:from-red-950/30 dark:via-transparent dark:to-transparent"></div>
         </div>
 
         {/* Heading */}
         <div className="h-full relative z-10 flex flex-col items-center justify-center text-center font-semibold">
           <div className="w-full h-full ">
             <div className="w-full h-full ">
-              <h1 className="text-4xl text-red-600 dark:text-white lg:text-5xl font-bold leading-tight  ">
+              <h1 className="text-4xl text-white dark:text-white lg:text-5xl font-bold leading-tight  ">
                 {t("title")}{" "}
-                <GradientText gradient="from-red-600 to-red-500 dark:from-red-400 dark:to-red-600">
-                  {t("title2")}{" "}
-                </GradientText>
+                {t("title2")}{" "}
+              
               </h1>
               <p className="text-black font-semibold dark:text-white pt-2 ">
                 {t("sub")}

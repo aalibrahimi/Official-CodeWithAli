@@ -660,7 +660,7 @@ export default function MerchandisePage() {
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 border-b-[1px] border-b-red-200/50 dark:border-b-red-950/50">
           <div className="dark:block block">
             <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white via-red-300 to-red-500 dark:from-red-950/30 dark:via-transparent dark:to-transparent"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-500 via-red-700 to-red-900 dark:bg-gradient-to-br  dark:from-red-950/30 dark:via-transparent dark:to-transparent"></div>
           </div>
         </div>
 
@@ -671,7 +671,7 @@ export default function MerchandisePage() {
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-black dark:text-white">
               {t("title.1")}
-              <span className="bg-gradient-to-r from-red-700 via-red-600 to-red-500 dark:from-red-400 dark:via-red-500 dark:to-red-700 bg-clip-text text-transparent block">
+              <span className="bg-gradient-to-r from-white via-white to-white dark:from-red-400 dark:via-red-500 dark:to-red-700 bg-clip-text text-transparent block">
                 {t("title.2")}
               </span>
             </h1>
@@ -843,17 +843,17 @@ export default function MerchandisePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-red-50 dark:bg-red-950/5 border-y border-red-200/20 dark:border-red-950/20">
+      <section className="py-16 bg-red-700 dark:bg-red-950/5 border-y border-red-200/20 dark:border-red-950/20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex flex-col items-center text-center p-6 group">
               <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 dark:from-red-800 dark:to-red-900 rounded-full flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
                 <Tag className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-red-800 dark:text-white mb-2">
+              <h3 className="text-xl font-bold text-white dark:text-white mb-2">
                 {t("features.1.title")}
               </h3>
-              <p className="text-black dark:text-red-200/70">
+              <p className="text-black font-medium dark:text-red-200/70">
                 {t("features.1.desc")}
               </p>
             </div>
@@ -862,10 +862,10 @@ export default function MerchandisePage() {
               <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 dark:from-red-800 dark:to-red-900 rounded-full flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
                 <TrendingUp className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-red-800 dark:text-white mb-2">
+              <h3 className="text-xl font-bold text-white dark:text-white mb-2">
                 {t("features.2.title")}
               </h3>
-              <p className="text-black dark:text-red-200/70">
+              <p className="text-black font-medium dark:text-red-200/70">
                 {t("features.2.desc")}
               </p>
             </div>
@@ -874,10 +874,10 @@ export default function MerchandisePage() {
               <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 dark:from-red-800 dark:to-red-900 rounded-full flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
                 <CheckCircle className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-red-800 dark:text-white mb-2">
+              <h3 className="text-xl font-bold text-white dark:text-white mb-2">
                 {t("features.3.title")}
               </h3>
-              <p className="text-black dark:text-red-200/70">
+              <p className="text-black font-medium dark:text-red-200/70">
                 {t("features.3.desc")}
               </p>
             </div>
@@ -888,7 +888,7 @@ export default function MerchandisePage() {
       {/* CTA Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto bg-red-800/90 dark:bg-black/60 border-3 border-red-950/80 dark:border-red-900/40 rounded-xl p-10 text-center hover:border-red-700/60 transition-all duration-300">
+          <div className="max-w-4xl mx-auto bg-red-700 dark:bg-black/60 border-3 border-red-950/80 dark:border-red-900/40 rounded-xl p-10 text-center hover:border-red-700/60 transition-all duration-300">
             <Badge className="bg-red-700 dark:bg-red-900/30 text-white dark:text-red-400 border-transparent mb-4 px-3 py-1">
               {t("badge.4")}
             </Badge>
