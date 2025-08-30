@@ -189,6 +189,9 @@ export function Navbar(): React.ReactElement {
           >
             {t("routes.contact")}
           </Link>
+          <Link
+          href="/costsimulator"
+           className="text-black dark:text-white hover:text-red-400 dark:hover:text-red-500 transition-colors">Cost Simulator</Link>
         </nav>
 
         {/* Right section: Language switcher, Mode toggle and Avatar with dropdown */}

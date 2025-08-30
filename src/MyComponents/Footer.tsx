@@ -46,7 +46,7 @@ export default function Footer() {
     return (
         <>
           {/* Footer */}
-          <footer className="py-12 border-t border-red-900 dark:bg-black">
+          <footer className="py-12 border-t border-red-900 bg-white dark:bg-black">
           <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-8">
               {/* Mobile Footer Links + Info */}
@@ -84,7 +84,7 @@ export default function Footer() {
                       <li key={item.title}>
                         <Link
                           href={item.href}
-                          className="text-red-500 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
+                          className="text-red-900 dark:text-red-200/60 hover:text-red-950 dark:hover:text-red-300 transition-colors"
                         >
                           {item.title}
                         </Link>
@@ -115,7 +115,7 @@ export default function Footer() {
                       <li key={item.title}>
                         <Link
                           href={item.href}
-                          className="text-red-500 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
+                          className="text-red-800 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
                         >
                           {item.title}
                         </Link>
@@ -132,7 +132,7 @@ export default function Footer() {
                       <li>
                         <a
                           href="mailto:info@codewithali.com"
-                          className="text-red-500 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
+                          className="text-red-800 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
                         >
                         {t("nav.contact.links.1")}
                         </a>
@@ -140,7 +140,7 @@ export default function Footer() {
                       <li>
                         <a
                           href="tel:+4086907890"
-                          className="text-red-500 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
+                          className="text-red-800 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
                         >
                           {t("nav.contact.links.2")}
                            
@@ -181,7 +181,7 @@ export default function Footer() {
                     CodeWithAli
                   </span>
                 </Link>
-                <p className="text-sm text-red-500 dark:text-red-200/60 mb-4">
+                <p className="text-sm text-red-800 dark:text-red-200/60 mb-4">
                  {t("compDesc")}
                 </p>
                 <div className="flex space-x-4">
@@ -194,15 +194,15 @@ export default function Footer() {
                       target={social.url !== "#" ? `_blank` : `_self`}
                       className={
                         social.style
-                          ? `w-8 h-8 rounded-full flex items-center justify-center bg-red-950/30 ${social.style} transition-colors duration-300 ease-in-out group`
+                          ? `w-8 h-8 rounded-full flex items-center justify-center dark:bg-red-950/30 ${social.style} transition-colors duration-300 ease-in-out group`
                           : `w-8 h-8 rounded-full flex items-center justify-center bg-red-950/30 hover:bg-red-900/50 transition-colors duration-300 ease-in-out group`
                       }
                     >
                       <span
                         className={
                           social.textStyle
-                            ? `text-xs text-red-500 dark:text-red-400 ${social.textStyle}`
-                            : `text-xs text-red-500 dark:text-red-400`
+                            ? `text-xs text-red-800 dark:text-red-400 ${social.textStyle}`
+                            : `text-xs text-red-800 dark:text-red-400`
                         }
                       >
                         {social.icon}
@@ -248,7 +248,7 @@ export default function Footer() {
                         <li key={item.title}>
                           <Link
                             href={item.href}
-                            className="text-red-500 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
+                            className="text-red-800 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
                           >
                             {item.title}
                           </Link>
@@ -287,7 +287,7 @@ export default function Footer() {
                         <li key={item.title}>
                           <Link
                             href={item.href}
-                            className="text-red-500 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
+                            className="text-red-800 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
                           >
                             {item.title}
                           </Link>
@@ -304,7 +304,7 @@ export default function Footer() {
                         <li>
                           <a
                             href="mailto:info@codewithali.com"
-                            className="text-red-500 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
+                            className="text-red-800 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
                           >
                            {t("nav.contact.links.1")}
                           </a>
@@ -312,7 +312,7 @@ export default function Footer() {
                         <li>
                           <a
                             href="tel:+4086907890"
-                            className="text-red-500 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
+                            className="text-red-800 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
                           >
                             {t("nav.contact.links.2")}
                            
@@ -345,7 +345,7 @@ export default function Footer() {
                   href="https://gofund.me/84a5e264"
                   target="_blank"
                   draggable={false}
-                  className="text-red-500"
+                  className="text-red-800"
                 >
                   <Heart />
                 </Link>
