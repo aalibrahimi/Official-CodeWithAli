@@ -316,11 +316,11 @@ export default function Footer() {
                           </a>
                         </li>
                         <li>
-                          <Link href="/contact">
+                          <Link href="/costsimulator">
                             <Button
                               variant="outline"
                               size="sm"
-                              className="mt-2 border-red-800/30 text-red-800 dark:text-red-400 bg-red-500/40 dark:bg-red-900/20 hover:bg-red-800/40 dark:hover:bg-red-950/20 hover:text-red-800"
+                              className="mt-2 border-red-800/30 text-white dark:text-red-400 bg-red-700  dark:bg-red-900/20 hover:bg-red-900 hover:text-white dark:hover:bg-red-950/20 "
                             >
                               {t("nav.contact.links.3")}
                             </Button>

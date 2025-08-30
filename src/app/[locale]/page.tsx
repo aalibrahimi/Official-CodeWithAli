@@ -65,42 +65,42 @@ const HomePage = () => {
       title: t("services.items.1.title"),
       description: t("services.items.1.description"),
       icon: Code,
-      color: "from-red-600 to-red-800",
+      color: "from-red-600 to-red-700",
       url: "/services/web-development",
     },
     {
       title: t("services.items.2.title"),
       description: t("services.items.2.description"),
       icon: Smartphone,
-      color: "from-red-700 to-red-900",
+      color: "from-red-600 to-red-700",
       url: "/services/mobile-app-development",
     },
     {
       title: t("services.items.3.title"),
       description: t("services.items.3.description"),
       icon: Palette,
-      color: "from-red-800 to-red-950",
+      color: "from-red-600 to-red-700",
       url: "/services/UI/UX-Design",
     },
     {
       title: t("services.items.4.title"),
       description: t("services.items.4.description"),
       icon: ShoppingBag,
-      color: "from-red-600 to-red-800",
+      color: "from-red-600 to-red-700",
       url: "/services/E-Commerse",
     },
     {
       title: t("services.items.5.title"),
       description: t("services.items.5.description"),
       icon: Search,
-      color: "from-red-700 to-red-900",
+      color: "from-red-600 to-red-700",
       url: "/services/seo-optimization",
     },
     {
       title: t("services.items.6.title"),
       description: t("services.items.6.description"),
       icon: Server,
-      color: "from-red-800 to-red-950",
+      color: "from-red-600 to-red-700",
       url: "/services/Web-hosting",
     },
   ];
@@ -223,7 +223,7 @@ const HomePage = () => {
       <section className="pt-10 pb-20 md:pb-24 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white via-red-300 to-red-500 dark:bg-gradient-to-br dark:from-red-950/30 dark:via-transparent dark:to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-500 via-red-700 to-red-900 dark:bg-gradient-to-br dark:from-red-950/30 dark:via-transparent dark:to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
@@ -231,7 +231,7 @@ const HomePage = () => {
             <motion.div className="md:pr-8" {...getAnimationProps()}>
               <h1 className="text-4xl text-black dark:text-white md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 {t("hero.title.part1")}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-500 dark:from-red-400 dark:to-red-600 block">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white dark:from-red-400 dark:to-red-600 block">
                   {t("hero.title.part2")}
                 </span>
               </h1>
@@ -257,7 +257,7 @@ const HomePage = () => {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-red-800/30 text-red-900 dark:text-red-400 bg-red-500/40 dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white dark:hover:text-white px-8 w-full sm:w-38 xl:w-auto"
+                    className="border-red-800/30 text-red-900 dark:text-red-400 bg-white dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white dark:hover:text-white px-8 w-full sm:w-38 xl:w-auto"
                   >
                     {t("hero.buttons.viewWork")}
                   </Button>
@@ -269,7 +269,7 @@ const HomePage = () => {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-red-800/30 text-red-900 dark:text-red-400 bg-red-500/40 dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white px-8 w-full sm:w-38 xl:w-auto 
+                    className="border-red-800/30 text-red-900 dark:text-red-400 bg-white dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white px-8 w-full sm:w-38 xl:w-auto 
                               flex items-center gap-2 transition-all duration-300 ease-in-out 
                               group-hover:bg-red-950/30 group-hover:text-white dark:group-hover:text-white"
                   >
@@ -369,10 +369,10 @@ const HomePage = () => {
       {/* Services Section */}
       <section
         id="services"
-        className="py-20 md:py-24 relative overflow-hidden"
+        className="py-10 md:py-14 relative overflow-hidden"
       >
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-500/30 dark:bg-red-900/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-500/30 dark:bg-red-700/10 rounded-full blur-3xl"></div>
+        {/* <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-500/30 dark:bg-red-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-500/30 dark:bg-red-700/10 rounded-full blur-3xl"></div> */}
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20">
           <div className="text-center mb-16">
@@ -392,19 +392,19 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, index) => (
               <motion.div key={index} {...getAnimationProps(index * 0.05)}>
-                <Card className="bg-red-200 dark:bg-black/60 border-red-900 backdrop-blur-sm h-full overflow-hidden group">
+                <Card className="bg-red-700 dark:bg-black/60 border-red-600 backdrop-blur-sm h-full overflow-hidden group">
                   <CardContent className="p-6 flex flex-col h-full">
                     <div className="mb-5">
                       <div
-                        className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.color} p-3 mb-4 transform group-hover:scale-110 transition-transform`}
+                        className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.color} border-red-900 border p-3 mb-4 transform group-hover:scale-110 transition-transform`}
                         style={{ willChange: "transform" }}
                       >
                         <service.icon className="w-full h-full text-white" />
                       </div>
-                      <h3 className="text-xl font-bold text-red-800 dark:text-white mb-2">
+                      <h3 className="text-xl font-bold text-white dark:text-white mb-2">
                         {service.title}
                       </h3>
-                      <p className="text-black dark:text-red-200/60">
+                      <p className="text-white dark:text-red-200/60">
                         {service.description}
                       </p>
                     </div>
@@ -412,7 +412,7 @@ const HomePage = () => {
                       <Link href={service.url} target="_blank">
                         <Button
                           variant="ghost"
-                          className="p-0 text-red-800 dark:text-red-400 dark:hover:text-red-300 hover:bg-transparent group"
+                          className="p-0 text-white dark:text-red-400 dark:hover:text-red-300 hover:bg-transparent group"
                         >
                           {t("services.learnMore")}
                           {isRTL ? (
@@ -432,7 +432,7 @@ const HomePage = () => {
       </section>
 
       {/* Project Display */}
-      <section id="work" className="py-20 md:py-24 dark:bg-red-950/10">
+      <section id="work" className="py-10 md:py-14 dark:bg-red-950/10">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-16">
             <motion.div {...getAnimationProps()}>
@@ -545,9 +545,9 @@ const HomePage = () => {
       </section>
 
       {/* Process Section */}
-      <section id="process" className="py-20 md:py-24 relative overflow-hidden">
-        <div className="absolute -top-40 left-40 w-80 h-80 bg-red-500/30 dark:bg-red-800/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 right-40 w-80 h-80 bg-red-500/30 dark:bg-red-700/10 rounded-full blur-3xl"></div>
+      <section id="process" className="py-10 md:py-14 relative overflow-hidden">
+        {/* <div className="absolute -top-40 left-40 w-80 h-80 bg-red-500/30 dark:bg-red-800/10 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 right-40 w-80 h-80 bg-red-500/30 dark:bg-red-700/10 rounded-full blur-3xl"></div> */}
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="text-center mb-16">
@@ -596,20 +596,20 @@ const HomePage = () => {
                 {...getAnimationProps(index * 0.1)}
                 className="relative"
               >
-                <div className="bg-red-200 dark:bg-black/60 border border-red-900 rounded-xl p-6 h-full">
+                <div className="bg-red-700 dark:bg-black/60 border border-red-900 rounded-xl p-6 h-full">
                   <div className="absolute -top-5 -left-2">
-                    <span className="text-5xl font-bold text-red-700/80 dark:text-white">
+                    <span className="text-5xl font-bold text-black dark:text-white">
                       {step.number}
                     </span>
                   </div>
                   <div className="pt-6">
                     <div className="mb-4 flex items-center">
-                      <step.icon className="w-6 h-6 text-black dark:text-red-500 mr-3" />
-                      <h3 className="text-xl font-bold text-red-800 dark:text-white">
+                      <step.icon className="w-6 h-6 text-white dark:text-red-500 mr-3" />
+                      <h3 className="text-xl font-bold text-wwhite dark:text-white">
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-black dark:text-red-200/60">
+                    <p className="text-white dark:text-red-200/60">
                       {step.description}
                     </p>
                   </div>
@@ -633,7 +633,7 @@ const HomePage = () => {
       {/* Testimonials */}
       <section
         id="testimonials"
-        className="py-20 md:py-24 relative overflow-hidden dark:bg-red-950/10"
+        className="py-10 md:py-14 relative overflow-hidden dark:bg-red-950/10"
       >
         <div className="max-w-5xl mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="text-center mb-16">
@@ -662,7 +662,7 @@ const HomePage = () => {
                 }
                 exit={isReducedMotion ? { opacity: 1 } : { opacity: 0.9, y: 0 }}
                 transition={{ duration: 0.1 }}
-                className="bg-red-200 dark:bg-black/60 border border-red-900 rounded-xl p-8 md:p-10"
+                className="bg-red-700  dark:bg-black/60 border border-red-900 rounded-xl p-8 md:p-10"
               >
                 <div className="flex flex-col items-center">
                   <div className="mb-6">
@@ -683,11 +683,11 @@ const HomePage = () => {
                       />
                     </svg> */}
                   </div>
-                  <p className="text-lg text-black dark:text-white md:text-xl text-center mb-8">
+                  <p className="text-lg text-white dark:text-white md:text-xl text-center mb-8">
                     &ldquo;{testimonials[activeTestimonial].content}&rdquo;
                   </p>
                   <div className="text-center">
-                    <div className="font-bold text-red-800 dark:text-white">
+                    <div className="font-bold text-white dark:text-white">
                       {testimonials[activeTestimonial].name}
                     </div>
                     <div className="text-black/80 dark:text-red-400/70 text-sm">
@@ -716,13 +716,13 @@ const HomePage = () => {
       </section>
 
       {/* Contact Form */}
-      <ContactForm />
+      {/* <ContactForm /> */}
 
       {/* CTA Section */}
-      <section className="py-20 md:py-24 dark:bg-gradient-to-b dark:from-red-950/10 dark:via-red-950/10 dark:to-black">
+      <section className="py-10 md:py-14 dark:bg-gradient-to-b dark:from-red-950/10 dark:via-red-950/10 dark:to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <motion.div
-            className="max-w-4xl mx-auto bg-red-800/90  dark:bg-black/60 border-3 border-red-950 dark:border-red-900 rounded-xl p-8 md:p-12 text-center"
+            className="max-w-4xl mx-auto bg-red-700  dark:bg-black/60 border-3 border-red-950 dark:border-red-900 rounded-xl p-8 md:p-12 text-center"
             {...getAnimationProps()}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-white mb-6">
