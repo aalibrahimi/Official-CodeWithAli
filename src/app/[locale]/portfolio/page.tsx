@@ -65,6 +65,12 @@ const PortfolioPage = () => {
       image: "/marioshauling_website.png",
       url: "https://marioshauling.codewithali.com/",
     },
+    {
+      title: "Phantom Forge",
+      category: t("category.1"),
+      image: "/phantom.png",
+      url: "https://www.phantomforgepc.com/en"
+    }
   ];
 
   return (
@@ -94,11 +100,11 @@ const PortfolioPage = () => {
         </div>
       </section>
 
-      <section className="dark:bg-red-950/10 h-full w-full p-5 lg:p-10 overflow-y-clip">
+      <section className="dark:black h-full w-full p-5 lg:p-10 overflow-y-clip">
         <div className="h-full relative z-10">
           <div className="">
             <motion.div
-              className="grid gap-8 place-items-center md:grid-cols-2 lg:grid-cols-3"
+              className="grid   gap-8 place-items-center md:grid-cols-2 lg:grid-cols-3"
               {...getAnimationProps()}
             >
               {portfolioProjects.map((project, index) => (
@@ -109,7 +115,7 @@ const PortfolioPage = () => {
                 // >
                 <div
                   key={index}
-                  className="group cursor-pointer h-auto max-w-[650px] min-w-[350px]"
+                  className="group cursor-pointer h-auto max-w-[450px] min-w-[350px]"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-xl shadow-red-950/20">
                     {/* Project Image */}
@@ -169,7 +175,7 @@ const PortfolioPage = () => {
                     <Badge className="bg-red-700 dark:bg-red-800/30 dark:text-red-300 border-transparent text-base py-1 px-3">
                       {project.category}
                     </Badge>
-                    <h3 className="text-xl font-bold text-black dark:text-white mt-3">
+                    <h3 className="text-xl font-bold text-black dark:text-white mt-3 ml-1">
                       {project.title}
                     </h3>
                   </div>
