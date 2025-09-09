@@ -86,6 +86,30 @@ export function Navbar(): React.ReactElement {
     setCurrentLanguage(matchedLanguage);
   }, [locale]);
 
+  // Helper function to check if a link is active
+  const isActiveLink = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    if (href === "/#contact") {
+      return false; // Contact is an anchor, handle separately if needed
+    }
+    return pathname.startsWith(href);
+  };
+
+  // Helper function to get link classes with hover and active states
+  const getLinkClasses = (href: string, baseClasses: string = "") => {
+    const isActive = isActiveLink(href);
+    return cn(
+      "relative transition-colors duration-300 ease-in-out",
+      "after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-red-500 after:transition-all after:duration-300 after:ease-in-out",
+      isActive 
+        ? "text-red-500 dark:text-red-400 after:w-full" 
+        : "text-black dark:text-white hover:text-red-400 dark:hover:text-red-500 after:w-0 hover:after:w-full",
+      baseClasses
+    );
+  };
+
   return (
     <>
       <header className="border-b border-red-900/30 text-black bg-white/90 backdrop-blur-sm dark:text-white dark:bg-black/90 py-4 px-6 flex justify-between items-center sticky top-0 z-50">
@@ -109,32 +133,32 @@ export function Navbar(): React.ReactElement {
         </div>
 
         {/* Regular nav for larger screens */}
-        <nav className="hidden lg:flex justify-center gap-8 text-lg">
+        <nav className="hidden lg:flex justify-center gap-8 text-lg ">
           <Link
             href="/"
-            className="text-black dark:text-white hover:text-red-400 dark:hover:text-red-500 transition-colors"
+            className={getLinkClasses("/")}
           >
             {t("routes.home")}
           </Link>
           <Link
             href="/about"
-            className="text-black dark:text-white hover:text-red-400 dark:hover:text-red-500 transition-colors"
+            className={getLinkClasses("/about")}
           >
             {t("routes.about")}
           </Link>
           <Link
             href="/portfolio"
-            className="text-black dark:text-white hover:text-red-400 dark:hover:text-red-500 transition-colors"
+            className={getLinkClasses("/portfolio")}
           >
             {t("routes.portfolio")}
           </Link>
 
-          {/* Removed extra margin that was given here for some reason */}
+          {/* Services dropdown with enhanced styling */}
           <div className="nav-item relative group m-0">
             <Link
               href="/services"
-              onClick={() => scrollTo({ top: 0 })} // This is to fix when navigating to Services from Contact
-              className="text-black dark:text-white hover:text-gray-900 dark:hover:text-red-400 transition-colors"
+              onClick={() => scrollTo({ top: 0 })}
+              className={getLinkClasses("/services")}
             >
               {t("routes.services.title")}
             </Link>
@@ -169,7 +193,14 @@ export function Navbar(): React.ReactElement {
                   <Link
                     key={service.title}
                     href={service.href}
-                    className="flex items-center px-4 py-2 w-50 h-auto text-black hover:text-red-800 dark:text-white dark:hover:text-red-400 hover:border-b-2 hover:border-red-400 dark:hover:border-red-500/80 hover:bg-red-200/60 dark:hover:bg-red-900/20"
+                    className={cn(
+                      "flex items-center px-4 py-2 w-50 h-auto transition-all duration-300 ease-in-out",
+                      "relative",
+                      "after:content-[''] after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-red-500 after:transition-all after:duration-300 after:ease-in-out",
+                      isActiveLink(service.href)
+                        ? "text-red-500 dark:text-red-400 after:w-auto"
+                        : "text-black hover:text-red-800 dark:text-white dark:hover:text-red-400 hover:bg-red-200/60 dark:hover:bg-red-900/20 after:w-0 hover:after:w-auto"
+                    )}
                   >
                     {service.title}
                   </Link>
@@ -179,19 +210,26 @@ export function Navbar(): React.ReactElement {
           </div>
           <Link
             href="/merchandise"
-            className="text-black dark:text-white hover:text-red-400 dark:hover:text-red-500 transition-colors"
+            className={getLinkClasses("/merchandise")}
           >
             {t("routes.merch")}
           </Link>
           <Link
             href="/#contact"
-            className="text-black dark:text-white hover:text-red-400 dark:hover:text-red-500 transition-colors"
+            className={cn(
+              "relative transition-colors duration-300 ease-in-out",
+              "after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-red-500 after:transition-all after:duration-300 after:ease-in-out",
+              "text-black dark:text-white hover:text-red-400 dark:hover:text-red-500 after:w-0 hover:after:w-full"
+            )}
           >
             {t("routes.contact")}
           </Link>
           <Link
-          href="/costsimulator"
-           className="text-black dark:text-white hover:text-red-400 dark:hover:text-red-500 transition-colors">Cost Simulator</Link>
+            href="/costsimulator"
+            className={getLinkClasses("/costsimulator")}
+          >
+            Cost Simulator
+          </Link>
         </nav>
 
         {/* Right section: Language switcher, Mode toggle and Avatar with dropdown */}
@@ -278,44 +316,91 @@ export function Navbar(): React.ReactElement {
               <Link
                 href="/"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/50 pb-2"
+                className={cn(
+                  "relative transition-colors duration-300 ease-in-out border-b border-red-900/50 pb-2",
+                  "after:content-[''] after:absolute after:bottom-2 after:left-0 after:h-0.5 after:bg-red-500 after:transition-all after:duration-300 after:ease-in-out",
+                  isActiveLink("/")
+                    ? "text-red-500 dark:text-red-400 after:w-full"
+                    : "text-black dark:text-white hover:text-red-400 after:w-0 hover:after:w-full"
+                )}
               >
                 {t("routes.home")}
               </Link>
               <Link
                 href="/about"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/50 pb-2"
+                className={cn(
+                  "relative transition-colors duration-300 ease-in-out border-b border-red-900/50 pb-2",
+                  "after:content-[''] after:absolute after:bottom-2 after:left-0 after:h-0.5 after:bg-red-500 after:transition-all after:duration-300 after:ease-in-out",
+                  isActiveLink("/about")
+                    ? "text-red-500 dark:text-red-400 after:w-full"
+                    : "text-black dark:text-white hover:text-red-400 after:w-0 hover:after:w-full"
+                )}
               >
                 {t("routes.about")}
               </Link>
               <Link
                 href="/portfolio"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/50 pb-2"
+                className={cn(
+                  "relative transition-colors duration-300 ease-in-out border-b border-red-900/50 pb-2",
+                  "after:content-[''] after:absolute after:bottom-2 after:left-0 after:h-0.5 after:bg-red-500 after:transition-all after:duration-300 after:ease-in-out",
+                  isActiveLink("/portfolio")
+                    ? "text-red-500 dark:text-red-400 after:w-full"
+                    : "text-black dark:text-white hover:text-red-400 after:w-0 hover:after:w-full"
+                )}
               >
                 {t("routes.portfolio")}
               </Link>
               <Link
                 href="/services"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/50 pb-2"
+                className={cn(
+                  "relative transition-colors duration-300 ease-in-out border-b border-red-900/50 pb-2",
+                  "after:content-[''] after:absolute after:bottom-2 after:left-0 after:h-0.5 after:bg-red-500 after:transition-all after:duration-300 after:ease-in-out",
+                  isActiveLink("/services")
+                    ? "text-red-500 dark:text-red-400 after:w-full"
+                    : "text-black dark:text-white hover:text-red-400 after:w-0 hover:after:w-full"
+                )}
               >
                 {t("routes.services.title")}
               </Link>
               <Link
                 href="/merchandise"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/50 pb-2"
+                className={cn(
+                  "relative transition-colors duration-300 ease-in-out border-b border-red-900/50 pb-2",
+                  "after:content-[''] after:absolute after:bottom-2 after:left-0 after:h-0.5 after:bg-red-500 after:transition-all after:duration-300 after:ease-in-out",
+                  isActiveLink("/merchandise")
+                    ? "text-red-500 dark:text-red-400 after:w-full"
+                    : "text-black dark:text-white hover:text-red-400 after:w-0 hover:after:w-full"
+                )}
               >
                 {t("routes.merch")}
               </Link>
               <Link
                 href="/#contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-black dark:text-white hover:text-red-400 transition-colors border-b border-red-900/50 pb-2"
+                className={cn(
+                  "relative transition-colors duration-300 ease-in-out border-b border-red-900/50 pb-2",
+                  "after:content-[''] after:absolute after:bottom-2 after:left-0 after:h-0.5 after:bg-red-500 after:transition-all after:duration-300 after:ease-in-out",
+                  "text-black dark:text-white hover:text-red-400 after:w-0 hover:after:w-full"
+                )}
               >
                 {t("routes.contact")}
+              </Link>
+              <Link
+                href="/costsimulator"
+                onClick={() => setIsMenuOpen(false)}
+                className={cn(
+                  "relative transition-colors duration-300 ease-in-out border-b border-red-900/50 pb-2",
+                  "after:content-[''] after:absolute after:bottom-2 after:left-0 after:h-0.5 after:bg-red-500 after:transition-all after:duration-300 after:ease-in-out",
+                  isActiveLink("/costsimulator")
+                    ? "text-red-500 dark:text-red-400 after:w-full"
+                    : "text-black dark:text-white hover:text-red-400 after:w-0 hover:after:w-full"
+                )}
+              >
+                Cost Simulator
               </Link>
             </div>
           </div>

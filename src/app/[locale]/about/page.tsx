@@ -442,7 +442,7 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline Detailed Process Section */}
-      <section className="py-20 bg-red-950/5 border-y bg-white border-red-950/20">
+      <section className="py-20 dark:bg-red-950/5 border-y bg-white border-red-950/20">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-16">
             <Badge className="bg-red-700 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
