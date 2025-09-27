@@ -54,10 +54,10 @@ const PortfolioPage = () => {
       url: "https://iraqisweets.codewithali.com/",
     },
     {
-      title: "Budgetary App",
+      title: "Simplicity App",
       category: t("category.2"),
       image: "/budgetary.png",
-      url: "https://budgetary.codewithali.com/",
+      url: "https://Simplicity.codewithali.com/",
     },
     {
       title: "Mario's Hauling",
