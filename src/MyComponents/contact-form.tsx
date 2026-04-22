@@ -130,42 +130,63 @@ export default function ContactForm({
 
   /* ── Validation ── */
 
-  const validateField = (key: keyof FormState, value: string): string | undefined => {
+  /**
+   * `live` = called on every keystroke. Only fires the "hard" checks
+   * (spam heuristics) — skips the empty-field "please fill this in"
+   * complaints that only make sense at blur time or submit time.
+   * `hard` = called on blur and submit. Fires everything.
+   */
+  const validateField = (
+    key: keyof FormState,
+    value: string,
+    mode: "live" | "hard" = "hard",
+  ): string | undefined => {
     switch (key) {
       case "name":
-        if (value.trim().length < 2) return "Please enter your full name.";
-        const nameG = isNameInvalid(value);
-        if (nameG.bad) return "Please enter your real name.";
+        if (mode === "hard" && value.trim().length < 2)
+          return "Please enter your full name.";
+        if (value.trim().length >= 2) {
+          const nameG = isNameInvalid(value);
+          if (nameG.bad) return "This doesn't look like a real name. This form blocks automated submissions.";
+        }
         return;
       case "email":
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim()))
+        if (mode === "hard" && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim()))
           return "Please enter a valid email.";
         return;
       case "service":
-        if (!value) return "Pick the service you're interested in.";
+        if (mode === "hard" && !value) return "Pick the service you're interested in.";
         return;
       case "budget":
-        if (!value) return "Approximate budget helps us propose the right scope.";
+        if (mode === "hard" && !value) return "Approximate budget helps us propose the right scope.";
         return;
       case "timeline":
-        if (!value) return "Tell us roughly when you want to start.";
+        if (mode === "hard" && !value) return "Tell us roughly when you want to start.";
         return;
-      case "details":
+      case "company": {
+        // Only fires for gibberish mash — empty is fine (optional field).
+        if (value.trim().length >= 8) {
+          const cg = isGibberish(value, { minLength: 8 });
+          if (cg.bad) return "That company name looks invalid.";
+        }
+        return;
+      }
+      case "details": {
         const v = value.trim();
-        if (v.length < MIN_DETAIL_CHARS)
+        if (mode === "hard" && v.length < MIN_DETAIL_CHARS)
           return `Please share at least ${MIN_DETAIL_CHARS} characters about the project.`;
         if (v.length > MAX_DETAIL_CHARS)
           return `Keep it under ${MAX_DETAIL_CHARS} characters — save the details for the call.`;
         if (SPAM_PATTERNS.some((re) => re.test(v)))
-          return "Your message triggered our spam filter. Please rephrase.";
+          return "This form rejects promotional content. Please write about your project.";
         if ((v.match(/https?:\/\//gi) ?? []).length > 3)
           return "Please include at most three links in your message.";
-        // Statistical gibberish check — catches keyboard mashing
-        // ("ssssss...") that passes the length check but isn't
-        // actually content.
-        const g = isGibberish(v, { minLength: 20 });
-        if (g.bad) return "That doesn't look like a real project description. Please tell us more.";
+        if (v.length >= 20) {
+          const g = isGibberish(v, { minLength: 20 });
+          if (g.bad) return "This form rejects automated and low-content submissions. Please write a real project description.";
+        }
         return;
+      }
       case "phone":
         if (value && value.replace(/\D/g, "").length < 7)
           return "That phone number looks incomplete.";
@@ -177,8 +198,8 @@ export default function ContactForm({
 
   const validateAll = (): FieldErrors => {
     const next: FieldErrors = {};
-    (["name","email","service","budget","timeline","details","phone"] as const).forEach((k) => {
-      const err = validateField(k, form[k]);
+    (["name","email","service","budget","timeline","details","phone","company"] as const).forEach((k) => {
+      const err = validateField(k, form[k], "hard");
       if (err) next[k] = err;
     });
     return next;
@@ -198,15 +219,47 @@ export default function ContactForm({
 
   /* ── Field updater ── */
 
+  // `spamFlagged` turns on the moment ANY field's live validation
+  // catches a heuristic hit (gibberish name, mash-pattern details,
+  // spam keyword). It stays on until they fix the content. Scares
+  // off casual spammers who see the banner and bail, and also
+  // surfaces to legit users if they accidentally typed something
+  // the heuristics flag.
+  const [spamFlagged, setSpamFlagged] = useState(false);
+
+  const recomputeSpamFlag = (next: FormState) => {
+    const hits = [
+      validateField("name", next.name, "live"),
+      validateField("company", next.company, "live"),
+      validateField("details", next.details, "live"),
+    ];
+    setSpamFlagged(hits.some(Boolean));
+  };
+
   const setField = <K extends keyof FormState>(key: K, value: FormState[K]) => {
-    setForm((p) => ({ ...p, [key]: value }));
-    // Clear any existing error as the user starts correcting it.
-    if (errors[key]) setErrors((p) => ({ ...p, [key]: undefined }));
+    const next = { ...form, [key]: value };
+    setForm(next);
+
+    // Live-validate the field that just changed. If it's a field
+    // that has a live check (name/company/details) we run in live
+    // mode — otherwise we clear any existing error and wait for blur.
+    const liveChecked = key === "name" || key === "company" || key === "details";
+    if (liveChecked && (touched[key] || (value as string).length > 0)) {
+      const err = validateField(key, value as string, "live");
+      setErrors((p) => ({ ...p, [key]: err }));
+    } else if (errors[key]) {
+      // Clear the existing error on non-live fields so the user isn't
+      // stuck with stale errors while they're editing.
+      setErrors((p) => ({ ...p, [key]: undefined }));
+    }
+
+    // Re-check the global spam flag across all flagged fields.
+    if (liveChecked) recomputeSpamFlag(next);
   };
 
   const blur = (key: keyof FormState) => {
     setTouched((p) => ({ ...p, [key]: true }));
-    const err = validateField(key, form[key]);
+    const err = validateField(key, form[key], "hard");
     setErrors((p) => ({ ...p, [key]: err }));
   };
 
@@ -322,6 +375,38 @@ export default function ContactForm({
 
   return (
     <form onSubmit={handleSubmit} noValidate className="mx-auto w-full max-w-3xl space-y-10">
+      {/* Spam-detected banner — surfaces the moment ANY field's live
+          heuristic fires. Intentionally blunt copy: makes real
+          visitors curious rather than confused, and makes casual
+          spammers close the tab. Animates in/out to feel responsive. */}
+      <AnimatePresence>
+        {spamFlagged && (
+          <motion.div
+            initial={{ opacity: 0, y: -8, height: 0 }}
+            animate={{ opacity: 1, y: 0, height: "auto" }}
+            exit={{ opacity: 0, y: -8, height: 0 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden rounded-xl border border-[#C8102E]/30 bg-[#C8102E]/5 p-4 text-[#C8102E]"
+          >
+            <div className="flex items-start gap-3">
+              <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+              <div className="min-w-0 flex-1">
+                <p className="text-[13px] font-semibold uppercase tracking-[0.16em]">
+                  Automated submission detected
+                </p>
+                <p className="mt-1.5 text-[13px] leading-relaxed">
+                  Our anti-spam system flagged one or more fields as
+                  low-content, keyboard-mashed, or promotional. Every
+                  submission is logged with your IP and reviewed. Real
+                  prospects, please write out your project in plain
+                  language — we'll reply within 24 hours.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* ── Contact section ── */}
       <Section eyebrow="01 · You" title="How do we reach you?">
         <div className="grid gap-4 sm:grid-cols-2">
