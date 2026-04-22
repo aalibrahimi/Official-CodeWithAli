@@ -169,7 +169,7 @@ const MerchCard: React.FC<{
       </div>
 
       {/* Image container with fixed aspect ratio */}
-      <div className="relative aspect-square w-full overflow-hidden bg-gradient-to-br from-red-50 to-white dark:from-red-950/10 dark:to-black">
+      <div className="relative aspect-square w-full overflow-hidden bg-gradient-to-br from-[#FAF9F6] to-white dark:from-[#0A0A0B]/10 dark:to-black">
         <Image
           src={imagePath}
           alt={`${name} in ${selectedColor}`}
@@ -268,7 +268,7 @@ const MerchCard: React.FC<{
       {/* Button */}
       <div className="p-4 pt-0">
         {/* <Button
-          className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 dark:from-red-700 dark:to-red-900 dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-400/30 dark:border-red-800/30"
+          className="w-full bg-[#C8102E] hover:bg-[#9F0F24] text-white border border-[#C8102E]/30 dark:border-[#C8102E]/30"
           disabled={!available}
           onClick={handleAddToCart}
           >
@@ -279,7 +279,7 @@ const MerchCard: React.FC<{
           <Link href={paymentLink} target="_blank">
             <Button
               size="sm"
-              className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 dark:from-red-700 dark:to-red-900 dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-400/30 dark:border-red-800/30 hover:cursor-pointer"
+              className="w-full bg-[#C8102E] hover:bg-[#9F0F24] text-white border border-[#C8102E]/30 dark:border-[#C8102E]/30 hover:cursor-pointer"
             >
               {t("merchComp.buyBtn")}
             </Button>
@@ -287,7 +287,7 @@ const MerchCard: React.FC<{
         ) : (
           <Button
             size="sm"
-            className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 dark:from-red-700 dark:to-red-900 dark:hover:from-red-600 dark:hover:to-red-800 text-white/60 border border-red-400/30 dark:border-red-800/30"
+            className="w-full bg-[#C8102E] hover:bg-[#9F0F24] text-white/60 border border-[#C8102E]/30 dark:border-[#C8102E]/30"
           >
             {t("merchComp.soonLabel")}
           </Button>
@@ -393,7 +393,7 @@ const MerchCard: React.FC<{
 //               >
 //                 View Cart
 //               </Button>
-//               <Button className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 dark:from-red-700 dark:to-red-900 dark:hover:from-red-600 dark:hover:to-red-800 text-white">
+//               <Button className="bg-[#C8102E] hover:bg-[#9F0F24] text-white">
 //                 Checkout
 //               </Button>
 //             </div>
@@ -660,7 +660,7 @@ export default function MerchandisePage() {
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 border-b-[1px] border-b-red-200/50 dark:border-b-red-950/50">
           <div className="dark:block block">
             <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-500 via-red-700 to-red-900 dark:bg-gradient-to-br  dark:from-red-950/30 dark:via-transparent dark:to-transparent"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#C8102E] via-[#0A0A0B] to-[#0A0A0B] dark:bg-gradient-to-br  dark:from-[#C8102E]/30 dark:via-transparent dark:to-transparent"></div>
           </div>
         </div>
 
@@ -671,7 +671,7 @@ export default function MerchandisePage() {
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-black dark:text-white">
               {t("title.1")}
-              <span className="bg-gradient-to-r from-white via-white to-white dark:from-red-400 dark:via-red-500 dark:to-red-700 bg-clip-text text-transparent block">
+              <span className="text-white dark:text-[#D4AF37] block">
                 {t("title.2")}
               </span>
             </h1>
@@ -680,7 +680,7 @@ export default function MerchandisePage() {
             </p>
             <Button
               size="lg"
-              className="bg-gradient-to-r from-red-700 to-red-700 hover:from-red-800 hover:to-red-800 dark:from-red-700 dark:to-red-900 dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-400/30 dark:border-red-800/30 shadow-lg shadow-red-300/20 dark:shadow-red-950/20"
+              className="bg-[#C8102E] hover:bg-[#9F0F24] text-white border border-[#C8102E]/30 dark:border-[#C8102E]/30 shadow-lg shadow-black/10"
             >
               {t("shopBtn")}
               <ShoppingCart className="ml-2 h-5 w-5" />
@@ -696,7 +696,7 @@ export default function MerchandisePage() {
             <Badge className="bg-red-700 dark:bg-red-900/30 text-white dark:text-red-400 border-transparent mb-4 px-3 py-1">
               {t("badge.2")}
             </Badge>
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-red-700 via-red-600 to-red-500 dark:from-white dark:via-red-500 dark:to-red-700 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-bold text-[#C8102E] dark:text-white">
               {t("heading.1")}
             </h2>
           </div>
@@ -707,7 +707,7 @@ export default function MerchandisePage() {
                 key={index}
                 className="group cursor-pointer bg-red-200 dark:bg-black/60 border border-red-300/40 dark:border-red-900/40 rounded-xl overflow-hidden hover:border-red-700/60 transition-all duration-300"
               >
-                <div className="aspect-[16/9] bg-gradient-to-br from-red-100 to-red-50/30 dark:from-red-950/40 dark:to-red-900/10 relative overflow-hidden">
+                <div className="aspect-[16/9] bg-gradient-to-br from-[#FAF9F6] to-[#FAF9F6]/30 dark:from-[#0A0A0B]/40 dark:to-[#0A0A0B]/10 relative overflow-hidden">
                   <div className="absolute inset-0 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500">
                     <ShoppingBag className="h-16 w-16 text-red-400/60 dark:text-red-500/40" />
                   </div>
@@ -735,7 +735,7 @@ export default function MerchandisePage() {
             <Badge className="bg-red-700 dark:bg-red-900/30 text-white dark:text-red-400 border-transparent mb-4 px-3 py-1">
               {t("badge.3")}
             </Badge>
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-red-700 via-red-600 to-red-500 dark:from-white dark:via-red-500 dark:to-red-700 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-bold text-[#C8102E] dark:text-white">
               {t("heading.2")}
             </h2>
           </div>
@@ -847,7 +847,7 @@ export default function MerchandisePage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex flex-col items-center text-center p-6 group">
-              <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 dark:from-red-800 dark:to-red-900 rounded-full flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#C8102E] to-[#0A0A0B] dark:from-[#C8102E] dark:to-[#0A0A0B] rounded-full flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
                 <Tag className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-white dark:text-white mb-2">
@@ -859,7 +859,7 @@ export default function MerchandisePage() {
             </div>
 
             <div className="flex flex-col items-center text-center p-6 group">
-              <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 dark:from-red-800 dark:to-red-900 rounded-full flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#C8102E] to-[#0A0A0B] dark:from-[#C8102E] dark:to-[#0A0A0B] rounded-full flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
                 <TrendingUp className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-white dark:text-white mb-2">
@@ -871,7 +871,7 @@ export default function MerchandisePage() {
             </div>
 
             <div className="flex flex-col items-center text-center p-6 group">
-              <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 dark:from-red-800 dark:to-red-900 rounded-full flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#C8102E] to-[#0A0A0B] dark:from-[#C8102E] dark:to-[#0A0A0B] rounded-full flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
                 <CheckCircle className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-white dark:text-white mb-2">
@@ -905,7 +905,7 @@ export default function MerchandisePage() {
               <Link href="/merchandise">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-red-700 to-red-700 hover:from-red-800 hover:to-red-800 dark:from-red-700 dark:to-red-900 dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-400/30 dark:border-red-800/30 shadow-lg shadow-red-300/20 dark:shadow-red-950/20"
+                  className="bg-[#C8102E] hover:bg-[#9F0F24] text-white border border-[#C8102E]/30 dark:border-[#C8102E]/30 shadow-lg shadow-black/10"
                 >
                   {t("shopBtn")}
                   <ShoppingCart className="ml-2 h-5 w-5" />

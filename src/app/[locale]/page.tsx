@@ -57,7 +57,7 @@ function Hero({ t, Chevron }: { t: ReturnType<typeof useTranslations>; Chevron: 
   return (
     <section className="relative overflow-hidden px-5 pb-16 pt-20 lg:px-10 lg:pb-24 lg:pt-28">
       {/* Single subtle red glow — the whole "red gradient wash" replaced by a single focal moment. */}
-      <div className="pointer-events-none absolute -top-40 right-[-10%] h-[600px] w-[800px] rounded-full bg-[#E11D48]/15 blur-[140px] dark:bg-[#E11D48]/10" />
+      <div className="pointer-events-none absolute -top-40 right-[-10%] h-[600px] w-[800px] rounded-full bg-[#C8102E]/15 blur-[140px] dark:bg-[#C8102E]/10" />
 
       <div className="relative mx-auto max-w-7xl">
         {/* Eyebrow */}
@@ -67,7 +67,7 @@ function Hero({ t, Chevron }: { t: ReturnType<typeof useTranslations>; Chevron: 
           transition={{ duration: 0.5 }}
           className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#0F0F10]/15 bg-[#0F0F10]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0F0F10]/70 dark:border-white/15 dark:bg-white/5 dark:text-white/75"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-[#E11D48]" />
+          <span className="h-1.5 w-1.5 rounded-full bg-[#C8102E]" />
           CodeWithAli · Web engineering studio
         </motion.div>
 
@@ -80,7 +80,7 @@ function Hero({ t, Chevron }: { t: ReturnType<typeof useTranslations>; Chevron: 
           style={{ fontSize: "clamp(44px, 9vw, 128px)" }}
         >
           {t("hero.title.part1")}<br />
-          <em className="font-normal italic text-[#E11D48]">{t("hero.title.part2")}</em>
+          <em className="font-normal italic text-[#C8102E]">{t("hero.title.part2")}</em>
         </motion.h1>
 
         {/* Subhead + CTAs */}
@@ -98,7 +98,7 @@ function Hero({ t, Chevron }: { t: ReturnType<typeof useTranslations>; Chevron: 
             <Link href="/contact">
               <Button
                 size="lg"
-                className="rounded-full bg-[#E11D48] px-7 py-6 text-[13.5px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#BE123C]"
+                className="rounded-full bg-[#C8102E] px-7 py-6 text-[13.5px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#9F0F24]"
               >
                 {t("hero.buttons.startProject")}
                 <Chevron className="ml-1 h-4 w-4" />
@@ -106,7 +106,7 @@ function Hero({ t, Chevron }: { t: ReturnType<typeof useTranslations>; Chevron: 
             </Link>
             <Link
               href="/portfolio"
-              className="group inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-[0.18em] text-[#0F0F10]/80 transition-colors hover:text-[#E11D48] dark:text-white/80 dark:hover:text-[#FF5C7A]"
+              className="group inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-[0.18em] text-[#0F0F10]/80 transition-colors hover:text-[#C8102E] dark:text-white/80 dark:hover:text-[#C8102E]"
             >
               {t("hero.buttons.viewWork")}
               <MoveUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -139,7 +139,7 @@ function StatsBand({ t }: { t: ReturnType<typeof useTranslations> }) {
             className="text-center md:text-left"
           >
             <p
-              className="font-light leading-none tracking-tight"
+              className="font-light leading-none tracking-tight text-[#C8102E]"
               style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
             >
               {s.v}
@@ -171,7 +171,7 @@ function IndustryDemos() {
           className="mb-14 flex flex-col items-start justify-between gap-5 md:flex-row md:items-end"
         >
           <div>
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#E11D48]">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">
               Pick your industry
             </p>
             <h2
@@ -179,12 +179,12 @@ function IndustryDemos() {
               style={{ fontSize: "clamp(34px, 5vw, 64px)" }}
             >
               See your site before we<br />
-              <em className="italic text-[#E11D48]">build a single line.</em>
+              <em className="italic text-[#C8102E]">build a single line.</em>
             </h2>
           </div>
           <Link
             href="/templates"
-            className="inline-flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-[0.2em] text-[#0F0F10]/70 hover:text-[#E11D48] dark:text-white/70"
+            className="inline-flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-[0.2em] text-[#0F0F10]/70 hover:text-[#C8102E] dark:text-white/70 dark:hover:text-[#C8102E]"
           >
             Browse all 8 templates
             <MoveUpRight className="h-3 w-3" />
@@ -306,7 +306,7 @@ function Services({ t }: { t: ReturnType<typeof useTranslations> }) {
         <FadeIn>
           <div className="mb-14 flex flex-col items-start justify-between gap-5 md:flex-row md:items-end">
             <div>
-              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#E11D48]">
+              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">
                 {t("services.badge")}
               </p>
               <h2
@@ -327,7 +327,7 @@ function Services({ t }: { t: ReturnType<typeof useTranslations> }) {
             <FadeIn key={s.key} delay={i * 0.04}>
               <Link href={s.url} className="group relative flex h-full flex-col justify-between bg-[#FAF9F6] p-8 transition-colors hover:bg-white dark:bg-[#0D0D0E] dark:hover:bg-[#121214] lg:p-10">
                 <div>
-                  <div className="h-16 w-16 text-[#E11D48]">
+                  <div className="h-16 w-16 text-[#C8102E]">
                     <s.Mark />
                   </div>
                   <h3 className="mt-6 text-[22px] font-semibold tracking-tight lg:text-[26px]">
@@ -337,7 +337,7 @@ function Services({ t }: { t: ReturnType<typeof useTranslations> }) {
                     {t(`services.items.${s.key}.description`)}
                   </p>
                 </div>
-                <div className="mt-8 flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-[0.2em] text-[#0F0F10]/70 transition-all group-hover:gap-3 group-hover:text-[#E11D48] dark:text-white/70">
+                <div className="mt-8 flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-[0.2em] text-[#0F0F10]/70 transition-all group-hover:gap-3 group-hover:text-[#C8102E] dark:text-white/70 dark:group-hover:text-[#C8102E]">
                   {t("services.learnMore")}
                   <ArrowRight className="h-3.5 w-3.5" />
                 </div>
@@ -365,7 +365,7 @@ function Portfolio({ t, Chevron }: { t: ReturnType<typeof useTranslations>; Chev
         <FadeIn>
           <div className="mb-14 flex flex-col items-start justify-between gap-5 md:flex-row md:items-end">
             <div>
-              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#E11D48]">
+              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">
                 {t("portfolio.badge")}
               </p>
               <h2
@@ -377,7 +377,7 @@ function Portfolio({ t, Chevron }: { t: ReturnType<typeof useTranslations>; Chev
             </div>
             <Link
               href="/portfolio"
-              className="inline-flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-[0.2em] text-[#0F0F10]/70 hover:text-[#E11D48] dark:text-white/70"
+              className="inline-flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-[0.2em] text-[#0F0F10]/70 hover:text-[#C8102E] dark:text-white/70 dark:hover:text-[#C8102E]"
             >
               All projects <MoveUpRight className="h-3 w-3" />
             </Link>
@@ -387,7 +387,7 @@ function Portfolio({ t, Chevron }: { t: ReturnType<typeof useTranslations>; Chev
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((p, i) => (
             <FadeIn key={p.title} delay={i * 0.06}>
-              <a href={p.url} target="_blank" rel="noreferrer" className="group block overflow-hidden rounded-2xl border border-[#0F0F10]/10 transition-all hover:-translate-y-1 hover:border-[#E11D48]/30 hover:shadow-[0_30px_60px_-20px_rgba(225,29,72,0.25)] dark:border-white/10">
+              <a href={p.url} target="_blank" rel="noreferrer" className="group block overflow-hidden rounded-2xl border border-[#0F0F10]/10 transition-all hover:-translate-y-1 hover:border-[#C8102E]/40 hover:shadow-[0_30px_60px_-20px_rgba(200,16,46,0.3)] dark:border-white/10">
                 <div className="relative aspect-[4/3] overflow-hidden bg-[#F1EFEA] dark:bg-white/5">
                   <Image
                     src={p.image}
@@ -400,7 +400,7 @@ function Portfolio({ t, Chevron }: { t: ReturnType<typeof useTranslations>; Chev
                   />
                 </div>
                 <div className="p-6">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#E11D48]">{p.category}</p>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF37]">{p.category}</p>
                   <h3 className="mt-2 text-[20px] font-semibold tracking-tight">{p.title}</h3>
                 </div>
               </a>
@@ -411,7 +411,7 @@ function Portfolio({ t, Chevron }: { t: ReturnType<typeof useTranslations>; Chev
         <div className="mt-12 text-center">
           <Link
             href="/portfolio"
-            className="inline-flex items-center gap-2 rounded-full border border-[#0F0F10]/15 px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.16em] text-[#0F0F10] hover:border-[#E11D48] hover:text-[#E11D48] dark:border-white/20 dark:text-white"
+            className="inline-flex items-center gap-2 rounded-full border border-[#0F0F10]/15 px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.16em] text-[#0F0F10] hover:border-[#C8102E] hover:text-[#C8102E] dark:border-white/20 dark:text-white dark:hover:text-[#C8102E]"
           >
             {t("portfolio.viewAllProjects")} <Chevron className="h-4 w-4" />
           </Link>
@@ -430,7 +430,7 @@ function Process({ t }: { t: ReturnType<typeof useTranslations> }) {
       <div className="mx-auto max-w-7xl">
         <FadeIn>
           <div className="mb-16 max-w-3xl">
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#E11D48]">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">
               {t("process.badge")}
             </p>
             <h2
@@ -449,7 +449,7 @@ function Process({ t }: { t: ReturnType<typeof useTranslations> }) {
           {steps.map((n, i) => (
             <FadeIn key={n} delay={i * 0.06}>
               <div className="border-t border-[#0F0F10]/15 pt-6 dark:border-white/15">
-                <p className="font-light tabular-nums text-[#E11D48]" style={{ fontSize: "clamp(40px, 4.5vw, 56px)" }}>
+                <p className="font-light tabular-nums text-[#C8102E]" style={{ fontSize: "clamp(40px, 4.5vw, 56px)" }}>
                   0{n}
                 </p>
                 <h3 className="mt-4 text-[20px] font-semibold tracking-tight lg:text-[22px]">
@@ -476,7 +476,7 @@ function Testimonials({ t }: { t: ReturnType<typeof useTranslations> }) {
       <div className="mx-auto max-w-7xl">
         <FadeIn>
           <div className="mb-14 max-w-3xl">
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#E11D48]">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">
               {t("testimonials.badge")}
             </p>
             <h2
@@ -492,7 +492,7 @@ function Testimonials({ t }: { t: ReturnType<typeof useTranslations> }) {
           {items.map((i, idx) => (
             <FadeIn key={i} delay={idx * 0.06}>
               <blockquote className="flex h-full flex-col rounded-2xl border border-[#0F0F10]/10 bg-[#FAF9F6] p-7 dark:border-white/10 dark:bg-[#0D0D0E] lg:p-9">
-                <Quote className="h-6 w-6 text-[#E11D48]/60" />
+                <Quote className="h-6 w-6 text-[#C8102E]" />
                 <p className="mt-5 flex-1 text-[15.5px] leading-relaxed text-[#0F0F10]/85 dark:text-white/85">
                   &ldquo;{t(`testimonials.items.${i}.content`)}&rdquo;
                 </p>
@@ -518,10 +518,10 @@ function FinalCTA({ t, Chevron }: { t: ReturnType<typeof useTranslations>; Chevr
     <section className="px-5 pb-24 pt-10 lg:px-10 lg:pb-32">
       <FadeIn>
         <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-[#0F0F10] p-12 text-white dark:bg-[#141416] lg:p-20">
-          <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-[#E11D48]/25 blur-[120px]" />
-          <div className="pointer-events-none absolute -bottom-40 -left-20 h-96 w-96 rounded-full bg-[#E11D48]/15 blur-[120px]" />
+          <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-[#C8102E]/25 blur-[120px]" />
+          <div className="pointer-events-none absolute -bottom-40 -left-20 h-96 w-96 rounded-full bg-[#C8102E]/15 blur-[120px]" />
           <div className="relative">
-            <Sparkles className="h-7 w-7 text-[#E11D48]" />
+            <Sparkles className="h-7 w-7 text-[#C8102E]" />
             <h2
               className="mt-6 max-w-3xl font-light leading-[1.0] tracking-[-0.02em]"
               style={{ fontSize: "clamp(36px, 6vw, 80px)" }}
@@ -535,14 +535,14 @@ function FinalCTA({ t, Chevron }: { t: ReturnType<typeof useTranslations>; Chevr
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="rounded-full bg-[#E11D48] px-7 py-6 text-[13.5px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#BE123C]"
+                  className="rounded-full bg-[#C8102E] px-7 py-6 text-[13.5px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#9F0F24]"
                 >
                   {t("cta.buttons.startProject")} <Chevron className="ml-1 h-4 w-4" />
                 </Button>
               </Link>
               <a
                 href="mailto:unfold@codewithali.com"
-                className="group inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.18em] text-white/80 transition-colors hover:text-[#FF5C7A]"
+                className="group inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.18em] text-white/80 transition-colors hover:text-[#C8102E]"
               >
                 <Mail className="h-4 w-4" /> unfold@codewithali.com
               </a>

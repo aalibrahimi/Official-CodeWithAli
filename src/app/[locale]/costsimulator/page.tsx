@@ -322,7 +322,7 @@ const CostSimulator = () => {
             </Badge>
             <h1 className="text-4xl text-black dark:text-white md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Website Build
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-500 dark:from-blue-400 dark:to-blue-600 block">
+              <span className="text-[#C8102E] dark:text-white block">
                 Cost Simulator
               </span>
             </h1>
@@ -533,12 +533,12 @@ const CostSimulator = () => {
             {/* Cost Summary Sidebar */}
             <div className="lg:col-span-1">
               <div className="sticky top-8">
-                <Card className="bg-gradient-to-br from-blue-600 to-blue-800 text-white border-0 shadow-2xl">
+                <Card className="bg-gradient-to-br from-[#C8102E] to-[#0A0A0B] text-white border-0 shadow-2xl">
                   <CardContent className="p-6">
                     <div className="text-center mb-6">
                       <h3 className="text-2xl font-bold mb-2">Project Estimate</h3>
                       <div className="text-4xl font-bold">
-                        <GradientText gradient="from-white to-blue-200">
+                        <GradientText gradient="from-white to-[#D4AF37]">
                           ${totalCost.toLocaleString()}
                         </GradientText>
                       </div>

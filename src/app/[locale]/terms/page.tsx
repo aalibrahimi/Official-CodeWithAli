@@ -96,7 +96,7 @@ export default function TermsAndConditions() {
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 w-full h-1 bg-gray-800 z-50">
         <div 
-          className="h-full bg-gradient-to-r from-red-500 to-red-600 transition-all duration-300"
+          className="h-full bg-gradient-to-r from-[#C8102E] to-[#9F0F24] transition-all duration-300"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -130,7 +130,7 @@ export default function TermsAndConditions() {
             <FileText className="w-3 h-3 mr-1" />
             Terms of Service
           </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black bg-gradient-to-r dark:from-white dark:via-red-200 dark:to-red-300 bg-clip-text dark:text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black dark:text-white">
             Terms and Conditions
           </h1>
           <p className="text-black dark:text-gray-400 text-lg">

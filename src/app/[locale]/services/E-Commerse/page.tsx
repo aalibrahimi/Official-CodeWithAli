@@ -22,7 +22,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import GradientText from "@/MyComponents/GradientText";
 import { useLocale, useTranslations } from "next-intl";
 import { isRtlLang } from "rtl-detect";
 
@@ -157,21 +156,21 @@ const EcommerceSolutionsPage = () => {
     <div className="min-h-screen bg-white dark:bg-black text-white overflow-x-hidden">
       {/* Hero Section - Side-by-side layout */}
       {/* Hero Section - Side-by-side layout */}
-      <section className="py-20 relative overflow-hidden border-b border-green-200 dark:border-green-900">
+      <section className="py-20 relative overflow-hidden border-b border-[#C8102E]/10 dark:border-white/10">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white via-green-300 to-green-500 dark:bg-gradient-to-br dark:from-green-950/30 dark:via-transparent dark:to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white via-[#C8102E]/20 to-[#C8102E]/40 dark:bg-gradient-to-br dark:from-[#C8102E]/10 dark:via-transparent dark:to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="bg-green-600 text-white dark:bg-green-900/30 dark:text-green-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-4 px-3 py-1">
                 {t("badge.1")}
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-black dark:text-white">
                 {t("title.1")}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-800 via-green-600 to-green-700 dark:from-white dark:via-green-400 dark:to-red-500 block">
+                <span className="text-[#C8102E] dark:text-white block">
                   {t("title.2")}
                 </span>
               </h1>
@@ -181,8 +180,8 @@ const EcommerceSolutionsPage = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-green-600 to-green-700 dark:from-green-700 dark:to-green-900 hover:from-green-700 hover:to-green-800 
-                   dark:hover:from-green-600 dark:hover:to-green-800 text-white border border-green-300 dark:border-green-800/30 shadow-lg shadow-green-200/50 dark:shadow-green-950/20 px-8"
+                  className="bg-[#C8102E] hover:bg-[#9F0F24] 
+                   text-white border border-[#0F0F10]/10 dark:border-white/10 shadow-lg shadow-black/10 px-8"
                   onClick={() => router.push("/contact")}
                 >
                   {t("startBtn")}
@@ -195,7 +194,7 @@ const EcommerceSolutionsPage = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-green-400 dark:border-green-800/30 text-green-700 dark:text-green-400 bg-green-100/80 dark:bg-green-950/20 hover:bg-green-400/80 dark:hover:bg-green-950/30 hover:text-green-800 dark:hover:text-white px-8"
+                  className="border-[#C8102E]/10 dark:border-white/10 text-[#C8102E] dark:text-[#D4AF37] bg-[#C8102E]/10 dark:bg-white/5 hover:bg-[#9F0F24] dark:hover:bg-white/10 hover:text-white dark:hover:text-white px-8"
                   onClick={() =>
                     document
                       .getElementById("packages")
@@ -208,7 +207,7 @@ const EcommerceSolutionsPage = () => {
             </div>
 
             {/* Stats/Features Box */}
-            <div className="bg-green-800 text-white dark:bg-black dark:text-white border border-green-300 dark:border-green-900 rounded-xl overflow-hidden shadow-xl p-6 md:p-8">
+            <div className="bg-[#C8102E] text-white dark:bg-black dark:text-white border border-[#C8102E]/20 dark:border-white/10 rounded-xl overflow-hidden shadow-xl p-6 md:p-8">
               <h3 className="text-2xl font-bold text-center mb-6">
                 {t("sections.1.title")}
               </h3>
@@ -236,10 +235,10 @@ const EcommerceSolutionsPage = () => {
                   },
                 ].map((stat, index) => (
                   <div key={index} className="text-center">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-400 to-green-600 dark:from-green-700 dark:to-green-900 flex items-center justify-center mx-auto mb-3">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#C8102E] to-[#9F0F24] dark:from-[#C8102E] dark:to-[#0A0A0B] flex items-center justify-center mx-auto mb-3">
                       <stat.icon className="w-6 h-6 text-white" />
                     </div>
-                    <div className="text-2xl md:text-3xl font-bold text-white dark:text-green-400">
+                    <div className="text-2xl md:text-3xl font-bold text-white dark:text-[#D4AF37]">
                       {stat.value}
                     </div>
                     <p className="text-sm text-white dark:text-white/80">
@@ -258,15 +257,15 @@ const EcommerceSolutionsPage = () => {
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
             <div>
-              <Badge className="bg-green-600 text-white dark:bg-green-900/30 dark:text-green-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-4 px-3 py-1">
                 {t("badge.2")}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-green-800 bg-transparent ">
-                <GradientText gradient="from-green-700 via-green-600 dark:from-gray-200 dark:via-green-400 to-green-500">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#C8102E] dark:text-white bg-transparent ">
+                <span>
                   {t("sections.2.title")}
-                </GradientText>
+                </span>
               </h2>
-              <p className="text-green-700 dark:text-white/80 text-lg max-w-2xl mx-auto">
+              <p className="text-[#C8102E] dark:text-white/80 text-lg max-w-2xl mx-auto">
                 {t("sections.2.desc")}
               </p>
             </div>
@@ -317,12 +316,12 @@ const EcommerceSolutionsPage = () => {
               },
             ].map((feature, index) => (
               <div key={index}>
-                <Card className="bg-green-200 text-black dark:bg-black/60 dark:text-white border-green-300 dark:border-green-900 backdrop-blur-sm h-full">
+                <Card className="bg-[#C8102E]/10 text-black dark:bg-black/60 dark:text-white border-[#C8102E]/10 dark:border-white/10 backdrop-blur-sm h-full">
                   <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-400 to-green-600 dark:from-green-700 dark:to-green-900 flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#C8102E] to-[#9F0F24] dark:from-[#C8102E] dark:to-[#0A0A0B] flex items-center justify-center mb-4">
                       <feature.icon className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-green-800 dark:text-white mb-2">
+                    <h3 className="text-xl font-bold text-[#C8102E] dark:text-white mb-2">
                       {feature.title}
                     </h3>
                     <p className="text-black dark:text-white/80">
@@ -341,13 +340,13 @@ const EcommerceSolutionsPage = () => {
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
             <div>
-              <Badge className="bg-green-600 text-white dark:bg-green-900/30 dark:text-green-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-4 px-3 py-1">
                 {t("badge.3")}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-green-800 bg-transparent">
-                <GradientText gradient="from-green-700 via-green-600 dark:from-gray-200 dark:via-green-400 to-green-500">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#C8102E] dark:text-white bg-transparent">
+                <span>
                   {t("sections.3.title")}
-                </GradientText>
+                </span>
               </h2>
               <p className="text-black dark:text-white/70 text-lg max-w-2xl mx-auto">
                 {t("sections.3.desc")}
@@ -361,17 +360,17 @@ const EcommerceSolutionsPage = () => {
                 <Card
                   className={`backdrop-blur-sm overflow-hidden ${
                     pkg.highlighted
-                      ? "bg-gradient-to-r from-green-500 to-green-400 text-black dark:from-green-800 dark:to-green-950 dark:text-white hover:from-green-600 hover:to-green-500 dark:hover:from-green-700 dark:hover:to-green-900"
-                      : "bg-green-200 text-green-800 dark:bg-black/60 dark:text-white border-green-300 dark:border-green-900"
+                      ? "bg-white hover:bg-[#F4F4F5] text-[#C8102E] dark:bg-[#0A0A0B] dark:text-[#D4AF37] dark:hover:bg-[#0A0A0B]"
+                      : "bg-[#C8102E]/10 text-[#C8102E] dark:bg-black/60 dark:text-white border-[#C8102E]/10 dark:border-white/10"
                   }`}
                 >
                   <CardContent className="p-0">
                     <div className="grid grid-cols-1 md:grid-cols-3">
                       {/* Left column with fixed height for consistent alignment */}
-                      <div className="p-6 md:p-8 md:border-r border-green-300 dark:border-green-900 flex flex-col h-full md:min-h-[320px]">
+                      <div className="p-6 md:p-8 md:border-r border-[#C8102E]/10 dark:border-white/10 flex flex-col h-full md:min-h-[320px]">
                         <div>
                           {pkg.highlighted && (
-                            <Badge className="bg-green-700 text-white dark:bg-green-950/70 dark:text-green-400 border-transparent mb-3">
+                            <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-3">
                               {t("sections.3.packages.badge")}
                             </Badge>
                           )}
@@ -379,7 +378,7 @@ const EcommerceSolutionsPage = () => {
                             {pkg.title}
                           </h3>
                           <div className="mt-2 mb-4">
-                            <span className="text-3xl font-bold text-black dark:text-green-400">
+                            <span className="text-3xl font-bold text-black dark:text-[#D4AF37]">
                               {pkg.price}
                             </span>
                             {pkg.price !== "Custom" && (
@@ -395,8 +394,8 @@ const EcommerceSolutionsPage = () => {
                         <Button
                           className={`w-full mt-auto ${
                             pkg.highlighted
-                              ? "bg-gradient-to-r from-green-700 to-green-800  dark:hover:from-green-500 dark:hover:to-green-700"
-                              : "bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 dark:from-green-700 dark:to-green-900 dark:hover:from-green-600 dark:hover:to-green-800"
+                              ? "bg-[#C8102E] hover:bg-[#9F0F24]"
+                              : "bg-[#C8102E] hover:bg-[#9F0F24]"
                           } text-white`}
                           onClick={() => router.push("/contact")}
                         >
@@ -410,14 +409,14 @@ const EcommerceSolutionsPage = () => {
                       </div>
 
                       {/* Right column with features - fixed vertical alignment */}
-                      <div className="p-6 md:p-8 md:col-span-2 bg-green-100/60 text-green-800 dark:bg-black/40 dark:text-white">
-                        <h4 className="text-lg font-semibold text-black dark:text-green-300 mb-4">
+                      <div className="p-6 md:p-8 md:col-span-2 bg-[#C8102E]/5 text-[#C8102E] dark:bg-black/40 dark:text-white">
+                        <h4 className="text-lg font-semibold text-black dark:text-[#D4AF37] mb-4">
                           {t("sections.3.packages.includedLabel")}
                         </h4>
                         <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                           {pkg.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start">
-                              <Check className={`w-5 h-5 text-green-600 dark:text-green-500 mt-0.5 ${isRTL ? "ml-2" : "mr-2"} flex-shrink-0`} />
+                              <Check className={`w-5 h-5 text-[#C8102E] dark:text-[#D4AF37] mt-0.5 ${isRTL ? "ml-2" : "mr-2"} flex-shrink-0`} />
                               <span className="text-black dark:text-white">
                                 {feature}
                               </span>
@@ -439,13 +438,13 @@ const EcommerceSolutionsPage = () => {
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
             <div>
-              <Badge className="bg-green-600 text-white dark:bg-green-900/30 dark:text-green-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-4 px-3 py-1">
                 {t("badge.4")}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-green-800 bg-transparent">
-                <GradientText gradient="from-green-700 via-green-600 dark:from-gray-200 dark:via-green-400 to-green-500">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#C8102E] dark:text-white bg-transparent">
+                <span>
                   {t("sections.4.title")}
-                </GradientText>
+                </span>
               </h2>
               <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
                 {t("sections.4.desc")}
@@ -489,17 +488,17 @@ const EcommerceSolutionsPage = () => {
               <div key={index} className="relative mb-10 last:mb-0">
                 <div className="flex">
                   <div className={`flex-shrink-0 ${isRTL ? "ml-6" : "mr-6"}`}>
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-green-600 dark:from-green-700 dark:to-green-900 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#C8102E] to-[#9F0F24] dark:from-[#C8102E] dark:to-[#0A0A0B] flex items-center justify-center">
                       <span className="text-xl font-bold text-white">
                         {phase.step}
                       </span>
                     </div>
                     {index < 5 && (
-                      <div className={`absolute top-16 -bottom-10 ${isRTL ? "right-8" : "left-8"} w-0.5 bg-green-300/60 dark:bg-green-900/40`}></div>
+                      <div className={`absolute top-16 -bottom-10 ${isRTL ? "right-8" : "left-8"} w-0.5 bg-[#C8102E]/30 dark:bg-white/10`}></div>
                     )}
                   </div>
-                  <div className="p-5 lg:w-[800px] border-1 border-green-600 flex flex-col justify-center rounded-lg">
-                    <h3 className="text-xl font-bold text-green-800 dark:text-white mb-3">
+                  <div className="p-5 lg:w-[800px] border-1 border-[#C8102E]/20 flex flex-col justify-center rounded-lg">
+                    <h3 className="text-xl font-bold text-[#C8102E] dark:text-white mb-3">
                       {phase.title}
                     </h3>
                     <p className="text-black dark:text-white/70">
@@ -518,13 +517,13 @@ const EcommerceSolutionsPage = () => {
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-14">
             <div>
-              <Badge className="bg-green-600 text-white dark:bg-green-900/30 dark:text-green-400 border-transparent mb-4 px-3 py-1">
+              <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-4 px-3 py-1">
                 {t("badge.5")}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-green-800 bg-transparent">
-                <GradientText gradient="from-green-700 via-green-600 dark:from-gray-200 dark:via-green-400 to-green-500">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#C8102E] dark:text-white bg-transparent">
+                <span>
                   {t("sections.5.title")}
-                </GradientText>
+                </span>
               </h2>
               <p className="text-black dark:text-white/85 text-lg max-w-2xl mx-auto">
                 {t("sections.5.desc")}
@@ -561,7 +560,7 @@ const EcommerceSolutionsPage = () => {
             ].map((faq, index) => (
               <div
                 key={index}
-                className="bg-green-200 text-green-800 dark:bg-black/60 dark:text-white border border-green-300 dark:border-green-900 rounded-lg overflow-hidden"
+                className="bg-[#C8102E]/10 text-[#C8102E] dark:bg-black/60 dark:text-white border border-[#C8102E]/10 dark:border-white/10 rounded-lg overflow-hidden"
               >
                 <button
                   className="w-full p-6 text-left flex justify-between items-center"
@@ -571,9 +570,9 @@ const EcommerceSolutionsPage = () => {
                     {faq.question}
                   </h3>
                   {activeFaq === index ? (
-                    <MinusCircle className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
+                    <MinusCircle className="w-5 h-5 text-[#C8102E] dark:text-[#D4AF37] flex-shrink-0" />
                   ) : (
-                    <PlusCircle className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
+                    <PlusCircle className="w-5 h-5 text-[#C8102E] dark:text-[#D4AF37] flex-shrink-0" />
                   )}
                 </button>
                 <div
@@ -594,10 +593,10 @@ const EcommerceSolutionsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 dark:bg-gradient-to-b dark:from-green-950/10 dark:to-black">
+      <section className="py-20 dark:bg-gradient-to-b dark:from-[#0A0A0B] dark:to-black">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <div className="max-w-4xl mx-auto bg-green-600/80 text-green-800 dark:bg-black/60 dark:text-white border border-green-300 dark:border-green-900 rounded-xl p-8 md:p-12 text-center">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-700 to-green-900 dark:from-green-700 dark:to-green-900 flex items-center justify-center mx-auto mb-6">
+          <div className="max-w-4xl mx-auto bg-[#C8102E]/20 text-[#C8102E] dark:bg-black/60 dark:text-white border border-[#C8102E]/20 dark:border-white/10 rounded-xl p-8 md:p-12 text-center">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#C8102E] to-[#0A0A0B] dark:from-[#C8102E] dark:to-[#0A0A0B] flex items-center justify-center mx-auto mb-6">
               <ShoppingBag className="w-8 h-8 text-white" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-6">
@@ -608,8 +607,8 @@ const EcommerceSolutionsPage = () => {
             </p>
             <Button
               size="lg"
-              className="bg-gradient-to-r from-green-600 to-green-700 dark:from-green-700 dark:to-green-900 hover:from-green-700 hover:to-green-800 
-                   dark:hover:from-green-600 dark:hover:to-green-800 text-white border border-green-700 dark:border-green-800/30 shadow-lg shadow-green-800/50 dark:shadow-green-950/20 px-8"
+              className="bg-[#C8102E] hover:bg-[#9F0F24] 
+                   text-white border border-[#0F0F10]/10 dark:border-white/10 shadow-lg shadow-black/10 px-8"
               onClick={() => router.push("/contact")}
             >
               {t("cta.getBtn")}

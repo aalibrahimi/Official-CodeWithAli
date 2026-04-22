@@ -1,370 +1,290 @@
+/**
+ * Services main page — rewritten 2026.
+ *
+ * Same design language as homepage/about. Six services with
+ * bespoke abstract SVG marks (the same marks used on the
+ * homepage grid), detailed capability lists per service, and
+ * a four-step approach band.
+ */
 "use client";
-import React, { useEffect, useState } from "react";
-import { AnimatePresence } from "motion/react";
-import { useRouter } from "next/navigation";
-import {
-  ChevronRight,
-  Code,
-  Layers,
-  Server,
-  Search,
-  ShoppingBag,
-  Palette,
-  ArrowUpRight,
-  ChevronLeft,
-  ArrowUpLeft,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import GradientText from "@/MyComponents/GradientText";
-import { useLocale, useTranslations } from "next-intl";
-import { isRtlLang } from "rtl-detect";
+
+import React from "react";
+import { motion } from "motion/react";
+import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-
-// ClientOnly wrapper to prevent hydration issues
-/* eslint-disable */
-const ClientOnly = ({ children }: any) => {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  return mounted ? children : null;
-};
-
-// Animation variants - simplified for better performance
-// const fadeIn = {
-//   hidden: { opacity: 0, y: 20 },
-//   visible: {
-//     opacity: 1,
-//     y: 0,
-//     transition: { duration: 0.5, ease: "easeOut" },
-//   },
-// };
+import { useTranslations } from "next-intl";
 
 export default function ServicesPage() {
-  const router = useRouter();
   const t = useTranslations("Serv");
-  const locale = useLocale();
-  const isRTL = isRtlLang(locale);
+  return (
+    <main className="bg-[#FAF9F6] text-[#0F0F10] antialiased dark:bg-[#0A0A0B] dark:text-[#F4F4F5]">
+      <Hero t={t} />
+      <ServiceCatalog t={t} />
+      <Approach t={t} />
+      <CTA t={t} />
+    </main>
+  );
+}
 
-  // Services data
+function Hero({ t }: { t: ReturnType<typeof useTranslations> }) {
+  return (
+    <section className="relative overflow-hidden px-5 pb-16 pt-20 lg:px-10 lg:pb-24 lg:pt-28">
+      <div className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[720px] rounded-full bg-[#C8102E]/15 blur-[140px] dark:bg-[#C8102E]/10" />
+      <div className="relative mx-auto max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#0F0F10]/15 bg-[#0F0F10]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF37] dark:border-white/15 dark:bg-white/5"
+        >
+          <span className="h-1.5 w-1.5 rounded-full bg-[#C8102E]" />
+          {t("badge")}
+        </motion.div>
+        <motion.h1
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-5xl font-light leading-[0.95] tracking-[-0.02em]"
+          style={{ fontSize: "clamp(40px, 7vw, 100px)" }}
+        >
+          {t("Header")}
+          <br />
+          <em className="font-normal italic text-[#C8102E]">{t("Subheader").trim()}</em>
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.18 }}
+          className="mt-10 max-w-2xl text-[16px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70 lg:text-[18px]"
+        >
+          {t("Subdesc").trim()}
+        </motion.p>
+      </div>
+    </section>
+  );
+}
+
+function ServiceCatalog({ t }: { t: ReturnType<typeof useTranslations> }) {
   const services = [
-    {
-      title: t("Services.titleLinks.1"),
-      description: t("Services.desc.1"),
-      icon: Code,
-      color: "from-red-600 to-red-800",
-      href: "/services/web-development",
-      features: [
-        t("Services.features.first.1"),
-        t("Services.features.first.2"),
-        t("Services.features.first.3"),
-        t("Services.features.first.4"),
-      ],
-    },
-    // {
-    //   title: t("Services.titleLinks.2"),
-    //   description:
-    //   t("Services.desc.2"),
-    //   icon: Smartphone,
-    //   color: "from-red-700 to-red-900",
-    //   href: "/services/mobile-app-development",
-    //   features: [
-    //     t("Services.features.second.1"),
-    //     t("Services.features.second.2"),
-    //     t("Services.features.second.3"),
-    //     t("Services.features.second.4"),
-    //   ],
-    // },
-    {
-      title: t("Services.titleLinks.3"),
-      description: t("Services.desc.3"),
-      icon: Palette,
-      color: "from-red-800 to-red-950",
-      href: "/services/UI/UX-Design", // Fixed path
-      features: [
-        t("Services.features.third.1"),
-        t("Services.features.third.2"),
-        t("Services.features.third.3"),
-        t("Services.features.third.4"),
-      ],
-    },
-    {
-      title: t("Services.titleLinks.4"),
-      description: t("Services.desc.4"),
-      icon: ShoppingBag,
-      color: "from-red-600 to-red-800",
-      href: "/services/E-Commerse",
-      features: [
-        t("Services.features.fourth.1"),
-        t("Services.features.fourth.2"),
-        t("Services.features.fourth.3"),
-        t("Services.features.fourth.4"),
-      ],
-    },
-    {
-      title: t("Services.titleLinks.5"),
-      description: t("Services.desc.5"),
-      icon: Search,
-      color: "from-red-700 to-red-900",
-      href: "/services/seo-optimization",
-      features: [
-        t("Services.features.fifth.1"),
-        t("Services.features.fifth.2"),
-        t("Services.features.fifth.3"),
-        t("Services.features.fifth.4"),
-      ],
-    },
-    {
-      title: t("Services.titleLinks.6"),
-      description: t("Services.desc.6"),
-      icon: Server,
-      color: "from-red-800 to-red-950",
-      href: "/services/Web-hosting",
-      features: [
-        t("Services.features.sixth.1"),
-        t("Services.features.sixth.2"),
-        t("Services.features.sixth.3"),
-        t("Services.features.sixth.4"),
-      ],
-    },
-  ];
-
-  const processSteps = [
-    {
-      number: t("Services.process.numbers.1"),
-      title: t("Services.process.1"),
-      description: t("Services.process.desc.1"),
-      icon: Search,
-    },
-    {
-      number: t("Services.process.numbers.2"),
-      title: t("Services.process.2"),
-      description: t("Services.process.desc.2"),
-      icon: Layers,
-    },
-    {
-      number: t("Services.process.numbers.3"),
-      title: t("Services.process.3"),
-      description: t("Services.process.desc.3"),
-      icon: Code,
-    },
-    {
-      number: t("Services.process.numbers.4"),
-      title: t("Services.process.4"),
-      description: t("Services.process.desc.4"),
-      icon: Server,
-    },
+    { n: 1, url: "/services/web-development", feats: "first", Mark: MarkWeb },
+    { n: 2, url: "/services/mobile-app-development", feats: "second", Mark: MarkMobile },
+    { n: 3, url: "/services/UI/UX-Design", feats: "third", Mark: MarkDesign },
+    { n: 4, url: "/services/E-Commerse", feats: "fourth", Mark: MarkCommerce },
+    { n: 5, url: "/services/seo-optimization", feats: "fifth", Mark: MarkSEO },
+    { n: 6, url: "/services/Web-hosting", feats: "sixth", Mark: MarkHost },
   ];
 
   return (
-    <ClientOnly>
-      <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white overflow-x-hidden">
-        {/* Hero Section */}
-        <section className="pt-24 pb-12 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-            <div className="absolute top-0 left-0 w-full h-full bg-red-50 dark:bg-black opacity-70"></div>
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-500 via-red-700 to-red-900 dark:bg-gradient-to-br  dark:from-red-950/30 dark:via-transparent dark:to-transparent"></div>
-          </div>
-
-          <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-            <div className="text-center max-w-3xl mx-auto">
-              <Badge className="bg-red-700 dark:bg-red-900/30 text-white dark:text-red-400 border-transparent mb-4 px-3 py-1">
-                {t("badge")}
-              </Badge>
-              <h1 className="text-4xl text-black dark:text-white md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                {t("Header")}
-
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white dark:from-red-400 dark:to-red-600 block">
-                  {t("Subheader")}
-                </span>
-              </h1>
-              <p className="text-lg md:text-xl text-black font-semibold dark:text-red-200/80 mb-8">
-                {t("Subdesc")}
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Services Section */}
-        <section className="py-16 relative overflow-hidden">
-          {/* <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-500/30 dark:bg-red-900/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-500/30 dark:bg-red-700/10 rounded-full blur-3xl"></div> */}
-
-          <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-8">
-              <AnimatePresence>
-                {services.map((service, index) => (
-                  <div key={index}>
-                    <Card className="bg-white border-red-300 dark:bg-black/60 dark:border-red-900 backdrop-blur-sm h-full overflow-hidden group hover:border-red-500 dark:hover:border-red-800/50 transition-colors">
-                      <CardContent className="p-6 flex flex-col h-full ">
-                        <div className="mb-5">
-                          <div
-                            className={`w-12 h-12 rounded-lg bg-gradient-to-br from-red-500 to-red-700 dark:from-red-600 dark:to-red-700 p-3 mb-4 transform group-hover:scale-110 transition-transform`}
-                          >
-                            <service.icon className="w-full h-full text-white" />
-                          </div>
-                          <h3 className="text-xl font-bold text-red-800 dark:text-white mb-3">
-                            {/* Removed Mobile Page. Add this back when want to show it again */}
-                            {/* : service.title === "Mobile App Development" ? (
-                              <>
-                                <GradientText gradient="from-blue-700 via-blue-600 to-blue-800 dark:from-white dark:via-cyan-400 dark:to-blue-400">{service.title}</GradientText>
-                              </>
-                            )  */}
-                            {service.title === "Website Development" ? (
-                              <>
-                                <GradientText gradient="from-red-700 via-red-600 to-red-800 dark:from-white dark:via-pink-400 dark:to-red-500">
-                                  {service.title}
-                                </GradientText>
-                              </>
-                            ) : service.title === "UI/UX Design" ? (
-                              <>
-                                <GradientText gradient="from-purple-700 via-purple-600 to-blue-800 dark:from-white dark:via-purple-500 dark:to-blue-500">
-                                  {service.title}
-                                </GradientText>
-                              </>
-                            ) : service.title === "E-commerce Solutions" ? (
-                              <>
-                                <GradientText gradient="from-green-700 to-green-900 dark:from-white dark:to-green-600">
-                                  {service.title}
-                                </GradientText>
-                              </>
-                            ) : service.title === "SEO Optimization" ? (
-                              <>
-                                <GradientText gradient="from-orange-700 via-orange-600 to-red-800 dark:from-white dark:via-orange-400 dark:to-red-600">
-                                  {service.title}
-                                </GradientText>
-                              </>
-                            ) : service.title ===
-                              "Web Hosting & Maintenance" ? (
-                              <>
-                                <GradientText gradient="from-gray-700 via-gray-600 to-gray-800 dark:from-white dark:via-gray-500 dark:to-gray-600">
-                                  {service.title}
-                                </GradientText>
-                              </>
-                            ) : (
-                              <>
-                                <GradientText gradient="from-green-700 to-red-800 dark:from-green-600 dark:to-red-600">
-                                  {service.title}
-                                </GradientText>
-                              </>
-                            )}
-                          </h3>
-                          <p className="text-black dark:text-white/90 mb-4">
-                            {service.description}
-                          </p>
-
-                          <ul className="space-y-2 mb-5">
-                            {service.features.map((feature, idx) => (
-                              <li
-                                key={idx}
-                                className="flex items-start font-bold"
-                              >
-                                {isRTL ? (
-                                  <ChevronLeft className="h-4 w-4 text-black dark:text-red-500 mt-1 mr-2 flex-shrink-0" />
-                                ) : (
-                                  <ChevronRight className="h-4 w-4 text-black dark:text-red-500 mt-1 mr-2 flex-shrink-0" />
-                                )}
-                                <span className="text-black dark:text-white/80 font-bold text-sm">
-                                  {feature}
-                                </span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div className="mt-auto pt-4">
-                          <Link href={service.href} target="_blank">
-                            <Button
-                              className="w-full bg-gradient-to-r from-red-500 to-red-700 dark:from-red-700 dark:to-red-900 hover:from-red-600 hover:to-red-800 
-                              dark:hover:from-red-600 dark:hover:to-red-800 text-white"
-                            >
-                              {t("Services.process.learn")}
-
-                              {isRTL ? (
-                                <ArrowUpLeft className="ml-2 h-4 w-4" />
-                              ) : (
-                                <ArrowUpRight className="ml-2 h-4 w-4" />
-                              )}
-                            </Button>
-                          </Link>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                ))}
-              </AnimatePresence>
-            </div>
-          </div>
-        </section>
-
-        {/* Process / Approach Overview */}
-        <section className="py-20 bg-red-700 dark:bg-red-950/10">
-          <div className="container mx-auto px-4 md:px-8 lg:px-12">
-            <div className="text-center mb-16">
-              <div>
-                <Badge className="bg-red-700 dark:bg-red-900/30 text-white dark:text-red-400 border-transparent mb-4 px-3 py-1">
-                  {t("Services.process.approach.badge")}
-                </Badge>
-                <h2 className="text-3xl bg-gradient-to-r from-white via-white to-white dark:from-white dark:via-red-500 dark:to-red-700 bg-clip-text text-transparent md:text-4xl font-bold mb-6">
-                  {t("Services.process.approach.title")}
-                </h2>
-                <p className="text-black dark:text-white/80 text-lg max-w-2xl mx-auto">
-                  {t("Services.process.approach.sub")}
-                </p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {processSteps.map((step, index) => (
-                <div key={index}>
-                  <div className="bg-white border-1 border-red-300 dark:bg-black dark:border-red-900 rounded-xl p-6 h-full">
-                    <div className="flex items-center mb-4">
-                      <div className={`w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-red-700 dark:from-red-600 dark:to-red-800 flex items-center justify-center ${isRTL ? "ml-3" : "mr-3"}`}>
-                        <span className="text-white font-bold">
-                          {step.number}
-                        </span>
-                      </div>
-                      <h3 className="text-xl font-bold text-red-800 dark:text-white">
-                        {step.title}
-                      </h3>
-                    </div>
-                    <p className="text-black dark:text-white/90">
-                      {step.description}
-                    </p>
+    <section className="border-y border-[#0F0F10]/10 bg-[#0F0F10]/[0.02] px-5 py-24 dark:border-white/10 dark:bg-white/[0.02] lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl space-y-20">
+        {services.map((s, i) => (
+          <FadeIn key={s.n} delay={i * 0.03}>
+            <article
+              className={`grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}
+            >
+              {/* Mark side */}
+              <div className="flex items-center">
+                <div className="relative aspect-square w-full max-w-md overflow-hidden rounded-3xl bg-[#0F0F10] p-10 text-[#C8102E] dark:bg-[#141416]">
+                  <div className="pointer-events-none absolute -top-10 -right-10 h-60 w-60 rounded-full bg-[#C8102E]/15 blur-[80px]" />
+                  <div className="pointer-events-none absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-[#D4AF37]/10 blur-[60px]" />
+                  <div className="relative h-full w-full">
+                    <s.Mark />
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
+              </div>
 
-        {/* CTA Section - More responsive */}
-        <section className="py-12 md:py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto bg-gradient-to-br from-red-700 to-red-700 dark:bg-gradient-to-br border-3 border-red-950 dark:from-red-950/30 dark:to-transparent rounded-xl p-6 md:p-10 text-center">
-              <h2 className="text-2xl md:text-4xl font-bold text-white dark:text-white mb-4 md:mb-6">
-                {t("Services.cta.title")}
-              </h2>
-              <p className="text-base md:text-lg text-white dark:text-white/80 mb-6 md:mb-8 max-w-2xl mx-auto">
-                {t("Services.cta.header")}
-              </p>
-              <Button
-                className="w-full md:w-auto bg-gradient-to-r from-red-700 to-red-800 dark:from-red-700 dark:to-red-900 hover:from-red-800 hover:to-red-800/80 
-                     dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-400 dark:border-red-800/30 shadow-lg shadow-red-400/30 dark:shadow-red-950/20 px-4 md:px-8 py-2"
-                onClick={() => router.push("/contact")}
-              >
-                {t("Services.cta.button")}
-                {isRTL ? (
-                  <ChevronLeft className="ml-2 h-4 w-4" />
-                ) : (
-                  <ChevronRight className="ml-2 h-4 w-4" />
-                )}
-              </Button>
-            </div>
-          </div>
-        </section>
+              {/* Copy side */}
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">
+                  Service · 0{s.n}
+                </p>
+                <h2
+                  className="mt-4 font-light leading-[1.05] tracking-[-0.01em]"
+                  style={{ fontSize: "clamp(30px, 4vw, 52px)" }}
+                >
+                  {t(`Services.titleLinks.${s.n}`)}
+                </h2>
+                <p className="mt-5 text-[15px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70 lg:text-[16.5px]">
+                  {t(`Services.desc.${s.n}`).trim()}
+                </p>
+                <ul className="mt-8 grid gap-2.5 sm:grid-cols-2">
+                  {[1, 2, 3, 4].map((f) => (
+                    <li key={f} className="flex items-start gap-2.5 text-[13.5px] text-[#0F0F10]/85 dark:text-white/85">
+                      <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#C8102E]" />
+                      {t(`Services.features.${s.feats}.${f}`)}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href={s.url}
+                  className="mt-10 inline-flex items-center gap-2 rounded-full bg-[#C8102E] px-6 py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#9F0F24]"
+                >
+                  {t("Services.process.learn")}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </article>
+          </FadeIn>
+        ))}
       </div>
-    </ClientOnly>
+    </section>
+  );
+}
+
+function Approach({ t }: { t: ReturnType<typeof useTranslations> }) {
+  const steps = [
+    { n: 1, title: t("Services.process.1"), desc: t("Services.process.desc.1") },
+    { n: 2, title: t("Services.process.2"), desc: t("Services.process.desc.2") },
+    { n: 3, title: t("Services.process.3"), desc: t("Services.process.desc.3") },
+    { n: 4, title: t("Services.process.4"), desc: t("Services.process.desc.4") },
+  ];
+  return (
+    <section className="px-5 py-24 lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl">
+        <FadeIn>
+          <div className="mb-16 max-w-3xl">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">
+              {t("Services.process.approach.badge")}
+            </p>
+            <h2
+              className="font-light leading-[1.05] tracking-[-0.01em]"
+              style={{ fontSize: "clamp(34px, 5vw, 64px)" }}
+            >
+              {t("Services.process.approach.title").trim()}
+            </h2>
+            <p className="mt-5 text-[15.5px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
+              {t("Services.process.approach.sub").trim()}
+            </p>
+          </div>
+        </FadeIn>
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+          {steps.map((s, i) => (
+            <FadeIn key={s.n} delay={i * 0.06}>
+              <div className="border-t border-[#0F0F10]/15 pt-6 dark:border-white/15">
+                <p className="font-light tabular-nums text-[#C8102E]" style={{ fontSize: "clamp(40px, 4.5vw, 56px)" }}>
+                  0{s.n}
+                </p>
+                <h3 className="mt-4 text-[20px] font-semibold tracking-tight lg:text-[22px]">{s.title}</h3>
+                <p className="mt-3 text-[14px] leading-relaxed text-[#0F0F10]/65 dark:text-white/65">{s.desc.trim()}</p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CTA({ t }: { t: ReturnType<typeof useTranslations> }) {
+  return (
+    <section className="px-5 pb-24 pt-12 lg:px-10 lg:pb-32">
+      <FadeIn>
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-[#0F0F10] p-12 text-white dark:bg-[#141416] lg:p-20">
+          <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-[#C8102E]/25 blur-[120px]" />
+          <div className="pointer-events-none absolute -bottom-40 -left-20 h-96 w-96 rounded-full bg-[#C8102E]/15 blur-[120px]" />
+          <div className="relative">
+            <Sparkles className="h-7 w-7 text-[#C8102E]" />
+            <h2
+              className="mt-6 max-w-3xl font-light leading-[1.0] tracking-[-0.02em]"
+              style={{ fontSize: "clamp(34px, 5.5vw, 72px)" }}
+            >
+              {t("Services.cta.title").trim()}
+            </h2>
+            <p className="mt-6 max-w-xl text-[15.5px] leading-relaxed text-white/75 lg:text-[17px]">
+              {t("Services.cta.header").trim()}
+            </p>
+            <Link
+              href="/contact"
+              className="mt-10 inline-flex items-center gap-1.5 rounded-full bg-[#C8102E] px-7 py-4 text-[13px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#9F0F24]"
+            >
+              {t("Services.cta.button").trim()}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </FadeIn>
+    </section>
+  );
+}
+
+/* ─── Primitives + marks ───────────────────────────────────────── */
+
+function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+function MarkWeb() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <rect x="4" y="10" width="56" height="44" rx="3" stroke="currentColor" strokeWidth="1.2" />
+      <line x1="4" y1="22" x2="60" y2="22" stroke="currentColor" strokeWidth="1.2" />
+      <circle cx="10" cy="16" r="1" fill="currentColor" />
+      <circle cx="14" cy="16" r="1" fill="currentColor" />
+      <circle cx="18" cy="16" r="1" fill="currentColor" />
+      <line x1="12" y1="34" x2="32" y2="34" stroke="currentColor" strokeWidth="1.2" />
+      <line x1="12" y1="42" x2="24" y2="42" stroke="currentColor" strokeWidth="1.2" />
+      <rect x="38" y="30" width="16" height="16" rx="1.5" fill="currentColor" fillOpacity="0.2" />
+    </svg>
+  );
+}
+function MarkMobile() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <rect x="20" y="4" width="24" height="56" rx="4" stroke="currentColor" strokeWidth="1.2" />
+      <line x1="30" y1="55" x2="34" y2="55" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <rect x="24" y="12" width="16" height="10" rx="1" fill="currentColor" fillOpacity="0.2" />
+      <line x1="24" y1="28" x2="40" y2="28" stroke="currentColor" strokeWidth="1" />
+      <line x1="24" y1="33" x2="36" y2="33" stroke="currentColor" strokeWidth="1" />
+      <circle cx="32" cy="46" r="4" stroke="currentColor" strokeWidth="1" />
+    </svg>
+  );
+}
+function MarkDesign() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <circle cx="22" cy="22" r="16" stroke="currentColor" strokeWidth="1.2" />
+      <circle cx="42" cy="42" r="16" stroke="currentColor" strokeWidth="1.2" />
+      <circle cx="32" cy="32" r="6" fill="currentColor" fillOpacity="0.25" />
+    </svg>
+  );
+}
+function MarkCommerce() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <path d="M12 16 L22 16 L28 44 L52 44 L56 24 L26 24" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" />
+      <circle cx="32" cy="52" r="3.5" stroke="currentColor" strokeWidth="1.2" />
+      <circle cx="48" cy="52" r="3.5" stroke="currentColor" strokeWidth="1.2" />
+      <rect x="36" y="28" width="10" height="10" fill="currentColor" fillOpacity="0.2" />
+    </svg>
+  );
+}
+function MarkSEO() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <circle cx="26" cy="26" r="16" stroke="currentColor" strokeWidth="1.2" />
+      <line x1="38" y1="38" x2="54" y2="54" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M18 26 L26 34 L36 20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+function MarkHost() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <rect x="8" y="14" width="48" height="12" rx="1.5" stroke="currentColor" strokeWidth="1.2" />
+      <rect x="8" y="28" width="48" height="12" rx="1.5" stroke="currentColor" strokeWidth="1.2" />
+      <rect x="8" y="42" width="48" height="12" rx="1.5" stroke="currentColor" strokeWidth="1.2" />
+      <circle cx="14" cy="20" r="1.5" fill="currentColor" />
+      <circle cx="14" cy="34" r="1.5" fill="currentColor" />
+      <circle cx="14" cy="48" r="1.5" fill="currentColor" />
+    </svg>
   );
 }

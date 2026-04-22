@@ -132,9 +132,9 @@ const PortfolioPage = () => {
       {/* Hero Section */}
       <section className="pt-10 pb-20 md:pb-24 relative overflow-hidden">
         {/* BG */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 border-b-[1px] border-b-red-950/50">
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 border-b-[1px] border-b-[#0F0F10]/10 dark:border-b-white/10">
           <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full  bg-gradient-to-br from-red-500 via-red-700 to-red-900 dark:bg-gradient-to-br  dark:from-red-950/30 dark:via-transparent dark:to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#C8102E] to-[#0A0A0B]"></div>
         </div>
 
         {/* Heading */}
@@ -171,13 +171,13 @@ const PortfolioPage = () => {
                   key={index}
                   className="group cursor-pointer h-auto max-w-[450px] min-w-[350px]"
                 >
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-xl shadow-red-950/20">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-xl shadow-black/10">
                     {/* Project Image — real screenshot when we have
                      *  one; gradient preview for our industry template
                      *  demos until we capture hero shots. Template
                      *  previews use the same accent swatches as the
                      *  /templates gallery so both pages feel cohesive. */}
-                    <div className="w-full h-full bg-red-300 dark:bg-black/80 border-2 border-red-800/30 flex items-center justify-center overflow-hidden">
+                    <div className="w-full h-full bg-[#FAF9F6] dark:bg-black/80 border-2 border-[#0F0F10]/10 dark:border-white/10 flex items-center justify-center overflow-hidden">
                       {project.image ? (
                         <Image
                           src={project.image}
@@ -209,14 +209,14 @@ const PortfolioPage = () => {
 
                     {/* Hover Overlay - preloaded with opacity-0 for better performance */}
                     <div
-                      className="absolute inset-0 bg-gradient-to-b from-red-400/80 to-red-800/90 dark:from-red-800/80 dark:to-black/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      className="absolute inset-0 bg-gradient-to-b from-[#C8102E]/80 to-[#0A0A0B]/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       style={{ willChange: "opacity" }}
                     >
                       <div className="text-center p-8">
                         <h3 className="text-2xl font-bold text-white mb-3">
                           {project.title}
                         </h3>
-                        <p className="text-red-100 text-lg mb-6">
+                        <p className="text-white/70 text-lg mb-6">
                           {project.category}
                         </p>
                         {/* Template demos use a plain anchor so
@@ -229,7 +229,7 @@ const PortfolioPage = () => {
                             <Button
                               variant="outline"
                               size="lg"
-                              className="border-2 dark:border-red-950/80 text-white bg-red-700/80 dark:bg-red-700/50 px-6 py-5 hover:bg-red-950 dark:hover:bg-black hover:text-white text-base font-medium"
+                              className="border-2 border-white/20 text-white bg-[#C8102E] px-6 py-5 hover:bg-[#9F0F24] hover:text-white text-base font-medium"
                             >
                               {t("viewbtn")}
                               <MoveUpRight className="ml-2 h-5 w-5" />
@@ -240,7 +240,7 @@ const PortfolioPage = () => {
                             <Button
                               variant="outline"
                               size="lg"
-                              className="border-2 dark:border-red-950/80 text-white bg-red-700/80 dark:bg-red-700/50 px-6 py-5 hover:bg-red-950 dark:hover:bg-black hover:text-white text-base font-medium"
+                              className="border-2 border-white/20 text-white bg-[#C8102E] px-6 py-5 hover:bg-[#9F0F24] hover:text-white text-base font-medium"
                             >
                               {t("viewbtn")}
                               <MoveUpRight className="ml-2 h-5 w-5" />
@@ -252,7 +252,7 @@ const PortfolioPage = () => {
                   </div>
 
                   <div className="mt-5">
-                    <Badge className="bg-red-700 dark:bg-red-800/30 dark:text-red-300 border-transparent text-base py-1 px-3">
+                    <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent text-base py-1 px-3">
                       {project.category}
                     </Badge>
                     <h3 className="text-xl font-bold text-black dark:text-white mt-3 ml-1">

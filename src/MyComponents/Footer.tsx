@@ -1,374 +1,152 @@
+/**
+ * Footer — rewritten 2026.
+ *
+ * Design intent: restrained, four-column mono-weight, red used
+ * only for the copyright red dot and CTA button. Gold used for
+ * section headings and hover states. Social icons are hollow
+ * outlines, not colorful brand-tiles.
+ */
+"use client";
 
-import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
-import { Facebook, Github, Heart, Instagram, Linkedin } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { Facebook, Github, Instagram, Linkedin, ArrowUpRight, Mail } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { isRtlLang } from "rtl-detect";
 
+const SOCIALS = [
+  { platform: "Github", icon: Github, url: "https://github.com/CodeWithAli-Co" },
+  { platform: "Instagram", icon: Instagram, url: "https://www.instagram.com/officialcodewithali/#" },
+  { platform: "Facebook", icon: Facebook, url: "https://www.facebook.com/profile.php?id=61573763924961" },
+  { platform: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/company/codewithali-co" },
+];
 
 export default function Footer() {
-    
-  const socials = [
-    {
-      platform: "Github",
-      style: "hover:bg-black hover:border border-red-950/30",
-      textStyle: "group-hover:text-white duration-150",
-      icon: <Github />,
-      url: "https://github.com/CodeWithAli-Co",
-    },
-    {
-      platform: "Instagram",
-      style:
-        "hover:bg-gradient-to-t hover:from-yellow-400 hover:via-red-500 hover:to-purple-500",
-      icon: <Instagram />,
-      url: "https://www.instagram.com/officialcodewithali/#",
-    },
-    {
-      platform: "Facebook",
-      style: "hover:bg-gradient-to-t hover:from-blue-900 hover:to-blue-800",
-      textStyle: "group-hover:text-white duration-150",
-      icon: <Facebook />,
-      url: "https://www.facebook.com/profile.php?id=61573763924961",
-    },
-    {
-      platform: "LinkedIn",
-      style: "hover:bg-gradient-to-t hover:from-blue-500 hover:to-blue-400",
-      textStyle: "group-hover:text-white duration-150",
-      icon: <Linkedin />,
-      url: "https://www.linkedin.com/company/codewithali-co",
-    },
-  ];
   const t = useTranslations("Footer");
-  const locale = useLocale();
-  const isRTL = isRtlLang(locale);
-    
-    return (
-        <>
-          {/* Footer */}
-          <footer className="py-12 border-t border-red-900 bg-white dark:bg-black">
-          <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-8">
-              {/* Mobile Footer Links + Info */}
-              <div className="md:hidden grid grid-cols-2 grid-rows-2 gap-y-5">
-                {/* Services Section */}
-                <div>
-                  <h4 className="font-medium text-black dark:text-white mb-4">{t("nav.company.title")}</h4>
-                  <ul className="space-y-2 text-sm">
-                    {[
-                      {
-                        title: t("nav.company.links.1"),
-                        href: "/services/web-development",
-                      },
-                      {
-                        title: t("nav.company.links.2"),
-                        href: "/services/mobile-app-development",
-                      },
-                      {
-                        title: t("nav.company.links.3"),
-                        href: "/services/UI/UX-Design",
-                      },
-                      {
-                        title: t("nav.company.links.4"),
-                        href: "/services/E-Commerse",
-                      },
-                      {
-                        title: t("nav.company.links.5"),
-                        href: "/services/seo-optimization",
-                      },
-                      {
-                        title: t("nav.company.links.6"),
-                        href: "/services/Web-hosting",
-                      },
-                    ].map((item) => (
-                      <li key={item.title}>
-                        <Link
-                          href={item.href}
-                          className="text-red-900 dark:text-red-200/60 hover:text-red-950 dark:hover:text-red-300 transition-colors"
-                        >
-                          {item.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
 
-                {/* Company Section */}
-                <div className="col-start-2">
-                  <h4 className="font-medium text-black dark:text-white mb-4">{t("nav.resources.title")}</h4>
-                  <ul className="space-y-2 text-sm">
-                    {[
-                      {
-                        title: t("nav.resources.links.1"),
-                        href: "/about",
-                      },
-                      {
-                        title: t("nav.resources.links.2"),
-                        href: "/portfolio",
-                      },
-                      { title: t("nav.resources.links.3"), href: "/#process" },
-                      {
-                        title: t("nav.resources.links.4"),
-                        href: "/contact",
-                      },
-                    ].map((item) => (
-                      <li key={item.title}>
-                        <Link
-                          href={item.href}
-                          className="text-red-900 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
-                        >
-                          {item.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+  return (
+    <footer className="border-t border-black/10 bg-[#FAF9F6] text-[#0F0F10] dark:border-white/10 dark:bg-[#0A0A0B] dark:text-white">
+      <div className="mx-auto max-w-7xl px-5 pb-10 pt-20 lg:px-10 lg:pt-28">
+        {/* Top — large wordmark + description */}
+        <div className="grid gap-14 border-b border-black/10 pb-16 dark:border-white/10 lg:grid-cols-[1.2fr_1fr]">
+          <div>
+            <Link href="/" className="inline-flex items-center gap-3">
+              <Image
+                src="/codewithali.png"
+                alt="CodeWithAli"
+                width={80}
+                height={80}
+                className="h-10 w-10 rounded-full border border-[#C8102E]/40"
+              />
+              <span className="text-[20px] font-semibold tracking-tight">CodeWithAli</span>
+            </Link>
+            <p className="mt-8 max-w-md text-[15.5px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
+              {t("compDesc")}
+            </p>
+            <Link
+              href="/contact"
+              className="mt-10 inline-flex items-center gap-2 rounded-full bg-[#C8102E] px-5 py-3 text-[12.5px] font-semibold uppercase tracking-[0.16em] text-white transition-colors hover:bg-[#9F0F24]"
+            >
+              <Mail className="h-3.5 w-3.5" />
+              {t("nav.contact.links.3")}
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
 
-                {/* Contact Section */}
-                <div className="col-span-2">
-                  <div>
-                    <h4 className="font-medium text-black dark:text-white mb-4">{t("nav.contact.title")}</h4>
-                    <ul className="space-y-2 text-sm">
-                      <li>
-                        <a
-                          href="mailto:info@codewithali.com"
-                          className="text-red-900 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
-                        >
-                        {t("nav.contact.links.1")}
-                        </a>
-                      </li>
-                      <li>
-                        {/* <a
-                          href="tel:+4086907890"
-                          className="text-red-900 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
-                        >
-                          {t("nav.contact.links.2")}
-                           
-                        </a> */}
-                      </li>
-                      <li>
-                        <Link href="/contact">
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            className="mt-2 border-red-800/30 text-red-900 dark:text-red-400 bg-red-500/40 dark:bg-red-900/20 hover:bg-red-800/40 dark:hover:bg-red-950/20 hover:text-red-900"
-                          >
-                           {t("nav.contact.links.3")}
-                          </Button>
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* Socials + Company Desc */}
-              <div className="col-span-1 md:col-span-2 lg:col-span-1">
-                <Link
-                  href="/"
-                  draggable={false}
-                  className="flex items-center mb-4"
-                >
-                  <Image
-                    src="/codewithali.png"
-                    alt="CodeWithAli"
-                    draggable={false}
-                    className="logo rounded-full border-2 border-red-800/50 shadow-lg shadow-red-900/20"
-                    width={70}
-                    height={70}
-                  />
-                  <span className={`${isRTL ? "mr-2" : "ml-2"} text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-red-900 dark:from-red-300 dark:to-red-500`}>
-                    CodeWithAli
-                  </span>
-                </Link>
-                <p className="text-sm text-red-900 dark:text-red-200/60 mb-4">
-                 {t("compDesc")}
-                </p>
-                <div className="flex space-x-4">
-                  {/* Social icons */}
-                  {/* eslint-disable */}
-                  {socials.map((social : any) => (
-                    <Link
-                      key={social.platform}
-                      href={social.url}
-                      target={social.url !== "#" ? `_blank` : `_self`}
-                      className={
-                        social.style
-                          ? `w-8 h-8 rounded-full flex items-center justify-center dark:bg-red-950/30 ${social.style} transition-colors duration-300 ease-in-out group`
-                          : `w-8 h-8 rounded-full flex items-center justify-center bg-red-950/30 hover:bg-red-900/50 transition-colors duration-300 ease-in-out group`
-                      }
-                    >
-                      <span
-                        className={
-                          social.textStyle
-                            ? `text-xs text-red-900 dark:text-red-400 ${social.textStyle}`
-                            : `text-xs text-red-900 dark:text-red-400`
-                        }
-                      >
-                        {social.icon}
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              {/* Footer Links + Info DESKTOP (?) */}
-              <div className="md:col-span-2">
-                <div className="hidden md:grid grid-cols-3 grid-rows-1">
-                  {/* Services Section */}
-                  <div>
-                    <h4 className="font-medium text-black dark:text-white mb-4">{t("nav.company.title")}</h4>
-                    <ul className="space-y-2 text-sm">
-                      {[
-                        {
-                          title: t("nav.company.links.1"),
-                          href: "/services/web-development",
-                        },
-                        {
-                          title: t("nav.company.links.2"),
-                          href: "/services/mobile-app-development",
-                        },
-                        {
-                          title: t("nav.company.links.3"),
-                          href: "/services/UI/UX-Design",
-                        },
-                        {
-                          title: t("nav.company.links.4"),
-                          href: "/services/E-Commerse",
-                        },
-                        {
-                          title: t("nav.company.links.5"),
-                          href: "/services/seo-optimization",
-                        },
-                        {
-                          title: t("nav.company.links.6"),
-                          href: "/services/Web-hosting",
-                        },
-                      ].map((item) => (
-                        <li key={item.title}>
-                          <Link
-                            href={item.href}
-                            className="text-red-900 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
-                          >
-                            {item.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Company Section */}
-                  <div>
-                    <h4 className="font-medium text-black dark:text-white mb-4">{t("nav.resources.title")}</h4>
-                    <ul className="space-y-2 text-sm">
-                      {[
-                        {
-                          title: t("nav.resources.links.1"),
-                          href: "/about",
-                        },
-                        {
-                          title: t("nav.resources.links.2"),
-                          href: "/portfolio",
-                        },
-                        { title: t("nav.resources.links.3"), href: "/#process" },
-                        {
-                          title: t("nav.resources.links.4"),
-                          href: "/contact",
-                        },
-                        {
-                          title: "Terms & Conditions",
-                          href: "/terms",
-                        },
-                      
-                      ].map((item) => (
-                        <li key={item.title}>
-                          <Link
-                            href={item.href}
-                            className="text-red-900 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
-                          >
-                            {item.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Contact Section */}
-                  <div>
-                    <div>
-                      <h4 className="font-medium text-black dark:text-white mb-4">{t("nav.contact.title")}</h4>
-                      <ul className="space-y-2 text-sm">
-                        <li>
-                          <a
-                            href="mailto:info@codewithali.com"
-                            className="text-red-900 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
-                          >
-                           {t("nav.contact.links.1")}
-                          </a>
-                        </li>
-                        {/* <li>
-                          <a
-                            href="tel:+4086907890"
-                            className="text-red-900 dark:text-red-200/60 hover:text-red-900 dark:hover:text-red-300 transition-colors"
-                          >
-                            {t("nav.contact.links.2")}
-                           
-                          </a>
-                        </li> */}
-                        <li>
-                          <Link href="/costsimulator">
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              className="mt-2 border-red-800/30 text-white dark:text-red-400 bg-red-700  dark:bg-red-900/20 hover:bg-red-900 hover:text-white dark:hover:bg-red-950/20 "
-                            >
-                              {t("nav.contact.links.3")}
-                            </Button>
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-12 pt-8 border-t border-red-900 flex flex-col md:flex-row justify-between items-center">
-              <p className="text-sm text-red-900 dark:text-red-200/60 mb-4 md:mb-0">
-                © {new Date().getFullYear()} {t("nav.legal.links.1")}
-              </p>
-              <div className="flex space-x-6">
-                <Link
-                  href="https://gofund.me/84a5e264"
+          {/* Socials on the right */}
+          <div className="lg:justify-self-end">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#D4AF37]">
+              Follow us
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {SOCIALS.map((s) => (
+                <a
+                  key={s.platform}
+                  href={s.url}
                   target="_blank"
-                  draggable={false}
-                  className="text-red-900"
+                  rel="noreferrer"
+                  className="group flex h-10 w-10 items-center justify-center rounded-full border border-black/15 text-[#0F0F10]/70 transition-all hover:-translate-y-0.5 hover:border-[#C8102E] hover:text-[#C8102E] dark:border-white/15 dark:text-white/70 dark:hover:border-[#C8102E]"
+                  aria-label={s.platform}
                 >
-                  <Heart />
-                </Link>
-                <a
-                  href="#"
-                  className="text-sm text-red-900 hover:text-red-400 dark:text-red-200/60 dark:hover:text-red-300 transition-colors"
-                >
-                  {t("nav.legal.links.2")}
-                
+                  <s.icon className="h-4 w-4" />
                 </a>
-                <a
-                  href="#"
-                  className="text-sm text-red-900 hover:text-red-400 dark:text-red-200/60 dark:hover:text-red-300 transition-colors"
-                >
-                  {t("nav.legal.links.3")}
-                </a>
-                <a
-                  href="#"
-                  className="text-sm text-red-900 hover:text-red-400 dark:text-red-200/60 dark:hover:text-red-300 transition-colors"
-                >
-                 {t("nav.legal.links.4")}
-                </a>
-              </div>
+              ))}
             </div>
           </div>
-        </footer>
-        </>
-    )
+        </div>
+
+        {/* Link columns */}
+        <div className="grid gap-10 py-14 md:grid-cols-4">
+          <FooterCol title={t("nav.company.title")}>
+            <FooterLink href="/services/web-development">{t("nav.company.links.1")}</FooterLink>
+            <FooterLink href="/services/mobile-app-development">{t("nav.company.links.2")}</FooterLink>
+            <FooterLink href="/services/UI/UX-Design">{t("nav.company.links.3")}</FooterLink>
+            <FooterLink href="/services/E-Commerse">{t("nav.company.links.4")}</FooterLink>
+            <FooterLink href="/services/seo-optimization">{t("nav.company.links.5")}</FooterLink>
+            <FooterLink href="/services/Web-hosting">{t("nav.company.links.6")}</FooterLink>
+          </FooterCol>
+
+          <FooterCol title={t("nav.resources.title")}>
+            <FooterLink href="/about">{t("nav.resources.links.1")}</FooterLink>
+            <FooterLink href="/portfolio">{t("nav.resources.links.2")}</FooterLink>
+            <FooterLink href="/templates">Template gallery</FooterLink>
+            <FooterLink href="/contact">{t("nav.resources.links.4")}</FooterLink>
+          </FooterCol>
+
+          <FooterCol title={t("nav.contact.title")}>
+            <FooterLink href="mailto:unfold@codewithali.com" external>
+              {t("nav.contact.links.1")}
+            </FooterLink>
+            <FooterLink href="/costsimulator">Cost simulator</FooterLink>
+            <FooterLink href="/merchandise">Merchandise</FooterLink>
+          </FooterCol>
+
+          <FooterCol title={t("nav.legal.title")}>
+            <FooterLink href="/terms">{t("nav.legal.links.3")}</FooterLink>
+            <FooterLink href="/terms">{t("nav.legal.links.2")}</FooterLink>
+            <FooterLink href="/terms">{t("nav.legal.links.4")}</FooterLink>
+            <FooterLink href="/contract">Contracts</FooterLink>
+          </FooterCol>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="flex flex-col items-start justify-between gap-3 border-t border-black/10 pt-8 text-[11.5px] uppercase tracking-[0.18em] text-[#0F0F10]/55 dark:border-white/10 dark:text-white/55 md:flex-row md:items-center">
+          <div className="flex items-center gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#C8102E]" />
+            © {new Date().getFullYear()} {t("nav.legal.links.1")}
+          </div>
+          <p>
+            {t("cwaMark")} <span className="text-[#D4AF37]">CodeWithAli</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+function FooterCol({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#D4AF37]">{title}</p>
+      <ul className="mt-5 space-y-3 text-[13.5px]">{children}</ul>
+    </div>
+  );
+}
+
+function FooterLink({ href, children, external }: { href: string; children: React.ReactNode; external?: boolean }) {
+  if (external) {
+    return (
+      <li>
+        <a href={href} className="text-[#0F0F10]/75 transition-colors hover:text-[#C8102E] dark:text-white/75">
+          {children}
+        </a>
+      </li>
+    );
+  }
+  return (
+    <li>
+      <Link href={href} className="text-[#0F0F10]/75 transition-colors hover:text-[#C8102E] dark:text-white/75">
+        {children}
+      </Link>
+    </li>
+  );
 }
