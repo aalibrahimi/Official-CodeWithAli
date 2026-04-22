@@ -89,6 +89,8 @@ export default function Footer() {
             <FooterLink href="/about">{t("nav.resources.links.1")}</FooterLink>
             <FooterLink href="/portfolio">{t("nav.resources.links.2")}</FooterLink>
             <FooterLink href="/templates">Template gallery</FooterLink>
+            <FooterLink href="/blog">Blog</FooterLink>
+            <FooterLink href="/newsletter">Newsletter</FooterLink>
             <FooterLink href="/contact">{t("nav.resources.links.4")}</FooterLink>
           </FooterCol>
 

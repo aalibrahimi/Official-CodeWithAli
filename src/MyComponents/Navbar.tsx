@@ -83,6 +83,7 @@ export function Navbar(): React.ReactElement {
     { href: "/about", label: t("routes.about") },
     { href: "/portfolio", label: t("routes.portfolio") },
     // services is rendered separately (dropdown)
+    { href: "/blog", label: "Blog" },
     { href: "/merchandise", label: t("routes.merch") },
     { href: "/costsimulator", label: "Cost Simulator" },
   ];
