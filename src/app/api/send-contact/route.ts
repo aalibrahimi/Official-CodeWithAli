@@ -16,6 +16,7 @@ import { EmailContact } from "@/MyComponents/email-contact";
 import React from "react";
 import { Resend } from "resend";
 import { NextRequest } from "next/server";
+import { checkSubmission } from "@/lib/spam-heuristics";
 
 const resend = new Resend(process.env.RESEND_KEY as string);
 
@@ -146,13 +147,14 @@ export async function POST(req: NextRequest) {
 
   // Spam pattern match.
   if (SPAM_PATTERNS.some((re) => re.test(details) || re.test(name))) {
-    // Silent success — don't tell the bot which pattern caught it.
+    console.info("[send-contact] dropped: keyword-match", { ip });
     return Response.json({ ok: true }, { status: 200 });
   }
 
   // Too many URLs in the message → likely spam.
   const urlCount = (details.match(/https?:\/\//gi) ?? []).length;
   if (urlCount > 3) {
+    console.info("[send-contact] dropped: url-count", { ip });
     return Response.json({ ok: true }, { status: 200 });
   }
 
@@ -161,6 +163,20 @@ export async function POST(req: NextRequest) {
   // reject if >40% of content is in Cyrillic.
   const cyrillicCount = (details.match(/[А-яЁё]/g) ?? []).length;
   if (cyrillicCount / Math.max(1, details.length) > 0.4) {
+    console.info("[send-contact] dropped: cyrillic", { ip });
+    return Response.json({ ok: true }, { status: 200 });
+  }
+
+  // Statistical gibberish / keyboard-mash / cross-field spam check.
+  // This is the layer that catches the "sssssss..." submissions the
+  // keyword list misses — it looks at character distribution, word
+  // diversity, vowel ratios, and whether mash patterns appear across
+  // multiple fields.
+  const heuristic = checkSubmission({
+    name, email, company: company || null, details,
+  });
+  if (!heuristic.ok) {
+    console.info("[send-contact] dropped:", heuristic.reason, { ip });
     return Response.json({ ok: true }, { status: 200 });
   }
 

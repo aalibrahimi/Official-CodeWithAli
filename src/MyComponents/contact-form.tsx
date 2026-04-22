@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { isRtlLang } from "rtl-detect";
+import { checkSubmission, isGibberish, isNameInvalid } from "@/lib/spam-heuristics";
 
 interface Props {
   /** Kept for backwards compatibility with the v1 prop surface. */
@@ -133,6 +134,8 @@ export default function ContactForm({
     switch (key) {
       case "name":
         if (value.trim().length < 2) return "Please enter your full name.";
+        const nameG = isNameInvalid(value);
+        if (nameG.bad) return "Please enter your real name.";
         return;
       case "email":
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim()))
@@ -157,6 +160,11 @@ export default function ContactForm({
           return "Your message triggered our spam filter. Please rephrase.";
         if ((v.match(/https?:\/\//gi) ?? []).length > 3)
           return "Please include at most three links in your message.";
+        // Statistical gibberish check — catches keyboard mashing
+        // ("ssssss...") that passes the length check but isn't
+        // actually content.
+        const g = isGibberish(v, { minLength: 20 });
+        if (g.bad) return "That doesn't look like a real project description. Please tell us more.";
         return;
       case "phone":
         if (value && value.replace(/\D/g, "").length < 7)
@@ -229,6 +237,19 @@ export default function ContactForm({
         name: true, email: true, service: true, budget: true,
         timeline: true, details: true, phone: true,
       });
+      return;
+    }
+
+    // Cross-field anti-spam: catch the "ssss everywhere" pattern
+    // the keyword filters miss.
+    const sub = checkSubmission({
+      name: form.name,
+      email: form.email,
+      company: form.company || null,
+      details: form.details,
+    });
+    if (!sub.ok) {
+      setErrors({ general: "Your message didn't go through. Please review each field and try again." });
       return;
     }
 
