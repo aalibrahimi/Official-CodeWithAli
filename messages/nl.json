@@ -19,7 +19,7 @@
         "ecommerce": "E-commerce",
         "education": "Onderwijs",
         "healthcare": "Gezondheidszorg",
-        "realEstate": "Vastgoed", 
+        "realEstate": "Vastgoed",
         "technology": "Technologie"
       }
     },
@@ -121,48 +121,48 @@
       }
     }
   },
-  "NavBar": {     
-    "labelSwitchLang": "Wissel van Taal",     
-    "labelSelectLang": "Selecteer Taal",     
-    "dropdown": {       
-      "title": "Mijn Account",       
-      "item1": "Profiel",       
-      "item2": "Instellingen",       
-      "item3": "Dashboard",       
-      "logout": "Uitloggen"     
-    },     
-    "labelLang": "Taal",     
-    "routes": {       
-      "home": "Home",       
-      "about": "Over Ons",       
-      "portfolio": "Portfolio",       
-      "services": {      
-        "title": "Diensten",         
-        "content": {           
-          "1": {             
-            "title": "Website Ontwikkeling"           
-          },           
-          "2": {             
-            "title": "Mobiele App Ontwikkeling"           
-          },           
-          "3": {             
-            "title": "UI/UX Ontwerp"           
-          },           
-          "4": {             
-            "title": "E-commerce Oplossingen"           
-          },           
-          "5": {             
-            "title": "SEO Optimalisatie"           
-          },           
-          "6": {             
-            "title": "Web Hosting & Onderhoud"           
-          }         
-        }       
-      },       
-      "merch": "Merchandise",       
-      "contact": "Contact"     
-    }   
-  },  
+  "NavBar": {
+    "labelSwitchLang": "Wissel van Taal",
+    "labelSelectLang": "Selecteer Taal",
+    "dropdown": {
+      "title": "Mijn Account",
+      "item1": "Profiel",
+      "item2": "Instellingen",
+      "item3": "Dashboard",
+      "logout": "Uitloggen"
+    },
+    "labelLang": "Taal",
+    "routes": {
+      "home": "Home",
+      "about": "Over Ons",
+      "portfolio": "Portfolio",
+      "services": {
+        "title": "Diensten",
+        "content": {
+          "1": {
+            "title": "Website Ontwikkeling"
+          },
+          "2": {
+            "title": "Mobiele App Ontwikkeling"
+          },
+          "3": {
+            "title": "UI/UX Ontwerp"
+          },
+          "4": {
+            "title": "E-commerce Oplossingen"
+          },
+          "5": {
+            "title": "SEO Optimalisatie"
+          },
+          "6": {
+            "title": "Web Hosting & Onderhoud"
+          }
+        }
+      },
+      "merch": "Merchandise",
+      "contact": "Contact"
+    }
+  },
   "About": {
     "badge": "OVER ONS",
     "title": "Wij Zijn Gepassioneerd Over",
@@ -285,7 +285,7 @@
     }
   },
   "Serv": {
-    "badge": "ONZE EXPERTISE",     
+    "badge": "ONZE EXPERTISE",
     "Header": "Uitgebreide Digitale",
     "Subheader": " Diensten & Oplossingen",
     "Subdesc": "  Van website-ontwikkeling tot SEO-optimalisatie, wij bieden end-to-end digitale oplossingen ontworpen om uw bedrijf te laten floreren in het digitale landschap.",
@@ -1391,6 +1391,50 @@
                 "10": "Toegewijde SEO Manager",
                 "11": "12-Maanden Minimale Verbintenis"
               }
+            },
+            "4": {
+              "title": "Lokale SEO",
+              "desc": "Gerichte SEO voor fysieke winkels en servicebedrijven die lokale zoekresultaten willen domineren.",
+              "period": "per maand",
+              "features": {
+                "1": "Google Bedrijfsprofiel Beheer",
+                "2": "Lokale Citaties & Branchegidsen",
+                "3": "Beoordelingsbeheer Strategie",
+                "4": "Locatie-Specifieke Landingspagina's",
+                "5": "Lokale Zoekwoord Optimalisatie",
+                "6": "NAP Consistentie Audits",
+                "7": "Minimale Inzet van 6 Maanden"
+              }
+            },
+            "5": {
+              "title": "SEO voor E-commerce",
+              "desc": "Product-niveau optimalisatie voor online winkels — Shopify, WooCommerce of maatwerkplatformen.",
+              "period": "per maand",
+              "features": {
+                "1": "Productpagina Optimalisatie",
+                "2": "Categorie & Collectie Architectuur",
+                "3": "Schema Markup (Producten, Reviews, FAQs)",
+                "4": "Shopping Feed Optimalisatie",
+                "5": "Duplicate Content Opschoning",
+                "6": "Contentstrategie voor Verlaten Winkelwagens",
+                "7": "Conversie Tracking Setup",
+                "8": "Minimale Inzet van 6 Maanden"
+              }
+            },
+            "6": {
+              "title": "Technische Audit",
+              "desc": "Eenmalige uitgebreide audit met een geprioriteerde roadmap. Geen lopende overeenkomst vereist.",
+              "period": "eenmalig",
+              "features": {
+                "1": "Volledige Crawl & Indexatie Analyse",
+                "2": "Core Web Vitals Diepteanalyse",
+                "3": "Mobiel-Vriendelijkheid Beoordeling",
+                "4": "Schema Dekking Audit",
+                "5": "Interne Linking Kaart",
+                "6": "Concurrentie Gap Analyse",
+                "7": "Geschreven Rapport van 90+ Pagina's",
+                "8": "60-Minuten Doorlooptijd Gesprek"
+              }
             }
           }
         }
@@ -1460,6 +1504,26 @@
                 "2": "Veilige Offsite Opslag",
                 "3": "Snelle Herstel",
                 "4": "Gegevensbewaarbeleid"
+              }
+            },
+            "5": {
+              "title": "Ontwikkelaars Toegang",
+              "desc": "Volledige SSH-toegang, git-gebaseerde deploys en staging-omgevingen voor teams die werken zoals ontwikkelaars dat echt doen.",
+              "features": {
+                "1": "SSH & SFTP Toegang",
+                "2": "Git-Push Deployments",
+                "3": "Staging Omgeving",
+                "4": "CLI & API Beheer"
+              }
+            },
+            "6": {
+              "title": "Uptime Garantie",
+              "desc": "Een echte 99,9% uptime SLA, ondersteund door automatische credits — geen marketingcijfer, maar een contractuele verplichting.",
+              "features": {
+                "1": "99,9% Uptime SLA",
+                "2": "Automatische Downtime Credits",
+                "3": "Transparante Status Pagina",
+                "4": "24/7 Incidentrespons"
               }
             }
           }
@@ -1596,6 +1660,36 @@
                 "9": "24/7 Toegewijde Ondersteuning",
                 "10": "Aangepaste Infrastructuur"
               }
+            }
+          }
+        },
+        "6": {
+          "title": "Veelgestelde Vragen",
+          "desc": "Rechtstreekse antwoorden op vragen die mensen ons stellen voordat ze tekenen.",
+          "QA": {
+            "1": {
+              "Q": "Beheren jullie hosting voor bestaande websites?",
+              "A": "Ja. We migreren je site vanaf je huidige host — of dat nu GoDaddy, Bluehost of een aangepaste VPS is — zonder downtime. Een typische migratie duurt 2–4 uur en we verifiëren elke omleiding, e-mail en back-up voordat we overschakelen."
+            },
+            "2": {
+              "Q": "Wat gebeurt er als mijn site uitvalt?",
+              "A": "Onze monitoring waarschuwt ons binnen 60 seconden. We reageren 24/7 — de meeste incidenten worden opgelost voordat je het merkt. Als we onze 99,9% SLA in een bepaalde maand niet halen, krijg je automatisch credits op je volgende factuur, geen support-ticket nodig."
+            },
+            "3": {
+              "Q": "Hoe werken de back-ups?",
+              "A": "Dagelijkse geautomatiseerde back-ups met 30 dagen retentie, opgeslagen offsite in een aparte regio. Point-in-time herstel is één klik vanuit je dashboard. We maken ook een snapshot vóór elke update van CMS, thema's of plugins."
+            },
+            "4": {
+              "Q": "Kan ik later van jullie hosting af als ik dat wil?",
+              "A": "Altijd. Je bezit je code, database, domein en content. Als je besluit te vertrekken, helpen we je kosteloos met de migratie — we verdienen liever je verlenging dan dat we je vastzetten."
+            },
+            "5": {
+              "Q": "Doen jullie beveiligingsupdates automatisch?",
+              "A": "Ja. We patchen je CMS-kern, plugins, thema's en serversoftware wekelijks. Kritieke beveiligingspatches gaan binnen 24 uur uit. Elke update draait eerst op staging, en we houden een rollback-venster aan als er iets misgaat in productie."
+            },
+            "6": {
+              "Q": "Wat is inbegrepen in het maandtarief?",
+              "A": "Monitoring, dagelijkse back-ups, beveiligingspatches, plugin- en thema-updates, SSL-vernieuwing, kleine content-wijzigingen (tot 2 uur per maand), uptime SLA en prioriteitssupport. Grotere content-wijzigingen of nieuwe functies worden apart geoffreerd tegen een vast projecttarief."
             }
           }
         }
@@ -1824,49 +1918,49 @@
       }
     }
   },
-  "Footer": {     
-    "compDesc": "Wij ontwerpen en ontwikkelen digitale ervaringen die bedrijven en individuen helpen online te slagen.",     
-    "rights": "Uw Bedrijf. Alle rechten voorbehouden.",     
-    "customLink": "Github",     
-    "cwaMark": "Ontworpen Door",     
-    "nav": {       
-      "company": {         
-        "title": "Diensten",         
-        "links": {           
-          "1": "Website Ontwikkeling",           
-          "2": "Mobiele App Ontwikkeling",           
-          "3": "UI/UX Ontwerp",           
-          "4": "E-commerce Oplossingen",           
-          "5": "SEO Optimalisatie",           
-          "6": "Web Hosting"         
-        }       
-      },       
-      "resources": {         
-        "title": "Bedrijf",         
-        "links": {           
-          "1": "Over Ons",           
+  "Footer": {
+    "compDesc": "Wij ontwerpen en ontwikkelen digitale ervaringen die bedrijven en individuen helpen online te slagen.",
+    "rights": "Uw Bedrijf. Alle rechten voorbehouden.",
+    "customLink": "Github",
+    "cwaMark": "Ontworpen Door",
+    "nav": {
+      "company": {
+        "title": "Diensten",
+        "links": {
+          "1": "Website Ontwikkeling",
+          "2": "Mobiele App Ontwikkeling",
+          "3": "UI/UX Ontwerp",
+          "4": "E-commerce Oplossingen",
+          "5": "SEO Optimalisatie",
+          "6": "Web Hosting"
+        }
+      },
+      "resources": {
+        "title": "Bedrijf",
+        "links": {
+          "1": "Over Ons",
           "2": "Portfolio",
-          "3": "Proces",           
-          "4": "Contact"         
-        }       
-      },       
-      "contact": {         
-        "title": "Contact",         
-        "links": {           
-          "1": "unfold@codewithali.com",           
-          "2": "(408) 690-4009",           
-          "3": "Vraag een Offerte Aan"          
-        }       
-      },       
-      "legal": {         
-        "title": "Privacy",         
-        "links": {           
-          "1": "CodeWithAli. Alle rechten voorbehouden.",           
-          "2": "Privacybeleid",           
-          "3": "Servicevoorwaarden",           
-          "4": "Cookiebeleid"         
-        }       
-      }     
-    }   
+          "3": "Proces",
+          "4": "Contact"
+        }
+      },
+      "contact": {
+        "title": "Contact",
+        "links": {
+          "1": "unfold@codewithali.com",
+          "2": "(408) 690-4009",
+          "3": "Vraag een Offerte Aan"
+        }
+      },
+      "legal": {
+        "title": "Privacy",
+        "links": {
+          "1": "CodeWithAli. Alle rechten voorbehouden.",
+          "2": "Privacybeleid",
+          "3": "Servicevoorwaarden",
+          "4": "Cookiebeleid"
+        }
+      }
+    }
   }
 }

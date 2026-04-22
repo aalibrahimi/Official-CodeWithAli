@@ -183,10 +183,10 @@ function FAQ({ t }: { t: ReturnType<typeof useTranslations> }) {
               {t("badge.6")}
             </p>
             <h2 className="font-light leading-[1.05] tracking-[-0.01em]" style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}>
-              FAQ
+              {t("sections.6.title")}
             </h2>
             <p className="mt-5 text-[15.5px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
-              Common questions about our hosting services.
+              {t("sections.6.desc")}
             </p>
           </div>
         </FadeIn>
@@ -202,7 +202,7 @@ function FAQ({ t }: { t: ReturnType<typeof useTranslations> }) {
                     className="flex w-full items-center justify-between gap-6 py-5 text-left transition-colors hover:text-[#C8102E]"
                   >
                     <span className="text-[15px] font-semibold tracking-tight lg:text-[16.5px]">
-                      {`Question ${n}`}
+                      {t(`sections.6.QA.${n}.Q`)}
                     </span>
                     <ChevronDown
                       className={`h-4 w-4 shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-[#C8102E]" : ""}`}
@@ -218,7 +218,7 @@ function FAQ({ t }: { t: ReturnType<typeof useTranslations> }) {
                         className="overflow-hidden"
                       >
                         <p className="pb-5 pr-10 text-[14.5px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
-                          Answer content here
+                          {t(`sections.6.QA.${n}.A`)}
                         </p>
                       </motion.div>
                     )}
