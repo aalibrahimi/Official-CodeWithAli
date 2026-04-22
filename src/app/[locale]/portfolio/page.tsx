@@ -128,29 +128,38 @@ const PortfolioPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-white overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="pt-10 pb-20 md:pb-24 relative overflow-hidden">
-        {/* BG */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 border-b-[1px] border-b-[#0F0F10]/10 dark:border-b-white/10">
-          <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#C8102E] to-[#0A0A0B]"></div>
-        </div>
-
-        {/* Heading */}
-        <div className="h-full relative z-10 flex flex-col items-center justify-center text-center font-semibold">
-          <div className="w-full h-full ">
-            <div className="w-full h-full ">
-              <h1 className="text-4xl text-white dark:text-white lg:text-5xl font-bold leading-tight  ">
-                {t("title")}{" "}
-                {t("title2")}{" "}
-              
-              </h1>
-              <p className="text-black font-semibold dark:text-white pt-2 ">
-                {t("sub")}
-              </p>
-            </div>
-          </div>
+    <div className="min-h-screen bg-[#FAF9F6] text-[#0F0F10] antialiased dark:bg-[#0A0A0B] dark:text-[#F4F4F5] overflow-x-hidden">
+      {/* Hero — matches home page design language: eyebrow pill,
+          big display type with italic accent, single red glow. */}
+      <section className="relative overflow-hidden px-5 pb-16 pt-20 lg:px-10 lg:pb-24 lg:pt-28">
+        <div className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[720px] rounded-full bg-[#C8102E]/15 blur-[140px] dark:bg-[#C8102E]/10" />
+        <div className="relative mx-auto max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#0F0F10]/15 bg-[#0F0F10]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF37] dark:border-white/15 dark:bg-white/5"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-[#C8102E]" />
+            Portfolio
+          </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-5xl font-light leading-[0.95] tracking-[-0.02em]"
+            style={{ fontSize: "clamp(40px, 7vw, 100px)" }}
+          >
+            {t("title")} <em className="font-normal italic text-[#C8102E]">{t("title2")}.</em>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.18 }}
+            className="mt-10 max-w-2xl text-[16px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70 lg:text-[18px]"
+          >
+            {t("sub")}
+          </motion.p>
         </div>
       </section>
 

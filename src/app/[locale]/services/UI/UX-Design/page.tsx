@@ -98,27 +98,36 @@ const UIUXDesignPage = () => {
     },
   ];
 
-  // Portfolio projects
+  // Portfolio projects — swapped the 4 broken placeholder cards out
+  // for 4 of our live template demos. Each links straight into the
+  // working /templates/<industry> site so a prospect clicks "SaaS
+  // dashboard" and lands inside Prism instead of staring at a missing
+  // image. Chose four that span our UI/UX range: dashboard-heavy,
+  // e-commerce editorial, minimal boutique, and data-grid real estate.
   const portfolioProjects = [
     {
-      title: t("sections.2.projects.1.title"),
-      category: t("sections.2.projects.1.category"),
-      image: "/placeholder/ui-project-1.jpg",
+      title: "Prism · SaaS platform",
+      category: "Dashboard design",
+      href: "/templates/saas",
+      gradient: "linear-gradient(135deg, #7C5CFF 0%, #4AD8E1 100%)",
     },
     {
-      title: t("sections.2.projects.2.title"),
-      category: t("sections.2.projects.2.category"),
-      image: "/placeholder/ui-project-2.jpg",
+      title: "NOIR SS/26",
+      category: "E-commerce · Fashion",
+      href: "/templates/fashion",
+      gradient: "linear-gradient(135deg, #3A3A3C 0%, #0F0F10 100%)",
     },
     {
-      title: t("sections.2.projects.3.title"),
-      category: t("sections.2.projects.3.category"),
-      image: "/placeholder/ui-project-3.jpg",
+      title: "Atelier Hush",
+      category: "Boutique commerce",
+      href: "/templates/boutique",
+      gradient: "linear-gradient(135deg, #D5C9B4 0%, #A89782 45%, #6B5B47 100%)",
     },
     {
-      title: t("sections.2.projects.4.title"),
-      category: t("sections.2.projects.4.category"),
-      image: "/placeholder/ui-project-4.jpg",
+      title: "Meridian Properties",
+      category: "Real estate platform",
+      href: "/templates/real-estate",
+      gradient: "linear-gradient(135deg, #8FCFA6 0%, #1F6F4A 60%, #0F2A1D 100%)",
     },
   ];
 
@@ -367,39 +376,38 @@ const UIUXDesignPage = () => {
 
           {/* either comment this out blaze (below ) or add photos*/}
           {/* Blaze: I'll add photos */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {portfolioProjects.map((project, index) => (
-              // <motion.div
-              //   key={index}
-              //   initial={{ opacity: 0, y: 20 }}
-              //   whileInView={{ opacity: 1, y: 0 }}
-              //   viewport={{ once: true }}
-              //   transition={{ duration: 0.5, delay: index * 0.1 }}
-              //   className="group"
-              // >
-
-              // ADD PHOTOS HERE TO HERE FOR THE PORTFOLIO SHOWCASE  ( BUDGETARY, TAKEOVER, 3DPC, OR ANY OTHER DESIGNS
-              <div key={index} className="group">
-                <div className="relative overflow-hidden rounded-xl aspect-[4/3] bg-[#C8102E]/10 dark:bg-white/[0.02]">
-                  <div className="w-full h-full bg-gradient-to-tr from-[#0A0A0B] to-black/20 absolute inset-0 opacity-40 group-hover:opacity-0 transition-opacity"></div>
-                  <img
-                    src="/api/placeholder/600/450"
-                    alt={project.title}
-                    className="w-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent p-6 flex flex-col justify-end">
-                    <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform">
-                      <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-none mb-2">
-                        {project.category}
-                      </Badge>
-                      <h3 className="text-xl font-bold text-white">
-                        {project.title}
-                      </h3>
+              <a
+                key={index}
+                href={project.href}
+                className="group block overflow-hidden rounded-2xl border border-[#0F0F10]/10 dark:border-white/10 transition-all hover:-translate-y-1 hover:border-[#C8102E]/40 hover:shadow-[0_30px_60px_-20px_rgba(200,16,46,0.3)]"
+              >
+                <div
+                  className="relative aspect-[4/3] overflow-hidden"
+                  style={{ background: project.gradient }}
+                >
+                  {/* Subtle live-demo badge top-right */}
+                  <span className="absolute right-4 top-4 rounded-full bg-white/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white backdrop-blur-sm">
+                    Live demo
+                  </span>
+                  {/* Gradient fade for legibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  {/* Label block */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-6">
+                    <p className="text-[10.5px] font-semibold uppercase tracking-[0.24em] text-[#D4AF37]">
+                      {project.category}
+                    </p>
+                    <h3 className="mt-2 text-[22px] font-semibold leading-tight text-white lg:text-[26px]">
+                      {project.title}
+                    </h3>
+                    <div className="mt-3 flex items-center gap-1.5 text-[11.5px] font-semibold uppercase tracking-[0.2em] text-white/80 transition-all group-hover:gap-3 group-hover:text-white">
+                      Walk the demo
+                      <ArrowRight className="h-3 w-3" />
                     </div>
                   </div>
                 </div>
-              </div>
-              // </motion.div>
+              </a>
             ))}
           </div>
 

@@ -23,6 +23,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@radix-ui/react-tabs";
 import { useLocale, useTranslations } from "next-intl";
 import GradientText from "@/MyComponents/GradientText";
+import Image from "next/image";
 import { isRtlLang } from "rtl-detect";
 // import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -463,65 +464,51 @@ const WebsiteDevelopmentPage = () => {
             {/* </motion.div> */}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {caseStudies.map((project, index) => (
-              // <motion.div
-              //   key={index}
-              //   initial={{ opacity: 0, y: 20 }}
-              //   whileInView={{ opacity: 1, y: 0 }}
-              //   viewport={{ once: true }}
-              //   transition={{ duration: 0.5, delay: index * 0.2 }}
-              //   className="group cursor-pointer"
-              // >
               <div key={index} className="group cursor-pointer">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-xl shadow-black/10 mb-5">
-                  {/* Project Image */}
-                  <div className="w-full h-full bg-[#F4F4F5] dark:bg-black/80 border-2 border-[#0F0F10]/10 dark:border-white/10 flex items-center justify-center">
-                    <div className="flex flex-col items-center">
-                      <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-3">
-                        {project.industry}
-                      </Badge>
-                      <p className="text-[#0F0F10]/70 dark:text-white/70 text-center px-6">
-                        {t("sections.4.case.imgPlaceholder")} {project.title}
-                      </p>
-                    </div>
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#0F0F10]/10 dark:border-white/10 transition-all group-hover:-translate-y-1 group-hover:border-[#C8102E]/40 group-hover:shadow-[0_30px_60px_-20px_rgba(200,16,46,0.3)] mb-5">
+                  {/* Real screenshot — was previously a placeholder div
+                      because the <Image> wasn't being rendered. Wired in
+                      the existing /public asset with proper Next.js Image. */}
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={800}
+                    height={600}
+                    quality={95}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  />
+                  {/* Industry label top-left */}
+                  <div className="absolute left-4 top-4">
+                    <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent px-2.5 py-1 text-[10.5px] font-semibold uppercase tracking-[0.18em]">
+                      {project.industry}
+                    </Badge>
                   </div>
-
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-[#C8102E]/80 to-[#0A0A0B]/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="text-center p-6">
-                      <Badge className="bg-[#D4AF37]/40 text-white border-transparent mb-3">
-                        {project.industry}
-                      </Badge>
-                      <h3 className="text-xl font-bold text-white mb-3">
+                  {/* Hover overlay with CTA */}
+                  <div className="absolute inset-0 flex items-end bg-gradient-to-t from-[#0A0A0B] via-[#0A0A0B]/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <div className="p-6 w-full">
+                      <h3 className="text-[20px] font-semibold text-white leading-tight">
                         {project.title}
                       </h3>
-                      {/* <p className="text-amber-50 mb-5 text-sm">
+                      <p className="mt-2 text-[13px] leading-relaxed text-white/80 line-clamp-2">
                         {project.description}
-                      </p> */}
-                      <Button
-                        variant="outline"
-                        className="border-2 border-white/30 hover:text-white text-white bg-[#C8102E] hover:bg-[#9F0F24]"
-                      >
+                      </p>
+                      <div className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-[#C8102E] px-4 py-2 text-[11.5px] font-semibold uppercase tracking-[0.18em] text-white">
                         {t("sections.4.case.viewBtn")}
-                        {isRTL ? (
-                          <ArrowLeft className="ml-2 h-4 w-4" />
-                        ) : (
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        )}
-                      </Button>
+                        {isRTL ? <ArrowLeft className="h-3 w-3" /> : <ArrowRight className="h-3 w-3" />}
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                <h3 className="text-[18px] font-semibold tracking-tight text-[#0F0F10] dark:text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-400 text-sm">
+                <p className="text-[13.5px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
                   {project.description}
                 </p>
               </div>
-              // </motion.div>
             ))}
           </div>
 
