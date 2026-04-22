@@ -1,335 +1,680 @@
+/**
+ * ContactForm — 2026 rewrite.
+ *
+ * Three goals behind the rewrite:
+ *   1. Richer context so leads come in qualified (budget, timeline,
+ *      company) instead of a 3-word "call me" from nowhere.
+ *   2. Client-side validation with proper error surfacing — the v1
+ *      just let the browser's built-in `required` check run, and
+ *      there was no feedback on why a submission failed.
+ *   3. Anti-spam. We've been getting junk, so the form now ships
+ *      with a honeypot field, a minimum time-to-submit gate, and
+ *      heuristic content filters. Server-side route does the same
+ *      validation plus IP rate limiting as a second line.
+ *
+ * Keeps existing i18n keys (`Contact.*`) for the fields that already
+ * have translations; new fields (company, phone, budget, timeline,
+ * hearAbout) are English-only for now and can be localized later.
+ */
 "use client";
-import { Loader2, Send } from "lucide-react";
-import { FormEvent, useEffect, useState } from "react";
-import { Badge } from "@/components/ui/badge";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useFormDataStore } from "./serviceform";
-import { useLocale, useTranslations } from "next-intl";
+
+import { FormEvent, useEffect, useMemo, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  Loader2, Send, CheckCircle2, AlertCircle, User, Mail, Building2,
+  Phone, Briefcase, DollarSign, Clock, FileText, Sparkles, ArrowRight,
+} from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import { isRtlLang } from "rtl-detect";
 
 interface Props {
-  scrollToTop?: boolean | false;
+  /** Kept for backwards compatibility with the v1 prop surface. */
+  scrollToTop?: boolean;
   badge?: string;
   header?: string;
   desc?: string;
   btnText?: string;
 }
 
+/* ─── Spam detection heuristics ──────────────────────────────── */
+// Simple but pragmatic: flag messages that look commercial-spammy.
+// Server mirrors the same patterns so client bypass alone doesn't
+// get a bot through.
+const SPAM_PATTERNS = [
+  /\b(viagra|cialis|casino|bitcoin|crypto\s*signal|forex|binary\s*options)\b/i,
+  /\b(loan|payday|debt\s*relief|refinance)\b/i,
+  /\bclick\s*here\b/i,
+  /\bseo\s*(services|rankings?|guarantee)\b/i,
+  /\b(100%|guaranteed)\s*(success|results?|rankings?)\b/i,
+  /\b(buy|cheap|order)\s+(now|online)\b/i,
+];
+
+const MIN_DETAIL_CHARS = 40;
+const MAX_DETAIL_CHARS = 2000;
+const MIN_TIME_TO_SUBMIT_MS = 3000;
+
+/* ─── Form state types ──────────────────────────────────────── */
+
+interface FormState {
+  name: string;
+  email: string;
+  company: string;
+  phone: string;
+  service: string;
+  budget: string;
+  timeline: string;
+  details: string;
+  hearAbout: string;
+  /** Honeypot field. Bots fill it; humans never see it. */
+  website: string;
+}
+
+type FieldErrors = Partial<Record<keyof FormState | "general", string>>;
+
+const INITIAL: FormState = {
+  name: "", email: "", company: "", phone: "",
+  service: "", budget: "", timeline: "", details: "",
+  hearAbout: "", website: "",
+};
+
+/* ─── Options ─────────────────────────────────────────────── */
+
+const BUDGETS = [
+  "Under $1,000",
+  "$1,000 – $5,000",
+  "$5,000 – $15,000",
+  "$15,000 – $50,000",
+  "$50,000+",
+];
+
+const TIMELINES = [
+  "ASAP · 1–2 weeks",
+  "Within a month",
+  "1–3 months",
+  "3+ months",
+  "Exploring · no firm date",
+];
+
+const HEAR_ABOUT = [
+  "Google search",
+  "Referral from a client",
+  "Upwork",
+  "LinkedIn",
+  "Twitter / X",
+  "Other",
+];
+
+/* ─── Component ─────────────────────────────────────────────── */
+
 export default function ContactForm({
   scrollToTop,
-  badge,
-  header,
-  desc,
   btnText,
 }: Props) {
   const t = useTranslations("Contact");
   const locale = useLocale();
   const isRTL = isRtlLang(locale);
 
-  const {
-    name,
-    setName,
-    email,
-    setEmail,
-    service,
-    setService,
-    projectDetails,
-    setProjectDetails,
-  } = useFormDataStore();
-  const formData = {
-    name,
-    email,
-    service,
-    projectDetails,
-  };
+  const [form, setForm] = useState<FormState>(INITIAL);
+  const [errors, setErrors] = useState<FieldErrors>({});
+  const [touched, setTouched] = useState<Partial<Record<keyof FormState, true>>>({});
+  const [submitting, setSubmitting] = useState(false);
+  const [succeeded, setSucceeded] = useState(false);
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  /* eslint-disable */
-  const [isMounted, setIsMounted] = useState(false);
-  /* eslint-disable */
-  const [isReducedMotion, setIsReducedMotion] = useState(false);
-  const [status, setStatus] = useState<{
-    type: "success" | "error" | null;
-    message: string;
-  }>({
-    type: null,
-    message: "",
-  });
+  // Time the form mounted — used to reject too-fast submissions (bots).
+  const [mountedAt] = useState(() => Date.now());
 
   useEffect(() => {
-    if (scrollToTop) {
-      scrollTo({ top: 0 });
+    if (scrollToTop) window.scrollTo({ top: 0 });
+  }, [scrollToTop]);
+
+  /* ── Validation ── */
+
+  const validateField = (key: keyof FormState, value: string): string | undefined => {
+    switch (key) {
+      case "name":
+        if (value.trim().length < 2) return "Please enter your full name.";
+        return;
+      case "email":
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim()))
+          return "Please enter a valid email.";
+        return;
+      case "service":
+        if (!value) return "Pick the service you're interested in.";
+        return;
+      case "budget":
+        if (!value) return "Approximate budget helps us propose the right scope.";
+        return;
+      case "timeline":
+        if (!value) return "Tell us roughly when you want to start.";
+        return;
+      case "details":
+        const v = value.trim();
+        if (v.length < MIN_DETAIL_CHARS)
+          return `Please share at least ${MIN_DETAIL_CHARS} characters about the project.`;
+        if (v.length > MAX_DETAIL_CHARS)
+          return `Keep it under ${MAX_DETAIL_CHARS} characters — save the details for the call.`;
+        if (SPAM_PATTERNS.some((re) => re.test(v)))
+          return "Your message triggered our spam filter. Please rephrase.";
+        if ((v.match(/https?:\/\//gi) ?? []).length > 3)
+          return "Please include at most three links in your message.";
+        return;
+      case "phone":
+        if (value && value.replace(/\D/g, "").length < 7)
+          return "That phone number looks incomplete.";
+        return;
+      default:
+        return;
     }
+  };
 
-    setIsMounted(true);
+  const validateAll = (): FieldErrors => {
+    const next: FieldErrors = {};
+    (["name","email","service","budget","timeline","details","phone"] as const).forEach((k) => {
+      const err = validateField(k, form[k]);
+      if (err) next[k] = err;
+    });
+    return next;
+  };
 
-    // Check for reduced motion preference
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setIsReducedMotion(mediaQuery.matches);
+  const isValid = useMemo(() => {
+    return (
+      form.name.trim().length >= 2 &&
+      /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(form.email.trim()) &&
+      !!form.service &&
+      !!form.budget &&
+      !!form.timeline &&
+      form.details.trim().length >= MIN_DETAIL_CHARS &&
+      form.details.trim().length <= MAX_DETAIL_CHARS
+    );
+  }, [form]);
 
-    const handleMediaChange = () => {
-      setIsReducedMotion(mediaQuery.matches);
-    };
+  /* ── Field updater ── */
 
-    mediaQuery.addEventListener("change", handleMediaChange);
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaChange);
-    };
-  }, []);
+  const setField = <K extends keyof FormState>(key: K, value: FormState[K]) => {
+    setForm((p) => ({ ...p, [key]: value }));
+    // Clear any existing error as the user starts correcting it.
+    if (errors[key]) setErrors((p) => ({ ...p, [key]: undefined }));
+  };
 
-  // Apply conditional animation based on device capability and user preference
-  // const getAnimationProps = (delay = 0) => {
-  //   if (!isMounted || isReducedMotion) {
-  //     return {}; // No animation on SSR or when reduced motion is preferred
-  //   }
+  const blur = (key: keyof FormState) => {
+    setTouched((p) => ({ ...p, [key]: true }));
+    const err = validateField(key, form[key]);
+    setErrors((p) => ({ ...p, [key]: err }));
+  };
 
-  //   return {
-  //     initial: { opacity: 0, y: 10 },
-  //     whileInView: { opacity: 1, y: 0 },
-  //     viewport: { once: true },
-  //     transition: { duration: 0.3, delay },
-  //   };
-  // };
+  /* ── Submit ── */
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setStatus({ type: null, message: "" });
+    setErrors({});
+
+    // Honeypot: bots fill this, humans never see it. Fail silently
+    // so the bot thinks it succeeded.
+    if (form.website) {
+      setSucceeded(true);
+      return;
+    }
+
+    // Too-fast submission → bot.
+    if (Date.now() - mountedAt < MIN_TIME_TO_SUBMIT_MS) {
+      setErrors({ general: "Please take a moment to review your message." });
+      return;
+    }
+
+    const errs = validateAll();
+    if (Object.keys(errs).length > 0) {
+      setErrors(errs);
+      // Mark every field as touched so errors render.
+      setTouched({
+        name: true, email: true, service: true, budget: true,
+        timeline: true, details: true, phone: true,
+      });
+      return;
+    }
+
+    setSubmitting(true);
 
     try {
-      const response = await fetch("/api/send-contact", {
+      const res = await fetch("/api/send-contact", {
         method: "POST",
-        headers: {
-          Authorization: `Bearer ${process.env.RESEND_KEY}`,
-          "Content-Type": "application/json",
-        },
-        // Need to send content to API
-        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name.trim(),
+          email: form.email.trim(),
+          company: form.company.trim() || null,
+          phone: form.phone.trim() || null,
+          service: form.service,
+          budget: form.budget,
+          timeline: form.timeline,
+          projectDetails: form.details.trim(),
+          hearAbout: form.hearAbout || null,
+          // Include the time-to-submit so server can also reject fast
+          // submissions as a second line of defense.
+          elapsedMs: Date.now() - mountedAt,
+        }),
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to submit form");
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body?.error || "Failed to submit");
       }
 
-      setName("");
-      setEmail("");
-      setService("");
-      setProjectDetails("");
-
-      setStatus({
-        type: "success",
-        message: t("status.success"),
-      });
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      setStatus({
-        type: "error",
-        message: t("status.error"),
-      });
+      setSucceeded(true);
+      setForm(INITIAL);
+    } catch (err) {
+      console.error("[contact] submit failed:", err);
+      setErrors({ general: t("status.error") });
     } finally {
-      setIsSubmitting(false);
+      setSubmitting(false);
     }
   };
 
-  return (
-    <section
-      id="contact"
-      className="py-20 md:py-24 bg-gradient-to-b from-red-500/80 to-red-600/80 dark:from-black dark:to-black"
-    >
-      <div className="container mx-auto px-4 md:px-8 lg:px-12">
-        <div className="max-w-4xl mx-auto">
-          {/* HEADER */}
-          {/* <motion.div className="text-center mb-12 " {...getAnimationProps()}> */}
-          <div className="text-center mb-12">
-            <Badge className="bg-red-700 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
-              {badge ? `${badge.toUpperCase()}` : `${t("badge")}`}
-            </Badge>
-            <h2 className="text-3xl text-white md:text-4xl font-bold mt-2 mb-4">
-              {header ? `${header}` : `${t("header")}`}
-            </h2>
-            <p className="text-white/80 dark:text-red-200/60 max-w-2xl mx-auto">
-              {desc ? `${desc}` : `${t("desc")}`}
-            </p>
-          </div>
-          {/* </motion.div> */}
+  /* ── Render: success state replaces form entirely ── */
 
-          {/* FORM */}
-          {/* <motion.div
-            className="bg-black border-2 border-red-800/40 rounded-xl p-8 md:p-10 shadow-xl shadow-red-950/10"
-            {...getAnimationProps(0.1)}
-          > */}
-          <div className="bg-red-950/80 dark:bg-black border-2 border-red-800/40 rounded-xl p-8 md:p-10 shadow-xl shadow-red-950/10">
-            <div className="grid grid-cols-1 gap-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name Field */}
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-white dark:text-red-200 font-medium mb-2"
-                  >
-                    {t("field.name.label")}
-                  </label>
-                  <Input
-                    type="text"
-                    id="name"
-                    value={formData.name}
-                    placeholder={`${t("field.name.placeholder")}`}
-                    onChange={(e) => setName(e.target.value)}
-                    className=" bg-white/90 placeholder:text-black/80 dark:placeholder:text-gray-500 dark:bg-red-950/20 border-red-800/40 text-black dark:text-white focus:border-red-600 h-12 text-base w-full"
-                    required
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Email Field */}
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-white dark:text-red-200 font-medium mb-2"
-                    >
-                      {t("field.email.label")}
-                    </label>
-                    <Input
-                      type="email"
-                      id="email"
-                      value={formData.email}
-                      placeholder={`${t("field.email.placeholder")}`}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="bg-white/90 placeholder:text-black/80 dark:placeholder:text-gray-500 dark:bg-red-950/20 border-red-800/40 text-black dark:text-white focus:border-red-600 h-12 text-base w-full"
-                      required
-                    />
-                  </div>
-
-                  {/* Services */}
-                  <div>
-                    <Select onValueChange={(value) => setService(value)}>
-                      <label
-                        htmlFor="email"
-                        className="block text-white dark:text-red-200 font-medium mb-2"
-                      >
-                        {t("field.service.label")}
-                      </label>
-                      <SelectTrigger
-                        id="service"
-                        className="w-full bg-white/90 dark:bg-red-950/20 border border-red-800 text-black dark:text-white focus:border-red-600 rounded-md h-12 text-base px-3 focus:bg-red-800"
-                      >
-                        <SelectValue
-                          placeholder={t("field.service.placeholder")}
-                        />
-                      </SelectTrigger>
-                      <SelectContent className="bg-white  dark:bg-black text-black dark:text-white">
-                        <SelectItem
-                          value="website"
-                          className="hover:bg-red-600 hover:text-white cursor-pointer"
-                        >
-                          {t("field.service.option.1")}
-                        </SelectItem>
-                        <SelectItem
-                          value="app"
-                          className="hover:bg-red-600 hover:text-white cursor-pointer"
-                        >
-                          {t("field.service.option.2")}
-                        </SelectItem>
-                        <SelectItem
-                          value="design"
-                          className="hover:bg-red-600 hover:text-white cursor-pointer"
-                        >
-                          {t("field.service.option.3")}
-                        </SelectItem>
-                        <SelectItem
-                          value="ecommerce"
-                          className="hover:bg-red-600 hover:text-white cursor-pointer"
-                        >
-                          {t("field.service.option.4")}
-                        </SelectItem>
-                        <SelectItem
-                          value="seo"
-                          className="hover:bg-red-600 hover:text-white cursor-pointer"
-                        >
-                          {t("field.service.option.5")}
-                        </SelectItem>
-                        <SelectItem
-                          value="hosting"
-                          className="hover:bg-red-600 hover:text-white cursor-pointer"
-                        >
-                          {t("field.service.option.6")}
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-
-                {/* Project Details */}
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-white dark:text-red-200 font-medium mb-2"
-                  >
-                    {t("field.details.label")}
-                  </label>
-                  <Textarea
-                    id="message"
-                    className="bg-white/90 placeholder:text-black/80 dark:placeholder:text-gray-500 dark:bg-red-950/20 border-red-800/40 text-black dark:text-white focus:border-red-600 h-40 text-base w-full resize-none"
-                    required
-                    value={formData.projectDetails}
-                    onChange={(e) => setProjectDetails(e.target.value)}
-                    placeholder={`${t("field.details.placeholder")}`}
-                  />
-                </div>
-
-                {/* Status Messages */}
-                {status.type && (
-                  <div
-                    className={`p-4 rounded-lg ${
-                      status.type === "success"
-                        ? "bg-green-50 text-green-800"
-                        : "bg-red-50 text-red-800"
-                    }`}
-                  >
-                    {status.message}
-                  </div>
-                )}
-
-                {/* Submit Button */}
-                <div className="flex justify-center md:justify-end">
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="bg-gradient-to-r from-red-700 to-red-800 dark:from-red-700 dark:to-red-900 hover:from-red-800 hover:to-red-800/80 
-                     dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-700/40 shadow-lg shadow-red-950/20 px-10 py-6 text-lg font-medium hover:cursor-pointer"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                        {t("submitLoad")}
-                      </>
-                    ) : (
-                      <>
-                        {isRTL ? (
-                          <Send className="mr-2 h-5 w-5 rotate-270" />
-                        ) : (
-                          <Send className="mr-2 h-5 w-5" />
-                        )}
-                        {btnText ? `${btnText}` : `${t("submitbtn")}`}
-                      </>
-                    )}
-                  </Button>
-                </div>
-              </form>
-            </div>
-          </div>
-          {/* </motion.div> */}
+  if (succeeded) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="mx-auto max-w-xl rounded-2xl border border-[#0F0F10]/10 bg-white p-10 text-center dark:border-white/10 dark:bg-[#0D0D0E] lg:p-14"
+      >
+        <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#C8102E] text-white">
+          <CheckCircle2 className="h-6 w-6" />
         </div>
+        <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">
+          Message sent
+        </p>
+        <h3
+          className="font-light leading-[1.1] tracking-[-0.01em]"
+          style={{ fontSize: "clamp(26px, 4vw, 40px)" }}
+        >
+          {t("status.success")}
+        </h3>
+        <p className="mt-5 text-[14.5px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
+          We review every message personally and reply within 24 hours —
+          usually the same day.
+        </p>
+      </motion.div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} noValidate className="mx-auto w-full max-w-3xl space-y-10">
+      {/* ── Contact section ── */}
+      <Section eyebrow="01 · You" title="How do we reach you?">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Field
+            Icon={User}
+            label={t("field.name.label")}
+            name="name"
+            value={form.name}
+            onChange={(v) => setField("name", v)}
+            onBlur={() => blur("name")}
+            placeholder={t("field.name.placeholder")}
+            error={touched.name ? errors.name : undefined}
+            required
+          />
+          <Field
+            Icon={Mail}
+            label={t("field.email.label")}
+            name="email"
+            type="email"
+            value={form.email}
+            onChange={(v) => setField("email", v)}
+            onBlur={() => blur("email")}
+            placeholder={t("field.email.placeholder")}
+            error={touched.email ? errors.email : undefined}
+            required
+          />
+          <Field
+            Icon={Building2}
+            label="Company"
+            name="company"
+            value={form.company}
+            onChange={(v) => setField("company", v)}
+            placeholder="Acme Inc. (optional)"
+          />
+          <Field
+            Icon={Phone}
+            label="Phone"
+            name="phone"
+            type="tel"
+            value={form.phone}
+            onChange={(v) => setField("phone", v)}
+            onBlur={() => blur("phone")}
+            placeholder="+1 512 555 0177 (optional)"
+            error={touched.phone ? errors.phone : undefined}
+          />
+        </div>
+      </Section>
+
+      {/* ── Project section ── */}
+      <Section eyebrow="02 · Project" title="What are we building?">
+        <div className="space-y-5">
+          <SelectField
+            Icon={Briefcase}
+            label={t("field.service.label")}
+            name="service"
+            value={form.service}
+            onChange={(v) => { setField("service", v); setTouched((p) => ({ ...p, service: true })); }}
+            placeholder={t("field.service.placeholder")}
+            error={touched.service ? errors.service : undefined}
+            options={[
+              { value: "website",   label: t("field.service.option.1") },
+              { value: "app",       label: t("field.service.option.2") },
+              { value: "design",    label: t("field.service.option.3") },
+              { value: "ecommerce", label: t("field.service.option.4") },
+              { value: "seo",       label: t("field.service.option.5") },
+              { value: "hosting",   label: t("field.service.option.6") },
+            ]}
+            required
+          />
+
+          <RadioGroup
+            Icon={DollarSign}
+            label="Budget range"
+            name="budget"
+            value={form.budget}
+            onChange={(v) => { setField("budget", v); setTouched((p) => ({ ...p, budget: true })); }}
+            options={BUDGETS}
+            error={touched.budget ? errors.budget : undefined}
+            required
+          />
+
+          <RadioGroup
+            Icon={Clock}
+            label="Timeline"
+            name="timeline"
+            value={form.timeline}
+            onChange={(v) => { setField("timeline", v); setTouched((p) => ({ ...p, timeline: true })); }}
+            options={TIMELINES}
+            error={touched.timeline ? errors.timeline : undefined}
+            required
+          />
+
+          <TextareaField
+            Icon={FileText}
+            label={t("field.details.label")}
+            name="details"
+            value={form.details}
+            onChange={(v) => setField("details", v)}
+            onBlur={() => blur("details")}
+            placeholder={t("field.details.placeholder")}
+            error={touched.details ? errors.details : undefined}
+            minChars={MIN_DETAIL_CHARS}
+            maxChars={MAX_DETAIL_CHARS}
+            required
+          />
+        </div>
+      </Section>
+
+      {/* ── Optional: how heard ── */}
+      <Section eyebrow="03 · Optional" title="How did you find us?">
+        <SelectField
+          Icon={Sparkles}
+          label="Source"
+          name="hearAbout"
+          value={form.hearAbout}
+          onChange={(v) => setField("hearAbout", v)}
+          placeholder="Pick one (optional)"
+          options={HEAR_ABOUT.map((h) => ({ value: h, label: h }))}
+        />
+      </Section>
+
+      {/* Honeypot — positioned absolutely, tab-index -1, aria-hidden,
+          invisible to humans. Bots auto-fill it; submission is silently
+          discarded if it has any value. */}
+      <div
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}
+      >
+        <label>
+          Do not fill this in if you are human:
+          <input
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            value={form.website}
+            onChange={(e) => setField("website", e.target.value)}
+          />
+        </label>
       </div>
-    </section>
+
+      {/* ── General error banner ── */}
+      <AnimatePresence>
+        {errors.general && (
+          <motion.div
+            initial={{ opacity: 0, y: -4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -4 }}
+            className="flex items-start gap-3 rounded-lg border border-[#C8102E]/30 bg-[#C8102E]/5 p-4 text-[13.5px] text-[#C8102E]"
+          >
+            <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+            <span>{errors.general}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ── Submit ── */}
+      <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-[12px] text-[#0F0F10]/55 dark:text-white/55">
+          We'll reply within 24 hours. Your info is never shared.
+        </p>
+        <button
+          type="submit"
+          disabled={submitting || !isValid}
+          className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#C8102E] px-8 py-4 text-[13px] font-semibold uppercase tracking-[0.16em] text-white transition-all hover:bg-[#9F0F24] disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          {submitting ? (
+            <>
+              <Loader2 className="h-4 w-4 animate-spin" />
+              {t("submitLoad")}
+            </>
+          ) : (
+            <>
+              {btnText ?? t("submitbtn")}
+              {isRTL ? <ArrowRight className="h-4 w-4 rotate-180" /> : <Send className="h-3.5 w-3.5" />}
+            </>
+          )}
+        </button>
+      </div>
+    </form>
+  );
+}
+
+/* ─── Primitives ─────────────────────────────────────────── */
+
+function Section({
+  eyebrow, title, children,
+}: { eyebrow: string; title: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <div className="mb-5 flex items-baseline gap-4">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">
+          {eyebrow}
+        </p>
+        <h3 className="text-[17px] font-semibold tracking-tight lg:text-[19px]">
+          {title}
+        </h3>
+      </div>
+      {children}
+    </div>
+  );
+}
+
+function Field({
+  Icon, label, name, type = "text", value, onChange, onBlur,
+  placeholder, error, required,
+}: {
+  Icon: React.ComponentType<{ className?: string }>;
+  label: string; name: string; type?: string;
+  value: string; onChange: (v: string) => void; onBlur?: () => void;
+  placeholder?: string; error?: string; required?: boolean;
+}) {
+  return (
+    <label className="block">
+      <span className="mb-1.5 flex items-center gap-1.5 text-[12px] font-semibold text-[#0F0F10]/75 dark:text-white/80">
+        <Icon className="h-3 w-3 opacity-60" />
+        {label} {required && <span className="text-[#C8102E]">*</span>}
+      </span>
+      <input
+        type={type}
+        name={name}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        onBlur={onBlur}
+        placeholder={placeholder}
+        className="w-full rounded-lg border bg-white px-4 py-3 text-[14.5px] outline-none transition-colors focus:border-[#C8102E] dark:bg-white/[0.03] dark:text-white"
+        style={{
+          borderColor: error ? "#C8102E" : "rgba(0,0,0,0.10)",
+        }}
+      />
+      {error && (
+        <span className="mt-1.5 flex items-center gap-1 text-[11.5px] text-[#C8102E]">
+          <AlertCircle className="h-3 w-3" />
+          {error}
+        </span>
+      )}
+    </label>
+  );
+}
+
+function TextareaField({
+  Icon, label, name, value, onChange, onBlur,
+  placeholder, error, required, minChars, maxChars,
+}: {
+  Icon: React.ComponentType<{ className?: string }>;
+  label: string; name: string;
+  value: string; onChange: (v: string) => void; onBlur?: () => void;
+  placeholder?: string; error?: string; required?: boolean;
+  minChars?: number; maxChars?: number;
+}) {
+  const len = value.trim().length;
+  return (
+    <label className="block">
+      <span className="mb-1.5 flex items-center justify-between text-[12px] font-semibold text-[#0F0F10]/75 dark:text-white/80">
+        <span className="inline-flex items-center gap-1.5">
+          <Icon className="h-3 w-3 opacity-60" />
+          {label} {required && <span className="text-[#C8102E]">*</span>}
+        </span>
+        {maxChars && (
+          <span className={`text-[11px] tabular-nums ${
+            len > maxChars ? "text-[#C8102E]" :
+            len < (minChars ?? 0) ? "text-[#0F0F10]/50 dark:text-white/50" :
+            "text-[#0F0F10]/70 dark:text-white/70"
+          }`}>
+            {len}/{maxChars}
+          </span>
+        )}
+      </span>
+      <textarea
+        name={name}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        onBlur={onBlur}
+        placeholder={placeholder}
+        rows={6}
+        className="w-full resize-none rounded-lg border bg-white px-4 py-3 text-[14.5px] outline-none transition-colors focus:border-[#C8102E] dark:bg-white/[0.03] dark:text-white"
+        style={{
+          borderColor: error ? "#C8102E" : "rgba(0,0,0,0.10)",
+        }}
+      />
+      {error && (
+        <span className="mt-1.5 flex items-center gap-1 text-[11.5px] text-[#C8102E]">
+          <AlertCircle className="h-3 w-3" />
+          {error}
+        </span>
+      )}
+    </label>
+  );
+}
+
+function SelectField({
+  Icon, label, name, value, onChange, placeholder, options, error, required,
+}: {
+  Icon: React.ComponentType<{ className?: string }>;
+  label: string; name: string;
+  value: string; onChange: (v: string) => void;
+  placeholder: string;
+  options: { value: string; label: string }[];
+  error?: string; required?: boolean;
+}) {
+  return (
+    <label className="block">
+      <span className="mb-1.5 flex items-center gap-1.5 text-[12px] font-semibold text-[#0F0F10]/75 dark:text-white/80">
+        <Icon className="h-3 w-3 opacity-60" />
+        {label} {required && <span className="text-[#C8102E]">*</span>}
+      </span>
+      <select
+        name={name}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="w-full rounded-lg border bg-white px-4 py-3 text-[14.5px] outline-none transition-colors focus:border-[#C8102E] dark:bg-white/[0.03] dark:text-white"
+        style={{
+          borderColor: error ? "#C8102E" : "rgba(0,0,0,0.10)",
+          color: value ? undefined : "rgba(0,0,0,0.45)",
+        }}
+      >
+        <option value="">{placeholder}</option>
+        {options.map((o) => (
+          <option key={o.value} value={o.value}>
+            {o.label}
+          </option>
+        ))}
+      </select>
+      {error && (
+        <span className="mt-1.5 flex items-center gap-1 text-[11.5px] text-[#C8102E]">
+          <AlertCircle className="h-3 w-3" />
+          {error}
+        </span>
+      )}
+    </label>
+  );
+}
+
+function RadioGroup({
+  Icon, label, name, value, onChange, options, error, required,
+}: {
+  Icon: React.ComponentType<{ className?: string }>;
+  label: string; name: string;
+  value: string; onChange: (v: string) => void;
+  options: string[];
+  error?: string; required?: boolean;
+}) {
+  return (
+    <div>
+      <p className="mb-2 flex items-center gap-1.5 text-[12px] font-semibold text-[#0F0F10]/75 dark:text-white/80">
+        <Icon className="h-3 w-3 opacity-60" />
+        {label} {required && <span className="text-[#C8102E]">*</span>}
+      </p>
+      <div className="flex flex-wrap gap-2">
+        {options.map((opt) => {
+          const active = value === opt;
+          return (
+            <button
+              key={opt}
+              type="button"
+              onClick={() => onChange(opt)}
+              className="rounded-full border px-4 py-2 text-[12.5px] font-medium transition-all"
+              style={{
+                borderColor: active ? "#C8102E" : "rgba(0,0,0,0.12)",
+                background: active ? "#C8102E" : "transparent",
+                color: active ? "#fff" : undefined,
+              }}
+            >
+              {opt}
+            </button>
+          );
+        })}
+      </div>
+      {error && (
+        <span className="mt-2 flex items-center gap-1 text-[11.5px] text-[#C8102E]">
+          <AlertCircle className="h-3 w-3" />
+          {error}
+        </span>
+      )}
+    </div>
   );
 }
