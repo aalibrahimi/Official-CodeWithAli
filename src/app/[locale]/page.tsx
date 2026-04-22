@@ -1,781 +1,697 @@
+/**
+ * codewithali.com — homepage v2.
+ *
+ * Design language (Path B rework, 2026):
+ *   · Dark-first. Light mode is a toggle, not the default.
+ *   · Red is punctuation, not atmosphere. No gradient text, no
+ *     gradient buttons, no gradient-washed backgrounds. Red appears
+ *     on exactly one CTA, hover underlines, and the logo moment.
+ *   · Typography carries the design. Display sizes range from 48px
+ *     mobile to ~120px desktop via clamp. Weight 300 for display,
+ *     500 for body, 600 for labels. Italic serif used sparingly for
+ *     emphasis (matches the template demos).
+ *   · Hero leads with the /templates picker — the 8 industry demos
+ *     are our strongest differentiator, so they belong at the top
+ *     rather than buried at the bottom of the portfolio.
+ *   · Stats band, real testimonial grid (no carousel), bespoke
+ *     SVG marks on services instead of Lucide-in-a-colored-box.
+ */
 "use client";
-import React, { useState, useEffect } from "react";
+
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import {
-  ChevronRight,
-  Code,
-  Smartphone,
-  Layers,
-  Server,
-  Search,
-  BriefcaseBusiness,
-  ShoppingBag,
-  School,
-  MoveUpRight,
-  CheckCircle,
-  Palette,
-  ArrowRight,
-  Coffee,
-  MessageSquare,
-  Mail,
-  ChevronLeft,
-  ArrowLeft,
-  MoveUpLeft,
+  ArrowRight, ArrowLeft, Code, Palette, ShoppingBag, Server, Search, Smartphone,
+  Mail, Quote, Sparkles, CheckCircle2, MoveUpRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-// import ContactForm from "@/MyComponents/contact-form";
 import { useLocale, useTranslations } from "next-intl";
 import { isRtlLang } from "rtl-detect";
 import { Link } from "@/i18n/navigation";
+import { TEMPLATES } from "@/app/templates/_shared/templates";
 
-// Animation variants with reduced intensity for mobile
-// const fadeIn = {
-//   hidden: { opacity: 0, y: 10 },
-//   visible: {
-//     opacity: 1,
-//     y: 0,
-//     transition: { duration: 0.4, ease: "easeOut" },
-//   },
-// };
-
-// const staggerContainer = {
-//   hidden: { opacity: 0 },
-//   visible: {
-//     opacity: 1,
-//     transition: {
-//       staggerChildren: 0.1,
-//     },
-//   },
-// };
-
-const HomePage = () => {
+export default function HomePage() {
   const t = useTranslations("HomePage");
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
-  const [isMounted, setIsMounted] = useState(false);
-  const [isReducedMotion, setIsReducedMotion] = useState(false);
   const locale = useLocale();
   const isRTL = isRtlLang(locale);
-
-  // Services data
-  const services = [
-    {
-      title: t("services.items.1.title"),
-      description: t("services.items.1.description"),
-      icon: Code,
-      color: "from-red-600 to-red-700",
-      url: "/services/web-development",
-    },
-    {
-      title: t("services.items.2.title"),
-      description: t("services.items.2.description"),
-      icon: Smartphone,
-      color: "from-red-600 to-red-700",
-      url: "/services/mobile-app-development",
-    },
-    {
-      title: t("services.items.3.title"),
-      description: t("services.items.3.description"),
-      icon: Palette,
-      color: "from-red-600 to-red-700",
-      url: "/services/UI/UX-Design",
-    },
-    {
-      title: t("services.items.4.title"),
-      description: t("services.items.4.description"),
-      icon: ShoppingBag,
-      color: "from-red-600 to-red-700",
-      url: "/services/E-Commerse",
-    },
-    {
-      title: t("services.items.5.title"),
-      description: t("services.items.5.description"),
-      icon: Search,
-      color: "from-red-600 to-red-700",
-      url: "/services/seo-optimization",
-    },
-    {
-      title: t("services.items.6.title"),
-      description: t("services.items.6.description"),
-      icon: Server,
-      color: "from-red-600 to-red-700",
-      url: "/services/Web-hosting",
-    },
-  ];
-
-  // Client industries
-  const industries = [
-    { name: t("clients.industries.business"), icon: BriefcaseBusiness },
-    { name: t("clients.industries.ecommerce"), icon: ShoppingBag },
-    { name: t("clients.industries.education"), icon: School },
-    { name: t("clients.industries.healthcare"), icon: MessageSquare },
-    { name: t("clients.industries.realEstate"), icon: Coffee },
-    { name: t("clients.industries.technology"), icon: Server },
-  ];
-
-  // Portfolio projects
-  const portfolioProjects = [
-    {
-      title: "Knoz Al-Najah Website",
-      category: "Web Development",
-      image: "/knoz_website.png",
-      url: "https://knoz.codewithali.com/",
-    },
-    {
-      title: "Budgetary App",
-      category: "Desktop Development",
-      image: "/budgetary.png",
-      url: "https://budgetary.codewithali.com/",
-    },
-    {
-      title: "Mario's Hauling",
-      category: "Web Development",
-      image: "/marioshauling_website.png",
-      url: "https://marioshauling.codewithali.com/",
-    },
-  ];
-
-  // Testimonials
-  const testimonials = [
-    {
-      name: t("testimonials.items.1.name"),
-      position: t("testimonials.items.1.position"),
-      content: t("testimonials.items.1.content"),
-    },
-    {
-      name: t("testimonials.items.2.name"),
-      position: t("testimonials.items.2.position"),
-      content: t("testimonials.items.2.content"),
-    },
-    {
-      name: t("testimonials.items.3.name"),
-      position: t("testimonials.items.3.position"),
-      content: t("testimonials.items.3.content"),
-    },
-  ];
-
-  // Check if component is mounted and check for reduced motion preference
-  useEffect(() => {
-    setIsMounted(true);
-
-    // Check for reduced motion preference
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setIsReducedMotion(mediaQuery.matches);
-
-    const handleMediaChange = () => {
-      setIsReducedMotion(mediaQuery.matches);
-    };
-
-    mediaQuery.addEventListener("change", handleMediaChange);
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaChange);
-    };
-  }, []);
-
-  // Auto rotate testimonials with optimization for hidden/inactive tabs
-  useEffect(() => {
-    /* eslint-disable */
-    let interval: any;
-
-    if (isMounted && document.visibilityState === "visible") {
-      interval = setInterval(() => {
-        setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-      }, 5000);
-    }
-
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === "visible") {
-        interval = setInterval(() => {
-          setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-        }, 5000);
-      } else {
-        clearInterval(interval);
-      }
-    };
-
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-
-    return () => {
-      clearInterval(interval);
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-    };
-  }, [isMounted]);
-
-  // Apply conditional animation based on device capability and user preference
-  const getAnimationProps = (delay = 0) => {
-    if (!isMounted || isReducedMotion) {
-      return {}; // No animation on SSR or when reduced motion is preferred
-    }
-
-    return {
-      initial: { opacity: 0, y: 10 },
-      whileInView: { opacity: 1, y: 0 },
-      viewport: { once: true },
-      transition: { duration: 0.3, delay },
-    };
-  };
+  const Chevron = isRTL ? ArrowLeft : ArrowRight;
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-white overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="pt-10 pb-20 md:pb-24 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-          <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-500 via-red-700 to-red-900 dark:bg-gradient-to-br dark:from-red-950/30 dark:via-transparent dark:to-transparent"></div>
-        </div>
+    <main className="bg-[#FAF9F6] text-[#0F0F10] antialiased dark:bg-[#0A0A0B] dark:text-[#F4F4F5]">
+      <Hero t={t} Chevron={Chevron} />
+      <StatsBand t={t} />
+      <IndustryDemos />
+      <Services t={t} />
+      <Portfolio t={t} Chevron={Chevron} />
+      <Process t={t} />
+      <Testimonials t={t} />
+      <FinalCTA t={t} Chevron={Chevron} />
+    </main>
+  );
+}
 
-        <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div className="md:pr-8" {...getAnimationProps()}>
-              <h1 className="text-4xl text-black dark:text-white md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                {t("hero.title.part1")}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white dark:from-red-400 dark:to-red-600 block">
-                  {t("hero.title.part2")}
-                </span>
-              </h1>
-              <p className="text-lg md:text-xl text-black font-semibold dark:text-red-200/80 mb-8 max-w-xl">
-                {t("hero.description")}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact">
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-red-600 to-red-700 dark:from-red-700 dark:to-red-900 hover:from-red-700 hover:to-red-800 
-                     dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8 w-full sm:w-45 xl:w-auto"
-                  >
-                    {t("hero.buttons.startProject")}
-                    {isRTL ? (
-                      <ChevronLeft className="ml-2 h-5 w-5" />
-                    ) : (
-                      <ChevronRight className="ml-2 h-5 w-5" />
-                    )}
-                  </Button>
-                </Link>
-                <Link href="/portfolio">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-red-800/30 text-red-900 dark:text-red-400 bg-white dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white dark:hover:text-white px-8 w-full sm:w-38 xl:w-auto"
-                  >
-                    {t("hero.buttons.viewWork")}
-                  </Button>
-                </Link>
-                <Link
-                  href="mailto:unfold@codewithali.com"
-                  className="group block"
-                >
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-red-800/30 text-red-900 dark:text-red-400 bg-white dark:bg-red-950/20 hover:bg-red-800/80 dark:hover:bg-red-950/30 hover:text-white px-8 w-full sm:w-38 xl:w-auto 
-                              flex items-center gap-2 transition-all duration-300 ease-in-out 
-                              group-hover:bg-red-950/30 group-hover:text-white dark:group-hover:text-white"
-                  >
-                    <Mail className="dark:text-red-400 group-hover:text-white dark:group-hover:text-white" />
-                    <span>{t("hero.buttons.contactUs")}</span>
-                  </Button>
-                </Link>
-              </div>
-            </motion.div>
+/* ─── Hero ─────────────────────────────────────────────────────── */
 
-            {/* Right Side Graphics - only rendered on larger screens */}
-            {isMounted && (
-              <motion.div
-                {...getAnimationProps(0.2)}
-                // Added ml-20 for LG so it doesnt cover the contact btn
-                className={`hidden lg:block ${isRTL ? "lg:${isRTL}0" : "lg:ml-20"} xl:ml-0 relative`}
-              >
-                <div className="relative bg-black/60 border border-red-900 rounded-xl overflow-hidden shadow-2xl shadow-red-950/20 p-2">
-                  <div className="grid grid-cols-2 gap-2">
-                    {/* Mock designs */}
-                    <div className="aspect-square bg-black/60 rounded-lg overflow-hidden p-4 flex items-center justify-center">
-                      <div className="w-full h-full border-2 border-red-500/20 rounded-md flex items-center justify-center">
-                        <Layers className="h-12 w-12 text-red-500/60" />
-                      </div>
-                    </div>
-                    <div className="aspect-square bg-black/60  to-red-900/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
-                      <div className="w-full h-full border-2 border-red-500/20 rounded-md flex items-center justify-center">
-                        <Code className="h-12 w-12 text-red-500/60" />
-                      </div>
-                    </div>
-                    <div className="aspect-square bg-black/60  to-red-900/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
-                      <div className="w-full h-full border-2 border-red-500/20 rounded-md flex items-center justify-center">
-                        <Smartphone className="h-12 w-12 text-red-500/60" />
-                      </div>
-                    </div>
-                    <div className="aspect-square bg-black/60  to-red-900/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
-                      <div className="w-full h-full border-2 border-red-500/20 rounded-md flex items-center justify-center">
-                        <ShoppingBag className="h-12 w-12 text-red-500/60" />
-                      </div>
-                    </div>
-                  </div>
+function Hero({ t, Chevron }: { t: ReturnType<typeof useTranslations>; Chevron: typeof ArrowRight }) {
+  return (
+    <section className="relative overflow-hidden px-5 pb-16 pt-20 lg:px-10 lg:pb-24 lg:pt-28">
+      {/* Single subtle red glow — the whole "red gradient wash" replaced by a single focal moment. */}
+      <div className="pointer-events-none absolute -top-40 right-[-10%] h-[600px] w-[800px] rounded-full bg-[#E11D48]/15 blur-[140px] dark:bg-[#E11D48]/10" />
 
-                  <div className="mt-2 p-4 bg-black/60  to-red-900/10 rounded-lg">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="w-32 h-3 bg-red-800/30 rounded-full"></div>
-                      <div className="flex space-x-2">
-                        <div className="w-3 h-3 rounded-full bg-red-800/50"></div>
-                        <div className="w-3 h-3 rounded-full bg-red-800/50"></div>
-                        <div className="w-3 h-3 rounded-full bg-red-800/50"></div>
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="h-2 bg-red-800/30 rounded-full w-full"></div>
-                      <div className="h-2 bg-red-800/30 rounded-full w-5/6"></div>
-                      <div className="h-2 bg-red-800/30 rounded-full w-4/6"></div>
-                    </div>
-                  </div>
-                </div>
+      <div className="relative mx-auto max-w-7xl">
+        {/* Eyebrow */}
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#0F0F10]/15 bg-[#0F0F10]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0F0F10]/70 dark:border-white/15 dark:bg-white/5 dark:text-white/75"
+        >
+          <span className="h-1.5 w-1.5 rounded-full bg-[#E11D48]" />
+          CodeWithAli · Web engineering studio
+        </motion.div>
 
-                {/* Decorative elements */}
-                <div className="absolute -top-10 -right-10 w-40 h-40 bg-red-400/10 dark:bg-red-600/10 rounded-full blur-3xl"></div>
-                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-red-400/10 dark:bg-red-800/10 rounded-full blur-3xl"></div>
-              </motion.div>
-            )}
-          </div>
-        </div>
-      </section>
+        {/* Display headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-5xl font-light leading-[0.95] tracking-[-0.02em]"
+          style={{ fontSize: "clamp(44px, 9vw, 128px)" }}
+        >
+          {t("hero.title.part1")}<br />
+          <em className="font-normal italic text-[#E11D48]">{t("hero.title.part2")}</em>
+        </motion.h1>
 
-      {/* Clients Section */}
-      <section className="py-12 bg-white dark:bg-black/80 border-y border-red-800">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <div className="text-center mb-8">
-            <p className="text-black dark:text-red-300/60 text-sm uppercase tracking-wider">
-              {t("clients.title")}
-            </p>
-          </div>
+        {/* Subhead + CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mt-10 grid gap-10 md:grid-cols-[1.3fr_1fr] md:items-end lg:mt-14"
+        >
+          <p className="max-w-xl text-[16px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70 lg:text-[19px]">
+            {t("hero.description")}
+          </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {industries.map((industry, index) => (
-              <motion.div
-                key={index}
-                {...getAnimationProps(index * 0.05)}
-                className="flex flex-col items-center"
-              >
-                <div className="w-12 h-12 bg-transparent dark:bg-black rounded-lg flex items-center justify-center mb-3">
-                  <industry.icon className="h-6 w-6 text-red-700 dark:text-red-500/70" />
-                </div>
-                <span className="text-red-800 dark:text-red-200/60 text-sm w-max">
-                  {industry.name}
-                </span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section
-        id="services"
-        className="py-10 md:py-14 relative overflow-hidden"
-      >
-        {/* <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-500/30 dark:bg-red-900/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-red-500/30 dark:bg-red-700/10 rounded-full blur-3xl"></div> */}
-
-        <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20">
-          <div className="text-center mb-16">
-            <motion.div {...getAnimationProps()}>
-              <Badge className="bg-red-700 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
-                {t("services.badge")}
-              </Badge>
-              <h2 className="text-3xl bg-gradient-to-r from-red-700 via-red-600 to-red-500 dark:from-white dark:via-red-500 dark:to-red-700 bg-clip-text text-transparent md:text-4xl font-bold mb-6">
-                {t("services.title")}
-              </h2>
-              <p className="text-black dark:text-red-200/60 text-lg max-w-2xl mx-auto">
-                {t("services.description")}
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {services.map((service, index) => (
-              <motion.div key={index} {...getAnimationProps(index * 0.05)}>
-                <Card className="bg-red-700 dark:bg-black/60 border-red-600 backdrop-blur-sm h-full overflow-hidden group">
-                  <CardContent className="p-6 flex flex-col h-full">
-                    <div className="mb-5">
-                      <div
-                        className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.color} border-red-900 border p-3 mb-4 transform group-hover:scale-110 transition-transform`}
-                        style={{ willChange: "transform" }}
-                      >
-                        <service.icon className="w-full h-full text-white" />
-                      </div>
-                      <h3 className="text-xl font-bold text-white dark:text-white mb-2">
-                        {service.title}
-                      </h3>
-                      <p className="text-white dark:text-red-200/60">
-                        {service.description}
-                      </p>
-                    </div>
-                    <div className="mt-auto pt-4">
-                      <Link href={service.url} target="_blank">
-                        <Button
-                          variant="ghost"
-                          className="p-0 text-white dark:text-red-400 dark:hover:text-red-300 hover:bg-transparent group"
-                        >
-                          {t("services.learnMore")}
-                          {isRTL ? (
-                            <ArrowLeft className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-                          ) : (
-                            <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-                          )}
-                        </Button>
-                      </Link>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Project Display */}
-      <section id="work" className="py-10 md:py-14 dark:bg-red-950/10">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <div className="text-center mb-16">
-            <motion.div {...getAnimationProps()}>
-              <Badge className="bg-red-700 dark:bg-red-900/50 dark:text-red-300 border-transparent mb-4 px-3 py-1">
-                {t("portfolio.badge")}
-              </Badge>
-              <h2 className="text-3xl bg-gradient-to-r from-red-700 via-red-600 to-red-500 dark:from-white dark:via-red-500 dark:to-red-700 bg-clip-text text-transparent md:text-4xl font-bold mb-6">
-                {t("portfolio.title")}
-              </h2>
-              <p className="text-black dark:text-red-200 text-lg max-w-2xl mx-auto">
-                {t("portfolio.description")}
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {portfolioProjects.map((project, index) => (
-              <motion.div
-                key={index}
-                {...getAnimationProps(index * 0.1)}
-                className="group cursor-pointer"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-xl shadow-red-950/20">
-                  {/* Project Image */}
-                  <div className="w-full h-full bg-red-300 dark:bg-black/80 border-2 border-red-800/30 flex items-center justify-center">
-                    {project.image ? (
-                      <>
-                        {/* Keeping height and width will make image quality better */}
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          height={1000}
-                          width={1000}
-                          quality={100}
-                          loading="eager"
-                          className="w-full h-full object-cover rounded-xl"
-                        />
-                      </>
-                    ) : (
-                      <>
-                        <p className="text-black dark:text-red-200/70">
-                          Project Image Placeholder
-                        </p>
-                      </>
-                    )}
-                  </div>
-
-                  {/* Hover Overlay - preloaded with opacity-0 for better performance */}
-                  <div
-                    className="absolute inset-0 bg-gradient-to-b from-red-400/80 to-red-800/90 dark:from-red-800/80 dark:to-black/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{ willChange: "opacity" }}
-                  >
-                    <div className="text-center p-8">
-                      <h3 className="text-2xl font-bold text-white mb-3">
-                        {project.title}
-                      </h3>
-                      <p className="text-red-100 text-lg mb-6">
-                        {project.category}
-                      </p>
-                      <Link
-                        href={`${project.url}`}
-                        target="_blank"
-                        draggable={false}
-                      >
-                        <Button
-                          variant="outline"
-                          size="lg"
-                          className="border-2 border-red/60 text-white bg-red-700/80 dark:bg-red-700/50 px-6 py-5 hover:bg-red-950 dark:hover:bg-black hover:text-white text-base font-medium"
-                        >
-                          {t("portfolio.viewProject")}
-                          {isRTL ? (
-                            <MoveUpLeft className="ml-2 h-5 w-5" />
-                          ) : (
-                            <MoveUpRight className="ml-2 h-5 w-5" />
-                          )}
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-5">
-                  <Badge className="bg-red-700 dark:bg-red-800/30 dark:text-red-300 border-transparent text-base py-1 px-3">
-                    {project.category}
-                  </Badge>
-                  <h3 className="text-xl font-bold text-black dark:text-white mt-3">
-                    {project.title}
-                  </h3>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="text-center mt-16">
-            <Link href="/portfolio">
+          <div className="flex flex-wrap items-center gap-x-7 gap-y-4">
+            <Link href="/contact">
               <Button
-                className="bg-gradient-to-r from-red-600 to-red-700 dark:from-red-700 dark:to-red-900 hover:from-red-700 hover:to-red-800 
-                     dark:hover:from-red-600 dark:hover:to-red-800 text-white border-2 border-red-800/40 shadow-lg shadow-red-950/20 px-8 py-6 text-lg font-medium"
+                size="lg"
+                className="rounded-full bg-[#E11D48] px-7 py-6 text-[13.5px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#BE123C]"
               >
-                {t("portfolio.viewAllProjects")}
-                {isRTL ? (
-                  <ChevronLeft className="ml-2 h-5 w-5" />
-                ) : (
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                )}
+                {t("hero.buttons.startProject")}
+                <Chevron className="ml-1 h-4 w-4" />
               </Button>
             </Link>
+            <Link
+              href="/portfolio"
+              className="group inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-[0.18em] text-[#0F0F10]/80 transition-colors hover:text-[#E11D48] dark:text-white/80 dark:hover:text-[#FF5C7A]"
+            >
+              {t("hero.buttons.viewWork")}
+              <MoveUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
-      {/* Process Section */}
-      <section id="process" className="py-10 md:py-14 relative overflow-hidden">
-        {/* <div className="absolute -top-40 left-40 w-80 h-80 bg-red-500/30 dark:bg-red-800/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 right-40 w-80 h-80 bg-red-500/30 dark:bg-red-700/10 rounded-full blur-3xl"></div> */}
+/* ─── Stats band ───────────────────────────────────────────────── */
 
-        <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-          <div className="text-center mb-16">
-            <motion.div {...getAnimationProps()}>
-              <Badge className="bg-red-700 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
-                {t("process.badge")}
-              </Badge>
-              <h2 className="text-3xl bg-gradient-to-r from-red-700 via-red-600 to-red-500 dark:from-white dark:via-red-500 dark:to-red-700 bg-clip-text text-transparent md:text-4xl font-bold mb-6">
-                {t("process.title")}
-              </h2>
-              <p className="text-black dark:text-white/80 text-lg max-w-2xl mx-auto">
-                {t("process.description")}
+function StatsBand({ t }: { t: ReturnType<typeof useTranslations> }) {
+  return (
+    <section className="border-y border-[#0F0F10]/10 bg-[#0F0F10]/[0.02] px-5 py-12 dark:border-white/10 dark:bg-white/[0.02] lg:px-10">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-y-8 md:grid-cols-4">
+        {[
+          { v: "23+", l: "sites shipped" },
+          { v: "4", l: "countries served" },
+          { v: "18d", l: "avg. turnaround" },
+          { v: "4.9★", l: "client rating" },
+        ].map((s, i) => (
+          <motion.div
+            key={s.l}
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: i * 0.05 }}
+            className="text-center md:text-left"
+          >
+            <p
+              className="font-light leading-none tracking-tight"
+              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
+            >
+              {s.v}
+            </p>
+            <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0F0F10]/55 dark:text-white/55">
+              {s.l}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ─── Industry demos picker (the /templates showcase) ──────────── */
+
+function IndustryDemos() {
+  const [active, setActive] = useState(TEMPLATES[0].slug);
+  const current = TEMPLATES.find((t) => t.slug === active)!;
+
+  return (
+    <section className="px-5 py-20 lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-14 flex flex-col items-start justify-between gap-5 md:flex-row md:items-end"
+        >
+          <div>
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#E11D48]">
+              Pick your industry
+            </p>
+            <h2
+              className="max-w-2xl font-light leading-[1.05] tracking-[-0.01em]"
+              style={{ fontSize: "clamp(34px, 5vw, 64px)" }}
+            >
+              See your site before we<br />
+              <em className="italic text-[#E11D48]">build a single line.</em>
+            </h2>
+          </div>
+          <Link
+            href="/templates"
+            className="inline-flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-[0.2em] text-[#0F0F10]/70 hover:text-[#E11D48] dark:text-white/70"
+          >
+            Browse all 8 templates
+            <MoveUpRight className="h-3 w-3" />
+          </Link>
+        </motion.div>
+
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+          {/* Industry pills */}
+          <div className="order-2 lg:order-1">
+            <div className="flex flex-wrap gap-2">
+              {TEMPLATES.map((t) => {
+                const isActive = t.slug === active;
+                return (
+                  <button
+                    key={t.slug}
+                    type="button"
+                    onClick={() => setActive(t.slug)}
+                    className="group relative rounded-full border px-4 py-2.5 text-[12.5px] font-semibold uppercase tracking-[0.14em] transition-all"
+                    style={{
+                      borderColor: isActive ? t.accent : "rgba(0,0,0,0.12)",
+                      background: isActive ? t.accent : "transparent",
+                      color: isActive ? "#FFFFFF" : undefined,
+                    }}
+                  >
+                    <span className="relative">{t.industry.split(" / ")[0]}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <motion.div
+              key={current.slug + "-desc"}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="mt-10"
+            >
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#0F0F10]/55 dark:text-white/55">
+                {current.industry}
               </p>
+              <h3
+                className="mt-3 font-light leading-[1.1] tracking-tight"
+                style={{ fontSize: "clamp(28px, 4vw, 44px)" }}
+              >
+                {current.brandName}
+              </h3>
+              <p className="mt-3 max-w-md text-[14.5px] italic leading-relaxed text-[#0F0F10]/65 dark:text-white/65">
+                &ldquo;{current.tagline}&rdquo;
+              </p>
+              <p className="mt-5 max-w-md text-[13.5px] leading-relaxed text-[#0F0F10]/75 dark:text-white/75">
+                {current.blurb}
+              </p>
+              <Link
+                href={`/templates/${current.slug}`}
+                className="mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3 text-[12.5px] font-semibold uppercase tracking-[0.16em] text-white transition-all"
+                style={{ background: current.accent }}
+              >
+                Walk the demo
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 md:gap-6">
-            {[
-              {
-                number: "01",
-                title: t("process.steps.1.title"),
-                description: t("process.steps.1.description"),
-                icon: Search,
-              },
-              {
-                number: "02",
-                title: t("process.steps.2.title"),
-                description: t("process.steps.2.description"),
-                icon: Palette,
-              },
-              {
-                number: "03",
-                title: t("process.steps.3.title"),
-                description: t("process.steps.3.description"),
-                icon: Code,
-              },
-              {
-                number: "04",
-                title: t("process.steps.4.title"),
-                description: t("process.steps.4.description"),
-                icon: ShoppingBag,
-              },
-            ].map((step, index) => (
+          {/* Live preview panel */}
+          <div className="order-1 lg:order-2">
+            <AnimatePresence mode="wait">
               <motion.div
-                key={index}
-                {...getAnimationProps(index * 0.1)}
-                className="relative"
+                key={current.slug + "-preview"}
+                initial={{ opacity: 0, scale: 0.97 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.99 }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                className="relative aspect-[4/3] overflow-hidden rounded-2xl"
+                style={{
+                  background: `linear-gradient(135deg, ${current.accent} 0%, ${shade(current.accent, -30)} 100%)`,
+                }}
               >
-                <div className="bg-red-700 dark:bg-black/60 border border-red-900 rounded-xl p-6 h-full">
-                  <div className="absolute -top-5 -left-2">
-                    <span className="text-5xl font-bold text-black dark:text-white">
-                      {step.number}
-                    </span>
-                  </div>
-                  <div className="pt-6">
-                    <div className="mb-4 flex items-center">
-                      <step.icon className="w-6 h-6 text-white dark:text-red-500 mr-3" />
-                      <h3 className="text-xl font-bold text-wwhite dark:text-white">
-                        {step.title}
-                      </h3>
-                    </div>
-                    <p className="text-white dark:text-red-200/60">
-                      {step.description}
+                <PreviewGraphic slug={current.slug} />
+                <div className="absolute inset-0 flex items-end p-8 text-white lg:p-10">
+                  <div>
+                    <p className="text-[10.5px] font-semibold uppercase tracking-[0.28em] text-white/75">
+                      Interactive demo
+                    </p>
+                    <p
+                      className="mt-2 font-semibold leading-tight"
+                      style={{ fontSize: "clamp(24px, 3vw, 36px)" }}
+                    >
+                      {current.brandName}
                     </p>
                   </div>
                 </div>
-
-                {index < 3 && (
-                  <div className={`hidden lg:block absolute top-1/2 transform ${isRTL ? "left-0 -translate-x-full" : "-right-0 translate-x-full"}`}>
-                    {isRTL ? (
-                      <ArrowLeft className="w-6 h-6 text-red-700 dark:text-red-700/50" />
-                    ) : (
-                      <ArrowRight className="w-6 h-6 text-red-700 dark:text-red-700/50" />
-                    )}
-                  </div>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section
-        id="testimonials"
-        className="py-10 md:py-14 relative overflow-hidden dark:bg-red-950/10"
-      >
-        <div className="max-w-5xl mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-          <div className="text-center mb-16">
-            <motion.div {...getAnimationProps()}>
-              <Badge className="bg-red-700 dark:bg-red-900/30 dark:text-red-400 border-transparent mb-4 px-3 py-1">
-                {t("testimonials.badge")}
-              </Badge>
-              <h2 className="text-3xl bg-gradient-to-r from-red-700 via-red-600 to-red-500 dark:from-white dark:via-red-500 dark:to-red-700 bg-clip-text text-transparent md:text-4xl font-bold mb-6">
-                {t("testimonials.title")}
-              </h2>
-              <p className="text-black dark:text-red-200/60 text-lg max-w-2xl mx-auto">
-                {t("testimonials.description")}
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="relative min-h-[240px]">
-            <AnimatePresence mode="popLayout">
-              <motion.div
-                key={activeTestimonial}
-                initial={
-                  isReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }
-                }
-                animate={
-                  isReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }
-                }
-                exit={isReducedMotion ? { opacity: 1 } : { opacity: 0.9, y: 0 }}
-                transition={{ duration: 0.1 }}
-                className="bg-red-700  dark:bg-black/60 border border-red-900 rounded-xl p-8 md:p-10"
-              >
-                <div className="flex flex-col items-center">
-                  <div className="mb-6">
-                    {/* <svg
-                      width="48"
-                      height="48"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M11.3 6.2H6.8C5.8 6.2 5 7 5 8V12.5C5 13.5 5.8 14.3 6.8 14.3H9.5V16.1C9.5 17 10.6 17.5 11.3 16.8L13.9 14.2V8C13.9 7 13.1 6.2 12.1 6.2H11.3Z"
-                        fill="rgba(220, 38, 38, 0.7)"
-                      />
-                      <path
-                        d="M18 6.2H16V11.4L14.7 12.7V14.9L17.2 12.4C17.7 11.9 18 11.2 18 10.5V8C18 7 17.2 6.2 16.2 6.2H16"
-                        fill="rgba(220, 38, 38, 0.7)"
-                      />
-                    </svg> */}
-                  </div>
-                  <p className="text-lg text-white dark:text-white md:text-xl text-center mb-8">
-                    &ldquo;{testimonials[activeTestimonial].content}&rdquo;
-                  </p>
-                  <div className="text-center">
-                    <div className="font-bold text-white dark:text-white">
-                      {testimonials[activeTestimonial].name}
-                    </div>
-                    <div className="text-black/80 dark:text-red-400/70 text-sm">
-                      {testimonials[activeTestimonial].position}
-                    </div>
-                  </div>
+                <div className="absolute right-6 top-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm">
+                  <MoveUpRight className="h-4 w-4" />
                 </div>
               </motion.div>
             </AnimatePresence>
-
-            <div className="flex justify-center mt-8">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveTestimonial(index)}
-                  className={`mx-1 w-3 h-3 rounded-full transition-colors ${
-                    index === activeTestimonial
-                      ? "bg-red-700"
-                      : "bg-red-900/30 hover:bg-red-800/50"
-                  }`}
-                />
-              ))}
-            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      {/* Contact Form */}
-      {/* <ContactForm /> */}
+/* ─── Services ─────────────────────────────────────────────────── */
 
-      {/* CTA Section */}
-      <section className="py-10 md:py-14 dark:bg-gradient-to-b dark:from-red-950/10 dark:via-red-950/10 dark:to-black">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <motion.div
-            className="max-w-4xl mx-auto bg-red-700  dark:bg-black/60 border-3 border-red-950 dark:border-red-900 rounded-xl p-8 md:p-12 text-center"
-            {...getAnimationProps()}
+function Services({ t }: { t: ReturnType<typeof useTranslations> }) {
+  const services = [
+    { key: 1, Icon: Code,      url: "/services/web-development", Mark: MarkWeb },
+    { key: 2, Icon: Smartphone, url: "/services/mobile-app-development", Mark: MarkMobile },
+    { key: 3, Icon: Palette,   url: "/services/UI/UX-Design", Mark: MarkDesign },
+    { key: 4, Icon: ShoppingBag, url: "/services/E-Commerse", Mark: MarkCommerce },
+    { key: 5, Icon: Search,    url: "/services/seo-optimization", Mark: MarkSEO },
+    { key: 6, Icon: Server,    url: "/services/Web-hosting", Mark: MarkHost },
+  ];
+
+  return (
+    <section id="services" className="border-t border-[#0F0F10]/10 bg-[#FAF9F6] px-5 py-24 dark:border-white/10 dark:bg-[#0D0D0E] lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl">
+        <FadeIn>
+          <div className="mb-14 flex flex-col items-start justify-between gap-5 md:flex-row md:items-end">
+            <div>
+              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#E11D48]">
+                {t("services.badge")}
+              </p>
+              <h2
+                className="max-w-2xl font-light leading-[1.05] tracking-[-0.01em]"
+                style={{ fontSize: "clamp(34px, 5vw, 64px)" }}
+              >
+                {t("services.title")}
+              </h2>
+            </div>
+            <p className="max-w-md text-[14.5px] leading-relaxed text-[#0F0F10]/65 dark:text-white/65">
+              {t("services.description")}
+            </p>
+          </div>
+        </FadeIn>
+
+        <div className="grid gap-px bg-[#0F0F10]/12 dark:bg-white/10 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((s, i) => (
+            <FadeIn key={s.key} delay={i * 0.04}>
+              <Link href={s.url} className="group relative flex h-full flex-col justify-between bg-[#FAF9F6] p-8 transition-colors hover:bg-white dark:bg-[#0D0D0E] dark:hover:bg-[#121214] lg:p-10">
+                <div>
+                  <div className="h-16 w-16 text-[#E11D48]">
+                    <s.Mark />
+                  </div>
+                  <h3 className="mt-6 text-[22px] font-semibold tracking-tight lg:text-[26px]">
+                    {t(`services.items.${s.key}.title`)}
+                  </h3>
+                  <p className="mt-3 text-[14px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
+                    {t(`services.items.${s.key}.description`)}
+                  </p>
+                </div>
+                <div className="mt-8 flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-[0.2em] text-[#0F0F10]/70 transition-all group-hover:gap-3 group-hover:text-[#E11D48] dark:text-white/70">
+                  {t("services.learnMore")}
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </div>
+              </Link>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Portfolio ────────────────────────────────────────────────── */
+
+function Portfolio({ t, Chevron }: { t: ReturnType<typeof useTranslations>; Chevron: typeof ArrowRight }) {
+  const projects = [
+    { title: "Knoz Al-Najah", category: "Web · E-commerce", image: "/knoz_website.png", url: "https://knoz.codewithali.com/" },
+    { title: "Budgetary App", category: "Desktop · Finance", image: "/budgetary.png", url: "https://budgetary.codewithali.com/" },
+    { title: "Mario's Hauling", category: "Web · Services", image: "/marioshauling_website.png", url: "https://marioshauling.codewithali.com/" },
+  ];
+
+  return (
+    <section className="px-5 py-24 lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl">
+        <FadeIn>
+          <div className="mb-14 flex flex-col items-start justify-between gap-5 md:flex-row md:items-end">
+            <div>
+              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#E11D48]">
+                {t("portfolio.badge")}
+              </p>
+              <h2
+                className="max-w-2xl font-light leading-[1.05] tracking-[-0.01em]"
+                style={{ fontSize: "clamp(34px, 5vw, 64px)" }}
+              >
+                {t("portfolio.title")}
+              </h2>
+            </div>
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-[0.2em] text-[#0F0F10]/70 hover:text-[#E11D48] dark:text-white/70"
+            >
+              All projects <MoveUpRight className="h-3 w-3" />
+            </Link>
+          </div>
+        </FadeIn>
+
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((p, i) => (
+            <FadeIn key={p.title} delay={i * 0.06}>
+              <a href={p.url} target="_blank" rel="noreferrer" className="group block overflow-hidden rounded-2xl border border-[#0F0F10]/10 transition-all hover:-translate-y-1 hover:border-[#E11D48]/30 hover:shadow-[0_30px_60px_-20px_rgba(225,29,72,0.25)] dark:border-white/10">
+                <div className="relative aspect-[4/3] overflow-hidden bg-[#F1EFEA] dark:bg-white/5">
+                  <Image
+                    src={p.image}
+                    alt={p.title}
+                    height={1000}
+                    width={1000}
+                    quality={95}
+                    loading="eager"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#E11D48]">{p.category}</p>
+                  <h3 className="mt-2 text-[20px] font-semibold tracking-tight">{p.title}</h3>
+                </div>
+              </a>
+            </FadeIn>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            href="/portfolio"
+            className="inline-flex items-center gap-2 rounded-full border border-[#0F0F10]/15 px-7 py-3.5 text-[13px] font-semibold uppercase tracking-[0.16em] text-[#0F0F10] hover:border-[#E11D48] hover:text-[#E11D48] dark:border-white/20 dark:text-white"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-white mb-6">
+            {t("portfolio.viewAllProjects")} <Chevron className="h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Process ──────────────────────────────────────────────────── */
+
+function Process({ t }: { t: ReturnType<typeof useTranslations> }) {
+  const steps = [1, 2, 3, 4];
+  return (
+    <section id="process" className="border-t border-[#0F0F10]/10 bg-[#0F0F10]/[0.02] px-5 py-24 dark:border-white/10 dark:bg-white/[0.02] lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl">
+        <FadeIn>
+          <div className="mb-16 max-w-3xl">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#E11D48]">
+              {t("process.badge")}
+            </p>
+            <h2
+              className="font-light leading-[1.05] tracking-[-0.01em]"
+              style={{ fontSize: "clamp(34px, 5vw, 64px)" }}
+            >
+              {t("process.title")}
+            </h2>
+            <p className="mt-5 text-[15.5px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
+              {t("process.description")}
+            </p>
+          </div>
+        </FadeIn>
+
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+          {steps.map((n, i) => (
+            <FadeIn key={n} delay={i * 0.06}>
+              <div className="border-t border-[#0F0F10]/15 pt-6 dark:border-white/15">
+                <p className="font-light tabular-nums text-[#E11D48]" style={{ fontSize: "clamp(40px, 4.5vw, 56px)" }}>
+                  0{n}
+                </p>
+                <h3 className="mt-4 text-[20px] font-semibold tracking-tight lg:text-[22px]">
+                  {t(`process.steps.${n}.title`)}
+                </h3>
+                <p className="mt-3 text-[14px] leading-relaxed text-[#0F0F10]/65 dark:text-white/65">
+                  {t(`process.steps.${n}.description`)}
+                </p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Testimonials (grid, no carousel) ─────────────────────────── */
+
+function Testimonials({ t }: { t: ReturnType<typeof useTranslations> }) {
+  const items = [1, 2, 3];
+  return (
+    <section id="testimonials" className="px-5 py-24 lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl">
+        <FadeIn>
+          <div className="mb-14 max-w-3xl">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#E11D48]">
+              {t("testimonials.badge")}
+            </p>
+            <h2
+              className="font-light leading-[1.05] tracking-[-0.01em]"
+              style={{ fontSize: "clamp(34px, 5vw, 64px)" }}
+            >
+              {t("testimonials.title")}
+            </h2>
+          </div>
+        </FadeIn>
+
+        <div className="grid gap-5 md:grid-cols-3">
+          {items.map((i, idx) => (
+            <FadeIn key={i} delay={idx * 0.06}>
+              <blockquote className="flex h-full flex-col rounded-2xl border border-[#0F0F10]/10 bg-[#FAF9F6] p-7 dark:border-white/10 dark:bg-[#0D0D0E] lg:p-9">
+                <Quote className="h-6 w-6 text-[#E11D48]/60" />
+                <p className="mt-5 flex-1 text-[15.5px] leading-relaxed text-[#0F0F10]/85 dark:text-white/85">
+                  &ldquo;{t(`testimonials.items.${i}.content`)}&rdquo;
+                </p>
+                <footer className="mt-7 border-t border-[#0F0F10]/10 pt-5 dark:border-white/10">
+                  <p className="text-[14px] font-semibold">{t(`testimonials.items.${i}.name`)}</p>
+                  <p className="mt-0.5 text-[11.5px] uppercase tracking-[0.2em] text-[#0F0F10]/55 dark:text-white/55">
+                    {t(`testimonials.items.${i}.position`)}
+                  </p>
+                </footer>
+              </blockquote>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Final CTA ────────────────────────────────────────────────── */
+
+function FinalCTA({ t, Chevron }: { t: ReturnType<typeof useTranslations>; Chevron: typeof ArrowRight }) {
+  return (
+    <section className="px-5 pb-24 pt-10 lg:px-10 lg:pb-32">
+      <FadeIn>
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-[#0F0F10] p-12 text-white dark:bg-[#141416] lg:p-20">
+          <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-[#E11D48]/25 blur-[120px]" />
+          <div className="pointer-events-none absolute -bottom-40 -left-20 h-96 w-96 rounded-full bg-[#E11D48]/15 blur-[120px]" />
+          <div className="relative">
+            <Sparkles className="h-7 w-7 text-[#E11D48]" />
+            <h2
+              className="mt-6 max-w-3xl font-light leading-[1.0] tracking-[-0.02em]"
+              style={{ fontSize: "clamp(36px, 6vw, 80px)" }}
+            >
               {t("cta.title")}
             </h2>
-            <p className="text-lg text-white/90 dark:text-white mb-8 max-w-2xl mx-auto">
+            <p className="mt-6 max-w-xl text-[15.5px] leading-relaxed text-white/75 lg:text-[17px]">
               {t("cta.description")}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4">
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-red-700 to-red-700 dark:from-red-700 dark:to-red-900 hover:from-red-800 hover:to-red-800 
-                     dark:hover:from-red-600 dark:hover:to-red-800 text-white border border-red-800/30 shadow-lg shadow-red-950/20 px-8 w-full sm:w-auto"
+                  className="rounded-full bg-[#E11D48] px-7 py-6 text-[13.5px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#BE123C]"
                 >
-                  {t("cta.buttons.startProject")}
-                  {isRTL ? (
-                    <ChevronLeft className=" ml-2 h-5 w-5" />
-                  ) : (
-                    <ChevronRight className=" ml-2 h-5 w-5" />
-                  )}
+                  {t("cta.buttons.startProject")} <Chevron className="ml-1 h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="/about">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-red-800/30 text-white dark:text-red-400 bg-red-500 dark:bg-red-950/20 hover:bg-red-800 dark:hover:bg-red-950/30 hover:text-white dark:hover:text-white px-8 w-full sm:w-auto"
-                >
-                  {t("cta.buttons.learnAboutUs")}
-                </Button>
-              </Link>
+              <a
+                href="mailto:unfold@codewithali.com"
+                className="group inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.18em] text-white/80 transition-colors hover:text-[#FF5C7A]"
+              >
+                <Mail className="h-4 w-4" /> unfold@codewithali.com
+              </a>
             </div>
-
-            <div className="flex flex-wrap items-center justify-center mt-8 text-white/95 dark:text-red-200/60">
-              <div className={`flex items-center ${isRTL ? "ml-4" : "mr-4"} mb-2`}>
-                <CheckCircle className={`h-4 w-4 ${isRTL ? "ml-2" : "mr-2"} text-red-300 dark:text-red-500`} />
-                <span className="text-sm">{t("cta.features.1")}</span>
-              </div>
-              <div className={`flex items-center ${isRTL ? "ml-4" : "mr-4"} mb-2`}>
-                <CheckCircle className={`h-4 w-4 ${isRTL ? "ml-2" : "mr-2"} text-red-300 dark:text-red-500`} />
-                <span className="text-sm">{t("cta.features.2")}</span>
-              </div>
-              <div className="flex items-center mb-2">
-                <CheckCircle className={`h-4 w-4 ${isRTL ? "ml-2" : "mr-2"} text-red-300 dark:text-red-500`} />
-                <span className="text-sm ">{t("cta.features.3")}</span>
-              </div>
-            </div>
-          </motion.div>
+          </div>
         </div>
-      </section>
-    </div>
+      </FadeIn>
+    </section>
   );
-};
+}
 
-export default HomePage;
+/* ─── Primitives ───────────────────────────────────────────────── */
+
+function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/* ─── Bespoke SVG marks per service ────────────────────────────── */
+// These replace the generic "Lucide-icon-in-a-colored-box" pattern.
+// Each mark is a subtle abstract composition that reads as
+// "something crafted, not stock." Kept monochromatic (currentColor)
+// so they inherit from the parent's text color.
+
+function MarkWeb() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <rect x="6" y="12" width="52" height="40" rx="3" stroke="currentColor" strokeWidth="1.5" />
+      <line x1="6" y1="22" x2="58" y2="22" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="12" cy="17" r="1.2" fill="currentColor" />
+      <circle cx="16" cy="17" r="1.2" fill="currentColor" />
+      <circle cx="20" cy="17" r="1.2" fill="currentColor" />
+      <line x1="14" y1="32" x2="32" y2="32" stroke="currentColor" strokeWidth="1.5" />
+      <line x1="14" y1="40" x2="26" y2="40" stroke="currentColor" strokeWidth="1.5" />
+      <rect x="38" y="30" width="14" height="14" rx="2" fill="currentColor" fillOpacity="0.2" />
+    </svg>
+  );
+}
+function MarkMobile() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <rect x="22" y="6" width="20" height="52" rx="4" stroke="currentColor" strokeWidth="1.5" />
+      <line x1="30" y1="53" x2="34" y2="53" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <rect x="26" y="14" width="12" height="8" rx="1" fill="currentColor" fillOpacity="0.2" />
+      <line x1="26" y1="28" x2="38" y2="28" stroke="currentColor" strokeWidth="1.2" />
+      <line x1="26" y1="33" x2="35" y2="33" stroke="currentColor" strokeWidth="1.2" />
+      <circle cx="32" cy="44" r="3" stroke="currentColor" strokeWidth="1.2" />
+    </svg>
+  );
+}
+function MarkDesign() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <circle cx="24" cy="24" r="14" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="40" cy="40" r="14" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="32" cy="32" r="5" fill="currentColor" fillOpacity="0.25" />
+    </svg>
+  );
+}
+function MarkCommerce() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <path d="M14 18 L22 18 L28 42 L50 42 L54 24 L26 24" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+      <circle cx="32" cy="50" r="3" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="46" cy="50" r="3" stroke="currentColor" strokeWidth="1.5" />
+      <rect x="36" y="28" width="8" height="8" fill="currentColor" fillOpacity="0.2" />
+    </svg>
+  );
+}
+function MarkSEO() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <circle cx="26" cy="26" r="14" stroke="currentColor" strokeWidth="1.5" />
+      <line x1="36" y1="36" x2="50" y2="50" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M20 26 L26 32 L34 22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+function MarkHost() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <rect x="10" y="16" width="44" height="10" rx="1.5" stroke="currentColor" strokeWidth="1.5" />
+      <rect x="10" y="28" width="44" height="10" rx="1.5" stroke="currentColor" strokeWidth="1.5" />
+      <rect x="10" y="40" width="44" height="10" rx="1.5" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="16" cy="21" r="1.5" fill="currentColor" />
+      <circle cx="16" cy="33" r="1.5" fill="currentColor" />
+      <circle cx="16" cy="45" r="1.5" fill="currentColor" />
+    </svg>
+  );
+}
+
+/* ─── Preview graphic (mirrors templates gallery) ──────────────── */
+
+function PreviewGraphic({ slug }: { slug: string }) {
+  return (
+    <svg className="absolute inset-0 h-full w-full opacity-55" viewBox="0 0 400 300" preserveAspectRatio="none">
+      {slug === "dental" && (<>
+        <circle cx="320" cy="60" r="110" fill="white" fillOpacity="0.18" />
+        <path d="M60 220 Q 200 120 340 220" stroke="white" strokeWidth="1.5" fill="none" strokeOpacity="0.4" />
+      </>)}
+      {slug === "restaurant" && (<>
+        <rect x="30" y="40" width="340" height="2" fill="white" fillOpacity="0.4" />
+        <text x="30" y="90" fontFamily="serif" fontSize="52" fill="white" opacity="0.35" fontStyle="italic">MAISON</text>
+        <circle cx="330" cy="220" r="50" fill="none" stroke="white" strokeWidth="1" strokeOpacity="0.4" />
+      </>)}
+      {slug === "law" && (<>
+        <text x="30" y="110" fontFamily="serif" fontSize="92" fill="white" opacity="0.35" fontWeight="600">W&amp;H</text>
+        <rect x="30" y="135" width="80" height="1.5" fill="white" opacity="0.6" />
+      </>)}
+      {slug === "real-estate" && (<>
+        <polygon points="60,220 60,140 120,80 180,140 180,220" fill="none" stroke="white" strokeWidth="1.5" strokeOpacity="0.5" />
+        <rect x="210" y="140" width="140" height="80" fill="none" stroke="white" strokeWidth="1.5" strokeOpacity="0.5" />
+      </>)}
+      {slug === "fashion" && (<>
+        <text x="30" y="200" fontFamily="sans-serif" fontSize="160" fill="white" opacity="0.25" fontWeight="800" letterSpacing="-8">NOIR</text>
+        <rect x="30" y="230" width="340" height="1" fill="white" opacity="0.7" />
+      </>)}
+      {slug === "construction" && (<>
+        <path d="M20 240 L 380 240 M 60 240 L 100 140 L 140 240 M 180 240 L 220 140 L 260 240 M 300 240 L 340 140 L 380 240" stroke="white" strokeWidth="2" strokeOpacity="0.45" fill="none" />
+      </>)}
+      {slug === "saas" && (<>
+        <rect x="40" y="70" width="80" height="80" rx="12" fill="white" fillOpacity="0.22" />
+        <rect x="140" y="100" width="80" height="80" rx="12" fill="white" fillOpacity="0.3" />
+        <rect x="240" y="70" width="80" height="80" rx="12" fill="white" fillOpacity="0.22" />
+      </>)}
+      {slug === "boutique" && (<>
+        <circle cx="200" cy="130" r="60" fill="none" stroke="white" strokeWidth="1.2" strokeOpacity="0.55" />
+        <rect x="140" y="200" width="120" height="1" fill="white" opacity="0.6" />
+        <text x="200" y="250" fontFamily="serif" fontSize="14" fill="white" opacity="0.5" textAnchor="middle" letterSpacing="4">ATELIER</text>
+      </>)}
+    </svg>
+  );
+}
+
+/** Naive hex shade for the preview gradient. */
+function shade(hex: string, percent: number): string {
+  const h = hex.replace("#", "");
+  const num = parseInt(h, 16);
+  const amt = Math.round(2.55 * percent);
+  const r = Math.min(255, Math.max(0, (num >> 16) + amt));
+  const g = Math.min(255, Math.max(0, ((num >> 8) & 0xff) + amt));
+  const b = Math.min(255, Math.max(0, (num & 0xff) + amt));
+  return `#${((r << 16) | (g << 8) | b).toString(16).padStart(6, "0")}`;
+}
