@@ -35,6 +35,21 @@ export type Color =
   | "Black" | "Gray" | "Navy" | "White" | "Red" | "Blue" | "Light-Gray";
 export type Size = "S" | "M" | "L" | "XL" | "XXL" | "One Size";
 
+interface MerchItem {
+  id: number;
+  name: string;
+  category: string;
+  price: number;
+  image: string;
+  paymentLink: string;
+  colors: string[];
+  sizes: string[];
+  description: string;
+  featured?: boolean;
+  bestseller?: boolean;
+  available?: boolean;
+}
+
 /* ─── Image path resolution (preserved) ───────────────────────── */
 
 const getImagePath = (baseName: string, color: Color): string => {
@@ -283,7 +298,7 @@ function Shop({
   setSearchQuery: (v: string) => void;
   sortBy: string;
   setSortBy: (v: string) => void;
-  items: ReturnType<typeof Array<any>>;
+  items: MerchItem[];
 }) {
   return (
     <section id="shop" className="px-5 py-24 lg:px-10 lg:py-32">
@@ -364,7 +379,7 @@ function Shop({
         </div>
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {items.map((item: any) => (
+          {items.map((item) => (
             <MerchCard key={item.id} {...item} t={t} />
           ))}
         </div>
