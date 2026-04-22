@@ -70,7 +70,61 @@ const PortfolioPage = () => {
       category: t("category.1"),
       image: "/phantom.png",
       url: "https://www.phantomforgepc.com/en"
-    }
+    },
+    // ── Industry template demos ──────────────────────────────────
+    // Eight standalone demo sites at /templates/<industry>. Each is
+    // a full flow (home → inner pages → checkout → success) showing
+    // what CodeWithAli can ship for a given vertical. Linked out
+    // so the sales engineer can send one URL and let the prospect
+    // walk through multiple industries.
+    {
+      title: "Aster Dental Studio",
+      category: "Template · Dental / Medical",
+      image: null,
+      url: "/templates/dental",
+    },
+    {
+      title: "Maison Laurent · Restaurant",
+      category: "Template · Hospitality",
+      image: null,
+      url: "/templates/restaurant",
+    },
+    {
+      title: "Whitmore & Hale · Law",
+      category: "Template · Legal",
+      image: null,
+      url: "/templates/law",
+    },
+    {
+      title: "Meridian Properties · Real estate",
+      category: "Template · Real estate",
+      image: null,
+      url: "/templates/real-estate",
+    },
+    {
+      title: "NOIR · Fashion SS/26",
+      category: "Template · Fashion / Apparel",
+      image: null,
+      url: "/templates/fashion",
+    },
+    {
+      title: "Ironline Builders · Construction",
+      category: "Template · Construction",
+      image: null,
+      url: "/templates/construction",
+    },
+    {
+      title: "Prism · SaaS platform",
+      category: "Template · SaaS / Tech",
+      image: null,
+      url: "/templates/saas",
+    },
+    {
+      title: "Atelier Hush · Boutique",
+      category: "Template · E-commerce",
+      image: null,
+      url: "/templates/boutique",
+    },
   ];
 
   return (
@@ -118,26 +172,38 @@ const PortfolioPage = () => {
                   className="group cursor-pointer h-auto max-w-[450px] min-w-[350px]"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-xl shadow-red-950/20">
-                    {/* Project Image */}
-                    <div className="w-full h-full bg-red-300 dark:bg-black/80 border-2 border-red-800/30 flex items-center justify-center">
+                    {/* Project Image — real screenshot when we have
+                     *  one; gradient preview for our industry template
+                     *  demos until we capture hero shots. Template
+                     *  previews use the same accent swatches as the
+                     *  /templates gallery so both pages feel cohesive. */}
+                    <div className="w-full h-full bg-red-300 dark:bg-black/80 border-2 border-red-800/30 flex items-center justify-center overflow-hidden">
                       {project.image ? (
-                        <>
-                          <Image
-                            src={project.image}
-                            alt={project.title}
-                            height={1000}
-                            width={1000}
-                            quality={100}
-                            loading="eager"
-                            className="w-full h-full object-cover rounded-xl"
-                          />
-                        </>
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          height={1000}
+                          width={1000}
+                          quality={100}
+                          loading="eager"
+                          className="w-full h-full object-cover rounded-xl"
+                        />
                       ) : (
-                        <>
-                          <p className="text-black dark:text-red-200/70">
-                            {t("holder")}
-                          </p>
-                        </>
+                        <div
+                          className="w-full h-full rounded-xl flex items-end p-5"
+                          style={{
+                            background: templatePreviewGradient(project.url),
+                          }}
+                        >
+                          <div>
+                            <p className="text-[9.5px] uppercase tracking-[0.25em] text-white/70 font-semibold">
+                              Interactive demo
+                            </p>
+                            <p className="mt-1.5 text-[20px] font-semibold text-white leading-tight">
+                              {project.title.split(" · ")[0]}
+                            </p>
+                          </div>
+                        </div>
                       )}
                     </div>
 
@@ -153,20 +219,34 @@ const PortfolioPage = () => {
                         <p className="text-red-100 text-lg mb-6">
                           {project.category}
                         </p>
-                        <Link
-                          href={`${project.url}`}
-                          target="_blank"
-                          draggable={false}
-                        >
-                          <Button
-                            variant="outline"
-                            size="lg"
-                            className="border-2 dark:border-red-950/80 text-white bg-red-700/80 dark:bg-red-700/50 px-6 py-5 hover:bg-red-950 dark:hover:bg-black hover:text-white text-base font-medium"
-                          >
-                            {t("viewbtn")}
-                            <MoveUpRight className="ml-2 h-5 w-5" />
-                          </Button>
-                        </Link>
+                        {/* Template demos use a plain anchor so
+                         *  next-intl's Link doesn't prepend /en/ —
+                         *  /templates/* is deliberately outside the
+                         *  locale tree. External client sites keep
+                         *  the i18n Link. */}
+                        {project.url.startsWith("/templates") ? (
+                          <a href={project.url} draggable={false}>
+                            <Button
+                              variant="outline"
+                              size="lg"
+                              className="border-2 dark:border-red-950/80 text-white bg-red-700/80 dark:bg-red-700/50 px-6 py-5 hover:bg-red-950 dark:hover:bg-black hover:text-white text-base font-medium"
+                            >
+                              {t("viewbtn")}
+                              <MoveUpRight className="ml-2 h-5 w-5" />
+                            </Button>
+                          </a>
+                        ) : (
+                          <Link href={`${project.url}`} target="_blank" draggable={false}>
+                            <Button
+                              variant="outline"
+                              size="lg"
+                              className="border-2 dark:border-red-950/80 text-white bg-red-700/80 dark:bg-red-700/50 px-6 py-5 hover:bg-red-950 dark:hover:bg-black hover:text-white text-base font-medium"
+                            >
+                              {t("viewbtn")}
+                              <MoveUpRight className="ml-2 h-5 w-5" />
+                            </Button>
+                          </Link>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -191,3 +271,20 @@ const PortfolioPage = () => {
 };
 
 export default PortfolioPage;
+
+/**
+ * Per-template gradient swatches for the portfolio card previews.
+ * Matches the accent colors used in /templates/_shared/templates.ts
+ * so both pages feel like one system.
+ */
+function templatePreviewGradient(url: string): string {
+  if (url.includes("/templates/dental")) return "linear-gradient(135deg, #0EA5B7 0%, #0B3D4C 100%)";
+  if (url.includes("/templates/restaurant")) return "linear-gradient(135deg, #C7A27A 0%, #B7410E 55%, #4A1C0A 100%)";
+  if (url.includes("/templates/law")) return "linear-gradient(135deg, #2A4C78 0%, #0B2447 100%)";
+  if (url.includes("/templates/real-estate")) return "linear-gradient(135deg, #8FCFA6 0%, #1F6F4A 60%, #0F2A1D 100%)";
+  if (url.includes("/templates/fashion")) return "linear-gradient(135deg, #3A3A3C 0%, #0F0F10 100%)";
+  if (url.includes("/templates/construction")) return "linear-gradient(135deg, #F2B705 0%, #1A1B1F 90%)";
+  if (url.includes("/templates/saas")) return "linear-gradient(135deg, #7C5CFF 0%, #4AD8E1 100%)";
+  if (url.includes("/templates/boutique")) return "linear-gradient(135deg, #D5C9B4 0%, #A89782 45%, #6B5B47 100%)";
+  return "linear-gradient(135deg, #7a1d1d 0%, #2d0505 100%)";
+}
