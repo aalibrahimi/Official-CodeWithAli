@@ -1,628 +1,388 @@
+/**
+ * E-commerce Solutions service page — 2026 rewrite.
+ *
+ * Follows the web-development pattern with dark-first, red + black + gold,
+ * display typography, and bespoke SVG marks. Features are 6 cards, process
+ * steps, and FAQ.
+ */
 "use client";
+
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+import { motion, AnimatePresence } from "motion/react";
 import {
-  ChevronRight,
-  ShoppingBag,
-  CreditCard,
-  TrendingUp,
-  Check,
-  Shield,
-  Package,
-  Users,
-  Zap,
-  Settings,
-  ArrowRight,
-  PlusCircle,
-  MinusCircle,
-  Smartphone,
-  ChevronLeft,
-  ArrowLeft,
+  ArrowRight, ArrowLeft, Sparkles, ChevronDown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { isRtlLang } from "rtl-detect";
 
-// Custom hook to detect mobile devices
-// const useIsMobile = () => {
-//   const [isMobile, setIsMobile] = useState(false);
-
-//   useEffect(() => {
-//     const checkIfMobile = () => {
-//       setIsMobile(window.innerWidth < 768);
-//     };
-
-//     // Initial check
-//     checkIfMobile();
-
-//     // Add event listener for window resize
-//     window.addEventListener("resize", checkIfMobile);
-
-//     // Cleanup
-//     return () => window.removeEventListener("resize", checkIfMobile);
-//   }, []);
-
-//   return isMobile;
-// };
-
-// Animation variants optimized for performance
-// const createFadeInVariant = (isMobile: any) => ({
-//   hidden: { opacity: 0, y: isMobile ? 10 : 20 },
-//   visible: {
-//     opacity: 1,
-//     y: 0,
-//     transition: {
-//       duration: isMobile ? 0.3 : 0.6,
-//       ease: "easeOut",
-//     },
-//   },
-// });
-
-const EcommerceSolutionsPage = () => {
+export default function EcommercePage() {
   const t = useTranslations("ServicePage.Ecom");
-  const router = useRouter();
-  const [activeFaq, setActiveFaq] = useState(null);
-  // const isMobile = useIsMobile();
   const locale = useLocale();
   const isRTL = isRtlLang(locale);
-
-  // E-commerce packages
-  const packages = [
-    {
-      title: t("sections.3.packages.1.title"),
-      price: "$2,500",
-      description: t("sections.3.packages.1.desc"),
-      features: [
-        t("sections.3.packages.1.features.1"),
-        t("sections.3.packages.1.features.2"),
-        t("sections.3.packages.1.features.3"),
-        t("sections.3.packages.1.features.4"),
-        t("sections.3.packages.1.features.5"),
-        t("sections.3.packages.1.features.6"),
-        t("sections.3.packages.1.features.7"),
-        t("sections.3.packages.1.features.8"),
-      ],
-    },
-    {
-      title: t("sections.3.packages.2.title"),
-      price: "$4,500",
-      description: t("sections.3.packages.2.desc"),
-      features: [
-        t("sections.3.packages.2.features.1"),
-        t("sections.3.packages.2.features.2"),
-        t("sections.3.packages.2.features.3"),
-        t("sections.3.packages.2.features.4"),
-        t("sections.3.packages.2.features.5"),
-        t("sections.3.packages.2.features.6"),
-        t("sections.3.packages.2.features.7"),
-        t("sections.3.packages.2.features.8"),
-        t("sections.3.packages.2.features.9"),
-      ],
-      highlighted: true,
-    },
-    {
-      title: t("sections.3.packages.3.title"),
-      price: "$7,000+",
-      description: t("sections.3.packages.3.desc"),
-      features: [
-        t("sections.3.packages.3.features.1"),
-        t("sections.3.packages.3.features.2"),
-        t("sections.3.packages.3.features.3"),
-        t("sections.3.packages.3.features.4"),
-        t("sections.3.packages.3.features.5"),
-        t("sections.3.packages.3.features.6"),
-        t("sections.3.packages.3.features.7"),
-        t("sections.3.packages.3.features.8"),
-        t("sections.3.packages.3.features.9"),
-      ],
-    },
-  ];
-  // Create animation variants based on device type
-  // const fadeIn = createFadeInVariant(isMobile);
-
-  /* eslint-disable */
-  const toggleFaq = (index: any) => {
-    if (activeFaq === index) {
-      setActiveFaq(null);
-    } else {
-      setActiveFaq(index);
-    }
-  };
-
-  // Helper function to create optimized motion props
-  // const getMotionProps = (index = 0) => {
-  //   if (isMobile) {
-  //     // Simplified animations for mobile (no staggered delays, simpler transitions)
-  //     return {
-  //       initial: { opacity: 0 },
-  //       whileInView: { opacity: 1 },
-  //       viewport: { once: true },
-  //       transition: { duration: 0.3 },
-  //     };
-  //   }
-
-  //   // Full animations for desktop
-  //   return {
-  //     initial: { opacity: 0, y: 20 },
-  //     whileInView: { opacity: 1, y: 0 },
-  //     viewport: { once: true },
-  //     transition: { duration: 0.5, delay: index * 0.1 },
-  //   };
-  // };
+  const Chevron = isRTL ? ArrowLeft : ArrowRight;
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-white overflow-x-hidden">
-      {/* Hero Section - Side-by-side layout */}
-      {/* Hero Section - Side-by-side layout */}
-      <section className="py-20 relative overflow-hidden border-b border-[#C8102E]/10 dark:border-white/10">
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-          <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white via-[#C8102E]/20 to-[#C8102E]/40 dark:bg-gradient-to-br dark:from-[#C8102E]/10 dark:via-transparent dark:to-transparent"></div>
-        </div>
+    <main className="bg-[#FAF9F6] text-[#0F0F10] antialiased dark:bg-[#0A0A0B] dark:text-[#F4F4F5]">
+      <Hero t={t} Chevron={Chevron} />
+      <Features t={t} />
+      <Process t={t} />
+      <FAQ t={t} />
+      <CTA t={t} Chevron={Chevron} />
+    </main>
+  );
+}
 
-        <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+/* ─── Hero ─────────────────────────────────────────────────────── */
+
+function Hero({
+  t, Chevron,
+}: { t: ReturnType<typeof useTranslations>; Chevron: typeof ArrowRight }) {
+  return (
+    <section className="relative overflow-hidden px-5 pb-16 pt-20 lg:px-10 lg:pb-24 lg:pt-28">
+      <div className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[720px] rounded-full bg-[#C8102E]/15 blur-[140px] dark:bg-[#C8102E]/10" />
+
+      <div className="relative mx-auto max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#0F0F10]/15 bg-[#0F0F10]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF37] dark:border-white/15 dark:bg-white/5"
+        >
+          <span className="h-1.5 w-1.5 rounded-full bg-[#C8102E]" />
+          {t("badge.1")}
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-5xl font-light leading-[0.95] tracking-[-0.02em]"
+          style={{ fontSize: "clamp(40px, 7vw, 100px)" }}
+        >
+          {t("title.1")}
+          <br />
+          <em className="font-normal italic text-[#C8102E]">{t("title.2")}</em>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.18 }}
+          className="mt-10 max-w-2xl text-[16px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70 lg:text-[18px]"
+        >
+          {t("desc")}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.28 }}
+          className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4"
+        >
+          <Link href="/contact">
+            <Button className="rounded-full bg-[#C8102E] px-7 py-6 text-[13.5px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#9F0F24]">
+              {t("startBtn")}
+              <Chevron className="ml-1 h-4 w-4" />
+            </Button>
+          </Link>
+          <Link
+            href="#features"
+            className="group inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-[0.18em] text-[#0F0F10]/80 transition-colors hover:text-[#C8102E] dark:text-white/80 dark:hover:text-[#C8102E]"
+          >
+            {t("packageBtn")} →
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Features ─────────────────────────────────────────────────── */
+
+function Features({ t }: { t: ReturnType<typeof useTranslations> }) {
+  const cards = [
+    { Icon: MarkProduct },   { Icon: MarkPayment },   { Icon: MarkShip },
+    { Icon: MarkAccount },   { Icon: MarkMobile },    { Icon: MarkAnalytics },
+  ];
+  return (
+    <section id="features" className="px-5 py-24 lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl">
+        <FadeIn>
+          <div className="mb-14 flex flex-col items-start justify-between gap-5 md:flex-row md:items-end">
             <div>
-              <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-4 px-3 py-1">
-                {t("badge.1")}
-              </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-black dark:text-white">
-                {t("title.1")}
-                <span className="text-[#C8102E] dark:text-white block">
-                  {t("title.2")}
-                </span>
-              </h1>
-              <p className="text-lg font-semibold text-black dark:text-white/90 mb-8 max-w-2xl">
-                {t("desc")}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-[#C8102E] hover:bg-[#9F0F24] 
-                   text-white border border-[#0F0F10]/10 dark:border-white/10 shadow-lg shadow-black/10 px-8"
-                  onClick={() => router.push("/contact")}
-                >
-                  {t("startBtn")}
-                  {isRTL ? (
-                    <ChevronLeft className="ml-2 h-5 w-5" />
-                  ) : (
-                    <ChevronRight className="ml-2 h-5 w-5" />
-                  )}
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-[#C8102E]/10 dark:border-white/10 text-[#C8102E] dark:text-[#D4AF37] bg-[#C8102E]/10 dark:bg-white/5 hover:bg-[#9F0F24] dark:hover:bg-white/10 hover:text-white dark:hover:text-white px-8"
-                  onClick={() =>
-                    document
-                      .getElementById("packages")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                >
-                  {t("packageBtn")}
-                </Button>
-              </div>
-            </div>
-
-            {/* Stats/Features Box */}
-            <div className="bg-[#C8102E] text-white dark:bg-black dark:text-white border border-[#C8102E]/20 dark:border-white/10 rounded-xl overflow-hidden shadow-xl p-6 md:p-8">
-              <h3 className="text-2xl font-bold text-center mb-6">
-                {t("sections.1.title")}
-              </h3>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  {
-                    value: "45%",
-                    label: t("sections.1.cards.1.title"),
-                    icon: TrendingUp,
-                  },
-                  {
-                    value: "60%",
-                    label: t("sections.1.cards.2.title"),
-                    icon: Smartphone,
-                  },
-                  {
-                    value: "99.9%",
-                    label: t("sections.1.cards.3.title"),
-                    icon: Zap,
-                  },
-                  {
-                    value: "24/7",
-                    label: t("sections.1.cards.4.title"),
-                    icon: Shield,
-                  },
-                ].map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#C8102E] to-[#9F0F24] dark:from-[#C8102E] dark:to-[#0A0A0B] flex items-center justify-center mx-auto mb-3">
-                      <stat.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="text-2xl md:text-3xl font-bold text-white dark:text-[#D4AF37]">
-                      {stat.value}
-                    </div>
-                    <p className="text-sm text-white dark:text-white/80">
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Features Section - Grid Cards */}
-      <section className="py-16 dark:bg-black">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <div className="text-center mb-14">
-            <div>
-              <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-4 px-3 py-1">
+              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">
                 {t("badge.2")}
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#C8102E] dark:text-white bg-transparent ">
-                <span>
-                  {t("sections.2.title")}
-                </span>
-              </h2>
-              <p className="text-[#C8102E] dark:text-white/80 text-lg max-w-2xl mx-auto">
-                {t("sections.2.desc")}
               </p>
-            </div>
-          </div>
-
-          {/* Changed this to 3 cols at LG bc removed 2 cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: t("sections.2.features.1.title"),
-                description: t("sections.2.features.1.desc"),
-                icon: Package,
-              },
-              {
-                title: t("sections.2.features.2.title"),
-                description: t("sections.2.features.2.desc"),
-                icon: CreditCard,
-              },
-              // {
-              //   title: t("sections.2.features.3.title"),
-              //   description: t("sections.2.features.3.desc"),
-              //   icon: Truck,
-              // },
-              {
-                title: t("sections.2.features.4.title"),
-                description: t("sections.2.features.4.desc"),
-                icon: Users,
-              },
-              {
-                title: t("sections.2.features.5.title"),
-                description: t("sections.2.features.5.desc"),
-                icon: Smartphone,
-              },
-              // {
-              //   title: t("sections.2.features.6.title"),
-              //   description: t("sections.2.features.6.desc"),
-              //   icon: BarChart3,
-              // },
-              {
-                title: t("sections.2.features.7.title"),
-                description: t("sections.2.features.7.desc"),
-                icon: TrendingUp,
-              },
-              {
-                title: t("sections.2.features.8.title"),
-                description: t("sections.2.features.8.desc"),
-                icon: Settings,
-              },
-            ].map((feature, index) => (
-              <div key={index}>
-                <Card className="bg-[#C8102E]/10 text-black dark:bg-black/60 dark:text-white border-[#C8102E]/10 dark:border-white/10 backdrop-blur-sm h-full">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#C8102E] to-[#9F0F24] dark:from-[#C8102E] dark:to-[#0A0A0B] flex items-center justify-center mb-4">
-                      <feature.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold text-[#C8102E] dark:text-white mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-black dark:text-white/80">
-                      {feature.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section - Horizontal Cards */}
-      <section id="packages" className="py-20 dark:bg-black">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <div className="text-center mb-14">
-            <div>
-              <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-4 px-3 py-1">
-                {t("badge.3")}
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#C8102E] dark:text-white bg-transparent">
-                <span>
-                  {t("sections.3.title")}
-                </span>
-              </h2>
-              <p className="text-black dark:text-white/70 text-lg max-w-2xl mx-auto">
-                {t("sections.3.desc")}
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 gap-8 max-w-5xl mx-auto">
-            {packages.map((pkg, index) => (
-              <div key={index}>
-                <Card
-                  className={`backdrop-blur-sm overflow-hidden ${
-                    pkg.highlighted
-                      ? "bg-white hover:bg-[#F4F4F5] text-[#C8102E] dark:bg-[#0A0A0B] dark:text-[#D4AF37] dark:hover:bg-[#0A0A0B]"
-                      : "bg-[#C8102E]/10 text-[#C8102E] dark:bg-black/60 dark:text-white border-[#C8102E]/10 dark:border-white/10"
-                  }`}
-                >
-                  <CardContent className="p-0">
-                    <div className="grid grid-cols-1 md:grid-cols-3">
-                      {/* Left column with fixed height for consistent alignment */}
-                      <div className="p-6 md:p-8 md:border-r border-[#C8102E]/10 dark:border-white/10 flex flex-col h-full md:min-h-[320px]">
-                        <div>
-                          {pkg.highlighted && (
-                            <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-3">
-                              {t("sections.3.packages.badge")}
-                            </Badge>
-                          )}
-                          <h3 className="text-2xl font-bold text-black dark:text-white">
-                            {pkg.title}
-                          </h3>
-                          <div className="mt-2 mb-4">
-                            <span className="text-3xl font-bold text-black dark:text-[#D4AF37]">
-                              {pkg.price}
-                            </span>
-                            {pkg.price !== "Custom" && (
-                              <span className="text-black dark:text-white ml-1">
-                                {t("sections.3.packages.payType")}
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                        <p className="text-black dark:text-white/80 mb-6 flex-grow">
-                          {pkg.description}
-                        </p>
-                        <Button
-                          className={`w-full mt-auto ${
-                            pkg.highlighted
-                              ? "bg-[#C8102E] hover:bg-[#9F0F24]"
-                              : "bg-[#C8102E] hover:bg-[#9F0F24]"
-                          } text-white`}
-                          onClick={() => router.push("/contact")}
-                        >
-                          {t("startBtn")}
-                          {isRTL ? (
-                            <ArrowLeft className="ml-2 h-4 w-4" />
-                          ) : (
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                          )}
-                        </Button>
-                      </div>
-
-                      {/* Right column with features - fixed vertical alignment */}
-                      <div className="p-6 md:p-8 md:col-span-2 bg-[#C8102E]/5 text-[#C8102E] dark:bg-black/40 dark:text-white">
-                        <h4 className="text-lg font-semibold text-black dark:text-[#D4AF37] mb-4">
-                          {t("sections.3.packages.includedLabel")}
-                        </h4>
-                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                          {pkg.features.map((feature, idx) => (
-                            <li key={idx} className="flex items-start">
-                              <Check className={`w-5 h-5 text-[#C8102E] dark:text-[#D4AF37] mt-0.5 ${isRTL ? "ml-2" : "mr-2"} flex-shrink-0`} />
-                              <span className="text-black dark:text-white">
-                                {feature}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section - Timeline */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <div className="text-center mb-14">
-            <div>
-              <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-4 px-3 py-1">
-                {t("badge.4")}
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#C8102E] dark:text-white bg-transparent">
-                <span>
-                  {t("sections.4.title")}
-                </span>
-              </h2>
-              <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
-                {t("sections.4.desc")}
-              </p>
-            </div>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            {[
-              {
-                step: "1",
-                title: t("sections.4.process.1.title"),
-                description: t("sections.4.process.1.desc"),
-              },
-              {
-                step: "2",
-                title: t("sections.4.process.2.title"),
-                description: t("sections.4.process.2.desc"),
-              },
-              {
-                step: "3",
-                title: t("sections.4.process.3.title"),
-                description: t("sections.4.process.3.desc"),
-              },
-              {
-                step: "4",
-                title: t("sections.4.process.4.title"),
-                description: t("sections.4.process.4.desc"),
-              },
-              {
-                step: "5",
-                title: t("sections.4.process.5.title"),
-                description: t("sections.4.process.5.desc"),
-              },
-              {
-                step: "6",
-                title: t("sections.4.process.6.title"),
-                description: t("sections.4.process.6.desc"),
-              },
-            ].map((phase, index) => (
-              <div key={index} className="relative mb-10 last:mb-0">
-                <div className="flex">
-                  <div className={`flex-shrink-0 ${isRTL ? "ml-6" : "mr-6"}`}>
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#C8102E] to-[#9F0F24] dark:from-[#C8102E] dark:to-[#0A0A0B] flex items-center justify-center">
-                      <span className="text-xl font-bold text-white">
-                        {phase.step}
-                      </span>
-                    </div>
-                    {index < 5 && (
-                      <div className={`absolute top-16 -bottom-10 ${isRTL ? "right-8" : "left-8"} w-0.5 bg-[#C8102E]/30 dark:bg-white/10`}></div>
-                    )}
-                  </div>
-                  <div className="p-5 lg:w-[800px] border-1 border-[#C8102E]/20 flex flex-col justify-center rounded-lg">
-                    <h3 className="text-xl font-bold text-[#C8102E] dark:text-white mb-3">
-                      {phase.title}
-                    </h3>
-                    <p className="text-black dark:text-white/70">
-                      {phase.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section - Accordion */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <div className="text-center mb-14">
-            <div>
-              <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-4 px-3 py-1">
-                {t("badge.5")}
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#C8102E] dark:text-white bg-transparent">
-                <span>
-                  {t("sections.5.title")}
-                </span>
-              </h2>
-              <p className="text-black dark:text-white/85 text-lg max-w-2xl mx-auto">
-                {t("sections.5.desc")}
-              </p>
-            </div>
-          </div>
-
-          <div className="max-w-3xl mx-auto space-y-4">
-            {[
-              {
-                question: t("sections.5.QA.1.Q"),
-                answer: t("sections.5.QA.1.A"),
-              },
-              {
-                question: t("sections.5.QA.2.Q"),
-                answer: t("sections.5.QA.2.A"),
-              },
-              {
-                question: t("sections.5.QA.3.Q"),
-                answer: t("sections.5.QA.3.A"),
-              },
-              {
-                question: t("sections.5.QA.4.Q"),
-                answer: t("sections.5.QA.4.A"),
-              },
-              {
-                question: t("sections.5.QA.5.Q"),
-                answer: t("sections.5.QA.5.A"),
-              },
-              {
-                question: t("sections.5.QA.6.Q"),
-                answer: t("sections.5.QA.6.A"),
-              },
-            ].map((faq, index) => (
-              <div
-                key={index}
-                className="bg-[#C8102E]/10 text-[#C8102E] dark:bg-black/60 dark:text-white border border-[#C8102E]/10 dark:border-white/10 rounded-lg overflow-hidden"
+              <h2
+                className="max-w-2xl font-light leading-[1.05] tracking-[-0.01em]"
+                style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
               >
-                <button
-                  className="w-full p-6 text-left flex justify-between items-center"
-                  onClick={() => toggleFaq(index)}
-                >
-                  <h3 className="text-lg font-bold text-black dark:text-white pr-8">
-                    {faq.question}
-                  </h3>
-                  {activeFaq === index ? (
-                    <MinusCircle className="w-5 h-5 text-[#C8102E] dark:text-[#D4AF37] flex-shrink-0" />
-                  ) : (
-                    <PlusCircle className="w-5 h-5 text-[#C8102E] dark:text-[#D4AF37] flex-shrink-0" />
-                  )}
-                </button>
-                <div
-                  className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${
-                    activeFaq === index
-                      ? "max-h-96 pb-6 opacity-100"
-                      : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <p className="text-black/80 font-semibold dark:text-white/80">
-                    {faq.answer}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 dark:bg-gradient-to-b dark:from-[#0A0A0B] dark:to-black">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <div className="max-w-4xl mx-auto bg-[#C8102E]/20 text-[#C8102E] dark:bg-black/60 dark:text-white border border-[#C8102E]/20 dark:border-white/10 rounded-xl p-8 md:p-12 text-center">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#C8102E] to-[#0A0A0B] dark:from-[#C8102E] dark:to-[#0A0A0B] flex items-center justify-center mx-auto mb-6">
-              <ShoppingBag className="w-8 h-8 text-white" />
+                {t("sections.2.title")}
+              </h2>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-6">
+            <p className="max-w-md text-[14.5px] leading-relaxed text-[#0F0F10]/65 dark:text-white/65">
+              {t("sections.2.desc")}
+            </p>
+          </div>
+        </FadeIn>
+
+        <div className="grid gap-px bg-[#0F0F10]/12 dark:bg-white/10 md:grid-cols-2 lg:grid-cols-3">
+          {cards.map((c, i) => (
+            <FadeIn key={i} delay={i * 0.04}>
+              <div className="h-full bg-[#FAF9F6] p-8 transition-colors hover:bg-white dark:bg-[#0D0D0E] dark:hover:bg-[#121214] lg:p-10">
+                <div className="h-14 w-14 text-[#C8102E]">
+                  <c.Icon />
+                </div>
+                <h3 className="mt-6 text-[19px] font-semibold tracking-tight lg:text-[22px]">
+                  {t(`sections.2.features.${i + 1}.title`)}
+                </h3>
+                <p className="mt-3 text-[14px] leading-relaxed text-[#0F0F10]/65 dark:text-white/65">
+                  {t(`sections.2.features.${i + 1}.desc`)}
+                </p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Process ──────────────────────────────────────────────────── */
+
+function Process({ t }: { t: ReturnType<typeof useTranslations> }) {
+  const steps = [1, 2, 3, 4, 5, 6];
+  return (
+    <section className="border-t border-[#0F0F10]/10 bg-[#0F0F10]/[0.02] px-5 py-24 dark:border-white/10 dark:bg-white/[0.02] lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl">
+        <FadeIn>
+          <div className="mb-16 max-w-3xl">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">
+              {t("badge.4")}
+            </p>
+            <h2
+              className="font-light leading-[1.05] tracking-[-0.01em]"
+              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
+            >
+              {t("sections.4.title")}
+            </h2>
+            <p className="mt-5 text-[15.5px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
+              {t("sections.4.desc")}
+            </p>
+          </div>
+        </FadeIn>
+
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          {steps.map((n, i) => (
+            <FadeIn key={n} delay={i * 0.04}>
+              <div className="border-t border-[#0F0F10]/15 pt-6 dark:border-white/15">
+                <p
+                  className="font-light tabular-nums text-[#C8102E]"
+                  style={{ fontSize: "clamp(36px, 4vw, 48px)" }}
+                >
+                  0{n}
+                </p>
+                <h3 className="mt-4 text-[18px] font-semibold tracking-tight lg:text-[20px]">
+                  {t(`sections.4.process.${n}.title`)}
+                </h3>
+                <p className="mt-3 text-[14px] leading-relaxed text-[#0F0F10]/65 dark:text-white/65">
+                  {t(`sections.4.process.${n}.desc`)}
+                </p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── FAQ ──────────────────────────────────────────────────────── */
+
+function FAQ({ t }: { t: ReturnType<typeof useTranslations> }) {
+  const [open, setOpen] = useState<number | null>(0);
+  const items = [1, 2, 3, 4, 5, 6];
+  return (
+    <section className="px-5 py-24 lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-4xl">
+        <FadeIn>
+          <div className="mb-14">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">
+              {t("badge.5")}
+            </p>
+            <h2
+              className="font-light leading-[1.05] tracking-[-0.01em]"
+              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
+            >
+              {t("sections.5.title")}
+            </h2>
+            <p className="mt-5 text-[15.5px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
+              {t("sections.5.desc")}
+            </p>
+          </div>
+        </FadeIn>
+
+        <div className="divide-y divide-[#0F0F10]/10 border-y border-[#0F0F10]/10 dark:divide-white/10 dark:border-white/10">
+          {items.map((n, i) => {
+            const isOpen = open === i;
+            return (
+              <FadeIn key={n} delay={i * 0.02}>
+                <div>
+                  <button
+                    type="button"
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    className="flex w-full items-center justify-between gap-6 py-5 text-left transition-colors hover:text-[#C8102E]"
+                  >
+                    <span className="text-[15px] font-semibold tracking-tight lg:text-[16.5px]">
+                      {t(`sections.5.QA.${n}.Q`)}
+                    </span>
+                    <ChevronDown
+                      className={`h-4 w-4 shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-[#C8102E]" : ""}`}
+                    />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <p className="pb-5 pr-10 text-[14.5px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
+                          {t(`sections.5.QA.${n}.A`)}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </FadeIn>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Final CTA ────────────────────────────────────────────────── */
+
+function CTA({
+  t, Chevron,
+}: { t: ReturnType<typeof useTranslations>; Chevron: typeof ArrowRight }) {
+  return (
+    <section className="px-5 pb-24 pt-12 lg:px-10 lg:pb-32">
+      <FadeIn>
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-[#0F0F10] p-12 text-white dark:bg-[#141416] lg:p-20">
+          <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-[#C8102E]/25 blur-[120px]" />
+          <div className="pointer-events-none absolute -bottom-40 -left-20 h-96 w-96 rounded-full bg-[#C8102E]/15 blur-[120px]" />
+          <div className="relative">
+            <Sparkles className="h-7 w-7 text-[#C8102E]" />
+            <h2
+              className="mt-6 max-w-3xl font-light leading-[1.0] tracking-[-0.02em]"
+              style={{ fontSize: "clamp(32px, 5vw, 64px)" }}
+            >
               {t("cta.title")}
             </h2>
-            <p className="text-lg text-black dark:text-white/85 mb-8 max-w-2xl mx-auto">
+            <p className="mt-6 max-w-xl text-[15.5px] leading-relaxed text-white/75 lg:text-[17px]">
               {t("cta.desc")}
             </p>
-            <Button
-              size="lg"
-              className="bg-[#C8102E] hover:bg-[#9F0F24] 
-                   text-white border border-[#0F0F10]/10 dark:border-white/10 shadow-lg shadow-black/10 px-8"
-              onClick={() => router.push("/contact")}
-            >
-              {t("cta.getBtn")}
-              {isRTL ? (
-                <ChevronLeft className="ml-2 h-5 w-5" />
-              ) : (
-                <ChevronRight className="ml-2 h-5 w-5" />
-              )}
-            </Button>
+            <Link href="/contact" className="mt-10 inline-flex items-center gap-1.5 rounded-full bg-[#C8102E] px-7 py-4 text-[13px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#9F0F24]">
+              {t("startBtn")}
+              <Chevron className="h-4 w-4" />
+            </Link>
           </div>
         </div>
-      </section>
-    </div>
+      </FadeIn>
+    </section>
   );
-};
+}
 
-export default EcommerceSolutionsPage;
+/* ─── Primitives ───────────────────────────────────────────────── */
+
+function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/* ─── Bespoke SVG marks ────────────────────────────────────────── */
+
+function MarkProduct() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <rect x="10" y="16" width="18" height="24" rx="1.5" stroke="currentColor" strokeWidth="1.2" />
+      <rect x="36" y="16" width="18" height="24" rx="1.5" stroke="currentColor" strokeWidth="1.2" />
+      <line x1="14" y1="22" x2="26" y2="22" stroke="currentColor" strokeWidth="1" />
+      <line x1="40" y1="22" x2="52" y2="22" stroke="currentColor" strokeWidth="1" />
+      <line x1="14" y1="28" x2="26" y2="28" stroke="currentColor" strokeWidth="1" />
+      <line x1="40" y1="28" x2="52" y2="28" stroke="currentColor" strokeWidth="1" />
+    </svg>
+  );
+}
+
+function MarkPayment() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <rect x="8" y="20" width="48" height="28" rx="2" stroke="currentColor" strokeWidth="1.2" />
+      <line x1="8" y1="28" x2="56" y2="28" stroke="currentColor" strokeWidth="1.2" />
+      <rect x="14" y="32" width="12" height="6" rx="1" fill="currentColor" />
+      <circle cx="44" cy="35" r="2.5" stroke="currentColor" strokeWidth="1.2" fill="none" />
+      <line x1="48" y1="32" x2="52" y2="38" stroke="currentColor" strokeWidth="1" />
+    </svg>
+  );
+}
+
+function MarkShip() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <path d="M32 14 L48 28 L48 48 L16 48 L16 28 Z" stroke="currentColor" strokeWidth="1.2" />
+      <line x1="16" y1="28" x2="48" y2="28" stroke="currentColor" strokeWidth="1.2" />
+      <path d="M24 36 L24 48" stroke="currentColor" strokeWidth="1" />
+      <path d="M32 36 L32 48" stroke="currentColor" strokeWidth="1" />
+      <path d="M40 36 L40 48" stroke="currentColor" strokeWidth="1" />
+    </svg>
+  );
+}
+
+function MarkAccount() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <circle cx="32" cy="22" r="6" stroke="currentColor" strokeWidth="1.2" />
+      <path d="M18 42 Q18 36 32 36 Q46 36 46 42 L46 50 Q46 52 44 52 L20 52 Q18 52 18 50 Z" stroke="currentColor" strokeWidth="1.2" />
+      <circle cx="32" cy="48" r="1.5" fill="currentColor" />
+    </svg>
+  );
+}
+
+function MarkMobile() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <rect x="18" y="12" width="28" height="40" rx="2" stroke="currentColor" strokeWidth="1.2" />
+      <line x1="18" y1="18" x2="46" y2="18" stroke="currentColor" strokeWidth="1.2" />
+      <circle cx="32" cy="50" r="1.5" fill="currentColor" />
+      <rect x="22" y="22" width="20" height="22" rx="1" stroke="currentColor" strokeWidth="1" />
+    </svg>
+  );
+}
+
+function MarkAnalytics() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <polyline points="12,48 24,32 36,40 52,16" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="12" cy="48" r="2.5" fill="currentColor" />
+      <circle cx="24" cy="32" r="2.5" fill="currentColor" />
+      <circle cx="36" cy="40" r="2.5" fill="currentColor" />
+      <circle cx="52" cy="16" r="2.5" fill="currentColor" />
+    </svg>
+  );
+}

@@ -1,696 +1,339 @@
+/**
+ * Web Hosting & Maintenance service page — 2026 rewrite.
+ * Follows web-development pattern.
+ */
 "use client";
-import React, { JSX } from "react";
-import { useRouter } from "next/navigation";
-import {
-  ChevronRight,
-  ArrowRight,
-  Server,
-  Shield,
-  BarChart,
-  Clock,
-  Zap,
-  Database,
-  Lock,
-  CheckCircle,
-  RefreshCw,
-  Cloud,
-  Download,
-  Globe,
-  ArrowLeft,
-  ChevronLeft,
-} from "lucide-react";
+
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { ArrowRight, ArrowLeft, Sparkles, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-// I imported these utilities from the new file I created
-import {
-  ClientOnly,
-  useResponsive,
-} from "../../../utils/browser-compatibility";
-import GradientText from "@/MyComponents/GradientText";
 import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { isRtlLang } from "rtl-detect";
 
-// Types for our data
-interface HostingFeature {
-  title: string;
-  description: string;
-  icon: React.ElementType;
-  features: string[];
-}
-
-interface TechCategory {
-  category: string;
-  technologies: string[];
-}
-
-interface HostingPackage {
-  title: string;
-  price: string;
-  period: string;
-  description: string;
-  features: string[];
-  highlighted?: boolean;
-}
-
-// interface Benefit {
-//   icon: React.ElementType;
-//   title: string;
-//   description: string;
-// }
-
-// interface ProcessStep {
-//   icon: React.ElementType;
-//   step: string;
-//   title: string;
-//   description: string;
-// }
-
-const WebHostingPage = (): JSX.Element => {
-  const router = useRouter();
+export default function WebHostingPage() {
   const t = useTranslations("ServicePage.Hosting");
   const locale = useLocale();
   const isRTL = isRtlLang(locale);
-
-  // Hosting features data
-  const hostingFeatures: HostingFeature[] = [
-    {
-      title: t("sections.1.hostFeatures.1.title"),
-      description: t("sections.1.hostFeatures.1.desc"),
-      icon: Server,
-      features: [
-        t("sections.1.hostFeatures.1.features.1"),
-        t("sections.1.hostFeatures.1.features.2"),
-        t("sections.1.hostFeatures.1.features.3"),
-        t("sections.1.hostFeatures.1.features.4"),
-      ],
-    },
-    {
-      title: t("sections.1.hostFeatures.2.title"),
-      description: t("sections.1.hostFeatures.2.desc"),
-      icon: Shield,
-      features: [
-        t("sections.1.hostFeatures.2.features.1"),
-        t("sections.1.hostFeatures.2.features.2"),
-        t("sections.1.hostFeatures.2.features.3"),
-        t("sections.1.hostFeatures.2.features.4"),
-      ],
-    },
-    {
-      title: t("sections.1.hostFeatures.3.title"),
-      description: t("sections.1.hostFeatures.3.desc"),
-      icon: BarChart,
-      features: [
-        t("sections.1.hostFeatures.3.features.1"),
-        t("sections.1.hostFeatures.3.features.2"),
-        t("sections.1.hostFeatures.3.features.3"),
-        t("sections.1.hostFeatures.3.features.4"),
-      ],
-    },
-    {
-      title: t("sections.1.hostFeatures.4.title"),
-      description: t("sections.1.hostFeatures.4.desc"),
-      icon: Clock,
-      features: [
-        t("sections.1.hostFeatures.4.features.1"),
-        t("sections.1.hostFeatures.4.features.2"),
-        t("sections.1.hostFeatures.4.features.3"),
-        t("sections.1.hostFeatures.4.features.4"),
-      ],
-    },
-  ];
-
-  // Technology stack
-  const techStack: TechCategory[] = [
-    {
-      category: t("sections.3.stack.1.category"),
-      technologies: ["AWS", "Google Cloud", "DigitalOcean", "Linode"],
-    },
-    {
-      category: t("sections.3.stack.2.category"),
-      technologies: ["Cloudflare", "AWS CloudFront", "Fastly", "Akamai"],
-    },
-    {
-      category: t("sections.3.stack.3.category"),
-      technologies: ["MySQL", "PostgreSQL", "MongoDB", "Redis"],
-    },
-    {
-      category: t("sections.3.stack.4.category"),
-      technologies: ["WordPress", "Drupal", "Shopify", "Custom Solutions"],
-    },
-  ];
-
-  // Hosting packages
-  const hostingPackages: HostingPackage[] = [
-    {
-      title: t("sections.5.packages.1.title"),
-      price: "$49",
-      period: t("sections.5.packages.1.period"),
-      description: t("sections.5.packages.1.desc"),
-      features: [
-        t("sections.5.packages.1.features.1"),
-        t("sections.5.packages.1.features.2"),
-        t("sections.5.packages.1.features.3"),
-        t("sections.5.packages.1.features.4"),
-        t("sections.5.packages.1.features.5"),
-        t("sections.5.packages.1.features.6"),
-        t("sections.5.packages.1.features.7"),
-      ],
-    },
-    {
-      title: t("sections.5.packages.2.title"),
-      price: "$129",
-      period: t("sections.5.packages.2.period"),
-      description: t("sections.5.packages.2.desc"),
-      features: [
-        t("sections.5.packages.2.features.1"),
-        t("sections.5.packages.2.features.2"),
-        t("sections.5.packages.2.features.3"),
-        t("sections.5.packages.2.features.4"),
-        t("sections.5.packages.2.features.5"),
-        t("sections.5.packages.2.features.6"),
-        t("sections.5.packages.2.features.7"),
-      ],
-      highlighted: true,
-    },
-    {
-      title: t("sections.5.packages.3.title"),
-      price: "$299",
-      period: t("sections.5.packages.3.period"),
-      description: t("sections.5.packages.3.desc"),
-      features: [
-        t("sections.5.packages.3.features.1"),
-        t("sections.5.packages.3.features.2"),
-        t("sections.5.packages.3.features.3"),
-        t("sections.5.packages.3.features.4"),
-        t("sections.5.packages.3.features.5"),
-        t("sections.5.packages.3.features.6"),
-        t("sections.5.packages.3.features.7"),
-        t("sections.5.packages.3.features.8"),
-        t("sections.5.packages.3.features.9"),
-        t("sections.5.packages.3.features.10"),
-      ],
-    },
-  ];
-
-  // I replaced The multiple useState and useEffect hooks with this single optimized hook
-  // This fixes the re-rendering issues in Safari/Firefox by properly handling resize events
-  const { isMobile, isReducedMotion } = useResponsive();
-
-  // I created an optimized version of the animation variants
-  // This prevents Safari/Firefox from struggling with the animations at leaast in theory
-  // const fadeIn = createBrowserOptimizedVariants();
+  const Chevron = isRTL ? ArrowLeft : ArrowRight;
 
   return (
-    <ClientOnly>
-      <div className="min-h-screen bg-white dark:bg-black text-white overflow-x-hidden">
-        {/* Hero Section */}
-        <section className="pt-24 pb-12 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full z-0">
-            <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white via-gray-400 to-gray-500 dark:bg-gradient-to-br dark:from-gray-800/30 dark:via-transparent dark:to-transparent"></div>
-          </div>
-
-          <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-            {/* I replaced the direct animation props with optimized ones */}
-            {/* <motion.div
-              className="max-w-3xl"
-              {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
-            > */}
-            <div className="max-w-3xl">
-              <Badge className="bg-gray-600 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
-                {t("badge.1")}
-              </Badge>
-              <h1 className="text-4xl text-black dark:text-white md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                {t("title.1")}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-800 via-gray-700 to-gray-700 dark:to-gray-500 block">
-                  {t("title.2")}
-                </span>
-              </h1>
-              <p className="text-lg md:text-xl font-semibold text-black dark:text-white mb-8">
-                {t("desc")}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  className="bg-gradient-to-r from-gray-600 to-gray-700 dark:from-gray-700 dark:to-gray-900 hover:from-gray-600 hover:to-gray-800 
-                     dark:hover:from-gray-600 dark:hover:to-gray-800 text-white"
-                  size="lg"
-                  onClick={() => router.push("/contact")}
-                >
-                  {t("startBtn")}
-                  {isRTL ? (
-                    <ArrowLeft className="ml-2 h-4 w-4" />
-                  ) : (
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  )}
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-gray-500 text-black dark:text-gray-400 bg-gray-400 brightness-110 dark:bg-gray-950/20 hover:bg-gray-500 dark:hover:bg-gray-950/30 hover:text-white dark:hover:text-white"
-                  onClick={() => router.push("#packages")}
-                >
-                  {t("plansBtn")}
-                  {isRTL ? (
-                    <ChevronLeft className="ml-2 h-4 w-4" />
-                  ) : (
-                    <ChevronRight className="ml-2 h-4 w-4" />
-                  )}
-                </Button>
-              </div>
-            </div>
-            {/* </motion.div> */}
-          </div>
-        </section>
-
-        {/* Services Overview */}
-        <section className="py-16 relative overflow-hidden">
-          {/* I made this conditional render more efficient */}
-          {!isMobile && !isReducedMotion && (
-            <>
-              <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-500/30 dark:bg-gray-700/10 rounded-full blur-3xl"></div>
-              <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-500/30 dark:bg-gray-700/10 rounded-full blur-3xl"></div>
-            </>
-          )}
-
-          <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20">
-            {/* I replaced the direct animation props with optimized ones */}
-            {/* <motion.div
-              className="text-center mb-16"
-              {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
-            > */}
-            <div className="text-center mb-16">
-              <Badge className="bg-gray-600 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
-                {t("badge.2")}
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-                <GradientText gradient="from-gray-700 via-gray-600 to-gray-500 dark:from-white dark:via-gray-400 dark:to-gray-500">
-                  {t("sections.1.title")}
-                </GradientText>
-              </h2>
-              <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
-                {t("sections.1.desc")}
-              </p>
-            </div>
-            {/* </motion.div> */}
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {hostingFeatures.map((service, index) => (
-                // <motion.div
-                //   key={index}
-                //   // I replaced the variant props with optimized ones that won't cause re-renders in Safari
-                //   {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
-                // >
-                <div key={index}>
-                  <Card className="bg-gray-200 dark:bg-black/60 border-gray-900 h-full group hover:border-gray-800/50 transition-colors">
-                    <CardContent className="p-6">
-                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-gray-700 to-gray-900 p-3 mb-4">
-                        <service.icon className="w-full h-full text-white" />
-                      </div>
-                      <h3 className="text-xl font-bold dark:text-white mb-3">
-                        {service.title}
-                      </h3>
-                      <p className="text-black dark:text-white mb-4">
-                        {service.description}
-                      </p>
-
-                      <ul className="space-y-2">
-                        {service.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <ChevronRight className="h-4 w-4 text-gray-900 dark:text-gray-500 mt-1 mr-2 flex-shrink-0" />
-                            <span className="text-black  dark:text-gray-200/80 text-sm">
-                              {feature}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-                // </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits Section */}
-        <section className="py-20 bg-gray-950/5 relative">
-          <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-            {/* <motion.div
-              className="text-center mb-16"
-              {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
-            > */}
-            <div className="text-center mb-16">
-              <Badge className="bg-gray-600 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
-                {t("badge.3")}
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-                <GradientText gradient="from-gray-700 via-gray-600 to-gray-500 dark:from-white dark:via-gray-400 dark:to-gray-500">
-                  {t("sections.2.title")}
-                </GradientText>
-              </h2>
-              <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
-                {t("sections.2.desc")}
-              </p>
-            </div>
-            {/* </motion.div> */}
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: Zap,
-                  title: t("sections.2.cards.1.title"),
-                  description: t("sections.2.cards.1.desc"),
-                },
-                {
-                  icon: Lock,
-                  title: t("sections.2.cards.2.title"),
-                  description: t("sections.2.cards.2.desc"),
-                },
-                {
-                  icon: Clock,
-                  title: t("sections.2.cards.3.title"),
-                  description: t("sections.2.cards.3.desc"),
-                },
-                {
-                  icon: RefreshCw,
-                  title: t("sections.2.cards.4.title"),
-                  description: t("sections.2.cards.4.desc"),
-                },
-                {
-                  icon: Database,
-                  title: t("sections.2.cards.5.title"),
-                  description: t("sections.2.cards.5.desc"),
-                },
-                {
-                  icon: Shield,
-                  title: t("sections.2.cards.6.title"),
-                  description: t("sections.2.cards.6.desc"),
-                },
-              ].map((benefit, index) => (
-                // <motion.div
-                //   key={index}
-                //   {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
-                // >
-                <div key={index}>
-                  <div className="bg-gray-200 dark:bg-black/60 border border-gray-900 rounded-xl p-6 h-full">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-gray-700 to-gray-900 p-3 mb-4">
-                      <benefit.icon className="w-full h-full text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold text-black dark:text-white mb-3">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-black/80 dark:text-white">
-                      {benefit.description}
-                    </p>
-                  </div>
-                </div>
-                // </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Technology Stack */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4 md:px-8 lg:px-12">
-            {/* <motion.div
-              className="text-center mb-16"
-              {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
-            > */}
-            <div className="text-center mb-16">
-              <Badge className="bg-gray-600 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
-                {t("badge.4")}
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-                <GradientText gradient="from-gray-700 via-gray-600 to-gray-500 dark:from-white dark:via-gray-400 dark:to-gray-500">
-                  {t("sections.3.title")}
-                </GradientText>
-              </h2>
-              <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
-                {t("sections.3.desc")}
-              </p>
-            </div>
-            {/* </motion.div> */}
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {techStack.map((tech, index) => (
-                // <motion.div
-                //   key={index}
-                //   {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
-                // >
-                <div key={index}>
-                  <Card className="bg-gray-200 dark:bg-black/60 border-gray-900 h-full">
-                    <CardContent className="p-6">
-                      <h3 className="text-lg font-bold dark:text-white mb-4">
-                        {tech.category}
-                      </h3>
-                      <ul className="space-y-2">
-                        {tech.technologies.map((item, idx) => (
-                          <li key={idx} className="flex items-center">
-                            <div className={`w-2 h-2 bg-gray-800 dark:bg-gray-600 rounded-full ${isRTL ? "ml-3" : "mr-3"}`}></div>
-                            <span className="text-black/80 dark:text-gray-200/80">
-                              {item}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-                // </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Process Section */}
-        <section className="py-20 bg-gray-900/5">
-          <div className="container mx-auto px-4 md:px-8 lg:px-12">
-            {/* <motion.div
-              className="text-center mb-16"
-              {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
-            > */}
-            <div className="text-center mb-16">
-              <Badge className="bg-gray-600 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
-                {t("badge.5")}
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-                <GradientText gradient="from-gray-700 via-gray-600 to-gray-500 dark:from-white dark:via-gray-400 dark:to-gray-500">
-                  {t("sections.4.title")}
-                </GradientText>
-              </h2>
-              <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
-                {t("sections.4.desc")}
-              </p>
-            </div>
-            {/* </motion.div> */}
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                {
-                  icon: Cloud,
-                  step: "01",
-                  title: t("sections.4.cards.1.title"),
-                  description: t("sections.4.cards.1.desc"),
-                },
-                {
-                  icon: RefreshCw,
-                  step: "02",
-                  title: t("sections.4.cards.2.title"),
-                  description: t("sections.4.cards.2.desc"),
-                },
-                {
-                  icon: Shield,
-                  step: "03",
-                  title: t("sections.4.cards.3.title"),
-                  description: t("sections.4.cards.3.desc"),
-                },
-                {
-                  icon: BarChart,
-                  step: "04",
-                  title: t("sections.4.cards.4.title"),
-                  description: t("sections.4.cards.4.desc"),
-                },
-                {
-                  icon: Download,
-                  step: "05",
-                  title: t("sections.4.cards.5.title"),
-                  description: t("sections.4.cards.5.desc"),
-                },
-                {
-                  icon: Globe,
-                  step: "06",
-                  title: t("sections.4.cards.6.title"),
-                  description: t("sections.4.cards.6.desc"),
-                },
-              ].map((step, index) => (
-                // <motion.div
-                //   key={index}
-                //   {...getOptimizedAnimationProps(isMobile, isReducedMotion, index * 0.05)}
-                //   className="relative"
-                // >
-                <div key={index} className="relative">
-                  {/* DISABLED CONNECTOR LINE FOR NOW, it has issues ( i think ) -- blaze */}
-                  {/* Connector line for desktop only */}
-                  {/* {!isMobile && index < 5 && (
-                    <div className="hidden md:block absolute top-12 left-[calc(50%+10px)] w-full h-0.5 bg-gradient-to-r from-gray-800/50 to-gray-900/10"></div>
-                  )} */}
-
-                  {/* Added a h-75 to this so they all are equal heights */}
-                  <div className="bg-gray-200 dark:bg-black/60 border border-gray-900 rounded-xl p-6 relative z-10 h-auto md:h-100 lg:h-85">
-                    <div className="flex flex-col items-center mb-4">
-                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-black to-black flex items-center justify-center mb-4">
-                        <step.icon className="h-6 w-6 text-white" />
-                      </div>
-                      <div className="bg-black dark:bg-white/60  rounded px-2 py-0.5 text-xs font-bold text-gray-200 dark:text-black mb-2">
-                        {t("sections.4.cards.stepLabel")} {step.step}
-                      </div>
-                      <h3 className="text-xl font-bold text-black dark:text-white text-center">
-                        {step.title}
-                      </h3>
-                    </div>
-                    <p className="text-black text-center dark:text-white">
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
-                // </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing */}
-        <section id="packages" className="py-20">
-          <div className="container mx-auto px-4 md:px-8 lg:px-12">
-            <div className="text-center mb-16">
-              <Badge className="bg-gray-600 dark:bg-gray-900/30 dark:text-gray-400 border-transparent mb-4 px-3 py-1">
-                {t("badge.6")}
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-                <GradientText gradient="from-gray-700 via-gray-600 to-gray-500 dark:from-white dark:via-gray-400 dark:to-gray-500">
-                  {t("sections.5.title")}
-                </GradientText>
-              </h2>
-              <p className="text-black dark:text-white text-lg max-w-2xl mx-auto">
-                {t("sections.5.desc")}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {hostingPackages.map((pkg, index) => (
-                <div key={index} className="h-full">
-                  {/* Pushed this on top so heading can be same lvl as other headings */}
-                  {pkg.highlighted && (
-                    <Badge className="bg-gray-700 text-white absolute -translate-y-7 border-transparent self-start mb-4">
-                      {t("sections.5.packages.badge")}
-                    </Badge>
-                  )}
-                  <Card
-                    className={`bg-gray-400/80 dark:bg-black/60 h-full flex flex-col ${
-                      pkg.highlighted
-                        ? "border-gray-600 shadow-lg shadow-gray-950/30"
-                        : "dark:border-gray-900"
-                    }`}
-                  >
-                    <CardContent className="p-6 flex flex-col h-full">
-                      {/* Fixed height top section */}
-                      <div className="h-60">
-                        <h3 className="text-2xl font-bold text-black dark:text-white mb-2">
-                          {pkg.title}
-                        </h3>
-                        <div className="mb-4">
-                          <span className="text-3xl font-bold text-gray-950 dark:text-gray-400">
-                            {pkg.price}
-                          </span>
-                          <span className="text-gray-950 dark:text-gray-200/60 ml-1">
-                            {pkg.period}
-                          </span>
-                        </div>
-                        <p className="text-black dark:text-white">
-                          {pkg.description}
-                        </p>
-                      </div>
-
-                      {/* Features section with flex-grow to push button to bottom */}
-                      <div className="flex-grow flex flex-col">
-                        <div className="border-t border-gray-900 pt-6 mb-6">
-                          <h4 className="font-bold text-gray-950 dark:text-white mb-4">
-                            {t("sections.5.packages.includedLabel")}
-                          </h4>
-                          <ul className="space-y-3">
-                            {pkg.features.map((feature, idx) => (
-                              <li key={idx} className="flex items-start">
-                                <CheckCircle className={`h-5 w-5 text-white/80 dark:text-gray-500 ${isRTL ? "ml-3" : "mr-3"} flex-shrink-0`} />
-                                <span className="text-black dark:text-gray-200/80">
-                                  {feature}
-                                </span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* Button always at the bottom */}
-                        <div className="mt-auto pt-4">
-                          <Button
-                            className={`w-full ${
-                              pkg.highlighted
-                                ? "bg-gradient-to-r from-gray-600 to-gray-700 dark:from-gray-700 dark:to-gray-900 hover:from-gray-700 hover:to-gray-800 dark:hover:from-gray-600 dark:hover:to-gray-800 dark:text-white"
-                                : "bg-black border border-gray-800/30 text-white dark:text-gray-400 hover:bg-gray-950/20"
-                            }`}
-                            onClick={() => router.push("/contact")}
-                          >
-                            {t("sections.5.packages.startBtn")}
-                            {isRTL ? (
-                              <ArrowLeft className="ml-2 h-4 w-4" />
-                            ) : (
-                              <ArrowRight className="ml-2 h-4 w-4" />
-                            )}
-                          </Button>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 dark:bg-gradient-to-b dark:from-gray-950/10 dark:to-black">
-          <div className="container mx-auto px-4 md:px-8 lg:px-12">
-            {/* <motion.div
-              className="max-w-4xl mx-auto bg-gray-300 dark:bg-black/60 border border-gray-900 rounded-xl p-8 md:p-12 text-center"
-              {...getOptimizedAnimationProps(isMobile, isReducedMotion)}
-            > */}
-            <div className="max-w-4xl mx-auto bg-gray-500/80 dark:bg-black/60 border border-gray-900 rounded-xl p-8 md:p-12 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-black mb-6">
-                {t("cta.title")}
-              </h2>
-              <p className="text-lg  dark:text-white text-black mb-8 max-w-2xl mx-auto">
-                {t("cta.desc")}
-              </p>
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-gray-600 to-gray-700 dark:from-gray-700 dark:to-gray-900 hover:from-gray-700 hover:to-gray-800 dark:hover:from-gray-600 dark:hover:to-gray-800 dark:text-white border border-gray-800/30 shadow-lg shadow-gray-950/20 px-8"
-                onClick={() => router.push("/contact")}
-              >
-                {t("cta.startBtn")}
-                {isRTL ? (
-                  <ChevronLeft className="ml-2 h-5 w-5" />
-                ) : (
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                )}
-              </Button>
-            </div>
-            {/* </motion.div> */}
-          </div>
-        </section>
-      </div>
-    </ClientOnly>
+    <main className="bg-[#FAF9F6] text-[#0F0F10] antialiased dark:bg-[#0A0A0B] dark:text-[#F4F4F5]">
+      <Hero t={t} Chevron={Chevron} />
+      <Services t={t} />
+      <Process t={t} />
+      <FAQ t={t} />
+      <CTA t={t} Chevron={Chevron} />
+    </main>
   );
-};
+}
 
-export default WebHostingPage;
+function Hero({
+  t, Chevron,
+}: { t: ReturnType<typeof useTranslations>; Chevron: typeof ArrowRight }) {
+  return (
+    <section className="relative overflow-hidden px-5 pb-16 pt-20 lg:px-10 lg:pb-24 lg:pt-28">
+      <div className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[720px] rounded-full bg-[#C8102E]/15 blur-[140px] dark:bg-[#C8102E]/10" />
+      <div className="relative mx-auto max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#0F0F10]/15 bg-[#0F0F10]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF37] dark:border-white/15 dark:bg-white/5"
+        >
+          <span className="h-1.5 w-1.5 rounded-full bg-[#C8102E]" />
+          {t("badge.1")}
+        </motion.div>
+        <motion.h1
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-5xl font-light leading-[0.95] tracking-[-0.02em]"
+          style={{ fontSize: "clamp(40px, 7vw, 100px)" }}
+        >
+          {t("title.1")}
+          <br />
+          <em className="font-normal italic text-[#C8102E]">{t("title.2")}</em>
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.18 }}
+          className="mt-10 max-w-2xl text-[16px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70 lg:text-[18px]"
+        >
+          {t("desc")}
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.28 }}
+          className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4"
+        >
+          <Link href="/contact">
+            <Button className="rounded-full bg-[#C8102E] px-7 py-6 text-[13.5px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#9F0F24]">
+              {t("startBtn")}
+              <Chevron className="ml-1 h-4 w-4" />
+            </Button>
+          </Link>
+          <Link
+            href="#services"
+            className="group inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-[0.18em] text-[#0F0F10]/80 transition-colors hover:text-[#C8102E] dark:text-white/80 dark:hover:text-[#C8102E]"
+          >
+            {t("plansBtn")} →
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function Services({ t }: { t: ReturnType<typeof useTranslations> }) {
+  const cards = [
+    { Icon: MarkManaged },   { Icon: MarkSecurity },   { Icon: MarkMonitor },
+    { Icon: MarkBackup },    { Icon: MarkPerf },       { Icon: MarkUpdate },
+  ];
+  return (
+    <section id="services" className="px-5 py-24 lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl">
+        <FadeIn>
+          <div className="mb-14">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">
+              {t("badge.2")}
+            </p>
+            <h2 className="max-w-2xl font-light leading-[1.05] tracking-[-0.01em]" style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}>
+              {t("sections.1.title")}
+            </h2>
+            <p className="mt-5 text-[15.5px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
+              {t("sections.1.desc")}
+            </p>
+          </div>
+        </FadeIn>
+        <div className="grid gap-px bg-[#0F0F10]/12 dark:bg-white/10 md:grid-cols-2 lg:grid-cols-3">
+          {cards.map((c, i) => (
+            <FadeIn key={i} delay={i * 0.04}>
+              <div className="h-full bg-[#FAF9F6] p-8 transition-colors hover:bg-white dark:bg-[#0D0D0E] dark:hover:bg-[#121214] lg:p-10">
+                <div className="h-14 w-14 text-[#C8102E]">
+                  <c.Icon />
+                </div>
+                <h3 className="mt-6 text-[19px] font-semibold tracking-tight lg:text-[22px]">
+                  {t(`sections.1.hostFeatures.${i + 1}.title`)}
+                </h3>
+                <p className="mt-3 text-[14px] leading-relaxed text-[#0F0F10]/65 dark:text-white/65">
+                  {t(`sections.1.hostFeatures.${i + 1}.desc`)}
+                </p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Process({ t }: { t: ReturnType<typeof useTranslations> }) {
+  const steps = [1, 2, 3, 4, 5, 6];
+  return (
+    <section className="border-t border-[#0F0F10]/10 bg-[#0F0F10]/[0.02] px-5 py-24 dark:border-white/10 dark:bg-white/[0.02] lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl">
+        <FadeIn>
+          <div className="mb-16 max-w-3xl">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">
+              {t("badge.5")}
+            </p>
+            <h2 className="font-light leading-[1.05] tracking-[-0.01em]" style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}>
+              {t("sections.4.title")}
+            </h2>
+            <p className="mt-5 text-[15.5px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
+              {t("sections.4.desc")}
+            </p>
+          </div>
+        </FadeIn>
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          {steps.map((n, i) => (
+            <FadeIn key={n} delay={i * 0.04}>
+              <div className="border-t border-[#0F0F10]/15 pt-6 dark:border-white/15">
+                <p className="font-light tabular-nums text-[#C8102E]" style={{ fontSize: "clamp(36px, 4vw, 48px)" }}>
+                  0{n}
+                </p>
+                <h3 className="mt-4 text-[18px] font-semibold tracking-tight lg:text-[20px]">
+                  {t(`sections.4.cards.${n}.title`)}
+                </h3>
+                <p className="mt-3 text-[14px] leading-relaxed text-[#0F0F10]/65 dark:text-white/65">
+                  {t(`sections.4.cards.${n}.desc`)}
+                </p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FAQ({ t }: { t: ReturnType<typeof useTranslations> }) {
+  const [open, setOpen] = useState<number | null>(0);
+  const items = [1, 2, 3, 4, 5, 6];
+  return (
+    <section className="px-5 py-24 lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-4xl">
+        <FadeIn>
+          <div className="mb-14">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">
+              {t("badge.6")}
+            </p>
+            <h2 className="font-light leading-[1.05] tracking-[-0.01em]" style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}>
+              FAQ
+            </h2>
+            <p className="mt-5 text-[15.5px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
+              Common questions about our hosting services.
+            </p>
+          </div>
+        </FadeIn>
+        <div className="divide-y divide-[#0F0F10]/10 border-y border-[#0F0F10]/10 dark:divide-white/10 dark:border-white/10">
+          {items.map((n, i) => {
+            const isOpen = open === i;
+            return (
+              <FadeIn key={n} delay={i * 0.02}>
+                <div>
+                  <button
+                    type="button"
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    className="flex w-full items-center justify-between gap-6 py-5 text-left transition-colors hover:text-[#C8102E]"
+                  >
+                    <span className="text-[15px] font-semibold tracking-tight lg:text-[16.5px]">
+                      {`Question ${n}`}
+                    </span>
+                    <ChevronDown
+                      className={`h-4 w-4 shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-[#C8102E]" : ""}`}
+                    />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <p className="pb-5 pr-10 text-[14.5px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
+                          Answer content here
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </FadeIn>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CTA({
+  t, Chevron,
+}: { t: ReturnType<typeof useTranslations>; Chevron: typeof ArrowRight }) {
+  return (
+    <section className="px-5 pb-24 pt-12 lg:px-10 lg:pb-32">
+      <FadeIn>
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-[#0F0F10] p-12 text-white dark:bg-[#141416] lg:p-20">
+          <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-[#C8102E]/25 blur-[120px]" />
+          <div className="pointer-events-none absolute -bottom-40 -left-20 h-96 w-96 rounded-full bg-[#C8102E]/15 blur-[120px]" />
+          <div className="relative">
+            <Sparkles className="h-7 w-7 text-[#C8102E]" />
+            <h2 className="mt-6 max-w-3xl font-light leading-[1.0] tracking-[-0.02em]" style={{ fontSize: "clamp(32px, 5vw, 64px)" }}>
+              {t("cta.title")}
+            </h2>
+            <p className="mt-6 max-w-xl text-[15.5px] leading-relaxed text-white/75 lg:text-[17px]">
+              {t("cta.desc")}
+            </p>
+            <Link href="/contact" className="mt-10 inline-flex items-center gap-1.5 rounded-full bg-[#C8102E] px-7 py-4 text-[13px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#9F0F24]">
+              {t("startBtn")}
+              <Chevron className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </FadeIn>
+    </section>
+  );
+}
+
+function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+function MarkManaged() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <rect x="12" y="16" width="40" height="28" rx="2" stroke="currentColor" strokeWidth="1.2" />
+      <line x1="12" y1="22" x2="52" y2="22" stroke="currentColor" strokeWidth="1.2" />
+      <circle cx="18" cy="19" r="1.5" fill="currentColor" />
+      <circle cx="26" cy="19" r="1.5" fill="currentColor" />
+      <line x1="16" y1="28" x2="48" y2="28" stroke="currentColor" strokeWidth="1" />
+      <line x1="16" y1="36" x2="48" y2="36" stroke="currentColor" strokeWidth="1" />
+    </svg>
+  );
+}
+
+function MarkSecurity() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <path d="M32 8 L52 16 L52 32 Q 52 48 32 56 Q 12 48 12 32 L12 16 Z" stroke="currentColor" strokeWidth="1.5" fill="none" />
+      <path d="M24 30 L30 36 L40 24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function MarkMonitor() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <polyline points="12,48 24,32 36,40 52,16" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="12" cy="48" r="2.5" fill="currentColor" />
+      <circle cx="24" cy="32" r="2.5" fill="currentColor" />
+      <circle cx="36" cy="40" r="2.5" fill="currentColor" />
+      <circle cx="52" cy="16" r="2.5" fill="currentColor" />
+    </svg>
+  );
+}
+
+function MarkBackup() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <path d="M14 28 Q14 22 20 22 L44 22 Q50 22 50 28 L50 46 Q50 52 44 52 L20 52 Q14 52 14 46 Z" stroke="currentColor" strokeWidth="1.2" />
+      <path d="M32 36 L32 44" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M28 40 L32 44 L36 40" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function MarkPerf() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <rect x="10" y="18" width="44" height="30" rx="2" stroke="currentColor" strokeWidth="1.2" />
+      <line x1="10" y1="24" x2="54" y2="24" stroke="currentColor" strokeWidth="1.2" />
+      <path d="M16 34 L24 30 L32 36 L40 28 L48 34" stroke="currentColor" strokeWidth="1.2" fill="none" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function MarkUpdate() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <circle cx="32" cy="32" r="14" stroke="currentColor" strokeWidth="1.2" />
+      <path d="M32 18 L32 32 L42 32" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M42 20 Q46 24 46 32 Q46 40 42 44" stroke="currentColor" strokeWidth="1.2" fill="none" strokeLinecap="round" />
+    </svg>
+  );
+}

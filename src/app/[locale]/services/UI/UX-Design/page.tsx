@@ -1,109 +1,30 @@
+/**
+ * UI/UX Design service page — 2026 rewrite.
+ *
+ * Follows the web-development pattern with dark-first, red + black + gold,
+ * display typography, and bespoke SVG marks. Features a preserved portfolio
+ * projects section with live template demos (Prism, NOIR, Atelier Hush, Meridian).
+ */
 "use client";
-import React from "react";
-import { motion } from "motion/react";
-import { useRouter } from "next/navigation";
+
+import React, { useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "motion/react";
 import {
-  ChevronRight,
-  ArrowRight,
-  Eye,
-  Lightbulb,
-  PenTool,
-  Layers,
-  Users,
-  Monitor,
-  MessageSquare,
-  CheckCircle,
-  ArrowLeft,
-  ChevronLeft,
+  ArrowRight, ArrowLeft, Sparkles, ChevronDown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { isRtlLang } from "rtl-detect";
-import Image from "next/image";
 
-// Animation variants
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
-// const staggerContainer = {
-//   hidden: { opacity: 0 },
-//   visible: {
-//     opacity: 1,
-//     transition: {
-//       staggerChildren: 0.1,
-//     },
-//   },
-// };
-
-const UIUXDesignPage = () => {
-  const router = useRouter();
+export default function UIUXDesignPage() {
   const t = useTranslations("ServicePage.UI");
   const locale = useLocale();
   const isRTL = isRtlLang(locale);
+  const Chevron = isRTL ? ArrowLeft : ArrowRight;
 
-  // Design offerings data
-  const designOfferings = [
-    {
-      title: t("sections.1.offerings.1.title"),
-      description: t("sections.1.offerings.1.desc"),
-      icon: Users,
-      features: [
-        t("sections.1.offerings.1.features.1"),
-        t("sections.1.offerings.1.features.2"),
-        t("sections.1.offerings.1.features.3"),
-        t("sections.1.offerings.1.features.4"),
-      ],
-    },
-    {
-      title: t("sections.1.offerings.2.title"),
-      description: t("sections.1.offerings.2.desc"),
-      icon: Monitor,
-      features: [
-        t("sections.1.offerings.2.features.1"),
-        t("sections.1.offerings.2.features.2"),
-        t("sections.1.offerings.2.features.3"),
-        t("sections.1.offerings.2.features.4"),
-      ],
-    },
-    {
-      title: t("sections.1.offerings.3.title"),
-      description: t("sections.1.offerings.3.desc"),
-      icon: Eye,
-      features: [
-        t("sections.1.offerings.3.features.1"),
-        t("sections.1.offerings.3.features.2"),
-        t("sections.1.offerings.3.features.3"),
-        t("sections.1.offerings.3.features.4"),
-      ],
-    },
-    {
-      title: t("sections.1.offerings.4.title"),
-      description: t("sections.1.offerings.4.desc"),
-      icon: Layers,
-      features: [
-        t("sections.1.offerings.4.features.1"),
-        t("sections.1.offerings.4.features.2"),
-        t("sections.1.offerings.4.features.3"),
-        t("sections.1.offerings.4.features.4"),
-      ],
-    },
-  ];
-
-  // Portfolio projects — swapped the 4 broken placeholder cards out
-  // for 4 of our live template demos. Each links straight into the
-  // working /templates/<industry> site so a prospect clicks "SaaS
-  // dashboard" and lands inside Prism instead of staring at a missing
-  // image. Chose four that span our UI/UX range: dashboard-heavy,
-  // e-commerce editorial, minimal boutique, and data-grid real estate.
+  // Portfolio projects with live template demos
   const portfolioProjects = [
     {
       title: "Prism · SaaS platform",
@@ -131,821 +52,422 @@ const UIUXDesignPage = () => {
     },
   ];
 
-  // Design process steps
-  const designProcess = [
-    {
-      number: "01",
-      title: t("sections.3.process.1.title"),
-      description: t("sections.3.process.1.desc"),
-      icon: Lightbulb,
-    },
-    {
-      number: "02",
-      title: t("sections.3.process.2.title"),
-      description: t("sections.3.process.2.desc"),
-      icon: Users,
-    },
-    {
-      number: "03",
-      title: t("sections.3.process.3.title"),
-      description: t("sections.3.process.3.desc"),
-      icon: PenTool,
-    },
-    {
-      number: "04",
-      title: t("sections.3.process.4.title"),
-      description: t("sections.3.process.4.desc"),
-      icon: Eye,
-    },
-    {
-      number: "05",
-      title: t("sections.3.process.5.title"),
-      description: t("sections.3.process.5.desc"),
-      icon: CheckCircle,
-    },
-  ];
-
-  // Packages data
-  const packages = [
-    {
-      title: t("sections.5.package.1.title"),
-      price: "$2,500",
-      description: t("sections.5.package.1.desc"),
-      features: [
-        t("sections.5.package.1.features.1"),
-        t("sections.5.package.1.features.2"),
-        t("sections.5.package.1.features.3"),
-        t("sections.5.package.1.features.4"),
-        t("sections.5.package.1.features.5"),
-      ],
-    },
-    {
-      title: t("sections.5.package.2.title"),
-      price: "$5,500",
-      description: t("sections.5.package.2.desc"),
-      features: [
-        t("sections.5.package.2.features.1"),
-        t("sections.5.package.2.features.2"),
-        t("sections.5.package.2.features.3"),
-        t("sections.5.package.2.features.4"),
-        t("sections.5.package.2.features.5"),
-        t("sections.5.package.2.features.6"),
-        t("sections.5.package.2.features.7"),
-      ],
-      highlighted: true,
-    },
-    {
-      title: t("sections.5.package.3.title"),
-      price: "Custom",
-      description: t("sections.5.package.3.desc"),
-      features: [
-        t("sections.5.package.3.features.1"),
-        t("sections.5.package.3.features.2"),
-        t("sections.5.package.3.features.3"),
-        t("sections.5.package.3.features.4"),
-        t("sections.5.package.3.features.5"),
-        t("sections.5.package.3.features.6"),
-        t("sections.5.package.3.features.7"),
-      ],
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-white overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="pt-24 pb-12 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-          <div className="absolute top-0 left-0 w-full h-full dark:bg-black dark:opacity-70"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white via-[#C8102E]/20 to-[#C8102E]/40 dark:bg-gradient-to-br dark:from-[#C8102E]/10 dark:via-transparent dark:to-transparent"></div>
-        </div>
+    <main className="bg-[#FAF9F6] text-[#0F0F10] antialiased dark:bg-[#0A0A0B] dark:text-[#F4F4F5]">
+      <Hero t={t} Chevron={Chevron} />
+      <Offerings t={t} />
+      <Portfolio portfolioProjects={portfolioProjects} t={t} Chevron={Chevron} />
+      <Process t={t} />
+      <FAQ t={t} />
+      <CTA t={t} Chevron={Chevron} />
+    </main>
+  );
+}
 
-        <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-          {/* <motion.div
-            className="max-w-3xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          > */}
-          <div className="max-w-3xl">
-            <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-4 px-3 py-1">
-              {t("badge.1")}
-            </Badge>
-            <h1 className="text-4xl text-black dark:text-white md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              {t("title.1")}
-              <span className="text-[#C8102E] dark:text-white block">
-                {t("title.2")}
-              </span>
-            </h1>
-            <p className="text-lg font-semibold md:text-xl text-black dark:text-white/80 mb-8">
-              {t("desc")}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              {/* Need to fix visibility of this btn */}
-              <Button
-                className="bg-[#C8102E] hover:bg-[#9F0F24] 
-                     text-white"
-                size="lg"
-                onClick={() => router.push("/contact")}
-              >
-                {t("consultBtn")}
-                {isRTL ? (
-                  <ArrowLeft className="ml-2 h-4 w-4" />
-                ) : (
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                )}
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-[#0F0F10]/10 dark:border-white/10 text-[#C8102E] dark:text-[#C8102E] bg-[#C8102E]/10 dark:bg-[#C8102E]/10 hover:bg-[#9F0F24] dark:hover:bg-[#9F0F24] hover:text-white dark:hover:text-white"
-                onClick={() => router.push("#portfolio")}
-              >
-                {t("workBtn")}
-                {isRTL ? (
-                  <ChevronLeft className="ml-2 h-4 w-4" />
-                ) : (
-                  <ChevronRight className="ml-2 h-4 w-4" />
-                )}
-              </Button>
-            </div>
-          </div>
-          {/* </motion.div> */}
-        </div>
-      </section>
+/* ─── Hero ─────────────────────────────────────────────────────── */
 
-      {/* Services Overview */}
-      <section className="py-16 relative overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#C8102E]/15 dark:bg-[#C8102E]/10 rounded-full blur-[100px]"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#C8102E]/15 dark:bg-[#C8102E]/10 rounded-full blur-[100px]"></div>
+function Hero({
+  t, Chevron,
+}: { t: ReturnType<typeof useTranslations>; Chevron: typeof ArrowRight }) {
+  return (
+    <section className="relative overflow-hidden px-5 pb-16 pt-20 lg:px-10 lg:pb-24 lg:pt-28">
+      <div className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[720px] rounded-full bg-[#C8102E]/15 blur-[140px] dark:bg-[#C8102E]/10" />
 
-        <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20">
-          {/* <motion.div
-            className="text-center mb-16"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-          > */}
-          <div className="text-center mb-16">
-            <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-4 px-3 py-1">
+      <div className="relative mx-auto max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#0F0F10]/15 bg-[#0F0F10]/[0.03] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF37] dark:border-white/15 dark:bg-white/5"
+        >
+          <span className="h-1.5 w-1.5 rounded-full bg-[#C8102E]" />
+          {t("badge.1")}
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-5xl font-light leading-[0.95] tracking-[-0.02em]"
+          style={{ fontSize: "clamp(40px, 7vw, 100px)" }}
+        >
+          {t("title.1")}
+          <br />
+          <em className="font-normal italic text-[#C8102E]">{t("title.2")}</em>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.18 }}
+          className="mt-10 max-w-2xl text-[16px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70 lg:text-[18px]"
+        >
+          {t("desc")}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.28 }}
+          className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4"
+        >
+          <Link href="/contact">
+            <Button className="rounded-full bg-[#C8102E] px-7 py-6 text-[13.5px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#9F0F24]">
+              {t("consultBtn")}
+              <Chevron className="ml-1 h-4 w-4" />
+            </Button>
+          </Link>
+          <Link
+            href="#portfolio"
+            className="group inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-[0.18em] text-[#0F0F10]/80 transition-colors hover:text-[#C8102E] dark:text-white/80 dark:hover:text-[#C8102E]"
+          >
+            {t("workBtn")} →
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Offerings ────────────────────────────────────────────────── */
+
+function Offerings({ t }: { t: ReturnType<typeof useTranslations> }) {
+  return (
+    <section className="border-t border-[#0F0F10]/10 bg-[#0F0F10]/[0.02] px-5 py-24 dark:border-white/10 dark:bg-white/[0.02] lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl">
+        <FadeIn>
+          <div className="mb-14">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">
               {t("badge.2")}
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-              <span>
-                {t("sections.1.title")}
-              </span>
+            </p>
+            <h2
+              className="max-w-2xl font-light leading-[1.05] tracking-[-0.01em]"
+              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
+            >
+              {t("sections.1.title")}
             </h2>
-            <p className="text-black dark:text-white/90 text-lg max-w-2xl mx-auto">
+            <p className="mt-5 text-[15.5px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
               {t("sections.1.desc")}
             </p>
           </div>
-          {/* </motion.div> */}
+        </FadeIn>
 
-          {/* <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          > */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {designOfferings.map((service, index) => (
-              <motion.div key={index} variants={fadeIn}>
-                <Card className="bg-[#C8102E]/10 dark:bg-black/60 border-[#0F0F10]/10 dark:border-white/10 backdrop-blur-sm h-full group hover:border-[#0F0F10]/20 dark:hover:border-white/20 transition-colors">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#C8102E] to-[#9F0F24] p-3 mb-4 transform group-hover:scale-110 transition-transform">
-                      <service.icon className="w-full h-full text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold text-[#C8102E] dark:text-white mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-black dark:text-white/80 mb-4">
-                      {service.description}
-                    </p>
-
-                    <ul className="space-y-2">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start">
-                          {isRTL ? (
-                            <ChevronLeft className="h-4 w-4 text-black dark:text-[#D4AF37] mt-1 mr-2 flex-shrink-0" />
-                          ) : (
-                            <ChevronRight className="h-4 w-4 text-black dark:text-[#D4AF37] mt-1 mr-2 flex-shrink-0" />
-                          )}
-                          <span className="text-black dark:text-white text-sm">
-                            {feature}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-          {/* </motion.div> */}
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {[1, 2, 3, 4].map((i) => (
+            <FadeIn key={i} delay={i * 0.04}>
+              <div className="h-full bg-[#FAF9F6] p-8 transition-colors hover:bg-white dark:bg-[#0D0D0E] dark:hover:bg-[#121214] lg:p-10 border border-[#0F0F10]/12 dark:border-white/10">
+                <div className="h-14 w-14 text-[#C8102E] mb-6">
+                  {i === 1 ? <MarkResearch /> : i === 2 ? <MarkInterface /> : i === 3 ? <MarkTesting /> : <MarkDesignSystem />}
+                </div>
+                <h3 className="text-[19px] font-semibold tracking-tight lg:text-[22px]">
+                  {t(`sections.1.offerings.${i}.title`)}
+                </h3>
+                <p className="mt-3 text-[14px] leading-relaxed text-[#0F0F10]/65 dark:text-white/65">
+                  {t(`sections.1.offerings.${i}.desc`)}
+                </p>
+                <ul className="mt-5 space-y-1.5">
+                  {[1, 2, 3, 4].map((j) => (
+                    <li key={j} className="text-[13px] text-[#0F0F10]/65 dark:text-white/65 flex items-start gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#C8102E] mt-1.5 flex-shrink-0" />
+                      {t(`sections.1.offerings.${i}.features.${j}`)}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </FadeIn>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      {/* Portfolio Section */}
-      <section
-        id="portfolio"
-        className="py-20 dark:bg-white/[0.02] relative overflow-hidden"
-      >
-        <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-          {/* <motion.div
-            className="text-center mb-16"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-          > */}
-          <div className="text-center mb-16">
-            <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-4 px-3 py-1">
+/* ─── Portfolio Projects ───────────────────────────────────────── */
+
+function Portfolio({
+  portfolioProjects,
+  t,
+  Chevron,
+}: {
+  portfolioProjects: Array<{ title: string; category: string; href: string; gradient: string }>;
+  t: ReturnType<typeof useTranslations>;
+  Chevron: typeof ArrowRight;
+}) {
+  return (
+    <section id="portfolio" className="px-5 py-24 lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl">
+        <FadeIn>
+          <div className="mb-14">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">
               {t("badge.3")}
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-              <span>
-                {t("sections.2.title")}
-              </span>
+            </p>
+            <h2
+              className="max-w-2xl font-light leading-[1.05] tracking-[-0.01em]"
+              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
+            >
+              {t("sections.2.title")}
             </h2>
-            <p className="text-black dark:text-amber-50 text-lg max-w-2xl mx-auto">
+            <p className="mt-5 text-[15.5px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
               {t("sections.2.desc")}
             </p>
           </div>
-          {/* </motion.div> */}
+        </FadeIn>
 
-          {/* either comment this out blaze (below ) or add photos*/}
-          {/* Blaze: I'll add photos */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {portfolioProjects.map((project, index) => (
-              <a
-                key={index}
-                href={project.href}
-                className="group block overflow-hidden rounded-2xl border border-[#0F0F10]/10 dark:border-white/10 transition-all hover:-translate-y-1 hover:border-[#C8102E]/40 hover:shadow-[0_30px_60px_-20px_rgba(200,16,46,0.3)]"
-              >
-                <div
-                  className="relative aspect-[4/3] overflow-hidden"
-                  style={{ background: project.gradient }}
-                >
-                  {/* Subtle live-demo badge top-right */}
-                  <span className="absolute right-4 top-4 rounded-full bg-white/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white backdrop-blur-sm">
-                    Live demo
-                  </span>
-                  {/* Gradient fade for legibility */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  {/* Label block */}
-                  <div className="absolute inset-0 flex flex-col justify-end p-6">
-                    <p className="text-[10.5px] font-semibold uppercase tracking-[0.24em] text-[#D4AF37]">
-                      {project.category}
-                    </p>
-                    <h3 className="mt-2 text-[22px] font-semibold leading-tight text-white lg:text-[26px]">
-                      {project.title}
-                    </h3>
-                    <div className="mt-3 flex items-center gap-1.5 text-[11.5px] font-semibold uppercase tracking-[0.2em] text-white/80 transition-all group-hover:gap-3 group-hover:text-white">
-                      Walk the demo
-                      <ArrowRight className="h-3 w-3" />
+        <div className="grid gap-5 md:grid-cols-2">
+          {portfolioProjects.map((project, i) => (
+            <FadeIn key={project.title} delay={i * 0.06}>
+              <Link href={project.href}>
+                <article className="group cursor-pointer">
+                  <div
+                    className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#0F0F10]/10 dark:border-white/10 transition-all group-hover:-translate-y-1 group-hover:border-[#C8102E]/40 group-hover:shadow-[0_30px_60px_-20px_rgba(200,16,46,0.3)]"
+                    style={{ background: project.gradient }}
+                  >
+                    <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-[#0A0A0B] via-[#0A0A0B]/70 to-transparent p-6">
+                      <span className="rounded-full bg-white/15 px-2.5 py-1 text-[10.5px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-sm w-fit mb-3">
+                        {project.category}
+                      </span>
+                      <h3 className="text-[20px] font-semibold text-white leading-tight">{project.title}</h3>
+                      <div className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-[#C8102E] px-4 py-2 text-[11.5px] font-semibold uppercase tracking-[0.18em] text-white w-fit">
+                        View Demo
+                        <Chevron className="h-3 w-3" />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </a>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Button
-              variant="outline"
-              className="border-[#0F0F10]/10 dark:border-white/10 text-[#C8102E] dark:text-[#C8102E] bg-[#C8102E]/10 dark:bg-[#C8102E]/10 hover:bg-[#9F0F24] dark:hover:bg-[#9F0F24] hover:text-white dark:hover:text-white"
-              onClick={() => router.push("/portfolio")}
-            >
-              {t("viewAllBtn")}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
+                </article>
+              </Link>
+            </FadeIn>
+          ))}
         </div>
-      </section>
 
-      {/* Design Process */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-          {/* <motion.div
-            className="text-center mb-16"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-          > */}
-          <div className="text-center mb-16">
-            <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-4 px-3 py-1">
+        <FadeIn delay={0.24}>
+          <div className="mt-12 flex justify-center">
+            <Link href="/portfolio">
+              <Button className="rounded-full border border-[#0F0F10]/20 bg-transparent px-7 py-6 text-[13.5px] font-semibold uppercase tracking-[0.16em] text-[#0F0F10]/80 transition-colors hover:bg-[#0F0F10]/[0.05] dark:border-white/20 dark:text-white/80 dark:hover:bg-white/[0.05]">
+                {t("viewAllBtn")}
+                <Chevron className="ml-1 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Process ──────────────────────────────────────────────────── */
+
+function Process({ t }: { t: ReturnType<typeof useTranslations> }) {
+  const steps = [1, 2, 3, 4, 5];
+  return (
+    <section className="border-t border-[#0F0F10]/10 bg-[#0F0F10]/[0.02] px-5 py-24 dark:border-white/10 dark:bg-white/[0.02] lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl">
+        <FadeIn>
+          <div className="mb-16 max-w-3xl">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">
               {t("badge.4")}
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-              <span>
-                {t("sections.3.title")}
-              </span>
+            </p>
+            <h2
+              className="font-light leading-[1.05] tracking-[-0.01em]"
+              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
+            >
+              {t("sections.3.title")}
             </h2>
-            <p className="text-black dark:text-white/70 text-lg max-w-2xl mx-auto">
+            <p className="mt-5 text-[15.5px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
               {t("sections.3.desc")}
             </p>
           </div>
-          {/* </motion.div> */}
+        </FadeIn>
 
-          <div className="relative">
-            {/* Connector line */}
-            <div className={`absolute ${isRTL ? "right-[27px]" : "left-[27px]"} top-8 bottom-8 w-1 bg-gradient-to-b from-[#C8102E] to-[#0A0A0B] rounded-full hidden md:block`}></div>
-
-            <div className="space-y-12 relative">
-              {designProcess.map((step, index) => (
-                // <motion.div
-                //   key={index}
-                //   initial={{ opacity: 0, x: -20 }}
-                //   whileInView={{ opacity: 1, x: 0 }}
-                //   viewport={{ once: true }}
-                //   transition={{ duration: 0.5, delay: index * 0.1 }}
-                //   className="flex flex-col md:flex-row gap-6"
-                // >
-                <div key={index} className="flex flex-col md:flex-row gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#D4AF37] dark:from-[#D4AF37] dark:to-[#D4AF37] flex items-center justify-center shadow-lg shadow-black/10 relative z-10">
-                      <step.icon className="h-6 w-6 text-black dark:text-white" />
-                    </div>
-                  </div>
-                  <div className="bg-[#C8102E]/10 dark:bg-black/60 border border-[#0F0F10]/10 dark:border-white/10 rounded-xl p-6 flex-grow backdrop-blur-sm">
-                    <div className="flex items-center mb-3">
-                      <span className={`text-sm font-bold text-black dark:text-[#D4AF37] ${isRTL ? "ml-2" : "mr-2"}`}>
-                        {step.number}
-                      </span>
-                      <h3 className="text-xl font-bold text-[#C8102E] dark:text-white">
-                        {step.title}
-                      </h3>
-                    </div>
-                    <p className="text-black dark:text-white/80">
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
-                // </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 dark:bg-white/[0.02]">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          {/* <motion.div
-            className="text-center mb-16"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-          > */}
-          <div className="text-center mb-16">
-            <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-4 px-3 py-1">
-              {t("badge.5")}
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-              <span>
-                {t("sections.4.title")}
-              </span>
-            </h2>
-            <p className="text-black dark:text-white/80 text-lg max-w-2xl mx-auto">
-              {t("sections.4.desc")}
-            </p>
-          </div>
-          {/* </motion.div> */}
-
-          {/* <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          > */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                quote: t("sections.4.quotes.1.quote"),
-                author: t("sections.4.quotes.1.author"),
-                company: t("sections.4.quotes.1.authDesc"),
-                // place holder images should be our logo until we can grab a different photo/idea
-                // sort of how like there are empty person shadow for authors ( your doctor invoice for ex) our logo would be that for us in our sites
-                image: "/codewithali.png",
-              },
-              {
-                quote: t("sections.4.quotes.2.quote"),
-                author: t("sections.4.quotes.2.author"),
-                company: t("sections.4.quotes.2.authDesc"),
-                image: "/codewithali.png",
-              },
-              {
-                quote: t("sections.4.quotes.3.quote"),
-                author: t("sections.4.quotes.3.author"),
-                company: t("sections.4.quotes.3.authDesc"),
-                image: "/codewithali.png",
-              },
-            ].map((testimonial, index) => (
-              // <motion.div key={index} variants={fadeIn} className="h-full">
-              <div key={index} className="h-full">
-                <Card className="bg-[#C8102E]/10 dark:bg-black/60 border-[#0F0F10]/10 dark:border-white/10 backdrop-blur-sm h-full">
-                  <CardContent className="p-6 flex flex-col h-full">
-                    <div className="mb-6">
-                      <MessageSquare className="h-8 w-8 text-[#C8102E] dark:text-[#D4AF37] mb-4" />
-                      <p className="text-black font-bold dark:text-white italic mb-6">
-                        &quot;{testimonial.quote}&quot;
-                      </p>
-                    </div>
-                    <div className="mt-auto flex items-center">
-                      <div className={`w-12 h-12 rounded-full overflow-hidden ${isRTL ? "ml-4" : "mr-4"}`}>
-                        <Image
-                          src={testimonial.image}
-                          alt={testimonial.author}
-                          width={48}
-                          height={48}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div>
-                        <p className="font-bold text-black dark:text-white">
-                          {testimonial.author}
-                        </p>
-                        <p className="text-sm text-black/80 dark:text-white/70">
-                          {testimonial.company}
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-              // </motion.div>
-            ))}
-          </div>
-          {/* </motion.div> */}
-        </div>
-      </section>
-
-      {/* Pricing */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12 ">
-          {/* <motion.div
-            className="text-center mb-16"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-          > */}
-          <div className="text-center mb-16">
-            <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-4 px-3 py-1">
-              {t("badge.6")}
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-              <span>
-                {t("sections.5.title")}
-              </span>
-            </h2>
-            <p className="text-black dark:text-white/80 text-lg max-w-2xl mx-auto">
-              {t("sections.5.desc")}
-            </p>
-          </div>
-          {/* </motion.div> */}
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
-              // <motion.div
-              //   key={index}
-              //   initial={{ opacity: 0, y: 20 }}
-              //   whileInView={{ opacity: 1, y: 0 }}
-              //   viewport={{ once: true }}
-              //   transition={{ duration: 0.5, delay: index * 0.1 }}
-              //   className="h-full"
-              // >
-              <div key={index} className="h-full">
-                {/* Pushed this on top of card so card header stays same lvl as other ones */}
-                {pkg.highlighted && (
-                  <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] absolute -translate-y-7 dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent self-start mb-4">
-                    {t("sections.5.package.whatIncluded")}
-                  </Badge>
-                )}
-                <Card
-                  className={`bg-[#C8102E]/10 dark:bg-black/60 backdrop-blur-sm h-full flex flex-col ${
-                    pkg.highlighted
-                      ? "border-[#0F0F10]/10 dark:border-white/10 shadow-lg shadow-black/10"
-                      : "dark:border-[#0F0F10]/10"
-                  }`}
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          {steps.map((n, i) => (
+            <FadeIn key={n} delay={i * 0.04}>
+              <div className="border-t border-[#0F0F10]/15 pt-6 dark:border-white/15">
+                <p
+                  className="font-light tabular-nums text-[#C8102E]"
+                  style={{ fontSize: "clamp(36px, 4vw, 48px)" }}
                 >
-                  <CardContent className="p-6 flex-grow flex flex-col">
-                    <div className="flex flex-col h-full">
-                      {/* Fixed height container for the top content */}
-                      <div className="h-60">
-                        {" "}
-                        {/* Adjust height as needed to fit your content */}
-                        <h3 className="text-2xl font-bold text-black dark:text-white mb-2">
-                          {pkg.title}
-                        </h3>
-                        <div className="mb-4">
-                          <span className="text-3xl font-bold text-black dark:text-[#D4AF37]">
-                            {pkg.price}
-                          </span>
-                          {pkg.price !== "Custom" && (
-                            <span className="text-black/80 dark:text-white/60 ml-1">
-                              {t("sections.5.package.startLabel")}
-                            </span>
-                          )}
-                        </div>
-                        <p className="text-black dark:text-white/70">
-                          {pkg.description}
-                        </p>
-                      </div>
-
-                      {/* What's Included section - now starts at the same height */}
-                      <div className="flex-grow">
-                        <div className="border-t border-[#0F0F10]/10 dark:border-white/10 pt-6 mb-6">
-                          <h4 className="font-bold text-white/95 dark:text-white mb-4">
-                            {t("sections.5.package.whatIncluded")}
-                          </h4>
-                          <ul className="space-y-3">
-                            {pkg.features.map((feature, idx) => (
-                              <li key={idx} className="flex items-start">
-                                <CheckCircle className={`h-5 w-5 text-white dark:text-[#D4AF37] ${isRTL ? "ml-3" : "mr-3"} flex-shrink-0`} />
-                                <span className="text-black dark:text-white/70">
-                                  {feature}
-                                </span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-
-                      {/* Button always at the bottom */}
-                      <div className="mt-auto pt-4">
-                        <Button
-                          className={`w-full ${
-                            pkg.highlighted
-                              ? "bg-[#C8102E] hover:bg-[#9F0F24] dark:hover:from-purple-600 dark:hover:to-purple-800 text-white"
-                              : "bg-black border border-[#0F0F10]/10 dark:text-[#D4AF37] hover:bg-black/80 dark:hover:bg-black/20"
-                          }`}
-                          onClick={() => router.push("/contact")}
-                        >
-                          {t("sections.5.package.startBtn")}
-                          {isRTL ? (
-                            <ArrowLeft className="ml-2 h-4 w-4" />
-                          ) : (
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                          )}
-                        </Button>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                  0{n}
+                </p>
+                <h3 className="mt-4 text-[18px] font-semibold tracking-tight lg:text-[20px]">
+                  {t(`sections.3.process.${n}.title`)}
+                </h3>
+                <p className="mt-3 text-[14px] leading-relaxed text-[#0F0F10]/65 dark:text-white/65">
+                  {t(`sections.3.process.${n}.desc`)}
+                </p>
               </div>
-              // </motion.div>
-            ))}
-          </div>
+            </FadeIn>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      {/* FAQ */}
-      <section className="py-20 dark:bg-white/[0.02]">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          {/* <motion.div
-            className="text-center mb-16"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-          > */}
-          <div className="text-center mb-16">
-            <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] dark:bg-[#D4AF37]/10 dark:text-[#D4AF37] border-transparent mb-4 px-3 py-1">
+/* ─── FAQ ──────────────────────────────────────────────────────── */
+
+function FAQ({ t }: { t: ReturnType<typeof useTranslations> }) {
+  const [open, setOpen] = useState<number | null>(0);
+  const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  return (
+    <section className="px-5 py-24 lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-4xl">
+        <FadeIn>
+          <div className="mb-14">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#D4AF37]">
               {t("badge.7")}
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-transparent">
-              <span>
-                {t("sections.6.title")}
-              </span>
+            </p>
+            <h2
+              className="font-light leading-[1.05] tracking-[-0.01em]"
+              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
+            >
+              {t("sections.6.title")}
             </h2>
-            <p className="text-black dark:text-white/80 text-lg max-w-2xl mx-auto">
+            <p className="mt-5 text-[15.5px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
               {t("sections.6.desc")}
             </p>
           </div>
-          {/* </motion.div> */}
+        </FadeIn>
 
-          <div className="max-w-3xl mx-auto">
-            <Tabs defaultValue="process" className="w-full">
-              <TabsList className="grid grid-cols-2 md:grid-cols-4 bg-[#C8102E]/10 dark:bg-black/60 text-black dark:text-white border border-[#0F0F10]/10 dark:border-white/10 rounded-lg p-1 mb-8">
-                <TabsTrigger
-                  value="process"
-                  className="data-[state=active]:bg-[#C8102E]/30 data-[state=active]:text-white dark:data-[state=active]:text-[#D4AF37]"
-                >
-                  {t("sections.6.tab.1")}
-                </TabsTrigger>
-                <TabsTrigger
-                  value="pricing"
-                  className="data-[state=active]:bg-[#C8102E]/30 data-[state=active]:text-white dark:data-[state=active]:text-[#D4AF37]"
-                >
-                  {t("sections.6.tab.2")}
-                </TabsTrigger>
-                <TabsTrigger
-                  value="deliverables"
-                  className="data-[state=active]:bg-[#C8102E]/30 data-[state=active]:text-white dark:data-[state=active]:text-[#D4AF37]"
-                >
-                  {t("sections.6.tab.3")}
-                </TabsTrigger>
-                <TabsTrigger
-                  value="timeline"
-                  className="data-[state=active]:bg-[#C8102E]/30 data-[state=active]:text-white dark:data-[state=active]:text-[#D4AF37]"
-                >
-                  {t("sections.6.tab.4")}
-                </TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="process" className="space-y-6">
-                {[
-                  {
-                    question: t("sections.6.QA.1.Q"),
-                    answer: t("sections.6.QA.1.A"),
-                  },
-                  {
-                    question: t("sections.6.QA.2.Q"),
-                    answer: t("sections.6.QA.2.A"),
-                  },
-                  {
-                    question: t("sections.6.QA.3.Q"),
-                    answer: t("sections.6.QA.3.A"),
-                  },
-                ].map((faq, index) => (
-                  // <motion.div
-                  //   key={index}
-                  //   initial={{ opacity: 0, y: 10 }}
-                  //   animate={{ opacity: 1, y: 0 }}
-                  //   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  //   className="bg-black/60 border border-purple-900 rounded-xl p-6"
-                  // >
-                  <div
-                    key={index}
-                    className="bg-white dark:bg-black/60 border border-[#0F0F10]/10 dark:border-white/10 rounded-xl p-6"
+        <div className="divide-y divide-[#0F0F10]/10 border-y border-[#0F0F10]/10 dark:divide-white/10 dark:border-white/10">
+          {items.map((n, i) => {
+            const isOpen = open === i;
+            return (
+              <FadeIn key={n} delay={i * 0.02}>
+                <div>
+                  <button
+                    type="button"
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    className="flex w-full items-center justify-between gap-6 py-5 text-left transition-colors hover:text-[#C8102E]"
                   >
-                    <h3 className="text-lg font-bold text-[#C8102E] dark:text-white mb-3">
-                      {faq.question}
-                    </h3>
-                    <p className="dark:text-white/80 text-black/80">
-                      {faq.answer}
-                    </p>
-                  </div>
-                  // </motion.div>
-                ))}
-              </TabsContent>
-
-              <TabsContent value="pricing" className="space-y-6">
-                {[
-                  {
-                    question: t("sections.6.QA.4.Q"),
-                    answer: t("sections.6.QA.4.A"),
-                  },
-                  {
-                    question: t("sections.6.QA.5.Q"),
-                    answer: t("sections.6.QA.5.A"),
-                  },
-                  {
-                    question: t("sections.6.QA.6.Q"),
-                    answer: t("sections.6.QA.6.A"),
-                  },
-                ].map((faq, index) => (
-                  // <motion.div
-                  //   key={index}
-                  //   initial={{ opacity: 0, y: 10 }}
-                  //   animate={{ opacity: 1, y: 0 }}
-                  //   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  //   className="bg-black/60 border border-purple-900 rounded-xl p-6"
-                  // >
-                  <div
-                    key={index}
-                    className="bg-white dark:bg-black/60 border border-[#0F0F10]/10 dark:border-white/10 rounded-xl p-6"
-                  >
-                    <h3 className="text-lg font-bold text-[#C8102E] dark:text-white mb-3">
-                      {faq.question}
-                    </h3>
-                    <p className="dark:text-white/80 text-black/80">
-                      {faq.answer}
-                    </p>
-                  </div>
-                  // </motion.div>
-                ))}
-              </TabsContent>
-
-              <TabsContent value="deliverables" className="space-y-6">
-                {[
-                  {
-                    question: t("sections.6.QA.7.Q"),
-                    answer: t("sections.6.QA.7.A"),
-                  },
-                  {
-                    question: t("sections.6.QA.8.Q"),
-                    answer: t("sections.6.QA.8.A"),
-                  },
-                  {
-                    question: t("sections.6.QA.9.Q"),
-                    answer: t("sections.6.QA.9.A"),
-                  },
-                ].map((faq, index) => (
-                  // <motion.div
-                  //   key={index}
-                  //   initial={{ opacity: 0, y: 10 }}
-                  //   animate={{ opacity: 1, y: 0 }}
-                  //   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  //   className="bg-black/60 border border-purple-900 rounded-xl p-6"
-                  // >
-                  <div
-                    key={index}
-                    className="bg-white dark:bg-black/60 border border-[#0F0F10]/10 dark:border-white/10 rounded-xl p-6"
-                  >
-                    <h3 className="text-lg font-bold text-[#C8102E] dark:text-white mb-3">
-                      {faq.question}
-                    </h3>
-                    <p className="dark:text-white/80 text-black/80">
-                      {faq.answer}
-                    </p>
-                  </div>
-                  // </motion.div>
-                ))}
-              </TabsContent>
-
-              <TabsContent value="timeline" className="space-y-6">
-                {[
-                  {
-                    question: t("sections.6.QA.10.Q"),
-                    answer: t("sections.6.QA.10.A"),
-                  },
-                  {
-                    question: t("sections.6.QA.11.Q"),
-                    answer: t("sections.6.QA.11.A"),
-                  },
-                  {
-                    question: t("sections.6.QA.12.Q"),
-                    answer: t("sections.6.QA.12.A"),
-                  },
-                ].map((faq, index) => (
-                  // <motion.div
-                  //   key={index}
-                  //   initial={{ opacity: 0, y: 10 }}
-                  //   animate={{ opacity: 1, y: 0 }}
-                  //   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  //   className="bg-black/60 border border-purple-900 rounded-xl p-6"
-                  // >
-                  <div
-                    key={index}
-                    className="bg-white dark:bg-black/60 border border-[#0F0F10]/10 dark:border-white/10 rounded-xl p-6"
-                  >
-                    <h3 className="text-lg font-bold text-[#C8102E] dark:text-white mb-3">
-                      {faq.question}
-                    </h3>
-                    <p className="dark:text-white/80 text-black/80">
-                      {faq.answer}
-                    </p>
-                  </div>
-                  // </motion.div>
-                ))}
-              </TabsContent>
-            </Tabs>
-          </div>
+                    <span className="text-[15px] font-semibold tracking-tight lg:text-[16.5px]">
+                      {t(`sections.6.QA.${n}.Q`)}
+                    </span>
+                    <ChevronDown
+                      className={`h-4 w-4 shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-[#C8102E]" : ""}`}
+                    />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <p className="pb-5 pr-10 text-[14.5px] leading-relaxed text-[#0F0F10]/70 dark:text-white/70">
+                          {t(`sections.6.QA.${n}.A`)}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </FadeIn>
+            );
+          })}
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      {/* CTA Section */}
-      <section className="py-20 dark:bg-gradient-to-b dark:from-[#0A0A0B] dark:to-black">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          {/* <motion.div
-            className="max-w-4xl mx-auto bg-black/60 border border-purple-900 rounded-xl p-8 md:p-12 text-center"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-          > */}
-          <div className="max-w-4xl mx-auto bg-[#C8102E]/10 dark:bg-black/60 border border-[#0F0F10]/10 dark:border-white/10 rounded-xl p-8 md:p-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-6">
+/* ─── Final CTA ────────────────────────────────────────────────── */
+
+function CTA({
+  t, Chevron,
+}: { t: ReturnType<typeof useTranslations>; Chevron: typeof ArrowRight }) {
+  return (
+    <section className="px-5 pb-24 pt-12 lg:px-10 lg:pb-32">
+      <FadeIn>
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-[#0F0F10] p-12 text-white dark:bg-[#141416] lg:p-20">
+          <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-[#C8102E]/25 blur-[120px]" />
+          <div className="pointer-events-none absolute -bottom-40 -left-20 h-96 w-96 rounded-full bg-[#C8102E]/15 blur-[120px]" />
+          <div className="relative">
+            <Sparkles className="h-7 w-7 text-[#C8102E]" />
+            <h2
+              className="mt-6 max-w-3xl font-light leading-[1.0] tracking-[-0.02em]"
+              style={{ fontSize: "clamp(32px, 5vw, 64px)" }}
+            >
               {t("cta.title")}
             </h2>
-            <p className="text-lg text-black/80 dark:text-white/80 mb-8 max-w-2xl mx-auto">
+            <p className="mt-6 max-w-xl text-[15.5px] leading-relaxed text-white/75 lg:text-[17px]">
               {t("cta.desc")}
             </p>
-            <Button
-              size="lg"
-              className="bg-[#C8102E] hover:bg-[#9F0F24] 
-                     text-white border border-[#0F0F10]/10 shadow-lg shadow-black/10 px-8"
-              onClick={() => router.push("/contact")}
-            >
+            <Link href="/contact" className="mt-10 inline-flex items-center gap-1.5 rounded-full bg-[#C8102E] px-7 py-4 text-[13px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#9F0F24]">
               {t("consultBtn")}
-              {isRTL ? (
-                <ChevronLeft className="ml-2 h-5 w-5" />
-              ) : (
-                <ChevronRight className="ml-2 h-5 w-5" />
-              )}
-            </Button>
+              <Chevron className="h-4 w-4" />
+            </Link>
           </div>
-          {/* </motion.div> */}
         </div>
-      </section>
-    </div>
+      </FadeIn>
+    </section>
   );
-};
+}
 
-export default UIUXDesignPage;
+/* ─── Primitives ───────────────────────────────────────────────── */
+
+function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/* ─── Bespoke SVG marks ────────────────────────────────────────── */
+
+function MarkResearch() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <circle cx="20" cy="20" r="8" stroke="currentColor" strokeWidth="1.2" />
+      <path d="M28 28 L40 40" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M26 18 L32 22" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+      <path d="M18 26 L22 32" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function MarkInterface() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <rect x="10" y="12" width="44" height="32" rx="2" stroke="currentColor" strokeWidth="1.2" />
+      <line x1="10" y1="20" x2="54" y2="20" stroke="currentColor" strokeWidth="1.2" />
+      <circle cx="16" cy="16" r="1.5" fill="currentColor" />
+      <circle cx="24" cy="16" r="1.5" fill="currentColor" />
+      <circle cx="32" cy="16" r="1.5" fill="currentColor" />
+      <line x1="16" y1="28" x2="48" y2="28" stroke="currentColor" strokeWidth="1" />
+      <line x1="16" y1="36" x2="48" y2="36" stroke="currentColor" strokeWidth="1" />
+    </svg>
+  );
+}
+
+function MarkTesting() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <rect x="12" y="14" width="40" height="36" rx="2" stroke="currentColor" strokeWidth="1.2" />
+      <path d="M24 28 L30 34 L40 22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <line x1="12" y1="22" x2="52" y2="22" stroke="currentColor" strokeWidth="1.2" />
+    </svg>
+  );
+}
+
+function MarkDesignSystem() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="h-full w-full">
+      <rect x="10" y="10" width="12" height="12" stroke="currentColor" strokeWidth="1.2" />
+      <rect x="26" y="10" width="12" height="12" stroke="currentColor" strokeWidth="1.2" />
+      <rect x="42" y="10" width="12" height="12" stroke="currentColor" strokeWidth="1.2" />
+      <rect x="10" y="26" width="12" height="12" stroke="currentColor" strokeWidth="1.2" />
+      <rect x="26" y="26" width="12" height="12" stroke="currentColor" strokeWidth="1.2" />
+      <rect x="42" y="26" width="12" height="12" stroke="currentColor" strokeWidth="1.2" />
+      <rect x="10" y="42" width="12" height="12" stroke="currentColor" strokeWidth="1.2" />
+      <rect x="26" y="42" width="12" height="12" stroke="currentColor" strokeWidth="1.2" />
+      <rect x="42" y="42" width="12" height="12" stroke="currentColor" strokeWidth="1.2" />
+    </svg>
+  );
+}
