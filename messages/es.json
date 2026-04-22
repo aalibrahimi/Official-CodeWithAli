@@ -91,19 +91,19 @@
       "description": "No solo tomes nuestra palabra – escucha de las empresas que hemos ayudado a tener éxito.",
       "items": {
         "1": {
-          "name": "Alex Thompson",
-          "position": "CEO, TechStart Inc.",
-          "content": "Entregaron nuestro sitio web antes de lo programado y superando nuestras expectativas. Su atención al detalle y experiencia en diseño responsive marcaron la diferencia."
+          "name": "Zahra Al-Najah",
+          "position": "Propietaria, Knoz Al-Najah",
+          "content": "CodeWithAli construyó el sitio de nuestro restaurante con el mismo cuidado que ponemos en nuestra comida. Los pedidos en línea aumentaron, las reservas se gestionan solas y los clientes siempre elogian lo fácil que es usar el sitio."
         },
         "2": {
-          "name": "Sarah Chen",
-          "position": "Directora de Marketing, StyleShop",
-          "content": "Nuestra tienda de comercio electrónico ha visto un aumento del 45% en conversiones desde el rediseño. Su equipo entendió nuestra marca e implementó exactamente lo que necesitábamos."
+          "name": "Derek Chen",
+          "position": "Director Creativo, Phantom Forge",
+          "content": "Capturaron exactamente el tono oscuro y cinematográfico que nuestro estudio quería — rápido, impactante y coherente con nuestra marca en todo. El equipo de Ali entregó a tiempo y siguió puliendo detalles mucho después de lo habitual."
         },
         "3": {
-          "name": "Marcus Johnson",
-          "position": "Fundador, HealthApp",
-          "content": "Desde el concepto hasta el lanzamiento, nos guiaron a través de todo el proceso de desarrollo de la aplicación con experiencia y profesionalismo. El producto final superó nuestra visión."
+          "name": "Miguel Ramirez",
+          "position": "Gerente de Proyecto, Merged Construction",
+          "content": "Llegamos con un brief desordenado y nos fuimos con un sitio que realmente atrae clientes cualificados. Comunicación clara durante todo el proceso, y las herramientas de administración hacen que actualizar las galerías sea sencillo."
         }
       }
     },
@@ -187,22 +187,22 @@
         "title": "Resultados reales de empresas que confiaron en nosotros para sus necesidades digitales."
       },
       "quots": {
-        "1": "CodeWithAli transformó nuestra plataforma de comercio electrónico, resultando en un aumento del 45% en conversiones y una mejora significativa en la satisfacción del usuario. Su experiencia técnica combinada con visión estratégica marcó la diferencia.",
-        "2": "Trabajar con CodeWithAli en nuestro panel de control empresarial ha sido transformador. Su equipo entendió rápidamente nuestros complejos requisitos y entregó una solución que ha optimizado nuestras operaciones y mejorado la toma de decisiones.",
-        "3": "La aplicación móvil que CodeWithAli desarrolló para nuestro servicio de salud ha recibido comentarios excepcionales de los usuarios. Su atención a la seguridad y experiencia de usuario se muestra en cada aspecto del producto terminado.",
-        "4": "Como startup, necesitábamos un socio que pudiera guiarnos a través de los desafíos técnicos de lanzar nuestra plataforma. CodeWithAli proporcionó no solo experiencia en desarrollo sino también valiosa contribución estratégica que ayudó a dar forma a nuestro producto."
+        "1": "Mario's Hauling triplicó las llamadas entrantes en el primer mes tras el lanzamiento. CodeWithAli entendió al tipo de cliente al que servimos y construyó un sitio que les habla directamente — simple, confiable y rápido en cualquier móvil.",
+        "2": "Nuestra panadería necesitaba un sitio tan cálido como se siente nuestra tienda. Entregaron mucho más que un sitio web — ahora tenemos menú en línea, formulario de entrega y una presencia de marca de la que estamos orgullosos.",
+        "3": "De la marca al sistema de reservas, CodeWithAli convirtió a Reggaeeli en una verdadera plataforma. Nuestros eventos se agotan más rápido y el equipo siguió iterando con nosotros hasta que cada detalle quedó perfecto.",
+        "4": "Simplicity no existiría en su forma actual sin CodeWithAli. Trataron nuestra startup como si fuera propia y entregaron un producto que realmente impresiona a inversores y usuarios por igual."
       },
       "author": {
-        "1": "Emma Thompson",
-        "2": "Michael Rodriguez",
-        "3": "Dr. James Wilson",
-        "4": "Sophia Chen"
+        "1": "Mario Santos",
+        "2": "Layla Hassan",
+        "3": "Eli Scott",
+        "4": "Sem Seem"
       },
       "job": {
-        "1": "CTO, StyleHub",
-        "2": " Fundador, DataVision Inc.",
-        "3": " Director, HealthConnect",
-        "4": " Co-fundadora, NextLevel Tech"
+        "1": "Propietario, Mario's Hauling",
+        "2": "Propietaria, Iraqi Sweets",
+        "3": "Fundador, Reggaeeli",
+        "4": "Cofundadora, Simplicity"
       }
     },
     "process": {
@@ -870,19 +870,19 @@
           "desc": "Escucha de empresas que han transformado su presencia digital con nuestros servicios de diseño UI/UX.",
           "quotes": {
             "1": {
-              "quote": "El rediseño transformó completamente nuestras métricas de participación de usuarios. Las tasas de conversión aumentaron un 40% durante el primer mes.",
-              "author": "Sarah Johnson",
-              "authDesc": "TechStart Solutions"
+              "quote": "Hicieron que nuestro producto de presupuestos se sintiera intuitivo desde la primera pantalla. Cada prueba de usuario fue más fluida que la anterior y el acabado visual elevó toda nuestra marca.",
+              "author": "Tariq Rahman",
+              "authDesc": "Cofundador, Budgetary"
             },
             "2": {
-              "quote": "Su investigación de usuarios descubrió puntos problemáticos que habíamos pasado por alto durante años. Los diseños de interfaz resultantes han mejorado significativamente la satisfacción del cliente.",
-              "author": "Michael Chen",
-              "authDesc": "Global Innovations"
+              "quote": "Nuestro flujo de pedidos del restaurante perdía clientes a mitad de camino. CodeWithAli lo rediseñó de principio a fin y las conversiones subieron casi de inmediato — limpio, rápido y fiel a la marca.",
+              "author": "Zahra Al-Najah",
+              "authDesc": "Propietaria, Knoz Al-Najah"
             },
             "3": {
-              "quote": "Trabajar con este equipo fue perfecto. Tradujeron nuestros complejos requisitos en un diseño intuitivo que nuestros usuarios adoran.",
-              "author": "Emma Rodriguez",
-              "authDesc": "HealthPlus"
+              "quote": "Tradujeron un flujo de construcción complejo en una interfaz que incluso nuestros equipos en obra pueden usar desde el móvil. Cada detalle, desde los iconos hasta la animación, se sintió deliberado.",
+              "author": "Miguel Ramirez",
+              "authDesc": "Gerente de Proyecto, Merged Construction"
             }
           }
         },

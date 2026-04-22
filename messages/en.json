@@ -91,19 +91,19 @@
       "description": "Don't just take our word for it – hear from the businesses we've helped succeed.",
       "items": {
         "1": {
-          "name": "Alex Thompson",
-          "position": "CEO, TechStart Inc.",
-          "content": "They delivered our company website ahead of schedule and beyond our expectations. Their attention to detail and responsive design expertise made all the difference."
+          "name": "Zahra Al-Najah",
+          "position": "Owner, Knoz Al-Najah",
+          "content": "CodeWithAli built our restaurant site with the same care we put into our food. Online orders went up, reservations run themselves, and customers constantly compliment how easy the site feels to use."
         },
         "2": {
-          "name": "Sarah Chen",
-          "position": "Marketing Director, StyleShop",
-          "content": "Our e-commerce site has seen a 45% increase in conversions since the redesign. Their team understood our brand and implemented exactly what we needed."
+          "name": "Derek Chen",
+          "position": "Creative Director, Phantom Forge",
+          "content": "They captured the exact dark, cinematic tone our studio wanted — fast, striking, and on-brand everywhere. Ali's team shipped on time and kept tuning details long after most agencies would have moved on."
         },
         "3": {
-          "name": "Marcus Johnson",
-          "position": "Founder, HealthApp",
-          "content": "From concept to launch, they guided us through the entire app development process with expertise and professionalism. The final product exceeded our vision."
+          "name": "Miguel Ramirez",
+          "position": "Project Manager, Merged Construction",
+          "content": "We came in with a messy spec and left with a site that actually brings us qualified leads. Clear communication the whole way, and the admin tools make updating project galleries effortless."
         }
       }
     },
@@ -187,22 +187,22 @@
         "title": "Real results from businesses that trusted us with their digital needs."
       },
       "quots": {
-        "1": "CodeWithAli transformed our e-commerce platform, resulting in a 45% increase in conversions and a significant improvement in user satisfaction. Their technical expertise combined with strategic insights made all the difference.",
-        "2": "Working with CodeWithAli on our business dashboard has been game-changing. Their team quickly understood our complex requirements and delivered a solution that has streamlined our operations and improved decision-making.",
-        "3": "The mobile app CodeWithAli developed for our healthcare service has received outstanding feedback from users. Their attention to security and user experience shows in every aspect of the finished product.",
-        "4": "As a startup, we needed a partner who could guide us through the technical challenges of launching our platform. CodeWithAli provided not just development expertise but valuable strategic input that helped shape our product."
+        "1": "Mario's Hauling tripled its inbound calls within the first month after launch. CodeWithAli understood the kind of customer we serve and built a site that speaks directly to them — simple, trustworthy, and fast on every phone.",
+        "2": "Our bakery needed a site that looked as warm as our shop feels. They delivered more than a website — we now have an online menu, a delivery form, and a brand presence we are proud to share with our community.",
+        "3": "From branding to booking, CodeWithAli turned Reggaeeli into a real platform. Our events sell out faster, and the team kept iterating with us until every last detail felt right.",
+        "4": "Simplicity would not exist in its current form without CodeWithAli. They treated our startup like it was their own and shipped a product that genuinely impresses investors and users alike."
       },
       "author": {
-        "1": "Emma Thompson",
-        "2": "Michael Rodriguez",
-        "3": "Dr. James Wilson",
-        "4": "Sophia Chen"
+        "1": "Mario Santos",
+        "2": "Layla Hassan",
+        "3": "Eli Scott",
+        "4": "Sem Seem"
       },
       "job": {
-        "1": "CTO, StyleHub",
-        "2": " Founder, DataVision Inc.",
-        "3": " Director, HealthConnect",
-        "4": " Co-founder, NextLevel Tech"
+        "1": "Owner, Mario's Hauling",
+        "2": "Owner, Iraqi Sweets",
+        "3": "Founder, Reggaeeli",
+        "4": "Co-founder, Simplicity"
       }
     },
     "process": {
@@ -870,19 +870,19 @@
           "desc": "Hear from businesses who have transformed their digital presence with our UI/UX design services.",
           "quotes": {
             "1": {
-              "quote": "The redesign completely transformed our user engagement metrics. Conversion rates increased by 40% within the first month.",
-              "author": "Sarah Johnson",
-              "authDesc": "TechStart Solutions"
+              "quote": "They made our budgeting product feel intuitive from the first screen. Every user test ran smoother than the last, and the visual polish elevated our whole brand.",
+              "author": "Tariq Rahman",
+              "authDesc": "Co-founder, Budgetary"
             },
             "2": {
-              "quote": "Their user research uncovered pain points we had overlooked for years. The resulting interface designs have significantly improved customer satisfaction.",
-              "author": "Michael Chen",
-              "authDesc": "Global Innovations"
+              "quote": "Our restaurant ordering flow used to lose customers halfway through. CodeWithAli redesigned it end-to-end and conversion climbed almost overnight — clean, fast, and on-brand.",
+              "author": "Zahra Al-Najah",
+              "authDesc": "Owner, Knoz Al-Najah"
             },
             "3": {
-              "quote": "Working with this team was seamless. They translated our complex requirements into an intuitive design that our users love.",
-              "author": "Emma Rodriguez",
-              "authDesc": "HealthPlus"
+              "quote": "They translated a complex construction workflow into an interface even our field crews can use on a phone. Every detail, from iconography to motion, felt deliberate.",
+              "author": "Miguel Ramirez",
+              "authDesc": "Project Manager, Merged Construction"
             }
           }
         },
